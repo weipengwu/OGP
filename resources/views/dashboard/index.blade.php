@@ -25,7 +25,7 @@
 							<div class="col-md-2">
 								<div class="top-profile"><?php echo getFirstCharter(Auth::user()->name);?></div>
 							</div>
-							<?php endif;?>
+							<? endif;?>
 							<div class="col-md-9">
 								<h3 class="heading-name">{{ getAuthorname($id) }}</h3> <a href="" id="edit_btn">Edit Profile</a>
 								<p class="description">
@@ -34,8 +34,32 @@
 									@endif
 								</p>
 							</div>
-							
+							<div class="d-row">
+								<p>My Group</p>
+								@if(myGroup($id) > 0)
+									@foreach(myGroup($id) as $mgroup)
+										<div class="grouplist" style="background: url('{{$mgroup->profile}}');background-size:auto 220px;">
+											<a href="groups/<?= $mgroup->slug;?>">
+											<div class="caption">
+												<h3>{{ $mgroup->name }}</h3>
+											</div>
+											</a>
+										</div>
+									@endforeach
+								@else
+									<a href="/groups/new">Create your own group</a>
+								@endif
+							</div>
+							<div class="d-row">
+							<p>Joined Groups</p>
+							@if(joinedGroupCount($id) > 0)
+								@foreach(joinedGroup($id) as $group)
+									<p>{{ $group->name }}</p>
+								@endforeach
+							@endif
+							</div>
 						</div>
+
 				</div>
 			</div>
 		</div>
