@@ -7,7 +7,6 @@
 			<div class="panel">
 
 				<div class="panel-body">
-					@if(Auth::check())
 						<?php
 							$id = Auth::user()->id;
 						?>
@@ -60,8 +59,6 @@
 							@endif
 							</div>
 						</div>
-
-					@endif
 				</div>
 			</div>
 		</div>
