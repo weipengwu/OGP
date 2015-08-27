@@ -25,7 +25,7 @@
 							<div class="col-md-2">
 								<div class="top-profile"><?php echo getFirstCharter(Auth::user()->name);?></div>
 							</div>
-							<? endif;?>
+							<?php endif;?>
 							<div class="col-md-9">
 								<h3 class="heading-name">{{ getAuthorname($id) }}</h3> <a href="" id="edit_btn">Edit Profile</a>
 								<p class="description">
