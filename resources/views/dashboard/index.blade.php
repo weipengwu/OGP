@@ -36,7 +36,7 @@
 							</div>
 							<div class="d-row">
 								<p>My Group</p>
-								@if(myGroup($id) > 0)
+								@if(count(myGroup($id)) > 0)
 									@foreach(myGroup($id) as $mgroup)
 										<div class="grouplist" style="background: url('{{$mgroup->profile}}');background-size:auto 220px;">
 											<a href="groups/<?= $mgroup->slug;?>">
