@@ -6274,7 +6274,8 @@ label,
   color: #fff !important;
 }
 .btn-logo{
-  background: #c9ad88;
+  /*background: #c9ad88;*/
+  background: #fc6c25;
   border: none;
   color: #fff !important;
 }
@@ -7041,7 +7042,8 @@ h3 a:hover{
   text-transform: uppercase;
 }
 .singlegroup .postfrom a{
-  color: #34A4D4;
+ /* color: #34A4D4;*/
+ color: #fc6c25;
 }
 .postauthor{
   color: #999;
