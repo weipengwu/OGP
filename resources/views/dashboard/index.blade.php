@@ -10,7 +10,32 @@
 						<?php
 							$id = Auth::user()->id;
 						?>
-						
+						<div>
+							<?php 
+								$user_profile = DB::table('user_meta')->where('user_id', $id)->where('meta_key', 'profile')->get();
+								$user_desc = DB::table('user_meta')->where('user_id', $id)->where('meta_key', 'description')->get();
+								if(count($user_profile) > 0):
+							?>
+							<div class="col-md-2">
+								<div class="top-profile" style="background: url(<?php echo url()."/".$user_profile[0]->meta_value;?>) center center no-repeat; background-size: cover"></div>
+							</div>
+							<?php
+								else:
+							?>
+							<div class="col-md-2">
+								<div class="top-profile"><?php echo getFirstCharter(Auth::user()->name);?></div>
+							</div>
+							<? endif;?>
+							<div class="col-md-9">
+								<h3 class="heading-name">{{ getAuthorname($id) }}</h3> <a href="" id="edit_btn">Edit Profile</a>
+								<p class="description">
+									@if(count($user_desc) > 0)
+										{{ $user_desc[0]->meta_value }}
+									@endif
+								</p>
+							</div>
+							
+						</div>
 				</div>
 			</div>
 		</div>
