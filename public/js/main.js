@@ -1,0 +1,348 @@
+//init
+
+$(document).ready(function(){
+	$('body').on('click', '.event_like', function(e){
+		e.preventDefault();
+		$.ajaxSetup({
+		   headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
+		});
+		var eid = $(this).data('event-id');
+		var uid = $(this).data('author-id');
+		$.ajax({
+			type: "POST",
+			url: window.location.origin+"/event/like",
+			data: "event-id="+eid+'&author-id='+uid
+		}).done(function(response){
+			$('.like_btn').removeClass('event_like');
+			$('.like_btn').addClass('event_unlike');
+			$('.like_btn').html('<i class="fa fa-heart"></i>');
+		})
+	})
+	$('body').on('click', '.event_unlike', function(e){
+		e.preventDefault();
+		$.ajaxSetup({
+		   headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
+		});
+		var eid = $(this).data('event-id');
+		var uid = $(this).data('author-id');
+		$.ajax({
+			type: "POST",
+			url: window.location.origin+"/event/unlike",
+			data: "event-id="+eid+'&author-id='+uid
+		}).done(function(response){
+			$('.like_btn').removeClass('event_unlike');
+			$('.like_btn').addClass('event_like');
+			$('.like_btn').html('<i class="fa fa-heart-o"></i>');
+		})
+	})
+	$('body').on('click', '.post_like', function(e){
+		e.preventDefault();
+		$.ajaxSetup({
+		   headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
+		});
+		var that = $(this);
+		var pid = $(this).data('post-id');
+		var uid = $(this).data('author-id');
+		$.ajax({
+			type: "POST",
+			url: window.location.origin+"/post/like",
+			data: "post-id="+pid+'&author-id='+uid
+		}).done(function(response){
+			that.removeClass('post_like');
+			that.addClass('post_unlike');
+			that.html('<img src="../img/already_likes_icon.png" width="16">');
+			that.parent().next().html(response);
+		})
+	})
+	$('body').on('click', '.post_unlike', function(e){
+		e.preventDefault();
+		$.ajaxSetup({
+		   headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
+		});
+		var that = $(this);
+		var pid = $(this).data('post-id');
+		var uid = $(this).data('author-id');
+		$.ajax({
+			type: "POST",
+			url: window.location.origin+"/post/unlike",
+			data: "post-id="+pid+'&author-id='+uid
+		}).done(function(response){
+			that.removeClass('post_unlike');
+			that.addClass('post_like');
+			that.html('<img src="../img/likes_icon.png" width="16">');
+			that.parent().next().html(response);
+		})
+	})
+	// $('body').on('click', '.follow_user', function(e){
+	// 	e.preventDefault();
+	// 	$.ajaxSetup({
+	// 	   headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
+	// 	});
+	// 	var myid = $(this).data('my-id');
+	// 	var toid = $(this).data('to-id');
+	// 	$.ajax({
+	// 		type: "POST",
+	// 		url: window.location.origin+"/profiles/follow",
+	// 		data: "my-id="+myid+'&to-id='+toid
+	// 	}).done(function(response){
+	// 		if(response == 'success'){
+	// 			$('.follow_btn').removeClass('follow_user');
+	// 			$('.follow_btn').addClass('unfollow_user');
+	// 			$('.follow_btn').html('Following');
+	// 		}
+	// 	})
+	// })
+	// $('body').on('click', '.unfollow_user', function(e){
+	// 	e.preventDefault();
+	// 	$.ajaxSetup({
+	// 	   headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
+	// 	});
+	// 	var myid = $(this).data('my-id');
+	// 	var toid = $(this).data('to-id');
+	// 	$.ajax({
+	// 		type: "POST",
+	// 		url: window.location.origin+"/profiles/unfollow",
+	// 		data: "my-id="+myid+'&to-id='+toid
+	// 	}).done(function(response){
+	// 		if(response == 'success'){
+	// 			$('.follow_btn').removeClass('unfollow_user');
+	// 			$('.follow_btn').addClass('follow_user');
+	// 			$('.follow_btn').html('Follow');
+	// 		}
+	// 	})
+	// })
+	$('body').on('click', '.follow_group', function(e){
+		e.preventDefault();
+		$.ajaxSetup({
+		   headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
+		});
+		var userid = $(this).data('user-id');
+		var groupid = $(this).data('group-id');
+		$.ajax({
+			type: "POST",
+			url: window.location.origin+"/groups/follow",
+			data: "uid="+userid+'&gid='+groupid
+		}).done(function(response){
+			if(response == 'success'){
+				$('.follow_btn').removeClass('follow_group');
+				$('.follow_btn').addClass('unfollow_group');
+				$('.follow_btn').html('Following');
+			}
+		})
+	})
+	$('body').on('click', '.unfollow_group', function(e){
+		e.preventDefault();
+		$.ajaxSetup({
+		   headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
+		});
+		var userid = $(this).data('user-id');
+		var groupid = $(this).data('group-id');
+		$.ajax({
+			type: "POST",
+			url: window.location.origin+"/groups/unfollow",
+			data: "uid="+userid+'&gid='+groupid
+		}).done(function(response){
+			if(response == 'success'){
+				$('.follow_btn').removeClass('unfollow_group');
+				$('.follow_btn').addClass('follow_group');
+				$('.follow_btn').html('Follow');
+			}
+		})
+	})
+
+	$('#g-profile').fileinput({
+		previewFileType: "image",
+		browseClass: "btn btn-success",
+		browseLabel: "Pick Image",
+		browseIcon: '<i class="glyphicon glyphicon-picture"></i>',
+		removeClass: "btn btn-danger",
+		removeLabel: "Delete",
+		removeIcon: '<i class="glyphicon glyphicon-trash"></i>',
+		showUpload: false,
+	});
+	$('#u-profile').fileinput({
+		previewFileType: "image",
+		browseClass: "btn btn-success",
+		browseLabel: "Pick Image",
+		browseIcon: '<i class="glyphicon glyphicon-picture"></i>',
+		removeClass: "btn btn-danger",
+		removeLabel: "Delete",
+		removeIcon: '<i class="glyphicon glyphicon-trash"></i>',
+		showUpload: false,
+	});
+	$('#banner').fileinput({
+		previewFileType: "image",
+		browseClass: "btn btn-success",
+		browseLabel: "Pick Image",
+		browseIcon: '<i class="glyphicon glyphicon-picture"></i>',
+		removeClass: "btn btn-danger",
+		removeLabel: "Delete",
+		removeIcon: '<i class="glyphicon glyphicon-trash"></i>',
+		showUpload: false,
+	});
+	$('#g-banner').fileinput({
+		previewFileType: "image",
+		browseClass: "btn btn-success",
+		browseLabel: "Pick Image",
+		browseIcon: '<i class="glyphicon glyphicon-picture"></i>',
+		removeClass: "btn btn-danger",
+		removeLabel: "Delete",
+		removeIcon: '<i class="glyphicon glyphicon-trash"></i>',
+		showUpload: false,
+	});
+	$('#postimage1').fileinput({
+		previewFileType: "image",
+		browseClass: "btn btn-primary btn-block btn-img1",
+        showCaption: false,
+        showRemove: false,
+        showUpload: false,
+		browseLabel: "",
+		browseIcon: "<i class=\"glyphicon glyphicon-plus\"></i> ",
+	})
+	$('#postimage1').on('fileloaded', function(event, file, previewId, index, reader) {
+	    $('.btn-img1').hide();
+	 	$('.form-img2').show();
+	});
+	$('#postimage1').on('filecleared', function(event, file, previewId, index, reader) {
+	    $('.btn-img1').show();
+	});
+
+	$('#postimage2').fileinput({
+		previewFileType: "image",
+		browseClass: "btn btn-primary btn-block btn-img2",
+        showCaption: false,
+        showRemove: false,
+        showUpload: false,
+		browseLabel: "",
+		browseIcon: "<i class=\"glyphicon glyphicon-plus\"></i>",
+	})
+	$('#postimage3').fileinput({
+		previewFileType: "image",
+		browseClass: "btn btn-primary btn-block btn-img3",
+        showCaption: false,
+        showRemove: false,
+        showUpload: false,
+		browseLabel: "",
+		browseIcon: "<i class=\"glyphicon glyphicon-plus\"></i>",
+	})
+	$('#postimage4').fileinput({
+		previewFileType: "image",
+		browseClass: "btn btn-primary btn-block btn-img4",
+        showCaption: false,
+        showRemove: false,
+        showUpload: false,
+		browseLabel: "",
+		browseIcon: "<i class=\"glyphicon glyphicon-plus\"></i>",
+	})
+	$('.form_datetime').datetimepicker({
+        	weekStart: 1,
+	        todayBtn:  1,
+			autoclose: 1,
+			todayHighlight: 1,
+			startView: 2,
+			forceParse: 0,
+	        showMeridian: 1,
+	        pickerPosition: 'bottom-left'
+    	});
+    $('input[name="applytojoin"]').bootstrapSwitch('state', false, true);
+    $('input[name="applyswitch"]').bootstrapSwitch('state', false, true);
+
+	$('#edit_btn').on('click', function(e){
+		e.preventDefault();
+		$('#update-profile').fadeIn();
+	})
+
+	$('.profile .tab_btn').on('click', function(e){
+		e.preventDefault();
+		var id = $(this).data('index');
+		$('.tab_btn').removeClass('active');
+		$(this).addClass('active');
+		$('.tab-content').removeClass('active');
+		$('#'+id).addClass('active');
+	})
+
+	$('.bootstrap-switch').on('click', function(){
+		if($(this).hasClass('bootstrap-switch-off')){
+			$('input[name="resume"]').val('off');
+			$('#linkresume').hide();
+			$('#noresume').show();
+		}else{
+			$('input[name="resume"]').val('on');
+			$('#linkresume').show();
+			$('#noresume').hide();
+		}
+	})
+	$('#category').on('change', function(){
+		var cat = $('#category').val();	
+		if( cat == ""){
+			window.location.href =  window.location.origin+'/events';
+		}else{
+			window.location.href =  window.location.origin+'/events?category='+cat;
+		}
+	})
+	$('#eventtime').on('change', function(){
+		var eventtime = $('#eventtime').val();	
+		if( eventtime == ""){
+			window.location.href =  window.location.origin+'/events';
+		}else{
+			window.location.href =  window.location.origin+'/events?time='+eventtime;
+		}
+	})
+	$('.shareto a').on('click', function(e){
+		e.preventDefault();
+		if($(this).parent().prev().is(":visible")){
+			$(this).parent().prev().hide();
+		}else{
+			$(this).parent().prev().show();
+		}
+	})
+	
+	$(window).scroll(function(){
+		if($(this).scrollTop() > 400){
+			$('.bannerwrapper').addClass('locked');
+			$('.bannerwrapper').next().css('margin-top', '500px');
+		}else{
+			$('.bannerwrapper').removeClass('locked');
+			$('.bannerwrapper').next().css('margin-top', '0');
+		}
+	})
+
+	Dropzone.options.createpost = { // The camelized version of the ID of the form element
+
+	  // The configuration we've talked about above
+	  autoProcessQueue: false,
+	  uploadMultiple: true,
+	  parallelUploads: 100,
+	  maxFiles: 8,
+	  clickable:'#dropzonePreview',
+
+	  // The setting up of the dropzone
+	  init: function() {
+	    var myDropzone = this;
+
+	    // First change the button to actually tell Dropzone to process the queue.
+	    this.element.querySelector("input[type=submit]").addEventListener("click", function(e) {
+	      // Make sure that the form isn't actually being sent.
+	      e.preventDefault();
+	      e.stopPropagation();
+	      myDropzone.processQueue();
+	    });
+
+	    // Listen to the sendingmultiple event. In this case, it's the sendingmultiple event instead
+	    // of the sending event because uploadMultiple is set to true.
+	    this.on("sendingmultiple", function() {
+	      // Gets triggered when the form is actually being sent.
+	      // Hide the success button or the complete form.
+	    });
+	    this.on("successmultiple", function(files, response) {
+	      // Gets triggered when the files have successfully been sent.
+	      // Redirect user or notify of success.
+	    });
+	    this.on("errormultiple", function(files, response) {
+	      // Gets triggered when there was an error sending the files.
+	      // Maybe show form again, and notify user of error
+	    });
+	  }
+
+	}
+})
