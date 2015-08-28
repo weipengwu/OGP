@@ -7,17 +7,19 @@
 			$group = DB::table('groups')->orderBy('created_at', 'desc')->take(1)->get();
 		?>
 		<section class="container">
-		<div class="homebanner">
-			<a href="/groups/{{ $group[0]->slug }}"><img src=<?php echo url()."/".$group[0]->profile;?> alt="" class="banner-img"/>
-			<div class="caption">
-				<p>from {{ getAuthorname($group[0]->owner) }}</p>
-				<h1>{{ $group[0]->name }}</h1>
+		<a href="/groups/{{ $group[0]->slug }}">
+			<div class="homebanner" style="background: url('<?php echo url().'/'.$group[0]->banner;?>'); background-size: cover;">
+			
+				<div class="caption">
+					<p>from {{ getAuthorname($group[0]->owner) }}</p>
+					<h1>{{ $group[0]->name }}</h1>
+				</div>
+				<div id="hblikebar">
+					<span class="cat">{{ $group[0]->category }}</span>
+				</div>
+			
 			</div>
-			<div id="hblikebar">
-				<span class="cat">{{ $group[0]->category }}</span>
-			</div>
-			</a>
-		</div>
+		</a>
 		</section>
 			<?php $posts = array();?>
 			@foreach ($allposts as $singlepost)

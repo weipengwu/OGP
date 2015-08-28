@@ -6901,6 +6901,7 @@ h3 a:hover{
 }
 .homebanner{
   position: relative;
+  height: 400px;
   margin-bottom: 30px;
   margin-top: 30px;
   padding-bottom: 20px;

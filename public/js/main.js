@@ -216,6 +216,13 @@ $(document).ready(function(){
 		browseLabel: "",
 		browseIcon: "<i class=\"glyphicon glyphicon-plus\"></i>",
 	})
+	$('#postimage2').on('fileloaded', function(event, file, previewId, index, reader) {
+	    $('.btn-img2').hide();
+	 	$('.form-img3').show();
+	});
+	$('#postimage2').on('filecleared', function(event, file, previewId, index, reader) {
+	    $('.btn-img2').show();
+	});
 	$('#postimage3').fileinput({
 		previewFileType: "image",
 		browseClass: "btn btn-primary btn-block btn-img3",
@@ -224,7 +231,14 @@ $(document).ready(function(){
         showUpload: false,
 		browseLabel: "",
 		browseIcon: "<i class=\"glyphicon glyphicon-plus\"></i>",
-	})
+	});
+	$('#postimage3').on('fileloaded', function(event, file, previewId, index, reader) {
+	    $('.btn-img3').hide();
+	 	$('.form-img4').show();
+	});
+	$('#postimage3').on('filecleared', function(event, file, previewId, index, reader) {
+	    $('.btn-img3').show();
+	});
 	$('#postimage4').fileinput({
 		previewFileType: "image",
 		browseClass: "btn btn-primary btn-block btn-img4",
@@ -233,7 +247,13 @@ $(document).ready(function(){
         showUpload: false,
 		browseLabel: "",
 		browseIcon: "<i class=\"glyphicon glyphicon-plus\"></i>",
-	})
+	});
+	$('#postimage4').on('fileloaded', function(event, file, previewId, index, reader) {
+	    $('.btn-img4').hide();
+	});
+	$('#postimage4').on('filecleared', function(event, file, previewId, index, reader) {
+	    $('.btn-img4').show();
+	});
 	$('.form_datetime').datetimepicker({
         	weekStart: 1,
 	        todayBtn:  1,
