@@ -14,7 +14,7 @@
 							<img src="<?php echo url().'/'.$banner;?>" class="post-img">
 						@endforeach
 					</p>
-					<p>{{ $post->content }}</p>
+					<p>{!!html_entity_decode($post->content)!!}</p>
 					<div class="commentscount">
 						<span class="c_holder">{{ $post->comments->count()}} Comments</span>
 					</div>

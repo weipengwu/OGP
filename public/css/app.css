@@ -6602,7 +6602,7 @@ label,
 .eventindex .eventgroup{
   border-right: 0;
   margin-bottom: 25px;
-  height: 440px;
+  height: 460px;
   float: left;
   width: 32%;
   margin-right: 2%;
@@ -6702,6 +6702,8 @@ h3 a:hover{
   padding: 0 15px;
   color: #777;
   font-size: 14px;
+  height: 100px;
+  overflow: hidden;
 }
 .eventgroup .eventgroup-list .event-details .event-info{
   max-height: 40px;
