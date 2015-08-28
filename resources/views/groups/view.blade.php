@@ -2,11 +2,11 @@
 
 @section('content')
 <div class="bannerwrapper">
-	<div class="groupbanner" style="background: url('<?php echo url()."/".$group->banner;?>') center center no-repeat; background-size: cover;">
+	<div class="groupbanner" style="background: #ccc url('<?php echo url()."/".$group->banner;?>') center center no-repeat; background-size: cover;">
 		<div class="caption">
 			<div class="container">
 				<div class="col-md-2">
-					<div class="groupprofile" style="background: url('<?php echo url()."/".$group->profile;?>') center center no-repeat; background-size: cover;"></div>
+					<div class="groupprofile" style="background: #666 url('<?php echo url()."/".$group->profile;?>') center center no-repeat; background-size: cover;"></div>
 				</div>
 				<div class="col-md-10">
 				<h1>{{ $group->name }}</h1>
@@ -75,7 +75,7 @@
 									<div class="postfrom"><div>From <a href="/groups/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div>
 									<div class="grouppost">{{ $post->group->category }}</div></div>
 									<a href="{{ url() }}/posts/<?php echo $post->id; ?>">
-										<div class="bannerholder" style="background: url('<?php echo url().'/'.$post->banner;?>'); background-size: cover;">
+										<div class="bannerholder" style="background: #ccc url('<?php echo url().'/'.$post->banner;?>'); background-size: cover;">
 										</div>
 									</a>
 										<div class="postauthor">By {{ getAuthorname($post->author) }}</div>
@@ -121,7 +121,7 @@
 									<?php if($i > 2) break;?>
 									<div class="col-md-4<?php if(is_int($j/3)) echo " last";?>">
 										<div class="postfrom"><div>From <a href="/groups/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ $post->group->category }}</div></div>
-										<a href="{{ url() }}/posts/<?php echo $post->id; ?>"><div class="bannerholder" style="background: url('<?php echo url().'/'.$post->banner;?>'); background-size: cover;">
+										<a href="{{ url() }}/posts/<?php echo $post->id; ?>"><div class="bannerholder" style="background: #ccc url('<?php echo url().'/'.$post->banner;?>'); background-size: cover;">
 											</div></a>
 										<div class="postauthor">By {{ getAuthorname($post->author) }}</div>
 											<div class="title-area"><a href="{{ url() }}/post/<?php echo $post->id; ?>"><h3>{{ $post->title }}</h3></a></div>

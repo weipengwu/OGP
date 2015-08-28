@@ -6371,7 +6371,7 @@ label,
 .bannerwrapper.locked{
   position: fixed;
   width: 100%;
-  margin-top: -400px;
+  margin-top: -436px;
   z-index: 99;
 }
 .left{
@@ -6602,12 +6602,13 @@ label,
 .eventindex .eventgroup{
   border-right: 0;
   margin-bottom: 25px;
+  height: 440px;
   float: left;
   width: 32%;
   margin-right: 2%;
   /*background: #fafafa;*/
   background: #fff;
-      -webkit-box-shadow: 0 0 2px #bababa;
+    -webkit-box-shadow: 0 0 2px #bababa;
     -moz-box-shadow: 0 0 2px #bababa;
     box-shadow: 0 0 2px #bababa;
     position: relative;
@@ -6674,6 +6675,8 @@ label,
 }
 .eventgroup .eventgroup-list h3{
   font-size: 20px;
+  height: 22px;
+  overflow: hidden;
   margin: 0 0 10px 0;
   padding: 0 15px;
 }
@@ -6699,6 +6702,10 @@ h3 a:hover{
   padding: 0 15px;
   color: #777;
   font-size: 14px;
+}
+.eventgroup .eventgroup-list .event-details .event-info{
+  max-height: 40px;
+  overflow: hidden;
 }
 .eventgroup .eventgroup-list .event-details .edicons{
   margin-right: 5px;

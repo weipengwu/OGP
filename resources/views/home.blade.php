@@ -8,7 +8,7 @@
 		?>
 		<section class="container">
 		<a href="/groups/{{ $group[0]->slug }}">
-			<div class="homebanner" style="background: url('<?php echo url().'/'.$group[0]->banner;?>'); background-size: cover;">
+			<div class="homebanner" style="background: #ccc url('<?php echo url().'/'.$group[0]->banner;?>'); background-size: cover;">
 			
 				<div class="caption">
 					<p>from {{ getAuthorname($group[0]->owner) }}</p>
@@ -37,7 +37,7 @@
 							<div class="grouppost">{{ $post->group->category }}</div></div>
 							<a href="{{ url() }}/posts/<?php echo $post->id; ?>">
 								<?php $banner = explode(',', $post->banner); ?>
-								<div class="bannerholder" style="background: url('<?php echo url().'/'.$banner[0];?>'); background-size: cover;">
+								<div class="bannerholder" style="background: #ccc url('<?php echo url().'/'.$banner[0];?>'); background-size: cover;">
 								</div>
 							</a>
 								<div class="postauthor">By {{ getAuthorname($post->author) }}</div>
@@ -83,7 +83,7 @@
 						<?php if($i > 2) break;?>
 						<div class="col-md-4<?php if(is_int($j/3)) echo " last";?>">
 							<div class="postfrom"><div>From <a href="/groups/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ $post->group->category }}</div></div>
-							<a href="{{ url() }}/posts/<?php echo $post->id; ?>"><div class="bannerholder" style="background: url('<?php echo url().'/'.$post->banner;?>'); background-size: cover;">
+							<a href="{{ url() }}/posts/<?php echo $post->id; ?>"><div class="bannerholder" style="background: #ccc url('<?php echo url().'/'.$post->banner;?>'); background-size: cover;">
 								</div></a>
 							<div class="postauthor">By {{ getAuthorname($post->author) }}</div>
 								<div class="title-area"><a href="{{ url() }}/post/<?php echo $post->id; ?>"><h3>{{ $post->title }}</h3></a></div>
@@ -129,7 +129,7 @@
 					@foreach ($events as $event)
 					<?php if($e > 4) break;?>
 					<a href="/events/{{ $event->id }}">
-					<div class="col" style="background: url('{{ $event->banner }}');background-size:cover;">
+					<div class="col" style="background: #ccc url('{{ $event->banner }}');background-size:cover;">
 						<div class="caption">
 							<h3>{{ $event->title }}</h3>
 						</div>
@@ -154,7 +154,7 @@
 						<div class="<?php if($i == 0) { echo "col-md-6";} else{ echo "col-md-3"; }?><?php if(is_int($j/3)) echo " last";?>">
 							<div class="postfrom"><div>From <a href="/groups/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ $post->group->category }}</div></div>
 							<a href="{{ url() }}/posts/<?php echo $post->id; ?>">
-								<div class="bannerholder" style="background: url('<?php echo url().'/'.$post->banner;?>'); background-size: cover;">
+								<div class="bannerholder" style="background: #ccc url('<?php echo url().'/'.$post->banner;?>'); background-size: cover;">
 								</div>
 							</a>
 								<div class="postauthor">By {{ getAuthorname($post->author) }}</div>
@@ -207,7 +207,7 @@
 					?>
 						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
 							<a href="groups/<?= $group->slug;?>">
-							<div class="bannerholder" style="background: url('{{$group->profile}}');background-size:cover"></div>
+							<div class="bannerholder" style="background: #ccc url('{{$group->profile}}');background-size:cover"></div>
 							<div class="caption">
 								<h3>{{ $group->name }}</h3>
 								<p>{{ memberCount($group->group_id) }} Members</p>
@@ -248,7 +248,7 @@
 						<div class="col-md-3<?php if(is_int($j/4)) echo " last";?>">
 							<div class="postfrom"><div>From <a href="/groups/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ $post->group->category }}</div></div>
 							<a href="{{ url() }}/posts/<?php echo $post->id; ?>">
-								<div class="bannerholder" style="background: url('<?php echo url().'/'.$post->banner;?>'); background-size: cover;">
+								<div class="bannerholder" style="background: #ccc url('<?php echo url().'/'.$post->banner;?>'); background-size: cover;">
 								</div>
 							</a>
 								<div class="postauthor">By {{ getAuthorname($post->author) }}</div>

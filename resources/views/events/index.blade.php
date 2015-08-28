@@ -52,7 +52,7 @@
 										<h3><a href="events/<?= $event->id;?>">{{ $event->title }}</a></h3>
 										
 										<div class="event-details">
-											<p>
+											<p class="event-info">
 												<img src="{{ asset('img/calendar_icon.png') }}" width="16" class="edicons"> 
 												<?php 
 													if(gmdate('M j',$event->fromtime) == gmdate('M j',$event->totime)) : 
@@ -63,8 +63,8 @@
 
 												<?php endif; ?>
 											</p>
-											<p><img src="{{ asset('img/address_icon.png') }}" width="15" class="edicons"> {{ $event->address }}</p>
-											<p><img src="{{ asset('img/ticket_icon.png') }}" height="12" class="edicons"> {{ $event->fee }}</p>
+											<p class="event-info"><img src="{{ asset('img/address_icon.png') }}" width="15" class="edicons"> {{ $event->address }}</p>
+											<p class="event-info"><img src="{{ asset('img/ticket_icon.png') }}" height="12" class="edicons"> {{ $event->fee }}</p>
 										</div>
 
 										<div class="interested">
