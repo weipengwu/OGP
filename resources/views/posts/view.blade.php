@@ -8,6 +8,12 @@
 
 				<div class="panel-body">
 					<h1> {{ $post->title }}</h1>
+					<?php $banners = explode(',', $post->banner); ?>
+					<p>
+						@foreach ($banners as $banner)
+							<img src="<?php echo url().'/'.$banner;?>" class="post-img">
+						@endforeach
+					</p>
 					<p>{{ $post->content }}</p>
 					<div class="commentscount">
 						<span class="c_holder">{{ $post->comments->count()}} Comments</span>
