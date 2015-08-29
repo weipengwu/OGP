@@ -26,6 +26,7 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::post('groups/{slug}/events/new', array('uses' => 'EventController@createEvent', 'as' => 'createEvent'));
 	Route::post('groups/new', array('uses' => 'GroupController@createGroup', 'as' => 'createGroup'));
 	Route::get('groups/{slug}/edit', array('uses' => 'GroupController@editGroup', 'as' => 'editGroup'));
+	Route::post('groups/{slug}/edit', array('uses' => 'GroupController@editingGroup', 'as' => 'editingGroup'));
 	Route::post('event/like', 'EventController@eventLike');
 	Route::post('event/unlike', 'EventController@eventUnlike');
 	Route::post('post/like', 'PostController@postLike');

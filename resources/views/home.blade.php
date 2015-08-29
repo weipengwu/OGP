@@ -40,8 +40,15 @@
 								<div class="bannerholder" style="background: #ccc url('<?php echo url().'/'.$banner[0];?>'); background-size: cover;">
 								</div>
 							</a>
+							<?php if($i == 0):?>
+							<div class="postinforight">
+							<?php endif;?>
 								<div class="postauthor">By {{ getAuthorname($post->author) }}</div>
 								<div class="title-area"><a href="{{ url() }}/posts/<?php echo $post->id; ?>"><h3>{{ $post->title }}</h3></a></div>
+							<?php if($i == 0):?>
+								<div class="excerpt-area">{!! html_entity_decode(getExcerpt($post->content)) !!}</div>
+							</div>
+							<?php endif;?>
 								<div class="bottom">
 									<div class="left">
 										
@@ -87,7 +94,7 @@
 								</div></a>
 							<div class="postauthor">By {{ getAuthorname($post->author) }}</div>
 								<div class="title-area"><a href="{{ url() }}/post/<?php echo $post->id; ?>"><h3>{{ $post->title }}</h3></a></div>
-								<div class="excerpt-area">{{ getExcerpt($post->content) }}</div>
+								<div class="excerpt-area">{!! html_entity_decode(getExcerpt($post->content)) !!}</div>
 								<div class="bottom">
 									<div class="left">
 										
@@ -159,7 +166,9 @@
 							</a>
 								<div class="postauthor">By {{ getAuthorname($post->author) }}</div>
 								<div class="title-area"><a href="{{ url() }}/posts/<?php echo $post->id; ?>"><h3>{{ $post->title }}</h3></a></div>
-								<div class="excerpt-area">{{ getExcerpt($post->content, 12) }}</div>
+								<?php if($i > 0): ?>
+								<div class="excerpt-area">{!! html_entity_decode(getExcerpt($post->content, 12)) !!}</div>
+								<?php endif;?>
 								<div class="bottom">
 									<div class="left">
 										
@@ -253,7 +262,7 @@
 							</a>
 								<div class="postauthor">By {{ getAuthorname($post->author) }}</div>
 								<div class="title-area"><a href="{{ url() }}/posts/<?php echo $post->id; ?>"><h3>{{ $post->title }}</h3></a></div>
-								<div class="excerpt-area">{{ getExcerpt($post->content, 12) }}</div>
+								<div class="excerpt-area">{!! html_entity_decode(getExcerpt($post->content, 12)) !!}</div>
 								<div class="bottom">
 									<div class="left">
 										

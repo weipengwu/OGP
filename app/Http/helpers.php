@@ -42,6 +42,15 @@
 		return DB::table('following')->where('followed_id', $group_id)->get();
 	}
 
+	function generateRandomString($length = 8) {
+	    $characters = '0123456789abcdefghijklmnopqrstuvwxyz';
+	    $charactersLength = strlen($characters);
+	    $randomString = '';
+	    for ($i = 0; $i < $length; $i++) {
+	        $randomString .= $characters[rand(0, $charactersLength - 1)];
+	    }
+	    return $randomString;
+	}
 	function getFollowedposts($uid,$skip = 0,$offset = 100){
 		$ids = DB::table('following')->where('followed_id', $uid)->select('user_id')->get();
 		$uids = [];

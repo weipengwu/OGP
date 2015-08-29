@@ -6932,6 +6932,9 @@ h3 a:hover{
 .singlegroup a{
   color: #333;
 }
+.singlegroup a:hover{
+  text-decoration: none;
+}
 .row-gap{
   clear: both;
   height: 25px;
@@ -7055,6 +7058,9 @@ h3 a:hover{
  /* color: #34A4D4;*/
  color: #fc6c25;
 }
+.singlegroup .postfrom a:hover{
+  text-decoration: underline;
+}
 .postauthor{
   color: #999;
   font-size: 12px;
@@ -7141,21 +7147,33 @@ h3 a:hover{
   background: #e8e8e8;
 }
 .layout84 .bannerholder{
-  height: 300px;
+  height: 250px;
+}
+.layout84 .col-md-8 .bannerholder{
+  height: 320px;
+  float: left;
+  width: 50%;
+}
+.layout84 .col-md-8 .postinforight{
+  float: left;
+  padding: 0 20px;
+}
+.layout84 .col-md-8 .postauthor{
+  padding-top: 0;
 }
 .layout84 .col-md-8, .layout84 .col-md-4{
-  height: 500px;
+  height: 420px;
   border-right: 1px solid #e8e8e8;
 }
 .layout444 .bannerholder{
-  height: 220px;
+  height: 250px;
 }
 .layout444 .col-md-4{
   height: 480px;
   border-right: 1px solid #e8e8e8;
 }
 .layout3333 .bannerholder{
-  height: 160px;
+  height: 200px;
 }
 .layout3333 .col-md-3{
   height: 380px;
@@ -7165,7 +7183,7 @@ h3 a:hover{
   height: 200px;
 }
 .layout633 .col-md-6 .bannerholder{
-  height: 250px;
+  height: 270px;
 }
 .layout633 .col-md-6, .layout633 .col-md-3{
   height: 440px;

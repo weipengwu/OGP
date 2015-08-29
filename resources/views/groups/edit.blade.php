@@ -8,14 +8,19 @@
 				<div class="panel-heading"><h3>EDIT GROUP</h3></div>
 
 				<div class="panel-body">
-					<form action="{{ URL::route('createGroup') }}" method="post" enctype="multipart/form-data">
+					<form action="{{ URL::route('editingGroup') }}" method="post" enctype="multipart/form-data">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
+						<input type="hidden" name="id" value="{{ $group->id }}">
 						<div class="form-group">
-							<label>Upload Your Group Profile</label>
+							<label>Upload Your New Group Profile</label>
 							<input type="file" id="g-profile" name="g-profile" accept="image/*">
 						</div>
 						<div class="form-group">
-							<input type="text" name="name" class="form-control" value="{{ $group->name }}">
+							<label>Upload Your New Group Banner Image</label>
+							<input type="file" id="g-banner" name="g-banner" accept="image/*">
+						</div>
+						<div class="form-group">
+							<input type="text" name="name" class="form-control" value="{{ $group->name }}" disabled>
 						</div>
 						<div class="form-group">
 							<select name="category" class="form-control">
