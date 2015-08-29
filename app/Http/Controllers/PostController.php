@@ -53,8 +53,8 @@ class PostController extends Controller {
 					if (Request::file('postimage1')->isValid()) {
 			      		$destinationPath = 'uploads'; // upload path
 			      		$originalname = Request::file('postimage1')->getClientOriginalName();
-			      		$extension = Request::file('postimage1')->getClientOriginalExtension(); // getting image extension
-			      		$fileName = 'Post_'.date('YmdHis').'_'.rand(111111,999999).'_'.$originalname.'.'.$extension; // renameing image
+			      		//$extension = Request::file('postimage1')->getClientOriginalExtension(); // getting image extension
+			      		$fileName = 'Post_'.date('YmdHis').'_'.rand(111111,999999).'_'.$originalname; // renameing image
 			      		Request::file('postimage1')->move($destinationPath, $fileName); // uploading file to given path
 				  		$postimage1 = $destinationPath."/".$fileName;
 						array_push($postimages, $postimage1);
@@ -71,8 +71,8 @@ class PostController extends Controller {
 					if (Request::file('postimage2')->isValid()) {
 			      		$destinationPath = 'uploads'; // upload path
 			      		$originalname = Request::file('postimage2')->getClientOriginalName();
-			      		$extension = Request::file('postimage2')->getClientOriginalExtension(); // getting image extension
-			      		$fileName = 'Post_'.date('YmdHis').'_'.rand(111111,999999).'_'.$originalname.'.'.$extension; // renameing image
+			      		//$extension = Request::file('postimage2')->getClientOriginalExtension(); // getting image extension
+			      		$fileName = 'Post_'.date('YmdHis').'_'.rand(111111,999999).'_'.$originalname; // renameing image
 			      		Request::file('postimage2')->move($destinationPath, $fileName); // uploading file to given path
 				  		$postimage2 = $destinationPath."/".$fileName;
 						array_push($postimages, $postimage2);
@@ -89,8 +89,8 @@ class PostController extends Controller {
 					if (Request::file('postimage3')->isValid()) {
 			      		$destinationPath = 'uploads'; // upload path
 			      		$originalname = Request::file('postimage3')->getClientOriginalName();
-			      		$extension = Request::file('postimage3')->getClientOriginalExtension(); // getting image extension
-			      		$fileName = 'Post_'.date('YmdHis').'_'.rand(111111,999999).'_'.$originalname.'.'.$extension; // renameing image
+			      		//$extension = Request::file('postimage3')->getClientOriginalExtension(); // getting image extension
+			      		$fileName = 'Post_'.date('YmdHis').'_'.rand(111111,999999).'_'.$originalname; // renameing image
 			      		Request::file('postimage3')->move($destinationPath, $fileName); // uploading file to given path
 				  		$postimage3 = $destinationPath."/".$fileName;
 						array_push($postimages, $postimage3);
@@ -107,8 +107,8 @@ class PostController extends Controller {
 					if (Request::file('postimage4')->isValid()) {
 			      		$destinationPath = 'uploads'; // upload path
 			      		$originalname = Request::file('postimage4')->getClientOriginalName();
-			      		$extension = Request::file('postimage4')->getClientOriginalExtension(); // getting image extension
-			      		$fileName = 'Post_'.date('YmdHis').'_'.rand(111111,999999).'_'.$originalname.'.'.$extension; // renameing image
+			      		//$extension = Request::file('postimage4')->getClientOriginalExtension(); // getting image extension
+			      		$fileName = 'Post_'.date('YmdHis').'_'.rand(111111,999999).'_'.$originalname; // renameing image
 			      		Request::file('postimage4')->move($destinationPath, $fileName); // uploading file to given path
 				  		$postimage4 = $destinationPath."/".$fileName;
 						array_push($postimages, $postimage4);
