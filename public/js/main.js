@@ -327,6 +327,20 @@ $(document).ready(function(){
 		}
 	})
 
+	$(".various").fancybox({
+		fitToView	: false,
+		width		: 400,
+		height		: 200,
+		autoSize	: false,
+		closeClick	: false,
+		openEffect	: 'none',
+		closeEffect	: 'none',
+		closeBtn    : false
+	});
+	$("#confirmdelete .close_btn").on('click', function(e){
+		e.preventDefault();
+		$.fancybox.close();
+	})
 	// Dropzone.options.createpost = { // The camelized version of the ID of the form element
 
 	//   // The configuration we've talked about above

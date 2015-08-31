@@ -6356,11 +6356,13 @@ label,
   text-transform: uppercase;
   font-weight: bold;
   font-size: 28px;
+  margin-top: 10px;
 }
 .groupbanner .caption a{
   color: #fff;
-  padding: 8px 12px;
+  padding: 8px 20px;
   border: 1px solid #fff;
+  display: inline-block;
 }
 .groupprofile{
   width: 130px;
@@ -6925,6 +6927,7 @@ h3 a:hover{
 .homebanner .caption h1{
   color: #fff;
   font-weight: bold;
+  margin-top: 0;
 }
 .singlegroup .eventslists{
   height: 500px;
@@ -7192,7 +7195,7 @@ h3 a:hover{
   height: 440px;
   border-right: 1px solid #e8e8e8;
 }
-.home .singlegroup .bottom{
+.singlegroup .bottom{
   position: absolute;
   bottom: 0;
   right: 20px;
@@ -7410,4 +7413,12 @@ h3 a:hover{
   .post-img{
     width: 100%;
     margin-bottom: 10px;
+  }
+  .deletepost{
+    position: absolute;
+    right: 15px;
+    top: 10px;
+  }
+  #confirmdelete{
+    display: none;
   }

@@ -72,14 +72,28 @@
 							@foreach ($posts as $post)
 								<?php if($i > 1) break;?>
 								<div <?php if($i == 0) { echo 'class="col-md-8"';} else{ echo 'class="col-md-4 last"'; } ?>>
+									<?php if($post->author == Auth::user()->id || $group->ower == Auth::user()->id):?>
+										<div class="deletepost"><a class="various" href="#confirmdelete"><img src="{{ asset('img/delete_icon.png') }}" width="20"></a></div>
+										<div id="confirmdelete">
+											<h3>Are you sure to delete this post?</h3>
+											<a href="{{ url() }}/posts/<?php echo $post->id; ?>/delete" class="btn btn-danger">Delete</a> <a href="" class="btn btn-logo close_btn">Cancel</a>
+										</div>
+									<?php endif;?>
 									<div class="postfrom"><div>From <a href="/groups/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div>
 									<div class="grouppost">{{ $post->group->category }}</div></div>
 									<a href="{{ url() }}/posts/<?php echo $post->id; ?>">
 										<div class="bannerholder" style="background: #ccc url('<?php echo url().'/'.$post->banner;?>'); background-size: cover;">
 										</div>
 									</a>
-										<div class="postauthor">By {{ getAuthorname($post->author) }}</div>
-										<div class="title-area"><a href="{{ url() }}/posts/<?php echo $post->id; ?>"><h3>{{ $post->title }}</h3></a></div>
+										<?php if($i == 0):?>
+										<div class="postinforight">
+										<?php endif;?>
+											<div class="postauthor">By {{ getAuthorname($post->author) }}</div>
+											<div class="title-area"><a href="{{ url() }}/posts/<?php echo $post->id; ?>"><h3>{{ $post->title }}</h3></a></div>
+										<?php if($i == 0):?>
+											<div class="excerpt-area">{!! html_entity_decode(getExcerpt($post->content)) !!}</div>
+										</div>
+										<?php endif;?>
 										<div class="bottom">
 											<div class="left">
 												
@@ -120,6 +134,13 @@
 								@foreach ($posts as $post)
 									<?php if($i > 2) break;?>
 									<div class="col-md-4<?php if(is_int($j/3)) echo " last";?>">
+										<?php if($post->author == Auth::user()->id || $group->ower == Auth::user()->id):?>
+											<div class="deletepost"><a class="various" href="#confirmdelete"><img src="{{ asset('img/delete_icon.png') }}" width="20"></a></div>
+											<div id="confirmdelete">
+												<h3>Are you sure to delete this post?</h3>
+												<a href="{{ url() }}/posts/<?php echo $post->id; ?>/delete" class="btn btn-danger">Delete</a> <a href="" class="btn btn-logo close_btn">Cancel</a>
+											</div>
+										<?php endif;?>
 										<div class="postfrom"><div>From <a href="/groups/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ $post->group->category }}</div></div>
 										<a href="{{ url() }}/posts/<?php echo $post->id; ?>"><div class="bannerholder" style="background: #ccc url('<?php echo url().'/'.$post->banner;?>'); background-size: cover;">
 											</div></a>

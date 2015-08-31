@@ -18,7 +18,7 @@
 
 	<link href="{{ asset('/css/fileinput.css') }}" rel="stylesheet">
 
-	<link href="{{ asset('/css/dropzone.css') }}" rel="stylesheet">
+	<link href="{{ asset('/css/jquery.fancybox.css') }}" rel="stylesheet">
 
 	<link href="{{ asset('/css/bootstrap-datetimepicker.min.css') }}" rel="stylesheet">
 
@@ -107,7 +107,7 @@
 	<script src="{{ asset('/js/fileinput.min.js') }}"></script>
 	<script src="{{ asset('/js/bootstrap-datetimepicker.min.js') }}"></script>
 	<script src="{{ asset('/js/bootstrap-switch.min.js') }}"></script>
-	<script src="{{ asset('/js/dropzone.js') }}"></script>
+	<script src="{{ asset('/js/jquery.fancybox.pack.js') }}"></script>
 	<script src="{{ asset('/js/main.js') }}"></script>
 	<script type="text/javascript">
 			$('.right a.facebook').on('click', function(e){

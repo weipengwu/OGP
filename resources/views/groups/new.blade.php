@@ -30,25 +30,19 @@
 						<div class="form-group">
 							<select name="category" class="form-control">
 								<option value="">Group Category -- Select one</option>
-								<option>Architecture</option>
-								<option>Arts</option>
-								<option>Automotive</option>
-								<option>Business</option>
-								<option>Charity</option>
-								<option>Culture</option>
-								<option>Design</option>
-								<option>Educational</option>
-								<option>Food</option>
-								<option>Games</option>
-								<option>Health</option>
-								<option>Home</option>
-								<option>Music</option>
-								<option>News</option>
-								<option>Photography</option>
-								<option>Religion</option>
-								<option>Sports</option>
-								<option>Technology</option>
-								<option>Travel</option>
+								<option value="Arts & Design">Arts & Design</option>
+								<option value="Auto">Auto</option>
+								<option value="Business">Business</option>
+								<option value="Education">Education</option>
+								<option value="Food">Food</option>
+								<option value="Games">Games</option>
+								<option value="Health">Health</option>
+								<option value="Home">Home</option>
+								<option value="Music">Music</option>
+								<option value="Sports">Sports</option>
+								<option value="Fashion">Fashion</option>
+								<option value="Technology">Technology</option>
+								<option value="Travel">Travel</option>
 							</select>
 						</div>
 						<div class="form-group">
