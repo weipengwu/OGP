@@ -337,7 +337,7 @@ $(document).ready(function(){
 		closeEffect	: 'none',
 		closeBtn    : false
 	});
-	$("#confirmdelete .close_btn").on('click', function(e){
+	$(".confirmdelete .close_btn").on('click', function(e){
 		e.preventDefault();
 		$.fancybox.close();
 	})

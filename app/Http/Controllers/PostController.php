@@ -171,4 +171,15 @@ class PostController extends Controller {
 		die();
 	}
 
+	// public function postDelete($id)
+	// {
+	// 	$post = Post::findOrFail($id);
+	// 	$group_id = $post->group_id;
+	// 	$group = Group::where('id', $group_id)->get();
+	// 	$post->delete();
+
+	// 	return redirect()->route('viewGroup', [ 'slug' => $group->slug ]);
+
+	// }
+
 }

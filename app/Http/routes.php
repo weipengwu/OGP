@@ -31,6 +31,7 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::post('event/unlike', 'EventController@eventUnlike');
 	Route::post('post/like', 'PostController@postLike');
 	Route::post('post/unlike', 'PostController@postUnlike');
+	Route::get('posts/{id}/delete', 'GroupController@postDelete');
 	Route::get('groups/join', array('uses' => 'GroupController@joinGroup', 'as' => 'joinGroup'));
 	Route::get('groups/leave', array('uses' => 'GroupController@leaveGroup', 'as' => 'leaveGroup'));
 	Route::get('dashboard', array('uses' => 'DashboardController@index','as' => 'dashboard'));

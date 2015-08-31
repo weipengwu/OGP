@@ -2,6 +2,7 @@
 use App\Group;
 use App\Member;
 use App\Following;
+use App\Post;
 use Request;
 use Validator;
 
@@ -202,5 +203,16 @@ class GroupController extends Controller {
 		$follow->delete();
 
 		echo 'success';
+	}
+
+	public function postDelete($id)
+	{
+		$post = Post::findOrFail($id);
+		$group_id = $post->group_id;
+		$slug = Group::findOrFail($group_id)->slug;
+		$post->delete();
+
+		return redirect()->route('viewGroup', [ 'slug' => $slug ]);
+
 	}
 }

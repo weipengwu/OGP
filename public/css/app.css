@@ -7419,6 +7419,6 @@ h3 a:hover{
     right: 15px;
     top: 10px;
   }
-  #confirmdelete{
+  .confirmdelete{
     display: none;
   }
