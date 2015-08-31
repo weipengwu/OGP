@@ -7171,12 +7171,20 @@ h3 a:hover{
   height: 420px;
   border-right: 1px solid #e8e8e8;
 }
+.layout84 .col-md-8 .excerpt-area{
+  height: 240px;
+  overflow: hidden;
+}
 .layout444 .bannerholder{
   height: 250px;
 }
 .layout444 .col-md-4{
   height: 480px;
   border-right: 1px solid #e8e8e8;
+}
+.layout444 .col-md-4 .excerpt-area{
+  height: 60px;
+  overflow: hidden;
 }
 .layout3333 .bannerholder{
   height: 200px;
@@ -7194,6 +7202,14 @@ h3 a:hover{
 .layout633 .col-md-6, .layout633 .col-md-3{
   height: 440px;
   border-right: 1px solid #e8e8e8;
+}
+.layout633 .col-md-3 .excerpt-area{
+  height: 60px;
+  overflow: hidden;
+}
+.layout3333 .col-md-3 .excerpt-area{
+  height: 40px;
+  overflow: hidden;
 }
 .singlegroup .bottom{
   position: absolute;

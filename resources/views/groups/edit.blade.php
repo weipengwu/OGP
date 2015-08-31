@@ -25,8 +25,6 @@
 						<div class="form-group">
 							<select name="category" class="form-control">
 								<option value="">Group Category -- Select one</option>
-
-								<option value="">Group Category -- Select one</option>
 								<option value="Arts & Design" <?php if($group->category == 'Arts & Design') echo "selected"; ?>>Arts & Design</option>
 								<option value="Auto" <?php if($group->category == 'Auto') echo "selected"; ?>>Auto</option>
 								<option value="Business" <?php if($group->category == 'Business') echo "selected"; ?>>Business</option>
