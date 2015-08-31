@@ -9,11 +9,15 @@
 				<div class="panel-body">
 					<h1> {{ $post->title }}</h1>
 					<?php $banners = explode(',', $post->banner); ?>
-					<p>
+					<div class="postbanner">
+					<div class="flexslider">
+						<ul class="slides">
 						@foreach ($banners as $banner)
-							<img src="<?php echo url().'/'.$banner;?>" class="post-img">
+							<li><img src="<?php echo url().'/'.$banner;?>" class="post-img"></li>
 						@endforeach
-					</p>
+						</ul>
+					</div>
+					</div>
 					<p>{!!html_entity_decode($post->content)!!}</p>
 					<div class="commentscount">
 						<span class="c_holder">{{ $post->comments->count()}} Comments</span>

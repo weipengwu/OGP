@@ -341,6 +341,7 @@ $(document).ready(function(){
 		e.preventDefault();
 		$.fancybox.close();
 	})
+	$('.flexslider').flexslider();
 	// Dropzone.options.createpost = { // The camelized version of the ID of the form element
 
 	//   // The configuration we've talked about above

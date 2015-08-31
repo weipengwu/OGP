@@ -25,25 +25,21 @@
 						<div class="form-group">
 							<select name="category" class="form-control">
 								<option value="">Group Category -- Select one</option>
-								<option <?php if($group->category == 'Architecture') echo "selected"; ?>>Architecture</option>
-								<option <?php if($group->category == 'Arts') echo "selected"; ?>>Arts</option>
-								<option <?php if($group->category == 'Automotive') echo "selected"; ?>>Automotive</option>
-								<option <?php if($group->category == 'Business') echo "selected"; ?>>Business</option>
-								<option <?php if($group->category == 'Charity') echo "selected"; ?>>Charity</option>
-								<option <?php if($group->category == 'Culture') echo "selected"; ?>>Culture</option>
-								<option <?php if($group->category == 'Design') echo "selected"; ?>>Design</option>
-								<option <?php if($group->category == 'Educational') echo "selected"; ?>>Educational</option>
-								<option <?php if($group->category == 'Food') echo "selected"; ?>>Food</option>
-								<option <?php if($group->category == 'Games') echo "selected"; ?>>Games</option>
-								<option <?php if($group->category == 'Health') echo "selected"; ?>>Health</option>
-								<option <?php if($group->category == 'Home') echo "selected"; ?>>Home</option>
-								<option <?php if($group->category == 'Music') echo "selected"; ?>>Music</option>
-								<option <?php if($group->category == 'News') echo "selected"; ?>>News</option>
-								<option <?php if($group->category == 'Photography') echo "selected"; ?>>Photography</option>
-								<option <?php if($group->category == 'Religion') echo "selected"; ?>>Religion</option>
-								<option <?php if($group->category == 'Sports') echo "selected"; ?>>Sports</option>
-								<option <?php if($group->category == 'Technology') echo "selected"; ?>>Technology</option>
-								<option <?php if($group->category == 'Travel') echo "selected"; ?>>Travel</option>
+
+								<option value="">Group Category -- Select one</option>
+								<option value="Arts & Design" <?php if($group->category == 'Arts & Design') echo "selected"; ?>>Arts & Design</option>
+								<option value="Auto" <?php if($group->category == 'Auto') echo "selected"; ?>>Auto</option>
+								<option value="Business" <?php if($group->category == 'Business') echo "selected"; ?>>Business</option>
+								<option value="Education" <?php if($group->category == 'Education') echo "selected"; ?>>Education</option>
+								<option value="Food" <?php if($group->category == 'Food') echo "selected"; ?>>Food</option>
+								<option value="Games" <?php if($group->category == 'Games') echo "selected"; ?>>Games</option>
+								<option value="Health" <?php if($group->category == 'Health') echo "selected"; ?>>Health</option>
+								<option value="Home" <?php if($group->category == 'Home') echo "selected"; ?>>Home</option>
+								<option value="Music" <?php if($group->category == 'Music') echo "selected"; ?>>Music</option>
+								<option value="Sports" <?php if($group->category == 'Sports') echo "selected"; ?>>Sports</option>
+								<option value="Fashion" <?php if($group->category == 'Fashion') echo "selected"; ?>>Fashion</option>
+								<option value="Technology" <?php if($group->category == 'Technology') echo "selected"; ?>>Technology</option>
+								<option value="Travel" <?php if($group->category == 'Travel') echo "selected"; ?>>Travel</option>
 							</select>
 						</div>
 						<div class="form-group">

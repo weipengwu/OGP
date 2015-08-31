@@ -20,6 +20,8 @@
 
 	<link href="{{ asset('/css/jquery.fancybox.css') }}" rel="stylesheet">
 
+	<link href="{{ asset('/css/flexslider.css') }}" rel="stylesheet">
+
 	<link href="{{ asset('/css/bootstrap-datetimepicker.min.css') }}" rel="stylesheet">
 
 	<link href="{{ asset('/css/bootstrap-switch.min.css') }}" rel="stylesheet">
@@ -108,6 +110,7 @@
 	<script src="{{ asset('/js/bootstrap-datetimepicker.min.js') }}"></script>
 	<script src="{{ asset('/js/bootstrap-switch.min.js') }}"></script>
 	<script src="{{ asset('/js/jquery.fancybox.pack.js') }}"></script>
+	<script src="{{ asset('/js/jquery.flexslider-min.js') }}"></script>
 	<script src="{{ asset('/js/main.js') }}"></script>
 	<script type="text/javascript">
 			$('.right a.facebook').on('click', function(e){

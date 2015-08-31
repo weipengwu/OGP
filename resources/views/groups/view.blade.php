@@ -52,7 +52,7 @@
 	<div class="panel">
 		<div class="panel-body">
 
-			@if(count($group->posts) == 0)
+			@if(count($gposts) == 0)
 				<section class="container">
 					<div class="row noposts">
 						<p>No posts</p>
@@ -60,7 +60,7 @@
 				</section>
 			@else
 				<?php $posts = array();?>
-				@foreach ($group->posts as $singlepost)
+				@foreach ($gposts as $singlepost)
 					<?php 
 						array_push($posts, $singlepost);
 					?>
@@ -82,7 +82,8 @@
 									<div class="postfrom"><div>From <a href="/groups/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div>
 									<div class="grouppost">{{ $post->group->category }}</div></div>
 									<a href="{{ url() }}/posts/<?php echo $post->id; ?>">
-										<div class="bannerholder" style="background: #ccc url('<?php echo url().'/'.$post->banner;?>'); background-size: cover;">
+										<?php $banner = explode(',', $post->banner); ?>
+										<div class="bannerholder" style="background: #ccc url('<?php echo url().'/'.$banner[0];?>'); background-size: cover;">
 										</div>
 									</a>
 										<?php if($i == 0):?>
@@ -142,7 +143,9 @@
 											</div>
 										<?php endif;?>
 										<div class="postfrom"><div>From <a href="/groups/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ $post->group->category }}</div></div>
-										<a href="{{ url() }}/posts/<?php echo $post->id; ?>"><div class="bannerholder" style="background: #ccc url('<?php echo url().'/'.$post->banner;?>'); background-size: cover;">
+										<a href="{{ url() }}/posts/<?php echo $post->id; ?>">
+										<?php $banner = explode(',', $post->banner); ?>
+										<div class="bannerholder" style="background: #ccc url('<?php echo url().'/'.$banner[0];?>'); background-size: cover;">
 											</div></a>
 										<div class="postauthor">By {{ getAuthorname($post->author) }}</div>
 											<div class="title-area"><a href="{{ url() }}/post/<?php echo $post->id; ?>"><h3>{{ $post->title }}</h3></a></div>
