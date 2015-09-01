@@ -34,15 +34,16 @@
 								<option value="Auto">Auto</option>
 								<option value="Business">Business</option>
 								<option value="Education">Education</option>
+								<option value="Fashion">Fashion</option>
 								<option value="Food">Food</option>
 								<option value="Games">Games</option>
 								<option value="Health">Health</option>
 								<option value="Home">Home</option>
 								<option value="Music">Music</option>
 								<option value="Sports">Sports</option>
-								<option value="Fashion">Fashion</option>
 								<option value="Technology">Technology</option>
 								<option value="Travel">Travel</option>
+								<option value="Other">Other</option>
 							</select>
 						</div>
 						<div class="form-group">

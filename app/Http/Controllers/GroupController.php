@@ -31,7 +31,7 @@ class GroupController extends Controller {
 	 */
 	public function index()
 	{
-		return view('groups.index')->with('groups', Group::orderBy('created_at', 'DESC')->get());;
+		return view('groups.index')->with('groups', Group::orderBy('created_at', 'DESC')->get())->with('artsgroups',Group::where('category','Arts & Design')->orderBy('created_at', 'DESC')->get())->with('autogroups',Group::where('category','Auto')->orderBy('created_at', 'DESC')->get())->with('businessgroups',Group::where('category','Business')->orderBy('created_at', 'DESC')->get())->with('educationgroups',Group::where('category','Education')->orderBy('created_at', 'DESC')->get())->with('fashiongroups',Group::where('category','Fashion')->orderBy('created_at', 'DESC')->get())->with('foodgroups',Group::where('category','Food')->orderBy('created_at', 'DESC')->get())->with('gamesgroups',Group::where('category','Games')->orderBy('created_at', 'DESC')->get())->with('healthgroups',Group::where('category','Health')->orderBy('created_at', 'DESC')->get())->with('homegroups',Group::where('category','Home')->orderBy('created_at', 'DESC')->get())->with('musicgroups',Group::where('category','Music')->orderBy('created_at', 'DESC')->get())->with('sportsgroups',Group::where('category','Sports')->orderBy('created_at', 'DESC')->get())->with('technologygroups',Group::where('category','Technology')->orderBy('created_at', 'DESC')->get())->with('travelgroups',Group::where('category','Travel')->orderBy('created_at', 'DESC')->get())->with('othergroups',Group::where('category','Other')->orderBy('created_at', 'DESC')->get());
 	}
 	public function newGroup()
 	{

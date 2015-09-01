@@ -6904,7 +6904,7 @@ h3 a:hover{
   display: table;
 }
 .home h1{
-  font-size: 24px;
+  font-size: 28px;
   text-align: center;
   margin-bottom: 25px;
     font-weight: bold;
@@ -6920,8 +6920,11 @@ h3 a:hover{
 }
 .homebanner .caption{
   position: absolute;
-  bottom: 50px;
-  left: 25px;
+  /*bottom: 50px;
+  left: 25px;*/
+  width: 100%;
+  text-align: center;
+  top: 150px;
   color: #fff;
 }
 .homebanner .caption h1{

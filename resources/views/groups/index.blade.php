@@ -26,24 +26,6 @@
 					@endforeach
 				</div>
 				<div class="divider"></div>
-				<h2 class="sectiontitle">HOT NEW RELEASES</h2>
-				<div class="row">
-					<?php $i = 1;?>
-					@foreach ($groups as $group)
-						<?php if($i > 4) break;?>
-						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
-							<a href="groups/<?= $group->slug;?>">
-							<div class="bannerholder" style="background: url('{{$group->profile}}');background-size:cover"></div>
-							<div class="caption">
-								<h3>{{ $group->name }}</h3>
-								<!-- <p>{{ memberCount($group->id) }} Members</p> -->
-							</div>
-							</a>
-						</div>
-						<?php $i++;?>
-					@endforeach
-				</div>
-				<div class="divider"></div>
 				<h2 class="sectiontitle">MOST POPULAR</h2>
 				<div class="row">
 					<?php $i = 1;?>
@@ -65,7 +47,7 @@
 				<h2 class="sectiontitle">ARTS & DESIGN</h2>
 				<div class="row">
 					<?php $i = 1;?>
-					@foreach ($groups as $group)
+					@foreach ($artsgroups as $group)
 						<?php if($i > 4) break;?>
 						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
 							<a href="groups/<?= $group->slug;?>">
@@ -79,6 +61,241 @@
 						<?php $i++;?>
 					@endforeach
 				</div>
+				<div class="divider"></div>
+				<h2 class="sectiontitle">AUTO</h2>
+				<div class="row">
+					<?php $i = 1;?>
+					@foreach ($autogroups as $group)
+						<?php if($i > 4) break;?>
+						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
+							<a href="groups/<?= $group->slug;?>">
+							<div class="bannerholder" style="background: url('{{$group->profile}}');background-size:cover"></div>
+							<div class="caption">
+								<h3>{{ $group->name }}</h3>
+								<!-- <p>{{ memberCount($group->id) }} Members</p> -->
+							</div>
+							</a>
+						</div>
+						<?php $i++;?>
+					@endforeach
+				</div>
+				<div class="divider"></div>
+				<h2 class="sectiontitle">BUSINESS</h2>
+				<div class="row">
+					<?php $i = 1;?>
+					@foreach ($businessgroups as $group)
+						<?php if($i > 4) break;?>
+						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
+							<a href="groups/<?= $group->slug;?>">
+							<div class="bannerholder" style="background: url('{{$group->profile}}');background-size:cover"></div>
+							<div class="caption">
+								<h3>{{ $group->name }}</h3>
+								<!-- <p>{{ memberCount($group->id) }} Members</p> -->
+							</div>
+							</a>
+						</div>
+						<?php $i++;?>
+					@endforeach
+				</div>
+				<div class="divider"></div>
+				<h2 class="sectiontitle">EDUCATION</h2>
+				<div class="row">
+					<?php $i = 1;?>
+					@foreach ($educationgroups as $group)
+						<?php if($i > 4) break;?>
+						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
+							<a href="groups/<?= $group->slug;?>">
+							<div class="bannerholder" style="background: url('{{$group->profile}}');background-size:cover"></div>
+							<div class="caption">
+								<h3>{{ $group->name }}</h3>
+								<!-- <p>{{ memberCount($group->id) }} Members</p> -->
+							</div>
+							</a>
+						</div>
+						<?php $i++;?>
+					@endforeach
+				</div>
+				<div class="divider"></div>
+				<h2 class="sectiontitle">FASHION</h2>
+				<div class="row">
+					<?php $i = 1;?>
+					@foreach ($fashiongroups as $group)
+						<?php if($i > 4) break;?>
+						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
+							<a href="groups/<?= $group->slug;?>">
+							<div class="bannerholder" style="background: url('{{$group->profile}}');background-size:cover"></div>
+							<div class="caption">
+								<h3>{{ $group->name }}</h3>
+								<!-- <p>{{ memberCount($group->id) }} Members</p> -->
+							</div>
+							</a>
+						</div>
+						<?php $i++;?>
+					@endforeach
+				</div>
+				<div class="divider"></div>
+				<h2 class="sectiontitle">FOOD</h2>
+				<div class="row">
+					<?php $i = 1;?>
+					@foreach ($foodgroups as $group)
+						<?php if($i > 4) break;?>
+						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
+							<a href="groups/<?= $group->slug;?>">
+							<div class="bannerholder" style="background: url('{{$group->profile}}');background-size:cover"></div>
+							<div class="caption">
+								<h3>{{ $group->name }}</h3>
+								<!-- <p>{{ memberCount($group->id) }} Members</p> -->
+							</div>
+							</a>
+						</div>
+						<?php $i++;?>
+					@endforeach
+				</div>
+				<div class="divider"></div>
+				<h2 class="sectiontitle">GAMES</h2>
+				<div class="row">
+					<?php $i = 1;?>
+					@foreach ($gamesgroups as $group)
+						<?php if($i > 4) break;?>
+						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
+							<a href="groups/<?= $group->slug;?>">
+							<div class="bannerholder" style="background: url('{{$group->profile}}');background-size:cover"></div>
+							<div class="caption">
+								<h3>{{ $group->name }}</h3>
+								<!-- <p>{{ memberCount($group->id) }} Members</p> -->
+							</div>
+							</a>
+						</div>
+						<?php $i++;?>
+					@endforeach
+				</div>
+				<div class="divider"></div>
+				<h2 class="sectiontitle">HEALTH</h2>
+				<div class="row">
+					<?php $i = 1;?>
+					@foreach ($healthgroups as $group)
+						<?php if($i > 4) break;?>
+						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
+							<a href="groups/<?= $group->slug;?>">
+							<div class="bannerholder" style="background: url('{{$group->profile}}');background-size:cover"></div>
+							<div class="caption">
+								<h3>{{ $group->name }}</h3>
+								<!-- <p>{{ memberCount($group->id) }} Members</p> -->
+							</div>
+							</a>
+						</div>
+						<?php $i++;?>
+					@endforeach
+				</div>
+				<div class="divider"></div>
+				<h2 class="sectiontitle">HOME</h2>
+				<div class="row">
+					<?php $i = 1;?>
+					@foreach ($homegroups as $group)
+						<?php if($i > 4) break;?>
+						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
+							<a href="groups/<?= $group->slug;?>">
+							<div class="bannerholder" style="background: url('{{$group->profile}}');background-size:cover"></div>
+							<div class="caption">
+								<h3>{{ $group->name }}</h3>
+								<!-- <p>{{ memberCount($group->id) }} Members</p> -->
+							</div>
+							</a>
+						</div>
+						<?php $i++;?>
+					@endforeach
+				</div>
+				<div class="divider"></div>
+				<h2 class="sectiontitle">MUSIC</h2>
+				<div class="row">
+					<?php $i = 1;?>
+					@foreach ($musicgroups as $group)
+						<?php if($i > 4) break;?>
+						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
+							<a href="groups/<?= $group->slug;?>">
+							<div class="bannerholder" style="background: url('{{$group->profile}}');background-size:cover"></div>
+							<div class="caption">
+								<h3>{{ $group->name }}</h3>
+								<!-- <p>{{ memberCount($group->id) }} Members</p> -->
+							</div>
+							</a>
+						</div>
+						<?php $i++;?>
+					@endforeach
+				</div>
+				<div class="divider"></div>
+				<h2 class="sectiontitle">SPORTS</h2>
+				<div class="row">
+					<?php $i = 1;?>
+					@foreach ($sportsgroups as $group)
+						<?php if($i > 4) break;?>
+						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
+							<a href="groups/<?= $group->slug;?>">
+							<div class="bannerholder" style="background: url('{{$group->profile}}');background-size:cover"></div>
+							<div class="caption">
+								<h3>{{ $group->name }}</h3>
+								<!-- <p>{{ memberCount($group->id) }} Members</p> -->
+							</div>
+							</a>
+						</div>
+						<?php $i++;?>
+					@endforeach
+				</div>
+				<div class="divider"></div>
+				<h2 class="sectiontitle">TECHNOLOGY</h2>
+				<div class="row">
+					<?php $i = 1;?>
+					@foreach ($technologygroups as $group)
+						<?php if($i > 4) break;?>
+						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
+							<a href="groups/<?= $group->slug;?>">
+							<div class="bannerholder" style="background: url('{{$group->profile}}');background-size:cover"></div>
+							<div class="caption">
+								<h3>{{ $group->name }}</h3>
+								<!-- <p>{{ memberCount($group->id) }} Members</p> -->
+							</div>
+							</a>
+						</div>
+						<?php $i++;?>
+					@endforeach
+				</div>
+				<div class="divider"></div>
+				<h2 class="sectiontitle">TRAVEL</h2>
+				<div class="row">
+					<?php $i = 1;?>
+					@foreach ($travelgroups as $group)
+						<?php if($i > 4) break;?>
+						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
+							<a href="groups/<?= $group->slug;?>">
+							<div class="bannerholder" style="background: url('{{$group->profile}}');background-size:cover"></div>
+							<div class="caption">
+								<h3>{{ $group->name }}</h3>
+								<!-- <p>{{ memberCount($group->id) }} Members</p> -->
+							</div>
+							</a>
+						</div>
+						<?php $i++;?>
+					@endforeach
+				</div>
+				<div class="divider"></div>
+				<h2 class="sectiontitle">OTHER</h2>
+				<div class="row">
+					<?php $i = 1;?>
+					@foreach ($othergroups as $group)
+						<?php if($i > 4) break;?>
+						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
+							<a href="groups/<?= $group->slug;?>">
+							<div class="bannerholder" style="background: url('{{$group->profile}}');background-size:cover"></div>
+							<div class="caption">
+								<h3>{{ $group->name }}</h3>
+								<!-- <p>{{ memberCount($group->id) }} Members</p> -->
+							</div>
+							</a>
+						</div>
+						<?php $i++;?>
+					@endforeach
+				</div>
+				<div class="divider"></div>
 			</div>
 		</div>
 	</div>

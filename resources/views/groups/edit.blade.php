@@ -29,15 +29,16 @@
 								<option value="Auto" <?php if($group->category == 'Auto') echo "selected"; ?>>Auto</option>
 								<option value="Business" <?php if($group->category == 'Business') echo "selected"; ?>>Business</option>
 								<option value="Education" <?php if($group->category == 'Education') echo "selected"; ?>>Education</option>
+								<option value="Fashion" <?php if($group->category == 'Fashion') echo "selected"; ?>>Fashion</option>
 								<option value="Food" <?php if($group->category == 'Food') echo "selected"; ?>>Food</option>
 								<option value="Games" <?php if($group->category == 'Games') echo "selected"; ?>>Games</option>
 								<option value="Health" <?php if($group->category == 'Health') echo "selected"; ?>>Health</option>
 								<option value="Home" <?php if($group->category == 'Home') echo "selected"; ?>>Home</option>
 								<option value="Music" <?php if($group->category == 'Music') echo "selected"; ?>>Music</option>
 								<option value="Sports" <?php if($group->category == 'Sports') echo "selected"; ?>>Sports</option>
-								<option value="Fashion" <?php if($group->category == 'Fashion') echo "selected"; ?>>Fashion</option>
 								<option value="Technology" <?php if($group->category == 'Technology') echo "selected"; ?>>Technology</option>
 								<option value="Travel" <?php if($group->category == 'Travel') echo "selected"; ?>>Travel</option>
+								<option value="Other" <?php if($group->category == 'Other') echo "selected"; ?>>Other</option>
 							</select>
 						</div>
 						<div class="form-group">
