@@ -31,6 +31,16 @@
 			$join->on('members.group_id', '=', 'groups.id');
 		})->get();
 	}
+
+	function followedGroup($uid){
+		$groups_id = DB::table('following')->where('user_id', $uid)->get();
+		$ids = [];
+		foreach ($groups_id as $group_id) {
+			$ids[] = $group_id->followed_id;
+		}
+		return DB::table('groups')->whereIn('id', $ids)->get();
+	}
+
 	function myGroup($uid){
 		return DB::table('groups')->where('owner', $uid)->get();
 	}

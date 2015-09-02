@@ -8,7 +8,7 @@
 		?>
 		<section class="container">
 		<a href="/groups/{{ $group[0]->slug }}">
-			<div class="homebanner" style="background: #ccc url('<?php echo url().'/'.$group[0]->banner;?>'); background-size: cover;">
+			<div class="homebanner" style="background: #ccc url('<?php echo url().'/'.$group[0]->banner;?>') no-repeat center center; background-size: cover;">
 			
 				<div class="caption">
 					<p>from {{ getAuthorname($group[0]->owner) }}</p>
@@ -37,7 +37,7 @@
 							<div class="grouppost">{{ $post->group->category }}</div></div>
 							<a href="{{ url() }}/posts/<?php echo $post->id; ?>">
 								<?php $banner = explode(',', $post->banner); ?>
-								<div class="bannerholder" style="background: #ccc url('<?php echo url().'/'.$banner[0];?>'); background-size: cover;">
+								<div class="bannerholder" style="background: #ccc url('<?php echo url().'/'.$banner[0];?>') no-repeat center center; background-size: cover;">
 								</div>
 							</a>
 							<?php if($i == 0):?>
@@ -92,7 +92,7 @@
 							<div class="postfrom"><div>From <a href="/groups/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ $post->group->category }}</div></div>
 							<a href="{{ url() }}/posts/<?php echo $post->id; ?>">
 								<?php $banner = explode(',', $post->banner); ?>
-								<div class="bannerholder" style="background: #ccc url('<?php echo url().'/'.$banner[0];?>'); background-size: cover;">
+								<div class="bannerholder" style="background: #ccc url('<?php echo url().'/'.$banner[0];?>') no-repeat center center; background-size: cover;">
 								</div></a>
 							<div class="postauthor">By {{ getAuthorname($post->author) }}</div>
 								<div class="title-area"><a href="{{ url() }}/posts/<?php echo $post->id; ?>"><h3>{{ $post->title }}</h3></a></div>
@@ -164,7 +164,7 @@
 							<div class="postfrom"><div>From <a href="/groups/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ $post->group->category }}</div></div>
 							<a href="{{ url() }}/posts/<?php echo $post->id; ?>">
 							<?php $banner = explode(',', $post->banner); ?>
-								<div class="bannerholder" style="background: #ccc url('<?php echo url().'/'.$banner[0];?>'); background-size: cover;">
+								<div class="bannerholder" style="background: #ccc url('<?php echo url().'/'.$banner[0];?>') no-repeat center center; background-size: cover;">
 								</div>
 							</a>
 								<div class="postauthor">By {{ getAuthorname($post->author) }}</div>
@@ -207,49 +207,34 @@
 			</section>
 			<section class="container">
 				<div class="joinedgroups">
-					<h3>JOINED GROUPS</h3>
+					<h3>FOLLOWING GROUPS</h3>
 					<p>Groups that you have already joined</p>
 					<div class="groupsrow">
 					<?php
 						$uid = Auth::user()->id;
-						$groups = joinedGroup($uid);
+						// $groups_id = DB::table('following')->where('user_id', $uid)->get();
+						// var_dump($groups_id);
+						$groups = followedGroup($uid);
 						$i =1;
-						$groups_id = array();
+						//$groups_id = array();
 						foreach ($groups as $group) :
 					?>
 						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
 							<a href="groups/<?= $group->slug;?>">
-							<div class="bannerholder" style="background: #ccc url('{{$group->profile}}');background-size:cover"></div>
+							<div class="bannerholder" style="background: #ccc url('{{$group->profile}}') no-repeat center center;background-size:cover"></div>
 							<div class="caption">
 								<h3>{{ $group->name }}</h3>
-								<p>{{ memberCount($group->group_id) }} Members</p>
+								<p>{{ memberCount($group->id) }} Members</p>
 							</div>
 							</a>
 						</div>
 						<?php 
-							array_push($groups_id, $group->group_id);
+							//array_push($groups_id, $group->group_id);
 						?>
 					<?php endforeach;$i++;?>
 					</div>
 					<div class="joinmore"><a href="">Join more groups to get more information</a></div>
-					<!-- <div class="row singlegroup">
-					<?php 
-						$gevents = getJoinedevents($groups_id);
-						foreach ($gevents as $gevent) :
-					?>
-						<div class="col-md-4">
-							<a href="{{ url() }}/events/<?php echo $gevent->id; ?>"><img src=<?php echo url()."/".$gevent->banner;?> alt="event banner" class="banner-img"/></a>
-								<p class="type">Events</p>
-								<div class="title-area"><a href="{{ url() }}/events/<?php echo $gevent->id; ?>"><h4>{{ $gevent->title }}</h4></a></div>
-								<div class="bottom">
-									<div class="left">
-										<div class="location"><?php echo $gevent->city;?></div>
-									</div>
-									
-								</div>
-						</div>
-					<?php endforeach;?>
-					</div> -->
+
 				</div>
 			</section>
 			<section class="container">
@@ -261,7 +246,7 @@
 							<div class="postfrom"><div>From <a href="/groups/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ $post->group->category }}</div></div>
 							<a href="{{ url() }}/posts/<?php echo $post->id; ?>">
 							<?php $banner = explode(',', $post->banner); ?>
-								<div class="bannerholder" style="background: #ccc url('<?php echo url().'/'.$banner[0];?>'); background-size: cover;">
+								<div class="bannerholder" style="background: #ccc url('<?php echo url().'/'.$banner[0];?>') no-repeat center center; background-size: cover;">
 								</div>
 							</a>
 								<div class="postauthor">By {{ getAuthorname($post->author) }}</div>
