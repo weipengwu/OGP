@@ -151,11 +151,11 @@
 							<h3><a href="events/<?php $event->id;?>">{{ $event->title }}</a></h3>
 							<div class="event-details">
 											<p class="event-info">
-												<img src="{{ asset('img/calendar_icon.png') }}" width="16" class="edicons"> 
+												<img src="{{ asset('img/calendar_icon.png') }}" width="14" class="edicons"> 
 												<?php 
 													if(gmdate('M j',$event->fromtime) == gmdate('M j',$event->totime)) : 
 												?>
-												{{ gmdate('D, M j',$event->fromtime) }} @ {{ gmdate('g : i a',$event->fromtime) }} - {{ gmdate('g : i a' ,$event->totime) }}
+												{{ gmdate('D, M j',$event->fromtime) }}
 												<?php else: ?>
 												{{ gmdate('M j',$event->fromtime) }} - {{ gmdate('M j',$event->totime) }}
 
