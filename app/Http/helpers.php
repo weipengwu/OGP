@@ -44,8 +44,8 @@
 	function myGroup($uid){
 		return DB::table('groups')->where('owner', $uid)->get();
 	}
-	function isFollowing($myid, $toid){
-		return DB::table('following')->where('user_id', $toid)->where('followed_id', $myid)->count();
+	function isFollowing($uid, $gid){
+		return DB::table('following')->where('user_id', $uid)->where('followed_id', $gid)->count();
 	}
 
 	function groupFollowers($group_id){

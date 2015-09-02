@@ -137,18 +137,37 @@
 					<?php $e = 0; ?>
 					@foreach ($events as $event)
 					<?php if($e > 4) break;?>
-					<a href="/events/{{ $event->id }}">
-					<div class="col" style="background: #ccc url('{{ $event->banner }}');background-size:cover;">
-						<div class="caption">
-							<h3>{{ $event->title }}</h3>
+					<div class="eventgroup">
+						<div class="eventgroup-list">
+							<a href="/events/{{ $event->id }}">
+							<!-- <div class="col" style="background: #ccc url('{{ $event->banner }}');background-size:cover;">
+								<div class="caption">
+									<h3>{{ $event->title }}</h3>
+								</div>
+							</div> -->
+							<div class="imgholder" style="background: url('<?php echo url()."/".$event->banner;?>') center center; background-size: cover;"></div>
+							</a>
+							<p class="location">{{ $event->city }}</p>
+							<h3><a href="events/<?php $event->id;?>">{{ $event->title }}</a></h3>
+							<div class="event-details">
+											<p class="event-info">
+												<img src="{{ asset('img/calendar_icon.png') }}" width="16" class="edicons"> 
+												<?php 
+													if(gmdate('M j',$event->fromtime) == gmdate('M j',$event->totime)) : 
+												?>
+												{{ gmdate('D, M j',$event->fromtime) }} @ {{ gmdate('g : i a',$event->fromtime) }} - {{ gmdate('g : i a' ,$event->totime) }}
+												<?php else: ?>
+												{{ gmdate('M j',$event->fromtime) }} - {{ gmdate('M j',$event->totime) }}
+
+												<?php endif; ?>
+											</p>
+											</div>
 						</div>
 					</div>
-					</a>
 					<?php $e++;?>
 					@endforeach
 				</div>
-				<div class="row-gap"></div>
-				<div class="row-gap"></div>
+				<div class="viewmore"><a href="/events">VIEW MORE</a></div>
 				<div class="row-gap"></div>
 				<div class="container">
 					<div class="divider"></div>
@@ -207,8 +226,8 @@
 			</section>
 			<section class="container">
 				<div class="joinedgroups">
-					<h3>FOLLOWING GROUPS</h3>
-					<p>Groups that you have already joined</p>
+					<h3>FOLLOWING</h3>
+					<p>Groups that you have are following</p>
 					<div class="groupsrow">
 					<?php
 						$uid = Auth::user()->id;
@@ -233,7 +252,7 @@
 						?>
 					<?php endforeach;$i++;?>
 					</div>
-					<div class="joinmore"><a href="">Join more groups to get more information</a></div>
+					<div class="joinmore"><a href="/groups">Follow more groups to get more information</a></div>
 
 				</div>
 			</section>

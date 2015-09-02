@@ -6596,10 +6596,38 @@ label,
 .eventindex .event-body{
   margin-top: 30px;
 }
-.eventgroup{
-  /*margin-bottom: 20px;
-  padding-bottom: 20px;*/
-  border-right: 1px solid #e8e8e8;
+.home .eventgroup{
+  float: left;
+  width: 18%;
+  margin: 0 1%;
+  height: 280px;
+  -webkit-box-shadow: 0 0 2px #bababa;
+    -moz-box-shadow: 0 0 2px #bababa;
+    box-shadow: 0 0 2px #bababa;
+}
+.home .eventgroup .eventgroup-list h3{
+  font-size: 18px;
+  height: 19px;
+}
+.home .eventgroup .eventgroup-list .event-details .event-info{
+  font-size: 12px;
+}
+.home .eventgroup .eventgroup-list .imgholder{
+  height: 160px;
+}
+.home_events:after{
+  clear: both;
+  content: "";
+  display: table;
+}
+.home .viewmore{
+  padding: 30px 0;
+  font-size: 14px;
+  text-align: center;
+}
+.home .viewmore a{
+  color: #999;
+  text-decoration: underline;
 }
 .eventindex .eventgroup{
   border-right: 0;
@@ -6634,10 +6662,7 @@ label,
   font-size: 14px;
   margin-top: 150px;
 }*/
-.eventindex .eventgroup .location{
-  padding: 10px 15px;
-  margin: 0;
-}
+
 .eventgroup .interested {
   font-size: 14px;
   margin-top: 10px;
@@ -6699,6 +6724,8 @@ h3 a:hover{
 .eventgroup .eventgroup-list .location{
   color: #999;
   font-size: 14px;
+  padding: 10px 15px;
+  margin: 0;
 }
 .eventgroup .eventgroup-list .event-details{
   padding: 0 15px;
