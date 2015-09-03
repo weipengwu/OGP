@@ -6606,8 +6606,11 @@ label,
     box-shadow: 0 0 2px #bababa;
 }
 .home .eventgroup .eventgroup-list h3{
-  font-size: 18px;
-  height: 19px;
+  font-size: 16px;
+  height: 34px;
+}
+.home .eventgroup .eventgroup-list .event-details{
+  height: auto;
 }
 .home .eventgroup .eventgroup-list .event-details .event-info{
   font-size: 12px;
