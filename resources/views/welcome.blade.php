@@ -8,7 +8,7 @@
 		?>
 		<section class="container">
 		<a href="/groups/{{ $group[0]->slug }}">
-			<div class="homebanner" style="background: #ccc url('<?php echo url().'/'.$group[0]->banner;?>'); background-size: cover;">
+			<div class="homebanner" style="background: #ccc url('<?php echo url().'/'.$group[0]->banner;?>') no-repeat center center; background-size: cover;">
 			
 				<div class="caption">
 					<p>from {{ getAuthorname($group[0]->owner) }}</p>
@@ -37,11 +37,18 @@
 							<div class="grouppost">{{ $post->group->category }}</div></div>
 							<a href="{{ url() }}/posts/<?php echo $post->id; ?>">
 								<?php $banner = explode(',', $post->banner); ?>
-								<div class="bannerholder" style="background: #ccc url('<?php echo url().'/'.$banner[0];?>'); background-size: cover;">
+								<div class="bannerholder" style="background: #ccc url('<?php echo url().'/'.$banner[0];?>') no-repeat center center; background-size: cover;">
 								</div>
 							</a>
+							<?php if($i == 0):?>
+							<div class="postinforight">
+							<?php endif;?>
 								<div class="postauthor">By {{ getAuthorname($post->author) }}</div>
 								<div class="title-area"><a href="{{ url() }}/posts/<?php echo $post->id; ?>"><h3>{{ $post->title }}</h3></a></div>
+							<?php if($i == 0):?>
+								<div class="excerpt-area">{!! html_entity_decode(getExcerpt($post->content)) !!}</div>
+							</div>
+							<?php endif;?>
 								<div class="bottom">
 									<div class="left">
 										
@@ -83,11 +90,13 @@
 						<?php if($i > 2) break;?>
 						<div class="col-md-4<?php if(is_int($j/3)) echo " last";?>">
 							<div class="postfrom"><div>From <a href="/groups/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ $post->group->category }}</div></div>
-							<a href="{{ url() }}/posts/<?php echo $post->id; ?>"><div class="bannerholder" style="background: #ccc url('<?php echo url().'/'.$post->banner;?>'); background-size: cover;">
+							<a href="{{ url() }}/posts/<?php echo $post->id; ?>">
+								<?php $banner = explode(',', $post->banner); ?>
+								<div class="bannerholder" style="background: #ccc url('<?php echo url().'/'.$banner[0];?>') no-repeat center center; background-size: cover;">
 								</div></a>
 							<div class="postauthor">By {{ getAuthorname($post->author) }}</div>
-								<div class="title-area"><a href="{{ url() }}/post/<?php echo $post->id; ?>"><h3>{{ $post->title }}</h3></a></div>
-								<div class="excerpt-area">{{ getExcerpt($post->content) }}</div>
+								<div class="title-area"><a href="{{ url() }}/posts/<?php echo $post->id; ?>"><h3>{{ $post->title }}</h3></a></div>
+								<div class="excerpt-area">{!! html_entity_decode(getExcerpt($post->content)) !!}</div>
 								<div class="bottom">
 									<div class="left">
 										
@@ -128,18 +137,32 @@
 					<?php $e = 0; ?>
 					@foreach ($events as $event)
 					<?php if($e > 4) break;?>
-					<a href="/events/{{ $event->id }}">
-					<div class="col" style="background: #ccc url('{{ $event->banner }}');background-size:cover;">
-						<div class="caption">
-							<h3>{{ $event->title }}</h3>
+					<div class="eventgroup">
+						<div class="eventgroup-list">
+							<a href="/events/{{ $event->id }}">
+							<div class="imgholder" style="background: url('<?php echo url()."/".$event->banner;?>') center center; background-size: cover;"></div>
+							</a>
+							<p class="location">{{ $event->city }}</p>
+							<h3><a href="events/<?php $event->id;?>">{{ $event->title }}</a></h3>
+							<div class="event-details">
+											<p class="event-info">
+												<img src="{{ asset('img/calendar_icon.png') }}" width="14" class="edicons"> 
+												<?php 
+													if(gmdate('M j',$event->fromtime) == gmdate('M j',$event->totime)) : 
+												?>
+												{{ gmdate('D, M j',$event->fromtime) }}
+												<?php else: ?>
+												{{ gmdate('M j',$event->fromtime) }} - {{ gmdate('M j',$event->totime) }}
+
+												<?php endif; ?>
+											</p>
+											</div>
 						</div>
 					</div>
-					</a>
 					<?php $e++;?>
 					@endforeach
 				</div>
-				<div class="row-gap"></div>
-				<div class="row-gap"></div>
+				<div class="viewmore"><a href="/events">VIEW MORE</a></div>
 				<div class="row-gap"></div>
 				<div class="container">
 					<div class="divider"></div>
@@ -154,12 +177,15 @@
 						<div class="<?php if($i == 0) { echo "col-md-6";} else{ echo "col-md-3"; }?><?php if(is_int($j/3)) echo " last";?>">
 							<div class="postfrom"><div>From <a href="/groups/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ $post->group->category }}</div></div>
 							<a href="{{ url() }}/posts/<?php echo $post->id; ?>">
-								<div class="bannerholder" style="background: #ccc url('<?php echo url().'/'.$post->banner;?>'); background-size: cover;">
+							<?php $banner = explode(',', $post->banner); ?>
+								<div class="bannerholder" style="background: #ccc url('<?php echo url().'/'.$banner[0];?>') no-repeat center center; background-size: cover;">
 								</div>
 							</a>
 								<div class="postauthor">By {{ getAuthorname($post->author) }}</div>
 								<div class="title-area"><a href="{{ url() }}/posts/<?php echo $post->id; ?>"><h3>{{ $post->title }}</h3></a></div>
-								<div class="excerpt-area">{{ getExcerpt($post->content, 12) }}</div>
+								<?php if($i > 0): ?>
+								<div class="excerpt-area">{!! html_entity_decode(getExcerpt($post->content, 12)) !!}</div>
+								<?php endif;?>
 								<div class="bottom">
 									<div class="left">
 										
@@ -193,6 +219,7 @@
 					<div class="row-gap"></div>
 			</div>
 			</section>
+
 			<section class="container">
 			<div class="row singlegroup layout3333">
 				<?php $i = 0; $j = 1;?>
@@ -201,12 +228,13 @@
 						<div class="col-md-3<?php if(is_int($j/4)) echo " last";?>">
 							<div class="postfrom"><div>From <a href="/groups/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ $post->group->category }}</div></div>
 							<a href="{{ url() }}/posts/<?php echo $post->id; ?>">
-								<div class="bannerholder" style="background: #ccc url('<?php echo url().'/'.$post->banner;?>'); background-size: cover;">
+							<?php $banner = explode(',', $post->banner); ?>
+								<div class="bannerholder" style="background: #ccc url('<?php echo url().'/'.$banner[0];?>') no-repeat center center; background-size: cover;">
 								</div>
 							</a>
 								<div class="postauthor">By {{ getAuthorname($post->author) }}</div>
 								<div class="title-area"><a href="{{ url() }}/posts/<?php echo $post->id; ?>"><h3>{{ $post->title }}</h3></a></div>
-								<div class="excerpt-area">{{ getExcerpt($post->content, 12) }}</div>
+								<div class="excerpt-area">{!! html_entity_decode(getExcerpt($post->content, 12)) !!}</div>
 								<div class="bottom">
 									<div class="left">
 										
