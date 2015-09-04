@@ -10,7 +10,8 @@
 				</div>
 				<div class="col-md-10">
 				<h1>{{ $group->name }}</h1>
-				<p>By {{ getAuthorname($group->owner) }}</p>
+				<!-- <p>By {{ getAuthorname($group->owner) }}</p> -->
+				<p>{{ $group->website }}</p>
 				@if(Auth::check())
 					@if($group->owner == Auth::user()->id)
 						<a href="/groups/{{ $group->slug }}/edit" class="btn btn_logo">Edit Group</a>

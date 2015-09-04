@@ -5,7 +5,10 @@
 	<div class="row">
 		<div class="panel">
 			<div class="panel-heading"><h1>EXPLORE</h1></div>
-
+			<?php 
+				$popular = DB::table('following')->select(DB::raw('followed_id, COUNT(followed_id) as count'))->groupBy('followed_id')->orderBy('count', 'desc')->take(4)->get();
+				
+			?>
 			<div class="panel-body">
 				<h2 class="sectiontitle">TRENDING</h2>
 				<div class="row">
@@ -28,15 +31,15 @@
 				<div class="divider"></div>
 				<h2 class="sectiontitle">MOST POPULAR</h2>
 				<div class="row">
-					<?php $i = 1;?>
-					@foreach ($groups as $group)
-						<?php if($i > 4) break;?>
+					<?php $i = 1; ?>
+					@foreach ($popular as $pop)
+						<?php $popgroup = DB::table('groups')->where('id', $pop->followed_id)->get(); ?>
 						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
-							<a href="groups/<?= $group->slug;?>">
-							<div class="bannerholder" style="background: url('{{$group->profile}}');background-size:cover"></div>
+							<a href="groups/{{ $popgroup[0]->slug }}">
+							<div class="bannerholder" style="background: url('{{$popgroup[0]->profile}}');background-size:cover"></div>
 							<div class="caption">
-								<h3>{{ $group->name }}</h3>
-								<!-- <p>{{ memberCount($group->id) }} Members</p> -->
+								<h3>{{ $popgroup[0]->name }}</h3>
+								
 							</div>
 							</a>
 						</div>
