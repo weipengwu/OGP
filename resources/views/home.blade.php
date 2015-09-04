@@ -148,7 +148,7 @@
 							<div class="imgholder" style="background: url('<?php echo url()."/".$event->banner;?>') center center; background-size: cover;"></div>
 							</a>
 							<p class="location">{{ $event->city }}</p>
-							<h3><a href="events/<?php $event->id;?>">{{ $event->title }}</a></h3>
+							<h3><a href="events/{{ $event->id }}">{{ $event->title }}</a></h3>
 							<div class="event-details">
 											<p class="event-info">
 												<img src="{{ asset('img/calendar_icon.png') }}" width="14" class="edicons"> 

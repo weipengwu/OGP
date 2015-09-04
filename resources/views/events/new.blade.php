@@ -45,15 +45,25 @@
 			                </div>
 							<input type="hidden" id="dtp_input2" value="" />
 			            </div>
+			            <div class="form-group" style="float:left; margin-right: 2%; width: 49%;">
+							<label class="col-md-2">Price</label>
+							<div class="col-md-10" style="padding: 0">
+							<select name="selectprice" id="selectprice" class="form-control">
+								<option value="Free">Free</option>
+								<option value="Paid">Paid</option>
+							</select>
+							</div>
+						</div>
+						<div id="fee" class="form-group" style="float:left; width: 49%;">
+							<label class="col-md-2" style="text-align: right">C$</label> <div class="col-md-10" style="padding: 0"><input type="text" name="fee" class="form-control" placeholder="Event Fee"></div>
+						</div>
 						<div class="form-group">
 							<input type="text" name="city" class="form-control" placeholder="City">
 						</div>
 						<div class="form-group">
 							<input type="text" name="address" class="form-control" placeholder="Address">
 						</div>
-						<div class="form-group">
-							<input type="text" name="fee" class="form-control" placeholder="Event Fee">
-						</div>
+						
 						<div class="form-group">
 							<textarea name="content" class="form-control" placeholder="Event Description"></textarea>
 						</div>

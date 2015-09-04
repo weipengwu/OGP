@@ -342,6 +342,14 @@ $(document).ready(function(){
 		$.fancybox.close();
 	})
 	$('.flexslider').flexslider();
+
+	$('#selectprice').on('change', function(){
+		if($(this).val() == 'Paid'){
+			$('#fee').show();
+		}else{
+			$('#fee').hide();
+		}
+	})
 	// Dropzone.options.createpost = { // The camelized version of the ID of the form element
 
 	//   // The configuration we've talked about above
