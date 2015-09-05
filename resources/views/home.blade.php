@@ -234,12 +234,12 @@
 						// $groups_id = DB::table('following')->where('user_id', $uid)->get();
 						// var_dump($groups_id);
 						$groups = followedGroup($uid);
-						$i =1;
+						$f =1;
 						//$groups_id = array();
 						foreach ($groups as $group) :
 					?>
-						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
-							<a href="groups/<?= $group->slug;?>">
+						<div class="grouplist<?php if(is_int($f/4)) echo " last";?>">
+							<a href="groups/{{ $group->slug }}">
 							<div class="bannerholder" style="background: #ccc url('{{$group->profile}}') no-repeat center center;background-size:cover"></div>
 							<div class="caption">
 								<h3>{{ $group->name }}</h3>
@@ -250,7 +250,7 @@
 						<?php 
 							//array_push($groups_id, $group->group_id);
 						?>
-					<?php endforeach;$i++;?>
+					<?php $f++; endforeach;?>
 					</div>
 					<div class="joinmore"><a href="/groups">Follow more groups to get more information</a></div>
 
