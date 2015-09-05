@@ -350,6 +350,18 @@ $(document).ready(function(){
 			$('#fee').hide();
 		}
 	})
+	$('.showall a').on('click', function(e){
+		e.preventDefault();
+		if($('.joinedgroups .groupsrow').hasClass('collapsed')){
+			$('.joinedgroups .groupsrow').removeClass('collapsed');
+			$('.joinedgroups .groupsrow').addClass('expanded');
+			$(this).html('COLLAPSE ALL');
+		}else{
+			$('.joinedgroups .groupsrow').removeClass('expanded');
+			$('.joinedgroups .groupsrow').addClass('collapsed');
+			$(this).html('SHOW ALL');
+		}
+	})
 	// Dropzone.options.createpost = { // The camelized version of the ID of the form element
 
 	//   // The configuration we've talked about above

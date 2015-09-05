@@ -6435,9 +6435,9 @@ label,
   display: table;
   content: "";
 }
-.grouplist:last-child{
+/*.grouplist:last-child{
   margin-right: 0;
-}
+}*/
 .grouplist .bannerholder{
   height: 280px;
   transition: all 0.3s ease;
@@ -6990,6 +6990,22 @@ h3 a:hover{
   clear: both;
   content: "";
   display: table;
+}
+.joinedgroups .groupsrow.collapsed{
+  height: 305px;
+  overflow: hidden;
+}
+.joinedgroups .groupsrow.expanded{
+  height: auto;
+  overflow: auto;
+}
+.showall{
+  margin: 20px 0;
+}
+.showall a{
+  color: #777;
+  font-size: 12px;
+  text-decoration: underline;
 }
 .singlegroup{
   text-align: left;

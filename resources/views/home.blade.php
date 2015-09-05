@@ -228,11 +228,9 @@
 				<div class="joinedgroups">
 					<h3>FOLLOWING</h3>
 					<p>Groups that you have are following</p>
-					<div class="groupsrow">
+					<div class="groupsrow collapsed">
 					<?php
 						$uid = Auth::user()->id;
-						// $groups_id = DB::table('following')->where('user_id', $uid)->get();
-						// var_dump($groups_id);
 						$groups = followedGroup($uid);
 						$f =1;
 						//$groups_id = array();
@@ -252,6 +250,7 @@
 						?>
 					<?php $f++; endforeach;?>
 					</div>
+					<div class="showall"><a href="">SHOW ALL</a></div>
 					<div class="joinmore"><a href="/groups">Follow more groups to get more information</a></div>
 
 				</div>
