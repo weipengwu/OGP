@@ -64,7 +64,7 @@
 						<div class="form-group">
 							<textarea name="description" class="form-control" placeholder="Group Description"></textarea>
 						</div>
-						<input type="submit" class="btn btn-logo">
+						<input type="submit" class="btn btn-logo" value="Submit">
 					</form>
 				</div>
 			</div>

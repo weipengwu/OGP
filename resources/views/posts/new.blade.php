@@ -42,7 +42,7 @@
 								<input type="file" id="postimage4" name="postimage4" accept="image/*">
 							</div>
 						</div>
-						<input type="submit" class="btn btn-logo">
+						<input type="submit" class="btn btn-logo" value="Submit">
 					</form>
 				</div>
 			</div>
