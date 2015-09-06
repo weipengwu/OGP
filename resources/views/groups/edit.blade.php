@@ -59,7 +59,7 @@
 						<div class="form-group">
 							<textarea name="description" class="form-control">{{ $group->description }}</textarea>
 						</div>
-						<input type="submit" class="btn btn-logo">
+						<input type="submit" class="btn btn-logo" value="Submit">
 					</form>
 				</div>
 			</div>
