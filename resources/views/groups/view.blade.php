@@ -8,8 +8,7 @@
 				<div class="groupprofile" style="background: #666 url('<?php echo url()."/".$group->profile;?>') center center no-repeat; background-size: cover;"></div>
 				<p class="groupcategory">{{ $group->category }}</p>
 				<h1>{{ $group->name }}</h1>
-				<p>{{ $group->description }}</p>
-				<!-- <p>By {{ getAuthorname($group->owner) }}</p> -->
+				<p>{!! html_entity_decode($group->description) !!}</p>
 				<p><a href="{{ $group->website }}" target="_blank" class="website">{{ $group->website }}</a></p>
 				@if(Auth::check())
 					@if($group->owner == Auth::user()->id)

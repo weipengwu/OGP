@@ -30,7 +30,7 @@
 								<option value="Business" <?php if($group->category == 'Business') echo "selected"; ?>>Business</option>
 								<option value="Education" <?php if($group->category == 'Education') echo "selected"; ?>>Education</option>
 								<option value="Fashion" <?php if($group->category == 'Fashion') echo "selected"; ?>>Fashion</option>
-								<option value="Food" <?php if($group->category == 'Food') echo "selected"; ?>>Food</option>
+								<option value="Food & Drink" <?php if($group->category == 'Food & Drink') echo "selected"; ?>>Food & Drink</option>
 								<option value="Games" <?php if($group->category == 'Games') echo "selected"; ?>>Games</option>
 								<option value="Health" <?php if($group->category == 'Health') echo "selected"; ?>>Health</option>
 								<option value="Home" <?php if($group->category == 'Home') echo "selected"; ?>>Home</option>
@@ -57,7 +57,7 @@
 							<label>Apply to Join</label> <input type="checkbox" name="applytojoin" />
 						</div>
 						<div class="form-group">
-							<textarea name="description" class="form-control">{{ $group->description }}</textarea>
+							<textarea name="description" maxlength="300" class="form-control">{{ $group->description }}</textarea>
 						</div>
 						<input type="submit" class="btn btn-logo" value="Submit">
 					</form>

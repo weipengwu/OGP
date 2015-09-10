@@ -16,7 +16,7 @@
 								<option value="Auto" <?php if(isset($_GET['category']) && $cat == 'Auto') echo "selected";?>>Auto</option>
 								<option value="Business" <?php if(isset($_GET['category']) && $cat == 'Business') echo "selected";?>>Business</option>
 								<option value="Education" <?php if(isset($_GET['category']) && $cat == 'Education') echo "selected";?>>Education</option>
-								<option value="Food" <?php if(isset($_GET['category']) && $cat == 'Food') echo "selected";?>>Food</option>
+								<option value="Food & Drink" <?php if(isset($_GET['category']) && $cat == 'Food & Drink') echo "selected";?>>Food & Drink</option>
 								<option value="Games" <?php if(isset($_GET['category']) && $cat == 'Games') echo "selected";?>>Games</option>
 								<option value="Health" <?php if(isset($_GET['category']) && $cat == 'Health') echo "selected";?>>Health</option>
 								<option value="Home" <?php if(isset($_GET['category']) && $cat == 'Home') echo "selected";?>>Home</option>

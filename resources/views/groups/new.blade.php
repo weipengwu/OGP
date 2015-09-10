@@ -35,7 +35,7 @@
 								<option value="Business">Business</option>
 								<option value="Education">Education</option>
 								<option value="Fashion">Fashion</option>
-								<option value="Food">Food</option>
+								<option value="Food & Drink">Food & Drink</option>
 								<option value="Games">Games</option>
 								<option value="Health">Health</option>
 								<option value="Home">Home</option>
@@ -62,7 +62,7 @@
 							<label>Apply to Join</label> <input type="checkbox" name="applytojoin" />
 						</div>
 						<div class="form-group">
-							<textarea name="description" class="form-control" placeholder="Group Description"></textarea>
+							<textarea name="description" maxlength="300" class="form-control" placeholder="Group Description"></textarea>
 						</div>
 						<input type="submit" class="btn btn-logo" value="Submit">
 					</form>
