@@ -137,7 +137,7 @@
 					@endforeach
 				</div>
 				<div class="divider"></div>
-				<h2 class="sectiontitle">FOOD</h2>
+				<h2 class="sectiontitle">FOOD & DRINK</h2>
 				<div class="row">
 					<?php $i = 1;?>
 					@foreach ($foodgroups as $group)
