@@ -6329,7 +6329,7 @@ label,
 }
 .groupbanner{
   position: relative;
-  height: 500px;
+  height: 550px;
   overflow: hidden;
   margin-top: -63px;
 }
@@ -6342,7 +6342,7 @@ label,
   background: rgba(0,0,0,.5);
   bottom: 0;
   top: 0;
-  text-align: left;
+  text-align: center;
   width:100%;
   padding: 20px 0;
 }
@@ -6350,7 +6350,8 @@ label,
   color: #fff;
 }
 .groupbanner .caption .container{
-  margin-top: 300px;
+  margin-top: 100px;
+
 }
 .groupbanner .caption h1{
   text-transform: uppercase;
@@ -6365,16 +6366,27 @@ label,
   display: inline-block;
   margin-top: 15px;
 }
+.groupbanner .caption a.website{
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
 .groupprofile{
   width: 130px;
   height: 130px;
   border: 2px solid #fff;
   border-radius: 10px;
+  margin: 0 auto;
+}
+.groupbanner .caption .groupcategory{
+  margin: 15px 0;
+  text-decoration: underline;
+  text-transform: uppercase;
 }
 .bannerwrapper.locked{
   position: fixed;
   width: 100%;
-  margin-top: -436px;
+  margin-top: -486px;
   z-index: 99;
 }
 .left{
@@ -7514,4 +7526,7 @@ h3 a:hover{
   }
   #fee{
     display: none;
+  }
+  .search h1{
+    font-size: 28px;
   }

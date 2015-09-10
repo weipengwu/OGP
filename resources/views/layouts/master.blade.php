@@ -63,7 +63,7 @@
 					<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><img src="{{ asset('/img/search.png') }}" alt="English" width="22" /></a>
 							<ul class="dropdown-menu search-dropdown" role="menu">
-								<li><form id="searchform"><input type="text" name="s" placeholder="Search OGP"></form></li>
+								<li><form id="searchform" action="{{ URL::route('search') }}"><input type="text" name="q" placeholder="Search OGP"></form></li>
 							</ul>
 						</li>
 					@endif

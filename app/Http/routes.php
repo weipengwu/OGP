@@ -62,3 +62,4 @@ Route::get('posts/{id}', array('uses' => 'PostController@viewPost', 'as' => 'vie
 Route::get('missions/{id}', array('uses' => 'MissionController@viewMission', 'as' => 'viewMission'));
 
 Route::get('search', 'SearchController@search');
+Route::post('search', array('uses' => 'SearchController@search', 'as' => 'search'));

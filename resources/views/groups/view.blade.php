@@ -5,13 +5,12 @@
 	<div class="groupbanner" style="background: #ccc url('<?php echo url()."/".$group->banner;?>') center center no-repeat; background-size: cover;">
 		<div class="caption">
 			<div class="container">
-				<div class="col-md-2">
-					<div class="groupprofile" style="background: #666 url('<?php echo url()."/".$group->profile;?>') center center no-repeat; background-size: cover;"></div>
-				</div>
-				<div class="col-md-10">
+				<div class="groupprofile" style="background: #666 url('<?php echo url()."/".$group->profile;?>') center center no-repeat; background-size: cover;"></div>
+				<p class="groupcategory">{{ $group->category }}</p>
 				<h1>{{ $group->name }}</h1>
+				<p>{{ $group->description }}</p>
 				<!-- <p>By {{ getAuthorname($group->owner) }}</p> -->
-				<p>{{ $group->website }}</p>
+				<p><a href="{{ $group->website }}" target="_blank" class="website">{{ $group->website }}</a></p>
 				@if(Auth::check())
 					@if($group->owner == Auth::user()->id)
 						<a href="/groups/{{ $group->slug }}/edit" class="btn btn_logo">Edit Group</a>
@@ -21,7 +20,6 @@
 						<a href="" class="follow_btn follow_group" data-user-id="{{ Auth::user()->id }}" data-group-id="{{ $group->id }}">Follow</a>
 					@endif
 				@endif
-				</div>
 			</div>
 		</div>	
 	</div>
