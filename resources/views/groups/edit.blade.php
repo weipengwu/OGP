@@ -5,18 +5,18 @@
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
 			<div class="panel">
-				<div class="panel-heading"><h3>EDIT GROUP</h3></div>
+				<div class="panel-heading"><h3>EDIT BRAND</h3></div>
 
 				<div class="panel-body">
 					<form action="{{ URL::route('editingGroup') }}" method="post" enctype="multipart/form-data">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 						<input type="hidden" name="id" value="{{ $group->id }}">
 						<div class="form-group">
-							<label>Upload Your New Group Profile</label>
+							<label>Upload Your New Brand Logo</label>
 							<input type="file" id="g-profile" name="g-profile" accept="image/*">
 						</div>
 						<div class="form-group">
-							<label>Upload Your New Group Banner Image</label>
+							<label>Upload Your New Brand Banner Image</label>
 							<input type="file" id="g-banner" name="g-banner" accept="image/*">
 						</div>
 						<div class="form-group">
@@ -24,7 +24,7 @@
 						</div>
 						<div class="form-group">
 							<select name="category" class="form-control">
-								<option value="">Group Category -- Select one</option>
+								<option value="">Brand Category -- Select one</option>
 								<option value="Arts & Design" <?php if($group->category == 'Arts & Design') echo "selected"; ?>>Arts & Design</option>
 								<option value="Auto" <?php if($group->category == 'Auto') echo "selected"; ?>>Auto</option>
 								<option value="Business" <?php if($group->category == 'Business') echo "selected"; ?>>Business</option>

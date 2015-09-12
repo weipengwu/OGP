@@ -53,7 +53,7 @@
 					@else
 					<li><a href="{{ url('/home') }}">OGP</a></li>
 					@endif
-					<li><a href="{{ url('/groups') }}">GROUPS</a></li>
+					<li><a href="{{ url('/groups') }}">BRAND</a></li>
 					<li><a href="{{ url('/events') }}">EVENTS</a></li>
 					<!-- <li><a href="{{ url('/missions') }}">MISSIONS</a></li> -->
 				</ul>
