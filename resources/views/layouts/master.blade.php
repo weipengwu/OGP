@@ -53,7 +53,7 @@
 					@else
 					<li><a href="{{ url('/home') }}">OGP</a></li>
 					@endif
-					<li><a href="{{ url('/groups') }}">BRAND</a></li>
+					<li><a href="{{ url('/groups') }}">BRANDS</a></li>
 					<li><a href="{{ url('/events') }}">EVENTS</a></li>
 					<!-- <li><a href="{{ url('/missions') }}">MISSIONS</a></li> -->
 				</ul>
@@ -106,6 +106,7 @@
 	<!-- Scripts -->
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
 	<script src="{{ asset('/js/fileinput.min.js') }}"></script>
 	<script src="{{ asset('/js/bootstrap-datetimepicker.min.js') }}"></script>
 	<script src="{{ asset('/js/bootstrap-switch.min.js') }}"></script>

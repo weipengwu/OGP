@@ -25,7 +25,8 @@
 						<h4>TELL US MORE ABOUT YOUR BRAND</h4>
 						<hr>
 						<div class="form-group">
-							<input type="text" name="name" class="form-control" placeholder="Brand Name">
+							<label>Brand Name</label>
+							<input type="text" name="name" class="form-control" placeholder="Brand Name" required>
 						</div>
 						<div class="form-group">
 							<select name="category" class="form-control">

@@ -54,7 +54,8 @@
 			<div class="panel" style="background: transparent">
 				<div class="panel-heading">
 					<div class="logoslogan">
-						<img src="{{ asset('img/logo_big.png') }}" width="70">
+						<img src="{{ asset('img/logo_transparent.png') }}" width="70">
+						<h1>OHGOODPARTY</h1>
 						<h1>GO BIG, GO HAPPY</h1>
 					</div>
 					<!-- <h3>SIGN UP TO OH GOOD PARTY</h3> -->
