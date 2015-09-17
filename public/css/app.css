@@ -7303,7 +7303,11 @@ h3 a:hover{
   margin: 20px auto 0 auto;
 }
 .login .logoslogan h1{
-  font-size: 20px;
+  font-size: 24px;
+  color: #fff;
+}
+.login .logoslogan h2{
+  font-size: 14px;
   color: #fff;
 }
 .gotosignin{
