@@ -77,7 +77,7 @@
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 
 						<div class="form-group">
-							<input type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="Name">
+							<input type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="Username">
 						</div>
 
 						<div class="form-group">
@@ -101,6 +101,9 @@
 								<button type="submit" class="btn btn-blue">
 									SIGN UP
 								</button>
+						</div>
+						<div class="privacy">
+						By contiune you agree to OH GOOD PARTY'S <a href="">Terms of Use</a>
 						</div>
 					</form>
 				</div>

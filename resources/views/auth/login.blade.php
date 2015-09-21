@@ -99,6 +99,9 @@
 							<a class="forget" href="{{ url('/password/email') }}">Forgot Your Password?</a>
 
 						</div>
+						<div class="privacy">
+						By contiune you agree to OH GOOD PARTY'S <a href="">Terms of Use</a>
+						</div>
 					</form>
 				</div>
 			</div>
