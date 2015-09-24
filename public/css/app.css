@@ -6662,6 +6662,9 @@ label,
 .eventgroup.last{
   margin-right: 0;
 }
+.eventindex .heading{
+  text-align: center;
+}
 /*.eventgroup .overlay{
   position: absolute;
   background: rgba(0,0,0,0.3);
@@ -7175,7 +7178,7 @@ h3 a:hover{
     font-size: 13px;
     line-height: 31px;
     border-radius: 25px;
-    padding-left: 9px;
+    text-align: center;
   text-transform: uppercase;
 }
 .home_events .col{
@@ -7538,4 +7541,32 @@ h3 a:hover{
   }
   .search h1{
     font-size: 28px;
+  }
+   .selectorigin:after{
+    clear: both;
+    display: table;
+    content: "";
+   }
+  .selectorigin select{
+    float: left;
+    width: 49%;
+  }
+  .selectorigin select:first-child{
+    margin-right: 2%;
+  }
+  .allpytojoin:after, .translation:after{
+    clear: both;
+    display: table;
+    content: "";
+  }
+  .allpytojoin span, .translation span{
+    float: left;
+    display: block;
+    margin-right: 15px;
+  }
+  .allpytojoin .radio, .allpytojoin span, .translation .radio, .translation span{
+    margin-top: 10px;
+  }
+  .trlanguages{
+    display: none;
   }

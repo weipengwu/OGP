@@ -56,7 +56,7 @@
 					<div class="logoslogan">
 						<img src="{{ asset('img/logo_transparent.png') }}" width="70">
 						<h1>OH GOOD PARTY</h1>
-						<h2>GO BIG, GO HAPPY</h2>
+						<h2>Global Brand Strategy Community</h2>
 					</div>
 					<!-- <h3>SIGN UP TO OH GOOD PARTY</h3> -->
 					<!-- <p class="gotosignin">Already have an account? <a href="url('/auth/login') ">Sign in</a></p> -->

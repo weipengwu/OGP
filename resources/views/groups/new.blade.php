@@ -28,7 +28,7 @@
 							<input type="text" name="name" class="form-control" placeholder="Brand Name" required>
 						</div>
 						<div class="form-group">
-							<select name="category" class="form-control">
+							<select name="category" class="form-control" required>
 								<option value="">Brand Category -- Select one</option>
 								<option value="Arts & Design">Arts & Design</option>
 								<option value="Auto">Auto</option>
@@ -52,17 +52,48 @@
 						<div class="form-group">
 							<input type="text" name="website" class="form-control" placeholder="Brand Website">
 						</div>
+						<div class="form-group selectorigin">
+							<select class="form-control" required>
+								<option value="">Origin (Country)</option>
+								<option value="Canada">Canada</option>
+								<option value="China">China</option>
+								<option value="United States">United States</option>
+							</select>
+							<select class="form-control" required>
+								<option>Origin (Province)</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<select name="target" class="form-control" required>
+								<option value="">Target Market</option>
+								<option value="North America">North America</option>
+								<option value="Westen Europe">Westen Europe</option>
+								<option value="China">China</option>
+							</select>
+						</div>
+						<div class="form-group translation">
+							<span>Do you need translation</span> <span class="radio"><input type="radio" name="translate" id="yestranslate" value="yes" /> <label for="yestranslate">Yes</label> </span><span class="radio"><input type="radio" name="translate" id="notranslate" value="no" /> <label for="notranslate">No</label></span>
+						</div>
+						<div class="form-group trlanguages">
+							<select name="trlang" class="form-control">
+								<option value="">Select Target Language</option>
+								<option value="Chinese">Chinese</option>
+								<option value="English">English</option>
+								<option value="French">French</option>
+								<option value="Spanish">Spanish</option>
+							</select>
+						</div>
 						<div class="form-group">
 							<select name="type" class="form-control">
 								<option value="public">Public</option>
 								<option value="private">Private</option>
 							</select>
 						</div>
-						<div class="form-group">
-							<label>Apply to Join</label> <input type="checkbox" name="applytojoin" />
+						<div class="form-group allpytojoin">
+							<span>Apply to Join</span> <span class="radio"><input type="radio" name="applytojoin" id="applyyes" value="yes" /> <label for="applyyes">Yes</label> </span><span class="radio"><input type="radio" name="applytojoin" id="applyno" value="no" /> <label for="applyno">No</label></span>
 						</div>
 						<div class="form-group">
-							<textarea name="description" maxlength="300" class="form-control" placeholder="Brand Description"></textarea>
+							<textarea name="description" maxlength="300" class="form-control" placeholder="Brand Description" required></textarea>
 						</div>
 						<input type="submit" class="btn btn-logo" value="Submit">
 					</form>

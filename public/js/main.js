@@ -264,8 +264,8 @@ $(document).ready(function(){
 	        showMeridian: 1,
 	        pickerPosition: 'bottom-left'
     	});
-    $('input[name="applytojoin"]').bootstrapSwitch('state', false, true);
-    $('input[name="applyswitch"]').bootstrapSwitch('state', false, true);
+    // $('input[name="applytojoin"]').bootstrapSwitch('state', false, true);
+    // $('input[name="applyswitch"]').bootstrapSwitch('state', false, true);
 
 	$('#edit_btn').on('click', function(e){
 		e.preventDefault();
@@ -360,6 +360,14 @@ $(document).ready(function(){
 			$('.joinedgroups .groupsrow').removeClass('expanded');
 			$('.joinedgroups .groupsrow').addClass('collapsed');
 			$(this).html('SHOW ALL');
+		}
+	})
+
+	$('.translation .radio input').on('change', function(){
+		if($('.translation input#yestranslate').is(':checked')){
+			$('.trlanguages').show();
+		}else{
+			$('.trlanguages').hide();
 		}
 	})
 	// Dropzone.options.createpost = { // The camelized version of the ID of the form element
