@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="ogpApp">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -141,5 +141,50 @@
 				window.open('https://www.facebook.com/dialog/feed?app_id=866884463391641&display=page&link='+encodeURIComponent('<?php echo url();?>')+'&caption=OhGoodParty&description='+encodeURIComponent('Share this article')+'&redirect_uri=https://www.facebook.com', "_blank", "width=800, height=600");
 			})
 	</script>
+	<script type="text/javascript">
+	//angular app
+	var ogpApp = angular.module('ogpApp', []);
+    ogpApp.controller('CountryController', function ($scope) {
+        $scope.countries = [{
+	        "name": "USA",
+	        "id": 1
+	      },{
+	        "name": "Canada",
+	        "id": 2
+	    }];
+	    $scope.states = [{
+	        "name": "Alabama",
+	        "id": 1,
+	        "countryId": 1
+	      }, {
+	        "name": "Alaska",
+	        "id": 2,
+	        "countryId": 1
+	      }, {
+	        "name": "Arizona",
+	        "id": 3,
+	        "countryId": 1
+	      }, {
+	        "name": "Alberta",
+	        "id": 4,
+	        "countryId": 2
+	      }, {
+	        "name": "British columbia",
+	        "id": 5,
+	        "countryId": 2
+	    }];
+	    
+	    $scope.updateCountry = function(){
+	      $scope.availableStates = [];
+	      
+	      angular.forEach($scope.states, function(value){
+	        if(value.countryId == $scope.country.id){
+	          $scope.availableStates.push(value);
+	        }
+	      });
+	    }
+    })
+
+</script>
 </body>
 </html>

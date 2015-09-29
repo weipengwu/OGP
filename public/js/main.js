@@ -370,6 +370,7 @@ $(document).ready(function(){
 			$('.trlanguages').hide();
 		}
 	})
+
 	// Dropzone.options.createpost = { // The camelized version of the ID of the form element
 
 	//   // The configuration we've talked about above

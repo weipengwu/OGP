@@ -52,15 +52,12 @@
 						<div class="form-group">
 							<input type="text" name="website" class="form-control" placeholder="Brand Website">
 						</div>
-						<div class="form-group selectorigin">
-							<select class="form-control" required>
+						<div class="form-group selectorigin" data-ng-controller="CountryController">
+							<select class="form-control" data-ng-model="country" data-ng-options="country.name for country in countries" data-ng-change="updateCountry()" required>
 								<option value="">Origin (Country)</option>
-								<option value="Canada">Canada</option>
-								<option value="China">China</option>
-								<option value="United States">United States</option>
 							</select>
-							<select class="form-control" required>
-								<option>Origin (Province)</option>
+							<select class="form-control" data-ng-model="state" data-ng-options="state.name for state in availableStates" required>
+								<option value="">Origin (Province)</option>
 							</select>
 						</div>
 						<div class="form-group">
@@ -102,4 +99,5 @@
 		</div>
 	</div>
 </div>
+
 @endsection
