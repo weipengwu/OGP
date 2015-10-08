@@ -3,7 +3,7 @@
 @section('content')
 <div class="container dashboard">
 	<div class="row">
-		<div class="col-md-8">
+		<div class="col-md-4">
 			<div class="panel">
 
 				<div class="panel-body">
@@ -63,7 +63,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-md-4">
+		<div class="col-md-8">
 			<div id="update-profile">
 				<h4>Edit Profile Info</h4>
 				<form action="{{ URL::route('createProfile') }}" method="post" enctype="multipart/form-data">
