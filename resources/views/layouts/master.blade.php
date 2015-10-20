@@ -93,8 +93,8 @@
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><img src="{{ asset('/img/en_icon.png') }}" alt="English" width="22" /></a>
 							<ul class="dropdown-menu" role="menu">
 								<li><a href="#">中文</a></li>
-								<li><a href="#">Français</a></li>
-								<li><a href="#">Español</a></li>
+								<!-- <li><a href="#">Français</a></li>
+								<li><a href="#">Español</a></li> -->
 							</ul>
 						</li>
 					@if (Auth::guest())
@@ -134,6 +134,8 @@
 	<script src="{{ asset('/js/bootstrap-switch.min.js') }}"></script>
 	<script src="{{ asset('/js/jquery.fancybox.pack.js') }}"></script>
 	<script src="{{ asset('/js/jquery.flexslider-min.js') }}"></script>
+	<!--<script src="{{ asset('/js/validator.min.js') }}"></script>-->
+	<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"></script>
 	<script src="{{ asset('/js/main.js') }}"></script>
 	<script type="text/javascript">
 			$('.right a.facebook').on('click', function(e){

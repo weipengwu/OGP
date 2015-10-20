@@ -82,7 +82,7 @@ class GroupController extends Controller {
 		$group->creator = Request::input('creator');
 		$group->owner = Request::input('owner');
 		$group->name = Request::input('name');
-		$slug = slug(Request::input('name')).'-'.generateRandomString();
+		$slug = slug(Request::input('name'));
 		$group->slug = $slug;
 		$group->category = Request::input('category');
 		$group->tag = Request::input('tag');
@@ -215,5 +215,14 @@ class GroupController extends Controller {
 
 		return redirect()->route('viewGroup', [ 'slug' => $slug ]);
 
+	}
+	public function checkBrandname($bname)
+	{
+		$group = Group::where('slug', slug($bname))->count();
+		if ( $group > 0 ) {
+			echo 'duplicated';
+		}else{
+			echo "pass";
+		}
 	}
 }

@@ -370,6 +370,40 @@ $(document).ready(function(){
 			$('.trlanguages').hide();
 		}
 	})
+	$('#createBrand #brandname').on('blur', function(){
+		$.ajaxSetup({
+		   headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
+		});
+		var bname = $(this).val();
+		if(bname !== ''){
+			$.ajax({
+				type: "POST",
+				url: window.location.origin+"/groups/checkBrandname",
+				data: "brandname="+bname
+			}).done(function(response){
+				if (response == 'duplicated') {
+					$('.checknamefail').show();
+					$('.checknamepass').hide();
+				}
+				else if(response == 'pass'){
+					$('.checknamefail').hide();
+					$('.checknamepass').show();
+				}
+			})
+		}
+	})
+	$('#createBrand .submit').on('click',function(e){
+		e.preventDefault();
+		if($('.checknamepass').is(':visible')){
+			$('#createBrand').validate({
+			  submitHandler: function(form) {
+			    // do other things for a valid form
+			    form.submit();
+			  }
+			});
+		}
+	})
+
 
 	// Dropzone.options.createpost = { // The camelized version of the ID of the form element
 

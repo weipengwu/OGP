@@ -7364,7 +7364,7 @@ h3 a:hover{
   color: #fff;
 }
 /* Required for Down Triangle */
-  .sharebox:before, .sharebox:after {
+.sharebox:before, .sharebox:after {
     content: "";
     position: absolute;
     width: 0;
@@ -7372,7 +7372,7 @@ h3 a:hover{
     border-style: solid;
     border-color: transparent;
     border-bottom: 0;
-  }
+}
 
   /* Stroke */
   .sharebox:before {
@@ -7542,11 +7542,11 @@ h3 a:hover{
   .search h1{
     font-size: 28px;
   }
-   .selectorigin:after{
+.selectorigin:after{
     clear: both;
     display: table;
     content: "";
-   }
+}
   .selectorigin select{
     float: left;
     width: 49%;
@@ -7570,3 +7570,9 @@ h3 a:hover{
   .trlanguages{
     display: none;
   }
+.checkname{
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  display: none;
+}

@@ -5,7 +5,7 @@
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
 			<div class="panel">
-				<div class="panel-heading"><h3>EDIT BRAND</h3></div>
+				<div class="panel-heading"><h3>EDIT MY BRAND</h3></div>
 
 				<div class="panel-body">
 					<form action="{{ URL::route('editingGroup') }}" method="post" enctype="multipart/form-data">
@@ -48,16 +48,7 @@
 							<input type="text" name="website" class="form-control" value="{{ $group->website }}">
 						</div>
 						<div class="form-group">
-							<select name="type" class="form-control">
-								<option value="public" <?php if($group->type == 'public') echo "selected"; ?>>Public</option>
-								<option value="private" <?php if($group->type == 'private') echo "selected"; ?>>Private</option>
-							</select>
-						</div>
-						<div class="form-group">
-							<label>Apply to Join</label> <input type="checkbox" name="applytojoin" />
-						</div>
-						<div class="form-group">
-							<textarea name="description" maxlength="300" class="form-control">{{ $group->description }}</textarea>
+							<textarea name="description" maxlength="300" class="form-control">{!! html_entity_decode($group->description) !!}</textarea>
 						</div>
 						<input type="submit" class="btn btn-logo" value="Submit">
 					</form>

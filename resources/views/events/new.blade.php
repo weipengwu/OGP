@@ -58,11 +58,12 @@
 							<label class="col-md-2" style="text-align: right">C$</label> <div class="col-md-10" style="padding: 0"><input type="text" name="fee" class="form-control" placeholder="Event Fee"></div>
 						</div>
 						<div class="form-group">
-							<input type="text" name="city" class="form-control" placeholder="City">
-						</div>
-						<div class="form-group">
 							<input type="text" name="address" class="form-control" placeholder="Address">
 						</div>
+						<div class="form-group">
+							<span class="radio"><input type="radio" name="type" id="typepublic" value="public" /> <label for="typepublic">Public(Anyone can see)</label> </span><span class="radio"><input type="radio" name="applytojoin" id="typeprivate" value="private" /> <label for="typeprivate">Private(Only members can see)</label></span>
+						</div>
+
 						
 						<div class="form-group">
 							<textarea name="content" class="form-control" placeholder="Event Description"></textarea>

@@ -8,7 +8,7 @@
 				<div class="panel-heading"><h3>CREATE YOUR BRAND</h3></div>
 
 				<div class="panel-body">
-					<form action="{{ URL::route('createGroup') }}" method="post" enctype="multipart/form-data">
+					<form action="{{ URL::route('createGroup') }}" method="post" enctype="multipart/form-data" id="createBrand">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 						<input type="hidden" name="creator" value="{{ Auth::user()->id }}">
 						<input type="hidden" name="owner" value="{{ Auth::user()->id }}">
@@ -25,7 +25,10 @@
 						<h4>TELL US MORE ABOUT YOUR BRAND</h4>
 						<hr>
 						<div class="form-group">
-							<input type="text" name="name" class="form-control" placeholder="Brand Name" required>
+							<input type="text" name="name" class="form-control" id="brandname" placeholder="Brand Name" required>
+							<div class="checknamepass checkname"><i class="fa fa-check"></i></div>
+							<div class="checknamefail checkname"><i class="fa fa-times"></i></div>
+							<div class="help-block with-errors">Please fill out this field.</div>
 						</div>
 						<div class="form-group">
 							<select name="category" class="form-control" required>
@@ -45,19 +48,23 @@
 								<option value="Travel">Travel</option>
 								<option value="Other">Other</option>
 							</select>
+							<div class="help-block with-errors">Please select a catogory.</div>
 						</div>
 						<div class="form-group">
 							<input type="text" name="tag" class="form-control" placeholder="Brand Tag">
 						</div>
 						<div class="form-group">
-							<input type="text" name="website" class="form-control" placeholder="Brand Website">
+							<div class="input-group">
+								<div class="input-group-addon">http://</div>
+								<input type="text" name="website" class="form-control" placeholder="Brand Website">
+							</div>
 						</div>
 						<div class="form-group selectorigin" data-ng-controller="CountryController">
 							<select class="form-control" data-ng-model="country" data-ng-options="country.name for country in countries" data-ng-change="updateCountry()" required>
 								<option value="">Origin (Country)</option>
 							</select>
 							<select class="form-control" data-ng-model="state" data-ng-options="state.name for state in availableStates" required>
-								<option value="">Origin (Province)</option>
+								<option value="">Origin (Province/State)</option>
 							</select>
 						</div>
 						<div class="form-group">
@@ -80,19 +87,21 @@
 								<option value="Spanish">Spanish</option>
 							</select>
 						</div>
-						<div class="form-group">
+						<!--<div class="form-group">
 							<select name="type" class="form-control">
 								<option value="public">Public</option>
 								<option value="private">Private</option>
 							</select>
 						</div>
-						<div class="form-group allpytojoin">
+						 <div class="form-group allpytojoin">
 							<span>Apply to Join</span> <span class="radio"><input type="radio" name="applytojoin" id="applyyes" value="yes" /> <label for="applyyes">Yes</label> </span><span class="radio"><input type="radio" name="applytojoin" id="applyno" value="no" /> <label for="applyno">No</label></span>
-						</div>
+						</div> -->
 						<div class="form-group">
-							<textarea name="description" maxlength="300" class="form-control" placeholder="Brand Description" required></textarea>
+							<textarea name="description" maxlength="300" class="form-control" placeholder="Brief Introduction(Tips: Please use the language of target markets.)" required></textarea>
+							<div class="help-block with-errors">Please fill out this field.</div>
 						</div>
-						<input type="submit" class="btn btn-logo" value="Submit">
+						<p class="small">I hereby pledge that the content filled in and the additional materials provided are true and authentic in every aspect.</p>
+						<input type="submit" class="btn btn-logo submit" value="Submit">
 					</form>
 				</div>
 			</div>
