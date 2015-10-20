@@ -216,8 +216,9 @@ class GroupController extends Controller {
 		return redirect()->route('viewGroup', [ 'slug' => $slug ]);
 
 	}
-	public function checkBrandname($bname)
+	public function checkBrandname()
 	{
+		$bname = Request::input('brandname');
 		$group = Group::where('slug', slug($bname))->count();
 		if ( $group > 0 ) {
 			echo 'duplicated';
