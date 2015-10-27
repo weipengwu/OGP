@@ -15,15 +15,18 @@
 						if(count($user_profile) > 0):
 					?>
 							<div class="col-md-6">
-								<div class="top-profile" style="background: url(<?php echo url()."/".$user_profile[0]->meta_value;?>) center center no-repeat; background-size: cover"></div>
+								<div class="top-profile" style="background: url(<?php echo url()."/".$user_profile[0]->meta_value;?>) center center no-repeat; background-size: cover; width: 100px; height: 100px"></div>
 							</div>
 					<?php
 						else:
 					?>
 							<div class="col-md-6">
-								<div class="top-profile"><?php echo getFirstCharter(Auth::user()->name);?></div>
+								<div class="top-profile">{{ getFirstCharter(Auth::user()->name) }}</div>
 							</div>
 					<?php endif;?>
+					<div class="col-md-6">
+						{{ Auth::user()->name }}
+					</div>
 				</div>
 				<div class="dash-side-bottom">
 					<div class="d-row">
@@ -35,10 +38,13 @@
 					<div class="d-row">
 						<a href="">Joined Groups</a>
 					</div>
+					<div class="d-row">
+						<a href="">Manage Events</a>
+					</div>
 				</div>
 
 		</div>
-		<div class="col-md-8">
+		<div class="col-md-7 col-md-push-1">
 			<div class="dash-main" id="update-profile">
 				<h4>Edit Profile Info</h4>
 				<form action="{{ URL::route('createProfile') }}" method="post" enctype="multipart/form-data">
@@ -59,24 +65,49 @@
 			</div>
 			<div class="dash-main" id="mybrand">
 				@if(count(myGroup($id)) > 0)
-					@foreach(myGroup($id) as $mgroup)
-						<div class="grouplist" style="background: url('{{$mgroup->profile}}');background-size:auto 220px;">
-							<a href="groups/<?= $mgroup->slug;?>">
+					<div class="row">
+					<?php $i = 1;?>
+					@foreach ( myGroup($id) as $group)
+						<?php if($i > 4) break;?>
+						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
+						<a href="groups/<?= $group->slug;?>">
+							<div class="bannerholder" style="background: url('{{$group->profile}}');background-size:cover"></div>
+							
 							<div class="caption">
-								<h3>{{ $mgroup->name }}</h3>
+								<h3>{{ $group->name }}</h3>
+								<p><span class="membercount"><img src="{{ asset('img/member_icon_white.png') }}" width="14"> {{ memberCount($group->id) }}</span><span class="followcount"><img src="{{ asset('img/follow_icon_white.png') }}" width="20"> {{ count(groupFollowers($group->id)) }}</span></p>
 							</div>
 							</a>
 						</div>
+						<?php $i++;?>
 					@endforeach
+					</div>
 				@else
-					<a href="/groups/new">Create your own group</a>
+					<div class="row">
+						<h3>You haven't created your brand yet.</h3>
+						<a href="/groups/new" class="createbrand">Create your brand</a>
+					</div>
 				@endif
 			</div>
 			<div class="dash-main" id="joinedbrand">
 				@if(joinedGroupCount($id) > 0)
-					@foreach(joinedGroup($id) as $group)
-						<p>{{ $group->name }}</p>
+					<div class="row">
+					<?php $i = 1;?>
+					@foreach (joinedGroup($id) as $group)
+						<?php if($i > 4) break;?>
+						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
+						<a href="groups/<?= $group->slug;?>">
+							<div class="bannerholder" style="background: url('{{$group->profile}}');background-size:cover"></div>
+							
+							<div class="caption">
+								<h3>{{ $group->name }}</h3>
+								<p><span class="membercount"><img src="{{ asset('img/member_icon_white.png') }}" width="14"> {{ memberCount($group->id) }}</span><span class="followcount"><img src="{{ asset('img/follow_icon_white.png') }}" width="20"> {{ count(groupFollowers($group->id)) }}</span></p>
+							</div>
+							</a>
+						</div>
+						<?php $i++;?>
 					@endforeach
+					</div>
 				@endif
 			</div>
 		</div>

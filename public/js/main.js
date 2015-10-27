@@ -395,6 +395,7 @@ $(document).ready(function(){
 	$('#createBrand .submit').on('click',function(e){
 		e.preventDefault();
 		if($('.checknamepass').is(':visible')){
+			console.log('pass');
 			$('#createBrand').validate({
 			  submitHandler: function(form) {
 			    // do other things for a valid form

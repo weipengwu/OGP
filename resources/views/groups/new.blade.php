@@ -24,7 +24,7 @@
 						</div>
 						<h4>TELL US MORE ABOUT YOUR BRAND</h4>
 						<hr>
-						<div class="form-group">
+						<div class="form-group" style="position:relative">
 							<input type="text" name="name" class="form-control" id="brandname" placeholder="Brand Name" required>
 							<div class="checknamepass checkname"><i class="fa fa-check"></i></div>
 							<div class="checknamefail checkname"><i class="fa fa-times"></i></div>

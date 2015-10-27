@@ -7177,7 +7177,7 @@ h3 a:hover{
     color: #fff;
     font-size: 13px;
     line-height: 31px;
-    border-radius: 25px;
+    border-radius: 50px;
     text-align: center;
   text-transform: uppercase;
 }
@@ -7573,6 +7573,6 @@ h3 a:hover{
 .checkname{
   position: absolute;
   right: 10px;
-  top: 8px;
+  top: 10px;
   display: none;
 }
