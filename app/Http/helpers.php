@@ -76,6 +76,10 @@
 		$events = DB::table('events')->whereIn('group_id', $groups)->orderBy('created_at', 'DESC')->get();
 		return $events;
 	}
+	function getMyevents($uid){
+		$events = DB::table('events')->where('author', $uid)->orderBy('created_at', 'DESC')->get();
+		return $events;
+	}
 
 	function getExcerpt($desc,$length=20){
 		if(str_word_count($desc) > $length){

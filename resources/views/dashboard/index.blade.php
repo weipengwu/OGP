@@ -15,7 +15,7 @@
 						if(count($user_profile) > 0):
 					?>
 							<div class="col-md-6">
-								<div class="top-profile" style="background: url(<?php echo url()."/".$user_profile[0]->meta_value;?>) center center no-repeat; background-size: cover; width: 100px; height: 100px"></div>
+								<div class="top-profile" style="background: url(<?php echo url()."/".$user_profile[0]->meta_value;?>) center center no-repeat; background-size: cover; width: 100px; height: 100px; border-radius: 50px"></div>
 							</div>
 					<?php
 						else:
@@ -36,11 +36,16 @@
 						<a href="">My Group</a>
 					</div>
 					<div class="d-row">
+						<a href="">Followed Groups</a>
+					</div>
+					<div class="d-row">
 						<a href="">Joined Groups</a>
 					</div>
+					@if(count(myGroup($id)) > 0)
 					<div class="d-row">
 						<a href="">Manage Events</a>
 					</div>
+					@endif
 				</div>
 
 		</div>
@@ -66,20 +71,17 @@
 			<div class="dash-main" id="mybrand">
 				@if(count(myGroup($id)) > 0)
 					<div class="row">
-					<?php $i = 1;?>
 					@foreach ( myGroup($id) as $group)
-						<?php if($i > 4) break;?>
-						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
+						<div class="col-md-4">
 						<a href="groups/<?= $group->slug;?>">
 							<div class="bannerholder" style="background: url('{{$group->profile}}');background-size:cover"></div>
-							
-							<div class="caption">
-								<h3>{{ $group->name }}</h3>
-								<p><span class="membercount"><img src="{{ asset('img/member_icon_white.png') }}" width="14"> {{ memberCount($group->id) }}</span><span class="followcount"><img src="{{ asset('img/follow_icon_white.png') }}" width="20"> {{ count(groupFollowers($group->id)) }}</span></p>
-							</div>
 							</a>
 						</div>
-						<?php $i++;?>
+						<div class="col-md-8">
+							<h3>{{ $group->name }}</h3>
+							<p><span class="membercount"><img src="{{ asset('img/member_icon_white.png') }}" width="14"> {{ memberCount($group->id) }}</span><span class="followcount"><img src="{{ asset('img/follow_icon_white.png') }}" width="20"> {{ count(groupFollowers($group->id)) }}</span></p>
+							<a href="">Edit my brand</a>
+						</div>
 					@endforeach
 					</div>
 				@else
@@ -108,6 +110,43 @@
 						<?php $i++;?>
 					@endforeach
 					</div>
+				@endif
+			</div>
+			<div class="dash-main" id="followedbrand">
+				@if(count(followedGroup($id)) > 0)
+					<div class="row">
+					<?php $i = 1;?>
+					@foreach (followedGroup($id) as $group)
+						<?php if($i > 4) break;?>
+						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
+						<a href="groups/<?= $group->slug;?>">
+							<div class="bannerholder" style="background: url('{{$group->profile}}');background-size:cover"></div>
+							
+							<div class="caption">
+								<h3>{{ $group->name }}</h3>
+								<p><span class="membercount"><img src="{{ asset('img/member_icon_white.png') }}" width="14"> {{ memberCount($group->id) }}</span><span class="followcount"><img src="{{ asset('img/follow_icon_white.png') }}" width="20"> {{ count(groupFollowers($group->id)) }}</span></p>
+							</div>
+							</a>
+						</div>
+						<?php $i++;?>
+					@endforeach
+					</div>
+				@endif
+			</div>
+			<div class="dash-main" id="manageEvents">
+				@if(count(getMyevents($id)) > 0)
+				@foreach (getMyevents($id) as $event)
+				<div class="row">
+					<div class="col-md-3">
+						<a href="events/{{ $event->id }}">
+							<div class="imgholder" style="background: url('<?php echo url()."/".$event->banner;?>') center center; background-size: cover;"></div>
+						</a>
+					</div>
+					<div class="col-md-9">
+					<a href="/events/{{ $event->id }}/edit">Edit Event</a>
+					</div>
+				</div>
+				@endforeach
 				@endif
 			</div>
 		</div>

@@ -107,6 +107,54 @@ class EventController extends Controller {
 			return redirect()->route('viewEvent', [ 'id' => $event->id ]);
 	}
 
+	public function editEvent($id)
+	{
+		$gid = Group::where('slug', $slug)->pluck('id');
+		$event = Event::findOrFail($id);
+		return view('events.edit')->with('gid', $gid)->with('event', $event);
+	}
+
+	public function editingEvent($id)
+	{
+		$event = Event::findOrFail($id);
+		if(Request::file('banner')){
+			$file = array('banner' => Request::file('banner'));
+			$rules = array('banner' => 'required|image');
+			$validator = Validator::make($file, $rules);
+			if ($validator->fails()){
+				return redirect()->back()->withErrors($validator);
+			}else{
+				if (Request::file('banner')->isValid()) {
+			      $destinationPath = 'uploads'; // upload path
+			      $extension = Request::file('banner')->getClientOriginalExtension(); // getting image extension
+			      $fileName = 'Event_'.date('YmdHis').'_'.rand(111111,999999).'.'.$extension; // renameing image
+			      Request::file('banner')->move($destinationPath, $fileName); // uploading file to given path
+				  $event->banner = $destinationPath."/".$fileName;
+			    }
+			}
+		}
+			$event->author = Request::input('author');
+			$event->title = Request::input('title');
+			$fromtime = Request::input('fromtime');
+			$unixfromtime = strtotime($fromtime);
+			$event->fromtime = $unixfromtime;
+			$totime = Request::input('totime');
+			$unixtotime = strtotime($totime);
+			$event->totime = $unixtotime;
+			$event->city = Request::input('city');
+			$event->address = Request::input('address');
+			if(Request::input('selectprice') == 'Free'){
+				$event->fee = 'Free';
+			}else{
+				$event->fee = 'C $'.Request::input('fee');
+			}
+			$event->content = nl2br(Request::input('content'));
+			$event->group_id = Request::input('gid');
+			$event->save();
+
+			return redirect()->route('viewEvent', [ 'id' => $event->id ]);
+	}
+
 	public function viewEvent($id)
 	{
 		$event = Event::findOrFail($id);

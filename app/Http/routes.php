@@ -42,10 +42,13 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::post('groups/follow', 'GroupController@follow');
 	Route::post('groups/unfollow', 'GroupController@unfollow');
 	Route::post('groups/checkBrandname/', array('uses' => 'GroupController@checkBrandname', 'as' => 'checkBrandname'));
-	Route::get('groups/{slug}/missions/new', array('uses' => 'MissionController@newMission', 'as' => 'newMission'));
-	Route::post('groups/{slug}/missions/new', array('uses' => 'MissionController@createMission', 'as' => 'createMission'));
-	Route::get('missions/{id}/apply', array('uses' => 'MissionController@applyMission', 'as' => 'applyMission'));
-	Route::post('missions/{id}/apply', array('uses' => 'MissionController@sendResume', 'as' => 'sendResume'));
+	Route::get('events/{id}/edit', array('uses' => 'EventController@editEvent', 'as' => 'editEvent'));
+	//Route::get('groups/{slug}/missions/new', array('uses' => 'MissionController@newMission', 'as' => 'newMission'));
+	//Route::post('groups/{slug}/missions/new', array('uses' => 'MissionController@createMission', 'as' => 'createMission'));
+	//Route::get('missions/{id}/apply', array('uses' => 'MissionController@applyMission', 'as' => 'applyMission'));
+	//Route::post('missions/{id}/apply', array('uses' => 'MissionController@sendResume', 'as' => 'sendResume'));
+	Route::get('search', 'SearchController@search');
+	Route::post('search', array('uses' => 'SearchController@search', 'as' => 'search'));
 });
 
 Route::get('events', 'EventController@index');
@@ -62,5 +65,3 @@ Route::get('posts/{id}', array('uses' => 'PostController@viewPost', 'as' => 'vie
 
 Route::get('missions/{id}', array('uses' => 'MissionController@viewMission', 'as' => 'viewMission'));
 
-Route::get('search', 'SearchController@search');
-Route::post('search', array('uses' => 'SearchController@search', 'as' => 'search'));
