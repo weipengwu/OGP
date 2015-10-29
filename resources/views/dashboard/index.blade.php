@@ -79,8 +79,8 @@
 						</div>
 						<div class="col-md-8">
 							<h3>{{ $group->name }}</h3>
-							<p><span class="membercount"><img src="{{ asset('img/member_icon_white.png') }}" width="14"> {{ memberCount($group->id) }}</span><span class="followcount"><img src="{{ asset('img/follow_icon_white.png') }}" width="20"> {{ count(groupFollowers($group->id)) }}</span></p>
-							<a href="">Edit my brand</a>
+							<p><span class="membercount"><img src="{{ asset('img/member_icon.png') }}" width="14"> {{ memberCount($group->id) }}</span><span class="followcount"><img src="{{ asset('img/follow_icon.png') }}" width="20"> {{ count(groupFollowers($group->id)) }}</span></p>
+							<a href="groups/<?= $group->slug;?>/edit">Edit my brand</a>
 						</div>
 					@endforeach
 					</div>
@@ -143,6 +143,22 @@
 						</a>
 					</div>
 					<div class="col-md-9">
+					<h3><a href="events/{{ $event->id }}">{{ $event->title }}</a></h3>
+					<div class="event-details">
+						<p class="event-info">
+							<img src="{{ asset('img/calendar_icon.png') }}" width="16" class="edicons"> 
+							<?php 
+								if(gmdate('M j',$event->fromtime) == gmdate('M j',$event->totime)) : 
+							?>
+								{{ gmdate('D, M j',$event->fromtime) }} @ {{ gmdate('g : i a',$event->fromtime) }} - {{ gmdate('g : i a' ,$event->totime) }}
+							<?php else: ?>
+								{{ gmdate('M j',$event->fromtime) }} - {{ gmdate('M j',$event->totime) }}
+
+							<?php endif; ?>
+						</p>
+						<p class="event-info"><img src="{{ asset('img/address_icon.png') }}" width="15" class="edicons"> {{ $event->address }}</p>
+						<p class="event-info"><img src="{{ asset('img/ticket_icon.png') }}" height="12" class="edicons"> {{ $event->fee }}</p>
+					</div>
 					<a href="/events/{{ $event->id }}/edit">Edit Event</a>
 					</div>
 				</div>

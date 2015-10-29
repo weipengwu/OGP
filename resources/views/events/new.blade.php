@@ -66,7 +66,12 @@
 						<div id="map">
 						</div>
 						<div class="form-group">
-							<span class="radio"><input type="radio" name="type" id="typepublic" value="public" /> <label for="typepublic">Public(Anyone can see)</label> </span><span class="radio"><input type="radio" name="applytojoin" id="typeprivate" value="private" /> <label for="typeprivate">Private(Only members can see)</label></span>
+							<div class="col-md-6">
+							<span class="radio"><input type="radio" name="type" id="typepublic" value="public" /><label for="typepublic">Public(Anyone can see)</label> </span>
+							</div>
+							<div class="col-md-6">
+							<span class="radio"><input type="radio" name="type" id="typeprivate" value="private" /> <label for="typeprivate">Private(Only members can see)</label></span>
+							</div>
 						</div>	
 						<div class="form-group">
 							<textarea name="content" class="form-control" placeholder="Event Description"></textarea>
@@ -93,7 +98,7 @@
 		</div>
 	</div>
 </div>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANM_gBRmfXCbtGiN768aUL1div-Dd0TU4&signed_in=true&libraries=places"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANM_gBRmfXCbtGiN768aUL1div-Dd0TU4&callback=initMap&libraries=places"></script>
 <script>
 	function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {

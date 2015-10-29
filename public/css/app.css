@@ -7567,6 +7567,10 @@ h3 a:hover{
   .allpytojoin .radio, .allpytojoin span, .translation .radio, .translation span{
     margin-top: 10px;
   }
+  #newevent #map{
+    width: 100%;
+    height: 250px;
+  }
   .trlanguages{
     display: none;
   }
@@ -7575,4 +7579,10 @@ h3 a:hover{
   right: 10px;
   top: 10px;
   display: none;
+}
+#mybrand .bannerholder{
+  height: 100px;
+}
+#manageEvents .imgholder{
+  height: 100px;
 }
