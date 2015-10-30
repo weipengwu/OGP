@@ -72,14 +72,16 @@
 				@if(count(myGroup($id)) > 0)
 					<div class="row">
 					@foreach ( myGroup($id) as $group)
-						<div class="col-md-4">
+						<div class="col-md-3">
 						<a href="groups/<?= $group->slug;?>">
 							<div class="bannerholder" style="background: url('{{$group->profile}}');background-size:cover"></div>
 							</a>
 						</div>
-						<div class="col-md-8">
+						<div class="col-md-7">
 							<h3>{{ $group->name }}</h3>
 							<p><span class="membercount"><img src="{{ asset('img/member_icon.png') }}" width="14"> {{ memberCount($group->id) }}</span><span class="followcount"><img src="{{ asset('img/follow_icon.png') }}" width="20"> {{ count(groupFollowers($group->id)) }}</span></p>
+						</div>
+						<div class="col-md-2">
 							<a href="groups/<?= $group->slug;?>/edit">Edit my brand</a>
 						</div>
 					@endforeach
@@ -96,8 +98,7 @@
 					<div class="row">
 					<?php $i = 1;?>
 					@foreach (joinedGroup($id) as $group)
-						<?php if($i > 4) break;?>
-						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
+						<div class="grouplist<?php if(is_int($i/3)) echo " last";?>">
 						<a href="groups/<?= $group->slug;?>">
 							<div class="bannerholder" style="background: url('{{$group->profile}}');background-size:cover"></div>
 							
@@ -117,8 +118,7 @@
 					<div class="row">
 					<?php $i = 1;?>
 					@foreach (followedGroup($id) as $group)
-						<?php if($i > 4) break;?>
-						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
+						<div class="grouplist<?php if(is_int($i/3)) echo " last";?>">
 						<a href="groups/<?= $group->slug;?>">
 							<div class="bannerholder" style="background: url('{{$group->profile}}');background-size:cover"></div>
 							
