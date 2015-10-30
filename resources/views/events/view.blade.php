@@ -82,7 +82,7 @@
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANM_gBRmfXCbtGiN768aUL1div-Dd0TU4&libraries=places"></script>
     <script type="text/javascript">
       function initialize() {
-      	var event_address = <?php echo $event->address;?>;
+      	var event_address = "<?php echo $event->address;?>";
             
             var event_geocoder = new google.maps.Geocoder();
             event_geocoder.geocode( { 'address': event_address}, function(results, status) {
