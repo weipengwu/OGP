@@ -142,7 +142,7 @@
 							<div class="imgholder" style="background: url('<?php echo url()."/".$event->banner;?>') center center; background-size: cover;"></div>
 						</a>
 					</div>
-					<div class="col-md-9">
+					<div class="col-md-7">
 					<h3><a href="events/{{ $event->id }}">{{ $event->title }}</a></h3>
 					<div class="event-details">
 						<p class="event-info">
@@ -158,8 +158,10 @@
 						</p>
 						<p class="event-info"><img src="{{ asset('img/address_icon.png') }}" width="15" class="edicons"> {{ $event->address }}</p>
 						<p class="event-info"><img src="{{ asset('img/ticket_icon.png') }}" height="12" class="edicons"> {{ $event->fee }}</p>
+					</div>		
 					</div>
-					<a href="/events/{{ $event->id }}/edit">Edit Event</a>
+					<div class="col-md-2">
+						<a href="/events/{{ $event->id }}/edit">Edit Event</a>
 					</div>
 				</div>
 				@endforeach

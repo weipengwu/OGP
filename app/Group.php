@@ -3,6 +3,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Group extends Model{
 
+	use SearchableTrait;
+
+	protected $searchable = [
+        'columns' => [
+            'name' => 10,
+            'description' => 5,
+        ],
+    ];
+
 	public function events()
 	{
 		return $this->hasMany('App\Event');

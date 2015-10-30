@@ -9,8 +9,10 @@ class SearchController extends Controller {
 	{
 		$query = $_GET['q'];
 		$posts = Post::search($query)->get();
+		$groups = Group::search($query)->get();
+		$events = Event::search($query)->get();
 
-		return view('search.index')->with('posts', $posts);
+		return view('search.index')->with('posts', $posts)->with('events', $events)->with('groups', $groups);
 	}
 
 

@@ -6609,6 +6609,9 @@ label,
 .eventindex .event-body{
   margin-top: 30px;
 }
+.eventindex h2{
+  margin-bottom: 30px;
+}
 .home .eventgroup{
   float: left;
   width: 18%;
@@ -7583,6 +7586,34 @@ h3 a:hover{
 #mybrand .bannerholder{
   height: 100px;
 }
+#mybrand .membercount{
+  padding-right: 20px;
+}
 #manageEvents .imgholder{
   height: 100px;
+}
+#manageEvents .row{
+  margin-bottom: 20px;
+  padding: 20px 0;
+  border: 1px solid #e7e7e7;
+}
+#manageEvents h3{
+  margin-top: 0;
+}
+#manageEvents h3 a{
+  color: #333;
+}
+.radio label{
+  line-height: 18px;
+}
+#followedbrand .grouplist{
+  width: 32%;
+}
+#followedbrand .grouplist .bannerholder{
+  height: 218px;
+}
+#followedbrand .grouplist .caption h3{
+  margin-top: 80px;
+  font-size: 12px;
+  width: 180px;
 }
