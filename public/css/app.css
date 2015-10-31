@@ -6404,6 +6404,7 @@ label,
   background: #fbfbfb;
   border-bottom: 1px solid #e8e8e8;
   color: #777;
+  position: relative;
 }
 .statusbar:after{
   clear: both;
@@ -6528,7 +6529,7 @@ label,
   margin-top: 5px;
   float: left;
 }
-#edit_btn{
+/*#edit_btn{
   margin-left: 20px;
   color: #333;
   padding: 5px 10px;
@@ -6539,7 +6540,7 @@ label,
 }
 #edit_btn:hover{
   text-decoration: none;
-}
+}*/
 .description{
   clear: both;
 }
@@ -6547,7 +6548,7 @@ label,
   clear: both;
   margin-bottom: 20px;
   border-bottom: 1px solid #e8e8e8;
-  padding: 20px 0;
+  padding: 20px;
 }
 .d-row:after{
   clear: both;
@@ -7293,8 +7294,12 @@ h3 a:hover{
     border-radius: 4px;
     z-index: 10;
 }
+.statusbar .sharebox{
+  right: 10px;
+  bottom: 50px;
+}
 .sharebox .social_icons{
-  margin: 0 5px;
+  margin: 0 5px !important;
   font-size: 14px;
   width: 30px;
   height: 30px;
@@ -7444,6 +7449,7 @@ h3 a:hover{
     float: left;
     width: 100px;
     margin: 0 20px 0 0;
+    overflow: hidden;
   }
   .imagezone .file-preview-image{
     height: 100px !important;
@@ -7589,6 +7595,12 @@ h3 a:hover{
 #mybrand .membercount{
   padding-right: 20px;
 }
+#mybrand .row{
+  clear: both;
+  margin-bottom: 30px;
+  border: 1px solid #e7e7e7;
+  padding: 20px 0;
+}
 #manageEvents .imgholder{
   height: 100px;
 }
@@ -7599,11 +7611,12 @@ h3 a:hover{
 }
 #manageEvents h3{
   margin-top: 0;
+  font-size: 18px;
 }
 #manageEvents h3 a{
   color: #333;
 }
-.radio label{
+#newevent .radio label{
   line-height: 18px;
 }
 #followedbrand .grouplist{
