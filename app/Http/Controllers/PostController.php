@@ -57,7 +57,13 @@ class PostController extends Controller {
 			      		$fileName = 'Post_'.date('YmdHis').'_'.rand(111111,999999).'.'.$extension; // renameing image
 			      		Request::file('postimage1')->move($destinationPath, $fileName); // uploading file to given path
 				  		$postimage1 = $destinationPath."/".$fileName;
-						array_push($postimages, $postimage1);
+				  		$img = Image::make($postimage1);
+				  		$img->resize(600, null, function ($constraint) {
+						    $constraint->aspectRatio();
+						    $constraint->upsize();
+						});
+						$img->save('Medium_'.$postimage1);
+						array_push($postimages, 'Medium_'.$postimage1);
 					}
 				}
 			}

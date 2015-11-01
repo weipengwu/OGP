@@ -341,7 +341,10 @@ $(document).ready(function(){
 		e.preventDefault();
 		$.fancybox.close();
 	})
-	$('.flexslider').flexslider();
+	$('.flexslider').flexslider({
+		animation: 'fade',
+		controlNav: false
+	});
 
 	$('#selectprice').on('change', function(){
 		if($(this).val() == 'Paid'){

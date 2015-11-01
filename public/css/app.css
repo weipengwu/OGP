@@ -7630,3 +7630,7 @@ h3 a:hover{
   font-size: 12px;
   width: 180px;
 }
+.postbanner{
+  width: 600px;
+  margin: 25px auto;
+}
