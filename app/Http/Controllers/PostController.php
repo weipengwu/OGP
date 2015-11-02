@@ -63,8 +63,8 @@ class PostController extends Controller {
 						    $constraint->aspectRatio();
 						    $constraint->upsize();
 						});
-						$img->save('Medium_'.$postimage1);
-						array_push($postimages, 'Medium_'.$postimage1);
+						$img->save($destinationPath."/Medium_".$fileName);
+						array_push($postimages, $destinationPath."/Medium_".$fileName);
 					}
 				}
 			}
