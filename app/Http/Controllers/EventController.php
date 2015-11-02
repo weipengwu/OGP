@@ -66,6 +66,104 @@ class EventController extends Controller {
 	public function createEvent()
 	{
 		$event = new Event();
+		$eventimages = array();
+			if(Request::file('postimage1')){
+
+				$file = array('postimage1' => Request::file('postimage1'));
+				$rules = array('postimage1' => 'required|image');
+				$validator = Validator::make($file, $rules);
+				if ($validator->fails()){
+					return redirect()->back()->withErrors($validator);
+				}else{
+					if (Request::file('postimage1')->isValid()) {
+			      		$destinationPath = 'uploads'; // upload path
+			      		//$originalname = Request::file('postimage1')->getClientOriginalName();
+			      		$extension = Request::file('postimage1')->getClientOriginalExtension(); // getting image extension
+			      		$fileName = 'Event_'.date('YmdHis').'_'.rand(111111,999999).'.'.$extension; // renameing image
+			      		Request::file('postimage1')->move($destinationPath, $fileName); // uploading file to given path
+				  		$postimage1 = $destinationPath."/".$fileName;
+				  		$img = Image::make($postimage1);
+				  		$img->resize(600, null, function ($constraint) {
+						    $constraint->aspectRatio();
+						    $constraint->upsize();
+						});
+						$img->save($destinationPath."/Medium_".$fileName);
+						array_push($eventimages, $destinationPath."/Medium_".$fileName);
+					}
+				}
+			}
+			if(Request::file('postimage2')){
+				$file = array('postimage2' => Request::file('postimage2'));
+				$rules = array('postimage2' => 'required|image');
+				$validator = Validator::make($file, $rules);
+				if ($validator->fails()){
+					return redirect()->back()->withErrors($validator);
+				}else{
+					if (Request::file('postimage2')->isValid()) {
+			      		$destinationPath = 'uploads'; // upload path
+			      		//$originalname = Request::file('postimage2')->getClientOriginalName();
+			      		$extension = Request::file('postimage2')->getClientOriginalExtension(); // getting image extension
+			      		$fileName = 'Event_'.date('YmdHis').'_'.rand(111111,999999).'.'.$extension; // renameing image
+			      		Request::file('postimage2')->move($destinationPath, $fileName); // uploading file to given path
+				  		$postimage2 = $destinationPath."/".$fileName;
+						$img = Image::make($postimage2);
+				  		$img->resize(600, null, function ($constraint) {
+						    $constraint->aspectRatio();
+						    $constraint->upsize();
+						});
+						$img->save($destinationPath."/Medium_".$fileName);
+						array_push($eventimages, $destinationPath."/Medium_".$fileName);
+					}
+				}
+			}
+			if(Request::file('postimage3')){
+				$file = array('postimage3' => Request::file('postimage3'));
+				$rules = array('postimage3' => 'required|image');
+				$validator = Validator::make($file, $rules);
+				if ($validator->fails()){
+					return redirect()->back()->withErrors($validator);
+				}else{
+					if (Request::file('postimage3')->isValid()) {
+			      		$destinationPath = 'uploads'; // upload path
+			      		//$originalname = Request::file('postimage3')->getClientOriginalName();
+			      		$extension = Request::file('postimage3')->getClientOriginalExtension(); // getting image extension
+			      		$fileName = 'Event_'.date('YmdHis').'_'.rand(111111,999999).'.'.$extension; // renameing image
+			      		Request::file('postimage3')->move($destinationPath, $fileName); // uploading file to given path
+				  		$postimage3 = $destinationPath."/".$fileName;
+						$img = Image::make($postimage3);
+				  		$img->resize(600, null, function ($constraint) {
+						    $constraint->aspectRatio();
+						    $constraint->upsize();
+						});
+						$img->save($destinationPath."/Medium_".$fileName);
+						array_push($eventimages, $destinationPath."/Medium_".$fileName);
+					}
+				}
+			}
+			if(Request::file('postimage4')){
+				$file = array('postimage4' => Request::file('postimage4'));
+				$rules = array('postimage4' => 'required|image');
+				$validator = Validator::make($file, $rules);
+				if ($validator->fails()){
+					return redirect()->back()->withErrors($validator);
+				}else{
+					if (Request::file('postimage4')->isValid()) {
+			      		$destinationPath = 'uploads'; // upload path
+			      		//$originalname = Request::file('postimage4')->getClientOriginalName();
+			      		$extension = Request::file('postimage4')->getClientOriginalExtension(); // getting image extension
+			      		$fileName = 'Event_'.date('YmdHis').'_'.rand(111111,999999).'.'.$extension; // renameing image
+			      		Request::file('postimage4')->move($destinationPath, $fileName); // uploading file to given path
+				  		$postimage4 = $destinationPath."/".$fileName;
+						$img = Image::make($postimage4);
+				  		$img->resize(600, null, function ($constraint) {
+						    $constraint->aspectRatio();
+						    $constraint->upsize();
+						});
+						$img->save($destinationPath."/Medium_".$fileName);
+						array_push($eventimages, $destinationPath."/Medium_".$fileName);
+					}
+				}
+			}
 		if(Request::file('banner')){
 			$file = array('banner' => Request::file('banner'));
 			$rules = array('banner' => 'required|image');
@@ -93,7 +191,7 @@ class EventController extends Controller {
 			$totime = Request::input('totime');
 			$unixtotime = strtotime($totime);
 			$event->totime = $unixtotime;
-			$event->city = Request::input('city');
+			//$event->city = Request::input('city');
 			$event->address = Request::input('address');
 			if(Request::input('selectprice') == 'Free'){
 				$event->fee = 'Free';
@@ -101,6 +199,7 @@ class EventController extends Controller {
 				$event->fee = 'C $'.Request::input('fee');
 			}
 			$event->content = nl2br(Request::input('content'));
+			$event->gallery = implode(',', $eventimages);
 			$event->group_id = Request::input('gid');
 			$event->save();
 
@@ -111,7 +210,7 @@ class EventController extends Controller {
 	{
 		$gid = Group::where('slug', $slug)->pluck('id');
 		$event = Event::findOrFail($id);
-		return view('events.edit')->with('gid', $gid)->with('event', $event);
+		return view('events.edit')->with('gid', $gid)->with('event', $even);
 	}
 
 	public function editingEvent($id)
@@ -141,7 +240,6 @@ class EventController extends Controller {
 			$totime = Request::input('totime');
 			$unixtotime = strtotime($totime);
 			$event->totime = $unixtotime;
-			$event->city = Request::input('city');
 			$event->address = Request::input('address');
 			if(Request::input('selectprice') == 'Free'){
 				$event->fee = 'Free';
