@@ -5,6 +5,7 @@ use App\PostLike;
 use App\Group;
 use Request;
 use Validator;
+use Image;
 
 class PostController extends Controller {
 
