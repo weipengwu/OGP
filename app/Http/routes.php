@@ -43,6 +43,7 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::post('groups/unfollow', 'GroupController@unfollow');
 	Route::post('groups/checkBrandname/', array('uses' => 'GroupController@checkBrandname', 'as' => 'checkBrandname'));
 	Route::get('events/{id}/edit', array('uses' => 'EventController@editEvent', 'as' => 'editEvent'));
+	Route::post('events/{id}/edit', array('uses' => 'EventController@editingEvent', 'as' => 'editingEvent'));
 	//Route::get('groups/{slug}/missions/new', array('uses' => 'MissionController@newMission', 'as' => 'newMission'));
 	//Route::post('groups/{slug}/missions/new', array('uses' => 'MissionController@createMission', 'as' => 'createMission'));
 	//Route::get('missions/{id}/apply', array('uses' => 'MissionController@applyMission', 'as' => 'applyMission'));

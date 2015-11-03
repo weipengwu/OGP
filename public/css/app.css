@@ -7457,6 +7457,7 @@ h3 a:hover{
   }
   .imagezone .file-preview-image{
     height: 100px !important;
+    width: auto !important;
   }
   .imagezone .file-thumbnail-footer{
     display: none;
