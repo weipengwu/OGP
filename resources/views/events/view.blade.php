@@ -50,6 +50,7 @@
 </section>
 <section class="orgnizationsection greybg">
 	<p class="title">Orgnized by</p>
+	<div class="groupprofile" style="background: #666 url('<?php echo url()."/".getGroupProfile($event->group_id);?>') center center no-repeat; background-size: cover;"></div>
 	<h2><a href="/groups/<?php echo getGroupSlug($event->group_id); ?>">{{ getGroupName($event->group_id) }}</a></h2>
 </section>
 <section class="contentsection">
@@ -88,9 +89,9 @@
             event_geocoder.geocode( { 'address': event_address}, function(results, status) {
               if (status == google.maps.GeocoderStatus.OK) {
                 
-                eventlat = results[0].geometry.location.lat();
-                eventlng = results[0].geometry.location.lng();
-                console.log(eventlat);
+                var eventlat = results[0].geometry.location.lat();
+                var eventlng = results[0].geometry.location.lng();
+
               } else {
                 alert("Geocode for Address was not successful for the following reason: " + status);
               }

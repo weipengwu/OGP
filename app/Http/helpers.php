@@ -101,6 +101,10 @@
 		$name = DB::table('groups')->where('id', $id)->pluck('name');
 		return $name;
 	}
+	function getGroupProfile($id){
+		$profile = DB::table('groups')->where('id', $id)->pluck('profile');
+		return $profile;
+	}
 
 	function getGroupSlug($id){
 		$slug = DB::table('groups')->where('id', $id)->pluck('slug');
