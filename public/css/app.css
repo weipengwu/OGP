@@ -6910,6 +6910,10 @@ h3 a:hover{
 .orgnizationsection .title{
   color: #999;
 }
+.orgnizationsection .groupprofile{
+  width: 100px;
+  height: 100px;
+}
 .greybg{
   background: #fbfbfb;
 }
