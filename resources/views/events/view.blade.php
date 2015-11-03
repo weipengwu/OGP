@@ -84,13 +84,12 @@
     <script type="text/javascript">
       function initialize() {
       	var event_address = "<?php echo $event->address;?>";
-            var eventlat, eventlng;
             var event_geocoder = new google.maps.Geocoder();
             event_geocoder.geocode( { 'address': event_address}, function(results, status) {
               if (status == google.maps.GeocoderStatus.OK) {
                 
-                	eventlat = results[0].geometry.location.lat();
-                	eventlng = results[0].geometry.location.lng();
+                	window.eventlat = results[0].geometry.location.lat();
+                	window.eventlng = results[0].geometry.location.lng();
 
               } else {
                 alert("Geocode for Address was not successful for the following reason: " + status);
