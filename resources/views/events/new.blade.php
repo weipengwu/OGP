@@ -65,7 +65,7 @@
 						</div>
 						<div id="map">
 						</div>
-						<div class="form-group">
+						<div class="form-group row">
 							<div class="col-md-6">
 							<span class="radio"><input type="radio" name="type" id="typepublic" value="public" /><label for="typepublic">Public(Anyone can see)</label> </span>
 							</div>
@@ -144,17 +144,6 @@
     marker.setPosition(place.geometry.location);
     marker.setVisible(true);
 
-    // var address = '';
-    // if (place.address_components) {
-    //   address = [
-    //     (place.address_components[0] && place.address_components[0].short_name || ''),
-    //     (place.address_components[1] && place.address_components[1].short_name || ''),
-    //     (place.address_components[2] && place.address_components[2].short_name || '')
-    //   ].join(' ');
-    // }
-
-    // infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
-    // infowindow.open(map, marker);
   });
 
 }

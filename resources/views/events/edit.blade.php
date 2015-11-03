@@ -21,7 +21,7 @@
 					<form id="newevent" action="{{ URL::route('editingEvent') }}" method="post" enctype="multipart/form-data">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 						<input type="hidden" name="author" value="{{ Auth::user()->id }}">
-						<input type="hidden" name="gid" value="<?php echo $gid;?>">
+						<input type="hidden" name="gid" value="{{ $event->group_id }}">
 						<div class="form-group">
 							<label>Upload Your Banner Image</label>
 							<input type="file" name="banner" id="banner" accept="image/*">

@@ -90,6 +90,7 @@
                 
                 eventlat = results[0].geometry.location.lat();
                 eventlng = results[0].geometry.location.lng();
+                console.log(eventlat);
               } else {
                 alert("Geocode for Address was not successful for the following reason: " + status);
               }

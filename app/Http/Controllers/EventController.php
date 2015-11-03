@@ -208,9 +208,8 @@ class EventController extends Controller {
 
 	public function editEvent($id)
 	{
-		$gid = Group::where('slug', $slug)->pluck('id');
 		$event = Event::findOrFail($id);
-		return view('events.edit')->with('gid', $gid)->with('event', $even);
+		return view('events.edit')->with('event', $event);
 	}
 
 	public function editingEvent($id)
