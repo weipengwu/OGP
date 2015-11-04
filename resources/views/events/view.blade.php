@@ -45,17 +45,36 @@
 					<div class="eventinfo"> {{ $event->address }}</div>
 					<div class="eventinfo eventfee">{{ $event->fee }}</div>
 				</div>
-				<form action="" method="POST">
-				  <script
-				    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-				    data-key="pk_test_6pRNASCoBOKtIshFeQd4XMUh"
-				    data-amount="2000"
-				    data-name="{{ getGroupName($event->group_id) }}"
-				    data-description="{{ $event->title }}"
-				    data-image="/128x128.png"
-				    data-locale="auto">
-				  </script>
-				</form>
+				<script src="https://checkout.stripe.com/checkout.js"></script>
+
+				<button id="customButton">Purchase</button>
+
+				<script>
+				  var handler = StripeCheckout.configure({
+				    key: 'pk_test_6pRNASCoBOKtIshFeQd4XMUh',
+				    image: '<?php echo url()."/".getGroupProfile($event->group_id);?>',
+				    locale: 'auto',
+				    token: function(token) {
+				      // Use the token to create the charge with a server-side script.
+				      // You can access the token ID with `token.id`
+				    }
+				  });
+
+				  $('#customButton').on('click', function(e) {
+				    // Open Checkout with further options
+				    handler.open({
+				      name: '{{ getGroupName($event->group_id) }}',
+				      description: '{{ $event->title }}',
+				      amount: 2000
+				    });
+				    e.preventDefault();
+				  });
+
+				  // Close Checkout on page navigation
+				  $(window).on('popstate', function() {
+				    handler.close();
+				  });
+				</script>
 			</div>
 	</div>
 </section>
