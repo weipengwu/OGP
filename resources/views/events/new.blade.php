@@ -98,9 +98,9 @@
 		</div>
 	</div>
 </div>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANM_gBRmfXCbtGiN768aUL1div-Dd0TU4&callback=initMap&libraries=places"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANM_gBRmfXCbtGiN768aUL1div-Dd0TU4&libraries=places"></script>
 <script>
-	function initMap() {
+	function initialize() {
   var map = new google.maps.Map(document.getElementById('map'), {
     center: { lat: 43.6509618, lng: -79.3824327},
     zoom: 12,
@@ -147,5 +147,6 @@
   });
 
 }
+google.maps.event.addDomListener(window, 'load', initialize);
 </script>
 @endsection

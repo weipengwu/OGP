@@ -353,6 +353,13 @@ $(document).ready(function(){
 			$('#fee').hide();
 		}
 	})
+
+	if($('#selectprice option:selected').val() == 'Paid'){
+		$('#fee').show();
+	}else{
+		$('#fee').hide();
+	}
+	
 	$('.showall a').on('click', function(e){
 		e.preventDefault();
 		if($('.joinedgroups .groupsrow').hasClass('collapsed')){

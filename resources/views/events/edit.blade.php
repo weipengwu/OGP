@@ -45,12 +45,13 @@
 			                </div>
 							<input type="hidden" id="dtp_input2" value="" />
 			            </div>
+			     
 			            <div class="form-group" style="float:left; margin-right: 2%; width: 49%;">
 							<label class="col-md-2">Price</label>
 							<div class="col-md-10" style="padding: 0">
 							<select name="selectprice" id="selectprice" class="form-control">
 								<option value="Free">Free</option>
-								<option value="Paid">Paid</option>
+								<option value="Paid" <?php if ($event->fee !== 'Free') echo "selected";?>>Paid</option>
 							</select>
 							</div>
 						</div>
@@ -85,9 +86,9 @@
 		</div>
 	</div>
 </div>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANM_gBRmfXCbtGiN768aUL1div-Dd0TU4&callback=initMap&libraries=places"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANM_gBRmfXCbtGiN768aUL1div-Dd0TU4&libraries=places"></script>
 <script>
-	function initMap() {
+	function initialize() {
   var event_address = "<?php echo $event->address;?>";
       	
             var event_geocoder = new google.maps.Geocoder();
@@ -150,5 +151,6 @@
   });
 
 }
+google.maps.event.addDomListener(window, 'load', initialize);
 </script>
 @endsection
