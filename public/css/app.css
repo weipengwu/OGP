@@ -7640,3 +7640,21 @@ h3 a:hover{
   width: 600px;
   margin: 25px auto;
 }
+.purchaseholder{
+  clear: both;
+  padding-top: 30px;
+}
+.purchaseholder #purchaseButton{
+  background: #fc6c25;
+    border: none;
+    color: #fff ;
+    font-weight: 400;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    white-space: nowrap;
+    padding: 10px 32px;
+    font-size: 14px;
+    line-height: 1.42857143;
+}

@@ -46,9 +46,9 @@
 					<div class="eventinfo eventfee">{{ $event->fee }}</div>
 				</div>
 				<script src="https://checkout.stripe.com/checkout.js"></script>
-
-				<button id="customButton">Purchase</button>
-
+				<div class="purchaseholder">
+				<button id="purchaseButton">Purchase</button>
+				</div>
 				<script>
 				  var handler = StripeCheckout.configure({
 				    key: 'pk_test_6pRNASCoBOKtIshFeQd4XMUh',
@@ -60,7 +60,7 @@
 				    }
 				  });
 
-				  $('#customButton').on('click', function(e) {
+				  $('#purchaseButton').on('click', function(e) {
 				    // Open Checkout with further options
 				    handler.open({
 				      name: '{{ getGroupName($event->group_id) }}',
