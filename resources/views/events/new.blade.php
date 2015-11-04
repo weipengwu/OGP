@@ -67,7 +67,7 @@
 						</div>
 						<div class="form-group row">
 							<div class="col-md-6">
-							<span class="radio"><input type="radio" name="type" id="typepublic" value="public" /><label for="typepublic">Public(Anyone can see)</label> </span>
+							<span class="radio"><input type="radio" name="type" id="typepublic" value="public" checked/><label for="typepublic">Public(Anyone can see)</label> </span>
 							</div>
 							<div class="col-md-6">
 							<span class="radio"><input type="radio" name="type" id="typeprivate" value="private" /> <label for="typeprivate">Private(Only members can see)</label></span>
@@ -132,7 +132,7 @@
       map.fitBounds(place.geometry.viewport);
     } else {
       map.setCenter(place.geometry.location);
-      map.setZoom(17);  // Why 17? Because it looks good.
+      map.setZoom(15); 
     }
     marker.setIcon(/** @type {google.maps.Icon} */({
       url: place.icon,
