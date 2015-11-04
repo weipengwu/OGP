@@ -56,7 +56,7 @@
 							</div>
 						</div>
 						<div id="fee" class="form-group" style="float:left; width: 49%;">
-							<label class="col-md-2" style="text-align: right">C$</label> <div class="col-md-10" style="padding: 0"><input type="text" name="fee" class="form-control" placeholder="Event Fee"></div>
+							<label class="col-md-2" style="text-align: right">C$</label> <div class="col-md-10" style="padding: 0"><input type="text" name="fee" class="form-control" placeholder="Event Fee" <?php if ($event->fee !== 'Free') echo "value='".$event->fee."'";?>></div>
 						</div>
 						<div class="form-group">
 							<input type="text" name="suiteno" class="form-control" placeholder="Suite No." value="{{ $event->suite }}">
@@ -94,6 +94,7 @@
             var event_geocoder = new google.maps.Geocoder();
             event_geocoder.geocode( { 'address': event_address}, function(results, status) {
               if (status == google.maps.GeocoderStatus.OK) {
+              	console.log(results[0].geometry.location);
               	var mapOptions = {
 		          center: { lat: 43.6509618, lng: -79.3824327 },
 		          zoom: 15,
@@ -101,11 +102,11 @@
 		          styles: [{"featureType":"landscape","stylers":[{"hue":"#FFBB00"},{"saturation":43.400000000000006},{"lightness":37.599999999999994},{"gamma":1}]},{"featureType":"road.highway","stylers":[{"hue":"#FFC200"},{"saturation":-61.8},{"lightness":45.599999999999994},{"gamma":1}]},{"featureType":"road.arterial","stylers":[{"hue":"#FF0300"},{"saturation":-100},{"lightness":51.19999999999999},{"gamma":1}]},{"featureType":"road.local","stylers":[{"hue":"#FF0300"},{"saturation":-100},{"lightness":52},{"gamma":1}]},{"featureType":"water","stylers":[{"hue":"#0078FF"},{"saturation":-13.200000000000003},{"lightness":2.4000000000000057},{"gamma":1}]},{"featureType":"poi","stylers":[{"hue":"#00FF6A"},{"saturation":-1.0989010989011234},{"lightness":11.200000000000017},{"gamma":1}]}]
 		        };
 		        var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-                map.setCenter(results[0].geometry.location);
-			      var marker = new google.maps.Marker({
-			        map: map,
-			        position: results[0].geometry.location
-			      });
+         //        map.setCenter(results[0].geometry.location);
+			      // var marker = new google.maps.Marker({
+			      //   map: map,
+			      //   position: results[0].geometry.location
+			      // });
 
               } else {
                 alert("Geocode for Address was not successful for the following reason: " + status);
