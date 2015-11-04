@@ -184,6 +184,7 @@ class EventController extends Controller {
 		}
 
 			$event->author = Request::input('author');
+			$event->type = Request::input('type');
 			$event->title = Request::input('title');
 			$fromtime = Request::input('fromtime');
 			$unixfromtime = strtotime($fromtime);
@@ -196,7 +197,7 @@ class EventController extends Controller {
 			if(Request::input('selectprice') == 'Free'){
 				$event->fee = 'Free';
 			}else{
-				$event->fee = 'C $'.Request::input('fee');
+				$event->fee = Request::input('fee');
 			}
 			$event->content = nl2br(Request::input('content'));
 			$event->gallery = implode(',', $eventimages);
@@ -233,6 +234,7 @@ class EventController extends Controller {
 		}
 			$event->author = Request::input('author');
 			$event->title = Request::input('title');
+			$event->type = Request::input('type');
 			$fromtime = Request::input('fromtime');
 			$unixfromtime = strtotime($fromtime);
 			$event->fromtime = $unixfromtime;
@@ -243,7 +245,7 @@ class EventController extends Controller {
 			if(Request::input('selectprice') == 'Free'){
 				$event->fee = 'Free';
 			}else{
-				$event->fee = 'C $'.Request::input('fee');
+				$event->fee = Request::input('fee');
 			}
 			$event->content = nl2br(Request::input('content'));
 			$event->group_id = Request::input('gid');

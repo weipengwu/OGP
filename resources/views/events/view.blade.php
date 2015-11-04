@@ -45,6 +45,17 @@
 					<div class="eventinfo"> {{ $event->address }}</div>
 					<div class="eventinfo eventfee">{{ $event->fee }}</div>
 				</div>
+				<form action="" method="POST">
+				  <script
+				    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+				    data-key="pk_test_6pRNASCoBOKtIshFeQd4XMUh"
+				    data-amount="2000"
+				    data-name="{{ getGroupName($event->group_id) }}"
+				    data-description="{{ $event->title }}"
+				    data-image="/128x128.png"
+				    data-locale="auto">
+				  </script>
+				</form>
 			</div>
 	</div>
 </section>

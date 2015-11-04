@@ -26,6 +26,15 @@
 							<label>Upload Your Banner Image</label>
 							<input type="file" name="banner" id="banner" accept="image/*">
 						</div>
+						<div class="form-group row">
+							<label>Select the type of your event</label>
+							<div class="col-md-6">
+							<span class="radio"><input type="radio" name="type" id="typepublic" value="public" <?php if($event->type == 'public') echo "checked"; ?>/><label for="typepublic">Public(Anyone can see)</label> </span>
+							</div>
+							<div class="col-md-6">
+							<span class="radio"><input type="radio" name="type" id="typeprivate" value="private" <?php if($event->type == 'private') echo "checked"; ?> /> <label for="typeprivate">Private(Only members can see)</label></span>
+							</div>
+						</div>	
 						<div class="form-group">
 							<input type="text" name="title" class="form-control" placeholder="Event Title" value="{{ $event->title }}">
 						</div>
@@ -59,6 +68,9 @@
 							<label class="col-md-2" style="text-align: right">C$</label> <div class="col-md-10" style="padding: 0"><input type="text" name="fee" class="form-control" placeholder="Event Fee" <?php if ($event->fee !== 'Free') echo "value='".$event->fee."'";?>></div>
 						</div>
 						<div class="form-group">
+							<input type="number" name="quantity" class="form-control" placeholder="Quantity" min="1" max="1000" value="{{ $event->quantity }}">
+						</div>
+						<div class="form-group">
 							<input type="text" name="suiteno" class="form-control" placeholder="Suite No." value="{{ $event->suite }}">
 						</div>
 						<div class="form-group">
@@ -66,16 +78,7 @@
 						</div>
 						<div id="map">
 						</div>
-						<div class="form-group row">
-							<div class="col-md-6">
-							<span class="radio"><input type="radio" name="type" id="typepublic" value="public" <?php if($event->type == 'public') echo "checked"; ?>/><label for="typepublic">Public(Anyone can see)</label> </span>
-							</div>
-							<div class="col-md-6">
-							<span class="radio"><input type="radio" name="type" id="typeprivate" value="private" <?php if($event->type == 'private') echo "checked"; ?> /> <label for="typeprivate">Private(Only members can see)</label></span>
-							</div>
-						</div>	
 
-						
 						<div class="form-group">
 							<textarea name="content" class="form-control" placeholder="Event Description">{!! html_entity_decode($event->content) !!}</textarea>
 						</div>
