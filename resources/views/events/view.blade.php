@@ -79,7 +79,6 @@
 				    handler.close();
 				  });
 				</script>-->
-				<?php //require_once('./config.php'); ?>
 
 				<form action="{{ url('ogppay') }}" method="post" class="stripe-form">
 				  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
