@@ -7640,11 +7640,11 @@ h3 a:hover{
   width: 600px;
   margin: 25px auto;
 }
-.purchaseholder{
+.stripe-form{
   clear: both;
   padding-top: 30px;
 }
-.purchaseholder #purchaseButton{
+.stripe-form .stripe-button{
   background: #fc6c25;
     border: none;
     color: #fff ;
