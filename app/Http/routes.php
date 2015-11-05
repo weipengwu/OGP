@@ -71,12 +71,12 @@ Route::group(['middleware' => 'auth'], function(){
 		    $error = $e_json['error'];
 		    // The card has been declined
 		    // redirect back to checkout page
-		    return Redirect::to('pay')
+		    return Redirect::to('ogppay')
 		        ->withInput()->with('stripe_errors',$error['message']);
 		}
 		// Maybe add an entry to your DB that the charge was successful, or at least Log the charge or errors
 		// Stripe charge was successfull, continue by redirecting to a page with a thank you message
-		return Redirect::to('pay/success');
+		return Redirect::to('ogppay/success');
 	});
 });
 
