@@ -61,7 +61,7 @@ Route::group(['middleware' => 'auth'], function(){
 		try {
 		    $charge = Stripe_Charge::create(array(
 		      "amount" => 2000, // amount in cents
-		      "currency" => "usd",
+		      "currency" => "cad",
 		      "card"  => $token,
 		      "description" => 'Charge for my product')
 		    );

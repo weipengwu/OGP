@@ -81,7 +81,6 @@
 				</script>-->
 
 				<form action="{{ url('ogppay') }}" method="post" class="stripe-form">
-				<input type="hidden" name="_token" value="{{ csrf_token() }}">
 				  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
 				          data-key="{{Config::get('stripe.stripe.public')}}"
 				          data-description="{{ $event->title }}"
