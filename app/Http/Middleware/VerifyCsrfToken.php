@@ -17,13 +17,17 @@ class VerifyCsrfToken extends BaseVerifier {
 		return parent::handle($request, $next);
 	}
 
-	private $openRoutes = ['ogppay' ];
+	protected $routes = ['ogppay' ];
 
    //add to the handler function
-    foreach($this->openRoutes as $route) {
-      if ($request->is($route)) {
-        return $next($request);
-      }
+    protected function excludedRoutes($request)
+    {
+        foreach($this->routes as $route)
+        {
+            if ($request->is($route))
+                return true;
+        }
+        return false;
     }
 
 }
