@@ -45,6 +45,9 @@
 					<div class="eventinfo"> {{ $event->address }}</div>
 					<div class="eventinfo eventfee">{{ $event->fee }}</div>
 				</div>
+				@if($event->fee == 'Free')
+
+				@else
 				<script src="https://checkout.stripe.com/checkout.js"></script>
 				<div class="purchaseholder">
 				<button id="purchaseButton">Purchase</button>
@@ -65,7 +68,8 @@
 				    handler.open({
 				      name: '{{ getGroupName($event->group_id) }}',
 				      description: '{{ $event->title }}',
-				      amount: 2000
+				      amount: {{ $event->fee * 100 }},
+				      currency: 'CAD'
 				    });
 				    e.preventDefault();
 				  });
@@ -75,6 +79,7 @@
 				    handler.close();
 				  });
 				</script>
+				@endif
 			</div>
 	</div>
 </section>
@@ -87,7 +92,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2">
-					<p>{{ $event->content }}</p>	
+					<p>{!! html_entity_decode($event->content) !!}</p>	
 			</div>
 		</div>
 	</div>
