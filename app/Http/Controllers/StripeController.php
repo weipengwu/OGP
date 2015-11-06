@@ -59,19 +59,23 @@ class StripeController extends Controller {
 		// // Stripe charge was successfull, continue by redirecting to a page with a thank you message
 		// return Redirect::to('ogppay/success');
 
-		$token  = Request::get('stripeToken');
+		try {
+			$token  = Request::get('stripeToken');
 
-		  $customer = \Stripe\Customer::create(array(
-		      'email' => 'customer@example.com',
-		      'card'  => $token
-		  ));
+			  $customer = \Stripe\Customer::create(array(
+			      'email' => Request::get('stripeEmail'),
+			      'card'  => $token
+			  ));
 
-		  $charge = \Stripe\Charge::create(array(
-		      'customer' => $customer->id,
-		      'amount'   => 5000,
-		      'currency' => 'usd'
-		  ));
-		  echo '<h1>Successfully charged $50.00!</h1>';
+			  $charge = \Stripe\Charge::create(array(
+			      'customer' => $customer->id,
+			      'amount'   => Request::get('stripeAmount'),
+			      'currency' => 'usd'
+			  ));
+			echo '<h1>Successfully charged $50.00!</h1>';
+		} catch(\Stripe\Error\Card $e){
+			echo $e->getMessage();
+		}
 	}
 
 }
