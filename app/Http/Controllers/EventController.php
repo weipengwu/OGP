@@ -289,9 +289,9 @@ class EventController extends Controller {
 		echo $count;
 	}
 
-	public function eventCharge($id)
+	public function eventCharge()
 	{
-		$event = Event::findOrFail($id);
+		$event = Event::findOrFail(Request::input('eid'));
 		\Stripe\Stripe::setApiKey(Config::get('stripe.stripe.secret'));
 
 		// // Get the credit card details submitted by the form

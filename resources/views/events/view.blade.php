@@ -82,6 +82,7 @@
 				</script>
 				</form> -->
 				<form action="{{ URL::route('eventCharge') }}" method="post" class="stripe-form">
+				  <input type="hidden" name="eid" value="{{ $event->id }}">
 				  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
 				          data-key="{{Config::get('stripe.stripe.public')}}"
 				          data-description="{{ $event->title }}"
