@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 use Stripe\Stripe;
+use Config;
 
 class StripeController extends Controller {
 
