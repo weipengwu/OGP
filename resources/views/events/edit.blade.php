@@ -21,13 +21,14 @@
 					<form id="newevent" action="{{ URL::route('editingEvent') }}" method="post" enctype="multipart/form-data">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 						<input type="hidden" name="author" value="{{ Auth::user()->id }}">
+						<input type="hidden" name="eid" value="{{ $event->id }}">
 						<input type="hidden" name="gid" value="{{ $event->group_id }}">
 						<div class="form-group">
 							<label>Upload Your Banner Image</label>
 							<input type="file" name="banner" id="banner" accept="image/*">
 						</div>
 						<div class="form-group row">
-							<label>Select the type of your event</label>
+							<div class="col-md-12">Select the type of your event</div>
 							<div class="col-md-6">
 							<span class="radio"><input type="radio" name="type" id="typepublic" value="public" <?php if($event->type == 'public') echo "checked"; ?>/><label for="typepublic">Public(Anyone can see)</label> </span>
 							</div>

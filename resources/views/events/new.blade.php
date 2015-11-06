@@ -27,7 +27,7 @@
 							<input type="file" name="banner" id="banner" accept="image/*">
 						</div>
 						<div class="form-group row">
-							<label>Select the type of your event</label>
+							<div class="col-md-12">Select the type of your event</div>
 							<div class="col-md-6">
 							<span class="radio"><input type="radio" name="type" id="typepublic" value="public" checked/><label for="typepublic">Public(Anyone can see)</label> </span>
 							</div>
