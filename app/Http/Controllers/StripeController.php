@@ -33,7 +33,7 @@ class StripeController extends Controller {
 	 */
 	public function charge()
 	{
-		// Stripe::setApiKey(Config::get('stripe.stripe.secret'));
+		\Stripe\Stripe::setApiKey(Config::get('stripe.stripe.secret'));
 
 		// // Get the credit card details submitted by the form
 		// $token = Request::get('stripeToken');
