@@ -21,7 +21,7 @@ class VerifyCsrfToken extends BaseVerifier {
 		return parent::handle($request, $next);
 	}
 
-	protected $routes = ['ogppay' ];
+	protected $routes = ['/ogppay' ];
 
    //add to the handler function
     protected function excludedRoutes($request)

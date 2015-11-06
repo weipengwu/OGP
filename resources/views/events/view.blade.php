@@ -81,7 +81,7 @@
 				  });
 				</script>
 				</form> -->
-				<form action="{{ url('eventCharge') }}" method="post" class="stripe-form">
+				<form action="{{ URL::route('eventCharge') }}" method="post" class="stripe-form">
 				  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
 				          data-key="{{Config::get('stripe.stripe.public')}}"
 				          data-description="{{ $event->title }}"
