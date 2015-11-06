@@ -50,7 +50,7 @@ Route::group(['middleware' => 'auth'], function(){
 	//Route::post('missions/{id}/apply', array('uses' => 'MissionController@sendResume', 'as' => 'sendResume'));
 	Route::get('search', 'SearchController@search');
 	Route::post('search', array('uses' => 'SearchController@search', 'as' => 'search'));
-	Route::post('ogppay', 'StripeController@charge');
+	Route::post('events/{id}/ogppay', array('uses' => 'EventController@eventCharge', 'as' => 'eventCharge'));
 });
 
 Route::get('events', 'EventController@index');

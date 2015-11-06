@@ -48,7 +48,8 @@
 				@if($event->fee == 'Free')
 
 				@else
-				<!--<script src="https://checkout.stripe.com/checkout.js"></script>
+				<!-- <form action="{{ url('ogppay') }}" method="post" class="stripe-form">
+				<script src="https://checkout.stripe.com/checkout.js"></script>
 				<div class="purchaseholder">
 				<button id="purchaseButton">Purchase</button>
 				</div>
@@ -69,7 +70,7 @@
 				      name: '{{ getGroupName($event->group_id) }}',
 				      description: '{{ $event->title }}',
 				      amount: {{ $event->fee * 100 }},
-				      currency: 'CAD'
+				      currency: 'cad'
 				    });
 				    e.preventDefault();
 				  });
@@ -78,9 +79,9 @@
 				  $(window).on('popstate', function() {
 				    handler.close();
 				  });
-				</script>-->
-
-				<form action="{{ url('ogppay') }}" method="post" class="stripe-form">
+				</script>
+				</form> -->
+				<form action="{{ url('eventCharge') }}" method="post" class="stripe-form">
 				  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
 				          data-key="{{Config::get('stripe.stripe.public')}}"
 				          data-description="{{ $event->title }}"
