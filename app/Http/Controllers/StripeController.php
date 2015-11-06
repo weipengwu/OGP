@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 use Stripe\Stripe;
 use Config;
+use Request;
 
 class StripeController extends Controller {
 
@@ -35,7 +36,7 @@ class StripeController extends Controller {
 		Stripe::setApiKey(Config::get('stripe.stripe.secret'));
 
 		// Get the credit card details submitted by the form
-		$token = Input::get('stripeToken');
+		$token = Request::get('stripeToken');
 
 		// Create the charge on Stripe's servers - this will charge the user's card
 		try {
