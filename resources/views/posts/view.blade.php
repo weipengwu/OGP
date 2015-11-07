@@ -46,7 +46,7 @@
 					@endif
 					<section id="comments">
 						@foreach ($post->comments as $comment)
-							<div class="comment">
+							<div class="comment row">
 								<div class="col-md-1">
 									<?php 
 										$user_profile = DB::table('user_meta')->where('user_id', $comment->author)->where('meta_key', 'profile')->get();
@@ -60,7 +60,7 @@
 									<?php endif;?>
 								</div>
 								<div class="col-md-11">
-									<p>{{ getAuthorname($comment->author) }}</p>
+									<p><strong>{{ getAuthorname($comment->author) }}</strong>&nbsp;&nbsp;•&nbsp;&nbsp;{{ $comment->created_at->diffForHumans() }}</p> 
 									<p>{{ $comment->content }}</p>
 								</div>
 							</div>
