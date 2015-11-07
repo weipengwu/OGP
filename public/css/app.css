@@ -7658,6 +7658,9 @@ h3 a:hover{
     font-size: 14px;
     line-height: 1.42857143;
 }
+#comment{
+  margin-top: 30px;
+}
 .comment{
   padding: 10px 0;
   margin-bottom: 10px;

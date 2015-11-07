@@ -47,23 +47,19 @@
 					<section id="comments">
 						@foreach ($post->comments as $comment)
 							<div class="comment">
-								<div class="col-md-2">
+								<div class="col-md-1">
 									<?php 
 										$user_profile = DB::table('user_meta')->where('user_id', $comment->author)->where('meta_key', 'profile')->get();
 										if(count($user_profile) > 0):
 									?>
-											<div class="col-md-6">
-												<div class="top-profile" style="background: url(<?php echo url()."/".$user_profile[0]->meta_value;?>) center center no-repeat; background-size: cover; width: 100px; height: 100px; border-radius: 50px"></div>
-											</div>
+										<div class="top-profile" style="background: url(<?php echo url()."/".$user_profile[0]->meta_value;?>) center center no-repeat; background-size: cover; width: 31px; height: 31px; border-radius: 25px"></div>
 									<?php
 										else:
 									?>
-											<div class="col-md-6">
-												<div class="top-profile">{{ getFirstCharter(Auth::user()->name) }}</div>
-											</div>
+										<div class="top-profile">{{ getFirstCharter(Auth::user()->name) }}</div>
 									<?php endif;?>
 								</div>
-								<div class="col-md-10">
+								<div class="col-md-11">
 									<p>{{ getAuthorname($comment->author) }}</p>
 									<p>{{ $comment->content }}</p>
 								</div>
