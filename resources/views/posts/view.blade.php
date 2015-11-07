@@ -60,7 +60,7 @@
 									<?php endif;?>
 								</div>
 								<div class="col-md-11">
-									<p><strong>{{ getAuthorname($comment->author) }}</strong>&nbsp;&nbsp;•&nbsp;&nbsp;{{ $comment->created_at->diffForHumans() }}</p> 
+									<p><strong>{{ getAuthorname($comment->author) }}</strong>&nbsp;&nbsp;<span class="ago-bullet">•</span>&nbsp;&nbsp;{{ $comment->created_at->diffForHumans() }}</p> 
 									<p>{{ $comment->content }}</p>
 								</div>
 							</div>

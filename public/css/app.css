@@ -7658,7 +7658,7 @@ h3 a:hover{
     font-size: 14px;
     line-height: 1.42857143;
 }
-#comment{
+#comments{
   margin-top: 30px;
 }
 .comment{
@@ -7669,4 +7669,8 @@ h3 a:hover{
   clear: both;
   display: table;
   content: "";
+}
+.ago-bullet{
+  font-size: 75%;
+  color: #ccc;
 }
