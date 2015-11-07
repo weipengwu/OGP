@@ -33,12 +33,12 @@
 					<hr>
 					@if(Auth::check())
 					<section>
-						<h3 class="title">Add a comment</h3>
+						<h3 class="title">Leave a comment</h3>
 						<form action="{{ URL::route('createComment', array('id' => $post->id)) }}" method="post">
 							<input type="hidden" name="_token" value="{{ csrf_token() }}">
 							<input type="hidden" name="author" value="{{ Auth::user()->id }}">
 							<div class="form-group">
-								<textarea name="content" class="form-control" placeholder="Write down your thoughts..."></textarea>
+								<textarea name="content" class="form-control" placeholder="Write down your thoughts..." required></textarea>
 							</div>
 							<input type="submit" class="btn btn-logo">
 						</form>
@@ -47,8 +47,26 @@
 					<section id="comments">
 						@foreach ($post->comments as $comment)
 							<div class="comment">
-								<p><a href="{{ url() }}/profiles/{{$comment->author}}">{{ getAuthorname($comment->author) }}</a></p>
-								<p>{{ $comment->content }}</p>
+								<div class="col-md-2">
+									<?php 
+										$user_profile = DB::table('user_meta')->where('user_id', $comment->author)->where('meta_key', 'profile')->get();
+										if(count($user_profile) > 0):
+									?>
+											<div class="col-md-6">
+												<div class="top-profile" style="background: url(<?php echo url()."/".$user_profile[0]->meta_value;?>) center center no-repeat; background-size: cover; width: 100px; height: 100px; border-radius: 50px"></div>
+											</div>
+									<?php
+										else:
+									?>
+											<div class="col-md-6">
+												<div class="top-profile">{{ getFirstCharter(Auth::user()->name) }}</div>
+											</div>
+									<?php endif;?>
+								</div>
+								<div class="col-md-10">
+									<p>{{ getAuthorname($comment->author) }}</p>
+									<p>{{ $comment->content }}</p>
+								</div>
 							</div>
 						@endforeach
 					</section>
