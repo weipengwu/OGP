@@ -52,7 +52,7 @@
 										$user_profile = DB::table('user_meta')->where('user_id', $comment->author)->where('meta_key', 'profile')->get();
 										if(count($user_profile) > 0):
 									?>
-										<div class="top-profile" style="background: url(<?php echo url()."/".$user_profile[0]->meta_value;?>) center center no-repeat; background-size: cover; width: 31px; height: 31px; border-radius: 25px"></div>
+										<div class="top-profile" style="background: url(<?php echo url()."/".$user_profile[0]->meta_value;?>) center center no-repeat; background-size: cover; border-radius: 50px"></div>
 									<?php
 										else:
 									?>
@@ -60,7 +60,7 @@
 									<?php endif;?>
 								</div>
 								<div class="col-md-11">
-									<p><strong>{{ getAuthorname($comment->author) }}</strong>&nbsp;&nbsp;<span class="ago-bullet">•</span>&nbsp;&nbsp;{{ $comment->created_at->diffForHumans() }}</p> 
+									<p class="commentauthor"><strong>{{ getAuthorname($comment->author) }}</strong>&nbsp;&nbsp;<span class="ago-bullet">•</span>&nbsp;&nbsp;{{ $comment->created_at->diffForHumans() }}</p> 
 									<p>{{ $comment->content }}</p>
 								</div>
 							</div>
