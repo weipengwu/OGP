@@ -304,7 +304,7 @@
 					<div class="row-gap"></div>
 			</div>
 			</section>
-			<section class="container">
+			<section class="container posts">
 			<div class="row singlegroup layout633">
 				<?php $i = 0; $j = 1;?>
 					@foreach ($posts as $post)
@@ -354,7 +354,7 @@
 					<div class="row-gap"></div>
 			</div>
 			</section>
-			<section class="container">
+			<section class="container posts">
 			<div class="row singlegroup layout444">
 				<?php $i = 0; $j = 1; ?>
 					@foreach ($posts as $post)
@@ -419,7 +419,7 @@
       loading : loading_options,
       navSelector : "#allposts .pager",
       nextSelector : "#allposts .pager li:nth-child(2) a",
-      itemSelector : "#allposts section.container"
+      itemSelector : "#allposts section.container.posts"
     });
 })();
 </script>
