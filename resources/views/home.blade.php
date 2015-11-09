@@ -405,13 +405,23 @@
 		</div>
 
 </div>
-<script src="{{ asset('js/jquery.jscroll.min.js') }}"></script>
+<script src="{{ asset('js/jquery.infinitescroll.min.js') }}"></script>
 <script type="text/javascript">
+(function(){
 
-    $('#allposts').jscroll({
-      nextSelector : "#allposts .pagination li.active + li:not(.disabled) a",
-      contentSelector : "#allposts section.container.posts"
+    var loading_options = {
+        //finishedMsg: "<div class='end-msg'>Congratulations! You've reached the end of the internet</div>",
+        msgText: "<div class='center'>Loading...</div>",
+        //img: "/assets/img/ajax-loader.gif"
+    };
+    var pagesNum = <?php echo $allposts->total(); ?>; 
+    $('#allposts').infinitescroll({
+      loading : loading_options,
+      navSelector : "#allposts .pagination",
+      nextSelector : "#allposts .pagination li.active + li a",
+      itemSelector : "#allposts section.container.posts",
+      maxPage: pagesNum
     });
-
+})();
 </script>
 @endsection
