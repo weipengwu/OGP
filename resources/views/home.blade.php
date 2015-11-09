@@ -28,7 +28,7 @@
 				?>
 			@endforeach
 		<div id="allposts">
-			<section class="container">
+			<section class="container posts">
 			<div class="row singlegroup layout84">
 					<?php $i = 0;?>
 					@foreach ($posts as $post)
@@ -84,7 +84,7 @@
 				<div class="row-gap"></div>
 			</div>
 			</section>
-			<section class="container">
+			<section class="container posts">
 			<div class="row singlegroup layout444">
 				<?php $i = 0; $j = 1; ?>
 					@foreach ($posts as $post)
@@ -175,7 +175,7 @@
 				</div>
 			</section>
 			
-			<section class="container">
+			<section class="container posts">
 			<div class="row singlegroup layout633">
 				<?php $i = 0; $j = 1;?>
 					@foreach ($posts as $post)
@@ -256,7 +256,7 @@
 
 				</div>
 			</section>
-			<section class="container">
+			<section class="container posts">
 			<div class="row singlegroup layout3333">
 				<?php $i = 0; $j = 1;?>
 					@foreach ($posts as $post)

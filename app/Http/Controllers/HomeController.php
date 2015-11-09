@@ -34,7 +34,7 @@ class HomeController extends Controller {
 	{
 		// $events = Event::orderBy('created_at', 'DESC')->take(5)->get();
 		$events = Event::orderBy('created_at', 'DESC')->simplePaginate(5);
-		$posts = Post::orderBy('created_at', 'DESC')->simplePaginate(15);
+		$posts = Post::orderBy('created_at', 'DESC')->simplePaginate(18);
 		return view('home')->with('events', $events)->with('allposts', $posts);
 	}
 
