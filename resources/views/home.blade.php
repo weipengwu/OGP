@@ -27,6 +27,7 @@
 					array_push($posts, $singlepost);
 				?>
 			@endforeach
+		<div id="allposts">
 			<section class="container">
 			<div class="row singlegroup layout84">
 					<?php $i = 0;?>
@@ -401,7 +402,25 @@
 			</div>
 			</section>
 			<?php echo $allposts->render(); ?>
+		</div>
 
 </div>
 <script src="{{ asset('js/jquery.infinitescroll.min.js') }}"></script>
+<script type="text/javascript">
+(function(){
+
+    var loading_options = {
+        //finishedMsg: "<div class='end-msg'>Congratulations! You've reached the end of the internet</div>",
+        msgText: "<div class='center'>Loading...</div>",
+        //img: "/assets/img/ajax-loader.gif"
+    };
+
+    $('#allposts').infinitescroll({
+      loading : loading_options,
+      navSelector : "#allposts .pager",
+      nextSelector : "#allposts .pager li:nth-child(2) a",
+      itemSelector : "#allposts .singlegroup"
+    });
+})();
+</script>
 @endsection
