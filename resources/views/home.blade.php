@@ -419,7 +419,7 @@
       loading : loading_options,
       navSelector : "#allposts .pager",
       nextSelector : "#allposts .pager li:nth-child(2) a",
-      itemSelector : "#allposts .singlegroup"
+      itemSelector : "#allposts section.container"
     });
 })();
 </script>
