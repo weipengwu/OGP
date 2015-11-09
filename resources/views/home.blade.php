@@ -418,7 +418,7 @@
     $('#allposts').infinitescroll({
       loading : loading_options,
       navSelector : "#allposts .pager",
-      nextSelector : "#allposts .pager li:nth-child(2) a",
+      nextSelector : "#allposts .pager li:nth-child(2):not(.disabled) a",
       itemSelector : "#allposts section.container.posts"
     });
 })();
