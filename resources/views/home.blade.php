@@ -414,7 +414,7 @@
         msgText: "<div class='center'>Loading...</div>",
         //img: "/assets/img/ajax-loader.gif"
     };
-    var pagesNum = <?php echo $allposts->total(); ?>; 
+    var pagesNum = <?php echo $allposts->lastPage(); ?>; 
     $('#allposts').infinitescroll({
       loading : loading_options,
       navSelector : "#allposts .pagination",
