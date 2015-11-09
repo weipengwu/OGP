@@ -407,20 +407,20 @@
 </div>
 <script src="{{ asset('js/jquery.infinitescroll.min.js') }}"></script>
 <script type="text/javascript">
-// (function(){
+(function(){
 
-//     var loading_options = {
-//         //finishedMsg: "<div class='end-msg'>Congratulations! You've reached the end of the internet</div>",
-//         msgText: "<div class='center'>Loading...</div>",
-//         //img: "/assets/img/ajax-loader.gif"
-//     };
+    var loading_options = {
+        //finishedMsg: "<div class='end-msg'>Congratulations! You've reached the end of the internet</div>",
+        msgText: "<div class='center'>Loading...</div>",
+        //img: "/assets/img/ajax-loader.gif"
+    };
 
-//     $('#allposts').infinitescroll({
-//       loading : loading_options,
-//       navSelector : "#allposts .pager",
-//       nextSelector : "#allposts .pager li:nth-child(2):not(.disabled) a",
-//       itemSelector : "#allposts section.container.posts"
-//     });
-// })();
+    $('#allposts').infinitescroll({
+      loading : loading_options,
+      navSelector : "#allposts .pagination",
+      nextSelector : "#allposts .pagination li.active + li:not(.disabled) a",
+      itemSelector : "#allposts section.container.posts"
+    });
+})();
 </script>
 @endsection
