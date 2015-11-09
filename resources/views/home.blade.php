@@ -400,6 +400,8 @@
 					<div class="row-gap"></div>
 			</div>
 			</section>
+			<?php echo $allposts->render(); ?>
 
 </div>
+<script src="{{ asset('js/jquery.infinitescroll.min.js') }}"></script>
 @endsection
