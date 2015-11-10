@@ -7694,7 +7694,7 @@ h3 a:hover{
 }
 
 /*** media query ***/
-@media (min-width: 992px){
+@media (max-width: 1199px){
   .grouplist .bannerholder{
     height: 227px;
   }
@@ -7703,7 +7703,7 @@ h3 a:hover{
     margin-top: 90px;
   }
 }
-@media (min-width: 768px) {
+@media (max-width: 991px) {
   .grouplist .bannerholder{
     height: 175px;
   }

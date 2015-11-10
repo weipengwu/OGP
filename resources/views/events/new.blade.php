@@ -132,6 +132,13 @@
       return;
     }
     console.log(place.address_components);
+    var components = place.address_components;
+    $.each(components, function(i, val){
+    	if(val[types][0] == 'locality'){
+    		var city = val['long_name'];
+    		console.log(city);
+    	}
+    })
     // If the place has a geometry, then present it on a map.
     if (place.geometry.viewport) {
       map.fitBounds(place.geometry.viewport);
