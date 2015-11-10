@@ -134,8 +134,8 @@
     console.log(place.address_components);
     var components = place.address_components;
     $.each(components, function(i, val){
-    	if(val[types][0] == 'locality'){
-    		var city = val['long_name'];
+    	if(val.types[0] == 'locality'){
+    		var city = val.long_name;
     		console.log(city);
     	}
     })

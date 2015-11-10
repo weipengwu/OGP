@@ -7717,6 +7717,7 @@ h3 a:hover{
   .grouplist{
     width: 300px;
     margin: 0 auto 25px auto;
+    float: none;
   }
   .grouplist.last{
     margin-right: auto;
