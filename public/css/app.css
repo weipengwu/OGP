@@ -7683,3 +7683,6 @@ h3 a:hover{
   line-height: 50px;
   font-size: 18px;
 }
+.center{
+  text-align: center;
+}

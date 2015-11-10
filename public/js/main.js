@@ -318,7 +318,7 @@ $(document).ready(function(){
 	})
 	
 	$(window).scroll(function(){
-		if($(this).scrollTop() > 435){
+		if($(this).scrollTop() > 455){
 			$('.bannerwrapper').addClass('locked');
 			$('.bannerwrapper').next().css('margin-top', '500px');
 		}else{

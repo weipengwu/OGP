@@ -421,9 +421,9 @@
 (function(){
 
     var loading_options = {
-        //finishedMsg: "<div class='end-msg'>Congratulations! You've reached the end of the internet</div>",
+        finishedMsg: "",
         msgText: "<div class='center'>Loading...</div>",
-        //img: "/assets/img/ajax-loader.gif"
+        img: ""
     };
     var pagesNum = <?php echo $allposts->lastPage(); ?>; 
     $('#allposts').infinitescroll({

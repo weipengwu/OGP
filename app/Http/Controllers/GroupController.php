@@ -159,7 +159,7 @@ class GroupController extends Controller {
 	public function viewGroup($slug)
 	{
 		$group = Group::where('slug', $slug)->firstOrFail();
-		$gposts = Post::where('group_id', $group->id)->orderBy('created_at', 'DESC')->get();
+		$gposts = Post::where('group_id', $group->id)->orderBy('created_at', 'DESC')->paginate(15);
 
 		return view('groups.view')->with('group', $group)->with('gposts', $gposts);
 	}
