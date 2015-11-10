@@ -131,7 +131,7 @@
       window.alert("Autocomplete's returned place contains no geometry");
       return;
     }
-    console.log(place);
+    console.log(place.address_components[2].long_name);
     // If the place has a geometry, then present it on a map.
     if (place.geometry.viewport) {
       map.fitBounds(place.geometry.viewport);
