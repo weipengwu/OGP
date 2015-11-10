@@ -188,6 +188,7 @@
 						</div>
 						</section>
 						@endif
+						<?php echo $gposts->render(); ?>
 			@endif
 
 			</div>
@@ -201,7 +202,7 @@
         msgText: "<div class='center'>Loading...</div>",
         img: ""
     };
-    var pagesNum = <?php echo $allposts->lastPage(); ?>; 
+    var pagesNum = <?php echo $gposts->lastPage(); ?>; 
     $('#allposts').infinitescroll({
       loading : loading_options,
       navSelector : "#allposts .pagination",
