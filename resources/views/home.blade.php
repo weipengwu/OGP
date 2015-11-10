@@ -423,7 +423,7 @@
     var loading_options = {
         finishedMsg: "",
         msgText: "<div class='center'>Loading...</div>",
-        img: null
+        //img: null
     };
     var pagesNum = <?php echo $allposts->lastPage(); ?>; 
     $('#allposts').infinitescroll({
