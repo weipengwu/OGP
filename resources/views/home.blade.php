@@ -28,6 +28,7 @@
 				?>
 			@endforeach
 		<div id="allposts">
+			@if(count($posts) > 0)
 			<section class="container posts">
 			<div class="row singlegroup layout84">
 					<?php $i = 0;?>
@@ -84,6 +85,8 @@
 				<div class="row-gap"></div>
 			</div>
 			</section>
+			@endif
+			@if(count($posts) > 0)
 			<section class="container posts">
 			<div class="row singlegroup layout444">
 				<?php $i = 0; $j = 1; ?>
@@ -131,6 +134,7 @@
 					<div class="row-gap"></div>
 			</div>
 			</section>
+			@endif
 			<section class="events_section">
 				<h2>EVENTS</h2>
 				<h4>See What's Happening Around You</h4>
@@ -174,7 +178,7 @@
 					<div class="divider"></div>
 				</div>
 			</section>
-			
+			@if(count($posts) > 0)
 			<section class="container posts">
 			<div class="row singlegroup layout633">
 				<?php $i = 0; $j = 1;?>
@@ -225,6 +229,7 @@
 					<div class="row-gap"></div>
 			</div>
 			</section>
+			@endif
 			<section class="container">
 				<div class="joinedgroups">
 					<h3>FOLLOWING</h3>
@@ -256,6 +261,7 @@
 
 				</div>
 			</section>
+			@if(count($posts) > 0)
 			<section class="container posts">
 			<div class="row singlegroup layout3333">
 				<?php $i = 0; $j = 1;?>
@@ -304,6 +310,8 @@
 					<div class="row-gap"></div>
 			</div>
 			</section>
+			@endif
+			@if(count($posts) > 0)
 			<section class="container posts">
 			<div class="row singlegroup layout633">
 				<?php $i = 0; $j = 1;?>
@@ -354,6 +362,8 @@
 					<div class="row-gap"></div>
 			</div>
 			</section>
+			@endif
+			@if(count($posts) > 0)
 			<section class="container posts">
 			<div class="row singlegroup layout444">
 				<?php $i = 0; $j = 1; ?>
@@ -401,6 +411,7 @@
 					<div class="row-gap"></div>
 			</div>
 			</section>
+			@endif
 			<?php echo $allposts->render(); ?>
 		</div>
 
