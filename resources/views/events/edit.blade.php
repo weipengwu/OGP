@@ -76,6 +76,7 @@
 						</div>
 						<div class="form-group">
 							<input type="text" name="address" id="address" class="form-control" placeholder="Address" value="{{ $event->address }}">
+							<input type="hidden" name="city" id="city" class="form-control" value="{{ $event->city }}">
 						</div>
 						<div id="map">
 						</div>
@@ -134,6 +135,13 @@
       window.alert("Autocomplete's returned place contains no geometry");
       return;
     }
+     var components = place.address_components;
+    $.each(components, function(i, val){
+    	if(val.types[0] == 'locality'){
+    		var city = val.long_name;
+    		$('#city').val(city);
+    	}
+    })
 
     // If the place has a geometry, then present it on a map.
     if (place.geometry.viewport) {

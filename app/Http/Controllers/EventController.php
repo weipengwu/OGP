@@ -194,7 +194,7 @@ class EventController extends Controller {
 			$totime = Request::input('totime');
 			$unixtotime = strtotime($totime);
 			$event->totime = $unixtotime;
-			//$event->city = Request::input('city');
+			$event->city = Request::input('city');
 			$event->address = Request::input('address');
 			if(Request::input('selectprice') == 'Free'){
 				$event->fee = 'Free';
@@ -244,6 +244,7 @@ class EventController extends Controller {
 			$unixtotime = strtotime($totime);
 			$event->totime = $unixtotime;
 			$event->address = Request::input('address');
+			$event->city = Request::input('city');
 			if(Request::input('selectprice') == 'Free'){
 				$event->fee = 'Free';
 			}else{
@@ -301,7 +302,7 @@ class EventController extends Controller {
 				      'email' => Request::get('stripeEmail'),
 				      'card'  => $token
 				  ));
-				  
+
 				  $charge = \Stripe\Charge::create(array(
 				      'customer' => $customer->id,
 				      'amount'   => $event->fee,

@@ -36,7 +36,7 @@
 							</div>
 						</div>	
 						<div class="form-group">
-							<input type="text" name="title" class="form-control" placeholder="Event Title">
+							<input type="text" name="title" class="form-control" placeholder="Event Title" required>
 						</div>
 						<div class="form-group" style="float:left; margin-right: 2%; width: 49%;">
 			                <label for="dtp_input1" class="col-md-2 control-label">From: </label>
@@ -74,12 +74,13 @@
 						</div>
 						<div class="form-group">
 							<input type="text" name="address" id="address" class="form-control" placeholder="Address">
+							<input type="hidden" name="city" id="city" class="form-control">
 						</div>
 						<div id="map">
 						</div>
 					
 						<div class="form-group">
-							<textarea name="content" class="form-control" placeholder="Event Description"></textarea>
+							<textarea name="content" class="form-control" placeholder="Event Description" required></textarea>
 						</div>
 
 						<div class="imagezone">
@@ -131,12 +132,11 @@
       window.alert("Autocomplete's returned place contains no geometry");
       return;
     }
-    console.log(place.address_components);
     var components = place.address_components;
     $.each(components, function(i, val){
     	if(val.types[0] == 'locality'){
     		var city = val.long_name;
-    		console.log(city);
+    		$('#city').val(city);
     	}
     })
     // If the place has a geometry, then present it on a map.
