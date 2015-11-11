@@ -48,5 +48,11 @@ class AuthController extends Controller {
             return redirect()->intended('home');
         }
     }
+    public function getLogout()
+    {
+        $this->auth->logout();
+        Session::flush();
+        return redirect('/');
+    }
 
 }
