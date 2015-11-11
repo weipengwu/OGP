@@ -20,7 +20,7 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 Route::get('/auth/login', 'Auth\AuthController@authenticate');
-Route::get('/auth/logout', 'Auth\AuthController@logout')
+Route::get('/auth/logout', 'Auth\AuthController@logout');
 
 Route::group(['middleware' => 'auth'], function(){
 	Route::get('groups/{slug}/events/new', array('uses' => 'EventController@newEvent', 'as' => 'newEvent'));
