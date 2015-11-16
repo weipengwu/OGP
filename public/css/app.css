@@ -3929,7 +3929,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   float: right;
   margin-right: 15px;
   padding: 9px 10px;
-  margin-top: 8px;
+  margin-top: 12px;
   margin-bottom: 8px;
   background-color: transparent;
   background-image: none;
@@ -7716,6 +7716,11 @@ h3 a:hover{
     margin-top: 60px;
     font-size: 12px;
   }
+  .home .eventgroup{
+    width: 70%;
+    float: none;
+    margin: 20px auto;
+  }
 }
 @media (min-width: 768px) {
   .desktop{
@@ -7734,7 +7739,12 @@ h3 a:hover{
   }
   .quickmenu{
     float: right;
+    margin: 0;
   }
+  .navbar-right.quickmenu .dropdown-menu {
+    left: auto;
+    right: 0;
+}
   .navbar-nav.quickmenu > li {
     float: left;
   }
