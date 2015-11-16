@@ -49,7 +49,7 @@ class GroupController extends Controller {
 		}else{
 			//double check brand name
 			$bname = array('name' => Request::input('name'));
-			$rules = array('name' => 'unique|groups,name');
+			$rules = array('name' => 'unique:groups,name');
 			$validator = Validator::make($bname, $rules);
 			if($validator->fails()){
 				return redirect()->back()->withErrors($validator);
