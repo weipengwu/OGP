@@ -7624,6 +7624,9 @@ label.error{
   border: 1px solid #e7e7e7;
   padding: 20px 0;
 }
+#mybrand .row.no-border{
+  border: 0;
+}
 #manageEvents .imgholder{
   height: 100px;
 }

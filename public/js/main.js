@@ -418,12 +418,13 @@ $(document).ready(function(){
 	// })
 	$('#createBrand').validate({
 		submitHandler: function(form) {
-			if($('.checknamepass').is(':visible')){
-				form.submit();
-			}else{
-				$('#createBrand #brandname').focus();
-				$('.checknameerror').show();
-			}
+			// if($('.checknamepass').is(':visible')){
+			// 	form.submit();
+			// }else{
+			// 	$('#createBrand #brandname').focus();
+			// 	$('.checknameerror').show();
+			// }
+			form.submit();
 		}
 	});
 

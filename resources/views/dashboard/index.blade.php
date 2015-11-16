@@ -87,7 +87,7 @@
 					@endforeach
 					</div>
 				@else
-					<div class="row">
+					<div class="row no-border">
 						<h3>You haven't created your brand yet.</h3>
 						<a href="/groups/new" class="createbrand">Create your brand</a>
 					</div>
