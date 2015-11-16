@@ -43,7 +43,7 @@ class GroupController extends Controller {
 		$checkGroup = Group::where('owner',$user)->count();
 		if($checkGroup > 0){
 			//one user can only create one brand
-			return redirect()->back()->withErrors('You can only have one brand!');
+			return redirect()->back()->withErrors('Msg', 'You can only have one brand!');
 		}else{
 			//create new brand
 			$group = new Group();

@@ -60,10 +60,10 @@
 							</div>
 						</div>
 						<div class="form-group selectorigin" data-ng-controller="CountryController">
-							<select class="form-control" data-ng-model="country" data-ng-options="country.name for country in countries" data-ng-change="updateCountry()" required>
+							<select class="form-control" data-ng-model="country" data-ng-options="country.name for country in countries" data-ng-change="updateCountry()">
 								<option value="">Origin (Country)</option>
 							</select>
-							<select class="form-control" data-ng-model="state" data-ng-options="state.name for state in availableStates" required>
+							<select class="form-control" data-ng-model="state" data-ng-options="state.name for state in availableStates">
 								<option value="">Origin (Province/State)</option>
 							</select>
 						</div>

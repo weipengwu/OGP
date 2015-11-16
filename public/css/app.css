@@ -7599,6 +7599,16 @@ h3 a:hover{
   top: 10px;
   display: none;
 }
+label.error{
+  margin-top: 5px;
+  color: red;
+}
+.checknamepass{
+  color: green
+}
+.checknamefail{
+  color: red;
+}
 #mybrand .bannerholder{
   height: 100px;
 }

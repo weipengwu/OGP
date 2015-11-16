@@ -417,8 +417,11 @@ $(document).ready(function(){
 	// })
 	$('#createBrand').validate({
 		submitHandler: function(form) {
-			// do other things for a valid form
-			form.submit();
+			if($('.checknamepass').is(':visible')){
+				form.submit();
+			}else{
+				console.log('fail');
+			}
 		}
 	});
 
