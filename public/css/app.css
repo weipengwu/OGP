@@ -7721,6 +7721,9 @@ h3 a:hover{
     float: none;
     margin: 20px auto;
   }
+  .layout84 .col-md-8, .layout84 .col-md-4, .layout444 .col-md-4, .layout633 .col-md-6, .layout633 .col-md-3, .layout3333 .col-md-3{
+    border-right: 0;
+  }
 }
 @media (min-width: 768px) {
   .desktop{
