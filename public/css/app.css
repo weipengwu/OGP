@@ -7735,6 +7735,9 @@ h3 a:hover{
   .quickmenu{
     float: right;
   }
+  .navbar-nav.quickmenu > li {
+    float: left;
+  }
   .grouplist{
     width: 300px;
     margin: 0 auto 25px auto;
