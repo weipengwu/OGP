@@ -50,7 +50,10 @@ class GroupController extends Controller {
 			//double check brand name
 			$bname = array('name' => Request::input('name'));
 			$rules = array('name' => 'unique:groups,name');
-			$validator = Validator::make($bname, $rules);
+			$messages = [
+			    'name.unique' => 'Brand name already exists, please choose another one',
+			];
+			$validator = Validator::make($bname, $rules, $messages);
 			if($validator->fails()){
 				return redirect()->back()->withErrors($validator);
 			}else{
