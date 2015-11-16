@@ -7642,7 +7642,7 @@ h3 a:hover{
 }
 .postbanner{
   width: 600px;
-  margin: 25px auto;
+  margin: 25px 0;
 }
 .stripe-form{
   clear: both;

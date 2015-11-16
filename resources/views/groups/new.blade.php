@@ -28,7 +28,7 @@
 							<input type="text" name="name" class="form-control" id="brandname" placeholder="Brand Name" required>
 							<div class="checknamepass checkname"><i class="fa fa-check"></i></div>
 							<div class="checknamefail checkname"><i class="fa fa-times"></i></div>
-							<div class="help-block with-errors">Please fill out this field.</div>
+							<!-- <div class="help-block with-errors">Please fill out this field.</div> -->
 						</div>
 						<div class="form-group">
 							<select name="category" class="form-control" required>
@@ -48,7 +48,7 @@
 								<option value="Travel">Travel</option>
 								<option value="Other">Other</option>
 							</select>
-							<div class="help-block with-errors">Please select a catogory.</div>
+							<!-- <div class="help-block with-errors">Please select a catogory.</div> -->
 						</div>
 						<div class="form-group">
 							<input type="text" name="tag" class="form-control" placeholder="Brand Tag">
@@ -98,7 +98,7 @@
 						</div> -->
 						<div class="form-group">
 							<textarea name="description" maxlength="300" class="form-control" placeholder="Brief Introduction(Tips: Please use the language of target markets.)" required></textarea>
-							<div class="help-block with-errors">Please fill out this field.</div>
+							<!-- <div class="help-block with-errors">Please fill out this field.</div> -->
 						</div>
 						<p class="small">I hereby pledge that the content filled in and the additional materials provided are true and authentic in every aspect.</p>
 						<input type="submit" class="btn btn-logo submit" value="Submit">
