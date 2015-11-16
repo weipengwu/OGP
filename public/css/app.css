@@ -7609,6 +7609,9 @@ label.error{
 .checknamefail, .checknameerror{
   color: red;
 }
+.checknameerror{
+  display: none;
+}
 #mybrand .bannerholder{
   height: 100px;
 }

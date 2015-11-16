@@ -8,6 +8,9 @@
 				<div class="panel-heading"><h3>CREATE YOUR BRAND</h3></div>
 
 				<div class="panel-body">
+					@if (Session::has('message'))
+					   <div class="alert alert-danger"><strong>Whoops!</strong> {{ Session::get('message') }}</div>
+					@endif
 					<form action="{{ URL::route('createGroup') }}" method="post" enctype="multipart/form-data" id="createBrand">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 						<input type="hidden" name="creator" value="{{ Auth::user()->id }}">
