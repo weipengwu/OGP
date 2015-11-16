@@ -402,19 +402,25 @@ $(document).ready(function(){
 			})
 		}
 	})
-	$('#createBrand .submit').on('click',function(e){
-		if($('.checknamepass').is(':visible')){
-			console.log('pass');
-			$('#createBrand').validate({
-			  submitHandler: function(form) {
-			    // do other things for a valid form
-			    form.submit();
-			  }
-			});
-		}else{
-			e.preventDefault();
+	// $('#createBrand .submit').on('click',function(e){
+	// 	if($('.checknamepass').is(':visible')){
+	// 		console.log('pass');
+	// 		$('#createBrand').validate({
+	// 		  submitHandler: function(form) {
+	// 		    // do other things for a valid form
+	// 		    form.submit();
+	// 		  }
+	// 		});
+	// 	}else{
+	// 		e.preventDefault();
+	// 	}
+	// })
+	$('#createBrand').validate({
+		submitHandler: function(form) {
+			// do other things for a valid form
+			form.submit();
 		}
-	})
+	});
 
 
 	// Dropzone.options.createpost = { // The camelized version of the ID of the form element
