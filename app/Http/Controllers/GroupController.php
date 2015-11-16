@@ -48,14 +48,11 @@ class GroupController extends Controller {
 			return redirect()->back();
 		}else{
 			//double check brand name
-			$bname = array('name' => Request::input('name'));
-			$rules = array('name' => 'unique:groups,name');
-			$messages = [
-			    'name.unique' => 'Brand name already exists, please choose another one',
-			];
-			$validator = Validator::make($bname, $rules, $messages);
-			if($validator->fails()){
-				return redirect()->back()->withErrors($validator);
+			$bname =  Request::input('name');
+			$checkBname = Group::where('name',$bname)->count();
+			if($checkBname > 0){
+				Session::flash('message', "Brand name is unavailable, please choose another one.");
+				return redirect()->back();
 			}else{
 				//create new brand
 				$group = new Group();

@@ -31,7 +31,7 @@
 							<input type="text" name="name" class="form-control" id="brandname" placeholder="Brand Name" required>
 							<div class="checknamepass checkname"><i class="fa fa-check"></i></div>
 							<div class="checknamefail checkname"><i class="fa fa-times"></i></div>
-							<div class="help-block checknameerror">Brand name unavailable, please choose another one.</div>
+							<div class="help-block checknameerror">Brand name is unavailable, please choose another one.</div>
 						</div>
 						<div class="form-group">
 							<select name="category" class="form-control" required>
