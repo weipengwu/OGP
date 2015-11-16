@@ -398,6 +398,7 @@ $(document).ready(function(){
 				else if(response == 'pass'){
 					$('.checknamefail').hide();
 					$('.checknamepass').show();
+					$('.checknameerror').hide();
 				}
 			})
 		}
@@ -420,7 +421,8 @@ $(document).ready(function(){
 			if($('.checknamepass').is(':visible')){
 				form.submit();
 			}else{
-				console.log('fail');
+				$('#createBrand #brandname').focus();
+				$('.checknameerror').show();
 			}
 		}
 	});

@@ -7606,7 +7606,7 @@ label.error{
 .checknamepass{
   color: green
 }
-.checknamefail{
+.checknamefail, .checknameerror{
   color: red;
 }
 #mybrand .bannerholder{
