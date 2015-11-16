@@ -56,7 +56,7 @@
 					<div class="logoslogan">
 						<img src="{{ asset('img/logo_transparent.png') }}" width="70">
 						<h1>OH GOOD PARTY</h1>
-						<h2>Global Brand Strategy Community</h2>
+						<h2>Leading Brands Community</h2>
 					</div>
 					<!-- <h3>SIGN UP TO OH GOOD PARTY</h3> -->
 					<!-- <p class="gotosignin">Already have an account? <a href="url('/auth/login') ">Sign in</a></p> -->
@@ -92,10 +92,10 @@
 							<input type="password" class="form-control" name="password_confirmation" placeholder="Confirm Password">
 						</div>
 
-						<div class="othersocials">
+						<!-- <div class="othersocials">
 							<p>Sign up faster by connecting your social network</p>
 							<a href="" class="social_icons social_tw"><i class="fa fa-twitter"></i></a> <a href="" class="social_icons social_fb"><i class="fa fa-facebook"></i></a> <a href="" class="social_icons social_wc"><i class="fa fa-wechat"></i></a> <a href="" class="social_icons social_wb"><i class="fa fa-weibo"></i></a>
-						</div>
+						</div> -->
 
 						<div class="form-group">
 								<button type="submit" class="btn btn-blue">
