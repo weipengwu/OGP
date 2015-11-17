@@ -103,7 +103,9 @@ class GroupController extends Controller {
 				$group->category = Request::input('category');
 				$group->tag = Request::input('tag');
 				$group->website = Request::input('website');
-				$group->type = Request::input('type');
+				$group->originCountry = Request::input('originCountry');
+				$group->originProvince = Request::input('originProvince');
+				$group->target = Request::input('target');
 				$group->description = nl2br(Request::input('description'));
 				$group->save();
 					
@@ -159,15 +161,16 @@ class GroupController extends Controller {
 			//do nothing
 		}
 
-		//$group->creator = Request::input('creator');
-		//$group->owner = Request::input('owner');
-		//$group->name = Request::input('name');
-		//$slug = slug(Request::input('name')).'-'.generateRandomString();
-		//$group->slug = $slug;
+
+		$group->name = Request::input('name');
+		$slug = slug(Request::input('name'));
+		$group->slug = $slug;
 		$group->category = Request::input('category');
 		$group->tag = Request::input('tag');
 		$group->website = Request::input('website');
-		$group->type = Request::input('type');
+		$group->originCountry = Request::input('originCountry');
+		$group->originProvince = Request::input('originProvince');
+		$group->target = Request::input('target');
 		$group->description = nl2br(Request::input('description'));
 		$group->save();
 			

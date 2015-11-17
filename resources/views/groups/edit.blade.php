@@ -8,9 +8,12 @@
 				<div class="panel-heading"><h3>EDIT MY BRAND</h3></div>
 
 				<div class="panel-body">
-					<form action="{{ URL::route('editingGroup') }}" method="post" enctype="multipart/form-data">
+					<form action="{{ URL::route('editingGroup') }}" method="post" enctype="multipart/form-data" id="createBrand">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 						<input type="hidden" name="id" value="{{ $group->id }}">
+
+						<h4>UPLOAD IMAGES FOR YOUR BRAND</h4>
+						<hr>
 						<div class="form-group">
 							<label>Upload Your New Brand Logo</label>
 							<input type="file" id="g-profile" name="g-profile" accept="image/*">
@@ -19,8 +22,13 @@
 							<label>Upload Your New Brand Banner Image</label>
 							<input type="file" id="g-banner" name="g-banner" accept="image/*">
 						</div>
-						<div class="form-group">
-							<input type="text" name="name" class="form-control" value="{{ $group->name }}" disabled>
+						<h4>TELL US MORE ABOUT YOUR BRAND</h4>
+						<hr>
+						<div class="form-group" style="position:relative">
+							<input type="text" name="name" class="form-control" id="brandname" placeholder="Brand Name" value="{{ $group->name }}" required>
+							<div class="checknamepass checkname"><i class="fa fa-check"></i></div>
+							<div class="checknamefail checkname"><i class="fa fa-times"></i></div>
+							<div class="help-block checknameerror">Brand name is unavailable, please choose another one.</div>
 						</div>
 						<div class="form-group">
 							<select name="category" class="form-control">
@@ -42,13 +50,44 @@
 							</select>
 						</div>
 						<div class="form-group">
-							<input type="text" name="tag" class="form-control" value="{{ $group->tag }}">
+							<input type="text" name="tag" class="form-control" placeholder="Brand Tag" value="{{ $group->tag }}">
 						</div>
 						<div class="form-group">
-							<input type="text" name="website" class="form-control" value="{{ $group->website }}">
+							<div class="input-group">
+								<div class="input-group-addon">http://</div>
+								<input type="text" name="website" class="form-control" placeholder="Brand Website" value="{{ $group->website }}">
+							</div>
+						</div>
+						<div class="form-group selectorigin" data-ng-controller="CountryController">
+							<select class="form-control" name="originCountry" data-ng-model="country" data-ng-options="country.name for country in countries" data-ng-change="updateCountry()">
+								<option value="">Origin (Country)</option>
+							</select>
+							<select class="form-control" name="originProvince" data-ng-model="state" data-ng-options="state.name for state in availableStates">
+								<option value="">Origin (Province/State)</option>
+							</select>
 						</div>
 						<div class="form-group">
-							<textarea name="description" maxlength="300" class="form-control">{!! html_entity_decode($group->description) !!}</textarea>
+							<select name="target" class="form-control" required>
+								<option value="">Target Market</option>
+								<option value="North America">North America</option>
+								<option value="Westen Europe">Westen Europe</option>
+								<option value="China">China</option>
+							</select>
+						</div>
+						<div class="form-group translation">
+							<span>Do you need translation</span> <span class="radio"><input type="radio" name="translate" id="yestranslate" value="yes" /> <label for="yestranslate">Yes</label> </span><span class="radio"><input type="radio" name="translate" id="notranslate" value="no" checked /> <label for="notranslate">No</label></span>
+						</div>
+						<div class="form-group trlanguages">
+							<select name="trlang" class="form-control">
+								<option value="">Select Target Language</option>
+								<option value="Chinese">Chinese</option>
+								<option value="English">English</option>
+								<option value="French">French</option>
+								<option value="Spanish">Spanish</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<textarea name="description" maxlength="300" placeholder="Brief Introduction(Tips: Please use the language of target markets.)" class="form-control" required>{!! html_entity_decode($group->description) !!}</textarea>
 						</div>
 						<input type="submit" class="btn btn-logo" value="Submit">
 					</form>

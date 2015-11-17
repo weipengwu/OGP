@@ -62,10 +62,10 @@
 							</div>
 						</div>
 						<div class="form-group selectorigin" data-ng-controller="CountryController">
-							<select class="form-control" data-ng-model="country" data-ng-options="country.name for country in countries" data-ng-change="updateCountry()">
+							<select class="form-control" name="originCountry" data-ng-model="country" data-ng-options="country.name for country in countries" data-ng-change="updateCountry()">
 								<option value="">Origin (Country)</option>
 							</select>
-							<select class="form-control" data-ng-model="state" data-ng-options="state.name for state in availableStates">
+							<select class="form-control" name="originProvince" data-ng-model="state" data-ng-options="state.name for state in availableStates">
 								<option value="">Origin (Province/State)</option>
 							</select>
 						</div>
@@ -78,7 +78,7 @@
 							</select>
 						</div>
 						<div class="form-group translation">
-							<span>Do you need translation</span> <span class="radio"><input type="radio" name="translate" id="yestranslate" value="yes" /> <label for="yestranslate">Yes</label> </span><span class="radio"><input type="radio" name="translate" id="notranslate" value="no" /> <label for="notranslate">No</label></span>
+							<span>Do you need translation</span> <span class="radio"><input type="radio" name="translate" id="yestranslate" value="yes" /> <label for="yestranslate">Yes</label> </span><span class="radio"><input type="radio" name="translate" id="notranslate" value="no" checked /> <label for="notranslate">No</label></span>
 						</div>
 						<div class="form-group trlanguages">
 							<select name="trlang" class="form-control">

@@ -89,7 +89,8 @@
 				          data-amount="{{ $event->fee * 100 }}"
 				          data-name="{{ getGroupName($event->group_id) }}"
 				          data-image='<?php echo url()."/".getGroupProfile($event->group_id);?>'
-				          data-currency='cad'></script>
+				          data-currency='cad'
+				          data-alipay="true"></script>
 				</form>
 				@endif
 			</div>
