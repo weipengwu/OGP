@@ -107,7 +107,7 @@ class GroupController extends Controller {
 				$group->originProvince = Request::input('originProvince');
 				$group->target = Request::input('target');
 				if(Request::input('translate') == 'no'){
-					$group->translate = 'no'
+					$group->translate = 'no';
 				}else{
 					$group->translate = Request::input('trlang');
 				}
@@ -177,7 +177,7 @@ class GroupController extends Controller {
 		$group->originProvince = Request::input('originProvince');
 		$group->target = Request::input('target');
 		if(Request::input('translate') == 'no'){
-			$group->translate = 'no'
+			$group->translate = 'no';
 		}else{
 			$group->translate = Request::input('trlang');
 		}
