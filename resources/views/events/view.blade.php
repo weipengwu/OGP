@@ -97,11 +97,9 @@
 			<div class="col-md-8 col-md-offset-2">
 			<h2>Interested</h2>
 			<?php
-				$alllikes = DB::table('eventlikes')->where('event_id', '=', $event->id)->take(10);
-				var_dump($alllikes);
+				$alllikes = DB::table('eventlikes')->where('event_id', '=', $event->id)->take(10)->get();
+				if(count($alllikes) > 0):
 				foreach ($alllikes as $eventlike) :
-					var_dump($eventlike);
-				die();
 					$uid = $eventlike->author_id;
 					$user_profile = DB::table('user_meta')->where('user_id', $uid)->where('meta_key', 'profile')->get();
 					if(count($user_profile) > 0):
@@ -113,7 +111,7 @@
 						<div class="eventlikeprofile">
 							<div class="top-profile">{{ getFirstCharter(Auth::user()->name) }}</div>
 						</div>
-			<?php endif; endforeach;?>
+			<?php endif; endforeach;endif;?>
 			<hr>
 			<h2>Attentees</h2>
 			</div>
