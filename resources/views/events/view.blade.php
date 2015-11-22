@@ -105,11 +105,11 @@
 					if(count($user_profile) > 0):
 			?>
 						<div class="eventlikeprofile">
-							<div class="top-profile" style="background: url(<?php echo url()."/".$user_profile[0]->meta_value;?>) center center no-repeat; background-size: cover; width: 100px; height: 100px; border-radius: 50px"></div>
+							<div class="top-profile" style="background: url(<?php echo url()."/".$user_profile[0]->meta_value;?>) center center no-repeat; background-size: cover; width: 50px; height: 50px; border-radius: 50px"></div>
 						</div>
 					<?php else: ?>
 						<div class="eventlikeprofile">
-							<div class="top-profile">{{ getFirstCharter(Auth::user()->name) }}</div>
+							<div class="top-profile" style="width: 50px; height: 50px;">{{ getFirstCharter(Auth::user()->name) }}</div>
 						</div>
 			<?php endif; endforeach;endif;?>
 			<hr>

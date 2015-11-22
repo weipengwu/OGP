@@ -7717,7 +7717,7 @@ label.error{
 }
 .eventlikeprofile{
   display: inline-block;
-  margin: 0 10px;
+  margin: 10px;
 }
 
 /*** media query ***/
