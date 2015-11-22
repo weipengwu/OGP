@@ -99,6 +99,8 @@
 			<?php
 				$alllikes = DB::table('eventlikes')->where('event_id', '=', $event->id)->take(10);
 				foreach ($alllikes as $eventlike) :
+					var_dump($eventlike);
+				die();
 					$uid = $eventlike->author_id;
 					$user_profile = DB::table('user_meta')->where('user_id', $uid)->where('meta_key', 'profile')->get();
 					if(count($user_profile) > 0):
