@@ -96,6 +96,7 @@
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2">
 			<h2>Interested</h2>
+			<div class="interestWrapper">
 			<?php
 				$alllikes = DB::table('eventlikes')->where('event_id', '=', $event->id)->take(10)->get();
 				if(count($alllikes) > 0):
@@ -112,6 +113,7 @@
 							<div class="top-profile" style="width: 50px; height: 50px;">{{ getFirstCharter(Auth::user()->name) }}</div>
 						</div>
 			<?php endif; endforeach;endif;?>
+			</div>
 			<hr>
 			<h2>Attentees</h2>
 			</div>

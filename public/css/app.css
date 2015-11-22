@@ -7715,8 +7715,11 @@ label.error{
 .pagination{
   visibility: hidden;
 }
-.eventlikeprofile{
+.interestWrapper{
   display: inline-block;
+}
+.eventlikeprofile{
+  float: left;
   margin: 10px;
 }
 
