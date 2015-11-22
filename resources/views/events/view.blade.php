@@ -97,7 +97,7 @@
 			<div class="col-md-8 col-md-offset-2">
 			<h2>Interested</h2>
 			<?php
-				$alllikes = DB::table('eventlikes')->where('event_id', '=', $event->id);
+				$alllikes = DB::table('eventlikes')->where('event_id', '=', $event->id)->take(10);
 				foreach ($alllikes as $eventlike) :
 					$uid = $eventlike->author_id;
 					$user_profile = DB::table('user_meta')->where('user_id', $uid)->where('meta_key', 'profile')->get();
