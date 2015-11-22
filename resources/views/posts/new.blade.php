@@ -18,15 +18,15 @@
 							</ul>
 						</div>
 					@endif
-					<form action="{{ URL::route('createPost') }}" method="post" enctype="multipart/form-data">
+					<form action="{{ URL::route('createPost') }}" method="post" enctype="multipart/form-data" id="createPost">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 						<input type="hidden" name="author" value="{{ Auth::user()->id }}">
 						<input type="hidden" name="gid" value="<?php echo $gid;?>">
 						<div class="form-group">
-							<input type="text" name="title" class="form-control" placeholder="Post Title">
+							<input type="text" name="title" class="form-control" placeholder="Post Title" required>
 						</div>
 						<div class="form-group">
-							<textarea name="content" class="form-control" id="posteditor"></textarea>
+							<textarea name="content" class="form-control" id="posteditor" required></textarea>
 						</div>
 						<div class="imagezone">
 							<div class="form-group form-img1">

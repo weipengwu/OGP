@@ -7612,6 +7612,9 @@ label.error{
 .checknameerror{
   display: none;
 }
+#createBrand label.small{
+  margin-left: 8px;
+}
 #mybrand .bannerholder{
   height: 100px;
 }
@@ -7711,6 +7714,10 @@ label.error{
 }
 .pagination{
   visibility: hidden;
+}
+.eventlikeprofile{
+  display: inline-block;
+  margin: 0 10px;
 }
 
 /*** media query ***/

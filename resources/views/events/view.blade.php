@@ -6,7 +6,7 @@
 </div>
 <div class="statusbar">
 			<div class="left">
-				<span>{{ $event->likes->count()}} Interested</span> 
+				<span class="leftlikenum">{{ $event->likes->count()}} Interested</span> 
 			</div>
 		<div class="right">
 			<div class="sharebox">
@@ -43,44 +43,18 @@
 						<?php endif; ?>
 					</div>
 					<div class="eventinfo"> {{ $event->address }}</div>
-					<div class="eventinfo eventfee">{{ $event->fee }}</div>
+					<div class="eventinfo eventfee">
+						@if($event->fee == 'Free') 
+							{{ $event->fee }}
+						@else
+							C ${{ $event->fee }}
+						@endif
+					</div>
 				</div>
 				@if($event->fee == 'Free')
 
 				@else
-				<!-- <form action="{{ url('ogppay') }}" method="post" class="stripe-form">
-				<script src="https://checkout.stripe.com/checkout.js"></script>
-				<div class="purchaseholder">
-				<button id="purchaseButton">Purchase</button>
-				</div>
-				<script>
-				  var handler = StripeCheckout.configure({
-				    key: 'pk_test_6pRNASCoBOKtIshFeQd4XMUh',
-				    image: '<?php echo url()."/".getGroupProfile($event->group_id);?>',
-				    locale: 'auto',
-				    token: function(token) {
-				      // Use the token to create the charge with a server-side script.
-				      // You can access the token ID with `token.id`
-				    }
-				  });
 
-				  $('#purchaseButton').on('click', function(e) {
-				    // Open Checkout with further options
-				    handler.open({
-				      name: '{{ getGroupName($event->group_id) }}',
-				      description: '{{ $event->title }}',
-				      amount: {{ $event->fee * 100 }},
-				      currency: 'cad'
-				    });
-				    e.preventDefault();
-				  });
-
-				  // Close Checkout on page navigation
-				  $(window).on('popstate', function() {
-				    handler.close();
-				  });
-				</script>
-				</form> -->
 				<form action="{{ URL::route('eventCharge') }}" method="post" class="stripe-form">
 				  <input type="hidden" name="eid" value="{{ $event->id }}">
 				  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
@@ -122,6 +96,21 @@
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2">
 			<h2>Interested</h2>
+			<?php
+				$alllikes = DB::table('eventlikes')->where('event_id', '=', $event->id);
+				foreach ($alllikes as $eventlike) :
+					$uid = $eventlike->author_id;
+					$user_profile = DB::table('user_meta')->where('user_id', $uid)->where('meta_key', 'profile')->get();
+					if(count($user_profile) > 0):
+			?>
+						<div class="eventlikeprofile">
+							<div class="top-profile" style="background: url(<?php echo url()."/".$user_profile[0]->meta_value;?>) center center no-repeat; background-size: cover; width: 100px; height: 100px; border-radius: 50px"></div>
+						</div>
+					<?php else: ?>
+						<div class="eventlikeprofile">
+							<div class="top-profile">{{ getFirstCharter(Auth::user()->name) }}</div>
+						</div>
+			<?php endif; endforeach;?>
 			<hr>
 			<h2>Attentees</h2>
 			</div>

@@ -145,11 +145,6 @@
 					<div class="eventgroup">
 						<div class="eventgroup-list">
 							<a href="/events/{{ $event->id }}">
-							<!-- <div class="col" style="background: #ccc url('{{ $event->banner }}');background-size:cover;">
-								<div class="caption">
-									<h3>{{ $event->title }}</h3>
-								</div>
-							</div> -->
 							<div class="imgholder" style="background: url('<?php echo url()."/".$event->banner;?>') center center; background-size: cover;"></div>
 							</a>
 							<p class="location">{{ $event->city }}</p>
@@ -166,7 +161,7 @@
 
 												<?php endif; ?>
 											</p>
-											</div>
+							</div>
 						</div>
 					</div>
 					<?php $e++;?>
@@ -423,7 +418,7 @@
     var loading_options = {
         finishedMsg: "",
         msgText: "<div class='center'>Loading...</div>",
-        //img: null
+        img: "{{ asset('img/spinner.gif') }}"
     };
     var pagesNum = <?php echo $allposts->lastPage(); ?>; 
     $('#allposts').infinitescroll({
