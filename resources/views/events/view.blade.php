@@ -98,6 +98,7 @@
 			<h2>Interested</h2>
 			<?php
 				$alllikes = DB::table('eventlikes')->where('event_id', '=', $event->id)->take(10);
+				var_dump($alllikes);
 				foreach ($alllikes as $eventlike) :
 					var_dump($eventlike);
 				die();
