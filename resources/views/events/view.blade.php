@@ -61,6 +61,7 @@
 				          data-key="{{Config::get('stripe.stripe.public')}}"
 				          data-description="{{ $event->title }}"
 				          data-amount="{{ $event->fee * 100 }}"
+				          data-label="Reserve"
 				          data-name="{{ getGroupName($event->group_id) }}"
 				          data-image='<?php echo url()."/".getGroupProfile($event->group_id);?>'
 				          data-currency='cad'
@@ -110,7 +111,7 @@
 						</div>
 					<?php else: ?>
 						<div class="eventlikeprofile">
-							<div class="top-profile" style="width: 50px; height: 50px;">{{ getFirstCharter(Auth::user()->name) }}</div>
+							<div class="top-profile" style="width: 50px; height: 50px; line-height: 50px;">{{ getFirstCharter(Auth::user()->name) }}</div>
 						</div>
 			<?php endif; endforeach;endif;?>
 			</div>

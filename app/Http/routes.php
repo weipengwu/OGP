@@ -22,6 +22,8 @@ Route::controllers([
 Route::get('/auth/login', 'Auth\AuthController@authenticate');
 Route::get('/auth/logout', 'Auth\AuthController@logout');
 
+Route::get('/lang/{lang}', 'LangController@switchLang');
+
 Route::group(['middleware' => 'auth'], function(){
 	Route::get('groups/{slug}/events/new', array('uses' => 'EventController@newEvent', 'as' => 'newEvent'));
 	Route::get('groups/new', array('uses' => 'GroupController@newGroup', 'as' => 'newGroup'));

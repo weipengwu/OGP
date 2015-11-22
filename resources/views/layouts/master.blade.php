@@ -117,8 +117,8 @@
 					@else
 					<li><a href="{{ url('/home') }}">OGP</a></li>
 					@endif
-					<li><a href="{{ url('/groups') }}">BRANDS</a></li>
-					<li><a href="{{ url('/events') }}">EVENTS</a></li>
+					<li><a href="{{ url('/groups') }}">{{ trans(menu.brands) }}</a></li>
+					<li><a href="{{ url('/events') }}">{{ trans(menu.events) }}</a></li>
 					<!-- <li><a href="{{ url('/missions') }}">MISSIONS</a></li> -->
 				</ul>
 
@@ -152,9 +152,19 @@
 						</li>
 					@endif
 					<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><img src="{{ asset('/img/en_icon.png') }}" alt="English" width="22" /></a>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+							@if(App::getLocale() == 'en')
+								<img src="{{ asset('/img/en_icon.png') }}" alt="English" width="22" />
+							@else
+								<img src="{{ asset('/img/en_icon.png') }}" alt="Chinese" width="22" />
+							@endif
+							</a>
 							<ul class="dropdown-menu" role="menu">
-								<li><a href="#">中文</a></li>
+								@if(App::getLocale() == 'en')
+									<li><a href="{{  url() }}/lang/zh">中文</a></li>
+								@else
+									<li><a href="{{  url() }}/lang/en">English</a></li>
+								@endif
 								<!-- <li><a href="#">Français</a></li>
 								<li><a href="#">Español</a></li> -->
 							</ul>
