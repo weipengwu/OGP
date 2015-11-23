@@ -65,7 +65,7 @@
 						<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><img src="{{ asset('/img/create_brand_icon.png') }}" alt="Create Brand" width="24" /></a>
 						<ul class="dropdown-menu" role="menu">
-							<li><a href="<?php echo url(); ?>/groups/new">Create your brand</a></li>
+							<li><a href="<?php echo url(); ?>/groups/new">{{ trans('headermenu.createBrand') }}</a></li>
 						</ul>
 					</li>
 					@endif
@@ -77,16 +77,24 @@
 						</li>
 					@endif
 					<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><img src="{{ asset('/img/en_icon.png') }}" alt="English" width="22" /></a>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+							@if(App::getLocale() == 'en')
+								<img src="{{ asset('/img/en_icon.png') }}" alt="English" width="22" />
+							@else
+								<img src="{{ asset('/img/en_icon.png') }}" alt="Chinese" width="22" />
+							@endif
+							</a>
 							<ul class="dropdown-menu" role="menu">
-								<li><a href="#">中文</a></li>
-								<!-- <li><a href="#">Français</a></li>
-								<li><a href="#">Español</a></li> -->
+								@if(App::getLocale() == 'en')
+									<li><a href="{{  url() }}/lang/zh">中文</a></li>
+								@else
+									<li><a href="{{  url() }}/lang/en">English</a></li>
+								@endif
 							</ul>
 						</li>
 					@if (Auth::guest())
-						<li><a href="{{ url('/auth/login') }}">SIGN IN</a></li>
-						<li><a href="{{ url('/auth/register') }}">SIGN UP</a></li>
+						<li><a href="{{ url('/auth/login') }}">{{ trans('headermenu.signin') }}</a></li>
+						<li><a href="{{ url('/auth/register') }}">{{ trans('headermenu.signup') }}</a></li>
 					@else
 						<li class="dropdown">
 							<?php $id = Auth::user()->id; $user_profile = DB::table('user_meta')->where('user_id', $id)->where('meta_key', 'profile')->get();?>
@@ -140,7 +148,7 @@
 						<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><img src="{{ asset('/img/create_brand_icon.png') }}" alt="Create Brand" width="24" /></a>
 						<ul class="dropdown-menu" role="menu">
-							<li><a href="<?php echo url(); ?>/groups/new">Create your brand</a></li>
+							<li><a href="<?php echo url(); ?>/groups/new">{{ trans('headermenu.createBrand') }}</a></li>
 						</ul>
 					</li>
 					@endif
@@ -165,13 +173,11 @@
 								@else
 									<li><a href="{{  url() }}/lang/en">English</a></li>
 								@endif
-								<!-- <li><a href="#">Français</a></li>
-								<li><a href="#">Español</a></li> -->
 							</ul>
 						</li>
 					@if (Auth::guest())
-						<li><a href="{{ url('/auth/login') }}">SIGN IN</a></li>
-						<li><a href="{{ url('/auth/register') }}">SIGN UP</a></li>
+						<li><a href="{{ url('/auth/login') }}">{{ trans('headermenu.signin') }}</a></li>
+						<li><a href="{{ url('/auth/register') }}">{{ trans('headermenu.signup') }}</a></li>
 					@else
 						<li class="dropdown">
 							<?php $id = Auth::user()->id; $user_profile = DB::table('user_meta')->where('user_id', $id)->where('meta_key', 'profile')->get();?>
