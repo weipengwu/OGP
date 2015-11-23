@@ -29,7 +29,7 @@
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
 </head>
-<body style="background: url({{ asset('img/cover1.jpg') }}) no-repeat center center fixed; background-size: cover;">
+<body style="background: url(<?php echo url();?>/img/cover<?php echo rand(1,3);?>.jpg) no-repeat center center fixed; background-size: cover;">
 	<nav class="navbar navbar-default" style="background: transparent; border: 0">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -41,8 +41,8 @@
 
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="/" class="login-explore"><i class="fa fa-compass"></i> Explore OGP</a></li>
-					<li><a href="{{ url('/auth/login') }}" id="login-in">SIGN IN</a></li>
-					<li><a href="{{ url('/auth/register') }}" id="login-up">SIGN UP</a></li>	
+					<li><a href="{{ url('/auth/login') }}" id="login-in">{{ trans('headermenu.signin') }}</a></li>
+					<li><a href="{{ url('/auth/register') }}" id="login-up">{{ trans('headermenu.signup') }}</a></li>	
 				</ul>
 			</div>
 		</div>
@@ -98,8 +98,8 @@
 						</div> -->
 
 						<div class="form-group">
-								<button type="submit" class="btn btn-blue">
-									SIGN UP
+								<button type="submit" class="btn btn-logo">
+									{{ trans('headermenu.signup') }}
 								</button>
 						</div>
 						<div class="privacy">

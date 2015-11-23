@@ -7733,7 +7733,14 @@ label.error{
   float: left;
   margin: 10px;
 }
-
+.page404{
+  text-align: center;
+  margin-top: 100px;
+}
+.page404 h1{
+  color: #fff;
+  margin-bottom: 50px;
+}
 /*** media query ***/
 @media (max-width: 1199px){
   .grouplist .bannerholder{

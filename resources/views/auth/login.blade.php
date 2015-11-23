@@ -40,8 +40,8 @@
 
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="/" class="login-explore"><i class="fa fa-compass"></i> Explore OGP</a></li>
-					<li><a href="{{ url('/auth/login') }}" id="login-in">SIGN IN</a></li>
-					<li><a href="{{ url('/auth/register') }}" id="login-up">SIGN UP</a></li>	
+					<li><a href="{{ url('/auth/login') }}" id="login-in">{{ trans('headermenu.signin') }}</a></li>
+					<li><a href="{{ url('/auth/register') }}" id="login-up">{{ trans('headermenu.signup') }}</a></li>	
 				</ul>
 			</div>
 		</div>
@@ -83,7 +83,7 @@
 						</div>
 
 						<div class="form-group">
-							<button type="submit" class="btn btn-blue">Sign in</button>
+							<button type="submit" class="btn btn-logo">{{ trans('headermenu.signin') }}</button>
 						</div>
 						<div class="form-group">
 							<a class="forget" href="{{ url('/password/email') }}">Forgot Your Password?</a>
