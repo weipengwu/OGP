@@ -7681,6 +7681,17 @@ label.error{
     font-size: 14px;
     line-height: 1.42857143;
 }
+.stripe-button-el{
+  background: #fc6c25;
+  border-radius: 0;
+    padding: 5px 15px;
+    box-shadow: none;
+}
+.stripe-button-el span{
+  background: #fc6c25;
+  box-shadow: none;
+    text-shadow: none;
+}
 #comments{
   margin-top: 30px;
 }
