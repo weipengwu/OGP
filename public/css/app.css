@@ -7438,6 +7438,12 @@ h3 a:hover{
     padding: 10px 15px !important;
     margin-right: 35px;
   }
+  .login-lang {
+    margin-top: 22px;
+    color: #fff !important;
+    padding: 10px 15px !important;
+    margin-right: 0;
+  }
   .login-explore .fa{
     font-size: 18px;
     position: relative;
