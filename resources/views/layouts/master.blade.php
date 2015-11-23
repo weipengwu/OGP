@@ -117,8 +117,8 @@
 					@else
 					<li><a href="{{ url('/home') }}">OGP</a></li>
 					@endif
-					<li><a href="{{ url('/groups') }}">{{ trans(menu.brands) }}</a></li>
-					<li><a href="{{ url('/events') }}">{{ trans(menu.events) }}</a></li>
+					<li><a href="{{ url('/groups') }}">{{ trans(headermenu.brands) }}</a></li>
+					<li><a href="{{ url('/events') }}">{{ trans(headermenu.events) }}</a></li>
 					<!-- <li><a href="{{ url('/missions') }}">MISSIONS</a></li> -->
 				</ul>
 
