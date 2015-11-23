@@ -40,6 +40,11 @@
 
 
 				<ul class="nav navbar-nav navbar-right">
+					@if(App::getLocale() == 'en')
+						<li><a href="{{  url() }}/lang/zh">中文</a></li>
+					@else
+						<li><a href="{{  url() }}/lang/en">English</a></li>
+					@endif
 					<li><a href="/" class="login-explore"><i class="fa fa-compass"></i> Explore OGP</a></li>
 					<li><a href="{{ url('/auth/login') }}" id="login-in">{{ trans('headermenu.signin') }}</a></li>
 					<li><a href="{{ url('/auth/register') }}" id="login-up">{{ trans('headermenu.signup') }}</a></li>	

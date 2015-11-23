@@ -37,7 +37,7 @@
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
 </head>
-<body>
+<body style="background: url(<?php echo url();?>/img/cover<?php echo rand(1,3);?>.jpg) no-repeat center center fixed; background-size: cover;">
 	<nav class="navbar navbar-default">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -203,7 +203,11 @@
 	<section class="site-container">
 		<div class="page404">
 			<h1>OOPS. SOMETHINGS GONE WRONG.</h1>
+			@if (Auth::guest())
+			<a href="/" class="btn btn-logo">Back to home</a>
+			@else
 			<a href="/home" class="btn btn-logo">Back to home</a>
+			@endif
 		</div>
 	</section>
 	<!-- Scripts -->
