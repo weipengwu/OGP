@@ -39,9 +39,14 @@
 
 
 				<ul class="nav navbar-nav navbar-right">
+					@if(App::getLocale() == 'en')
+						<li><a href="{{  url() }}/lang/zh" class="login-lang">中文</a></li>
+					@else
+						<li><a href="{{  url() }}/lang/en" class="login-lang">English</a></li>
+					@endif
 					<li><a href="/" class="login-explore"><i class="fa fa-compass"></i> Explore OGP</a></li>
-					<li><a href="{{ url('/auth/login') }}" id="login-in">SIGN IN</a></li>
-					<li><a href="{{ url('/auth/register') }}" id="login-up">SIGN UP</a></li>	
+					<li><a href="{{ url('/auth/login') }}" id="login-in">{{ trans('headermenu.signin') }}</a></li>
+					<li><a href="{{ url('/auth/register') }}" id="login-up">{{ trans('headermenu.signup') }}</a></li>	
 				</ul>
 			</div>
 		</div>
@@ -55,7 +60,7 @@
 					<div class="logoslogan">
 						<img src="{{ asset('img/logo_transparent.png') }}" width="70">
 						<h1>OH GOOD PARTY</h1>
-						<h2>Global Brand Strategy Community</h2>
+						<h2>Leading Brands Community</h2>
 					</div>
 					<!-- <h3>SIGN IN TO OH GOOD PARTY</h3> -->
 				</div>
@@ -82,18 +87,8 @@
 							<input type="password" class="form-control" name="password" placeholder="Password">
 						</div>
 
-						<!-- <div class="form-group">
-							<div class="col-md-6 col-md-offset-4">
-								<div class="checkbox">
-									<label>
-										<input type="checkbox" name="remember"> Remember Me
-									</label>
-								</div>
-							</div>
-						</div> -->
-
 						<div class="form-group">
-							<button type="submit" class="btn btn-blue">Sign in</button>
+							<button type="submit" class="btn btn-logo">{{ trans('headermenu.signin') }}</button>
 						</div>
 						<div class="form-group">
 							<a class="forget" href="{{ url('/password/email') }}">Forgot Your Password?</a>

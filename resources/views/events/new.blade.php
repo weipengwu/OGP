@@ -26,8 +26,17 @@
 							<label>Upload Your Banner Image</label>
 							<input type="file" name="banner" id="banner" accept="image/*">
 						</div>
+						<div class="form-group row">
+							<div class="col-md-12">Select the type of your event</div>
+							<div class="col-md-6">
+							<span class="radio"><input type="radio" name="type" id="typepublic" value="public" checked/><label for="typepublic">Public(Anyone can see)</label> </span>
+							</div>
+							<div class="col-md-6">
+							<span class="radio"><input type="radio" name="type" id="typeprivate" value="private" /> <label for="typeprivate">Private(Only members can see)</label></span>
+							</div>
+						</div>	
 						<div class="form-group">
-							<input type="text" name="title" class="form-control" placeholder="Event Title">
+							<input type="text" name="title" class="form-control" placeholder="Event Title" required>
 						</div>
 						<div class="form-group" style="float:left; margin-right: 2%; width: 49%;">
 			                <label for="dtp_input1" class="col-md-2 control-label">From: </label>
@@ -58,23 +67,20 @@
 							<label class="col-md-2" style="text-align: right">C$</label> <div class="col-md-10" style="padding: 0"><input type="text" name="fee" class="form-control" placeholder="Event Fee"></div>
 						</div>
 						<div class="form-group">
+							<input type="number" name="quantity" class="form-control" placeholder="Quantity" min="1" max="1000">
+						</div>
+						<div class="form-group">
 							<input type="text" name="suiteno" class="form-control" placeholder="Suite No.">
 						</div>
 						<div class="form-group">
 							<input type="text" name="address" id="address" class="form-control" placeholder="Address">
+							<input type="hidden" name="city" id="city" class="form-control">
 						</div>
 						<div id="map">
 						</div>
+					
 						<div class="form-group">
-							<div class="col-md-6">
-							<span class="radio"><input type="radio" name="type" id="typepublic" value="public" /><label for="typepublic">Public(Anyone can see)</label> </span>
-							</div>
-							<div class="col-md-6">
-							<span class="radio"><input type="radio" name="type" id="typeprivate" value="private" /> <label for="typeprivate">Private(Only members can see)</label></span>
-							</div>
-						</div>	
-						<div class="form-group">
-							<textarea name="content" class="form-control" placeholder="Event Description"></textarea>
+							<textarea name="content" class="form-control" placeholder="Event Description" required></textarea>
 						</div>
 
 						<div class="imagezone">
@@ -98,9 +104,9 @@
 		</div>
 	</div>
 </div>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANM_gBRmfXCbtGiN768aUL1div-Dd0TU4&callback=initMap&libraries=places"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANM_gBRmfXCbtGiN768aUL1div-Dd0TU4&libraries=places"></script>
 <script>
-	function initMap() {
+	function initialize() {
   var map = new google.maps.Map(document.getElementById('map'), {
     center: { lat: 43.6509618, lng: -79.3824327},
     zoom: 12,
@@ -126,13 +132,19 @@
       window.alert("Autocomplete's returned place contains no geometry");
       return;
     }
-
+    var components = place.address_components;
+    $.each(components, function(i, val){
+    	if(val.types[0] == 'locality'){
+    		var city = val.long_name;
+    		$('#city').val(city);
+    	}
+    })
     // If the place has a geometry, then present it on a map.
     if (place.geometry.viewport) {
       map.fitBounds(place.geometry.viewport);
     } else {
       map.setCenter(place.geometry.location);
-      map.setZoom(17);  // Why 17? Because it looks good.
+      map.setZoom(15); 
     }
     marker.setIcon(/** @type {google.maps.Icon} */({
       url: place.icon,
@@ -144,19 +156,9 @@
     marker.setPosition(place.geometry.location);
     marker.setVisible(true);
 
-    // var address = '';
-    // if (place.address_components) {
-    //   address = [
-    //     (place.address_components[0] && place.address_components[0].short_name || ''),
-    //     (place.address_components[1] && place.address_components[1].short_name || ''),
-    //     (place.address_components[2] && place.address_components[2].short_name || '')
-    //   ].join(' ');
-    // }
-
-    // infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
-    // infowindow.open(map, marker);
   });
 
 }
+google.maps.event.addDomListener(window, 'load', initialize);
 </script>
 @endsection

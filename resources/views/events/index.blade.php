@@ -64,7 +64,13 @@
 												<?php endif; ?>
 											</p>
 											<p class="event-info"><img src="{{ asset('img/address_icon.png') }}" width="15" class="edicons"> {{ $event->address }}</p>
-											<p class="event-info"><img src="{{ asset('img/ticket_icon.png') }}" height="12" class="edicons"> {{ $event->fee }}</p>
+											<p class="event-info"><img src="{{ asset('img/ticket_icon.png') }}" height="12" class="edicons">
+											@if($event->fee == 'Free') 
+												{{ $event->fee }}
+											@else
+												C ${{ $event->fee }}
+											@endif
+											</p>
 										</div>
 
 										<div class="interested">

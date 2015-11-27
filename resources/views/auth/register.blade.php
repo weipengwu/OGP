@@ -29,7 +29,7 @@
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
 </head>
-<body style="background: url({{ asset('img/cover1.jpg') }}) no-repeat center center fixed; background-size: cover;">
+<body style="background: url(<?php echo url();?>/img/cover<?php echo rand(1,3);?>.jpg) no-repeat center center fixed; background-size: cover;">
 	<nav class="navbar navbar-default" style="background: transparent; border: 0">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -40,9 +40,14 @@
 
 
 				<ul class="nav navbar-nav navbar-right">
+					@if(App::getLocale() == 'en')
+						<li><a href="{{  url() }}/lang/zh" class="login-lang">中文</a></li>
+					@else
+						<li><a href="{{  url() }}/lang/en" class="login-lang">English</a></li>
+					@endif
 					<li><a href="/" class="login-explore"><i class="fa fa-compass"></i> Explore OGP</a></li>
-					<li><a href="{{ url('/auth/login') }}" id="login-in">SIGN IN</a></li>
-					<li><a href="{{ url('/auth/register') }}" id="login-up">SIGN UP</a></li>	
+					<li><a href="{{ url('/auth/login') }}" id="login-in">{{ trans('headermenu.signin') }}</a></li>
+					<li><a href="{{ url('/auth/register') }}" id="login-up">{{ trans('headermenu.signup') }}</a></li>	
 				</ul>
 			</div>
 		</div>
@@ -56,7 +61,7 @@
 					<div class="logoslogan">
 						<img src="{{ asset('img/logo_transparent.png') }}" width="70">
 						<h1>OH GOOD PARTY</h1>
-						<h2>Global Brand Strategy Community</h2>
+						<h2>Leading Brands Community</h2>
 					</div>
 					<!-- <h3>SIGN UP TO OH GOOD PARTY</h3> -->
 					<!-- <p class="gotosignin">Already have an account? <a href="url('/auth/login') ">Sign in</a></p> -->
@@ -92,14 +97,14 @@
 							<input type="password" class="form-control" name="password_confirmation" placeholder="Confirm Password">
 						</div>
 
-						<div class="othersocials">
+						<!-- <div class="othersocials">
 							<p>Sign up faster by connecting your social network</p>
 							<a href="" class="social_icons social_tw"><i class="fa fa-twitter"></i></a> <a href="" class="social_icons social_fb"><i class="fa fa-facebook"></i></a> <a href="" class="social_icons social_wc"><i class="fa fa-wechat"></i></a> <a href="" class="social_icons social_wb"><i class="fa fa-weibo"></i></a>
-						</div>
+						</div> -->
 
 						<div class="form-group">
-								<button type="submit" class="btn btn-blue">
-									SIGN UP
+								<button type="submit" class="btn btn-logo">
+									{{ trans('headermenu.signup') }}
 								</button>
 						</div>
 						<div class="privacy">

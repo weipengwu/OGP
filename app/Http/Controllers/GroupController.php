@@ -5,6 +5,7 @@ use App\Following;
 use App\Post;
 use Request;
 use Validator;
+use Session;
 
 class GroupController extends Controller {
 
@@ -39,59 +40,83 @@ class GroupController extends Controller {
 	}
 	public function createGroup()
 	{
-		$group = new Group();
-		if(Request::file('g-profile')){
-			$file = array('g-profile' => Request::file('g-profile'));
-			$rules = array('g-profile' => 'required|image');
-			$validator = Validator::make($file, $rules);
-			if ($validator->fails()){
-				return redirect()->back()->withErrors($validator);
-			}else{
-				if (Request::file('g-profile')->isValid()){
-					$destinationPath = 'uploads'; // upload path
-			      $extension = Request::file('g-profile')->getClientOriginalExtension(); // getting image extension
-			      $fileName = 'Group_'.date('YmdHis').'_'.rand(111111,999999).'.'.$extension; // renameing image
-			      Request::file('g-profile')->move($destinationPath, $fileName); // uploading file to given path
-				  $group->profile = $destinationPath."/".$fileName;
-				}
-			}
+		$user = Request::input('owner');
+		$checkGroup = Group::where('owner',$user)->count();
+		if($checkGroup > 0){
+			//one user can only create one brand
+			Session::flash('message', "You can only have one brand!");
+			return redirect()->back();
 		}else{
-			$group->profile = 'img/defaultbg'.rand(1,8).'.jpg';
-
-		}
-		if(Request::file('g-banner')){
-			$file = array('g-banner' => Request::file('g-banner'));
-			$rules = array('g-banner' => 'required|image');
-			$validator = Validator::make($file, $rules);
-			if ($validator->fails()){
-				return redirect()->back()->withErrors($validator);
+			//double check brand name
+			$bname =  Request::input('name');
+			$checkBname = Group::where('name',$bname)->count();
+			if($checkBname > 0){
+				Session::flash('message', "Brand name is unavailable, please choose another one.");
+				return redirect()->back();
 			}else{
-				if (Request::file('g-banner')->isValid()){
-					$destinationPath = 'uploads'; // upload path
-			      $extension = Request::file('g-banner')->getClientOriginalExtension(); // getting image extension
-			      $fileName = 'Group_'.date('YmdHis').'_'.rand(111111,999999).'.'.$extension; // renameing image
-			      Request::file('g-banner')->move($destinationPath, $fileName); // uploading file to given path
-				  $group->banner = $destinationPath."/".$fileName;
+				//create new brand
+				$group = new Group();
+				if(Request::file('g-profile')){
+					$file = array('g-profile' => Request::file('g-profile'));
+					$rules = array('g-profile' => 'required|image');
+					$validator = Validator::make($file, $rules);
+					if ($validator->fails()){
+						return redirect()->back()->withErrors($validator);
+					}else{
+						if (Request::file('g-profile')->isValid()){
+							$destinationPath = 'uploads'; // upload path
+					      $extension = Request::file('g-profile')->getClientOriginalExtension(); // getting image extension
+					      $fileName = 'Group_'.date('YmdHis').'_'.rand(111111,999999).'.'.$extension; // renameing image
+					      Request::file('g-profile')->move($destinationPath, $fileName); // uploading file to given path
+						  $group->profile = $destinationPath."/".$fileName;
+						}
+					}
+				}else{
+					$group->profile = 'img/defaultbg'.rand(1,8).'.jpg';
+
 				}
+				if(Request::file('g-banner')){
+					$file = array('g-banner' => Request::file('g-banner'));
+					$rules = array('g-banner' => 'required|image');
+					$validator = Validator::make($file, $rules);
+					if ($validator->fails()){
+						return redirect()->back()->withErrors($validator);
+					}else{
+						if (Request::file('g-banner')->isValid()){
+							$destinationPath = 'uploads'; // upload path
+					      $extension = Request::file('g-banner')->getClientOriginalExtension(); // getting image extension
+					      $fileName = 'Group_'.date('YmdHis').'_'.rand(111111,999999).'.'.$extension; // renameing image
+					      Request::file('g-banner')->move($destinationPath, $fileName); // uploading file to given path
+						  $group->banner = $destinationPath."/".$fileName;
+						}
+					}
+				}else{
+					$group->banner = 'img/defaultbg'.rand(1,8).'.jpg';
+
+				}
+
+				$group->creator = Request::input('creator');
+				$group->owner = Request::input('owner');
+				$group->name = Request::input('name');
+				$slug = slug(Request::input('name'));
+				$group->slug = $slug;
+				$group->category = Request::input('category');
+				$group->tag = Request::input('tag');
+				$group->website = Request::input('website');
+				$group->originCountry = Request::input('originCountry');
+				$group->originProvince = Request::input('originProvince');
+				$group->target = Request::input('target');
+				if(Request::input('translate') == 'no'){
+					$group->translate = 'no';
+				}else{
+					$group->translate = Request::input('trlang');
+				}
+				$group->description = nl2br(Request::input('description'));
+				$group->save();
+					
+				return redirect()->route('viewGroup', [ 'slug' => $slug ]);
 			}
-		}else{
-			$group->banner = 'img/defaultbg'.rand(1,8).'.jpg';
-
 		}
-
-		$group->creator = Request::input('creator');
-		$group->owner = Request::input('owner');
-		$group->name = Request::input('name');
-		$slug = slug(Request::input('name'));
-		$group->slug = $slug;
-		$group->category = Request::input('category');
-		$group->tag = Request::input('tag');
-		$group->website = Request::input('website');
-		$group->type = Request::input('type');
-		$group->description = nl2br(Request::input('description'));
-		$group->save();
-			
-		return redirect()->route('viewGroup', [ 'slug' => $slug ]);
 	}
 
 	public function editGroup($slug)
@@ -141,15 +166,21 @@ class GroupController extends Controller {
 			//do nothing
 		}
 
-		//$group->creator = Request::input('creator');
-		//$group->owner = Request::input('owner');
-		//$group->name = Request::input('name');
-		//$slug = slug(Request::input('name')).'-'.generateRandomString();
-		//$group->slug = $slug;
+
+		$group->name = Request::input('name');
+		$slug = slug(Request::input('name'));
+		$group->slug = $slug;
 		$group->category = Request::input('category');
 		$group->tag = Request::input('tag');
 		$group->website = Request::input('website');
-		$group->type = Request::input('type');
+		$group->originCountry = Request::input('originCountry');
+		$group->originProvince = Request::input('originProvince');
+		$group->target = Request::input('target');
+		if(Request::input('translate') == 'no'){
+			$group->translate = 'no';
+		}else{
+			$group->translate = Request::input('trlang');
+		}
 		$group->description = nl2br(Request::input('description'));
 		$group->save();
 			
@@ -159,7 +190,7 @@ class GroupController extends Controller {
 	public function viewGroup($slug)
 	{
 		$group = Group::where('slug', $slug)->firstOrFail();
-		$gposts = Post::where('group_id', $group->id)->orderBy('created_at', 'DESC')->get();
+		$gposts = Post::where('group_id', $group->id)->orderBy('created_at', 'DESC')->paginate(15);
 
 		return view('groups.view')->with('group', $group)->with('gposts', $gposts);
 	}

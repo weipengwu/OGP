@@ -4,6 +4,8 @@ use App\EventLike;
 use App\Group;
 use Request;
 use Validator;
+use Stripe\Stripe;
+use Config;
 
 class EventController extends Controller {
 
@@ -66,6 +68,104 @@ class EventController extends Controller {
 	public function createEvent()
 	{
 		$event = new Event();
+		$eventimages = array();
+			if(Request::file('postimage1')){
+
+				$file = array('postimage1' => Request::file('postimage1'));
+				$rules = array('postimage1' => 'required|image');
+				$validator = Validator::make($file, $rules);
+				if ($validator->fails()){
+					return redirect()->back()->withErrors($validator);
+				}else{
+					if (Request::file('postimage1')->isValid()) {
+			      		$destinationPath = 'uploads'; // upload path
+			      		//$originalname = Request::file('postimage1')->getClientOriginalName();
+			      		$extension = Request::file('postimage1')->getClientOriginalExtension(); // getting image extension
+			      		$fileName = 'Event_'.date('YmdHis').'_'.rand(111111,999999).'.'.$extension; // renameing image
+			      		Request::file('postimage1')->move($destinationPath, $fileName); // uploading file to given path
+				  		$postimage1 = $destinationPath."/".$fileName;
+				  		$img = Image::make($postimage1);
+				  		$img->resize(600, null, function ($constraint) {
+						    $constraint->aspectRatio();
+						    $constraint->upsize();
+						});
+						$img->save($destinationPath."/Medium_".$fileName);
+						array_push($eventimages, $destinationPath."/Medium_".$fileName);
+					}
+				}
+			}
+			if(Request::file('postimage2')){
+				$file = array('postimage2' => Request::file('postimage2'));
+				$rules = array('postimage2' => 'required|image');
+				$validator = Validator::make($file, $rules);
+				if ($validator->fails()){
+					return redirect()->back()->withErrors($validator);
+				}else{
+					if (Request::file('postimage2')->isValid()) {
+			      		$destinationPath = 'uploads'; // upload path
+			      		//$originalname = Request::file('postimage2')->getClientOriginalName();
+			      		$extension = Request::file('postimage2')->getClientOriginalExtension(); // getting image extension
+			      		$fileName = 'Event_'.date('YmdHis').'_'.rand(111111,999999).'.'.$extension; // renameing image
+			      		Request::file('postimage2')->move($destinationPath, $fileName); // uploading file to given path
+				  		$postimage2 = $destinationPath."/".$fileName;
+						$img = Image::make($postimage2);
+				  		$img->resize(600, null, function ($constraint) {
+						    $constraint->aspectRatio();
+						    $constraint->upsize();
+						});
+						$img->save($destinationPath."/Medium_".$fileName);
+						array_push($eventimages, $destinationPath."/Medium_".$fileName);
+					}
+				}
+			}
+			if(Request::file('postimage3')){
+				$file = array('postimage3' => Request::file('postimage3'));
+				$rules = array('postimage3' => 'required|image');
+				$validator = Validator::make($file, $rules);
+				if ($validator->fails()){
+					return redirect()->back()->withErrors($validator);
+				}else{
+					if (Request::file('postimage3')->isValid()) {
+			      		$destinationPath = 'uploads'; // upload path
+			      		//$originalname = Request::file('postimage3')->getClientOriginalName();
+			      		$extension = Request::file('postimage3')->getClientOriginalExtension(); // getting image extension
+			      		$fileName = 'Event_'.date('YmdHis').'_'.rand(111111,999999).'.'.$extension; // renameing image
+			      		Request::file('postimage3')->move($destinationPath, $fileName); // uploading file to given path
+				  		$postimage3 = $destinationPath."/".$fileName;
+						$img = Image::make($postimage3);
+				  		$img->resize(600, null, function ($constraint) {
+						    $constraint->aspectRatio();
+						    $constraint->upsize();
+						});
+						$img->save($destinationPath."/Medium_".$fileName);
+						array_push($eventimages, $destinationPath."/Medium_".$fileName);
+					}
+				}
+			}
+			if(Request::file('postimage4')){
+				$file = array('postimage4' => Request::file('postimage4'));
+				$rules = array('postimage4' => 'required|image');
+				$validator = Validator::make($file, $rules);
+				if ($validator->fails()){
+					return redirect()->back()->withErrors($validator);
+				}else{
+					if (Request::file('postimage4')->isValid()) {
+			      		$destinationPath = 'uploads'; // upload path
+			      		//$originalname = Request::file('postimage4')->getClientOriginalName();
+			      		$extension = Request::file('postimage4')->getClientOriginalExtension(); // getting image extension
+			      		$fileName = 'Event_'.date('YmdHis').'_'.rand(111111,999999).'.'.$extension; // renameing image
+			      		Request::file('postimage4')->move($destinationPath, $fileName); // uploading file to given path
+				  		$postimage4 = $destinationPath."/".$fileName;
+						$img = Image::make($postimage4);
+				  		$img->resize(600, null, function ($constraint) {
+						    $constraint->aspectRatio();
+						    $constraint->upsize();
+						});
+						$img->save($destinationPath."/Medium_".$fileName);
+						array_push($eventimages, $destinationPath."/Medium_".$fileName);
+					}
+				}
+			}
 		if(Request::file('banner')){
 			$file = array('banner' => Request::file('banner'));
 			$rules = array('banner' => 'required|image');
@@ -86,6 +186,7 @@ class EventController extends Controller {
 		}
 
 			$event->author = Request::input('author');
+			$event->type = Request::input('type');
 			$event->title = Request::input('title');
 			$fromtime = Request::input('fromtime');
 			$unixfromtime = strtotime($fromtime);
@@ -98,9 +199,10 @@ class EventController extends Controller {
 			if(Request::input('selectprice') == 'Free'){
 				$event->fee = 'Free';
 			}else{
-				$event->fee = 'C $'.Request::input('fee');
+				$event->fee = Request::input('fee');
 			}
 			$event->content = nl2br(Request::input('content'));
+			$event->gallery = implode(',', $eventimages);
 			$event->group_id = Request::input('gid');
 			$event->save();
 
@@ -109,14 +211,13 @@ class EventController extends Controller {
 
 	public function editEvent($id)
 	{
-		$gid = Group::where('slug', $slug)->pluck('id');
 		$event = Event::findOrFail($id);
-		return view('events.edit')->with('gid', $gid)->with('event', $event);
+		return view('events.edit')->with('event', $event);
 	}
 
-	public function editingEvent($id)
+	public function editingEvent()
 	{
-		$event = Event::findOrFail($id);
+		$event = Event::find(Request::input('eid'));
 		if(Request::file('banner')){
 			$file = array('banner' => Request::file('banner'));
 			$rules = array('banner' => 'required|image');
@@ -135,18 +236,19 @@ class EventController extends Controller {
 		}
 			$event->author = Request::input('author');
 			$event->title = Request::input('title');
+			$event->type = Request::input('type');
 			$fromtime = Request::input('fromtime');
 			$unixfromtime = strtotime($fromtime);
 			$event->fromtime = $unixfromtime;
 			$totime = Request::input('totime');
 			$unixtotime = strtotime($totime);
 			$event->totime = $unixtotime;
-			$event->city = Request::input('city');
 			$event->address = Request::input('address');
+			$event->city = Request::input('city');
 			if(Request::input('selectprice') == 'Free'){
 				$event->fee = 'Free';
 			}else{
-				$event->fee = 'C $'.Request::input('fee');
+				$event->fee = Request::input('fee');
 			}
 			$event->content = nl2br(Request::input('content'));
 			$event->group_id = Request::input('gid');
@@ -185,5 +287,31 @@ class EventController extends Controller {
 
 		$count = EventLike::where('event_id','=',$eid)->count();
 		echo $count;
+	}
+
+	public function eventCharge()
+	{
+		$event = Event::findOrFail(Request::input('eid'));
+		\Stripe\Stripe::setApiKey(Config::get('stripe.stripe.secret'));
+
+		if($event->quantity > 0 ){
+			try {
+				$token  = Request::get('stripeToken');
+
+				  $customer = \Stripe\Customer::create(array(
+				      'email' => Request::get('stripeEmail'),
+				      'card'  => $token
+				  ));
+
+				  $charge = \Stripe\Charge::create(array(
+				      'customer' => $customer->id,
+				      'amount'   => $event->fee,
+				      'currency' => 'usd'
+				  ));
+				echo '<h1>Successfully charged CAD $'.$event->fee.'!</h1>';
+			} catch(\Stripe\Error\Card $e){
+				echo $e->getMessage();
+			}
+		}
 	}
 }

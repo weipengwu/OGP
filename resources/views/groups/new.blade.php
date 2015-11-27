@@ -8,6 +8,9 @@
 				<div class="panel-heading"><h3>CREATE YOUR BRAND</h3></div>
 
 				<div class="panel-body">
+					@if (Session::has('message'))
+					   <div class="alert alert-danger"><strong>Whoops!</strong> {{ Session::get('message') }}</div>
+					@endif
 					<form action="{{ URL::route('createGroup') }}" method="post" enctype="multipart/form-data" id="createBrand">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 						<input type="hidden" name="creator" value="{{ Auth::user()->id }}">
@@ -28,7 +31,7 @@
 							<input type="text" name="name" class="form-control" id="brandname" placeholder="Brand Name" required>
 							<div class="checknamepass checkname"><i class="fa fa-check"></i></div>
 							<div class="checknamefail checkname"><i class="fa fa-times"></i></div>
-							<div class="help-block with-errors">Please fill out this field.</div>
+							<div class="help-block checknameerror">Brand name is unavailable, please choose another one.</div>
 						</div>
 						<div class="form-group">
 							<select name="category" class="form-control" required>
@@ -48,7 +51,6 @@
 								<option value="Travel">Travel</option>
 								<option value="Other">Other</option>
 							</select>
-							<div class="help-block with-errors">Please select a catogory.</div>
 						</div>
 						<div class="form-group">
 							<input type="text" name="tag" class="form-control" placeholder="Brand Tag">
@@ -60,10 +62,10 @@
 							</div>
 						</div>
 						<div class="form-group selectorigin" data-ng-controller="CountryController">
-							<select class="form-control" data-ng-model="country" data-ng-options="country.name for country in countries" data-ng-change="updateCountry()" required>
+							<select class="form-control" name="originCountry" data-ng-model="country" data-ng-options="country.name for country in countries" data-ng-change="updateCountry()">
 								<option value="">Origin (Country)</option>
 							</select>
-							<select class="form-control" data-ng-model="state" data-ng-options="state.name for state in availableStates" required>
+							<select class="form-control" name="originProvince" data-ng-model="state" data-ng-options="state.name for state in availableStates">
 								<option value="">Origin (Province/State)</option>
 							</select>
 						</div>
@@ -76,7 +78,7 @@
 							</select>
 						</div>
 						<div class="form-group translation">
-							<span>Do you need translation</span> <span class="radio"><input type="radio" name="translate" id="yestranslate" value="yes" /> <label for="yestranslate">Yes</label> </span><span class="radio"><input type="radio" name="translate" id="notranslate" value="no" /> <label for="notranslate">No</label></span>
+							<span>Do you need translation</span> <span class="radio"><input type="radio" name="translate" id="yestranslate" value="yes" /> <label for="yestranslate">Yes</label> </span><span class="radio"><input type="radio" name="translate" id="notranslate" value="no" checked /> <label for="notranslate">No</label></span>
 						</div>
 						<div class="form-group trlanguages">
 							<select name="trlang" class="form-control">
@@ -98,9 +100,8 @@
 						</div> -->
 						<div class="form-group">
 							<textarea name="description" maxlength="300" class="form-control" placeholder="Brief Introduction(Tips: Please use the language of target markets.)" required></textarea>
-							<div class="help-block with-errors">Please fill out this field.</div>
 						</div>
-						<p class="small">I hereby pledge that the content filled in and the additional materials provided are true and authentic in every aspect.</p>
+						<input type="checkbox" id="conscent" name="conscent" required><label for="conscent" class="small">I hereby pledge that the content filled in and the additional materials provided are true and authentic in every aspect.</label>
 						<input type="submit" class="btn btn-logo submit" value="Submit">
 					</form>
 				</div>

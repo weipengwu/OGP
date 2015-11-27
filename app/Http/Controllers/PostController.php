@@ -5,6 +5,7 @@ use App\PostLike;
 use App\Group;
 use Request;
 use Validator;
+use Image;
 
 class PostController extends Controller {
 
@@ -57,7 +58,13 @@ class PostController extends Controller {
 			      		$fileName = 'Post_'.date('YmdHis').'_'.rand(111111,999999).'.'.$extension; // renameing image
 			      		Request::file('postimage1')->move($destinationPath, $fileName); // uploading file to given path
 				  		$postimage1 = $destinationPath."/".$fileName;
-						array_push($postimages, $postimage1);
+				  		$img = Image::make($postimage1);
+				  		$img->resize(600, null, function ($constraint) {
+						    $constraint->aspectRatio();
+						    $constraint->upsize();
+						});
+						$img->save($destinationPath."/Medium_".$fileName);
+						array_push($postimages, $destinationPath."/Medium_".$fileName);
 					}
 				}
 			}
@@ -75,7 +82,13 @@ class PostController extends Controller {
 			      		$fileName = 'Post_'.date('YmdHis').'_'.rand(111111,999999).'.'.$extension; // renameing image
 			      		Request::file('postimage2')->move($destinationPath, $fileName); // uploading file to given path
 				  		$postimage2 = $destinationPath."/".$fileName;
-						array_push($postimages, $postimage2);
+						$img = Image::make($postimage2);
+				  		$img->resize(600, null, function ($constraint) {
+						    $constraint->aspectRatio();
+						    $constraint->upsize();
+						});
+						$img->save($destinationPath."/Medium_".$fileName);
+						array_push($postimages, $destinationPath."/Medium_".$fileName);
 					}
 				}
 			}
@@ -93,7 +106,13 @@ class PostController extends Controller {
 			      		$fileName = 'Post_'.date('YmdHis').'_'.rand(111111,999999).'.'.$extension; // renameing image
 			      		Request::file('postimage3')->move($destinationPath, $fileName); // uploading file to given path
 				  		$postimage3 = $destinationPath."/".$fileName;
-						array_push($postimages, $postimage3);
+						$img = Image::make($postimage3);
+				  		$img->resize(600, null, function ($constraint) {
+						    $constraint->aspectRatio();
+						    $constraint->upsize();
+						});
+						$img->save($destinationPath."/Medium_".$fileName);
+						array_push($postimages, $destinationPath."/Medium_".$fileName);
 					}
 				}
 			}
@@ -111,7 +130,13 @@ class PostController extends Controller {
 			      		$fileName = 'Post_'.date('YmdHis').'_'.rand(111111,999999).'.'.$extension; // renameing image
 			      		Request::file('postimage4')->move($destinationPath, $fileName); // uploading file to given path
 				  		$postimage4 = $destinationPath."/".$fileName;
-						array_push($postimages, $postimage4);
+						$img = Image::make($postimage4);
+				  		$img->resize(600, null, function ($constraint) {
+						    $constraint->aspectRatio();
+						    $constraint->upsize();
+						});
+						$img->save($destinationPath."/Medium_".$fileName);
+						array_push($postimages, $destinationPath."/Medium_".$fileName);
 					}
 				}
 			}

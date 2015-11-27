@@ -6,6 +6,7 @@ $(document).ready(function(){
 		$.ajaxSetup({
 		   headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
 		});
+		var that = $(this);
 		var eid = $(this).data('event-id');
 		var uid = $(this).data('author-id');
 		$.ajax({
@@ -13,9 +14,11 @@ $(document).ready(function(){
 			url: window.location.origin+"/event/like",
 			data: "event-id="+eid+'&author-id='+uid
 		}).done(function(response){
-			$('.like_btn').removeClass('event_like');
-			$('.like_btn').addClass('event_unlike');
-			$('.like_btn').html('<i class="fa fa-heart"></i>');
+			that.removeClass('event_like');
+			that.addClass('event_unlike');
+			that.html('<img src="../img/already_likes_icon.png" width="16">');
+			$('.leftlikenum').html(response+' Interested');
+			$('.likenum').html(response);
 		})
 	})
 	$('body').on('click', '.event_unlike', function(e){
@@ -23,6 +26,7 @@ $(document).ready(function(){
 		$.ajaxSetup({
 		   headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
 		});
+		var that = $(this);
 		var eid = $(this).data('event-id');
 		var uid = $(this).data('author-id');
 		$.ajax({
@@ -30,9 +34,11 @@ $(document).ready(function(){
 			url: window.location.origin+"/event/unlike",
 			data: "event-id="+eid+'&author-id='+uid
 		}).done(function(response){
-			$('.like_btn').removeClass('event_unlike');
-			$('.like_btn').addClass('event_like');
-			$('.like_btn').html('<i class="fa fa-heart-o"></i>');
+			that.removeClass('event_unlike');
+			that.addClass('event_like');
+			that.html('<img src="../img/likes_icon.png" width="16">');
+			$('.leftlikenum').html(response+' Interested');
+			$('.likenum').html(response);
 		})
 	})
 	$('body').on('click', '.post_like', function(e){
@@ -318,7 +324,7 @@ $(document).ready(function(){
 	})
 	
 	$(window).scroll(function(){
-		if($(this).scrollTop() > 435){
+		if($(this).scrollTop() > 455){
 			$('.bannerwrapper').addClass('locked');
 			$('.bannerwrapper').next().css('margin-top', '500px');
 		}else{
@@ -341,7 +347,10 @@ $(document).ready(function(){
 		e.preventDefault();
 		$.fancybox.close();
 	})
-	$('.flexslider').flexslider();
+	$('.flexslider').flexslider({
+		animation: 'fade',
+		controlNav: false
+	});
 
 	$('#selectprice').on('change', function(){
 		if($(this).val() == 'Paid'){
@@ -350,6 +359,13 @@ $(document).ready(function(){
 			$('#fee').hide();
 		}
 	})
+
+	if($('#selectprice option:selected').val() == 'Paid'){
+		$('#fee').show();
+	}else{
+		$('#fee').hide();
+	}
+	
 	$('.showall a').on('click', function(e){
 		e.preventDefault();
 		if($('.joinedgroups .groupsrow').hasClass('collapsed')){
@@ -388,22 +404,23 @@ $(document).ready(function(){
 				else if(response == 'pass'){
 					$('.checknamefail').hide();
 					$('.checknamepass').show();
+					$('.checknameerror').hide();
 				}
 			})
 		}
 	})
-	$('#createBrand .submit').on('click',function(e){
-		e.preventDefault();
-		if($('.checknamepass').is(':visible')){
-			console.log('pass');
-			$('#createBrand').validate({
-			  submitHandler: function(form) {
-			    // do other things for a valid form
-			    form.submit();
-			  }
-			});
+
+	$('#createBrand').validate({
+		submitHandler: function(form) {
+			if($('.checknamepass').is(':visible')){
+				form.submit();
+			}else{
+				$('#createBrand #brandname').focus();
+				$('.checknameerror').show();
+			}
 		}
-	})
+	});
+	$('#createPost').validate();
 
 
 	// Dropzone.options.createpost = { // The camelized version of the ID of the form element

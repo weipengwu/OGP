@@ -33,7 +33,8 @@ class HomeController extends Controller {
 	public function index()
 	{
 		$events = Event::orderBy('created_at', 'DESC')->take(5)->get();
-		$posts = Post::orderBy('created_at', 'DESC')->get();
+		//$events = Event::orderBy('created_at', 'DESC')->simplePaginate(5);
+		$posts = Post::orderBy('created_at', 'DESC')->paginate(18);
 		return view('home')->with('events', $events)->with('allposts', $posts);
 	}
 

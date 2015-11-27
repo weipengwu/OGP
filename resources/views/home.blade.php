@@ -27,7 +27,9 @@
 					array_push($posts, $singlepost);
 				?>
 			@endforeach
-			<section class="container">
+		<div id="allposts">
+			@if(count($posts) > 0)
+			<section class="container posts">
 			<div class="row singlegroup layout84">
 					<?php $i = 0;?>
 					@foreach ($posts as $post)
@@ -83,7 +85,9 @@
 				<div class="row-gap"></div>
 			</div>
 			</section>
-			<section class="container">
+			@endif
+			@if(count($posts) > 0)
+			<section class="container posts">
 			<div class="row singlegroup layout444">
 				<?php $i = 0; $j = 1; ?>
 					@foreach ($posts as $post)
@@ -130,6 +134,7 @@
 					<div class="row-gap"></div>
 			</div>
 			</section>
+			@endif
 			<section class="events_section">
 				<h2>EVENTS</h2>
 				<h4>See What's Happening Around You</h4>
@@ -140,11 +145,6 @@
 					<div class="eventgroup">
 						<div class="eventgroup-list">
 							<a href="/events/{{ $event->id }}">
-							<!-- <div class="col" style="background: #ccc url('{{ $event->banner }}');background-size:cover;">
-								<div class="caption">
-									<h3>{{ $event->title }}</h3>
-								</div>
-							</div> -->
 							<div class="imgholder" style="background: url('<?php echo url()."/".$event->banner;?>') center center; background-size: cover;"></div>
 							</a>
 							<p class="location">{{ $event->city }}</p>
@@ -161,7 +161,7 @@
 
 												<?php endif; ?>
 											</p>
-											</div>
+							</div>
 						</div>
 					</div>
 					<?php $e++;?>
@@ -173,8 +173,8 @@
 					<div class="divider"></div>
 				</div>
 			</section>
-			
-			<section class="container">
+			@if(count($posts) > 0)
+			<section class="container posts">
 			<div class="row singlegroup layout633">
 				<?php $i = 0; $j = 1;?>
 					@foreach ($posts as $post)
@@ -224,6 +224,7 @@
 					<div class="row-gap"></div>
 			</div>
 			</section>
+			@endif
 			<section class="container">
 				<div class="joinedgroups">
 					<h3>FOLLOWING</h3>
@@ -255,7 +256,8 @@
 
 				</div>
 			</section>
-			<section class="container">
+			@if(count($posts) > 0)
+			<section class="container posts">
 			<div class="row singlegroup layout3333">
 				<?php $i = 0; $j = 1;?>
 					@foreach ($posts as $post)
@@ -303,7 +305,9 @@
 					<div class="row-gap"></div>
 			</div>
 			</section>
-			<section class="container">
+			@endif
+			@if(count($posts) > 0)
+			<section class="container posts">
 			<div class="row singlegroup layout633">
 				<?php $i = 0; $j = 1;?>
 					@foreach ($posts as $post)
@@ -353,7 +357,9 @@
 					<div class="row-gap"></div>
 			</div>
 			</section>
-			<section class="container">
+			@endif
+			@if(count($posts) > 0)
+			<section class="container posts">
 			<div class="row singlegroup layout444">
 				<?php $i = 0; $j = 1; ?>
 					@foreach ($posts as $post)
@@ -400,6 +406,28 @@
 					<div class="row-gap"></div>
 			</div>
 			</section>
+			@endif
+			<?php echo $allposts->render(); ?>
+		</div>
 
 </div>
+<script src="{{ asset('js/jquery.infinitescroll.min.js') }}"></script>
+<script type="text/javascript">
+(function(){
+
+    var loading_options = {
+        finishedMsg: "",
+        msgText: "<div class='center'>Loading...</div>",
+        img: "{{ asset('img/spinner.gif') }}"
+    };
+    var pagesNum = <?php echo $allposts->lastPage(); ?>; 
+    $('#allposts').infinitescroll({
+      loading : loading_options,
+      navSelector : "#allposts .pagination",
+      nextSelector : "#allposts .pagination li.active + li a",
+      itemSelector : "#allposts section.container.posts",
+      maxPage: pagesNum
+    });
+})();
+</script>
 @endsection

@@ -19,14 +19,20 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+Route::get('/auth/login', 'Auth\AuthController@authenticate');
+Route::get('/auth/logout', 'Auth\AuthController@logout');
+
+Route::get('/lang/{lang}', 'LangController@switchLang');
 
 Route::group(['middleware' => 'auth'], function(){
 	Route::get('groups/{slug}/events/new', array('uses' => 'EventController@newEvent', 'as' => 'newEvent'));
 	Route::get('groups/new', array('uses' => 'GroupController@newGroup', 'as' => 'newGroup'));
-	Route::post('groups/{slug}/events/new', array('uses' => 'EventController@createEvent', 'as' => 'createEvent'));
+	//Route::post('groups/{slug}/events/new', array('uses' => 'EventController@createEvent', 'as' => 'createEvent'));
+	Route::post('events/new', array('uses' => 'EventController@createEvent', 'as' => 'createEvent'));
 	Route::post('groups/new', array('uses' => 'GroupController@createGroup', 'as' => 'createGroup'));
 	Route::get('groups/{slug}/edit', array('uses' => 'GroupController@editGroup', 'as' => 'editGroup'));
-	Route::post('groups/{slug}/edit', array('uses' => 'GroupController@editingGroup', 'as' => 'editingGroup'));
+	// Route::post('groups/{slug}/edit', array('uses' => 'GroupController@editingGroup', 'as' => 'editingGroup'));
+	Route::post('groups/edit', array('uses' => 'GroupController@editingGroup', 'as' => 'editingGroup'));
 	Route::post('event/like', 'EventController@eventLike');
 	Route::post('event/unlike', 'EventController@eventUnlike');
 	Route::post('post/like', 'PostController@postLike');
@@ -37,18 +43,21 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('dashboard', array('uses' => 'DashboardController@index','as' => 'dashboard'));
 	Route::post('dashboard', array('uses' => 'DashboardController@createProfile','as' => 'createProfile'));
 	Route::get('groups/{slug}/posts/new', array('uses' => 'PostController@newPost', 'as' => 'newPost'));
-	Route::post('groups/{slug}/posts/new', array('uses' => 'PostController@createPost', 'as' => 'createPost'));
+	// Route::post('groups/{slug}/posts/new', array('uses' => 'PostController@createPost', 'as' => 'createPost'));
+	Route::post('posts/new', array('uses' => 'PostController@createPost', 'as' => 'createPost'));
 	Route::post('posts/{id}', array('uses' => 'PostController@createComment', 'as' => 'createComment'));
 	Route::post('groups/follow', 'GroupController@follow');
 	Route::post('groups/unfollow', 'GroupController@unfollow');
 	Route::post('groups/checkBrandname/', array('uses' => 'GroupController@checkBrandname', 'as' => 'checkBrandname'));
 	Route::get('events/{id}/edit', array('uses' => 'EventController@editEvent', 'as' => 'editEvent'));
+	Route::post('events/edit/{id}', array('uses' => 'EventController@editingEvent', 'as' => 'editingEvent'));
 	//Route::get('groups/{slug}/missions/new', array('uses' => 'MissionController@newMission', 'as' => 'newMission'));
 	//Route::post('groups/{slug}/missions/new', array('uses' => 'MissionController@createMission', 'as' => 'createMission'));
 	//Route::get('missions/{id}/apply', array('uses' => 'MissionController@applyMission', 'as' => 'applyMission'));
 	//Route::post('missions/{id}/apply', array('uses' => 'MissionController@sendResume', 'as' => 'sendResume'));
 	Route::get('search', 'SearchController@search');
 	Route::post('search', array('uses' => 'SearchController@search', 'as' => 'search'));
+	Route::post('ogppay', array('uses' => 'EventController@eventCharge', 'as' => 'eventCharge'));
 });
 
 Route::get('events', 'EventController@index');

@@ -60,7 +60,7 @@
 						<input type="file" name="u-profile" id="u-profile" accept="image/*">
 					</div>
 					<div class="form-group">
-						<input type="text" class="form-control" value="{{ getAuthorname($id) }}" disabled>
+						<input type="text" class="form-control" value="{{ getAuthorname($id) }}">
 					</div>
 					<div class="form-group">
 						<textarea name="desc" class="form-control" placeholder="Bio"></textarea>
@@ -87,7 +87,7 @@
 					@endforeach
 					</div>
 				@else
-					<div class="row">
+					<div class="row no-border">
 						<h3>You haven't created your brand yet.</h3>
 						<a href="/groups/new" class="createbrand">Create your brand</a>
 					</div>
@@ -137,12 +137,12 @@
 				@if(count(getMyevents($id)) > 0)
 				@foreach (getMyevents($id) as $event)
 				<div class="row">
-					<div class="col-md-3">
+					<div class="col-md-3 col-sm-3 col-xs-3">
 						<a href="events/{{ $event->id }}">
 							<div class="imgholder" style="background: url('<?php echo url()."/".$event->banner;?>') center center; background-size: cover;"></div>
 						</a>
 					</div>
-					<div class="col-md-7">
+					<div class="col-md-7 col-sm-7 col-xs-7">
 					<h3><a href="events/{{ $event->id }}">{{ $event->title }}</a></h3>
 					<div class="event-details">
 						<p class="event-info">
@@ -157,10 +157,16 @@
 							<?php endif; ?>
 						</p>
 						<p class="event-info"><img src="{{ asset('img/address_icon.png') }}" width="15" class="edicons"> {{ $event->address }}</p>
-						<p class="event-info"><img src="{{ asset('img/ticket_icon.png') }}" height="12" class="edicons"> {{ $event->fee }}</p>
+						<p class="event-info"><img src="{{ asset('img/ticket_icon.png') }}" height="12" class="edicons">
+						@if($event->fee == 'Free') 
+							{{ $event->fee }}
+						@else
+							C ${{ $event->fee }}
+						@endif
+						</p>
 					</div>		
 					</div>
-					<div class="col-md-2">
+					<div class="col-md-2 col-sm-2 col-xs-2">
 						<a href="/events/{{ $event->id }}/edit">Edit Event</a>
 					</div>
 				</div>

@@ -48,7 +48,7 @@
 </div>
 
 	<div class="panel">
-		<div class="panel-body">
+		<div class="panel-body" id="allposts">
 
 			@if(count($gposts) == 0)
 				<section class="container">
@@ -63,7 +63,7 @@
 						array_push($posts, $singlepost);
 					?>
 				@endforeach
-							
+				@if(count($posts) > 0)
 				<section class="container">
 					<div class="row singlegroup layout84">
 							<?php $i = 0;?>
@@ -129,6 +129,8 @@
 						<div class="row-gap"></div>
 					</div>
 					</section>
+					@endif
+					@if(count($posts) > 0)
 					<section class="container">
 						<div class="row singlegroup layout444">
 							<?php $i = 0; $j = 1; ?>
@@ -185,8 +187,29 @@
 								<div class="row-gap"></div>
 						</div>
 						</section>
+						@endif
+						<?php echo $gposts->render(); ?>
 			@endif
 
 			</div>
 	</div>
+<script src="{{ asset('js/jquery.infinitescroll.min.js') }}"></script>
+<script type="text/javascript">
+(function(){
+
+    var loading_options = {
+        finishedMsg: "",
+        msgText: "<div class='center'>Loading...</div>",
+        //img: null
+    };
+    var pagesNum = <?php echo $gposts->lastPage(); ?>; 
+    $('#allposts').infinitescroll({
+      loading : loading_options,
+      navSelector : "#allposts .pagination",
+      nextSelector : "#allposts .pagination li.active + li a",
+      itemSelector : "#allposts section.container.posts",
+      maxPage: pagesNum
+    });
+})();
+</script>
 @endsection

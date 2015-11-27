@@ -28,6 +28,8 @@
 
 	<link href="{{ asset('/css/build.css') }}" rel="stylesheet">	
 
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 9]>
@@ -45,22 +47,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="{{ url('/') }}"><img src="{{ asset('/img/logo.png') }}" alt="Oh Good Party" width="30"></a>
-			</div>
-
-			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav">
-					@if (Auth::guest())
-					<li><a href="{{ url('/') }}">OGP</a></li>
-					@else
-					<li><a href="{{ url('/home') }}">OGP</a></li>
-					@endif
-					<li><a href="{{ url('/groups') }}">BRANDS</a></li>
-					<li><a href="{{ url('/events') }}">EVENTS</a></li>
-					<!-- <li><a href="{{ url('/missions') }}">MISSIONS</a></li> -->
-				</ul>
-
-				<ul class="nav navbar-nav navbar-right">
+				<ul class="nav navbar-nav navbar-right mobile quickmenu">
 					@if (Auth::check())
 					<?php
 							$id = Auth::user()->id;
@@ -78,7 +65,90 @@
 						<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><img src="{{ asset('/img/create_brand_icon.png') }}" alt="Create Brand" width="24" /></a>
 						<ul class="dropdown-menu" role="menu">
-							<li><a href="<?php echo url(); ?>/groups/new">Create your brand</a></li>
+							<li><a href="<?php echo url(); ?>/groups/new">{{ trans('headermenu.createBrand') }}</a></li>
+						</ul>
+					</li>
+					@endif
+					<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><img src="{{ asset('/img/search.png') }}" alt="Search Icon" width="22" /></a>
+							<ul class="dropdown-menu search-dropdown" role="menu" style="right: -120px;">
+								<li><form id="searchform" action="{{ URL::route('search') }}"><input type="text" name="q" placeholder="Search OGP"></form></li>
+							</ul>
+						</li>
+					@endif
+					<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+							@if(App::getLocale() == 'en')
+								<img src="{{ asset('/img/en_icon.png') }}" alt="English" width="22" />
+							@else
+								<img src="{{ asset('/img/en_icon.png') }}" alt="Chinese" width="22" />
+							@endif
+							</a>
+							<ul class="dropdown-menu" role="menu">
+								@if(App::getLocale() == 'en')
+									<li><a href="{{  url() }}/lang/zh">中文</a></li>
+								@else
+									<li><a href="{{  url() }}/lang/en">English</a></li>
+								@endif
+							</ul>
+						</li>
+					@if (Auth::guest())
+						<li><a href="{{ url('/auth/login') }}">{{ trans('headermenu.signin') }}</a></li>
+						<li><a href="{{ url('/auth/register') }}">{{ trans('headermenu.signup') }}</a></li>
+					@else
+						<li class="dropdown">
+							<?php $id = Auth::user()->id; $user_profile = DB::table('user_meta')->where('user_id', $id)->where('meta_key', 'profile')->get();?>
+							<a href="#" class="dropdown-toggle profile-dropdown" data-toggle="dropdown" role="button" aria-expanded="false">
+							<?php if(count($user_profile) > 0): ?>
+								<div class="top-profile" style="background: url(<?php echo url()."/".$user_profile[0]->meta_value;?>) center center no-repeat; background-size: cover"></div>
+							<?php else: ?>
+								<div class="top-profile"><?php echo getFirstCharter(Auth::user()->name);?></div>
+							<?php endif; ?>
+							</a>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="{{ url('/dashboard') }}">Dashboard</a></li>
+								<li><a href="#">Feedback</a></li>
+								<li><a href="#">Notifications</a></li>
+								<li><a href="{{ url('/auth/logout') }}">Logout</a></li>
+							</ul>
+						</li>
+					@endif
+				</ul>
+				
+				<a class="navbar-brand" href="{{ url('/') }}"><img src="{{ asset('/img/logo.png') }}" alt="Oh Good Party" width="30"></a>
+			</div>
+
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					@if (Auth::guest())
+					<li><a href="{{ url('/') }}">OGP</a></li>
+					@else
+					<li><a href="{{ url('/home') }}">OGP</a></li>
+					@endif
+					<li><a href="{{ url('/groups') }}">{{ trans('headermenu.brands') }}</a></li>
+					<li><a href="{{ url('/events') }}">{{ trans('headermenu.events') }}</a></li>
+					<!-- <li><a href="{{ url('/missions') }}">MISSIONS</a></li> -->
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right desktop quickmenu">
+					@if (Auth::check())
+					<?php
+							$id = Auth::user()->id;
+							$mygroup = myGroup($id);
+						?>
+					@if ( count(myGroup($id)) > 0 )
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><img src="{{ asset('/img/edit_icon.png') }}" alt="English" width="22" /></a>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="<?php echo url(); ?>/groups/<?php echo $mygroup[0]->slug; ?>/posts/new">Quick Post</a></li>
+								<li><a href="<?php echo url(); ?>/groups/<?php echo $mygroup[0]->slug; ?>/events/new">Quick Event</a></li>
+							</ul>
+						</li>
+					@else
+						<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><img src="{{ asset('/img/create_brand_icon.png') }}" alt="Create Brand" width="24" /></a>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="<?php echo url(); ?>/groups/new">{{ trans('headermenu.createBrand') }}</a></li>
 						</ul>
 					</li>
 					@endif
@@ -90,16 +160,24 @@
 						</li>
 					@endif
 					<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><img src="{{ asset('/img/en_icon.png') }}" alt="English" width="22" /></a>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+							@if(App::getLocale() == 'en')
+								<img src="{{ asset('/img/en_icon.png') }}" alt="English" width="22" />
+							@else
+								<img src="{{ asset('/img/en_icon.png') }}" alt="Chinese" width="22" />
+							@endif
+							</a>
 							<ul class="dropdown-menu" role="menu">
-								<li><a href="#">中文</a></li>
-								<!-- <li><a href="#">Français</a></li>
-								<li><a href="#">Español</a></li> -->
+								@if(App::getLocale() == 'en')
+									<li><a href="{{  url() }}/lang/zh">中文</a></li>
+								@else
+									<li><a href="{{  url() }}/lang/en">English</a></li>
+								@endif
 							</ul>
 						</li>
 					@if (Auth::guest())
-						<li><a href="{{ url('/auth/login') }}">SIGN IN</a></li>
-						<li><a href="{{ url('/auth/register') }}">SIGN UP</a></li>
+						<li><a href="{{ url('/auth/login') }}">{{ trans('headermenu.signin') }}</a></li>
+						<li><a href="{{ url('/auth/register') }}">{{ trans('headermenu.signup') }}</a></li>
 					@else
 						<li class="dropdown">
 							<?php $id = Auth::user()->id; $user_profile = DB::table('user_meta')->where('user_id', $id)->where('meta_key', 'profile')->get();?>
@@ -126,7 +204,6 @@
 		@yield('content')
 	</section>
 	<!-- Scripts -->
-	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
 	<script src="{{ asset('/js/fileinput.min.js') }}"></script>

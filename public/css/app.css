@@ -3929,7 +3929,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   float: right;
   margin-right: 15px;
   padding: 9px 10px;
-  margin-top: 8px;
+  margin-top: 12px;
   margin-bottom: 8px;
   background-color: transparent;
   background-image: none;
@@ -3962,7 +3962,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   line-height: 20px;
 }
 @media (max-width: 767px) {
-  .navbar-nav .open .dropdown-menu {
+  /*.navbar-nav .open .dropdown-menu {
     position: static;
     float: none;
     width: auto;
@@ -3981,6 +3981,10 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   .navbar-nav .open .dropdown-menu > li > a:hover,
   .navbar-nav .open .dropdown-menu > li > a:focus {
     background-image: none;
+  }*/
+  .navbar-nav > li > a {
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
 }
 @media (min-width: 768px) {
@@ -6404,6 +6408,7 @@ label,
   background: #fbfbfb;
   border-bottom: 1px solid #e8e8e8;
   color: #777;
+  position: relative;
 }
 .statusbar:after{
   clear: both;
@@ -6528,7 +6533,7 @@ label,
   margin-top: 5px;
   float: left;
 }
-#edit_btn{
+/*#edit_btn{
   margin-left: 20px;
   color: #333;
   padding: 5px 10px;
@@ -6539,7 +6544,7 @@ label,
 }
 #edit_btn:hover{
   text-decoration: none;
-}
+}*/
 .description{
   clear: both;
 }
@@ -6547,7 +6552,7 @@ label,
   clear: both;
   margin-bottom: 20px;
   border-bottom: 1px solid #e8e8e8;
-  padding: 20px 0;
+  padding: 20px;
 }
 .d-row:after{
   clear: both;
@@ -6908,6 +6913,10 @@ h3 a:hover{
 }
 .orgnizationsection .title{
   color: #999;
+}
+.orgnizationsection .groupprofile{
+  width: 100px;
+  height: 100px;
 }
 .greybg{
   background: #fbfbfb;
@@ -7293,8 +7302,12 @@ h3 a:hover{
     border-radius: 4px;
     z-index: 10;
 }
+.statusbar .sharebox{
+  right: 10px;
+  bottom: 50px;
+}
 .sharebox .social_icons{
-  margin: 0 5px;
+  margin: 0 5px !important;
   font-size: 14px;
   width: 30px;
   height: 30px;
@@ -7425,6 +7438,12 @@ h3 a:hover{
     padding: 10px 15px !important;
     margin-right: 35px;
   }
+  .login-lang {
+    margin-top: 22px;
+    color: #fff !important;
+    padding: 10px 15px !important;
+    margin-right: 0;
+  }
   .login-explore .fa{
     font-size: 18px;
     position: relative;
@@ -7444,9 +7463,11 @@ h3 a:hover{
     float: left;
     width: 100px;
     margin: 0 20px 0 0;
+    overflow: hidden;
   }
   .imagezone .file-preview-image{
     height: 100px !important;
+    width: auto !important;
   }
   .imagezone .file-thumbnail-footer{
     display: none;
@@ -7573,6 +7594,7 @@ h3 a:hover{
   #newevent #map{
     width: 100%;
     height: 250px;
+    margin-bottom: 20px;
   }
   .trlanguages{
     display: none;
@@ -7583,11 +7605,36 @@ h3 a:hover{
   top: 10px;
   display: none;
 }
+label.error{
+  margin-top: 5px;
+  color: red;
+}
+.checknamepass{
+  color: green
+}
+.checknamefail, .checknameerror{
+  color: red;
+}
+.checknameerror{
+  display: none;
+}
+#createBrand label.small{
+  margin-left: 8px;
+}
 #mybrand .bannerholder{
   height: 100px;
 }
 #mybrand .membercount{
   padding-right: 20px;
+}
+#mybrand .row{
+  clear: both;
+  margin-bottom: 30px;
+  border: 1px solid #e7e7e7;
+  padding: 20px 0;
+}
+#mybrand .row.no-border{
+  border: 0;
 }
 #manageEvents .imgholder{
   height: 100px;
@@ -7599,11 +7646,12 @@ h3 a:hover{
 }
 #manageEvents h3{
   margin-top: 0;
+  font-size: 18px;
 }
 #manageEvents h3 a{
   color: #333;
 }
-.radio label{
+#newevent .radio label{
   line-height: 18px;
 }
 #followedbrand .grouplist{
@@ -7616,4 +7664,157 @@ h3 a:hover{
   margin-top: 80px;
   font-size: 12px;
   width: 180px;
+}
+.postbanner{
+  width: 600px;
+  margin: 25px 0;
+}
+.stripe-form{
+  clear: both;
+  padding-top: 30px;
+}
+.stripe-form .stripe-button{
+  background: #fc6c25;
+    border: none;
+    color: #fff ;
+    font-weight: 400;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    white-space: nowrap;
+    padding: 10px 32px;
+    font-size: 14px;
+    line-height: 1.42857143;
+}
+.stripe-button-el{
+  background: #fc6c25 !important;
+  border-radius: 0 !important;
+  padding: 5px 15px !important;
+  box-shadow: none !important;
+}
+.stripe-button-el span{
+  background: #fc6c25 !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+#comments{
+  margin-top: 30px;
+}
+.comment{
+  padding: 10px 0;
+  margin-bottom: 10px;
+}
+.comment:after{
+  clear: both;
+  display: table;
+  content: "";
+}
+.commentauthor{
+  color: #888;
+}
+.ago-bullet{
+  font-size: 75%;
+  color: #ccc;
+}
+#comments .comment .top-profile{
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 18px;
+}
+.center{
+  text-align: center;
+}
+#infscr-loading{
+  text-align: center;
+}
+.pagination{
+  visibility: hidden;
+}
+.interestWrapper{
+  display: inline-block;
+}
+.eventlikeprofile{
+  float: left;
+  margin: 10px;
+}
+.page404{
+  text-align: center;
+  margin-top: 100px;
+}
+.page404 h1{
+  color: #fff;
+  margin-bottom: 50px;
+}
+/*** media query ***/
+@media (max-width: 1199px){
+  .grouplist .bannerholder{
+    height: 227px;
+  }
+  .grouplist .caption h3{
+    width: 200px;
+    margin-top: 90px;
+  }
+}
+@media (max-width: 991px) {
+  .grouplist .bannerholder{
+    height: 175px;
+  }
+  .grouplist .caption h3{
+    width: 160px;
+    margin-top: 60px;
+    font-size: 12px;
+  }
+  .home .eventgroup{
+    width: 70%;
+    float: none;
+    margin: 20px auto;
+  }
+  .layout84 .col-md-8, .layout84 .col-md-4, .layout444 .col-md-4, .layout633 .col-md-6, .layout633 .col-md-3, .layout3333 .col-md-3{
+    border-right: 0;
+  }
+}
+@media (min-width: 768px) {
+  .desktop{
+    display: block;
+  }
+  .mobile{
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .desktop{
+    display: none;
+  }
+  .mobile{
+    display: block;
+  }
+  .quickmenu{
+    float: right;
+    margin: 0;
+  }
+  .navbar-right.quickmenu .dropdown-menu {
+    left: auto;
+    right: 0;
+}
+  .navbar-nav.quickmenu > li {
+    float: left;
+  }
+  .grouplist{
+    width: 300px;
+    margin: 0 auto 25px auto;
+    float: none;
+  }
+  .grouplist.last{
+    margin-right: auto;
+  }
+  .grouplist .bannerholder{
+    height: 300px;
+  }
+  .grouplist .caption h3{
+    width: 220px;
+    margin-top: 120px;
+  }
+
 }
