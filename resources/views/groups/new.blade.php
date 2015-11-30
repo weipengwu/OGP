@@ -101,7 +101,7 @@
 						<div class="form-group">
 							<textarea name="description" maxlength="300" class="form-control" placeholder="Brief Introduction(Tips: Please use the language of target markets.)" required></textarea>
 						</div>
-						<input type="checkbox" id="conscent" name="conscent" required><label for="conscent" class="small">I hereby pledge that the content filled in and the additional materials provided are true and authentic in every aspect.</label>
+						<p class="small">By continuing you pledge that the content filled in and the additional materials provided are true and authentic in every aspect.</p>
 						<input type="submit" class="btn btn-logo submit" value="Submit">
 					</form>
 				</div>

@@ -133,6 +133,9 @@ $(document).ready(function(){
 				$('.follow_btn').removeClass('follow_group');
 				$('.follow_btn').addClass('unfollow_group');
 				$('.follow_btn').html('Following');
+				$('.groupfollow span a').removeClass('follow_group');
+				$('.groupfollow span a').addClass('unfollow_group');
+				$('.groupfollow span a').html('<img src="../img/unfollow_icon.png" width="20">');
 			}
 		})
 	})
@@ -152,6 +155,9 @@ $(document).ready(function(){
 				$('.follow_btn').removeClass('unfollow_group');
 				$('.follow_btn').addClass('follow_group');
 				$('.follow_btn').html('Follow');
+				$('.groupfollow span a').removeClass('unfollow_group');
+				$('.groupfollow span a').addClass('follow_group');
+				$('.groupfollow span a').html('<img src="../img/follow_icon.png" width="20">');
 			}
 		})
 	})

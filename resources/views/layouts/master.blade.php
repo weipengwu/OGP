@@ -81,7 +81,7 @@
 							@if(App::getLocale() == 'en')
 								<img src="{{ asset('/img/en_icon.png') }}" alt="English" width="22" />
 							@else
-								<img src="{{ asset('/img/en_icon.png') }}" alt="Chinese" width="22" />
+								<img src="{{ asset('/img/zh_icon.png') }}" alt="Chinese" width="22" />
 							@endif
 							</a>
 							<ul class="dropdown-menu" role="menu">
@@ -164,7 +164,7 @@
 							@if(App::getLocale() == 'en')
 								<img src="{{ asset('/img/en_icon.png') }}" alt="English" width="22" />
 							@else
-								<img src="{{ asset('/img/en_icon.png') }}" alt="Chinese" width="22" />
+								<img src="{{ asset('/img/zh_icon.png') }}" alt="Chinese" width="22" />
 							@endif
 							</a>
 							<ul class="dropdown-menu" role="menu">
