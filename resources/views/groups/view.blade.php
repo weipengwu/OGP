@@ -23,7 +23,7 @@
 		</div>	
 	</div>
 	<div class="statusbar">
-		<div class="left"><span>{{ memberCount($group->id) }} Members</span> <span>{{ count(groupFollowers($group->id)) }} Followers</span> <span>{{ count($group->events) }} Events</span> <span>{{ count($group->posts) }} Posts</span></div>
+		<div class="left"><span>{{ count(groupFollowers($group->id)) }} Followers</span> <span>{{ count($group->events) }} Events</span> <span>{{ count($group->posts) }} Posts</span></div>
 		<div class="right">
 			@if(Auth::check())
 				@if($group->owner == Auth::user()->id)
@@ -37,9 +37,6 @@
 					</div>
 					<div class="groupfollow">
 						<span><a href=""><img src="{{ asset('img/follow_icon.png') }}" width="20"></a></span>
-					</div>
-					<div class="groupjoin">
-						<span><a href=""><img src="{{ asset('img/join_icon.png') }}" width="16"></a></span>
 					</div>
 				@endif
 			@endif

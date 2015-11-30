@@ -79,7 +79,7 @@
 						</div>
 						<div class="col-md-7">
 							<h3>{{ $group->name }}</h3>
-							<p><span class="membercount"><img src="{{ asset('img/member_icon.png') }}" width="14"> {{ memberCount($group->id) }}</span><span class="followcount"><img src="{{ asset('img/follow_icon.png') }}" width="20"> {{ count(groupFollowers($group->id)) }}</span></p>
+							<p><span class="followcount"><img src="{{ asset('img/follow_icon.png') }}" width="20"> {{ count(groupFollowers($group->id)) }}</span></p>
 						</div>
 						<div class="col-md-2">
 							<a href="groups/<?= $group->slug;?>/edit">Edit my brand</a>
@@ -93,7 +93,7 @@
 					</div>
 				@endif
 			</div>
-			<div class="dash-main" id="joinedbrand">
+		<!-- 	<div class="dash-main" id="joinedbrand">
 				@if(joinedGroupCount($id) > 0)
 					<div class="row">
 					<?php $i = 1;?>
@@ -112,7 +112,7 @@
 					@endforeach
 					</div>
 				@endif
-			</div>
+			</div> -->
 			<div class="dash-main" id="followedbrand">
 				@if(count(followedGroup($id)) > 0)
 					<div class="row">
@@ -124,7 +124,7 @@
 							
 							<div class="caption">
 								<h3>{{ $group->name }}</h3>
-								<p><span class="membercount"><img src="{{ asset('img/member_icon_white.png') }}" width="14"> {{ memberCount($group->id) }}</span><span class="followcount"><img src="{{ asset('img/follow_icon_white.png') }}" width="20"> {{ count(groupFollowers($group->id)) }}</span></p>
+								<p><span class="followcount"><img src="{{ asset('img/follow_icon_white.png') }}" width="20"> {{ count(groupFollowers($group->id)) }}</span></p>
 							</div>
 							</a>
 						</div>

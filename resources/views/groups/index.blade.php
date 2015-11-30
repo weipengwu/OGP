@@ -21,7 +21,7 @@
 							
 							<div class="caption">
 								<h3>{{ $group->name }}</h3>
-								<p><span class="membercount"><img src="{{ asset('img/member_icon_white.png') }}" width="14"> {{ memberCount($group->id) }}</span><span class="followcount"><img src="{{ asset('img/follow_icon_white.png') }}" width="20"> {{ count(groupFollowers($group->id)) }}</span></p>
+								<p><!-- <span class="membercount"><img src="{{ asset('img/member_icon_white.png') }}" width="14"> {{ memberCount($group->id) }}</span> --><span class="followcount"><img src="{{ asset('img/follow_icon_white.png') }}" width="20"> {{ count(groupFollowers($group->id)) }}</span></p>
 							</div>
 							</a>
 						</div>
@@ -39,7 +39,7 @@
 							<div class="bannerholder" style="background: url('{{$popgroup[0]->profile}}');background-size:cover"></div>
 							<div class="caption">
 								<h3>{{ $popgroup[0]->name }}</h3>
-								<p><span class="membercount"><img src="{{ asset('img/member_icon_white.png') }}" width="14"> {{ memberCount($popgroup[0]->id) }}</span><span class="followcount"><img src="{{ asset('img/follow_icon_white.png') }}" width="20"> {{ count(groupFollowers($popgroup[0]->id)) }}</span></p>
+								<p><!-- <span class="membercount"><img src="{{ asset('img/member_icon_white.png') }}" width="14"> {{ memberCount($popgroup[0]->id) }}</span> --><span class="followcount"><img src="{{ asset('img/follow_icon_white.png') }}" width="20"> {{ count(groupFollowers($popgroup[0]->id)) }}</span></p>
 							</div>
 							</a>
 						</div>
@@ -57,7 +57,7 @@
 							<div class="bannerholder" style="background: url('{{$group->profile}}');background-size:cover"></div>
 							<div class="caption">
 								<h3>{{ $group->name }}</h3>
-								<p><span class="membercount"><img src="{{ asset('img/member_icon_white.png') }}" width="14"> {{ memberCount($group->id) }}</span><span class="followcount"><img src="{{ asset('img/follow_icon_white.png') }}" width="20"> {{ count(groupFollowers($group->id)) }}</span></p>
+								<p><span class="followcount"><img src="{{ asset('img/follow_icon_white.png') }}" width="20"> {{ count(groupFollowers($group->id)) }}</span></p>
 							</div>
 							</a>
 						</div>
@@ -75,7 +75,7 @@
 							<div class="bannerholder" style="background: url('{{$group->profile}}');background-size:cover"></div>
 							<div class="caption">
 								<h3>{{ $group->name }}</h3>
-								<p><span class="membercount"><img src="{{ asset('img/member_icon_white.png') }}" width="14"> {{ memberCount($group->id) }}</span><span class="followcount"><img src="{{ asset('img/follow_icon_white.png') }}" width="20"> {{ count(groupFollowers($group->id)) }}</span></p>
+								<p><span class="followcount"><img src="{{ asset('img/follow_icon_white.png') }}" width="20"> {{ count(groupFollowers($group->id)) }}</span></p>
 							</div>
 							</a>
 						</div>
@@ -93,7 +93,7 @@
 							<div class="bannerholder" style="background: url('{{$group->profile}}');background-size:cover"></div>
 							<div class="caption">
 								<h3>{{ $group->name }}</h3>
-								<p><span class="membercount"><img src="{{ asset('img/member_icon_white.png') }}" width="14"> {{ memberCount($group->id) }}</span><span class="followcount"><img src="{{ asset('img/follow_icon_white.png') }}" width="20"> {{ count(groupFollowers($group->id)) }}</span></p>
+								<p><span class="followcount"><img src="{{ asset('img/follow_icon_white.png') }}" width="20"> {{ count(groupFollowers($group->id)) }}</span></p>
 							</div>
 							</a>
 						</div>
@@ -111,7 +111,7 @@
 							<div class="bannerholder" style="background: url('{{$group->profile}}');background-size:cover"></div>
 							<div class="caption">
 								<h3>{{ $group->name }}</h3>
-								<p><span class="membercount"><img src="{{ asset('img/member_icon_white.png') }}" width="14"> {{ memberCount($group->id) }}</span><span class="followcount"><img src="{{ asset('img/follow_icon_white.png') }}" width="20"> {{ count(groupFollowers($group->id)) }}</span></p>
+								<p><span class="followcount"><img src="{{ asset('img/follow_icon_white.png') }}" width="20"> {{ count(groupFollowers($group->id)) }}</span></p>
 							</div>
 							</a>
 						</div>
@@ -129,7 +129,7 @@
 							<div class="bannerholder" style="background: url('{{$group->profile}}');background-size:cover"></div>
 							<div class="caption">
 								<h3>{{ $group->name }}</h3>
-								<p><span class="membercount"><img src="{{ asset('img/member_icon_white.png') }}" width="14"> {{ memberCount($group->id) }}</span><span class="followcount"><img src="{{ asset('img/follow_icon_white.png') }}" width="20"> {{ count(groupFollowers($group->id)) }}</span></p>
+								<p><!-- <span class="membercount"><img src="{{ asset('img/member_icon_white.png') }}" width="14"> {{ memberCount($group->id) }}</span> --><span class="followcount"><img src="{{ asset('img/follow_icon_white.png') }}" width="20"> {{ count(groupFollowers($group->id)) }}</span></p>
 							</div>
 							</a>
 						</div>
@@ -147,7 +147,7 @@
 							<div class="bannerholder" style="background: url('{{$group->profile}}');background-size:cover"></div>
 							<div class="caption">
 								<h3>{{ $group->name }}</h3>
-								<p><span class="membercount"><img src="{{ asset('img/member_icon_white.png') }}" width="14"> {{ memberCount($group->id) }}</span><span class="followcount"><img src="{{ asset('img/follow_icon_white.png') }}" width="20"> {{ count(groupFollowers($group->id)) }}</span></p>
+								<p><span class="followcount"><img src="{{ asset('img/follow_icon_white.png') }}" width="20"> {{ count(groupFollowers($group->id)) }}</span></p>
 							</div>
 							</a>
 						</div>
@@ -165,7 +165,7 @@
 							<div class="bannerholder" style="background: url('{{$group->profile}}');background-size:cover"></div>
 							<div class="caption">
 								<h3>{{ $group->name }}</h3>
-								<p><span class="membercount"><img src="{{ asset('img/member_icon_white.png') }}" width="14"> {{ memberCount($group->id) }}</span><span class="followcount"><img src="{{ asset('img/follow_icon_white.png') }}" width="20"> {{ count(groupFollowers($group->id)) }}</span></p>
+								<p><span class="followcount"><img src="{{ asset('img/follow_icon_white.png') }}" width="20"> {{ count(groupFollowers($group->id)) }}</span></p>
 							</div>
 							</a>
 						</div>
@@ -183,7 +183,7 @@
 							<div class="bannerholder" style="background: url('{{$group->profile}}');background-size:cover"></div>
 							<div class="caption">
 								<h3>{{ $group->name }}</h3>
-								<p><span class="membercount"><img src="{{ asset('img/member_icon_white.png') }}" width="14"> {{ memberCount($group->id) }}</span><span class="followcount"><img src="{{ asset('img/follow_icon_white.png') }}" width="20"> {{ count(groupFollowers($group->id)) }}</span></p>
+								<p><span class="followcount"><img src="{{ asset('img/follow_icon_white.png') }}" width="20"> {{ count(groupFollowers($group->id)) }}</span></p>
 							</div>
 							</a>
 						</div>
@@ -201,7 +201,7 @@
 							<div class="bannerholder" style="background: url('{{$group->profile}}');background-size:cover"></div>
 							<div class="caption">
 								<h3>{{ $group->name }}</h3>
-								<p><span class="membercount"><img src="{{ asset('img/member_icon_white.png') }}" width="14"> {{ memberCount($group->id) }}</span><span class="followcount"><img src="{{ asset('img/follow_icon_white.png') }}" width="20"> {{ count(groupFollowers($group->id)) }}</span></p>
+								<p><span class="followcount"><img src="{{ asset('img/follow_icon_white.png') }}" width="20"> {{ count(groupFollowers($group->id)) }}</span></p>
 							</div>
 							</a>
 						</div>
@@ -219,7 +219,7 @@
 							<div class="bannerholder" style="background: url('{{$group->profile}}');background-size:cover"></div>
 							<div class="caption">
 								<h3>{{ $group->name }}</h3>
-								<p><span class="membercount"><img src="{{ asset('img/member_icon_white.png') }}" width="14"> {{ memberCount($group->id) }}</span><span class="followcount"><img src="{{ asset('img/follow_icon_white.png') }}" width="20"> {{ count(groupFollowers($group->id)) }}</span></p>
+								<p><span class="followcount"><img src="{{ asset('img/follow_icon_white.png') }}" width="20"> {{ count(groupFollowers($group->id)) }}</span></p>
 							</div>
 							</a>
 						</div>
@@ -237,7 +237,7 @@
 							<div class="bannerholder" style="background: url('{{$group->profile}}');background-size:cover"></div>
 							<div class="caption">
 								<h3>{{ $group->name }}</h3>
-								<p><span class="membercount"><img src="{{ asset('img/member_icon_white.png') }}" width="14"> {{ memberCount($group->id) }}</span><span class="followcount"><img src="{{ asset('img/follow_icon_white.png') }}" width="20"> {{ count(groupFollowers($group->id)) }}</span></p>
+								<p><span class="followcount"><img src="{{ asset('img/follow_icon_white.png') }}" width="20"> {{ count(groupFollowers($group->id)) }}</span></p>
 							</div>
 							</a>
 						</div>
@@ -255,7 +255,7 @@
 							<div class="bannerholder" style="background: url('{{$group->profile}}');background-size:cover"></div>
 							<div class="caption">
 								<h3>{{ $group->name }}</h3>
-								<p><span class="membercount"><img src="{{ asset('img/member_icon_white.png') }}" width="14"> {{ memberCount($group->id) }}</span><span class="followcount"><img src="{{ asset('img/follow_icon_white.png') }}" width="20"> {{ count(groupFollowers($group->id)) }}</span></p>
+								<p><span class="followcount"><img src="{{ asset('img/follow_icon_white.png') }}" width="20"> {{ count(groupFollowers($group->id)) }}</span></p>
 							</div>
 							</a>
 						</div>
@@ -273,7 +273,7 @@
 							<div class="bannerholder" style="background: url('{{$group->profile}}');background-size:cover"></div>
 							<div class="caption">
 								<h3>{{ $group->name }}</h3>
-								<p><span class="membercount"><img src="{{ asset('img/member_icon_white.png') }}" width="14"> {{ memberCount($group->id) }}</span><span class="followcount"><img src="{{ asset('img/follow_icon_white.png') }}" width="20"> {{ count(groupFollowers($group->id)) }}</span></p>
+								<p><span class="followcount"><img src="{{ asset('img/follow_icon_white.png') }}" width="20"> {{ count(groupFollowers($group->id)) }}</span></p>
 							</div>
 							</a>
 						</div>
@@ -291,7 +291,7 @@
 							<div class="bannerholder" style="background: url('{{$group->profile}}');background-size:cover"></div>
 							<div class="caption">
 								<h3>{{ $group->name }}</h3>
-								<p><span class="membercount"><img src="{{ asset('img/member_icon_white.png') }}" width="14"> {{ memberCount($group->id) }}</span><span class="followcount"><img src="{{ asset('img/follow_icon_white.png') }}" width="20"> {{ count(groupFollowers($group->id)) }}</span></p>
+								<p><span class="followcount"><img src="{{ asset('img/follow_icon_white.png') }}" width="20"> {{ count(groupFollowers($group->id)) }}</span></p>
 							</div>
 							</a>
 						</div>
