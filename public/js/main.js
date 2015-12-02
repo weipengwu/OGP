@@ -172,6 +172,8 @@ $(document).ready(function(){
 		})
 	})
 	$('.groupfollow span a').tooltip();
+	$('.share_btn').tooltip();
+	$('.like_btn').tooltip();
 
 	$('#g-profile').fileinput({
 		previewFileType: "image",

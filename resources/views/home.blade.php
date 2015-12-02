@@ -63,7 +63,7 @@
 											<a href="" class="share_btn"> <img src="{{ asset('img/share_icon.png') }}" width="16"> </a>
 										</div>
 										<div class="postcomments">
-											<span><a href="{{ url() }}/posts/<?php echo $post->id; ?>"><img src="{{ asset('img/comments_icon.png') }}" width="16"></a></span> <span class="count">{{ count($post->comments) }}</span>
+											<span><a href="{{ url() }}/posts/<?php echo $post->id; ?>#leavecomments"><img src="{{ asset('img/comments_icon.png') }}" width="16"></a></span> <span class="count">{{ count($post->comments) }}</span>
 										</div>
 										<div class="postlikes">
 										@if(Auth::check())
@@ -113,7 +113,7 @@
 											<a href="" class="share_btn"><img src="{{ asset('img/share_icon.png') }}" width="16"></a>
 										</div>
 										<div class="postcomments">
-											<span><a href="{{ url() }}/posts/<?php echo $post->id; ?>"><img src="{{ asset('img/comments_icon.png') }}" width="16"></a></span> <span class="count">{{ count($post->comments) }}</span>
+											<span><a href="{{ url() }}/posts/<?php echo $post->id; ?>#leavecomments"><img src="{{ asset('img/comments_icon.png') }}" width="16"></a></span> <span class="count">{{ count($post->comments) }}</span>
 										</div>
 										<div class="postlikes">
 										@if(Auth::check())
@@ -203,7 +203,7 @@
 											<a href="" class="share_btn"><img src="{{ asset('img/share_icon.png') }}" width="16"></a>
 										</div>
 										<div class="postcomments">
-											<span><a href="{{ url() }}/posts/<?php echo $post->id; ?>"><img src="{{ asset('img/comments_icon.png') }}" width="16"></a></span> <span class="count">{{ count($post->comments) }}</span>
+											<span><a href="{{ url() }}/posts/<?php echo $post->id; ?>#leavecomments"><img src="{{ asset('img/comments_icon.png') }}" width="16"></a></span> <span class="count">{{ count($post->comments) }}</span>
 										</div>
 										<div class="postlikes">
 										@if(Auth::check())
@@ -284,7 +284,7 @@
 											<a href="" class="share_btn"><img src="{{ asset('img/share_icon.png') }}" width="16"></a>
 										</div>
 										<div class="postcomments">
-											<span><a href="{{ url() }}/posts/<?php echo $post->id; ?>"><img src="{{ asset('img/comments_icon.png') }}" width="16"></a></span> <span class="count">{{ count($post->comments) }}</span>
+											<span><a href="{{ url() }}/posts/<?php echo $post->id; ?>#leavecomments"><img src="{{ asset('img/comments_icon.png') }}" width="16"></a></span> <span class="count">{{ count($post->comments) }}</span>
 										</div>
 										<div class="postlikes">
 										@if(Auth::check())
@@ -336,7 +336,7 @@
 											<a href="" class="share_btn"><img src="{{ asset('img/share_icon.png') }}" width="16"></a>
 										</div>
 										<div class="postcomments">
-											<span><a href="{{ url() }}/posts/<?php echo $post->id; ?>"><img src="{{ asset('img/comments_icon.png') }}" width="16"></a></span> <span class="count">{{ count($post->comments) }}</span>
+											<span><a href="{{ url() }}/posts/<?php echo $post->id; ?>#leavecomments"><img src="{{ asset('img/comments_icon.png') }}" width="16"></a></span> <span class="count">{{ count($post->comments) }}</span>
 										</div>
 										<div class="postlikes">
 										@if(Auth::check())
@@ -385,7 +385,7 @@
 											<a href="" class="share_btn"><img src="{{ asset('img/share_icon.png') }}" width="16"></a>
 										</div>
 										<div class="postcomments">
-											<span><a href="{{ url() }}/posts/<?php echo $post->id; ?>"><img src="{{ asset('img/comments_icon.png') }}" width="16"></a></span> <span class="count">{{ count($post->comments) }}</span>
+											<span><a href="{{ url() }}/posts/<?php echo $post->id; ?>#leavecomments"><img src="{{ asset('img/comments_icon.png') }}" width="16"></a></span> <span class="count">{{ count($post->comments) }}</span>
 										</div>
 										<div class="postlikes">
 										@if(Auth::check())

@@ -32,7 +32,7 @@
 					</div>
 					<hr>
 					@if(Auth::check())
-					<section>
+					<section id="leavecomments">
 						<h3 class="title">Leave a comment</h3>
 						<form action="{{ URL::route('createComment', array('id' => $post->id)) }}" method="post">
 							<input type="hidden" name="_token" value="{{ csrf_token() }}">

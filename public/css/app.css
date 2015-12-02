@@ -6902,6 +6902,7 @@ h3 a:hover{
   }
   .orgnizationsection a{
     color: #777;
+    text-decoration: none !important; 
   }
 #map-canvas{
   height: 250px;
@@ -7757,7 +7758,7 @@ label.error{
   color: #fff;
   margin-bottom: 50px;
 }
-#allpost{
+#allposts{
   min-height: 580px;
 }
 /*** media query ***/

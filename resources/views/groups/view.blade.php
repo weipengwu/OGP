@@ -23,7 +23,7 @@
 		</div>	
 	</div>
 	<div class="statusbar">
-		<div class="left"><span class="followerNumber">{{ count(groupFollowers($group->id)) }} @if(count(groupFollowers($group->id)) > 1) Followers @else Follower @endif</span> <span>{{ count($group->events) }} Events</span> <span>{{ count($group->posts) }} Posts</span></div>
+		<div class="left"><span class="followerNumber">{{ count(groupFollowers($group->id)) }} @if(count(groupFollowers($group->id)) > 1) Followers @else Follower @endif</span> <span>{{ count($group->events) }} @if(count($group->events) > 1) Events @else Event @endif</span> <span>{{ count($group->posts) }} @if(count($group->posts) > 1) Posts @else Post @endif</span></div>
 		<div class="right">
 			@if(Auth::check())
 				@if($group->owner == Auth::user()->id)
@@ -33,7 +33,7 @@
 						<a href="" class="social_icons social_tw"><i class="fa fa-twitter"></i></a> <a href="" class="social_icons social_fb"><i class="fa fa-facebook"></i></a> <a href="" class="social_icons social_wc"><i class="fa fa-wechat"></i></a> <a href="" class="social_icons social_wb"><i class="fa fa-weibo"></i></a>
 					</div>
 					<div class="shareto">
-						<a href="" class="share_btn"> <img src="{{ asset('img/share_icon.png') }}" width="16"> </a>
+						<a href="" data-toggle="tooltip" title="Share" class="share_btn"> <img src="{{ asset('img/share_icon.png') }}" width="16"> </a>
 					</div>
 					@if(isFollowing(Auth::user()->id, $group->id))
 					<div class="groupfollow">
@@ -110,7 +110,7 @@
 													<a href="" class="share_btn"> <img src="{{ asset('img/share_icon.png') }}" width="16"> </a>
 												</div>
 												<div class="postcomments">
-													<span><a href="{{ url() }}/posts/<?php echo $post->id; ?>"><img src="{{ asset('img/comments_icon.png') }}" width="16"></a></span> <span class="count">{{ count($post->comments) }}</span>
+													<span><a href="{{ url() }}/posts/<?php echo $post->id; ?>#leavecomments"><img src="{{ asset('img/comments_icon.png') }}" width="16"></a></span> <span class="count">{{ count($post->comments) }}</span>
 												</div>
 												<div class="postlikes">
 												@if(Auth::check())
@@ -169,7 +169,7 @@
 														<a href="" class="share_btn"><img src="{{ asset('img/share_icon.png') }}" width="16"></a>
 													</div>
 													<div class="postcomments">
-														<span><a href="{{ url() }}/posts/<?php echo $post->id; ?>"><img src="{{ asset('img/comments_icon.png') }}" width="16"></a></span> <span class="count">{{ count($post->comments) }}</span>
+														<span><a href="{{ url() }}/posts/<?php echo $post->id; ?>#leavecomments"><img src="{{ asset('img/comments_icon.png') }}" width="16"></a></span> <span class="count">{{ count($post->comments) }}</span>
 													</div>
 													<div class="postlikes">
 													@if(Auth::check())
