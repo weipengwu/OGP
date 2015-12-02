@@ -224,8 +224,9 @@ class GroupController extends Controller {
 		$follow->user_id = Request::input('uid');
 		$follow->followed_id = Request::input('gid');
 		$follow->save();
+		$follower = Following::where('followed_id', Request::input('gid'))->count();
 
-		echo 'success';
+		echo $follower;
 	}
 	public function unfollow()
 	{
@@ -233,8 +234,9 @@ class GroupController extends Controller {
 		$uid = Request::input('uid');
 		$follow = Following::where('user_id', $uid)->where('followed_id', $gid);
 		$follow->delete();
+		$follower = Following::where('followed_id', Request::input('gid'))->count();
 
-		echo 'success';
+		echo $follower;
 	}
 
 	public function postDelete($id)

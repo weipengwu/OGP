@@ -23,7 +23,7 @@
 		</div>	
 	</div>
 	<div class="statusbar">
-		<div class="left"><span>{{ count(groupFollowers($group->id)) }} Followers</span> <span>{{ count($group->events) }} Events</span> <span>{{ count($group->posts) }} Posts</span></div>
+		<div class="left"><span class="followerNumber">{{ count(groupFollowers($group->id)) }} @if(count(groupFollowers($group->id)) > 1) Followers @else Follower @endif</span> <span>{{ count($group->events) }} Events</span> <span>{{ count($group->posts) }} Posts</span></div>
 		<div class="right">
 			@if(Auth::check())
 				@if($group->owner == Auth::user()->id)

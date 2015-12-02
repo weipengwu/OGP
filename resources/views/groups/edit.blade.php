@@ -58,6 +58,10 @@
 								<input type="text" name="website" class="form-control" placeholder="Brand Website" value="{{ $group->website }}">
 							</div>
 						</div>
+						<div class="originsection">
+						<div class="currentOrigin">
+							Current Origin: {{ $group->originCountry }} {{ $group->originProvince }} <a href="#" class="showSelect">Change</a> 
+						</div>
 						<div class="form-group selectorigin" data-ng-controller="CountryController">
 							<select class="form-control" name="originCountry" data-ng-model="country" data-ng-options="country.name for country in countries" data-ng-change="updateCountry()">
 								<option value="">Origin (Country)</option>
@@ -65,6 +69,7 @@
 							<select class="form-control" name="originProvince" data-ng-model="state" data-ng-options="state.name for state in availableStates">
 								<option value="">Origin (Province/State)</option>
 							</select>
+						</div>
 						</div>
 						<div class="form-group">
 							<select name="target" class="form-control" required>

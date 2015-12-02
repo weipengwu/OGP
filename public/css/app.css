@@ -6391,7 +6391,7 @@ label,
 .bannerwrapper.locked{
   position: fixed;
   width: 100%;
-  margin-top: -486px;
+  margin-top: -485px;
   z-index: 99;
 }
 .left{
@@ -7408,7 +7408,12 @@ h3 a:hover{
     border-top-color: #fff;
     border-width: 8px;
   }
-
+  .statusbar .sharebox:before{
+    left: 106px;
+  }
+  .statusbar .sharebox:after{
+    left: 107px;
+  }
   #login-in{
     background: rgba(255,255,255,.3);
     color: #fff;
@@ -7670,6 +7675,10 @@ label.error{
   width: 600px;
   margin: 25px 0;
 }
+.eventgallery{
+  width: 600px;
+  margin: 30px auto;
+}
 .stripe-form{
   clear: both;
   padding-top: 30px;
@@ -7747,6 +7756,9 @@ label.error{
 .page404 h1{
   color: #fff;
   margin-bottom: 50px;
+}
+#allpost{
+  min-height: 580px;
 }
 /*** media query ***/
 @media (max-width: 1199px){

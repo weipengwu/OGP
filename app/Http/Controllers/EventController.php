@@ -90,7 +90,7 @@ class EventController extends Controller {
 						    $constraint->upsize();
 						});
 						$img->save($destinationPath."/Medium_".$fileName);
-						array_push($eventimages, $destinationPath."/Medium_".$fileName);
+						array_push($eventimages, $destinationPath."/".$fileName);
 					}
 				}
 			}
@@ -114,7 +114,7 @@ class EventController extends Controller {
 						    $constraint->upsize();
 						});
 						$img->save($destinationPath."/Medium_".$fileName);
-						array_push($eventimages, $destinationPath."/Medium_".$fileName);
+						array_push($eventimages, $destinationPath."/".$fileName);
 					}
 				}
 			}
@@ -138,7 +138,7 @@ class EventController extends Controller {
 						    $constraint->upsize();
 						});
 						$img->save($destinationPath."/Medium_".$fileName);
-						array_push($eventimages, $destinationPath."/Medium_".$fileName);
+						array_push($eventimages, $destinationPath."/".$fileName);
 					}
 				}
 			}
@@ -162,7 +162,7 @@ class EventController extends Controller {
 						    $constraint->upsize();
 						});
 						$img->save($destinationPath."/Medium_".$fileName);
-						array_push($eventimages, $destinationPath."/Medium_".$fileName);
+						array_push($eventimages, $destinationPath."/".$fileName);
 					}
 				}
 			}
@@ -178,6 +178,18 @@ class EventController extends Controller {
 			      $extension = Request::file('banner')->getClientOriginalExtension(); // getting image extension
 			      $fileName = 'Event_'.date('YmdHis').'_'.rand(111111,999999).'.'.$extension; // renameing image
 			      Request::file('banner')->move($destinationPath, $fileName); // uploading file to given path
+			      $bannerimage = $destinationPath."/".$fileName;
+			      $img = Image::make($bannerimage);
+				  		$img->resize(1200, null, function ($constraint) {
+						    $constraint->aspectRatio();
+						    $constraint->upsize();
+						});
+						$img->save($destinationPath."/Large_".$fileName);
+					$img->resize(400, null, function ($constraint) {
+						    $constraint->aspectRatio();
+						    $constraint->upsize();
+						});
+						$img->save($destinationPath."/Medium_".$fileName);
 				  $event->banner = $destinationPath."/".$fileName;
 			    }
 			}
@@ -230,6 +242,18 @@ class EventController extends Controller {
 			      $extension = Request::file('banner')->getClientOriginalExtension(); // getting image extension
 			      $fileName = 'Event_'.date('YmdHis').'_'.rand(111111,999999).'.'.$extension; // renameing image
 			      Request::file('banner')->move($destinationPath, $fileName); // uploading file to given path
+			      $bannerimage = $destinationPath."/".$fileName;
+			      $img = Image::make($bannerimage);
+				  		$img->resize(1200, null, function ($constraint) {
+						    $constraint->aspectRatio();
+						    $constraint->upsize();
+						});
+						$img->save($destinationPath."/Large_".$fileName);
+					$img->resize(400, null, function ($constraint) {
+						    $constraint->aspectRatio();
+						    $constraint->upsize();
+						});
+						$img->save($destinationPath."/Medium_".$fileName);
 				  $event->banner = $destinationPath."/".$fileName;
 			    }
 			}

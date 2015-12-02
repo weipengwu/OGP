@@ -51,7 +51,7 @@
 						@endif
 					</div>
 				</div>
-				@if($event->fee == 'Free')
+				<!-- @if($event->fee == 'Free')
 
 				@else
 
@@ -67,7 +67,7 @@
 				          data-currency='cad'
 				          data-alipay="true"></script>
 				</form>
-				@endif
+				@endif -->
 			</div>
 	</div>
 </section>
@@ -80,8 +80,21 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2">
-					<p>{!! html_entity_decode($event->content) !!}</p>	
+			@if ($event->gallery !== '')
+				<?php $galleries = explode(',', $event->gallery); ?>
+					<div class="eventgallery">
+					<div class="flexslider">
+						<ul class="slides">
+						@foreach ($galleries as $gallery)
+							<li><img src="<?php echo url().'/'.$gallery;?>" class="post-img"></li>
+						@endforeach
+						</ul>
+					</div>
+					</div>
+			@endif
+				<p>{!! html_entity_decode($event->content) !!}</p>	
 			</div>
+
 		</div>
 	</div>
 </section>
@@ -115,8 +128,8 @@
 						</div>
 			<?php endif; endforeach;endif;?>
 			</div>
-			<hr>
-			<h2>Attentees</h2>
+			<!-- <hr>
+			<h2>Attentees</h2> -->
 			</div>
 		</div>
 	</div>

@@ -129,14 +129,19 @@ $(document).ready(function(){
 			url: window.location.origin+"/groups/follow",
 			data: "uid="+userid+'&gid='+groupid
 		}).done(function(response){
-			if(response == 'success'){
+		
 				$('.follow_btn').removeClass('follow_group');
 				$('.follow_btn').addClass('unfollow_group');
 				$('.follow_btn').html('Following');
 				$('.groupfollow span a').removeClass('follow_group');
 				$('.groupfollow span a').addClass('unfollow_group');
 				$('.groupfollow span a').html('<img src="../img/unfollow_icon.png" width="20">');
-			}
+				if(response > 1){
+					$('.followerNumber').html(response+' Followers');
+				}else{
+					$('.followerNumber').html(response+' Follower');
+				}
+			
 		})
 	})
 	$('body').on('click', '.unfollow_group', function(e){
@@ -151,14 +156,19 @@ $(document).ready(function(){
 			url: window.location.origin+"/groups/unfollow",
 			data: "uid="+userid+'&gid='+groupid
 		}).done(function(response){
-			if(response == 'success'){
+			
 				$('.follow_btn').removeClass('unfollow_group');
 				$('.follow_btn').addClass('follow_group');
 				$('.follow_btn').html('Follow');
 				$('.groupfollow span a').removeClass('unfollow_group');
 				$('.groupfollow span a').addClass('follow_group');
 				$('.groupfollow span a').html('<img src="../img/follow_icon.png" width="20">');
-			}
+				if(response > 1){
+					$('.followerNumber').html(response+' Followers');
+				}else{
+					$('.followerNumber').html(response+' Follower');
+				}
+			
 		})
 	})
 	$('.groupfollow span a').tooltip();
@@ -333,7 +343,7 @@ $(document).ready(function(){
 	$(window).scroll(function(){
 		if($(this).scrollTop() > 455){
 			$('.bannerwrapper').addClass('locked');
-			$('.bannerwrapper').next().css('margin-top', '500px');
+			$('.bannerwrapper').next().css('margin-top', '485px');
 		}else{
 			$('.bannerwrapper').removeClass('locked');
 			$('.bannerwrapper').next().css('margin-top', '0');
