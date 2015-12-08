@@ -219,7 +219,7 @@ class EventController extends Controller {
 			$event->group_id = Request::input('gid');
 			$event->save();
 			$followers = Following::where('followed_id', Request::input('gid'))->get();
-			Mail::send('html'=>'emails.newevent', array('title'=>Request::input('title')), function($message)
+			Mail::send(['html' => 'emails.newevent'], ['title' => Request::input('title')], function($message)
 	        {
 	            $message->from('noreply@ohgoodparty.com');
 

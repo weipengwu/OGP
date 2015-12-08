@@ -50,6 +50,10 @@
 
 		</div>
 		<div class="col-md-7 col-md-push-1">
+			<div class="dash-main">
+				<h3>Dashboard</h3>
+				<p>Select what you want to do from left side menu.</p>
+			</div>
 			<div class="dash-main" id="updateprofile">
 				<h4>Edit Profile Info</h4>
 				<form action="{{ URL::route('createProfile') }}" method="post" enctype="multipart/form-data">
