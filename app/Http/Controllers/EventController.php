@@ -2,6 +2,7 @@
 use App\Event;
 use App\EventLike;
 use App\Group;
+use App\Following;
 use Request;
 use Validator;
 use Stripe\Stripe;
@@ -217,6 +218,14 @@ class EventController extends Controller {
 			$event->gallery = implode(',', $eventimages);
 			$event->group_id = Request::input('gid');
 			$event->save();
+			$followers = Following::where('followed_id', Request::input('gid'))->get();
+			Mail::send('html'=>'emails.newevent', array('title'=>Request::input('title')), function($message)
+	        {
+	            $message->from('noreply@ohgoodparty.com');
+
+	            $message->to('wwp722@yahoo.ca')->subject('New Event on OGP');
+
+	        });
 
 			return redirect()->route('viewEvent', [ 'id' => $event->id ]);
 	}

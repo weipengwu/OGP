@@ -171,9 +171,15 @@ $(document).ready(function(){
 			
 		})
 	})
-	$('.groupfollow span a').tooltip();
-	$('.share_btn').tooltip();
-	$('.like_btn').tooltip();
+	$('.groupfollow span a').tooltip({
+		placement: 'left'
+	});
+	$('.share_btn').tooltip({
+		placement: 'left'
+	});
+	$('.like_btn').tooltip({
+		placement: 'left'
+	});
 
 	$('#g-profile').fileinput({
 		previewFileType: "image",
@@ -292,9 +298,11 @@ $(document).ready(function(){
     // $('input[name="applytojoin"]').bootstrapSwitch('state', false, true);
     // $('input[name="applyswitch"]').bootstrapSwitch('state', false, true);
 
-	$('#edit_btn').on('click', function(e){
+	$('.dash-btn').on('click', function(e){
 		e.preventDefault();
-		$('#update-profile').fadeIn();
+		$('.dash-main').hide();
+		var panel = $(this).data('id');
+		$('#'+panel).fadeIn();
 	})
 
 	$('.profile .tab_btn').on('click', function(e){

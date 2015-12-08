@@ -6560,7 +6560,7 @@ label,
   display: table;
   content: "";
 }
-#update-profile{
+.dash-main{
   display: none;
 }
 .btn-success{

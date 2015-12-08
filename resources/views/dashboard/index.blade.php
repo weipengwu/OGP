@@ -30,27 +30,27 @@
 				</div>
 				<div class="dash-side-bottom">
 					<div class="d-row">
-						<a href="" id="edit_btn">Edit Profile</a>
+						<a href="" class="dash-btn" data-id="updateprofile">Edit Profile</a>
 					</div>
 					<div class="d-row">
-						<a href="">My Group</a>
+						<a href="" class="dash-btn" data-id="mybrand">My Brand</a>
 					</div>
 					<div class="d-row">
-						<a href="">Followed Groups</a>
+						<a href="" class="dash-btn" data-id="followedbrand">Followed Brands</a>
 					</div>
-					<div class="d-row">
+<!-- 					<div class="d-row">
 						<a href="">Joined Groups</a>
-					</div>
+					</div> -->
 					@if(count(myGroup($id)) > 0)
 					<div class="d-row">
-						<a href="">Manage Events</a>
+						<a href="" class="dash-btn" data-id="manageEvents">Manage Events</a>
 					</div>
 					@endif
 				</div>
 
 		</div>
 		<div class="col-md-7 col-md-push-1">
-			<div class="dash-main" id="update-profile">
+			<div class="dash-main" id="updateprofile">
 				<h4>Edit Profile Info</h4>
 				<form action="{{ URL::route('createProfile') }}" method="post" enctype="multipart/form-data">
 					<input type="hidden" name="_token" value="{{ csrf_token() }}">
