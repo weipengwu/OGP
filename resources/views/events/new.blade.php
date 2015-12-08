@@ -32,7 +32,7 @@
 							<span class="radio"><input type="radio" name="type" id="typepublic" value="public" checked/><label for="typepublic">Public(Anyone can see)</label> </span>
 							</div>
 							<div class="col-md-6">
-							<span class="radio"><input type="radio" name="type" id="typeprivate" value="private" /> <label for="typeprivate">Private(Only members can see)</label></span>
+							<span class="radio"><input type="radio" name="type" id="typeprivate" value="private" /> <label for="typeprivate">Private(Only followers can see)</label></span>
 							</div>
 						</div>	
 						<div class="form-group">

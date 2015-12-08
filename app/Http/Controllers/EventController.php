@@ -8,6 +8,7 @@ use Validator;
 use Stripe\Stripe;
 use Config;
 use Image;
+use Mail;
 
 class EventController extends Controller {
 
