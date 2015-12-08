@@ -88,7 +88,7 @@ class EventController extends Controller {
 			      		Request::file('postimage1')->move($destinationPath, $fileName); // uploading file to given path
 				  		$postimage1 = $destinationPath."/".$fileName;
 				  		$img = Image::make($postimage1);
-				  		$img->resize(600, null, function ($constraint) {
+				  		$img->resize(400, null, function ($constraint) {
 						    $constraint->aspectRatio();
 						    $constraint->upsize();
 						});
@@ -112,7 +112,7 @@ class EventController extends Controller {
 			      		Request::file('postimage2')->move($destinationPath, $fileName); // uploading file to given path
 				  		$postimage2 = $destinationPath."/".$fileName;
 						$img = Image::make($postimage2);
-				  		$img->resize(600, null, function ($constraint) {
+				  		$img->resize(400, null, function ($constraint) {
 						    $constraint->aspectRatio();
 						    $constraint->upsize();
 						});
@@ -136,7 +136,7 @@ class EventController extends Controller {
 			      		Request::file('postimage3')->move($destinationPath, $fileName); // uploading file to given path
 				  		$postimage3 = $destinationPath."/".$fileName;
 						$img = Image::make($postimage3);
-				  		$img->resize(600, null, function ($constraint) {
+				  		$img->resize(400, null, function ($constraint) {
 						    $constraint->aspectRatio();
 						    $constraint->upsize();
 						});
@@ -160,7 +160,7 @@ class EventController extends Controller {
 			      		Request::file('postimage4')->move($destinationPath, $fileName); // uploading file to given path
 				  		$postimage4 = $destinationPath."/".$fileName;
 						$img = Image::make($postimage4);
-				  		$img->resize(600, null, function ($constraint) {
+				  		$img->resize(400, null, function ($constraint) {
 						    $constraint->aspectRatio();
 						    $constraint->upsize();
 						});
@@ -297,6 +297,14 @@ class EventController extends Controller {
 		$event = Event::findOrFail($id);
 
 		return view('events.view')->with('event', $event);
+	}
+
+	public function deleteEvent($id)
+	{
+		$event = Event::findOrFail($id);
+		$event->delete();
+
+		return view('dashboard.index');
 	}
 
 

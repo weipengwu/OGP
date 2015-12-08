@@ -21,7 +21,7 @@
 						else:
 					?>
 							<div class="col-md-6">
-								<div class="top-profile" style="width: 100px; height: 100px; border-radius: 50px">{{ getFirstCharter(Auth::user()->name) }}</div>
+								<div class="top-profile" style="width: 100px; height: 100px; border-radius: 50px; font-size:50px; line-height: 100px;">{{ getFirstCharter(Auth::user()->name) }}</div>
 							</div>
 					<?php endif;?>
 					<div class="col-md-6">
@@ -172,6 +172,11 @@
 					</div>
 					<div class="col-md-2 col-sm-2 col-xs-2">
 						<a href="/events/{{ $event->id }}/edit">Edit Event</a>
+						<a class="various" href="#confirmdelete<?php echo $event->id; ?>">Delete Event</a>
+						<div id="confirmdelete<?php echo $event->id; ?>" class="confirmdelete">
+							<h3>Are you sure to delete this event?</h3>
+							<a href="{{ url() }}/events/<?php echo $event->id; ?>/delete" class="btn btn-danger">Delete</a> <a href="" class="btn btn-logo close_btn">Cancel</a>
+						</div>
 					</div>
 				</div>
 				@endforeach
