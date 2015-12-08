@@ -6563,6 +6563,13 @@ label,
 .dash-main{
   display: none;
 }
+.dash-init{
+  display: block;
+}
+.dash-init h3{
+  margin-top: 0;
+  margin-bottom: 30px;
+}
 .btn-success{
   border: 0;
 }

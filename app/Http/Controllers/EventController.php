@@ -7,6 +7,7 @@ use Request;
 use Validator;
 use Stripe\Stripe;
 use Config;
+use Image;
 
 class EventController extends Controller {
 

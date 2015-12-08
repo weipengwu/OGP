@@ -21,7 +21,7 @@
 						else:
 					?>
 							<div class="col-md-6">
-								<div class="top-profile">{{ getFirstCharter(Auth::user()->name) }}</div>
+								<div class="top-profile" style="width: 100px; height: 100px; border-radius: 50px">{{ getFirstCharter(Auth::user()->name) }}</div>
 							</div>
 					<?php endif;?>
 					<div class="col-md-6">
@@ -50,7 +50,7 @@
 
 		</div>
 		<div class="col-md-7 col-md-push-1">
-			<div class="dash-main">
+			<div class="dash-main dash-init">
 				<h3>Dashboard</h3>
 				<p>Select what you want to do from left side menu.</p>
 			</div>
