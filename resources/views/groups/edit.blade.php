@@ -60,9 +60,9 @@
 						</div>
 						<div class="originsection">
 						<div class="currentOrigin">
-							Current Origin: {{ $group->originCountry }} {{ $group->originProvince }} <a href="#" class="showSelect">Change</a> 
+							Current Origin: @if($group->originCountry == '') {{ 'N/A' }} @else {{ $group->originCountry }} {{ $group->originProvince }} @endif <a href="#" class="showSelect">Change</a> 
 						</div>
-						<div class="form-group selectorigin" data-ng-controller="CountryController">
+						<div class="form-group selectorigin" data-ng-controller="CountryController" style="display: none;">
 							<select class="form-control" name="originCountry" data-ng-model="country" data-ng-options="country.name for country in countries" data-ng-change="updateCountry()">
 								<option value="">Origin (Country)</option>
 							</select>

@@ -7768,6 +7768,9 @@ label.error{
 #allposts{
   min-height: 580px;
 }
+.currentOrigin{
+  margin-bottom: 15px;
+}
 /*** media query ***/
 @media (max-width: 1199px){
   .grouplist .bannerholder{

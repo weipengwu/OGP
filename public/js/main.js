@@ -449,6 +449,11 @@ $(document).ready(function(){
 	});
 	$('#createPost').validate();
 
+	$('a.showSelect').on('click', function(e){
+		e.preventDefault();
+		$('.selectorigin').show();
+	})
+
 
 	// Dropzone.options.createpost = { // The camelized version of the ID of the form element
 
