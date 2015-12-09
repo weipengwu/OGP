@@ -198,7 +198,7 @@ class EventController extends Controller {
 			    }
 			}
 		}else{
-			$eventbanner = 'img/defaultbg'.rand(1,8).'.jpg';
+			$eventbanner = 'defaultbg'.rand(1,8).'.jpg';
 			$event->banner = $eventbanner;
 		}
 
@@ -226,7 +226,7 @@ class EventController extends Controller {
 			$event->save();
 			$eventid = $event->id;
 			$followers = Following::where('followed_id', Request::input('gid'))->get();
-			Mail::send(['html' => 'emails.newevent'], ['eventid' => $eventid, 'eventtitle' => Request::input('title'), 'eventbanner' => $eventbanner, 'location' => Request::input('address'), 'fromtime' => $unixfromtime, 'totime' => $unixtotime], function($message)
+			Mail::send(['html' => 'emails.newevent'], ['eventid' => $eventid, 'eventtitle' => Request::input('title'), 'eventbanner' => $eventbanner, 'eventfee' => $eventfee, 'location' => Request::input('address'), 'fromtime' => $unixfromtime, 'totime' => $unixtotime], function($message)
 	        {
 	            $message->from('noreply@ohgoodparty.com');
 
