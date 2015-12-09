@@ -47,7 +47,7 @@
                   <table cellpadding="0" cellspacing="0" border="0" align="center">
                     <tr>
                       <td valign="top" style="vertical-align: top;">
-                        <div style="padding:10px 0; border-bottom: 4px solid #fc6c25;">
+                        <div style="padding:10px 0; text-align: center">
                         <img src="{{ url() }}/img/logo.png" alt="OGP Logo" title="OGP Logo" width="30" />
                         </div>
                       </td>
@@ -56,7 +56,9 @@
                   <table cellpadding="0" cellspacing="0" border="0" align="center">
                     <tr>
                       <td valign="top" style="vertical-align: top;">
-                        <img src="{{ url() }}/uploads/{{ $eventbanner }}" alt="Event Banner" title="Event Banner" width="600" />
+                        <div style="border-top: 4px solid #fc6c25;">
+                          <img src="{{ url() }}/uploads/Medium_{{ $eventbanner }}" alt="Event Banner" title="Event Banner" width="600" />
+                        </div>
                       </td>
                     </tr>
                   </table>
@@ -77,7 +79,7 @@
                           <?php endif; ?>
                         </div>
                         <div style="text-align: center; margin: 0 0 10px 0;"> {{ $location }}</div>
-                        <div style="text-align: center; margin: 0 0 10px 0;">
+                        <div style="text-align: center; margin: 0 0 20px 0;">
                           @if($eventfee == 'Free') 
                             {{ $eventfee }}
                           @else
@@ -85,9 +87,10 @@
                           @endif
                         </div>
                         <div style="text-align: center; margin: 0 0 30px 0;">
-                          <a href="{{ url() }}/events/{{ $eventid }}" style="padding: 8px 15px; color: #fff; background: #fc6c25;">View Details</a>
+                          <a href="{{ url() }}/events/{{ $eventid }}" style="padding: 8px 15px; color: #fff; background: #fc6c25; display: inline-block;">View Details</a>
                         </div>
-                        <div style="text-align: center; color: #888; font-size: 9px;">
+                        <div style="text-align: center; color: #888; font-size: 9px; border-top: 1px solid #e7e7e7; padding-top:10px;">
+                          @ {{ date('Y') }} OH GOOD PARTY LTD. All rights reserved.<br>
                           If you would no longer like to receive these emails, please unsubscribe here.
                         </div>
                       </td>
