@@ -7771,6 +7771,9 @@ label.error{
 .currentOrigin{
   margin-bottom: 15px;
 }
+.currentOrigin a.showSelect{
+  float: right;
+}
 /*** media query ***/
 @media (max-width: 1199px){
   .grouplist .bannerholder{

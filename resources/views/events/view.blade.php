@@ -86,7 +86,7 @@
 					<div class="flexslider">
 						<ul class="slides">
 						@foreach ($galleries as $gallery)
-							<li><img src="<?php echo url().'/Medium_'.$gallery;?>" class="post-img"></li>
+							<li><img src="<?php echo url().'/uploads/Medium_'.$gallery;?>" class="post-img"></li>
 						@endforeach
 						</ul>
 					</div>

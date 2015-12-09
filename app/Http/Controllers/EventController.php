@@ -93,7 +93,7 @@ class EventController extends Controller {
 						    $constraint->upsize();
 						});
 						$img->save($destinationPath."/Medium_".$fileName);
-						array_push($eventimages, $destinationPath."/".$fileName);
+						array_push($eventimages, $fileName);
 					}
 				}
 			}
@@ -117,7 +117,7 @@ class EventController extends Controller {
 						    $constraint->upsize();
 						});
 						$img->save($destinationPath."/Medium_".$fileName);
-						array_push($eventimages, $destinationPath."/".$fileName);
+						array_push($eventimages, $fileName);
 					}
 				}
 			}
@@ -141,7 +141,7 @@ class EventController extends Controller {
 						    $constraint->upsize();
 						});
 						$img->save($destinationPath."/Medium_".$fileName);
-						array_push($eventimages, $destinationPath."/".$fileName);
+						array_push($eventimages, $fileName);
 					}
 				}
 			}
@@ -165,7 +165,7 @@ class EventController extends Controller {
 						    $constraint->upsize();
 						});
 						$img->save($destinationPath."/Medium_".$fileName);
-						array_push($eventimages, $destinationPath."/".$fileName);
+						array_push($eventimages, $fileName);
 					}
 				}
 			}
