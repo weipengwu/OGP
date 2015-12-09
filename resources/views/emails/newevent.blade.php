@@ -47,7 +47,9 @@
                   <table cellpadding="0" cellspacing="0" border="0" align="center">
                     <tr>
                       <td valign="top" style="vertical-align: top;">
+                        <div style="padding:10px 0; border-bottom: 4px solid #fc6c25;">
                         <img src="{{ url() }}/img/logo.png" alt="OGP Logo" title="OGP Logo" width="30" />
+                        </div>
                       </td>
                     </tr>
                   </table>
@@ -61,9 +63,12 @@
                   <table cellpadding="0" cellspacing="0" border="0" align="center">
                     <tr height="30">
                       <td valign="top" style="vertical-align: top;" width="600" >
-                        <h2><a href="{{ url() }}/events/{{ $eventid }}">{{ $eventtitle }}</a></h2>
-                        <hr>
-                        <div class="eventinfo">
+                        <h2 style="text-align: center"><a href="{{ url() }}/events/{{ $eventid }}">{{ $eventtitle }}</a></h2>
+                        <div style="text-align: center; margin: 15px 0;">
+                          Organized by<br>
+                          <h3><a href="{{ url() }}/groups/{{ gslug }}">{{ gname }}</a></h3>
+                        </div>
+                        <div style="text-align: center; margin: 0 0 10px 0;">
                           <?php if(gmdate('M j',$fromtime) == gmdate('M j',$totime)) : ?>
                             {{ gmdate('D, M j',$fromtime) }} @ {{ gmdate('g : i a',$fromtime) }} - {{ gmdate('g : i a' ,$totime) }}
                           <?php else: ?>
@@ -71,16 +76,19 @@
 
                           <?php endif; ?>
                         </div>
-                        <div class="eventinfo"> {{ $location }}</div>
-                        <div class="eventinfo eventfee">
+                        <div style="text-align: center; margin: 0 0 10px 0;"> {{ $location }}</div>
+                        <div style="text-align: center; margin: 0 0 10px 0;">
                           @if($eventfee == 'Free') 
                             {{ $eventfee }}
                           @else
                             C ${{ $eventfee }}
                           @endif
                         </div>
-                        <div>
-                          <a href="{{ url() }}/events/{{ $eventid }}">View Details</a>
+                        <div style="text-align: center; margin: 0 0 30px 0;">
+                          <a href="{{ url() }}/events/{{ $eventid }}" style="padding: 8px 15px; color: #fff; background: #fc6c25;">View Details</a>
+                        </div>
+                        <div style="text-align: center; color: #888; font-size: 9px;">
+                          If you would no longer like to receive these emails, please unsubscribe here.
                         </div>
                       </td>
                     </tr>

@@ -188,7 +188,7 @@ class EventController extends Controller {
 						    $constraint->upsize();
 						});
 						$img->save($destinationPath."/Large_".$fileName);
-					$img->resize(400, null, function ($constraint) {
+					$img->resize(390, 260, function ($constraint) {
 						    $constraint->aspectRatio();
 						    $constraint->upsize();
 						});
@@ -225,8 +225,10 @@ class EventController extends Controller {
 			$event->group_id = Request::input('gid');
 			$event->save();
 			$eventid = $event->id;
+			$gslug = getGroupSlug(Request::input('gid'));
+			$gname = getGroupName(Request::input('gid'));
 			$followers = Following::where('followed_id', Request::input('gid'))->get();
-			Mail::send(['html' => 'emails.newevent'], ['eventid' => $eventid, 'eventtitle' => Request::input('title'), 'eventbanner' => $eventbanner, 'eventfee' => $eventfee, 'location' => Request::input('address'), 'fromtime' => $unixfromtime, 'totime' => $unixtotime], function($message)
+			Mail::send(['html' => 'emails.newevent'], ['eventid' => $eventid, 'eventtitle' => Request::input('title'), 'eventbanner' => $eventbanner, 'gslug' => $gslug, 'gname' => $gname, 'eventfee' => $eventfee, 'location' => Request::input('address'), 'fromtime' => $unixfromtime, 'totime' => $unixtotime], function($message)
 	        {
 	            $message->from('noreply@ohgoodparty.com');
 
