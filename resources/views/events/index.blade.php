@@ -43,7 +43,7 @@
 						<div class="eventgroup<?php if(is_int($i/3)) { echo " last"; }?>">
 							<div class="eventgroup-list">
 										<a href="events/{{ $event->id }}">
-										<div class="imgholder" style="background: url('<?php echo url()."/".$event->banner;?>') center center; background-size: cover;">
+										<div class="imgholder" style="background: url('<?php echo url()."/uploads/Medium_".$event->banner;?>') center center; background-size: cover;">
 										</div>
 										</a>
 										<!-- <div style="clear:both; height:4px; background-color: #fc6c25"></div> -->

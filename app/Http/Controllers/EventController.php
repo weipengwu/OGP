@@ -193,11 +193,13 @@ class EventController extends Controller {
 						    $constraint->upsize();
 						});
 						$img->save($destinationPath."/Medium_".$fileName);
-				  $event->banner = $destinationPath."/".$fileName;
+					$eventbanner = $fileName;
+				  $event->banner = $eventbanner;
 			    }
 			}
 		}else{
-			$event->banner = 'img/defaultbg'.rand(1,8).'.jpg';
+			$eventbanner = 'img/defaultbg'.rand(1,8).'.jpg';
+			$event->banner = $eventbanner;
 		}
 
 			$event->author = Request::input('author');
@@ -212,16 +214,19 @@ class EventController extends Controller {
 			$event->city = Request::input('city');
 			$event->address = Request::input('address');
 			if(Request::input('selectprice') == 'Free'){
-				$event->fee = 'Free';
+				$eventfee = 'Free';
+				$event->fee = $eventfee;
 			}else{
-				$event->fee = Request::input('fee');
+				$eventfee = Request::input('fee');
+				$event->fee = $eventfee;
 			}
 			$event->content = nl2br(Request::input('content'));
 			$event->gallery = implode(',', $eventimages);
 			$event->group_id = Request::input('gid');
 			$event->save();
+			$eventid = $event->id;
 			$followers = Following::where('followed_id', Request::input('gid'))->get();
-			Mail::send(['html' => 'emails.newevent'], ['eventtitle' => Request::input('title')], function($message)
+			Mail::send(['html' => 'emails.newevent'], ['eventid' => $eventid, 'eventtitle' => Request::input('title'), 'eventbanner' => $eventbanner, 'location' => Request::input('address'), 'fromtime' => $unixfromtime, 'totime' => $unixtotime], function($message)
 	        {
 	            $message->from('noreply@ohgoodparty.com');
 

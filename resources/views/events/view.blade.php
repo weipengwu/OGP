@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-<div class="eventbanner" style="background: #ccc url('<?php echo url()."/".$event->banner;?>') center center no-repeat; background-size: cover;)">
+<div class="eventbanner" style="background: #ccc url('<?php echo url()."/uploads/Large_".$event->banner;?>') center center no-repeat; background-size: cover;)">
 
 </div>
 <div class="statusbar">

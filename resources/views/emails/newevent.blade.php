@@ -35,40 +35,61 @@
   <tr>
     <td valign="top">
       <!-- edge wrapper -->
-      <table cellpadding="0" cellspacing="0" border="0" align="center" width="600" style="background: #efefef;">
+      <table cellpadding="0" cellspacing="0" border="0" align="center" width="600" style="background: #fff;">
         <tr>
           <td valign="top">
             <!-- content wrapper -->
-            <table cellpadding="0" cellspacing="0" border="0" align="center" width="560" style="background: #cfcfcf;">
+            <!-- <table cellpadding="0" cellspacing="0" border="0" align="center" width="560" style="background: #cfcfcf;">
               <tr>
-                <td valign="top" style="vertical-align: top;">
+                <td valign="top" style="vertical-align: top;"> -->
                   <!-- ///////////////////////////////////////////////////// -->
 
                   <table cellpadding="0" cellspacing="0" border="0" align="center">
                     <tr>
                       <td valign="top" style="vertical-align: top;">
-                        <span style="">{{ $eventtitle }}</span>
+                        <img src="{{ url() }}/img/logo.png" alt="OGP Logo" title="OGP Logo" width="30" />
                       </td>
                     </tr>
                   </table>
                   <table cellpadding="0" cellspacing="0" border="0" align="center">
                     <tr>
                       <td valign="top" style="vertical-align: top;">
-                        <img src="full path to image" alt="alt text" title="title text" width="50" height="50" style="width: 50px; height: 50px;"/>
+                        <img src="{{ url() }}/uploads/{{ $eventbanner }}" alt="Event Banner" title="Event Banner" width="600" />
                       </td>
                     </tr>
                   </table>
                   <table cellpadding="0" cellspacing="0" border="0" align="center">
                     <tr height="30">
-                      <td valign="top" style="vertical-align: top; background: #efefef;" width="600" >
+                      <td valign="top" style="vertical-align: top;" width="600" >
+                        <h2><a href="{{ url() }}/events/{{ $eventid }}">{{ $eventtitle }}</a></h2>
+                        <hr>
+                        <div class="eventinfo">
+                          <?php if(gmdate('M j',$fromtime) == gmdate('M j',$totime)) : ?>
+                            {{ gmdate('D, M j',$fromtime) }} @ {{ gmdate('g : i a',$fromtime) }} - {{ gmdate('g : i a' ,$totime) }}
+                          <?php else: ?>
+                            {{ gmdate('M j',$fromtime) }} - {{ gmdate('M j',$totime) }}
+
+                          <?php endif; ?>
+                        </div>
+                        <div class="eventinfo"> {{ $location }}</div>
+                        <div class="eventinfo eventfee">
+                          @if($eventfee == 'Free') 
+                            {{ $eventfee }}
+                          @else
+                            C ${{ $eventfee }}
+                          @endif
+                        </div>
+                        <div>
+                          <a href="{{ url() }}/events/{{ $eventid }}">View Details</a>
+                        </div>
                       </td>
                     </tr>
                   </table>
 
                   <!-- //////////// -->
-                </td>
+                <!-- </td>
               </tr>
-            </table>
+            </table> -->
             <!-- / content wrapper -->
           </td>
         </tr>
