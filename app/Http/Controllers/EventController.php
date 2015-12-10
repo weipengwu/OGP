@@ -233,10 +233,10 @@ class EventController extends Controller {
 	        {
 	            $message->from('noreply@ohgoodparty.com', 'OGP');
 	            $followers = Following::where('followed_id', Request::input('gid'))->get();
+	            var_dump($followers);
 	            foreach ($followers as $follower) {
-	            	$user = User::where('id', $follower)->get();
+	            	$user = User::where('id', $follower->user_id)->get();
 	            	var_dump($user);
-	            	var_dump($user->email);
 	            	$message->to($user->email)->subject('New Event on OGP');
 	            }
 
