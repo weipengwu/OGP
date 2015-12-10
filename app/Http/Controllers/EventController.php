@@ -233,16 +233,14 @@ class EventController extends Controller {
 	        {
 	            $message->from('noreply@ohgoodparty.com', 'OGP');
 	            $followers = Following::where('followed_id', Request::input('gid'))->get();
-	            var_dump($followers);
 	            foreach ($followers as $follower) {
 	            	$user = User::where('id', $follower->user_id)->get();
-	            	var_dump($user);
-	            	$message->to($user->email)->subject('New Event on OGP');
+	            	$message->to($user[0]->email)->subject('New Event on OGP');
 	            }
 
 	        });
 
-			//return redirect()->route('viewEvent', [ 'id' => $event->id ]);
+			return redirect()->route('viewEvent', [ 'id' => $event->id ]);
 	}
 
 	public function editEvent($id)
