@@ -228,10 +228,11 @@ class EventController extends Controller {
 			$eventid = $event->id;
 			$gslug = getGroupSlug(Request::input('gid'));
 			$gname = getGroupName(Request::input('gid'));
-			$followers = Following::where('followed_id', Request::input('gid'))->get();
+			
 			Mail::queue(['html' => 'emails.newevent'], ['eventid' => $eventid, 'eventtitle' => Request::input('title'), 'eventbanner' => $eventbanner, 'gslug' => $gslug, 'gname' => $gname, 'eventfee' => $eventfee, 'location' => Request::input('address'), 'fromtime' => $unixfromtime, 'totime' => $unixtotime], function($message)
 	        {
 	            $message->from('noreply@ohgoodparty.com', 'OGP');
+	            $followers = Following::where('followed_id', Request::input('gid'))->get();
 	            foreach ($followers as $follower) {
 	            	$user = User::where('id', $follower)->get();
 	            	$message->to($user->email)->subject('New Event on OGP');
