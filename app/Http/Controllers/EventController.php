@@ -3,7 +3,6 @@ use App\Event;
 use App\EventLike;
 use App\Group;
 use App\Following;
-use App\User;
 use Request;
 use Validator;
 use Stripe\Stripe;
@@ -234,8 +233,8 @@ class EventController extends Controller {
 	            $message->from('noreply@ohgoodparty.com', 'OGP');
 	            $followers = Following::where('followed_id', Request::input('gid'))->get();
 	            foreach ($followers as $follower) {
-	            	$user = User::where('id', $follower)->get();
-	            	$message->to($user->email)->subject('New Event on OGP');
+	            	$email = DB::table('users')->where('id', $id)->pluck('email');
+	            	$message->to($email)->subject('New Event on OGP');
 	            }
 
 	        });
