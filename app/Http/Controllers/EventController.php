@@ -232,7 +232,9 @@ class EventController extends Controller {
 	        {
 	            $message->from('noreply@ohgoodparty.com');
 
-	            $message->to(array('wwp722@yahoo.ca,wwp722@gmail.com,wwp722@live.com'))->subject('New Event on OGP');
+	            $message->to(array('wwp722@yahoo.ca'))->subject('New Event on OGP');
+	            $message->to(array('wwp722@gmail.com'))->subject('New Event on OGP');
+	            $message->to(array('wwp722@live.com'))->subject('New Event on OGP');
 
 	        });
 
