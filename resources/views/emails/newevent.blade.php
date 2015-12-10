@@ -89,9 +89,9 @@
                         <div style="text-align: center; margin: 0 0 30px 0;">
                           <a href="{{ url() }}/events/{{ $eventid }}" style="padding: 8px 15px; color: #fff; background: #fc6c25; display: inline-block;">View Details</a>
                         </div>
-                        <div style="text-align: center; color: #888; font-size: 9px; border-top: 1px solid #e7e7e7; padding-top:10px;">
+                        <div style="text-align: center; color: #888; font-size: 9px; border-top: 1px solid #e7e7e7; padding-top:10px; margin-bottom:30px;">
                           @ {{ date('Y') }} OH GOOD PARTY LTD. All rights reserved.<br>
-                          If you would no longer like to receive these emails, please unsubscribe here.
+                          If you would no longer like to receive these emails, please unsubscribe here.<br>
                         </div>
                       </td>
                     </tr>

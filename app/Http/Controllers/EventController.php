@@ -3,6 +3,7 @@ use App\Event;
 use App\EventLike;
 use App\Group;
 use App\Following;
+use App\User;
 use Request;
 use Validator;
 use Stripe\Stripe;
@@ -228,13 +229,13 @@ class EventController extends Controller {
 			$gslug = getGroupSlug(Request::input('gid'));
 			$gname = getGroupName(Request::input('gid'));
 			$followers = Following::where('followed_id', Request::input('gid'))->get();
-			Mail::send(['html' => 'emails.newevent'], ['eventid' => $eventid, 'eventtitle' => Request::input('title'), 'eventbanner' => $eventbanner, 'gslug' => $gslug, 'gname' => $gname, 'eventfee' => $eventfee, 'location' => Request::input('address'), 'fromtime' => $unixfromtime, 'totime' => $unixtotime], function($message)
+			Mail::queue(['html' => 'emails.newevent'], ['eventid' => $eventid, 'eventtitle' => Request::input('title'), 'eventbanner' => $eventbanner, 'gslug' => $gslug, 'gname' => $gname, 'eventfee' => $eventfee, 'location' => Request::input('address'), 'fromtime' => $unixfromtime, 'totime' => $unixtotime], function($message)
 	        {
-	            $message->from('noreply@ohgoodparty.com');
-
-	            $message->to('wwp722@yahoo.ca')->subject('New Event on OGP');
-	            $message->to('wwp722@gmail.com')->subject('New Event on OGP');
-	            $message->to('wwp722@live.com')->subject('New Event on OGP');
+	            $message->from('noreply@ohgoodparty.com', 'OGP');
+	            foreach ($followers as $follower) {
+	            	$user = User::where('id', $follower)->get();
+	            	$message->to($user->email)->subject('New Event on OGP');
+	            }
 
 	        });
 
