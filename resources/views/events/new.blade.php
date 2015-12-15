@@ -64,7 +64,7 @@
 							</div>
 						</div>
 						<div id="fee" class="form-group" style="float:left; width: 49%;">
-							<div class="col-md-2"><select style="text-align: right"><option>C$</option><option>$</option><option>¥</option><option>€</option></select></div> <div class="col-md-10" style="padding: 0"><input type="text" name="fee" class="form-control" placeholder="Event Fee"></div>
+							<div class="col-md-2"><select class="form-control"><option>C$</option><option>$</option><option>¥</option><option>€</option></select></div> <div class="col-md-10" style="padding: 0"><input type="text" name="fee" class="form-control" placeholder="Event Fee"></div>
 						</div>
 						<div class="form-group">
 							<input type="number" name="quantity" class="form-control" placeholder="Quantity" min="1" max="1000">

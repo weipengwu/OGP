@@ -82,7 +82,7 @@
 						</div>
 
 						<div class="form-group">
-							<textarea name="content" class="form-control" placeholder="Event Description">{!! html_entity_decode($event->content) !!}</textarea>
+							<textarea name="content" class="form-control" placeholder="Event Description">{{ $event->content }}</textarea>
 						</div>
 						<input type="submit" class="btn btn-logo" value="Submit">
 					</form>
