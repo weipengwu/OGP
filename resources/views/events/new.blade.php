@@ -28,10 +28,10 @@
 						</div>
 						<div class="form-group row">
 							<div class="col-md-12">Select the type of your event</div>
-							<div class="col-md-6">
+							<div class="col-md-6 col-sm-6">
 							<span class="radio"><input type="radio" name="type" id="typepublic" value="public" checked/><label for="typepublic">Public(Anyone can see)</label> </span>
 							</div>
-							<div class="col-md-6">
+							<div class="col-md-6 col-sm-6">
 							<span class="radio"><input type="radio" name="type" id="typeprivate" value="private" /> <label for="typeprivate">Private(Only followers can see)</label></span>
 							</div>
 						</div>	
@@ -64,7 +64,7 @@
 							</div>
 						</div>
 						<div id="fee" class="form-group" style="float:left; width: 49%;">
-							<select class="col-md-2" style="text-align: right"><option>C$</option><option>$</option><option>¥</option><option>€</option></select> <div class="col-md-10" style="padding: 0"><input type="text" name="fee" class="form-control" placeholder="Event Fee"></div>
+							<div class="col-md-2"><select style="text-align: right"><option>C$</option><option>$</option><option>¥</option><option>€</option></select></div> <div class="col-md-10" style="padding: 0"><input type="text" name="fee" class="form-control" placeholder="Event Fee"></div>
 						</div>
 						<div class="form-group">
 							<input type="number" name="quantity" class="form-control" placeholder="Quantity" min="1" max="1000">

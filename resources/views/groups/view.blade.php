@@ -27,7 +27,7 @@
 		<div class="right">
 			@if(Auth::check())
 				@if($group->owner == Auth::user()->id)
-					<a data-toggle="tooltip" title="Create Event" href="<?php echo url();?>/groups/<?php echo $group->slug;?>/events/new"><img src="{{ asset('img/ticket_icon.png') }}" width="20"></a> <a data-toggle="tooltip" title="Create Post" href="<?php echo url();?>/groups/<?php echo $group->slug;?>/posts/new"><img src="{{ asset('img/createpost_icon.png') }}" width="16"></a>
+					<a class="create_btn" data-toggle="tooltip" title="Create Event" href="<?php echo url();?>/groups/<?php echo $group->slug;?>/events/new"><img src="{{ asset('img/ticket_icon.png') }}" width="20"></a> <a class="create_btn" data-toggle="tooltip" title="Create Post" href="<?php echo url();?>/groups/<?php echo $group->slug;?>/posts/new"><img src="{{ asset('img/createpost_icon.png') }}" width="16"></a>
 				@else
 					<div class="sharebox">
 						<a href="" class="social_icons social_tw"><i class="fa fa-twitter"></i></a> <a href="" class="social_icons social_fb"><i class="fa fa-facebook"></i></a> <a href="" class="social_icons social_wc"><i class="fa fa-wechat"></i></a> <a href="" class="social_icons social_wb"><i class="fa fa-weibo"></i></a>

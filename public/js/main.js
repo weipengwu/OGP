@@ -180,6 +180,9 @@ $(document).ready(function(){
 	$('.like_btn').tooltip({
 		placement: 'left'
 	});
+	$('.create_btn').tooltip({
+		placement: 'left'
+	});
 
 	$('#g-profile').fileinput({
 		previewFileType: "image",

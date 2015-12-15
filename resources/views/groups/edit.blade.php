@@ -105,7 +105,7 @@
 								   headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
 								});
 								var bname = $(this).val();
-								if(bname !== '' && bname !== {{ $group->name }}){
+								if(bname !== '' && bname !== '{{ $group->name }}'){
 									$.ajax({
 										type: "POST",
 										url: window.location.origin+"/groups/checkBrandname",
