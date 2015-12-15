@@ -24,6 +24,7 @@
 						<input type="hidden" name="gid" value="<?php echo $gid;?>">
 						<div class="form-group">
 							<label>Upload Your Banner Image</label>
+							<p>Images must be in .jpg, .bmp, .png, or .gif format, and less than 4M.</p>
 							<input type="file" name="banner" id="banner" accept="image/*">
 						</div>
 						<div class="form-group row">
@@ -64,7 +65,7 @@
 							</div>
 						</div>
 						<div id="fee" class="form-group" style="float:left; width: 49%;">
-							<label class="col-md-2" style="text-align: right">C$</label> <div class="col-md-10" style="padding: 0"><input type="text" name="fee" class="form-control" placeholder="Event Fee"></div>
+							<select class="col-md-2" style="text-align: right"><option>C$</option><option>$</option><option>¥</option><option>€</option></select> <div class="col-md-10" style="padding: 0"><input type="text" name="fee" class="form-control" placeholder="Event Fee"></div>
 						</div>
 						<div class="form-group">
 							<input type="number" name="quantity" class="form-control" placeholder="Quantity" min="1" max="1000">

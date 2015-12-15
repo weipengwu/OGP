@@ -36,7 +36,7 @@
 						<a href="" class="dash-btn" data-id="mybrand">My Brand</a>
 					</div>
 					<div class="d-row">
-						<a href="" class="dash-btn" data-id="followedbrand">Followed Brands</a>
+						<a href="" class="dash-btn" data-id="followedbrand">Followed</a>
 					</div>
 <!-- 					<div class="d-row">
 						<a href="">Joined Groups</a>
@@ -64,12 +64,12 @@
 						<input type="file" name="u-profile" id="u-profile" accept="image/*">
 					</div>
 					<div class="form-group">
-						<input type="text" class="form-control" value="{{ getAuthorname($id) }}">
+						<input type="text" class="form-control" value="{{ getAuthorname($id) }}" placeholder="Username">
 					</div>
 					<div class="form-group">
 						<textarea name="desc" class="form-control" placeholder="Bio"></textarea>
 					</div>
-					<input type="submit" class="btn btn-logo">
+					<input type="submit" class="btn btn-logo" value="Submit">
 				</form>
 			</div>
 			<div class="dash-main" id="mybrand">

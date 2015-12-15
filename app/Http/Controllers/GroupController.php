@@ -104,7 +104,7 @@ class GroupController extends Controller {
 				$group->tag = Request::input('tag');
 				$group->website = Request::input('website');
 				$group->originCountry = Request::input('originCountry');
-				$group->originProvince = Request::input('originProvince');
+				//$group->originProvince = Request::input('originProvince');
 				$group->target = Request::input('target');
 				if(Request::input('translate') == 'no'){
 					$group->translate = 'no';
@@ -174,7 +174,7 @@ class GroupController extends Controller {
 		$group->tag = Request::input('tag');
 		$group->website = Request::input('website');
 		$group->originCountry = Request::input('originCountry');
-		$group->originProvince = Request::input('originProvince');
+		//$group->originProvince = Request::input('originProvince');
 		$group->target = Request::input('target');
 		if(Request::input('translate') == 'no'){
 			$group->translate = 'no';

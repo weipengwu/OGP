@@ -13,24 +13,25 @@
 						<select id="category" class="form-control">
 								<option value="">All Categories</option>
 								<option value="Arts & Design" <?php if(isset($_GET['category']) && $cat == 'Arts & Design') echo "selected";?>>Arts & Design</option>
-								<option value="Auto" <?php if(isset($_GET['category']) && $cat == 'Auto') echo "selected";?>>Auto</option>
+								<option value="Autos" <?php if(isset($_GET['category']) && $cat == 'Autos') echo "selected";?>>Autos</option>
 								<option value="Business" <?php if(isset($_GET['category']) && $cat == 'Business') echo "selected";?>>Business</option>
 								<option value="Education" <?php if(isset($_GET['category']) && $cat == 'Education') echo "selected";?>>Education</option>
+								<option value="Fashion" <?php if(isset($_GET['category']) && $cat == 'Fashion') echo "selected";?>>Fashion</option>
 								<option value="Food & Drink" <?php if(isset($_GET['category']) && $cat == 'Food & Drink') echo "selected";?>>Food & Drink</option>
-								<option value="Games" <?php if(isset($_GET['category']) && $cat == 'Games') echo "selected";?>>Games</option>
+								<option value="Gaming" <?php if(isset($_GET['category']) && $cat == 'Gaming') echo "selected";?>>Gaming</option>
 								<option value="Health" <?php if(isset($_GET['category']) && $cat == 'Health') echo "selected";?>>Health</option>
 								<option value="Home" <?php if(isset($_GET['category']) && $cat == 'Home') echo "selected";?>>Home</option>
 								<option value="Music" <?php if(isset($_GET['category']) && $cat == 'Music') echo "selected";?>>Music</option>
 								<option value="Sports" <?php if(isset($_GET['category']) && $cat == 'Sports') echo "selected";?>>Sports</option>
-								<option value="Fashion" <?php if(isset($_GET['category']) && $cat == 'Fashion') echo "selected";?>>Fashion</option>
-								<option value="Technology" <?php if(isset($_GET['category']) && $cat == 'Technology') echo "selected";?>>Technology</option>
+								<option value="Technology & Science" <?php if(isset($_GET['category']) && $cat == 'Technology & Science') echo "selected";?>>Technology & Science</option>
 								<option value="Travel" <?php if(isset($_GET['category']) && $cat == 'Travel') echo "selected";?>>Travel</option>
+								<option value="Other" <?php if(isset($_GET['category']) && $cat == 'Other') echo "selected";?>>Other</option>
 						</select>
 						<?php if(isset($_GET['time'])){
 							$time = $_GET['time'];
 						}?>
 						<select id="eventtime" class="form-control">
-							<option value="">Start time</option>
+							<option value="">All time</option>
 							<option value="thisweek" <?php if(isset($_GET['time']) && $time == 'thisweek') echo "selected";?>>This week</option>
 							<option value="nextweek" <?php if(isset($_GET['time']) && $time == 'nextweek') echo "selected";?>>Next week</option>
 						</select>

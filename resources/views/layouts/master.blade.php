@@ -222,47 +222,47 @@
 	</script>
 	<script type="text/javascript">
 	//angular app
-	var ogpApp = angular.module('ogpApp', []);
-    ogpApp.controller('CountryController', function ($scope) {
-        $scope.countries = [{
-	        "name": "USA",
-	        "id": 1
-	      },{
-	        "name": "Canada",
-	        "id": 2
-	    }];
-	    $scope.states = [{
-	        "name": "Alabama",
-	        "id": 1,
-	        "countryId": 1
-	      }, {
-	        "name": "Alaska",
-	        "id": 2,
-	        "countryId": 1
-	      }, {
-	        "name": "Arizona",
-	        "id": 3,
-	        "countryId": 1
-	      }, {
-	        "name": "Alberta",
-	        "id": 4,
-	        "countryId": 2
-	      }, {
-	        "name": "British columbia",
-	        "id": 5,
-	        "countryId": 2
-	    }];
+	// var ogpApp = angular.module('ogpApp', []);
+ //    ogpApp.controller('CountryController', function ($scope) {
+ //        $scope.countries = [{
+	//         "name": "USA",
+	//         "id": 1
+	//       },{
+	//         "name": "Canada",
+	//         "id": 2
+	//     }];
+	//     $scope.states = [{
+	//         "name": "Alabama",
+	//         "id": 1,
+	//         "countryId": 1
+	//       }, {
+	//         "name": "Alaska",
+	//         "id": 2,
+	//         "countryId": 1
+	//       }, {
+	//         "name": "Arizona",
+	//         "id": 3,
+	//         "countryId": 1
+	//       }, {
+	//         "name": "Alberta",
+	//         "id": 4,
+	//         "countryId": 2
+	//       }, {
+	//         "name": "British columbia",
+	//         "id": 5,
+	//         "countryId": 2
+	//     }];
 	    
-	    $scope.updateCountry = function(){
-	      $scope.availableStates = [];
+	//     $scope.updateCountry = function(){
+	//       $scope.availableStates = [];
 	      
-	      angular.forEach($scope.states, function(value){
-	        if(value.countryId == $scope.country.id){
-	          $scope.availableStates.push(value);
-	        }
-	      });
-	    }
-    })
+	//       angular.forEach($scope.states, function(value){
+	//         if(value.countryId == $scope.country.id){
+	//           $scope.availableStates.push(value);
+	//         }
+	//       });
+	//     }
+ //    })
 
 </script>
 </body>

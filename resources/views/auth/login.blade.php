@@ -60,7 +60,7 @@
 					<div class="logoslogan">
 						<img src="{{ asset('img/logo_transparent.png') }}" width="70">
 						<h1>OH GOOD PARTY</h1>
-						<h2>Leading Brands Community</h2>
+						<h2>Brand Strategy & Innovation Community</h2>
 					</div>
 					<!-- <h3>SIGN IN TO OH GOOD PARTY</h3> -->
 				</div>

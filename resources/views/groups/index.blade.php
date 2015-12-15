@@ -65,7 +65,8 @@
 					@endforeach
 				</div>
 				<div class="divider"></div>
-				<h2 class="sectiontitle">AUTO</h2>
+				@if (count($autogroups) > 0)
+				<h2 class="sectiontitle">AUTOS</h2>
 				<div class="row">
 					<?php $i = 1;?>
 					@foreach ($autogroups as $group)
@@ -83,6 +84,9 @@
 					@endforeach
 				</div>
 				<div class="divider"></div>
+				@endif
+
+				@if (count($businessgroups) > 0)
 				<h2 class="sectiontitle">BUSINESS</h2>
 				<div class="row">
 					<?php $i = 1;?>
@@ -101,6 +105,9 @@
 					@endforeach
 				</div>
 				<div class="divider"></div>
+				@endif
+
+				@if (count($educationgroups) > 0)
 				<h2 class="sectiontitle">EDUCATION</h2>
 				<div class="row">
 					<?php $i = 1;?>
@@ -119,6 +126,9 @@
 					@endforeach
 				</div>
 				<div class="divider"></div>
+				@endif
+
+				@if (count($fashiongroups) > 0)
 				<h2 class="sectiontitle">FASHION</h2>
 				<div class="row">
 					<?php $i = 1;?>
@@ -137,6 +147,9 @@
 					@endforeach
 				</div>
 				<div class="divider"></div>
+				@endif
+
+				@if (count($foodgroups) > 0)
 				<h2 class="sectiontitle">FOOD & DRINK</h2>
 				<div class="row">
 					<?php $i = 1;?>
@@ -155,7 +168,10 @@
 					@endforeach
 				</div>
 				<div class="divider"></div>
-				<h2 class="sectiontitle">GAMES</h2>
+				@endif
+
+				@if (count($gamesgroups) > 0)
+				<h2 class="sectiontitle">GAMING</h2>
 				<div class="row">
 					<?php $i = 1;?>
 					@foreach ($gamesgroups as $group)
@@ -173,6 +189,9 @@
 					@endforeach
 				</div>
 				<div class="divider"></div>
+				@endif
+
+				@if (count($healthgroups) > 0)
 				<h2 class="sectiontitle">HEALTH</h2>
 				<div class="row">
 					<?php $i = 1;?>
@@ -191,6 +210,9 @@
 					@endforeach
 				</div>
 				<div class="divider"></div>
+				@endif
+
+				@if (count($homegroups) > 0)
 				<h2 class="sectiontitle">HOME</h2>
 				<div class="row">
 					<?php $i = 1;?>
@@ -209,6 +231,9 @@
 					@endforeach
 				</div>
 				<div class="divider"></div>
+				@endif
+
+				@if (count($musicgroups) > 0)
 				<h2 class="sectiontitle">MUSIC</h2>
 				<div class="row">
 					<?php $i = 1;?>
@@ -227,6 +252,9 @@
 					@endforeach
 				</div>
 				<div class="divider"></div>
+				@endif
+
+				@if (count($sportsgroups) > 0)
 				<h2 class="sectiontitle">SPORTS</h2>
 				<div class="row">
 					<?php $i = 1;?>
@@ -245,7 +273,10 @@
 					@endforeach
 				</div>
 				<div class="divider"></div>
-				<h2 class="sectiontitle">TECHNOLOGY</h2>
+				@endif
+
+				@if (count($technologygroups) > 0)
+				<h2 class="sectiontitle">TECHNOLOGY & SCIENCE</h2>
 				<div class="row">
 					<?php $i = 1;?>
 					@foreach ($technologygroups as $group)
@@ -263,6 +294,9 @@
 					@endforeach
 				</div>
 				<div class="divider"></div>
+				@endif
+
+				@if (count($travelgroups) > 0)
 				<h2 class="sectiontitle">TRAVEL</h2>
 				<div class="row">
 					<?php $i = 1;?>
@@ -281,6 +315,9 @@
 					@endforeach
 				</div>
 				<div class="divider"></div>
+				@endif
+
+				@if (count($othergroups) > 0)
 				<h2 class="sectiontitle">OTHER</h2>
 				<div class="row">
 					<?php $i = 1;?>
@@ -299,6 +336,7 @@
 					@endforeach
 				</div>
 				<div class="divider"></div>
+				@endif
 			</div>
 		</div>
 	</div>

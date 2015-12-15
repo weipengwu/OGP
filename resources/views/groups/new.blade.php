@@ -31,23 +31,23 @@
 							<input type="text" name="name" class="form-control" id="brandname" placeholder="Brand Name" required>
 							<div class="checknamepass checkname"><i class="fa fa-check"></i></div>
 							<div class="checknamefail checkname"><i class="fa fa-times"></i></div>
-							<div class="help-block checknameerror">Brand name is unavailable, please choose another one.</div>
+							<div class="help-block checknameerror">Brand name has been taken, please choose another one.</div>
 						</div>
 						<div class="form-group">
 							<select name="category" class="form-control" required>
 								<option value="">Brand Category -- Select one</option>
 								<option value="Arts & Design">Arts & Design</option>
-								<option value="Auto">Auto</option>
+								<option value="Autos">Autos</option>
 								<option value="Business">Business</option>
 								<option value="Education">Education</option>
 								<option value="Fashion">Fashion</option>
 								<option value="Food & Drink">Food & Drink</option>
-								<option value="Games">Games</option>
+								<option value="Gaming">Gaming</option>
 								<option value="Health">Health</option>
 								<option value="Home">Home</option>
 								<option value="Music">Music</option>
 								<option value="Sports">Sports</option>
-								<option value="Technology">Technology</option>
+								<option value="Technology & Science">Technology & Science</option>
 								<option value="Travel">Travel</option>
 								<option value="Other">Other</option>
 							</select>
@@ -61,15 +61,18 @@
 								<input type="text" name="website" class="form-control" placeholder="Brand Website">
 							</div>
 						</div>
-						<div class="form-group selectorigin" data-ng-controller="CountryController">
-							<select class="form-control" name="originCountry" data-ng-model="country" data-ng-options="country.name for country in countries" data-ng-change="updateCountry()">
+						<!-- <div class="form-group selectorigin" data-ng-controller="CountryController">
+							 <select class="form-control" name="originCountry" data-ng-model="country" data-ng-options="country.name for country in countries" data-ng-change="updateCountry()">
 								<option value="">Origin (Country)</option>
 							</select>
 							<select class="form-control" name="originProvince" data-ng-model="state" data-ng-options="state.name for state in availableStates">
 								<option value="">Origin (Province/State)</option>
+							</select> 
+						</div>-->
+						<div class="form-group orginandtarget">
+							<select class="form-control" name="originCountry">
+								<option value="">Origin (Country)</option>
 							</select>
-						</div>
-						<div class="form-group">
 							<select name="target" class="form-control" required>
 								<option value="">Target Market</option>
 								<option value="North America">North America</option>
@@ -77,7 +80,7 @@
 								<option value="China">China</option>
 							</select>
 						</div>
-						<div class="form-group translation">
+						<!-- <div class="form-group translation">
 							<span>Do you need translation</span> <span class="radio"><input type="radio" name="translate" id="yestranslate" value="yes" /> <label for="yestranslate">Yes</label> </span><span class="radio"><input type="radio" name="translate" id="notranslate" value="no" checked /> <label for="notranslate">No</label></span>
 						</div>
 						<div class="form-group trlanguages">
@@ -88,7 +91,7 @@
 								<option value="French">French</option>
 								<option value="Spanish">Spanish</option>
 							</select>
-						</div>
+						</div> -->
 						<!--<div class="form-group">
 							<select name="type" class="form-control">
 								<option value="public">Public</option>

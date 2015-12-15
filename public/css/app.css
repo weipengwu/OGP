@@ -7580,16 +7580,16 @@ h3 a:hover{
   .search h1{
     font-size: 28px;
   }
-.selectorigin:after{
+.orginandtarget:after{
     clear: both;
     display: table;
     content: "";
 }
-  .selectorigin select{
+  .orginandtarget select{
     float: left;
     width: 49%;
   }
-  .selectorigin select:first-child{
+  .orginandtarget select:first-child{
     margin-right: 2%;
   }
   .allpytojoin:after, .translation:after{
@@ -7800,6 +7800,11 @@ label.error{
   }
   .layout84 .col-md-8, .layout84 .col-md-4, .layout444 .col-md-4, .layout633 .col-md-6, .layout633 .col-md-3, .layout3333 .col-md-3{
     border-right: 0;
+  }
+  .eventindex .eventgroup{
+    width: 70%;
+    float: none;
+    margin: 0 auto 25px auto
   }
 }
 @media (min-width: 768px) {
