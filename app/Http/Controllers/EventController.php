@@ -220,6 +220,7 @@ class EventController extends Controller {
 			}else{
 				$eventfee = Request::input('fee');
 				$event->fee = $eventfee;
+				$event->currency = Request::input('eventcurrency');
 			}
 			$event->content = nl2br(Request::input('content'));
 			$event->gallery = implode(',', $eventimages);
@@ -295,6 +296,7 @@ class EventController extends Controller {
 				$event->fee = 'Free';
 			}else{
 				$event->fee = Request::input('fee');
+				$event->currency = Request::input('eventcurrency');
 			}
 			$event->content = nl2br(Request::input('content'));
 			$event->group_id = Request::input('gid');

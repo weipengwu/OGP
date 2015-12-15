@@ -95,7 +95,7 @@
 							</select>
 						</div> -->
 						<div class="form-group">
-							<textarea name="description" maxlength="300" placeholder="Brief Introduction ( Tips: Please use the language of target markets. )" class="form-control" required>{!! html_entity_decode($group->description) !!}</textarea>
+							<textarea name="description" maxlength="300" placeholder="Brief Introduction ( Tips: Please use the language of target markets. )" class="form-control" required>{!! strip_tags($group->description) !!}</textarea>
 						</div>
 						<input type="submit" class="btn btn-logo" value="Submit">
 					</form>

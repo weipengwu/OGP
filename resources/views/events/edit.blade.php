@@ -66,7 +66,14 @@
 							</div>
 						</div>
 						<div id="fee" class="form-group" style="float:left; width: 49%;">
-							<label class="col-md-2" style="text-align: right">C$</label> <div class="col-md-10" style="padding: 0"><input type="text" name="fee" class="form-control" placeholder="Event Fee" <?php if ($event->fee !== 'Free') echo "value='".$event->fee."'";?>></div>
+							<div class="col-md-3">
+								<select class="form-control">
+									<option value="cad" @if ($event->currency == 'cad') {{ 'selected' }} @endif >C$</option>
+									<option value="usd" @if ($event->currency == 'usd') {{ 'selected' }} @endif >$</option>
+									<option value="cny" @if ($event->currency == 'cny') {{ 'selected' }} @endif >¥</option>
+									<option value="eur" @if ($event->currency == 'eur') {{ 'selected' }} @endif >€</option>
+								</select>
+							</div> <div class="col-md-9" style="padding: 0"><input type="text" name="fee" class="form-control" placeholder="Event Fee" <?php if ($event->fee !== 'Free') echo "value='".$event->fee."'";?>></div>
 						</div>
 						<div class="form-group">
 							<input type="number" name="quantity" class="form-control" placeholder="Quantity" min="0" max="1000" value="{{ $event->quantity }}">
@@ -82,7 +89,7 @@
 						</div>
 
 						<div class="form-group">
-							<textarea name="content" class="form-control" placeholder="Event Description">{{ $event->content }}</textarea>
+							<textarea name="content" class="form-control" placeholder="Event Description">{{ strip_tags($event->content) }}</textarea>
 						</div>
 						<input type="submit" class="btn btn-logo" value="Submit">
 					</form>
