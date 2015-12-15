@@ -135,13 +135,13 @@
 			</div>
 			</section>
 			@endif
-			<section class="events_section">
+			<section class="events_section container">
 				<h2>EVENTS</h2>
 				<h4>See What's Happening Around You</h4>
 				<div class="home_events">
 					<?php $e = 0; ?>
 					@foreach ($events as $event)
-					<?php if($e > 4) break;?>
+					<?php if($e > 3) break;?>
 					<div class="eventgroup">
 						<div class="eventgroup-list">
 							<a href="/events/{{ $event->id }}">

@@ -9,10 +9,10 @@
 				<p class="groupcategory">{{ $group->category }}</p>
 				<h1>{{ $group->name }}</h1>
 				<p>{!! html_entity_decode($group->description) !!}</p>
-				<p><a href="{{ $group->website }}" target="_blank" class="website">{{ $group->website }}</a></p>
+				<p><a href="http://{{ $group->website }}" target="_blank" class="website">{{ $group->website }}</a></p>
 				@if(Auth::check())
 					@if($group->owner == Auth::user()->id)
-						<a href="/groups/{{ $group->slug }}/edit" class="btn btn_logo">Edit Group</a>
+						<a href="/groups/{{ $group->slug }}/edit" class="btn btn_logo">Edit Brand</a>
 					@elseif(isFollowing(Auth::user()->id, $group->id))
 						<a href="" class="follow_btn unfollow_group" data-user-id="{{ Auth::user()->id }}" data-group-id="{{ $group->id }}">Following</a>
 					@else
@@ -27,7 +27,7 @@
 		<div class="right">
 			@if(Auth::check())
 				@if($group->owner == Auth::user()->id)
-					<a href="<?php echo url();?>/groups/<?php echo $group->slug;?>/events/new"><img src="{{ asset('img/ticket_icon.png') }}" width="20"></a> <a href="<?php echo url();?>/groups/<?php echo $group->slug;?>/posts/new"><img src="{{ asset('img/createpost_icon.png') }}" width="16"></a>
+					<a data-toggle="tooltip" title="Create Event" href="<?php echo url();?>/groups/<?php echo $group->slug;?>/events/new"><img src="{{ asset('img/ticket_icon.png') }}" width="20"></a> <a data-toggle="tooltip" title="Create Post" href="<?php echo url();?>/groups/<?php echo $group->slug;?>/posts/new"><img src="{{ asset('img/createpost_icon.png') }}" width="16"></a>
 				@else
 					<div class="sharebox">
 						<a href="" class="social_icons social_tw"><i class="fa fa-twitter"></i></a> <a href="" class="social_icons social_fb"><i class="fa fa-facebook"></i></a> <a href="" class="social_icons social_wc"><i class="fa fa-wechat"></i></a> <a href="" class="social_icons social_wb"><i class="fa fa-weibo"></i></a>

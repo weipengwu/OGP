@@ -6627,7 +6627,7 @@ label,
 }
 .home .eventgroup{
   float: left;
-  width: 18%;
+  width: 23%;
   margin: 0 1%;
   height: 280px;
   -webkit-box-shadow: 0 0 2px #bababa;
@@ -7847,6 +7847,15 @@ label.error{
   .grouplist .caption h3{
     width: 220px;
     margin-top: 120px;
+  }
+  #category, #eventtime{
+    margin-bottom: 20px;
+  }
+  .groupbanner .caption h1{
+    font-size: 20px;
+  }
+  .groupbanner .caption p{
+    font-size: 12px;
   }
 
 }

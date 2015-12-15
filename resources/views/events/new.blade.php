@@ -23,8 +23,7 @@
 						<input type="hidden" name="author" value="{{ Auth::user()->id }}">
 						<input type="hidden" name="gid" value="<?php echo $gid;?>">
 						<div class="form-group">
-							<label>Upload Your Banner Image</label>
-							<p>Images must be in .jpg, .bmp, .png, or .gif format, and less than 4M.</p>
+							<label>Upload Your Banner Image. Recomended size: 1500px X 500px. Images must be in .jpg, .bmp, .png, or .gif format, and not exceed 4 MB.</label>
 							<input type="file" name="banner" id="banner" accept="image/*">
 						</div>
 						<div class="form-group row">

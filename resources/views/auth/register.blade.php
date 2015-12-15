@@ -108,7 +108,7 @@
 								</button>
 						</div>
 						<div class="privacy">
-						By contiune you agree to OH GOOD PARTY'S <a href="">Terms of Use</a>
+						By continue you agree to OH GOOD PARTY's <a href="">Terms of Use</a>
 						</div>
 					</form>
 				</div>
