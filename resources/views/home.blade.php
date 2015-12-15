@@ -169,9 +169,7 @@
 				</div>
 				<div class="viewmore"><a href="/events">VIEW MORE</a></div>
 				<div class="row-gap"></div>
-				<div class="container">
-					<div class="divider"></div>
-				</div>
+				<div class="divider"></div>
 			</section>
 			@if(count($posts) > 0)
 			<section class="container posts">

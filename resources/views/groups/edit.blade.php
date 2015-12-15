@@ -16,10 +16,12 @@
 						<hr>
 						<div class="form-group">
 							<label>Upload Your New Brand Logo</label>
+							<p>Recomended size: 200px X 200px. Images must be in .jpg, .bmp, .png, or .gif format, and not exceed 4 MB.</p>
 							<input type="file" id="g-profile" name="g-profile" accept="image/*">
 						</div>
 						<div class="form-group">
 							<label>Upload Your New Brand Banner Image</label>
+							<p>Recomended size: 1500px X 500px. Images must be in .jpg, .bmp, .png, or .gif format, and not exceed 4 MB.</p>
 							<input type="file" id="g-banner" name="g-banner" accept="image/*">
 						</div>
 						<h4>TELL US MORE ABOUT YOUR BRAND</h4>

@@ -1,6 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
+<div class="ebannerwrapper">
 <div class="eventbanner" style="background: #ccc url('<?php echo url()."/uploads/Large_".$event->banner;?>') center center no-repeat; background-size: cover;)">
 
 </div>
@@ -27,6 +28,7 @@
 			</div>
 		</div>
 	</div>
+</div>
 <section class="eventdetails">
 	<div class="container">
 		<div class="row">
@@ -162,5 +164,15 @@
    
       }
       google.maps.event.addDomListener(window, 'load', initialize);
+
+     $(window).scroll(function(){
+		if($(this).scrollTop() > 255){
+			$('.ebannerwrapper').addClass('locked');
+			$('.ebannerwrapper').next().css('margin-top', '285px');
+		}else{
+			$('.ebannerwrapper').removeClass('locked');
+			$('.ebannerwrapper').next().css('margin-top', '0');
+		}
+	})
     </script>
 @endsection

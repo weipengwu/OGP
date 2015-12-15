@@ -112,7 +112,7 @@
 				<div class="home_events">
 					<?php $e = 0; ?>
 					@foreach ($events as $event)
-					<?php if($e > 4) break;?>
+					<?php if($e > 3) break;?>
 					<div class="eventgroup">
 						<div class="eventgroup-list">
 							<a href="/events/{{ $event->id }}">
@@ -140,9 +140,7 @@
 				</div>
 				<div class="viewmore"><a href="/events">VIEW MORE</a></div>
 				<div class="row-gap"></div>
-				<div class="container">
-					<div class="divider"></div>
-				</div>
+				<div class="divider"></div>
 			</section>
 			
 			<section class="container">

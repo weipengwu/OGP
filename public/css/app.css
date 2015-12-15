@@ -7774,6 +7774,18 @@ label.error{
 .currentOrigin a.showSelect{
   float: right;
 }
+.btn-success.btn-file{
+  background: #fc6c25;
+}
+.dash-side-top:after{
+  clear: both;
+  content: "";
+  display: table;
+}
+.dash-side-bottom {
+  clear: both;
+  margin-top: 30px;
+}
 /*** media query ***/
 @media (max-width: 1199px){
   .grouplist .bannerholder{

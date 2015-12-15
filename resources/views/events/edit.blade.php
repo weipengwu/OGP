@@ -25,6 +25,7 @@
 						<input type="hidden" name="gid" value="{{ $event->group_id }}">
 						<div class="form-group">
 							<label>Upload Your Banner Image</label>
+							<p>Recomended size: 1500px X 500px. Images must be in .jpg, .bmp, .png, or .gif format, and not exceed 4 MB.</p>
 							<input type="file" name="banner" id="banner" accept="image/*">
 						</div>
 						<div class="form-group row">
@@ -67,7 +68,7 @@
 						</div>
 						<div id="fee" class="form-group" style="float:left; width: 49%;">
 							<div class="col-md-3">
-								<select class="form-control">
+								<select class="form-control" name="eventcurrency">
 									<option value="cad" @if ($event->currency == 'cad') {{ 'selected' }} @endif >C$</option>
 									<option value="usd" @if ($event->currency == 'usd') {{ 'selected' }} @endif >$</option>
 									<option value="cny" @if ($event->currency == 'cny') {{ 'selected' }} @endif >¥</option>
