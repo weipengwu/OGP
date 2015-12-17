@@ -6278,8 +6278,8 @@ label,
   color: #fff !important;
 }
 .btn-logo{
-  /*background: #c9ad88;*/
-  background: #fc6c25;
+  background: #c9ad88;
+  /*background: #fc6c25;*/
   border: none;
   color: #fff !important;
 }
@@ -6392,6 +6392,12 @@ label,
   position: fixed;
   width: 100%;
   margin-top: -485px;
+  z-index: 99;
+}
+.ebannerwrapper.locked{
+  position: fixed;
+  width: 100%;
+  margin-top: -285px;
   z-index: 99;
 }
 .left{
@@ -7786,6 +7792,12 @@ label.error{
   clear: both;
   margin-top: 30px;
 }
+.dash-box{
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+}
 /*** media query ***/
 @media (max-width: 1199px){
   .grouplist .bannerholder{
@@ -7828,6 +7840,9 @@ label.error{
   }
 }
 @media (max-width: 767px) {
+  .navbar-brand{
+    margin-right: 0;
+  }
   .desktop{
     display: none;
   }

@@ -36,7 +36,7 @@
 						<a href="" class="dash-btn" data-id="mybrand">My Brand</a>
 					</div>
 					<div class="d-row">
-						<a href="" class="dash-btn" data-id="followedbrand">Followed</a>
+						<a href="" class="dash-btn" data-id="followedbrand">Following</a>
 					</div>
 <!-- 					<div class="d-row">
 						<a href="">Joined Groups</a>
@@ -52,7 +52,38 @@
 		<div class="col-md-7 col-md-push-1 col-sm-7 col-sm-push-1">
 			<div class="dash-main dash-init">
 				<h3>Dashboard</h3>
-				<p>Select what you want to do from left side menu.</p>
+				<div class="col-md-12 col-sm-12 col-xs-12">
+					<div class="row">
+						<div class="col-md-6 col-sm-6 col-xs-6">
+							<a href="">
+								<div class="dash-box">
+									<img src="{{ asset('img/create_brand_icon.png') }}" width="20">
+									<p>Create your own brand</p>
+								</div>
+							</a>
+							<a href="">
+								<div class="dash-box">
+									<img src="{{ asset('img/follow_icon.png') }}" width="20">
+									<p>Following</p>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-6">
+							<a href="">
+								<div class="dash-box">
+									<img src="{{ asset('img/edit_icon.png') }}" width="20">
+									<p>Edit profile</p>
+								</div>
+							</a>
+							<a href="">
+								<div class="dash-box">
+									<img src="{{ asset('img/ticket_icon.png') }}" width="20">
+									<p>Manage Events</p>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
 			</div>
 			<div class="dash-main" id="updateprofile">
 				<h4>Edit Profile Info</h4>
