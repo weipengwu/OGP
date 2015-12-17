@@ -7797,6 +7797,22 @@ label.error{
   border: 1px solid #ccc;
   border-radius: 5px;
   text-align: center;
+  width: 150px;
+  height: 150px;
+  float: left;
+  margin-right: 30px;
+}
+.dash-init .dash-row{
+  margin-bottom: 30px;
+}
+.dash-init .dash-row:after{
+  clear: both;
+  display: table;
+  content: "";
+}
+.dash-init .dash-row a{
+  color: #ccc;
+  text-decoration: none;
 }
 /*** media query ***/
 @media (max-width: 1199px){
@@ -7855,11 +7871,21 @@ label.error{
   }
   .navbar-right.quickmenu .dropdown-menu {
     left: auto;
-    right: 0;
+    right: -20px;
 }
   .navbar-nav.quickmenu > li {
     float: left;
   }
+  .navbar-collapse .navbar-nav li{
+    width: 100%;
+  }
+  .login-body .navbar-collapse.collapse {
+    display: block !important;
+    visibility: visible !important;
+    height: auto !important;
+    padding-bottom: 0;
+    overflow: visible !important;
+}
   .grouplist{
     width: 300px;
     margin: 0 auto 25px auto;
