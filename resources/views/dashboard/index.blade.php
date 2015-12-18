@@ -55,13 +55,17 @@
 					<div class="dash-row">
 							<a href="/groups/new">
 								<div class="dash-box">
+									<div class="img-wrapper">
 									<img src="{{ asset('img/create_brand_icon.png') }}" width="30">
+									</div>
 									<p>Create Brand</p>
 								</div>
 							</a>
 							<a href="">
 								<div class="dash-box">
+									<div class="img-wrapper">
 									<img src="{{ asset('img/follow_icon.png') }}" width="30">
+									</div>
 									<p>Following</p>
 								</div>
 							</a>
@@ -69,13 +73,17 @@
 					<div class="dash-row">
 							<a href="">
 								<div class="dash-box">
+									<div class="img-wrapper">
 									<img src="{{ asset('img/edit_icon.png') }}" width="30">
+									</div>
 									<p>Edit Profile</p>
 								</div>
 							</a>
 							<a href="">
 								<div class="dash-box">
+									<div class="img-wrapper">
 									<img src="{{ asset('img/ticket_icon.png') }}" width="30">
+									</div>
 									<p>Manage Events</p>
 								</div>
 							</a>

@@ -30,6 +30,7 @@ class DashboardController extends Controller {
 	public function createProfile()
 	{
 		$id = Request::input('user');
+		$user = User::findOrFail($id);
 		//create or edit profile image
 		if(Request::file('u-profile')){
 			if(count(Usermeta::where('user_id', $id)->where('meta_key','profile')->get()) > 0){
@@ -85,13 +86,23 @@ class DashboardController extends Controller {
 				$profile->meta_key = 'description';
 				$profile->meta_value = Request::input('desc');
 				$profile->save();
+				$user->name = Request::input('username');
+				$user->email = Request::input('useremail');
+				$user->save();
 			}else{
 				$profile = new Usermeta();
 				$profile->user_id = $id;
 				$profile->meta_key = 'description';
 				$profile->meta_value = Request::input('desc');
 				$profile->save();
+				$user->name = Request::input('username');
+				$user->email = Request::input('useremail');
+				$user->save();
 			}
+		}else{
+				$user->name = Request::input('username');
+				$user->email = Request::input('useremail');
+				$user->save();
 		}
 
 		return redirect()->route('dashboard');
