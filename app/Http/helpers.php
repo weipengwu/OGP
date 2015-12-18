@@ -5,6 +5,10 @@
 		return $name;
 	}
 
+	function getAuthoremail($id){
+		$email = DB::table('users')->where('id', $id)->pluck('email');
+		return $email;
+	}
 
 	function alreadyLikedEvent($id,$eid){
 		return DB::table('eventlikes')->where('author_id', $id)->where('event_id', '=', $eid)->count();

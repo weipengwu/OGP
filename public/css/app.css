@@ -7797,8 +7797,8 @@ label.error{
   border: 1px solid #ccc;
   border-radius: 5px;
   text-align: center;
-  width: 150px;
-  height: 150px;
+  width: 120px;
+  height: 120px;
   float: left;
   margin-right: 30px;
 }
@@ -7811,7 +7811,7 @@ label.error{
   content: "";
 }
 .dash-init .dash-row a{
-  color: #ccc;
+  color: #666;
   text-decoration: none;
 }
 /*** media query ***/
@@ -7871,7 +7871,7 @@ label.error{
   }
   .navbar-right.quickmenu .dropdown-menu {
     left: auto;
-    right: -20px;
+    right: -30px;
 }
   .navbar-nav.quickmenu > li {
     float: left;
@@ -7885,6 +7885,15 @@ label.error{
     height: auto !important;
     padding-bottom: 0;
     overflow: visible !important;
+}
+.login-body .navbar-collapse .navbar-nav li {
+     width: auto; 
+}
+.login-body .navbar-collapse .navbar-nav li a{
+  font-size: 12px;
+}
+.login-explore, #login-in{
+  margin-right: 15px;
 }
   .grouplist{
     width: 300px;

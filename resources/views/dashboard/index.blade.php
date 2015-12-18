@@ -53,15 +53,15 @@
 			<div class="dash-main dash-init">
 				<h3>Dashboard</h3>
 					<div class="dash-row">
-							<a href="">
+							<a href="/groups/new">
 								<div class="dash-box">
-									<img src="{{ asset('img/create_brand_icon.png') }}" width="40">
+									<img src="{{ asset('img/create_brand_icon.png') }}" width="30">
 									<p>Create Brand</p>
 								</div>
 							</a>
 							<a href="">
 								<div class="dash-box">
-									<img src="{{ asset('img/follow_icon.png') }}" width="40">
+									<img src="{{ asset('img/follow_icon.png') }}" width="30">
 									<p>Following</p>
 								</div>
 							</a>
@@ -69,13 +69,13 @@
 					<div class="dash-row">
 							<a href="">
 								<div class="dash-box">
-									<img src="{{ asset('img/edit_icon.png') }}" width="40">
+									<img src="{{ asset('img/edit_icon.png') }}" width="30">
 									<p>Edit Profile</p>
 								</div>
 							</a>
 							<a href="">
 								<div class="dash-box">
-									<img src="{{ asset('img/ticket_icon.png') }}" width="40">
+									<img src="{{ asset('img/ticket_icon.png') }}" width="30">
 									<p>Manage Events</p>
 								</div>
 							</a>
@@ -92,7 +92,10 @@
 						<input type="file" name="u-profile" id="u-profile" accept="image/*">
 					</div>
 					<div class="form-group">
-						<input type="text" class="form-control" value="{{ getAuthorname($id) }}" placeholder="Username">
+						<input type="text" class="form-control" name="username" value="{{ getAuthorname($id) }}" placeholder="Username">
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control" name="useremail" value="{{ getAuthoremail($id) }}" placeholder="Email">
 					</div>
 					<div class="form-group">
 						<textarea name="desc" class="form-control" placeholder="Bio"></textarea>
@@ -120,8 +123,14 @@
 					</div>
 				@else
 					<div class="row no-border">
-						<h3>You haven't created your brand yet.</h3>
-						<a href="/groups/new" class="createbrand">Create your brand</a>
+						<h3 style="margin-top:0;">You haven't created your brand yet.</h3>
+						<!-- <a href="/groups/new" class="createbrand">Create your brand</a> -->
+						<a href="/groups/new">
+								<div class="dash-box">
+									<img src="{{ asset('img/create_brand_icon.png') }}" width="30">
+									<p>Create Brand</p>
+								</div>
+							</a>
 					</div>
 				@endif
 			</div>
