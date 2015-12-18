@@ -7901,6 +7901,7 @@ label.error{
 #login-in, #login-up{
   border: 0;
   background: none;
+  color: #fff;
 }
 .login-explore, #login-in{
   margin-right: 0;
