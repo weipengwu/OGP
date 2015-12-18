@@ -6265,7 +6265,7 @@ label,
 }
 .login{
   text-align: center;
-  margin-top: 40px;
+  /*margin-top: 40px;*/
 }
 .btn-grey{
   background: #77787B;
@@ -7343,6 +7343,7 @@ h3 a:hover{
 .login .logoslogan h2{
   font-size: 14px;
   color: #fff;
+  font-family: "Lato", Helvetica, Arial, sans-serif;
 }
 .privacy{
   font-size: 12px;
@@ -7895,9 +7896,14 @@ label.error{
 }
 .login-body .navbar-collapse .navbar-nav li a{
   font-size: 12px;
+  padding: 0 10px !important;
+}
+#login-in, #login-up{
+  border: 0;
+  background: none;
 }
 .login-explore, #login-in{
-  margin-right: 15px;
+  margin-right: 0;
 }
   .grouplist{
     width: 300px;

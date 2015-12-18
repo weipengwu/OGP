@@ -84,7 +84,7 @@ class DashboardController extends Controller {
 				$meta_id = Usermeta::where('user_id', $id)->where('meta_key','description')->pluck('id');
 				$profile = Usermeta::find($meta_id);
 				$profile->meta_key = 'description';
-				$profile->meta_value = Request::input('desc');
+				$profile->meta_value = nl2br(Request::input('desc'));
 				$profile->save();
 				$user->name = Request::input('username');
 				$user->email = Request::input('useremail');
@@ -93,7 +93,7 @@ class DashboardController extends Controller {
 				$profile = new Usermeta();
 				$profile->user_id = $id;
 				$profile->meta_key = 'description';
-				$profile->meta_value = Request::input('desc');
+				$profile->meta_value = nl2br(Request::input('desc'));
 				$profile->save();
 				$user->name = Request::input('username');
 				$user->email = Request::input('useremail');

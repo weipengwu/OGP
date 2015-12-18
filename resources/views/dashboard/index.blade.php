@@ -106,7 +106,7 @@
 						<input type="text" class="form-control" name="useremail" value="{{ getAuthoremail($id) }}" placeholder="Email">
 					</div>
 					<div class="form-group">
-						<textarea name="desc" class="form-control" placeholder="Bio"></textarea>
+						<textarea name="desc" class="form-control" placeholder="Bio">{!! strip_tags(userDesc(Auth::user()->id)) !!}</textarea>
 					</div>
 					<input type="submit" class="btn btn-logo" value="Submit">
 				</form>
