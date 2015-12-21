@@ -234,7 +234,7 @@
 				@endif
 
 				@if (count($musicgroups) > 0)
-				<h2 class="sectiontitle">MUSIC</h2>
+				<h2 class="sectiontitle">MUSIC & PERFORMANCE</h2>
 				<div class="row">
 					<?php $i = 1;?>
 					@foreach ($musicgroups as $group)

@@ -59,19 +59,18 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('search', 'SearchController@search');
 	Route::post('search', array('uses' => 'SearchController@search', 'as' => 'search'));
 	Route::post('ogppay', array('uses' => 'EventController@eventCharge', 'as' => 'eventCharge'));
+
+	Route::get('events/{id}', array('uses' => 'EventController@viewEvent', 'as' => 'viewEvent'));
+
+	Route::get('groups/{slug}', array('uses' => 'GroupController@viewGroup', 'as' => 'viewGroup'));
+
+	Route::get('posts/{id}', array('uses' => 'PostController@viewPost', 'as' => 'viewPost'));
 });
 
 Route::get('events', 'EventController@index');
 Route::get('groups', 'GroupController@index');
-Route::get('missions', 'MissionController@index');
+//Route::get('missions', 'MissionController@index');
 
-Route::get('events/{id}', array('uses' => 'EventController@viewEvent', 'as' => 'viewEvent'));
-
-Route::get('groups/{slug}', array('uses' => 'GroupController@viewGroup', 'as' => 'viewGroup'));
-
-Route::get('profiles/{id}', array('uses' => 'ProfileController@viewUser', 'as' => 'viewUser'));
-
-Route::get('posts/{id}', array('uses' => 'PostController@viewPost', 'as' => 'viewPost'));
-
-Route::get('missions/{id}', array('uses' => 'MissionController@viewMission', 'as' => 'viewMission'));
+//Route::get('profiles/{id}', array('uses' => 'ProfileController@viewUser', 'as' => 'viewUser'));
+//Route::get('missions/{id}', array('uses' => 'MissionController@viewMission', 'as' => 'viewMission'));
 

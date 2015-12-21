@@ -44,7 +44,7 @@
 								<option value="Gaming" <?php if($group->category == 'Gaming') echo "selected"; ?>>Gaming</option>
 								<option value="Health" <?php if($group->category == 'Health') echo "selected"; ?>>Health</option>
 								<option value="Home" <?php if($group->category == 'Home') echo "selected"; ?>>Home</option>
-								<option value="Music" <?php if($group->category == 'Music') echo "selected"; ?>>Music</option>
+								<option value="Music & Performance" <?php if($group->category == 'Music & Performance') echo "selected"; ?>>Music & Performance</option>
 								<option value="Sports" <?php if($group->category == 'Sports') echo "selected"; ?>>Sports</option>
 								<option value="Technology & Science" <?php if($group->category == 'Technology & Science') echo "selected"; ?>>Technology & Science</option>
 								<option value="Travel" <?php if($group->category == 'Travel') echo "selected"; ?>>Travel</option>

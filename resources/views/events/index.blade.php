@@ -21,7 +21,7 @@
 								<option value="Gaming" <?php if(isset($_GET['category']) && $cat == 'Gaming') echo "selected";?>>Gaming</option>
 								<option value="Health" <?php if(isset($_GET['category']) && $cat == 'Health') echo "selected";?>>Health</option>
 								<option value="Home" <?php if(isset($_GET['category']) && $cat == 'Home') echo "selected";?>>Home</option>
-								<option value="Music" <?php if(isset($_GET['category']) && $cat == 'Music') echo "selected";?>>Music</option>
+								<option value="Music & Performance" <?php if(isset($_GET['category']) && $cat == 'Music & Performance') echo "selected";?>>Music & Performance</option>
 								<option value="Sports" <?php if(isset($_GET['category']) && $cat == 'Sports') echo "selected";?>>Sports</option>
 								<option value="Technology & Science" <?php if(isset($_GET['category']) && $cat == 'Technology & Science') echo "selected";?>>Technology & Science</option>
 								<option value="Travel" <?php if(isset($_GET['category']) && $cat == 'Travel') echo "selected";?>>Travel</option>

@@ -906,7 +906,7 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #fc6c25;
+  color: #00c2a9;
   text-decoration: none;
 }
 a:hover,
@@ -6307,7 +6307,7 @@ label,
   color: #777;
 }
 .likebar a:hover{
-  color: #fc6c25;
+  color: #00c2a9;
 }
 .commentscount{
   text-align: left;
@@ -7150,7 +7150,7 @@ h3 a:hover{
 }
 .singlegroup .postfrom a{
  /* color: #34A4D4;*/
- color: #fc6c25;
+ color: #00c2a9;
 }
 .singlegroup .postfrom a:hover{
   text-decoration: underline;
@@ -7200,7 +7200,8 @@ h3 a:hover{
 .top-profile{
     width: 31px;
     height: 31px;
-    background: #fc6c25;
+    /*background: #fc6c25;*/
+    background: #00c2a9;
     color: #fff;
     font-size: 13px;
     line-height: 31px;

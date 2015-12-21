@@ -47,7 +47,7 @@
 								<option value="Gaming">Gaming</option>
 								<option value="Health">Health</option>
 								<option value="Home">Home</option>
-								<option value="Music">Music</option>
+								<option value="Music & Performance">Music & Performance</option>
 								<option value="Sports">Sports</option>
 								<option value="Technology & Science">Technology & Science</option>
 								<option value="Travel">Travel</option>
