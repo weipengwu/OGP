@@ -20,7 +20,7 @@
 					<div class="flexslider">
 						<ul class="slides">
 						@foreach ($banners as $banner)
-							<li><img src="<?php echo url().'/'.$banner;?>" class="post-img"></li>
+							<li><img src="<?php echo url().'/uploads/Medium_'.$banner;?>" class="post-img"></li>
 						@endforeach
 						</ul>
 					</div>

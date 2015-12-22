@@ -69,7 +69,7 @@ class PostController extends Controller {
 						    $constraint->upsize();
 						});
 						$img->save($destinationPath."/Small_".$fileName);
-						array_push($postimages, $destinationPath."/".$fileName);
+						array_push($postimages, $fileName);
 					}
 				}
 			}
@@ -98,7 +98,7 @@ class PostController extends Controller {
 						    $constraint->upsize();
 						});
 						$img->save($destinationPath."/Small_".$fileName);
-						array_push($postimages, $destinationPath."/".$fileName);
+						array_push($postimages, $fileName);
 					}
 				}
 			}
@@ -127,7 +127,7 @@ class PostController extends Controller {
 						    $constraint->upsize();
 						});
 						$img->save($destinationPath."/Small_".$fileName);
-						array_push($postimages, $destinationPath."/".$fileName);
+						array_push($postimages, $fileName);
 					}
 				}
 			}
@@ -156,7 +156,7 @@ class PostController extends Controller {
 						    $constraint->upsize();
 						});
 						$img->save($destinationPath."/Small_".$fileName);
-						array_push($postimages, $destinationPath."/".$fileName);
+						array_push($postimages, $fileName);
 					}
 				}
 			}

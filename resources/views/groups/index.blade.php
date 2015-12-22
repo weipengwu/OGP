@@ -17,7 +17,7 @@
 						<?php if($i > 4) break;?>
 						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
 						<a href="groups/<?= $group->slug;?>">
-							<div class="bannerholder" style="background: url('{{$group->profile}}');background-size:cover"></div>
+							<div class="bannerholder" style="background: url('<?php echo url()."/uploads/Medium_".$group->profile;?>');background-size:cover"></div>
 							
 							<div class="caption">
 								<h3>{{ $group->name }}</h3>
@@ -36,7 +36,7 @@
 						<?php $popgroup = DB::table('groups')->where('id', $pop->followed_id)->get(); ?>
 						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
 							<a href="groups/{{ $popgroup[0]->slug }}">
-							<div class="bannerholder" style="background: url('{{$popgroup[0]->profile}}');background-size:cover"></div>
+							<div class="bannerholder" style="background: url('<?php echo url()."/uploads/Medium_".$popgroup[0]->profile;?>');background-size:cover"></div>
 							<div class="caption">
 								<h3>{{ $popgroup[0]->name }}</h3>
 								<p><!-- <span class="membercount"><img src="{{ asset('img/member_icon_white.png') }}" width="14"> {{ memberCount($popgroup[0]->id) }}</span> --><span class="followcount"><img src="{{ asset('img/follow_icon_white.png') }}" width="20"> {{ count(groupFollowers($popgroup[0]->id)) }}</span></p>
@@ -54,7 +54,7 @@
 						<?php if($i > 4) break;?>
 						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
 							<a href="groups/<?= $group->slug;?>">
-							<div class="bannerholder" style="background: url('{{$group->profile}}');background-size:cover"></div>
+							<div class="bannerholder" style="background: url('<?php echo url()."/uploads/Medium_".$group->profile;?>');background-size:cover"></div>
 							<div class="caption">
 								<h3>{{ $group->name }}</h3>
 								<p><span class="followcount"><img src="{{ asset('img/follow_icon_white.png') }}" width="20"> {{ count(groupFollowers($group->id)) }}</span></p>
@@ -73,7 +73,7 @@
 						<?php if($i > 4) break;?>
 						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
 							<a href="groups/<?= $group->slug;?>">
-							<div class="bannerholder" style="background: url('{{$group->profile}}');background-size:cover"></div>
+							<div class="bannerholder" style="background: url('<?php echo url()."/uploads/Medium_".$group->profile;?>');background-size:cover"></div>
 							<div class="caption">
 								<h3>{{ $group->name }}</h3>
 								<p><span class="followcount"><img src="{{ asset('img/follow_icon_white.png') }}" width="20"> {{ count(groupFollowers($group->id)) }}</span></p>
@@ -94,7 +94,7 @@
 						<?php if($i > 4) break;?>
 						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
 							<a href="groups/<?= $group->slug;?>">
-							<div class="bannerholder" style="background: url('{{$group->profile}}');background-size:cover"></div>
+							<div class="bannerholder" style="background: url('<?php echo url()."/uploads/Medium_".$group->profile;?>');background-size:cover"></div>
 							<div class="caption">
 								<h3>{{ $group->name }}</h3>
 								<p><span class="followcount"><img src="{{ asset('img/follow_icon_white.png') }}" width="20"> {{ count(groupFollowers($group->id)) }}</span></p>
@@ -115,7 +115,7 @@
 						<?php if($i > 4) break;?>
 						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
 							<a href="groups/<?= $group->slug;?>">
-							<div class="bannerholder" style="background: url('{{$group->profile}}');background-size:cover"></div>
+							<div class="bannerholder" style="background: url('<?php echo url()."/uploads/Medium_".$group->profile;?>');background-size:cover"></div>
 							<div class="caption">
 								<h3>{{ $group->name }}</h3>
 								<p><span class="followcount"><img src="{{ asset('img/follow_icon_white.png') }}" width="20"> {{ count(groupFollowers($group->id)) }}</span></p>
@@ -136,7 +136,7 @@
 						<?php if($i > 4) break;?>
 						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
 							<a href="groups/<?= $group->slug;?>">
-							<div class="bannerholder" style="background: url('{{$group->profile}}');background-size:cover"></div>
+							<div class="bannerholder" style="background: url('<?php echo url()."/uploads/Medium_".$group->profile;?>');background-size:cover"></div>
 							<div class="caption">
 								<h3>{{ $group->name }}</h3>
 								<p><!-- <span class="membercount"><img src="{{ asset('img/member_icon_white.png') }}" width="14"> {{ memberCount($group->id) }}</span> --><span class="followcount"><img src="{{ asset('img/follow_icon_white.png') }}" width="20"> {{ count(groupFollowers($group->id)) }}</span></p>
@@ -157,7 +157,7 @@
 						<?php if($i > 4) break;?>
 						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
 							<a href="groups/<?= $group->slug;?>">
-							<div class="bannerholder" style="background: url('{{$group->profile}}');background-size:cover"></div>
+							<div class="bannerholder" style="background: url('<?php echo url()."/uploads/Medium_".$group->profile;?>');background-size:cover"></div>
 							<div class="caption">
 								<h3>{{ $group->name }}</h3>
 								<p><span class="followcount"><img src="{{ asset('img/follow_icon_white.png') }}" width="20"> {{ count(groupFollowers($group->id)) }}</span></p>
@@ -178,7 +178,7 @@
 						<?php if($i > 4) break;?>
 						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
 							<a href="groups/<?= $group->slug;?>">
-							<div class="bannerholder" style="background: url('{{$group->profile}}');background-size:cover"></div>
+							<div class="bannerholder" style="background: url('<?php echo url()."/uploads/Medium_".$group->profile;?>');background-size:cover"></div>
 							<div class="caption">
 								<h3>{{ $group->name }}</h3>
 								<p><span class="followcount"><img src="{{ asset('img/follow_icon_white.png') }}" width="20"> {{ count(groupFollowers($group->id)) }}</span></p>
@@ -199,7 +199,7 @@
 						<?php if($i > 4) break;?>
 						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
 							<a href="groups/<?= $group->slug;?>">
-							<div class="bannerholder" style="background: url('{{$group->profile}}');background-size:cover"></div>
+							<div class="bannerholder" style="background: url('<?php echo url()."/uploads/Medium_".$group->profile;?>');background-size:cover"></div>
 							<div class="caption">
 								<h3>{{ $group->name }}</h3>
 								<p><span class="followcount"><img src="{{ asset('img/follow_icon_white.png') }}" width="20"> {{ count(groupFollowers($group->id)) }}</span></p>
@@ -220,7 +220,7 @@
 						<?php if($i > 4) break;?>
 						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
 							<a href="groups/<?= $group->slug;?>">
-							<div class="bannerholder" style="background: url('{{$group->profile}}');background-size:cover"></div>
+							<div class="bannerholder" style="background: url('<?php echo url()."/uploads/Medium_".$group->profile;?>');background-size:cover"></div>
 							<div class="caption">
 								<h3>{{ $group->name }}</h3>
 								<p><span class="followcount"><img src="{{ asset('img/follow_icon_white.png') }}" width="20"> {{ count(groupFollowers($group->id)) }}</span></p>
@@ -241,7 +241,7 @@
 						<?php if($i > 4) break;?>
 						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
 							<a href="groups/<?= $group->slug;?>">
-							<div class="bannerholder" style="background: url('{{$group->profile}}');background-size:cover"></div>
+							<div class="bannerholder" style="background: url('<?php echo url()."/uploads/Medium_".$group->profile;?>');background-size:cover"></div>
 							<div class="caption">
 								<h3>{{ $group->name }}</h3>
 								<p><span class="followcount"><img src="{{ asset('img/follow_icon_white.png') }}" width="20"> {{ count(groupFollowers($group->id)) }}</span></p>
@@ -262,7 +262,7 @@
 						<?php if($i > 4) break;?>
 						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
 							<a href="groups/<?= $group->slug;?>">
-							<div class="bannerholder" style="background: url('{{$group->profile}}');background-size:cover"></div>
+							<div class="bannerholder" style="background: url('<?php echo url()."/uploads/Medium_".$group->profile;?>');background-size:cover"></div>
 							<div class="caption">
 								<h3>{{ $group->name }}</h3>
 								<p><span class="followcount"><img src="{{ asset('img/follow_icon_white.png') }}" width="20"> {{ count(groupFollowers($group->id)) }}</span></p>
@@ -283,7 +283,7 @@
 						<?php if($i > 4) break;?>
 						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
 							<a href="groups/<?= $group->slug;?>">
-							<div class="bannerholder" style="background: url('{{$group->profile}}');background-size:cover"></div>
+							<div class="bannerholder" style="background: url('<?php echo url()."/uploads/Medium_".$group->profile;?>');background-size:cover"></div>
 							<div class="caption">
 								<h3>{{ $group->name }}</h3>
 								<p><span class="followcount"><img src="{{ asset('img/follow_icon_white.png') }}" width="20"> {{ count(groupFollowers($group->id)) }}</span></p>
@@ -304,7 +304,7 @@
 						<?php if($i > 4) break;?>
 						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
 							<a href="groups/<?= $group->slug;?>">
-							<div class="bannerholder" style="background: url('{{$group->profile}}');background-size:cover"></div>
+							<div class="bannerholder" style="background: url('<?php echo url()."/uploads/Medium_".$group->profile;?>');background-size:cover"></div>
 							<div class="caption">
 								<h3>{{ $group->name }}</h3>
 								<p><span class="followcount"><img src="{{ asset('img/follow_icon_white.png') }}" width="20"> {{ count(groupFollowers($group->id)) }}</span></p>
@@ -325,7 +325,7 @@
 						<?php if($i > 4) break;?>
 						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
 							<a href="groups/<?= $group->slug;?>">
-							<div class="bannerholder" style="background: url('{{$group->profile}}');background-size:cover"></div>
+							<div class="bannerholder" style="background: url('<?php echo url()."/uploads/Medium_".$group->profile;?>');background-size:cover"></div>
 							<div class="caption">
 								<h3>{{ $group->name }}</h3>
 								<p><span class="followcount"><img src="{{ asset('img/follow_icon_white.png') }}" width="20"> {{ count(groupFollowers($group->id)) }}</span></p>
