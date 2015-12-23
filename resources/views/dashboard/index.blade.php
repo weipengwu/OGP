@@ -53,6 +53,16 @@
 			<div class="dash-main dash-init">
 				<h3>Dashboard</h3>
 					<div class="dash-row">
+						@if(count(myGroup($id)) > 0)
+							<a href="" class="dash-btn" data-id="mybrand">
+								<div class="dash-box">
+									<div class="img-wrapper">
+									<img src="{{ asset('img/create_brand_icon.png') }}" width="30">
+									</div>
+									<p>Edit Brand</p>
+								</div>
+							</a>
+						@else
 							<a href="/groups/new">
 								<div class="dash-box">
 									<div class="img-wrapper">
@@ -61,7 +71,8 @@
 									<p>Create Brand</p>
 								</div>
 							</a>
-							<a href="">
+						@endif
+							<a href="" class="dash-btn" data-id="followedbrand">
 								<div class="dash-box">
 									<div class="img-wrapper">
 									<img src="{{ asset('img/follow_icon.png') }}" width="30">
@@ -71,7 +82,7 @@
 							</a>
 					</div>
 					<div class="dash-row">
-							<a href="">
+							<a href="" class="dash-btn" data-id="updateprofile">
 								<div class="dash-box">
 									<div class="img-wrapper">
 									<img src="{{ asset('img/edit_icon.png') }}" width="30">
@@ -79,7 +90,8 @@
 									<p>Edit Profile</p>
 								</div>
 							</a>
-							<a href="">
+							@if(count(myGroup($id)) > 0)
+							<a href="" class="dash-btn" data-id="manageEvents">
 								<div class="dash-box">
 									<div class="img-wrapper">
 									<img src="{{ asset('img/ticket_icon.png') }}" width="30">
@@ -87,6 +99,7 @@
 									<p>Manage Events</p>
 								</div>
 							</a>
+							@endif
 					</div>
 
 			</div>
