@@ -127,11 +127,11 @@ class GroupController extends Controller {
 				$group->originCountry = Request::input('originCountry');
 				//$group->originProvince = Request::input('originProvince');
 				$group->target = Request::input('target');
-				if(Request::input('translate') == 'no'){
-					$group->translate = 'no';
-				}else{
-					$group->translate = Request::input('trlang');
-				}
+				// if(Request::input('translate') == 'no'){
+				// 	$group->translate = 'no';
+				// }else{
+				// 	$group->translate = Request::input('trlang');
+				// }
 				$group->description = nl2br(Request::input('description'));
 				$group->save();
 					
@@ -197,11 +197,11 @@ class GroupController extends Controller {
 		$group->originCountry = Request::input('originCountry');
 		//$group->originProvince = Request::input('originProvince');
 		$group->target = Request::input('target');
-		if(Request::input('translate') == 'no'){
-			$group->translate = 'no';
-		}else{
-			$group->translate = Request::input('trlang');
-		}
+		// if(Request::input('translate') == 'no'){
+		// 	$group->translate = 'no';
+		// }else{
+		// 	$group->translate = Request::input('trlang');
+		// }
 		$group->description = nl2br(Request::input('description'));
 		$group->save();
 			
