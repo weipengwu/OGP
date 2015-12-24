@@ -6,6 +6,7 @@ use App\Post;
 use Request;
 use Validator;
 use Session;
+use Image;
 
 class GroupController extends Controller {
 

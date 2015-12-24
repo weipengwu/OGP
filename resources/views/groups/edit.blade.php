@@ -129,13 +129,13 @@
 								<option value="CG" @if($group->originCountry == 'CG') {{ 'selected' }} @endif>Congo</option>
 								<option value="CD" @if($group->originCountry == 'CD') {{ 'selected' }} @endif>Congo, the Democratic Republic of the</option>
 								<option value="CK" @if($group->originCountry == 'CK') {{ 'selected' }} @endif>Cook Islands</option>
-								<option value="CR">Costa Rica</option>
-								<option value="CI">Côte d'Ivoire</option>
-								<option value="HR">Croatia</option>
-								<option value="CU">Cuba</option>
-								<option value="CW">Curaçao</option>
-								<option value="CY">Cyprus</option>
-								<option value="CZ">Czech Republic</option>
+								<option value="CR" @if($group->originCountry == 'CR') {{ 'selected' }} @endif>Costa Rica</option>
+								<option value="CI" @if($group->originCountry == 'CI') {{ 'selected' }} @endif>Côte d'Ivoire</option>
+								<option value="HR" @if($group->originCountry == 'HR') {{ 'selected' }} @endif>Croatia</option>
+								<option value="CU" @if($group->originCountry == 'CU') {{ 'selected' }} @endif>Cuba</option>
+								<option value="CW" @if($group->originCountry == 'CW') {{ 'selected' }} @endif>Curaçao</option>
+								<option value="CY" @if($group->originCountry == 'CY') {{ 'selected' }} @endif>Cyprus</option>
+								<option value="CZ" @if($group->originCountry == 'CZ') {{ 'selected' }} @endif>Czech Republic</option>
 								<option value="DK">Denmark</option>
 								<option value="DJ">Djibouti</option>
 								<option value="DM">Dominica</option>
