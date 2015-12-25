@@ -7847,6 +7847,17 @@ label.error{
     margin-top: 60px;
     font-size: 12px;
   }
+  #followedbrand .grouplist{
+    width: 220px;
+  }
+  #followedbrand .grouplist .bannerholder{
+    height: 220px;
+  }
+  #followedbrand .grouplist .caption h3 {
+    margin-top: 90px;
+    font-size: 12px;
+    width: 180px;
+  }
   .home .eventgroup{
     width: 70%;
     float: none;
