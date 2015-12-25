@@ -911,7 +911,7 @@ a {
 }
 a:hover,
 a:focus {
-  color: #e95d18;
+  color: #00c2a9;
   text-decoration: underline;
 }
 a:focus {
@@ -7828,6 +7828,14 @@ label.error{
   .grouplist .caption h3{
     width: 200px;
     margin-top: 90px;
+  }
+  #followedbrand .grouplist .bannerholder{
+    height: 181px;
+  }
+  #followedbrand .grouplist .caption h3 {
+    margin-top: 70px;
+    font-size: 11px;
+    width: 160px;
   }
 }
 @media (max-width: 991px) {
