@@ -18,11 +18,9 @@
 					<?php $banners = explode(',', $post->banner); ?>
 					<div class="postbanner">
 					<div class="flexslider">
-						<ul class="slides">
 						@foreach ($banners as $banner)
-							<li><img src="<?php echo url().'/uploads/Medium_'.$banner;?>" class="post-img"></li>
+							<img src="<?php echo url().'/uploads/Medium_'.$banner;?>" class="post-img">
 						@endforeach
-						</ul>
 					</div>
 					</div>
 					<p>{!!html_entity_decode($post->content)!!}</p>
