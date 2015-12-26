@@ -326,9 +326,12 @@
 							</select>
 							<select name="target" class="form-control" required>
 								<option value="">Target Market</option>
+								<option value="Global">Global</option>
+								<option value="Asia">Asia</option>
+								<option value="Europe">Europe</option>
+								<option value="Mid East">Mid East</option>
 								<option value="North America">North America</option>
-								<option value="Westen Europe">Westen Europe</option>
-								<option value="China">China</option>
+								<option value="South America">South America</option>
 							</select>
 						</div>
 						<!-- <div class="form-group translation">
