@@ -163,7 +163,19 @@ class GroupController extends Controller {
 			      $extension = Request::file('g-profile')->getClientOriginalExtension(); // getting image extension
 			      $fileName = 'Group_'.date('YmdHis').'_'.rand(111111,999999).'.'.$extension; // renameing image
 			      Request::file('g-profile')->move($destinationPath, $fileName); // uploading file to given path
-				  $group->profile = $destinationPath."/".$fileName;
+			      $profileimage = $destinationPath."/".$fileName;
+			      		  $img = Image::make($profileimage);
+					  		$img->resize(600, null, function ($constraint) {
+							    $constraint->aspectRatio();
+							    $constraint->upsize();
+							});
+							$img->save($destinationPath."/Medium_".$fileName);
+							$img->resize(300, null, function ($constraint) {
+							    $constraint->aspectRatio();
+							    $constraint->upsize();
+							});
+							$img->save($destinationPath."/Small_".$fileName);
+				  $group->profile = $fileName;
 				}
 			}
 		}else{
@@ -181,7 +193,14 @@ class GroupController extends Controller {
 			      $extension = Request::file('g-banner')->getClientOriginalExtension(); // getting image extension
 			      $fileName = 'Group_'.date('YmdHis').'_'.rand(111111,999999).'.'.$extension; // renameing image
 			      Request::file('g-banner')->move($destinationPath, $fileName); // uploading file to given path
-				  $group->banner = $destinationPath."/".$fileName;
+			      $bannerimage = $destinationPath."/".$fileName;
+			      		  $img = Image::make($bannerimage);
+					  		$img->resize(1200, null, function ($constraint) {
+							    $constraint->aspectRatio();
+							    $constraint->upsize();
+							});
+							$img->save($destinationPath."/Large_".$fileName);
+				  $group->banner = $fileName;
 				}
 			}
 		}else{
