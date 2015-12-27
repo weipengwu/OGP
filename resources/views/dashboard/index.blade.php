@@ -14,19 +14,21 @@
 						$user_desc = DB::table('user_meta')->where('user_id', $id)->where('meta_key', 'description')->get();
 						if(count($user_profile) > 0):
 					?>
-							<div class="col-md-6 col-sm-6 col-xs-6">
+							<div class="col-md-5 col-sm-5 col-xs-5">
 								<div class="top-profile" style="background: url(<?php echo url()."/".$user_profile[0]->meta_value;?>) center center no-repeat; background-size: cover; width: 100px; height: 100px; border-radius: 50px"></div>
 							</div>
 					<?php
 						else:
 					?>
-							<div class="col-md-6 col-sm-6 col-xs-6">
+							<div class="col-md-5 col-sm-5 col-xs-5">
 								<div class="top-profile" style="width: 100px; height: 100px; border-radius: 50px; font-size:50px; line-height: 100px;">{{ getFirstCharter(Auth::user()->name) }}</div>
 							</div>
 					<?php endif;?>
-					<div class="col-md-6 col-sm-6 col-xs-6">
-						<p>{{ Auth::user()->name }}</p>
+					<div class="col-md-7 col-sm-7 col-xs-7">
+						<p><strong>{{ Auth::user()->name }}</strong></p>
+						<?php if(count($user_desc) > 0): ?>
 						<p>{{ $user_desc[0]->meta_value }}</p>
+						<?php endif; ?>
 					</div>
 				</div>
 				<div class="dash-side-bottom">
