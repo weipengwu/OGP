@@ -4152,7 +4152,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-  color: #333333;
+  color: #00c2a9;
   background-color: transparent;
 }
 /*.navbar-default .navbar-nav > .active > a,
@@ -6283,6 +6283,9 @@ label,
   border: none;
   color: #fff !important;
 }
+.btn-logo:hover{
+  background: #fab85c;
+}
 .btn-grey:hover{
   background: #fc6c25;
   color: #fff;
@@ -7439,11 +7442,17 @@ h3 a:hover{
     padding: 10px 15px;
     margin-top: 20px;
   }
+  #login-in:hover{
+    background: rgba(255,255,255,1);
+  }
    #login-up{
     background: rgba(255,255,255,1);
     padding: 10px 15px;
     margin-top: 20px;
     border: 1px solid #fff;
+  }
+  #login-up:hover{
+    background: rgba(255,255,255,.3);
   }
   #loginpageform .form-group{
     margin-bottom: 0;
