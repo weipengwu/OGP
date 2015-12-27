@@ -86,7 +86,8 @@
 							</a>
 					</div>
 					@if(count(myGroup($id)) > 0)
-						<a href="<?php echo url(); ?>/groups/<?php echo $myGroup($id)[0]->slug; ?>/posts/new">
+						<?php $mygroup = myGroup($id);?>
+						<a href="<?php echo url(); ?>/groups/<?php echo $mygroup[0]->slug; ?>/posts/new">
 							<div class="dash-box">
 								<div class="img-wrapper">
 									<img src="{{ asset('img/createpost_icon_icon.png') }}" width="30">
@@ -94,7 +95,7 @@
 								<p>Create Post</p>
 							</div>
 						</a>
-						<a href="<?php echo url(); ?>/groups/<?php echo $myGroup($id)[0]->slug; ?>/events/new">
+						<a href="<?php echo url(); ?>/groups/<?php echo $mygroup[0]->slug; ?>/events/new">
 							<div class="dash-box">
 								<div class="img-wrapper">
 									<img src="{{ asset('img/ticket_icon.png') }}" width="30">
