@@ -29,8 +29,8 @@
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
 </head>
-<body style="background: url(<?php echo url();?>/img/cover<?php echo rand(1,3);?>.jpg) no-repeat center center fixed; background-size: cover;">
-	<nav class="navbar navbar-default" style="background: transparent; border: 0">
+<body class="login-body" style="background: url(<?php echo url();?>/img/cover<?php echo rand(1,3);?>.jpg) no-repeat center center fixed; background-size: cover;">
+	<nav class="navbar navbar-default" style="background: transparent; border: 0; position: relative">
 		<div class="container-fluid">
 			<div class="navbar-header">
 			</div>
@@ -60,7 +60,7 @@
 					<div class="logoslogan">
 						<img src="{{ asset('img/logo_transparent.png') }}" width="70">
 						<h1>OH GOOD PARTY</h1>
-						<h2>Leading Brands Community</h2>
+						<h2>Brand Strategy & Innovation Community</h2>
 					</div>
 					<!-- <h3>SIGN IN TO OH GOOD PARTY</h3> -->
 				</div>
@@ -95,7 +95,7 @@
 
 						</div>
 						<div class="privacy">
-						By contiune you agree to OH GOOD PARTY'S <a href="">Terms of Use</a>
+						By continue you agree to OH GOOD PARTY's <a href="">Terms of Use</a>
 						</div>
 					</form>
 				</div>

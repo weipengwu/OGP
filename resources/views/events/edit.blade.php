@@ -25,6 +25,7 @@
 						<input type="hidden" name="gid" value="{{ $event->group_id }}">
 						<div class="form-group">
 							<label>Upload Your Banner Image</label>
+							<p>Recomended size: 1500px X 500px. Images must be in .jpg, .bmp, .png, or .gif format, and not exceed 4 MB.</p>
 							<input type="file" name="banner" id="banner" accept="image/*">
 						</div>
 						<div class="form-group row">
@@ -33,7 +34,7 @@
 							<span class="radio"><input type="radio" name="type" id="typepublic" value="public" <?php if($event->type == 'public') echo "checked"; ?>/><label for="typepublic">Public(Anyone can see)</label> </span>
 							</div>
 							<div class="col-md-6">
-							<span class="radio"><input type="radio" name="type" id="typeprivate" value="private" <?php if($event->type == 'private') echo "checked"; ?> /> <label for="typeprivate">Private(Only members can see)</label></span>
+							<span class="radio"><input type="radio" name="type" id="typeprivate" value="private" <?php if($event->type == 'private') echo "checked"; ?> /> <label for="typeprivate">Private(Only followers can see)</label></span>
 							</div>
 						</div>	
 						<div class="form-group">
@@ -66,13 +67,20 @@
 							</div>
 						</div>
 						<div id="fee" class="form-group" style="float:left; width: 49%;">
-							<label class="col-md-2" style="text-align: right">C$</label> <div class="col-md-10" style="padding: 0"><input type="text" name="fee" class="form-control" placeholder="Event Fee" <?php if ($event->fee !== 'Free') echo "value='".$event->fee."'";?>></div>
+							<div class="col-md-3">
+								<select class="form-control" name="eventcurrency">
+									<option value="cad" @if ($event->currency == 'cad') {{ 'selected' }} @endif >C$</option>
+									<option value="usd" @if ($event->currency == 'usd') {{ 'selected' }} @endif >$</option>
+									<option value="cny" @if ($event->currency == 'cny') {{ 'selected' }} @endif >¥</option>
+									<option value="eur" @if ($event->currency == 'eur') {{ 'selected' }} @endif >€</option>
+								</select>
+							</div> <div class="col-md-9" style="padding: 0"><input type="text" name="fee" class="form-control" placeholder="Event Fee" <?php if ($event->fee !== 'Free') echo "value='".$event->fee."'";?>></div>
 						</div>
-						<div class="form-group">
+						<!-- <div class="form-group">
 							<input type="number" name="quantity" class="form-control" placeholder="Quantity" min="0" max="1000" value="{{ $event->quantity }}">
-						</div>
+						</div> -->
 						<div class="form-group">
-							<input type="text" name="suiteno" class="form-control" placeholder="Suite No." value="{{ $event->suite }}">
+							<input type="text" name="suitenum" class="form-control" placeholder="Suite No." value="{{ $event->suitenum }}">
 						</div>
 						<div class="form-group">
 							<input type="text" name="address" id="address" class="form-control" placeholder="Address" value="{{ $event->address }}">
@@ -82,7 +90,7 @@
 						</div>
 
 						<div class="form-group">
-							<textarea name="content" class="form-control" placeholder="Event Description">{!! html_entity_decode($event->content) !!}</textarea>
+							<textarea name="content" class="form-control" placeholder="Event Description">{{ strip_tags($event->content) }}</textarea>
 						</div>
 						<input type="submit" class="btn btn-logo" value="Submit">
 					</form>

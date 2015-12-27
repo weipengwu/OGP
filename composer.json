@@ -8,7 +8,8 @@
 		"laravel/framework": "5.0.*",
 		"nicolaslopezj/searchable": "1.*",
 		"intervention/image": "^2.3",
-		"stripe/stripe-php": "dev-master"
+		"stripe/stripe-php": "dev-master",
+		"guzzlehttp/guzzle": "~5.0"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "~4.0",

@@ -23,16 +23,17 @@
 						<input type="hidden" name="author" value="{{ Auth::user()->id }}">
 						<input type="hidden" name="gid" value="<?php echo $gid;?>">
 						<div class="form-group">
-							<label>Upload Your Banner Image</label>
+							<label>Upload Your Banner Image.</label>
+							<p>Recomended size: 1500px X 500px. Images must be in .jpg, .bmp, .png, or .gif format, and not exceed 4 MB.</p>
 							<input type="file" name="banner" id="banner" accept="image/*">
 						</div>
 						<div class="form-group row">
 							<div class="col-md-12">Select the type of your event</div>
-							<div class="col-md-6">
+							<div class="col-md-6 col-sm-6">
 							<span class="radio"><input type="radio" name="type" id="typepublic" value="public" checked/><label for="typepublic">Public(Anyone can see)</label> </span>
 							</div>
-							<div class="col-md-6">
-							<span class="radio"><input type="radio" name="type" id="typeprivate" value="private" /> <label for="typeprivate">Private(Only members can see)</label></span>
+							<div class="col-md-6 col-sm-6">
+							<span class="radio"><input type="radio" name="type" id="typeprivate" value="private" /> <label for="typeprivate">Private(Only followers can see)</label></span>
 							</div>
 						</div>	
 						<div class="form-group">
@@ -64,13 +65,13 @@
 							</div>
 						</div>
 						<div id="fee" class="form-group" style="float:left; width: 49%;">
-							<label class="col-md-2" style="text-align: right">C$</label> <div class="col-md-10" style="padding: 0"><input type="text" name="fee" class="form-control" placeholder="Event Fee"></div>
+							<div class="col-md-3"><select name="eventcurrency" class="form-control"><option value="cad">C$</option><option value="usd">$</option><option value="cny">¥</option><option class="eur">€</option></select></div> <div class="col-md-9" style="padding: 0"><input type="text" name="fee" class="form-control" placeholder="Event Fee"></div>
 						</div>
-						<div class="form-group">
+						<!-- <div class="form-group">
 							<input type="number" name="quantity" class="form-control" placeholder="Quantity" min="1" max="1000">
-						</div>
+						</div> -->
 						<div class="form-group">
-							<input type="text" name="suiteno" class="form-control" placeholder="Suite No.">
+							<input type="text" name="suitenum" class="form-control" placeholder="Suite No.">
 						</div>
 						<div class="form-group">
 							<input type="text" name="address" id="address" class="form-control" placeholder="Address">

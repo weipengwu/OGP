@@ -906,12 +906,12 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #fc6c25;
+  color: #00c2a9;
   text-decoration: none;
 }
 a:hover,
 a:focus {
-  color: #e95d18;
+  color: #00c2a9;
   text-decoration: underline;
 }
 a:focus {
@@ -6265,7 +6265,7 @@ label,
 }
 .login{
   text-align: center;
-  margin-top: 40px;
+  /*margin-top: 40px;*/
 }
 .btn-grey{
   background: #77787B;
@@ -6278,8 +6278,8 @@ label,
   color: #fff !important;
 }
 .btn-logo{
-  /*background: #c9ad88;*/
-  background: #fc6c25;
+  background: #c9ad88;
+  /*background: #fc6c25;*/
   border: none;
   color: #fff !important;
 }
@@ -6307,7 +6307,7 @@ label,
   color: #777;
 }
 .likebar a:hover{
-  color: #fc6c25;
+  color: #00c2a9;
 }
 .commentscount{
   text-align: left;
@@ -6369,6 +6369,7 @@ label,
   border: 1px solid #fff;
   display: inline-block;
   margin-top: 15px;
+  text-decoration: none !important;
 }
 .groupbanner .caption a.website{
   border: 0;
@@ -6390,7 +6391,13 @@ label,
 .bannerwrapper.locked{
   position: fixed;
   width: 100%;
-  margin-top: -486px;
+  margin-top: -485px;
+  z-index: 99;
+}
+.ebannerwrapper.locked{
+  position: fixed;
+  width: 100%;
+  margin-top: -285px;
   z-index: 99;
 }
 .left{
@@ -6559,8 +6566,15 @@ label,
   display: table;
   content: "";
 }
-#update-profile{
+.dash-main{
   display: none;
+}
+.dash-init{
+  display: block;
+}
+.dash-init h3{
+  margin-top: 0;
+  margin-bottom: 30px;
 }
 .btn-success{
   border: 0;
@@ -6619,7 +6633,7 @@ label,
 }
 .home .eventgroup{
   float: left;
-  width: 18%;
+  width: 23%;
   margin: 0 1%;
   height: 280px;
   -webkit-box-shadow: 0 0 2px #bababa;
@@ -6901,6 +6915,7 @@ h3 a:hover{
   }
   .orgnizationsection a{
     color: #777;
+    text-decoration: none !important; 
   }
 #map-canvas{
   height: 250px;
@@ -7135,7 +7150,7 @@ h3 a:hover{
 }
 .singlegroup .postfrom a{
  /* color: #34A4D4;*/
- color: #fc6c25;
+ color: #00c2a9;
 }
 .singlegroup .postfrom a:hover{
   text-decoration: underline;
@@ -7185,7 +7200,8 @@ h3 a:hover{
 .top-profile{
     width: 31px;
     height: 31px;
-    background: #fc6c25;
+    /*background: #fc6c25;*/
+    background: #00c2a9;
     color: #fff;
     font-size: 13px;
     line-height: 31px;
@@ -7328,6 +7344,7 @@ h3 a:hover{
 .login .logoslogan h2{
   font-size: 14px;
   color: #fff;
+  font-family: "Lato", Helvetica, Arial, sans-serif;
 }
 .privacy{
   font-size: 12px;
@@ -7407,7 +7424,12 @@ h3 a:hover{
     border-top-color: #fff;
     border-width: 8px;
   }
-
+  .statusbar .sharebox:before{
+    left: 106px;
+  }
+  .statusbar .sharebox:after{
+    left: 107px;
+  }
   #login-in{
     background: rgba(255,255,255,.3);
     color: #fff;
@@ -7566,16 +7588,16 @@ h3 a:hover{
   .search h1{
     font-size: 28px;
   }
-.selectorigin:after{
+.orginandtarget:after{
     clear: both;
     display: table;
     content: "";
 }
-  .selectorigin select{
+  .orginandtarget select{
     float: left;
     width: 49%;
   }
-  .selectorigin select:first-child{
+  .orginandtarget select:first-child{
     margin-right: 2%;
   }
   .allpytojoin:after, .translation:after{
@@ -7669,6 +7691,10 @@ label.error{
   width: 600px;
   margin: 25px 0;
 }
+.eventgallery{
+  width: 400px;
+  margin: 30px auto;
+}
 .stripe-form{
   clear: both;
   padding-top: 30px;
@@ -7747,6 +7773,53 @@ label.error{
   color: #fff;
   margin-bottom: 50px;
 }
+#allposts{
+  min-height: 580px;
+}
+.currentOrigin{
+  margin-bottom: 15px;
+}
+.currentOrigin a.showSelect{
+  float: right;
+}
+.btn-success.btn-file{
+  background: #c9ad88;
+}
+.dash-side-top:after{
+  clear: both;
+  content: "";
+  display: table;
+}
+.dash-side-bottom {
+  clear: both;
+  margin-top: 30px;
+}
+.dash-box{
+  padding: 30px 0 0 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+  width: 120px;
+  height: 120px;
+  float: left;
+  margin-right: 30px;
+}
+.dash-box .img-wrapper{
+  height: 30px;
+  margin-bottom: 10px;
+}
+.dash-init .dash-row{
+  margin-bottom: 30px;
+}
+.dash-init .dash-row:after{
+  clear: both;
+  display: table;
+  content: "";
+}
+.dash-init .dash-row a{
+  color: #666;
+  text-decoration: none;
+}
 /*** media query ***/
 @media (max-width: 1199px){
   .grouplist .bannerholder{
@@ -7755,6 +7828,14 @@ label.error{
   .grouplist .caption h3{
     width: 200px;
     margin-top: 90px;
+  }
+  #followedbrand .grouplist .bannerholder{
+    height: 181px;
+  }
+  #followedbrand .grouplist .caption h3 {
+    margin-top: 70px;
+    font-size: 11px;
+    width: 160px;
   }
 }
 @media (max-width: 991px) {
@@ -7766,6 +7847,17 @@ label.error{
     margin-top: 60px;
     font-size: 12px;
   }
+  #followedbrand .grouplist{
+    width: 220px;
+  }
+  #followedbrand .grouplist .bannerholder{
+    height: 220px;
+  }
+  #followedbrand .grouplist .caption h3 {
+    margin-top: 90px;
+    font-size: 12px;
+    width: 180px;
+  }
   .home .eventgroup{
     width: 70%;
     float: none;
@@ -7773,6 +7865,11 @@ label.error{
   }
   .layout84 .col-md-8, .layout84 .col-md-4, .layout444 .col-md-4, .layout633 .col-md-6, .layout633 .col-md-3, .layout3333 .col-md-3{
     border-right: 0;
+  }
+  .eventindex .eventgroup{
+    width: 70%;
+    float: none;
+    margin: 0 auto 25px auto
   }
 }
 @media (min-width: 768px) {
@@ -7784,6 +7881,9 @@ label.error{
   }
 }
 @media (max-width: 767px) {
+  .navbar-brand{
+    margin-right: 0;
+  }
   .desktop{
     display: none;
   }
@@ -7796,11 +7896,36 @@ label.error{
   }
   .navbar-right.quickmenu .dropdown-menu {
     left: auto;
-    right: 0;
+    right: -30px;
 }
   .navbar-nav.quickmenu > li {
     float: left;
   }
+  .navbar-collapse .navbar-nav li{
+    width: 100%;
+  }
+  .login-body .navbar-collapse.collapse {
+    display: block !important;
+    visibility: visible !important;
+    height: auto !important;
+    padding-bottom: 0;
+    overflow: visible !important;
+}
+.login-body .navbar-collapse .navbar-nav li {
+     width: auto; 
+}
+.login-body .navbar-collapse .navbar-nav li a{
+  font-size: 12px;
+  padding: 0 10px !important;
+}
+#login-in, #login-up{
+  border: 0;
+  background: none;
+  color: #fff;
+}
+.login-explore, #login-in{
+  margin-right: 0;
+}
   .grouplist{
     width: 300px;
     margin: 0 auto 25px auto;
@@ -7815,6 +7940,15 @@ label.error{
   .grouplist .caption h3{
     width: 220px;
     margin-top: 120px;
+  }
+  #category, #eventtime{
+    margin-bottom: 20px;
+  }
+  .groupbanner .caption h1{
+    font-size: 20px;
+  }
+  .groupbanner .caption p{
+    font-size: 12px;
   }
 
 }

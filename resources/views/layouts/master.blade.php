@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="ogpApp">
+<html lang="en">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -81,7 +81,7 @@
 							@if(App::getLocale() == 'en')
 								<img src="{{ asset('/img/en_icon.png') }}" alt="English" width="22" />
 							@else
-								<img src="{{ asset('/img/en_icon.png') }}" alt="Chinese" width="22" />
+								<img src="{{ asset('/img/zh_icon.png') }}" alt="Chinese" width="22" />
 							@endif
 							</a>
 							<ul class="dropdown-menu" role="menu">
@@ -107,8 +107,8 @@
 							</a>
 							<ul class="dropdown-menu" role="menu">
 								<li><a href="{{ url('/dashboard') }}">Dashboard</a></li>
-								<li><a href="#">Feedback</a></li>
-								<li><a href="#">Notifications</a></li>
+								<!-- <li><a href="#">Feedback</a></li>
+								<li><a href="#">Notifications</a></li> -->
 								<li><a href="{{ url('/auth/logout') }}">Logout</a></li>
 							</ul>
 						</li>
@@ -164,7 +164,7 @@
 							@if(App::getLocale() == 'en')
 								<img src="{{ asset('/img/en_icon.png') }}" alt="English" width="22" />
 							@else
-								<img src="{{ asset('/img/en_icon.png') }}" alt="Chinese" width="22" />
+								<img src="{{ asset('/img/zh_icon.png') }}" alt="Chinese" width="22" />
 							@endif
 							</a>
 							<ul class="dropdown-menu" role="menu">
@@ -190,8 +190,8 @@
 							</a>
 							<ul class="dropdown-menu" role="menu">
 								<li><a href="{{ url('/dashboard') }}">Dashboard</a></li>
-								<li><a href="#">Feedback</a></li>
-								<li><a href="#">Notifications</a></li>
+								<!-- <li><a href="#">Feedback</a></li>
+								<li><a href="#">Notifications</a></li> -->
 								<li><a href="{{ url('/auth/logout') }}">Logout</a></li>
 							</ul>
 						</li>
@@ -222,47 +222,47 @@
 	</script>
 	<script type="text/javascript">
 	//angular app
-	var ogpApp = angular.module('ogpApp', []);
-    ogpApp.controller('CountryController', function ($scope) {
-        $scope.countries = [{
-	        "name": "USA",
-	        "id": 1
-	      },{
-	        "name": "Canada",
-	        "id": 2
-	    }];
-	    $scope.states = [{
-	        "name": "Alabama",
-	        "id": 1,
-	        "countryId": 1
-	      }, {
-	        "name": "Alaska",
-	        "id": 2,
-	        "countryId": 1
-	      }, {
-	        "name": "Arizona",
-	        "id": 3,
-	        "countryId": 1
-	      }, {
-	        "name": "Alberta",
-	        "id": 4,
-	        "countryId": 2
-	      }, {
-	        "name": "British columbia",
-	        "id": 5,
-	        "countryId": 2
-	    }];
+	// var ogpApp = angular.module('ogpApp', []);
+ //    ogpApp.controller('CountryController', function ($scope) {
+ //        $scope.countries = [{
+	//         "name": "USA",
+	//         "id": 1
+	//       },{
+	//         "name": "Canada",
+	//         "id": 2
+	//     }];
+	//     $scope.states = [{
+	//         "name": "Alabama",
+	//         "id": 1,
+	//         "countryId": 1
+	//       }, {
+	//         "name": "Alaska",
+	//         "id": 2,
+	//         "countryId": 1
+	//       }, {
+	//         "name": "Arizona",
+	//         "id": 3,
+	//         "countryId": 1
+	//       }, {
+	//         "name": "Alberta",
+	//         "id": 4,
+	//         "countryId": 2
+	//       }, {
+	//         "name": "British columbia",
+	//         "id": 5,
+	//         "countryId": 2
+	//     }];
 	    
-	    $scope.updateCountry = function(){
-	      $scope.availableStates = [];
+	//     $scope.updateCountry = function(){
+	//       $scope.availableStates = [];
 	      
-	      angular.forEach($scope.states, function(value){
-	        if(value.countryId == $scope.country.id){
-	          $scope.availableStates.push(value);
-	        }
-	      });
-	    }
-    })
+	//       angular.forEach($scope.states, function(value){
+	//         if(value.countryId == $scope.country.id){
+	//           $scope.availableStates.push(value);
+	//         }
+	//       });
+	//     }
+ //    })
 
 </script>
 </body>

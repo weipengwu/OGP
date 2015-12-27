@@ -17,13 +17,9 @@
 					</div>
 					<?php $banners = explode(',', $post->banner); ?>
 					<div class="postbanner">
-					<div class="flexslider">
-						<ul class="slides">
 						@foreach ($banners as $banner)
-							<li><img src="<?php echo url().'/'.$banner;?>" class="post-img"></li>
+							<img src="<?php echo url().'/uploads/Medium_'.$banner;?>" class="post-img">
 						@endforeach
-						</ul>
-					</div>
 					</div>
 					<p>{!!html_entity_decode($post->content)!!}</p>
 					
@@ -32,7 +28,7 @@
 					</div>
 					<hr>
 					@if(Auth::check())
-					<section>
+					<section id="leavecomments">
 						<h3 class="title">Leave a comment</h3>
 						<form action="{{ URL::route('createComment', array('id' => $post->id)) }}" method="post">
 							<input type="hidden" name="_token" value="{{ csrf_token() }}">

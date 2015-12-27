@@ -1,7 +1,8 @@
 @extends('layouts.master')
 
 @section('content')
-<div class="eventbanner" style="background: #ccc url('<?php echo url()."/".$event->banner;?>') center center no-repeat; background-size: cover;)">
+<div class="ebannerwrapper">
+<div class="eventbanner" style="background: #ccc url('<?php echo url()."/uploads/Large_".$event->banner;?>') center center no-repeat; background-size: cover;)">
 
 </div>
 <div class="statusbar">
@@ -13,20 +14,21 @@
 				<a href="" class="social_icons social_tw"><i class="fa fa-twitter"></i></a> <a href="" class="social_icons social_fb"><i class="fa fa-facebook"></i></a> <a href="" class="social_icons social_wc"><i class="fa fa-wechat"></i></a> <a href="" class="social_icons social_wb"><i class="fa fa-weibo"></i></a>
 			</div>
 			<div class="shareto">
-				<a href="" class="share_btn"> <img src="{{ asset('img/share_icon.png') }}" width="16"> </a>
+				<a href="" data-toggle="tooltip" title="Share" class="share_btn"> <img src="{{ asset('img/share_icon.png') }}" width="16"> </a>
 			</div>
 			<div class="likebar">
 			@if(Auth::check())
 				@if(alreadyLikedEvent(Auth::user()->id,$event->id) > 0)
-					<span><a href="" data-event-id="{{ $event->id }}" data-author-id="{{ Auth::user()->id }}" class="like_btn event_unlike"><img src="{{ asset('img/already_likes_icon.png') }}" width="16"></a></span>
+					<span><a href="" data-toggle="tooltip" title="Not interested" data-event-id="{{ $event->id }}" data-author-id="{{ Auth::user()->id }}" class="like_btn event_unlike"><img src="{{ asset('img/already_likes_icon.png') }}" width="16"></a></span>
 				@else
-					<span><a href="" data-event-id="{{ $event->id }}" data-author-id="{{ Auth::user()->id }}" class="like_btn event_like"><img src="{{ asset('img/likes_icon.png') }}" width="16"></a></span>
+					<span><a href="" data-toggle="tooltip" title="Interested" data-event-id="{{ $event->id }}" data-author-id="{{ Auth::user()->id }}" class="like_btn event_like"><img src="{{ asset('img/likes_icon.png') }}" width="16"></a></span>
 				@endif
 					<span class="likenum">{{ $event->likes->count()}}</span>
 			@endif
 			</div>
 		</div>
 	</div>
+</div>
 <section class="eventdetails">
 	<div class="container">
 		<div class="row">
@@ -35,14 +37,13 @@
 				<p>Category: {{ $event->group->category }}</p>
 				<hr>
 					<div class="eventinfo">
-						<?php if(gmdate('M j',$event->fromtime) == gmdate('M j',$event->totime)) : ?>
-							{{ gmdate('D, M j',$event->fromtime) }} @ {{ gmdate('g : i a',$event->fromtime) }} - {{ gmdate('g : i a' ,$event->totime) }}
+						<?php if(date('M j',$event->fromtime) == date('M j',$event->totime)) : ?>
+							{{ date('D, M j',$event->fromtime) }} @ {{ date('g : i a',$event->fromtime) }} - {{ date('g : i a' ,$event->totime) }}
 						<?php else: ?>
-							{{ gmdate('M j',$event->fromtime) }} - {{ gmdate('M j',$event->totime) }}
-
+							{{ date('D, M j',$event->fromtime) }} @ {{ date('g : i a',$event->fromtime) }} - {{ date('D, M j',$event->totime) }} @ {{ date('g : i a' ,$event->totime) }}
 						<?php endif; ?>
 					</div>
-					<div class="eventinfo"> {{ $event->address }}</div>
+					<div class="eventinfo">@if($event->suitenum !== '') {{ $event->suitenum }}, {{ $event->address }} @else  {{ $event->address }} @endif</div>
 					<div class="eventinfo eventfee">
 						@if($event->fee == 'Free') 
 							{{ $event->fee }}
@@ -51,7 +52,7 @@
 						@endif
 					</div>
 				</div>
-				@if($event->fee == 'Free')
+				<!-- @if($event->fee == 'Free')
 
 				@else
 
@@ -67,21 +68,34 @@
 				          data-currency='cad'
 				          data-alipay="true"></script>
 				</form>
-				@endif
+				@endif -->
 			</div>
 	</div>
 </section>
 <section class="orgnizationsection greybg">
 	<p class="title">Orgnized by</p>
-	<div class="groupprofile" style="background: #666 url('<?php echo url()."/".getGroupProfile($event->group_id);?>') center center no-repeat; background-size: cover;"></div>
+	<div class="groupprofile" style="background: #666 url('<?php echo url()."/uploads/Small_".getGroupProfile($event->group_id);?>') center center no-repeat; background-size: cover;"></div>
 	<h2><a href="/groups/<?php echo getGroupSlug($event->group_id); ?>">{{ getGroupName($event->group_id) }}</a></h2>
 </section>
 <section class="contentsection">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2">
-					<p>{!! html_entity_decode($event->content) !!}</p>	
+			@if ($event->gallery !== '')
+				<?php $galleries = explode(',', $event->gallery); ?>
+					<div class="eventgallery">
+					<div class="flexslider">
+						<ul class="slides">
+						@foreach ($galleries as $gallery)
+							<li><img src="<?php echo url().'/uploads/Medium_'.$gallery;?>" class="post-img"></li>
+						@endforeach
+						</ul>
+					</div>
+					</div>
+			@endif
+				<p>{!! html_entity_decode($event->content) !!}</p>	
 			</div>
+
 		</div>
 	</div>
 </section>
@@ -115,8 +129,8 @@
 						</div>
 			<?php endif; endforeach;endif;?>
 			</div>
-			<hr>
-			<h2>Attentees</h2>
+			<!-- <hr>
+			<h2>Attentees</h2> -->
 			</div>
 		</div>
 	</div>
@@ -149,5 +163,15 @@
    
       }
       google.maps.event.addDomListener(window, 'load', initialize);
+
+     $(window).scroll(function(){
+		if($(this).scrollTop() > 255){
+			$('.ebannerwrapper').addClass('locked');
+			$('.ebannerwrapper').next().css('margin-top', '285px');
+		}else{
+			$('.ebannerwrapper').removeClass('locked');
+			$('.ebannerwrapper').next().css('margin-top', '0');
+		}
+	})
     </script>
 @endsection
