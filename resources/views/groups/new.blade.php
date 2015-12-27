@@ -327,10 +327,11 @@
 							<select name="target" class="form-control" required>
 								<option value="">Target Market</option>
 								<option value="Global">Global</option>
+								<option value="Africa">Africa</option>
 								<option value="Asia">Asia</option>
 								<option value="Europe">Europe</option>
-								<option value="Mid East">Mid East</option>
 								<option value="North America">North America</option>
+								<option value="Oceania">Oceania</option>
 								<option value="South America">South America</option>
 							</select>
 						</div>
@@ -356,7 +357,7 @@
 							<span>Apply to Join</span> <span class="radio"><input type="radio" name="applytojoin" id="applyyes" value="yes" /> <label for="applyyes">Yes</label> </span><span class="radio"><input type="radio" name="applytojoin" id="applyno" value="no" /> <label for="applyno">No</label></span>
 						</div> -->
 						<div class="form-group">
-							<textarea name="description" maxlength="300" class="form-control" placeholder="Brief Introduction(Tips: Please use the language of target markets.)" required></textarea>
+							<textarea name="description" maxlength="300" class="form-control" placeholder="Brief Introduction ( Tips: Please use the official language at the target markets.)" required></textarea>
 						</div>
 						<p class="small">By continuing you pledge that the content filled in and the additional materials provided are true and authentic in every aspect.</p>
 						<input type="submit" class="btn btn-logo submit" value="Submit">

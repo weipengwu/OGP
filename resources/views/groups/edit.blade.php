@@ -328,17 +328,12 @@
 							</select>
 							<select name="target" class="form-control" required>
 								<option value="">Target Market</option>
-								<option value="North America" <?php if($group->target == 'North America') echo "selected"; ?>>North America</option>
-								<option value="Westen Europe" <?php if($group->target == 'Westen Europe') echo "selected"; ?>>Westen Europe</option>
-								<option value="China" <?php if($group->target == 'China') echo "selected"; ?>>China</option>
-							</select>
-							<select name="target" class="form-control" required>
-								<option value="">Target Market</option>
 								<option value="Global" <?php if($group->target == 'Global') echo "selected"; ?>>Global</option>
+								<option value="Africa" <?php if($group->target == 'Africa') echo "selected"; ?>>Africa</option>
 								<option value="Asia" <?php if($group->target == 'Asia') echo "selected"; ?>>Asia</option>
 								<option value="Europe" <?php if($group->target == 'Europe') echo "selected"; ?>>Europe</option>
-								<option value="Mid East" <?php if($group->target == 'Mid East') echo "selected"; ?>>Mid East</option>
 								<option value="North America" <?php if($group->target == 'North America') echo "selected"; ?>>North America</option>
+								<option value="Oceania" <?php if($group->target == 'Oceania') echo "selected"; ?>>Oceania</option>
 								<option value="South America" <?php if($group->target == 'South America') echo "selected"; ?>>South America</option>
 							</select>
 						</div>
@@ -355,8 +350,9 @@
 							</select>
 						</div> -->
 						<div class="form-group">
-							<textarea name="description" maxlength="300" placeholder="Brief Introduction ( Tips: Please use the language of target markets. )" class="form-control" required>{!! strip_tags($group->description) !!}</textarea>
+							<textarea name="description" maxlength="300" placeholder="Brief Introduction ( Tips: Please use the official language at the target markets. )" class="form-control" required>{!! strip_tags($group->description) !!}</textarea>
 						</div>
+						<p class="small">By continuing you pledge that the content filled in and the additional materials provided are true and authentic in every aspect.</p>
 						<input type="submit" class="btn btn-logo" value="Submit">
 					</form>
 						<script type="text/javascript">
