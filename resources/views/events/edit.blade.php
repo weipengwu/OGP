@@ -80,7 +80,7 @@
 							<input type="number" name="quantity" class="form-control" placeholder="Quantity" min="0" max="1000" value="{{ $event->quantity }}">
 						</div>
 						<div class="form-group">
-							<input type="text" name="suiteno" class="form-control" placeholder="Suite No." value="{{ $event->suite }}">
+							<input type="text" name="suitenum" class="form-control" placeholder="Suite No." value="{{ $event->suitenum }}">
 						</div>
 						<div class="form-group">
 							<input type="text" name="address" id="address" class="form-control" placeholder="Address" value="{{ $event->address }}">
