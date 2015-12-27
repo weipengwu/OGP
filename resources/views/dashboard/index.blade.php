@@ -229,7 +229,7 @@
 					</div>		
 					</div>
 					<div class="col-md-3 col-sm-3 col-xs-3">
-						<a href="/events/{{ $event->id }}/edit" class="btn btn-logo">Edit Event</a>
+						<a href="/events/{{ $event->id }}/edit" class="btn btn-logo" style="margin-bottom: 10px">Edit Event</a>
 						<a class="various btn btn-danger" href="#confirmdelete<?php echo $event->id; ?>">Delete Event</a>
 						<div id="confirmdelete<?php echo $event->id; ?>" class="confirmdelete">
 							<h3>Are you sure to delete this event?</h3>

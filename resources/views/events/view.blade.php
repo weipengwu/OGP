@@ -43,7 +43,7 @@
 							{{ gmdate('D, M j',$event->fromtime) }} @ {{ gmdate('g : i a',$event->fromtime) }} - {{ gmdate('D, M j',$event->totime) }} @ {{ gmdate('g : i a' ,$event->totime) }}
 						<?php endif; ?>
 					</div>
-					<div class="eventinfo"> {{ $event->address }}</div>
+					<div class="eventinfo">@if($event->suitenum !== '') {{ $event->suitenum }}, {{ $event->address }} @else  {{ $event->address }} @endif</div>
 					<div class="eventinfo eventfee">
 						@if($event->fee == 'Free') 
 							{{ $event->fee }}
