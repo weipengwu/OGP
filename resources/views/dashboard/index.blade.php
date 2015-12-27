@@ -25,7 +25,8 @@
 							</div>
 					<?php endif;?>
 					<div class="col-md-6 col-sm-6 col-xs-6">
-						{{ Auth::user()->name }}
+						<p>{{ Auth::user()->name }}</p>
+						<p>{{ $user_desc[0]->meta_value }}</p>
 					</div>
 				</div>
 				<div class="dash-side-bottom">
@@ -84,6 +85,24 @@
 								</div>
 							</a>
 					</div>
+					@if(count(myGroup($id)) > 0)
+						<a href="<?php echo url(); ?>/groups/<?php echo $mygroup[0]->slug; ?>/posts/new">
+							<div class="dash-box">
+								<div class="img-wrapper">
+									<img src="{{ asset('img/createpost_icon_icon.png') }}" width="30">
+								</div>
+								<p>Create Post</p>
+							</div>
+						</a>
+						<a href="<?php echo url(); ?>/groups/<?php echo $mygroup[0]->slug; ?>/events/new">
+							<div class="dash-box">
+								<div class="img-wrapper">
+									<img src="{{ asset('img/ticket_icon.png') }}" width="30">
+								</div>
+								<p>Create Event</p>
+							</div>
+						</a>
+					@endif
 					<div class="dash-row">
 							<a href="" class="dash-btn" data-id="updateprofile">
 								<div class="dash-box">
@@ -97,13 +116,14 @@
 							<a href="" class="dash-btn" data-id="manageEvents">
 								<div class="dash-box">
 									<div class="img-wrapper">
-									<img src="{{ asset('img/ticket_icon.png') }}" width="30">
+									<img src="{{ asset('img/edit_event_icon.png') }}" width="30">
 									</div>
 									<p>Manage Events</p>
 								</div>
 							</a>
 							@endif
 					</div>
+
 
 			</div>
 			<div class="dash-main" id="updateprofile">

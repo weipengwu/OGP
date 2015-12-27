@@ -16,7 +16,7 @@
 						<hr>
 						<div class="form-group">
 							<label>Upload Your New Brand Logo</label>
-							<p>Recomended size: 200px X 200px. Images must be in .jpg, .bmp, .png, or .gif format, and not exceed 4 MB.</p>
+							<p>Recomended size: 400px X 400px. Images must be in .jpg, .bmp, .png, or .gif format, and not exceed 4 MB.</p>
 							<input type="file" id="g-profile" name="g-profile" accept="image/*">
 						</div>
 						<div class="form-group">
