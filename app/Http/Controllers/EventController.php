@@ -213,6 +213,7 @@ class EventController extends Controller {
 			$unixtotime = strtotime($totime);
 			$event->totime = $unixtotime;
 			$event->city = Request::input('city');
+			$event->suitenum = Request::input('suitenum');
 			$event->address = Request::input('address');
 			if(Request::input('selectprice') == 'Free'){
 				$eventfee = 'Free';
@@ -292,6 +293,7 @@ class EventController extends Controller {
 			$totime = Request::input('totime');
 			$unixtotime = strtotime($totime);
 			$event->totime = $unixtotime;
+			$event->suitenum = Request::input('suitenum');
 			$event->address = Request::input('address');
 			$event->city = Request::input('city');
 			if(Request::input('selectprice') == 'Free'){

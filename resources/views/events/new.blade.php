@@ -71,7 +71,7 @@
 							<input type="number" name="quantity" class="form-control" placeholder="Quantity" min="1" max="1000">
 						</div>
 						<div class="form-group">
-							<input type="text" name="suiteno" class="form-control" placeholder="Suite No.">
+							<input type="text" name="suitenum" class="form-control" placeholder="Suite No.">
 						</div>
 						<div class="form-group">
 							<input type="text" name="address" id="address" class="form-control" placeholder="Address">
