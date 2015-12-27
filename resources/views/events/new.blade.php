@@ -67,9 +67,9 @@
 						<div id="fee" class="form-group" style="float:left; width: 49%;">
 							<div class="col-md-3"><select name="eventcurrency" class="form-control"><option value="cad">C$</option><option value="usd">$</option><option value="cny">¥</option><option class="eur">€</option></select></div> <div class="col-md-9" style="padding: 0"><input type="text" name="fee" class="form-control" placeholder="Event Fee"></div>
 						</div>
-						<div class="form-group">
+						<!-- <div class="form-group">
 							<input type="number" name="quantity" class="form-control" placeholder="Quantity" min="1" max="1000">
-						</div>
+						</div> -->
 						<div class="form-group">
 							<input type="text" name="suitenum" class="form-control" placeholder="Suite No.">
 						</div>

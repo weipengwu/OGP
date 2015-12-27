@@ -76,9 +76,9 @@
 								</select>
 							</div> <div class="col-md-9" style="padding: 0"><input type="text" name="fee" class="form-control" placeholder="Event Fee" <?php if ($event->fee !== 'Free') echo "value='".$event->fee."'";?>></div>
 						</div>
-						<div class="form-group">
+						<!-- <div class="form-group">
 							<input type="number" name="quantity" class="form-control" placeholder="Quantity" min="0" max="1000" value="{{ $event->quantity }}">
-						</div>
+						</div> -->
 						<div class="form-group">
 							<input type="text" name="suitenum" class="form-control" placeholder="Suite No." value="{{ $event->suitenum }}">
 						</div>

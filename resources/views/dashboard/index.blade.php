@@ -30,6 +30,9 @@
 				</div>
 				<div class="dash-side-bottom">
 					<div class="d-row">
+						<a href="" class="dash-btn" data-id="overview">Overview</a>
+					</div>
+					<div class="d-row">
 						<a href="" class="dash-btn" data-id="updateprofile">Edit Profile</a>
 					</div>
 					<div class="d-row">
@@ -50,7 +53,7 @@
 
 		</div>
 		<div class="col-md-7 col-md-push-1 col-sm-7 col-sm-push-1">
-			<div class="dash-main dash-init">
+			<div class="dash-main dash-init" id="overview">
 				<h3>Dashboard</h3>
 					<div class="dash-row">
 						@if(count(myGroup($id)) > 0)
@@ -138,7 +141,7 @@
 							<p><span class="followcount"><img src="{{ asset('img/follow_icon.png') }}" width="20"> {{ count(groupFollowers($group->id)) }}</span></p>
 						</div>
 						<div class="col-md-3 col-sm-3 col-xs-3">
-							<a href="groups/<?= $group->slug;?>/edit" class="btn btn-logo">Edit my brand</a>
+							<a href="groups/<?= $group->slug;?>/edit" class="btn btn-logo">Edit brand</a>
 						</div>
 					@endforeach
 					</div>
