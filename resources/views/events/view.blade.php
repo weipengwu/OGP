@@ -40,8 +40,7 @@
 						<?php if(gmdate('M j',$event->fromtime) == gmdate('M j',$event->totime)) : ?>
 							{{ gmdate('D, M j',$event->fromtime) }} @ {{ gmdate('g : i a',$event->fromtime) }} - {{ gmdate('g : i a' ,$event->totime) }}
 						<?php else: ?>
-							{{ gmdate('M j',$event->fromtime) }} - {{ gmdate('M j',$event->totime) }}
-
+							{{ gmdate('D, M j',$event->fromtime) }} @ {{ gmdate('g : i a',$event->fromtime) }} - {{ gmdate('D, M j',$event->totime) }} @ {{ gmdate('g : i a' ,$event->totime) }}
 						<?php endif; ?>
 					</div>
 					<div class="eventinfo"> {{ $event->address }}</div>

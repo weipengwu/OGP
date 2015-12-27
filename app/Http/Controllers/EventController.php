@@ -230,16 +230,18 @@ class EventController extends Controller {
 			$gslug = getGroupSlug(Request::input('gid'));
 			$gname = getGroupName(Request::input('gid'));
 			
-			Mail::queue(['html' => 'emails.newevent'], ['eventid' => $eventid, 'eventtitle' => Request::input('title'), 'eventbanner' => $eventbanner, 'gslug' => $gslug, 'gname' => $gname, 'eventfee' => $eventfee, 'location' => Request::input('address'), 'fromtime' => $unixfromtime, 'totime' => $unixtotime], function($message)
-	        {
-	            $message->from('noreply@ohgoodparty.com', 'OGP');
-	            $followers = Following::where('followed_id', Request::input('gid'))->get();
-	            foreach ($followers as $follower) {
-	            	$user = User::where('id', $follower->user_id)->get();
-	            	$message->to($user[0]->email)->subject('New Event on OGP');
-	            }
+			if( Following::where('followed_id', Request::input('gid'))->count() > 0 ){
+				Mail::queue(['html' => 'emails.newevent'], ['eventid' => $eventid, 'eventtitle' => Request::input('title'), 'eventbanner' => $eventbanner, 'gslug' => $gslug, 'gname' => $gname, 'eventfee' => $eventfee, 'location' => Request::input('address'), 'fromtime' => $unixfromtime, 'totime' => $unixtotime], function($message)
+		        {
+		            $message->from('noreply@ohgoodparty.com', 'OGP');
+		            $followers = Following::where('followed_id', Request::input('gid'))->get();
+		            foreach ($followers as $follower) {
+		            	$user = User::where('id', $follower->user_id)->get();
+		            	$message->to($user[0]->email)->subject('New Event on OGP');
+		            }
 
-	        });
+		        });
+			}
 
 			return redirect()->route('viewEvent', [ 'id' => $event->id ]);
 	}
@@ -277,7 +279,7 @@ class EventController extends Controller {
 						    $constraint->upsize();
 						});
 						$img->save($destinationPath."/Medium_".$fileName);
-				  $event->banner = $destinationPath."/".$fileName;
+				  $event->banner = $fileName;
 			    }
 			}
 		}
