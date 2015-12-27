@@ -7444,6 +7444,7 @@ h3 a:hover{
   }
   #login-in:hover{
     background: rgba(255,255,255,1);
+    color: #777777;
   }
    #login-up{
     background: rgba(255,255,255,1);
@@ -7453,6 +7454,7 @@ h3 a:hover{
   }
   #login-up:hover{
     background: rgba(255,255,255,.3);
+    color: #fff;
   }
   #loginpageform .form-group{
     margin-bottom: 0;
