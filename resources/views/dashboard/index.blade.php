@@ -87,10 +87,11 @@
 					</div>
 					@if(count(myGroup($id)) > 0)
 						<?php $mygroup = myGroup($id);?>
+						<div class="dash-row">
 						<a href="<?php echo url(); ?>/groups/<?php echo $mygroup[0]->slug; ?>/posts/new">
 							<div class="dash-box">
 								<div class="img-wrapper">
-									<img src="{{ asset('img/createpost_icon_icon.png') }}" width="30">
+									<img src="{{ asset('img/createpost_icon.png') }}" width="30">
 								</div>
 								<p>Create Post</p>
 							</div>
@@ -103,6 +104,7 @@
 								<p>Create Event</p>
 							</div>
 						</a>
+						</div>
 					@endif
 					<div class="dash-row">
 							<a href="" class="dash-btn" data-id="updateprofile">
