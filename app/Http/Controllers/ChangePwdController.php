@@ -2,6 +2,7 @@
 use App\User;
 use Request;
 use Validator;
+use Hash;
 
 class ChangePwdController extends Controller {
 
