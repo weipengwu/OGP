@@ -157,7 +157,7 @@
 			</div>
 			<div class="dash-main" id="changepwd">
 				<h4>Change Password</h4>
-				<form action="{{ URL::route('changepassword') }}" method="post">
+				<form action="{{ url('/changepassword') }}" method="post">
 					<input type="hidden" name="_token" value="{{ csrf_token() }}">
 					<input type="hidden" name="user" value="{{ Auth::user()->id }}">
 					<div class="form-group">
