@@ -136,7 +136,7 @@
 			</div>
 			<div class="dash-main" id="updateprofile">
 				<h4>Edit Profile Info</h4>
-				<form action="{{ URL::route('createProfile') }}" method="post" enctype="multipart/form-data">
+				<form action="{{ URL::route('updateProfile') }}" method="post" enctype="multipart/form-data">
 					<input type="hidden" name="_token" value="{{ csrf_token() }}">
 					<input type="hidden" name="user" value="{{ Auth::user()->id }}">
 					<div class="form-group">

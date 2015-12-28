@@ -27,7 +27,7 @@ class DashboardController extends Controller {
 		return view('dashboard.index');
 	}
 
-	public function createProfile()
+	public function updateProfile()
 	{
 		$id = Request::input('user');
 		$user = User::findOrFail($id);
