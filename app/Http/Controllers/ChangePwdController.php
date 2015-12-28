@@ -39,7 +39,7 @@ class ChangePwdController extends Controller {
 			if(Hash::check(Request::input('currentPwd'), $hashedPassword)){
 				$user->password = bcrypt(Request::input('password'));
 				$user->save();
-				Session::flash('message','Password updated.')
+				Session::flash('message','Password updated.');
 				return redirect()->back();
 			}else{
 				return redirect()->back()->withErrors('Password Incorrect');
