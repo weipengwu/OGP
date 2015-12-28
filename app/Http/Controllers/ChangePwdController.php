@@ -25,7 +25,7 @@ class ChangePwdController extends Controller {
 
 	public function changePassword()
 	{
-		$validator = Validator::make(Request::only('currentPwd', 'password'), [
+		$validator = Validator::make(Request::only('currentPwd', 'password', 'password_confirmation'), [
 			'currentPwd' => 'required',
 			'password' => 'required|confirmed|min:6',
 		]);
