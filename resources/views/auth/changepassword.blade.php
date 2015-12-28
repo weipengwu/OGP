@@ -17,6 +17,9 @@
 							</ul>
 						</div>
 					@endif
+					@if (Session::has('message'))
+					   <div class="alert alert-success">{{ Session::get('message') }}</div>
+					@endif
 
 					<form action="{{ URL::route('changePassword') }}" method="post">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">

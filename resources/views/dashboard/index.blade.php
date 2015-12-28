@@ -89,10 +89,8 @@
 									<p>Following</p>
 								</div>
 							</a>
-					</div>
 					@if(count(myGroup($id)) > 0)
 						<?php $mygroup = myGroup($id);?>
-						<div class="dash-row">
 						<a href="<?php echo url(); ?>/groups/<?php echo $mygroup[0]->slug; ?>/posts/new">
 							<div class="dash-box">
 								<div class="img-wrapper">
@@ -109,15 +107,21 @@
 								<p>Create Event</p>
 							</div>
 						</a>
-						</div>
 					@endif
-					<div class="dash-row">
 							<a href="" class="dash-btn" data-id="updateprofile">
+								<div class="dash-box">
+									<div class="img-wrapper">
+									<img src="{{ asset('img/member_icon.png') }}" width="30">
+									</div>
+									<p>Edit Profile</p>
+								</div>
+							</a>
+							<a href="/changepassword">
 								<div class="dash-box">
 									<div class="img-wrapper">
 									<img src="{{ asset('img/edit_icon.png') }}" width="30">
 									</div>
-									<p>Edit Profile</p>
+									<p>Change Password</p>
 								</div>
 							</a>
 							@if(count(myGroup($id)) > 0)
