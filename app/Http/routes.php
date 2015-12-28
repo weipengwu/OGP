@@ -42,7 +42,7 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('groups/leave', array('uses' => 'GroupController@leaveGroup', 'as' => 'leaveGroup'));
 	Route::get('dashboard', array('uses' => 'DashboardController@index','as' => 'dashboard'));
 	Route::post('dashboard', array('uses' => 'DashboardController@updateProfile','as' => 'updateProfile'));
-	Route::get('changepassword', 'PasswordController@changepwdindex')
+	Route::get('changepassword', 'PasswordController@changepwdindex');
 	Route::post('changepassword', array('uses' => 'DashboardController@changePassword','as' => 'changePassword'));
 	Route::get('groups/{slug}/posts/new', array('uses' => 'PostController@newPost', 'as' => 'newPost'));
 	// Route::post('groups/{slug}/posts/new', array('uses' => 'PostController@createPost', 'as' => 'createPost'));
