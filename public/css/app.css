@@ -7938,6 +7938,9 @@ label.error{
 .login-explore, #login-in{
   margin-right: 0;
 }
+.navbar-collapse .navbar-nav > li > a{
+  text-align: center;
+}
   .grouplist{
     width: 300px;
     margin: 0 auto 25px auto;

@@ -107,4 +107,24 @@ class DashboardController extends Controller {
 
 		return redirect()->route('dashboard');
 	}
+
+	public function changePassword()
+	{
+		$validator = Validator::make(Request::only('currentPwd', 'newPwd'), [
+			'currentPwd' => 'required',
+			'newPwd' => 'required|confirmed|min:6',
+		]);
+		if ($validator->fails()){
+			return redirect()->back()->withErrors($validator);
+		}else{
+			$user = User::findOrFail(Request::input('user'));
+			$hashedPassword = $user->password;
+			if(Hash::check(Request::input('currentPwd'), $hashedPassword)){
+				$user->password = Request::input('newPwd');
+				$user->save();
+			}else{
+				return redirect()->back()->withErrors('Password Incorrect');
+			}
+		}
+	}
 }
