@@ -22,13 +22,13 @@
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 						<input type="hidden" name="user" value="{{ Auth::user()->id }}">
 						<div class="form-group">
-							<input type="text" class="form-control" name="currentPwd" placeholder="Current Password">
+							<input type="password" class="form-control" name="currentPwd" placeholder="Current Password">
 						</div>
 						<div class="form-group">
-							<input type="text" class="form-control" name="newPwd" placeholder="New Password">
+							<input type="password" class="form-control" name="password" placeholder="New Password">
 						</div>
 						<div class="form-group">
-							<input type="text" class="form-control" name="newPwd_confirmation" placeholder="Confirm Password">
+							<input type="password" class="form-control" name="password_confirmation" placeholder="Confirm Password">
 						</div>
 						<input type="submit" class="btn btn-logo" value="Submit">
 					</form>

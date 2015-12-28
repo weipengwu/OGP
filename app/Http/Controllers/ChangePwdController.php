@@ -25,9 +25,9 @@ class ChangePwdController extends Controller {
 
 	public function changePassword()
 	{
-		$validator = Validator::make(Request::only('currentPwd', 'newPwd'), [
+		$validator = Validator::make(Request::only('currentPwd', 'password'), [
 			'currentPwd' => 'required',
-			'newPwd' => 'required|confirmed|min:6',
+			'password' => 'required|confirmed|min:6',
 		]);
 		if ($validator->fails()){
 			return redirect()->back()->withErrors($validator);
@@ -35,7 +35,7 @@ class ChangePwdController extends Controller {
 			$user = User::findOrFail(Request::input('user'));
 			$hashedPassword = $user->password;
 			if(Hash::check(Request::input('currentPwd'), $hashedPassword)){
-				$user->password = Request::input('newPwd');
+				$user->password = Request::input('password');
 				$user->save();
 				return redirect()->back()->with('success', true)->with('message','Password updated.');
 			}else{
