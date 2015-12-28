@@ -39,7 +39,7 @@
 						<a href="" class="dash-btn" data-id="updateprofile">Edit Profile</a>
 					</div>
 					<div class="d-row">
-						<a href="" class="dash-btn" data-id="changepwd">Change Password</a>
+						<a href="/changepassword">Change Password</a>
 					</div>
 					<div class="d-row">
 						<a href="" class="dash-btn" data-id="mybrand">My Brand</a>
@@ -136,7 +136,7 @@
 			</div>
 			<div class="dash-main" id="updateprofile">
 				<h4>Edit Profile Info</h4>
-				<form action="{{ url('updateprofile') }}" method="post" enctype="multipart/form-data">
+				<form action="{{ URL::route('createProfile') }}" method="post" enctype="multipart/form-data">
 					<input type="hidden" name="_token" value="{{ csrf_token() }}">
 					<input type="hidden" name="user" value="{{ Auth::user()->id }}">
 					<div class="form-group">
@@ -151,23 +151,6 @@
 					</div>
 					<div class="form-group">
 						<textarea name="desc" class="form-control" placeholder="Bio">@if(count($user_desc) > 0) {!! strip_tags(userDesc(Auth::user()->id)[0]->meta_value) !!} @endif</textarea>
-					</div>
-					<input type="submit" class="btn btn-logo" value="Submit">
-				</form>
-			</div>
-			<div class="dash-main" id="changepwd">
-				<h4>Change Password</h4>
-				<form action="{{ url('/changepassword') }}" method="post">
-					<input type="hidden" name="_token" value="{{ csrf_token() }}">
-					<input type="hidden" name="user" value="{{ Auth::user()->id }}">
-					<div class="form-group">
-						<input type="text" class="form-control" name="currentPwd" placeholder="Current Password">
-					</div>
-					<div class="form-group">
-						<input type="text" class="form-control" name="newPwd" placeholder="New Password">
-					</div>
-					<div class="form-group">
-						<input type="text" class="form-control" name="newPwd_confirmation" placeholder="Confirm Password">
 					</div>
 					<input type="submit" class="btn btn-logo" value="Submit">
 				</form>
