@@ -377,13 +377,10 @@ $(document).ready(function(){
 		e.preventDefault();
 		$.fancybox.close();
 	})
-	$('.flexslider').flexslider({
-		animation: 'fade',
-		controlNav: false
-	});
 	$('.bxslider').bxSlider({
 	  adaptiveHeight: true,
 	  mode: 'fade',
+	  auto: true,
 	  pager: false
 	});
 
