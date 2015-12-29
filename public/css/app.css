@@ -7151,6 +7151,10 @@ h3 a:hover{
   color: #999;
   text-transform: uppercase;
 }
+.postfrom > div{
+  height: 17px;
+  overflow: hidden;
+}
 .singlegroup .postfrom a{
  /* color: #34A4D4;*/
  color: #00c2a9;
