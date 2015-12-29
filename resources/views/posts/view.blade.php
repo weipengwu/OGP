@@ -15,7 +15,7 @@
 					<div class="authorinfo">
 						<span>By {{ getAuthorname($post->author) }}</span> <span><img src="{{ asset('img/calendar_icon.png') }}" width="16"> <?php $timestamp = strtotime($post->created_at); echo date('M j, Y', $timestamp); ?></span>
 					</div>
-					<?php $banners = explode(',', $post->banner); if(count($banners) > 0):?>
+					<?php $banners = explode(',', $post->banner); if(count($banners) > 0 && strpos($post->banner,'img/defaultbg') == false):?>
 					<div class="postbanner">
 						<ul class="bxslider">
 						@foreach ($banners as $banner)

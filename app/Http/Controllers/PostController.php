@@ -163,7 +163,11 @@ class PostController extends Controller {
 
 			$post->author = Request::input('author');
 			$post->title = Request::input('title');
-			$post->banner = implode(',', $postimages);
+			if(count($postimages) > 0){
+				$post->banner = implode(',', $postimages);
+			}else{
+				$post->banner = 'img/defaultbg'.rand(1,8).'.jpg';
+			}
 			$post->content = nl2br(Request::input('content'));
 			$post->group_id = Request::input('gid');
 			$post->save();
