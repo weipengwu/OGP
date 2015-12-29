@@ -381,6 +381,11 @@ $(document).ready(function(){
 		animation: 'fade',
 		controlNav: false
 	});
+	$('.bxslider').bxSlider({
+	  adaptiveHeight: true,
+	  mode: 'fade',
+	  pager: false
+	});
 
 	$('#selectprice').on('change', function(){
 		if($(this).val() == 'Paid'){

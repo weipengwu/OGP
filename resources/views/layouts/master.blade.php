@@ -26,7 +26,9 @@
 
 	<link href="{{ asset('/css/bootstrap-switch.min.css') }}" rel="stylesheet">
 
-	<link href="{{ asset('/css/build.css') }}" rel="stylesheet">	
+	<link href="{{ asset('/css/build.css') }}" rel="stylesheet">
+
+	<link href="{{ asset('/css/jquery.bxslider.css') }}" rel="stylesheet">	
 
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
@@ -211,6 +213,7 @@
 	<script src="{{ asset('/js/bootstrap-switch.min.js') }}"></script>
 	<script src="{{ asset('/js/jquery.fancybox.pack.js') }}"></script>
 	<script src="{{ asset('/js/jquery.flexslider-min.js') }}"></script>
+	<script src="{{ asset('/js/jquery.bxslider.min.js') }}"></script>
 	<!--<script src="{{ asset('/js/validator.min.js') }}"></script>-->
 	<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"></script>
 	<script src="{{ asset('/js/main.js') }}"></script>

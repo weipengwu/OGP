@@ -17,9 +17,11 @@
 					</div>
 					<?php $banners = explode(',', $post->banner); ?>
 					<div class="postbanner">
+						<ul class="bxslider">
 						@foreach ($banners as $banner)
-							<img src="<?php echo url().'/uploads/Medium_'.$banner;?>" class="post-img">
+							<li><img src="<?php echo url().'/uploads/Medium_'.$banner;?>" class="post-img"></li>
 						@endforeach
+						</ul>
 					</div>
 					<p>{!!html_entity_decode($post->content)!!}</p>
 					
