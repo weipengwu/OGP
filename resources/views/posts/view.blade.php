@@ -19,7 +19,7 @@
 					<div class="postbanner">
 						<ul class="bxslider">
 						@foreach ($banners as $banner)
-							<li><img src="<?php echo url().'/uploads/Medium_'.$banner;?>" class="post-img"></li>
+							<li><img src="<?php echo url().'/uploads/Medium_'.$banner;?>"></li>
 						@endforeach
 						</ul>
 					</div>
