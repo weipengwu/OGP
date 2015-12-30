@@ -3,7 +3,7 @@
 @section('content')
 <div class="container dashboard">
 	<div class="row">
-		<div class="col-md-4 col-sm-4">
+		<div class="col-md-4">
 
 			<?php
 				$id = Auth::user()->id;
@@ -58,7 +58,7 @@
 				</div>
 
 		</div>
-		<div class="col-md-7 col-md-push-1 col-sm-7 col-sm-push-1">
+		<div class="col-md-7 col-md-push-1">
 			<div class="dash-main dash-init" id="overview">
 				<h3>Dashboard</h3>
 					<div class="dash-row">

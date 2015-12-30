@@ -7660,7 +7660,7 @@ label.error{
   margin-left: 8px;
 }
 #mybrand .bannerholder{
-  height: 100px;
+  height: 140px;
 }
 #mybrand .membercount{
   padding-right: 20px;
@@ -7853,6 +7853,13 @@ label.error{
     margin-top: 70px;
     font-size: 11px;
     width: 160px;
+  }
+  #mybrand .bannerholder{
+    height: 110px;
+  }
+  .dash-main .btn{
+    padding: 5px 10px;
+    font-size: 12px;
   }
 }
 @media (max-width: 991px) {
