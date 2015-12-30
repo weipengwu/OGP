@@ -66,7 +66,7 @@
 							<a href="" class="dash-btn" data-id="mybrand">
 								<div class="dash-box">
 									<div class="img-wrapper">
-									<img src="{{ asset('img/create_brand_icon.png') }}" width="30">
+									<img src="{{ asset('img/edit_brand_icon.png') }}" width="30">
 									</div>
 									<p>Edit Brand</p>
 								</div>
@@ -102,7 +102,7 @@
 						<a href="<?php echo url(); ?>/groups/<?php echo $mygroup[0]->slug; ?>/events/new">
 							<div class="dash-box">
 								<div class="img-wrapper">
-									<img src="{{ asset('img/ticket_icon.png') }}" width="30">
+									<img src="{{ asset('img/event_icon.png') }}" width="30">
 								</div>
 								<p>Create Event</p>
 							</div>
@@ -111,7 +111,7 @@
 							<a href="" class="dash-btn" data-id="updateprofile">
 								<div class="dash-box">
 									<div class="img-wrapper">
-									<img src="{{ asset('img/member_icon.png') }}" width="30">
+									<img src="{{ asset('img/edit_profile_icon.png') }}" width="30">
 									</div>
 									<p>Edit Profile</p>
 								</div>
@@ -119,7 +119,7 @@
 							<a href="/changepassword">
 								<div class="dash-box">
 									<div class="img-wrapper">
-									<img src="{{ asset('img/edit_icon.png') }}" width="30">
+									<img src="{{ asset('img/password_icon.png') }}" width="30">
 									</div>
 									<p>Change Password</p>
 								</div>
