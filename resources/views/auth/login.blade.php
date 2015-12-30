@@ -29,7 +29,7 @@
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
 </head>
-<body class="login-body" style="background: url(<?php echo url();?>/img/cover<?php echo rand(1,3);?>.jpg) no-repeat center center fixed; background-size: cover;">
+<body class="login-body" style="background: url(<?php echo url();?>/img/cover<?php echo rand(1,10);?>.jpg) no-repeat center center fixed; background-size: cover;">
 	<nav class="navbar navbar-default" style="background: transparent; border: 0; position: relative">
 		<div class="container-fluid">
 			<div class="navbar-header">

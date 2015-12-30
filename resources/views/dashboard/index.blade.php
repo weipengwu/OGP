@@ -38,9 +38,9 @@
 					<div class="d-row">
 						<a href="" class="dash-btn" data-id="updateprofile">Edit Profile</a>
 					</div>
-					<div class="d-row">
+<!-- 					<div class="d-row">
 						<a href="/changepassword">Change Password</a>
-					</div>
+					</div> -->
 					<div class="d-row">
 						<a href="" class="dash-btn" data-id="mybrand">My Brand</a>
 					</div>
@@ -66,7 +66,7 @@
 							<a href="" class="dash-btn" data-id="mybrand">
 								<div class="dash-box">
 									<div class="img-wrapper">
-									<img src="{{ asset('img/edit_brand_icon.png') }}" width="30">
+									<img src="{{ asset('img/edit_brand_icon.png') }}" width="40">
 									</div>
 									<p>Edit Brand</p>
 								</div>
@@ -75,7 +75,7 @@
 							<a href="/groups/new">
 								<div class="dash-box">
 									<div class="img-wrapper">
-									<img src="{{ asset('img/create_brand_icon.png') }}" width="30">
+									<img src="{{ asset('img/create_brand_icon.png') }}" width="40">
 									</div>
 									<p>Create Brand</p>
 								</div>
@@ -84,7 +84,7 @@
 							<a href="" class="dash-btn" data-id="followedbrand">
 								<div class="dash-box">
 									<div class="img-wrapper">
-									<img src="{{ asset('img/follow_icon.png') }}" width="30">
+									<img src="{{ asset('img/follow_icon.png') }}" width="40">
 									</div>
 									<p>Following</p>
 								</div>
@@ -94,7 +94,7 @@
 						<a href="<?php echo url(); ?>/groups/<?php echo $mygroup[0]->slug; ?>/posts/new">
 							<div class="dash-box">
 								<div class="img-wrapper">
-									<img src="{{ asset('img/createpost_icon.png') }}" width="30">
+									<img src="{{ asset('img/createpost_icon.png') }}" width="40">
 								</div>
 								<p>Create Post</p>
 							</div>
@@ -102,7 +102,7 @@
 						<a href="<?php echo url(); ?>/groups/<?php echo $mygroup[0]->slug; ?>/events/new">
 							<div class="dash-box">
 								<div class="img-wrapper">
-									<img src="{{ asset('img/event_icon.png') }}" width="30">
+									<img src="{{ asset('img/event_icon.png') }}" width="40">
 								</div>
 								<p>Create Event</p>
 							</div>
@@ -111,7 +111,7 @@
 							<a href="" class="dash-btn" data-id="updateprofile">
 								<div class="dash-box">
 									<div class="img-wrapper">
-									<img src="{{ asset('img/edit_profile_icon.png') }}" width="30">
+									<img src="{{ asset('img/edit_profile_icon.png') }}" width="40">
 									</div>
 									<p>Edit Profile</p>
 								</div>
@@ -119,7 +119,7 @@
 							<a href="/changepassword">
 								<div class="dash-box">
 									<div class="img-wrapper">
-									<img src="{{ asset('img/password_icon.png') }}" width="30">
+									<img src="{{ asset('img/password_icon.png') }}" width="40">
 									</div>
 									<p>Change Password</p>
 								</div>
@@ -128,7 +128,7 @@
 							<a href="" class="dash-btn" data-id="manageEvents">
 								<div class="dash-box">
 									<div class="img-wrapper">
-									<img src="{{ asset('img/edit_event_icon.png') }}" width="30">
+									<img src="{{ asset('img/edit_event_icon.png') }}" width="40">
 									</div>
 									<p>Manage Events</p>
 								</div>
@@ -183,7 +183,7 @@
 						<!-- <a href="/groups/new" class="createbrand">Create your brand</a> -->
 						<a href="/groups/new">
 								<div class="dash-box">
-									<img src="{{ asset('img/create_brand_icon.png') }}" width="30">
+									<img src="{{ asset('img/create_brand_icon.png') }}" width="40">
 									<p>Create Brand</p>
 								</div>
 							</a>
