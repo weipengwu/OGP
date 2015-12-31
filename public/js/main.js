@@ -183,6 +183,15 @@ $(document).ready(function(){
 	$('.create_btn').tooltip({
 		placement: 'left'
 	});
+	$('.shareto a').tooltip({
+		placement: 'left'
+	})
+	$('.postcomments a').tooltip({
+		placement: 'left'
+	})
+	$('.postlikes a').tooltip({
+		placement: 'left'
+	})
 
 	$('#g-profile').fileinput({
 		previewFileType: "image",
