@@ -27,7 +27,7 @@
 					<div class="col-md-7 col-sm-7 col-xs-7">
 						<p><strong>{{ Auth::user()->name }}</strong></p>
 						<?php if(count($user_desc) > 0): ?>
-						<p>{{ $user_desc[0]->meta_value }}</p>
+						<p>{!! html_entity_decode($user_desc[0]->meta_value) !!}</p>
 						<?php endif; ?>
 					</div>
 				</div>

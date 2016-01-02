@@ -363,6 +363,7 @@ $(document).ready(function(){
 	})
 	
 	$(window).scroll(function(){
+		console.log($('.statusbar').offset().top);
 		if($(this).scrollTop() > $('.statusbar').offset().top){
 			$('.bannerwrapper').addClass('locked');
 			$('.bannerwrapper').next().css('margin-top', '485px');
@@ -390,6 +391,7 @@ $(document).ready(function(){
 	  adaptiveHeight: true,
 	  mode: 'fade',
 	  auto: true,
+	  infiniteLoop: false,
 	  pager: false
 	});
 

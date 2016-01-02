@@ -7388,20 +7388,32 @@ h3 a:hover{
   padding-top: 5px;
 }
 .social_icons.social_tw{
-  background: #65CCEF; 
+  background: #333; 
   color: #fff;
+}
+.social_icons.social_tw:hover{
+  background: #65CCEF; 
 }
 .social_icons.social_fb{
-  background: #507BBE; 
+  background: #333; 
   color: #fff;
+}
+.social_icons.social_fb:hover{
+  background: #507BBE; 
 }
 .social_icons.social_wc{
-  background: #38B449; 
+  background: #333; 
   color: #fff;
 }
+.social_icons.social_wc:hover{
+  background: #38B449; 
+}
 .social_icons.social_wb{
-  background: #ED1C24; 
+  background: #333; 
   color: #fff;
+}
+.social_icons.social_wb:hover{
+  background: #ED1C24;
 }
 /* Required for Down Triangle */
 .sharebox:before, .sharebox:after {
