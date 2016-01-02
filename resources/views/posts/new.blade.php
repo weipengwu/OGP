@@ -28,6 +28,9 @@
 						<div class="form-group">
 							<textarea name="content" class="form-control" id="posteditor" placeholder="Is there any good news?" required></textarea>
 						</div>
+						<div class="form-group">
+							<div>Please upload at least one image, maximum eight images. Image size can not be exceed 4 MB.</div>
+						</div>
 						<div class="imagezone">
 							<div class="form-group form-img1">
 								<input type="file" id="postimage1" name="postimage1" accept="image/*">
@@ -40,6 +43,18 @@
 							</div>
 							<div class="form-group form-img4">
 								<input type="file" id="postimage4" name="postimage4" accept="image/*">
+							</div>
+							<div class="form-group form-img5">
+								<input type="file" id="postimage5" name="postimage4" accept="image/*">
+							</div>
+							<div class="form-group form-img6">
+								<input type="file" id="postimage6" name="postimage4" accept="image/*">
+							</div>
+							<div class="form-group form-img7">
+								<input type="file" id="postimage7" name="postimage4" accept="image/*">
+							</div>
+							<div class="form-group form-img8">
+								<input type="file" id="postimage8" name="postimage4" accept="image/*">
 							</div>
 						</div>
 						<input type="submit" class="btn btn-logo" value="Submit">

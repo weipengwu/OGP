@@ -2,8 +2,7 @@
 
 @section('content')
 <div class="container single-post">
-	<div class="row">
-		<div class="col-md-10 col-md-offset-1">
+
 			<div class="panel">
 
 				<div class="panel-body">
@@ -67,7 +66,6 @@
 					</section>
 				</div>
 			</div>
-		</div>
-	</div>
+
 </div>
 @endsection

@@ -59,7 +59,7 @@ class PostController extends Controller {
 			      		Request::file('postimage1')->move($destinationPath, $fileName); // uploading file to given path
 				  		$postimage1 = $destinationPath."/".$fileName;
 				  		$img = Image::make($postimage1);
-				  		$img->resize(600, null, function ($constraint) {
+				  		$img->resize(750, null, function ($constraint) {
 						    $constraint->aspectRatio();
 						    $constraint->upsize();
 						});
@@ -88,7 +88,7 @@ class PostController extends Controller {
 			      		Request::file('postimage2')->move($destinationPath, $fileName); // uploading file to given path
 				  		$postimage2 = $destinationPath."/".$fileName;
 						$img = Image::make($postimage2);
-				  		$img->resize(600, null, function ($constraint) {
+				  		$img->resize(750, null, function ($constraint) {
 						    $constraint->aspectRatio();
 						    $constraint->upsize();
 						});
@@ -117,7 +117,7 @@ class PostController extends Controller {
 			      		Request::file('postimage3')->move($destinationPath, $fileName); // uploading file to given path
 				  		$postimage3 = $destinationPath."/".$fileName;
 						$img = Image::make($postimage3);
-				  		$img->resize(600, null, function ($constraint) {
+				  		$img->resize(750, null, function ($constraint) {
 						    $constraint->aspectRatio();
 						    $constraint->upsize();
 						});
@@ -146,7 +146,123 @@ class PostController extends Controller {
 			      		Request::file('postimage4')->move($destinationPath, $fileName); // uploading file to given path
 				  		$postimage4 = $destinationPath."/".$fileName;
 						$img = Image::make($postimage4);
-				  		$img->resize(600, null, function ($constraint) {
+				  		$img->resize(750, null, function ($constraint) {
+						    $constraint->aspectRatio();
+						    $constraint->upsize();
+						});
+						$img->save($destinationPath."/Medium_".$fileName);
+						$img->resize(350, null, function ($constraint) {
+						    $constraint->aspectRatio();
+						    $constraint->upsize();
+						});
+						$img->save($destinationPath."/Small_".$fileName);
+						array_push($postimages, $fileName);
+					}
+				}
+			}
+			if(Request::file('postimage5')){
+				$file = array('postimage5' => Request::file('postimage5'));
+				$rules = array('postimage5' => 'required|image');
+				$validator = Validator::make($file, $rules);
+				if ($validator->fails()){
+					return redirect()->back()->withErrors($validator);
+				}else{
+					if (Request::file('postimage5')->isValid()) {
+			      		$destinationPath = 'uploads'; // upload path
+			      		//$originalname = Request::file('postimage4')->getClientOriginalName();
+			      		$extension = Request::file('postimage5')->getClientOriginalExtension(); // getting image extension
+			      		$fileName = 'Post_'.date('YmdHis').'_'.rand(111111,999999).'.'.$extension; // renameing image
+			      		Request::file('postimage5')->move($destinationPath, $fileName); // uploading file to given path
+				  		$postimage5 = $destinationPath."/".$fileName;
+						$img = Image::make($postimage5);
+				  		$img->resize(750, null, function ($constraint) {
+						    $constraint->aspectRatio();
+						    $constraint->upsize();
+						});
+						$img->save($destinationPath."/Medium_".$fileName);
+						$img->resize(350, null, function ($constraint) {
+						    $constraint->aspectRatio();
+						    $constraint->upsize();
+						});
+						$img->save($destinationPath."/Small_".$fileName);
+						array_push($postimages, $fileName);
+					}
+				}
+			}
+			if(Request::file('postimage6')){
+				$file = array('postimage6' => Request::file('postimage6'));
+				$rules = array('postimage6' => 'required|image');
+				$validator = Validator::make($file, $rules);
+				if ($validator->fails()){
+					return redirect()->back()->withErrors($validator);
+				}else{
+					if (Request::file('postimage6')->isValid()) {
+			      		$destinationPath = 'uploads'; // upload path
+			      		//$originalname = Request::file('postimage4')->getClientOriginalName();
+			      		$extension = Request::file('postimage6')->getClientOriginalExtension(); // getting image extension
+			      		$fileName = 'Post_'.date('YmdHis').'_'.rand(111111,999999).'.'.$extension; // renameing image
+			      		Request::file('postimage6')->move($destinationPath, $fileName); // uploading file to given path
+				  		$postimage6 = $destinationPath."/".$fileName;
+						$img = Image::make($postimage6);
+				  		$img->resize(750, null, function ($constraint) {
+						    $constraint->aspectRatio();
+						    $constraint->upsize();
+						});
+						$img->save($destinationPath."/Medium_".$fileName);
+						$img->resize(350, null, function ($constraint) {
+						    $constraint->aspectRatio();
+						    $constraint->upsize();
+						});
+						$img->save($destinationPath."/Small_".$fileName);
+						array_push($postimages, $fileName);
+					}
+				}
+			}
+			if(Request::file('postimage7')){
+				$file = array('postimage7' => Request::file('postimage7'));
+				$rules = array('postimage7' => 'required|image');
+				$validator = Validator::make($file, $rules);
+				if ($validator->fails()){
+					return redirect()->back()->withErrors($validator);
+				}else{
+					if (Request::file('postimage7')->isValid()) {
+			      		$destinationPath = 'uploads'; // upload path
+			      		//$originalname = Request::file('postimage4')->getClientOriginalName();
+			      		$extension = Request::file('postimage7')->getClientOriginalExtension(); // getting image extension
+			      		$fileName = 'Post_'.date('YmdHis').'_'.rand(111111,999999).'.'.$extension; // renameing image
+			      		Request::file('postimage7')->move($destinationPath, $fileName); // uploading file to given path
+				  		$postimage7 = $destinationPath."/".$fileName;
+						$img = Image::make($postimage7);
+				  		$img->resize(750, null, function ($constraint) {
+						    $constraint->aspectRatio();
+						    $constraint->upsize();
+						});
+						$img->save($destinationPath."/Medium_".$fileName);
+						$img->resize(350, null, function ($constraint) {
+						    $constraint->aspectRatio();
+						    $constraint->upsize();
+						});
+						$img->save($destinationPath."/Small_".$fileName);
+						array_push($postimages, $fileName);
+					}
+				}
+			}
+			if(Request::file('postimage8')){
+				$file = array('postimage8' => Request::file('postimage8'));
+				$rules = array('postimage8' => 'required|image');
+				$validator = Validator::make($file, $rules);
+				if ($validator->fails()){
+					return redirect()->back()->withErrors($validator);
+				}else{
+					if (Request::file('postimage8')->isValid()) {
+			      		$destinationPath = 'uploads'; // upload path
+			      		//$originalname = Request::file('postimage4')->getClientOriginalName();
+			      		$extension = Request::file('postimage8')->getClientOriginalExtension(); // getting image extension
+			      		$fileName = 'Post_'.date('YmdHis').'_'.rand(111111,999999).'.'.$extension; // renameing image
+			      		Request::file('postimage8')->move($destinationPath, $fileName); // uploading file to given path
+				  		$postimage8 = $destinationPath."/".$fileName;
+						$img = Image::make($postimage8);
+				  		$img->resize(750, null, function ($constraint) {
 						    $constraint->aspectRatio();
 						    $constraint->upsize();
 						});

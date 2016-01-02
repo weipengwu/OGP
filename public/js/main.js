@@ -293,9 +293,73 @@ $(document).ready(function(){
 	});
 	$('#postimage4').on('fileloaded', function(event, file, previewId, index, reader) {
 	    $('.btn-img4').hide();
+	    $('.form-img5').show();
 	});
 	$('#postimage4').on('filecleared', function(event, file, previewId, index, reader) {
 	    $('.btn-img4').show();
+	});
+	$('#postimage5').fileinput({
+		previewFileType: "image",
+		browseClass: "btn btn-primary btn-block btn-img5",
+        showCaption: false,
+        showRemove: false,
+        showUpload: false,
+		browseLabel: "",
+		browseIcon: "<i class=\"glyphicon glyphicon-plus\"></i>",
+	});
+	$('#postimage5').on('fileloaded', function(event, file, previewId, index, reader) {
+	    $('.btn-img5').hide();
+	    $('.form-img6').show();
+	});
+	$('#postimage5').on('filecleared', function(event, file, previewId, index, reader) {
+	    $('.btn-img5').show();
+	});
+	$('#postimage6').fileinput({
+		previewFileType: "image",
+		browseClass: "btn btn-primary btn-block btn-img6",
+        showCaption: false,
+        showRemove: false,
+        showUpload: false,
+		browseLabel: "",
+		browseIcon: "<i class=\"glyphicon glyphicon-plus\"></i>",
+	});
+	$('#postimage6').on('fileloaded', function(event, file, previewId, index, reader) {
+	    $('.btn-img6').hide();
+	    $('.form-img7').show();
+	});
+	$('#postimage6').on('filecleared', function(event, file, previewId, index, reader) {
+	    $('.btn-img6').show();
+	});
+	$('#postimage7').fileinput({
+		previewFileType: "image",
+		browseClass: "btn btn-primary btn-block btn-img7",
+        showCaption: false,
+        showRemove: false,
+        showUpload: false,
+		browseLabel: "",
+		browseIcon: "<i class=\"glyphicon glyphicon-plus\"></i>",
+	});
+	$('#postimage7').on('fileloaded', function(event, file, previewId, index, reader) {
+	    $('.btn-img7').hide();
+	    $('.form-img8').show();
+	});
+	$('#postimage7').on('filecleared', function(event, file, previewId, index, reader) {
+	    $('.btn-img7').show();
+	});
+	$('#postimage8').fileinput({
+		previewFileType: "image",
+		browseClass: "btn btn-primary btn-block btn-img8",
+        showCaption: false,
+        showRemove: false,
+        showUpload: false,
+		browseLabel: "",
+		browseIcon: "<i class=\"glyphicon glyphicon-plus\"></i>",
+	});
+	$('#postimage8').on('fileloaded', function(event, file, previewId, index, reader) {
+	    $('.btn-img8').hide();
+	});
+	$('#postimage8').on('filecleared', function(event, file, previewId, index, reader) {
+	    $('.btn-img8').show();
 	});
 	$('.form_datetime').datetimepicker({
         	weekStart: 1,
