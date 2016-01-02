@@ -29,7 +29,7 @@
 							<textarea name="content" class="form-control" id="posteditor" placeholder="Is there any good news?" required></textarea>
 						</div>
 						<div class="form-group">
-							<div>Please upload at least one image, maximum eight images. Image size can not be exceed 4 MB.</div>
+							<div>Please upload at least one image, maximum six images. Image size can not be exceed 4 MB.</div>
 						</div>
 						<div class="imagezone">
 							<div class="form-group form-img1">
