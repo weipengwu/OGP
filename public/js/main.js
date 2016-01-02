@@ -325,42 +325,42 @@ $(document).ready(function(){
 	});
 	$('#postimage6').on('fileloaded', function(event, file, previewId, index, reader) {
 	    $('.btn-img6').hide();
-	    $('.form-img7').show();
+	    // $('.form-img7').show();
 	});
 	$('#postimage6').on('filecleared', function(event, file, previewId, index, reader) {
 	    $('.btn-img6').show();
 	});
-	$('#postimage7').fileinput({
-		previewFileType: "image",
-		browseClass: "btn btn-primary btn-block btn-img7",
-        showCaption: false,
-        showRemove: false,
-        showUpload: false,
-		browseLabel: "",
-		browseIcon: "<i class=\"glyphicon glyphicon-plus\"></i>",
-	});
-	$('#postimage7').on('fileloaded', function(event, file, previewId, index, reader) {
-	    $('.btn-img7').hide();
-	    $('.form-img8').show();
-	});
-	$('#postimage7').on('filecleared', function(event, file, previewId, index, reader) {
-	    $('.btn-img7').show();
-	});
-	$('#postimage8').fileinput({
-		previewFileType: "image",
-		browseClass: "btn btn-primary btn-block btn-img8",
-        showCaption: false,
-        showRemove: false,
-        showUpload: false,
-		browseLabel: "",
-		browseIcon: "<i class=\"glyphicon glyphicon-plus\"></i>",
-	});
-	$('#postimage8').on('fileloaded', function(event, file, previewId, index, reader) {
-	    $('.btn-img8').hide();
-	});
-	$('#postimage8').on('filecleared', function(event, file, previewId, index, reader) {
-	    $('.btn-img8').show();
-	});
+	// $('#postimage7').fileinput({
+	// 	previewFileType: "image",
+	// 	browseClass: "btn btn-primary btn-block btn-img7",
+ //        showCaption: false,
+ //        showRemove: false,
+ //        showUpload: false,
+	// 	browseLabel: "",
+	// 	browseIcon: "<i class=\"glyphicon glyphicon-plus\"></i>",
+	// });
+	// $('#postimage7').on('fileloaded', function(event, file, previewId, index, reader) {
+	//     $('.btn-img7').hide();
+	//     $('.form-img8').show();
+	// });
+	// $('#postimage7').on('filecleared', function(event, file, previewId, index, reader) {
+	//     $('.btn-img7').show();
+	// });
+	// $('#postimage8').fileinput({
+	// 	previewFileType: "image",
+	// 	browseClass: "btn btn-primary btn-block btn-img8",
+ //        showCaption: false,
+ //        showRemove: false,
+ //        showUpload: false,
+	// 	browseLabel: "",
+	// 	browseIcon: "<i class=\"glyphicon glyphicon-plus\"></i>",
+	// });
+	// $('#postimage8').on('fileloaded', function(event, file, previewId, index, reader) {
+	//     $('.btn-img8').hide();
+	// });
+	// $('#postimage8').on('filecleared', function(event, file, previewId, index, reader) {
+	//     $('.btn-img8').show();
+	// });
 	$('.form_datetime').datetimepicker({
         	weekStart: 1,
 	        todayBtn:  1,
@@ -427,8 +427,7 @@ $(document).ready(function(){
 	})
 	
 	$(window).scroll(function(){
-		console.log($('.statusbar').offset().top);
-		if($(this).scrollTop() > $('.statusbar').offset().top){
+		if($(this).scrollTop() > 465){
 			$('.bannerwrapper').addClass('locked');
 			$('.bannerwrapper').next().css('margin-top', '485px');
 		}else{

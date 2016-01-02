@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
 	<div class="row">
-		<div class="col-md-8 col-md-offset-2">
+		<div class="fixedarea">
 			<div class="panel">
 				<div class="panel-heading"><h3>CREATE A NEW POST</h3></div>
 
@@ -45,16 +45,10 @@
 								<input type="file" id="postimage4" name="postimage4" accept="image/*">
 							</div>
 							<div class="form-group form-img5">
-								<input type="file" id="postimage5" name="postimage4" accept="image/*">
+								<input type="file" id="postimage5" name="postimage5" accept="image/*">
 							</div>
 							<div class="form-group form-img6">
-								<input type="file" id="postimage6" name="postimage4" accept="image/*">
-							</div>
-							<div class="form-group form-img7">
-								<input type="file" id="postimage7" name="postimage4" accept="image/*">
-							</div>
-							<div class="form-group form-img8">
-								<input type="file" id="postimage8" name="postimage4" accept="image/*">
+								<input type="file" id="postimage6" name="postimage6" accept="image/*">
 							</div>
 						</div>
 						<input type="submit" class="btn btn-logo" value="Submit">

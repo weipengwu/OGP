@@ -7548,8 +7548,15 @@ h3 a:hover{
     color: #fff;
     background-color: #666;
   }
-  .imagezone .form-img2,.imagezone .form-img3,.imagezone .form-img4{
+  .imagezone .form-img2,.imagezone .form-img3,.imagezone .form-img4, .imagezone .form-img5, .imagezone .form-img6{
     display: none;
+  }
+  .imagezone .form-img6{
+    margin: 0;
+  }
+  .fixedarea{
+    width: 750px;
+    margin: 0 auto;
   }
   .imagezone .btn-primary{
     color: #bababa;
