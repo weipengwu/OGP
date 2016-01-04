@@ -59,12 +59,12 @@ class PostController extends Controller {
 			      		Request::file('postimage1')->move($destinationPath, $fileName); // uploading file to given path
 				  		$postimage1 = $destinationPath."/".$fileName;
 				  		$img = Image::make($postimage1);
-				  		$img->resize(750, null, function ($constraint) {
+				  		$img->resize(900, null, function ($constraint) {
 						    $constraint->aspectRatio();
 						    $constraint->upsize();
 						});
 						$img->save($destinationPath."/Medium_".$fileName);
-				  		$img->resize(350, null, function ($constraint) {
+				  		$img->resize(500, null, function ($constraint) {
 						    $constraint->aspectRatio();
 						    $constraint->upsize();
 						});
@@ -88,12 +88,12 @@ class PostController extends Controller {
 			      		Request::file('postimage2')->move($destinationPath, $fileName); // uploading file to given path
 				  		$postimage2 = $destinationPath."/".$fileName;
 						$img = Image::make($postimage2);
-				  		$img->resize(750, null, function ($constraint) {
+				  		$img->resize(900, null, function ($constraint) {
 						    $constraint->aspectRatio();
 						    $constraint->upsize();
 						});
 						$img->save($destinationPath."/Medium_".$fileName);
-						$img->resize(350, null, function ($constraint) {
+						$img->resize(500, null, function ($constraint) {
 						    $constraint->aspectRatio();
 						    $constraint->upsize();
 						});
@@ -117,12 +117,12 @@ class PostController extends Controller {
 			      		Request::file('postimage3')->move($destinationPath, $fileName); // uploading file to given path
 				  		$postimage3 = $destinationPath."/".$fileName;
 						$img = Image::make($postimage3);
-				  		$img->resize(750, null, function ($constraint) {
+				  		$img->resize(900, null, function ($constraint) {
 						    $constraint->aspectRatio();
 						    $constraint->upsize();
 						});
 						$img->save($destinationPath."/Medium_".$fileName);
-						$img->resize(350, null, function ($constraint) {
+						$img->resize(500, null, function ($constraint) {
 						    $constraint->aspectRatio();
 						    $constraint->upsize();
 						});
@@ -146,12 +146,12 @@ class PostController extends Controller {
 			      		Request::file('postimage4')->move($destinationPath, $fileName); // uploading file to given path
 				  		$postimage4 = $destinationPath."/".$fileName;
 						$img = Image::make($postimage4);
-				  		$img->resize(750, null, function ($constraint) {
+				  		$img->resize(900, null, function ($constraint) {
 						    $constraint->aspectRatio();
 						    $constraint->upsize();
 						});
 						$img->save($destinationPath."/Medium_".$fileName);
-						$img->resize(350, null, function ($constraint) {
+						$img->resize(500, null, function ($constraint) {
 						    $constraint->aspectRatio();
 						    $constraint->upsize();
 						});
@@ -175,12 +175,12 @@ class PostController extends Controller {
 			      		Request::file('postimage5')->move($destinationPath, $fileName); // uploading file to given path
 				  		$postimage5 = $destinationPath."/".$fileName;
 						$img = Image::make($postimage5);
-				  		$img->resize(750, null, function ($constraint) {
+				  		$img->resize(900, null, function ($constraint) {
 						    $constraint->aspectRatio();
 						    $constraint->upsize();
 						});
 						$img->save($destinationPath."/Medium_".$fileName);
-						$img->resize(350, null, function ($constraint) {
+						$img->resize(500, null, function ($constraint) {
 						    $constraint->aspectRatio();
 						    $constraint->upsize();
 						});
@@ -204,12 +204,12 @@ class PostController extends Controller {
 			      		Request::file('postimage6')->move($destinationPath, $fileName); // uploading file to given path
 				  		$postimage6 = $destinationPath."/".$fileName;
 						$img = Image::make($postimage6);
-				  		$img->resize(750, null, function ($constraint) {
+				  		$img->resize(900, null, function ($constraint) {
 						    $constraint->aspectRatio();
 						    $constraint->upsize();
 						});
 						$img->save($destinationPath."/Medium_".$fileName);
-						$img->resize(350, null, function ($constraint) {
+						$img->resize(500, null, function ($constraint) {
 						    $constraint->aspectRatio();
 						    $constraint->upsize();
 						});
