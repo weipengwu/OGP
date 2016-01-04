@@ -65,7 +65,7 @@
                   <table cellpadding="0" cellspacing="0" border="0" align="center">
                     <tr height="30">
                       <td valign="top" style="vertical-align: top;" width="600" >
-                        <h2 style="text-align: center"><a href="{{ url() }}/events/{{ $eventid }}">{{ $eventtitle }}</a></h2>
+                        <h2 style="text-align: center; line-height:1.4"><a href="{{ url() }}/events/{{ $eventid }}">{{ $eventtitle }}</a></h2>
                         <div style="text-align: center; margin: 15px 0;">
                           Organized by<br>
                           <h3><a href="{{ url() }}/groups/{{ $gslug }}">{{ $gname }}</a></h3>

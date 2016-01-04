@@ -198,6 +198,15 @@
 									@foreach ($posts as $post)
 										<?php if($i >= 3) break;?>
 										<div class="<?php if($i == 0) { echo "col-md-6";} else{ echo "col-md-3"; }?><?php if(is_int($j/3)) echo " last";?>">
+												<?php if(Auth::check()) : ?>
+										<?php if($post->author == Auth::user()->id || $group->owner == Auth::user()->id):?>
+											<div class="deletepost"><a class="various" href="#confirmdelete<?php echo $post->id; ?>"><img src="{{ asset('img/delete_icon.png') }}" width="20"></a></div>
+											<div id="confirmdelete<?php echo $post->id; ?>" class="confirmdelete">
+												<h3>Are you sure to delete this post?</h3>
+												<a href="{{ url() }}/posts/<?php echo $post->id; ?>/delete" class="btn btn-danger">Delete</a> <a href="" class="btn btn-logo close_btn">Cancel</a>
+											</div>
+										<?php endif;?>
+										<?php endif;?>
 											<div class="postfrom"><div>From <a href="/groups/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ $post->group->category }}</div></div>
 											<a href="{{ url() }}/posts/<?php echo $post->id; ?>">
 											<?php $banner = explode(',', $post->banner); ?>
@@ -250,6 +259,15 @@
 										@foreach ($posts as $post)
 											<?php if($i >= 4) break;?>
 											<div class="col-md-3<?php if(is_int($j/4)) echo " last";?>">
+											<?php if(Auth::check()) : ?>
+										<?php if($post->author == Auth::user()->id || $group->owner == Auth::user()->id):?>
+											<div class="deletepost"><a class="various" href="#confirmdelete<?php echo $post->id; ?>"><img src="{{ asset('img/delete_icon.png') }}" width="20"></a></div>
+											<div id="confirmdelete<?php echo $post->id; ?>" class="confirmdelete">
+												<h3>Are you sure to delete this post?</h3>
+												<a href="{{ url() }}/posts/<?php echo $post->id; ?>/delete" class="btn btn-danger">Delete</a> <a href="" class="btn btn-logo close_btn">Cancel</a>
+											</div>
+										<?php endif;?>
+										<?php endif;?>
 												<div class="postfrom"><div>From <a href="/groups/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ $post->group->category }}</div></div>
 												<a href="{{ url() }}/posts/<?php echo $post->id; ?>">
 												<?php $banner = explode(',', $post->banner); ?>

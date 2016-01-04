@@ -238,7 +238,7 @@ class EventController extends Controller {
 		            $followers = Following::where('followed_id', Request::input('gid'))->get();
 		            foreach ($followers as $follower) {
 		            	$user = User::where('id', $follower->user_id)->get();
-		            	$message->to($user[0]->email)->subject('New Event on OGP');
+		            	$message->to('members@ohgoodparty.com', 'Members')->cc($user[0]->email)->subject('New Event on OGP');
 		            }
 
 		        });
