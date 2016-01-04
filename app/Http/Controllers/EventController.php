@@ -89,7 +89,7 @@ class EventController extends Controller {
 			      		Request::file('postimage1')->move($destinationPath, $fileName); // uploading file to given path
 				  		$postimage1 = $destinationPath."/".$fileName;
 				  		$img = Image::make($postimage1);
-				  		$img->resize(400, null, function ($constraint) {
+				  		$img->resize(900, null, function ($constraint) {
 						    $constraint->aspectRatio();
 						    $constraint->upsize();
 						});
@@ -113,7 +113,7 @@ class EventController extends Controller {
 			      		Request::file('postimage2')->move($destinationPath, $fileName); // uploading file to given path
 				  		$postimage2 = $destinationPath."/".$fileName;
 						$img = Image::make($postimage2);
-				  		$img->resize(400, null, function ($constraint) {
+				  		$img->resize(900, null, function ($constraint) {
 						    $constraint->aspectRatio();
 						    $constraint->upsize();
 						});
@@ -137,7 +137,7 @@ class EventController extends Controller {
 			      		Request::file('postimage3')->move($destinationPath, $fileName); // uploading file to given path
 				  		$postimage3 = $destinationPath."/".$fileName;
 						$img = Image::make($postimage3);
-				  		$img->resize(400, null, function ($constraint) {
+				  		$img->resize(900, null, function ($constraint) {
 						    $constraint->aspectRatio();
 						    $constraint->upsize();
 						});
@@ -161,7 +161,7 @@ class EventController extends Controller {
 			      		Request::file('postimage4')->move($destinationPath, $fileName); // uploading file to given path
 				  		$postimage4 = $destinationPath."/".$fileName;
 						$img = Image::make($postimage4);
-				  		$img->resize(400, null, function ($constraint) {
+				  		$img->resize(900, null, function ($constraint) {
 						    $constraint->aspectRatio();
 						    $constraint->upsize();
 						});
@@ -189,7 +189,7 @@ class EventController extends Controller {
 						    $constraint->upsize();
 						});
 						$img->save($destinationPath."/Large_".$fileName);
-					$img->resize(600, 260, function ($constraint) {
+					$img->resize(800, 260, function ($constraint) {
 						    $constraint->aspectRatio();
 						    $constraint->upsize();
 						});
@@ -275,7 +275,7 @@ class EventController extends Controller {
 						    $constraint->upsize();
 						});
 						$img->save($destinationPath."/Large_".$fileName);
-					$img->resize(400, null, function ($constraint) {
+					$img->resize(800, null, function ($constraint) {
 						    $constraint->aspectRatio();
 						    $constraint->upsize();
 						});

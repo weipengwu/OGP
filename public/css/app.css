@@ -7733,7 +7733,7 @@ label.error{
   margin: 25px auto;
 }
 .eventgallery{
-  width: 400px;
+  width: 600px;
   margin: 30px auto;
 }
 .stripe-form{
@@ -8006,6 +8006,9 @@ label.error{
     width: 100%;
   }
   .postbanner{
+    width: 100%;
+  }
+  .eventgallery{
     width: 100%;
   }
 
