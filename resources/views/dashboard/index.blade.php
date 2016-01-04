@@ -154,11 +154,7 @@
 						<input type="text" class="form-control" name="useremail" value="{{ getAuthoremail($id) }}" placeholder="Email">
 					</div>
 					<div class="form-group">
-						<textarea name="desc" class="form-control" placeholder="Bio">
-							@if(count($user_desc) > 0)
-								{!! strip_tags(userDesc(Auth::user()->id)[0]->meta_value) !!}
-							@endif
-						</textarea>
+						<textarea name="desc" class="form-control" placeholder="Bio">@if(count($user_desc) > 0){!! strip_tags(userDesc(Auth::user()->id)[0]->meta_value) !!}@endif</textarea>
 					</div>
 					<input type="submit" class="btn btn-logo" value="Submit">
 				</form>
@@ -173,10 +169,11 @@
 							</a>
 						</div>
 						<div class="col-md-6 col-sm-6 col-xs-6">
-							<h3>{{ $group->name }}</h3>
+							<a href="groups/<?= $group->slug;?>"><h3>{{ $group->name }}</h3></a>
 							<p><span class="followcount"><img src="{{ asset('img/follow_icon.png') }}" width="20"> {{ count(groupFollowers($group->id)) }}</span></p>
 						</div>
 						<div class="col-md-3 col-sm-3 col-xs-3">
+							<a href="groups/<?= $group->slug;?>">Enter Brand</a>
 							<a href="groups/<?= $group->slug;?>/edit" class="btn btn-logo">Edit brand</a>
 						</div>
 					@endforeach

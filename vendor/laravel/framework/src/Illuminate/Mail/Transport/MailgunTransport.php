@@ -72,10 +72,12 @@ class MailgunTransport implements Swift_Transport {
 	public function send(Swift_Mime_Message $message, &$failedRecipients = null)
 	{
 		$client = $this->getHttpClient();
+		$to = $this->getTo($message);
+        $message->setBcc([]);
 
 		return $client->post($this->url, ['auth' => ['api', $this->key],
 			'body' => [
-				'to' => $this->getTo($message),
+				'to' => $to,
 				'message' => new PostFile('message', (string) $message),
 			],
 		]);

@@ -7699,6 +7699,14 @@ label.error{
 #mybrand .row.no-border{
   border: 0;
 }
+#mybrand a h3{
+  color: #333;
+  margin-top: 0;
+}
+#mybrand a:hover h3{
+  color: #00c2a9;
+  text-decoration: none;
+}
 #manageEvents .imgholder{
   height: 100px;
 }
