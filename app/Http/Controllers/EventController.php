@@ -76,7 +76,7 @@ class EventController extends Controller {
 			if(Request::file('postimage1')){
 
 				$file = array('postimage1' => Request::file('postimage1'));
-				$rules = array('postimage1' => 'required|image');
+				$rules = array('postimage1' => 'required|image|max:4096');
 				$validator = Validator::make($file, $rules);
 				if ($validator->fails()){
 					return redirect()->back()->withErrors($validator);
@@ -100,7 +100,7 @@ class EventController extends Controller {
 			}
 			if(Request::file('postimage2')){
 				$file = array('postimage2' => Request::file('postimage2'));
-				$rules = array('postimage2' => 'required|image');
+				$rules = array('postimage2' => 'required|image|max:4096');
 				$validator = Validator::make($file, $rules);
 				if ($validator->fails()){
 					return redirect()->back()->withErrors($validator);
@@ -124,7 +124,7 @@ class EventController extends Controller {
 			}
 			if(Request::file('postimage3')){
 				$file = array('postimage3' => Request::file('postimage3'));
-				$rules = array('postimage3' => 'required|image');
+				$rules = array('postimage3' => 'required|image|max:4096');
 				$validator = Validator::make($file, $rules);
 				if ($validator->fails()){
 					return redirect()->back()->withErrors($validator);
@@ -148,7 +148,7 @@ class EventController extends Controller {
 			}
 			if(Request::file('postimage4')){
 				$file = array('postimage4' => Request::file('postimage4'));
-				$rules = array('postimage4' => 'required|image');
+				$rules = array('postimage4' => 'required|image|max:4096');
 				$validator = Validator::make($file, $rules);
 				if ($validator->fails()){
 					return redirect()->back()->withErrors($validator);
@@ -172,7 +172,7 @@ class EventController extends Controller {
 			}
 		if(Request::file('banner')){
 			$file = array('banner' => Request::file('banner'));
-			$rules = array('banner' => 'required|image');
+			$rules = array('banner' => 'required|image|max:4096');
 			$validator = Validator::make($file, $rules);
 			if ($validator->fails()){
 				return redirect()->back()->withErrors($validator);
@@ -258,7 +258,7 @@ class EventController extends Controller {
 		$event = Event::find(Request::input('eid'));
 		if(Request::file('banner')){
 			$file = array('banner' => Request::file('banner'));
-			$rules = array('banner' => 'required|image');
+			$rules = array('banner' => 'required|image|max:4096');
 			$validator = Validator::make($file, $rules);
 			if ($validator->fails()){
 				return redirect()->back()->withErrors($validator);

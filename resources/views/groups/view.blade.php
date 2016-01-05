@@ -22,6 +22,7 @@
 			</div>
 		</div>	
 	</div>
+</div>
 	<div class="statusbar">
 		<div class="left"><span class="followerNumber">{{ count(groupFollowers($group->id)) }} @if(count(groupFollowers($group->id)) > 1) Followers @else Follower @endif</span> <span>{{ count($group->events) }} @if(count($group->events) > 1) Events @else Event @endif</span> <span>{{ count($group->posts) }} @if(count($group->posts) > 1) Posts @else Post @endif</span></div>
 		<div class="right">
@@ -48,7 +49,7 @@
 			@endif
 		</div>
 	</div>
-</div>
+
 
 	<div class="panel">
 		<div class="panel-body" id="allposts">

@@ -6418,7 +6418,12 @@ label,
   background: #fbfbfb;
   border-bottom: 1px solid #e8e8e8;
   color: #777;
+  width: 100%;
   position: relative;
+}
+.statusbar.locked{
+  position: fixed;
+  top: 63px;
 }
 .statusbar:after{
   clear: both;

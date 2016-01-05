@@ -59,7 +59,7 @@ class GroupController extends Controller {
 				$group = new Group();
 				if(Request::file('g-profile')){
 					$file = array('g-profile' => Request::file('g-profile'));
-					$rules = array('g-profile' => 'required|image');
+					$rules = array('g-profile' => 'required|image|max:4096');
 					$validator = Validator::make($file, $rules);
 					if ($validator->fails()){
 						return redirect()->back()->withErrors($validator);
@@ -92,7 +92,7 @@ class GroupController extends Controller {
 				}
 				if(Request::file('g-banner')){
 					$file = array('g-banner' => Request::file('g-banner'));
-					$rules = array('g-banner' => 'required|image');
+					$rules = array('g-banner' => 'required|image|max:4096');
 					$validator = Validator::make($file, $rules);
 					if ($validator->fails()){
 						return redirect()->back()->withErrors($validator);
@@ -153,7 +153,7 @@ class GroupController extends Controller {
 		$group = Group::where('id', $id)->firstOrFail();
 		if(Request::file('g-profile')){
 			$file = array('g-profile' => Request::file('g-profile'));
-			$rules = array('g-profile' => 'required|image');
+			$rules = array('g-profile' => 'required|image|max:4096');
 			$validator = Validator::make($file, $rules);
 			if ($validator->fails()){
 				return redirect()->back()->withErrors($validator);
@@ -183,7 +183,7 @@ class GroupController extends Controller {
 		}
 		if(Request::file('g-banner')){
 			$file = array('g-banner' => Request::file('g-banner'));
-			$rules = array('g-banner' => 'required|image');
+			$rules = array('g-banner' => 'required|image|max:4096');
 			$validator = Validator::make($file, $rules);
 			if ($validator->fails()){
 				return redirect()->back()->withErrors($validator);
