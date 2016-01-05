@@ -432,7 +432,7 @@ $(document).ready(function(){
 			$('.bannerwrapper').addClass('locked');
 			// $('.bannerwrapper').next().css('margin-top', '485px');
 			$('.statusbar').addClass('locked');
-			$('#allposts').css({'margin-top':'55px'});
+			$('#allposts').css({'margin-top':'500px'});
 		}else{
 			$('.bannerwrapper').removeClass('locked');
 			// $('.bannerwrapper').next().css('margin-top', '0');
