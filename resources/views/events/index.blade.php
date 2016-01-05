@@ -42,6 +42,8 @@
 					<?php $i = 1; $length = count($events);?>
 					@foreach ($events as $event)
 						<?php
+							var_dump(isFollowing($event->group_id, Auth::user()->id));
+							var_dump($event->type);
 							if ( $event->type == 'Private' && isFollowing($event->group_id, Auth::user()->id) == 0 ){
 								continue;
 							}
