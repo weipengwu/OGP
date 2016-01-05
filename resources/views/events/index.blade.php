@@ -42,7 +42,7 @@
 					<?php $i = 1; $length = count($events);?>
 					@foreach ($events as $event)
 						<?php
-							if ( $event->type = 'Private' && !isFollowing($event->group_id, Auth::user()->id) ){
+							if ( $event->type = 'Private' && isFollowing($event->group_id, Auth::user()->id) == 0 ){
 								continue;
 							}
 						?>
