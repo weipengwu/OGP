@@ -432,12 +432,12 @@ $(document).ready(function(){
 			$('.navbar-default').addClass('whitebg');
 			// $('.bannerwrapper').next().css('margin-top', '485px');
 			$('.statusbar').addClass('locked');
-			$('#allposts').css('margin-top','55px;');
+			$('#allposts').css({'margin-top':'55px'});
 		}else{
 			$('.navbar-default').removeClass('whitebg');
 			// $('.bannerwrapper').next().css('margin-top', '0');
 			$('.statusbar').removeClass('locked');
-			$('#allposts').css('margin-top','0;');
+			$('#allposts').css({'margin-top':'0'});
 		}
 	})
 
