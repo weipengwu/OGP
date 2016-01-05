@@ -42,8 +42,9 @@
 					<?php $i = 1; $length = count($events);?>
 					@foreach ($events as $event)
 						<?php
-							if ( $event->type = 'Private' && !isFollowing($event->group_id, Auth::user()->id) )
+							if ( $event->type = 'Private' && !isFollowing($event->group_id, Auth::user()->id) ){
 								continue;
+							}
 						?>
 						<div class="eventgroup<?php if(is_int($i/3)) { echo " last"; }?>">
 							<div class="eventgroup-list">
