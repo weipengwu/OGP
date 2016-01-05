@@ -429,14 +429,12 @@ $(document).ready(function(){
 	$(window).scroll(function(){
 		if($(this).scrollTop() > 465){
 			$('.bannerwrapper').addClass('locked');
-			// $('.bannerwrapper').next().css('margin-top', '485px');
+			$('.bannerwrapper').next().css('margin-top', '520px');
 			$('.statusbar').addClass('locked');
-			$('#allposts').css({'margin-top':'520px'});
 		}else{
 			$('.bannerwrapper').removeClass('locked');
-			// $('.bannerwrapper').next().css('margin-top', '0');
+			$('.bannerwrapper').next().css('margin-top', '0');
 			$('.statusbar').removeClass('locked');
-			$('#allposts').css({'margin-top':'0'});
 		}
 	})
 
