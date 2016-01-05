@@ -148,11 +148,12 @@ class GroupController extends Controller {
 	{
 		$bname =  Request::input('name');
 		$checkBname = Group::where('name',$bname)->count();
-		if($checkBname > 0){
+		$id = Request::input('id');
+		$group = Group::where('id', $id)->firstOrFail();
+		if($checkBname > 0 && $bname !== $group->name){
 			return redirect()->back()->withErrors("Brand name is unavailable, please choose another one.");
 		}else{
-			$id = Request::input('id');
-			$group = Group::where('id', $id)->firstOrFail();
+			
 			if(Request::file('g-profile')){
 				$file = array('g-profile' => Request::file('g-profile'));
 				$rules = array('g-profile' => 'required|image|max:4096');
