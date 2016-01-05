@@ -6,7 +6,6 @@ use App\Group;
 use Request;
 use Validator;
 use Image;
-use Session;
 
 class PostController extends Controller {
 

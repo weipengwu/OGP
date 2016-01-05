@@ -8,8 +8,15 @@
 				<div class="panel-heading"><h3>CREATE YOUR BRAND</h3></div>
 
 				<div class="panel-body">
-					@if (Session::has('message'))
-					   <div class="alert alert-danger"><strong>Whoops!</strong> {{ Session::get('message') }}</div>
+					@if (count($errors) > 0)
+						<div class="alert alert-danger">
+							<strong>Whoops!</strong> There were some problems with your input.<br><br>
+							<ul>
+								@foreach ($errors->all() as $error)
+									<li>{{ $error }}</li>
+								@endforeach
+							</ul>
+						</div>
 					@endif
 					<form action="{{ URL::route('createGroup') }}" method="post" enctype="multipart/form-data" id="createBrand">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
