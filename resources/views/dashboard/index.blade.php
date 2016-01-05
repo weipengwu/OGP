@@ -163,17 +163,17 @@
 				@if(count(myGroup($id)) > 0)
 					<div class="row">
 					@foreach ( myGroup($id) as $group)
-						<div class="col-md-3 col-sm-3 col-xs-3">
+						<div class="col-md-3">
 						<a href="groups/<?= $group->slug;?>">
 							<div class="bannerholder" style="background: #666 url('<?php echo url()."/uploads/Small_".$group->profile;?>');background-size:cover"></div>
 							</a>
 						</div>
-						<div class="col-md-6 col-sm-6 col-xs-6">
+						<div class="col-md-6">
 							<a href="groups/<?= $group->slug;?>"><h3>{{ $group->name }}</h3></a>
 							<p><span class="followcount"><img src="{{ asset('img/follow_icon.png') }}" width="20"> {{ count(groupFollowers($group->id)) }}</span></p>
 						</div>
-						<div class="col-md-3 col-sm-3 col-xs-3">
-							<a href="groups/<?= $group->slug;?>" class="btn btn-logo" style="margin-bottom:10px;">Enter Brand</a>
+						<div class="col-md-3">
+							<a href="groups/<?= $group->slug;?>" class="btn btn-logo">Enter Brand</a>
 							<a href="groups/<?= $group->slug;?>/edit" class="btn btn-logo">Edit brand</a>
 						</div>
 					@endforeach
@@ -235,12 +235,12 @@
 				@if(count(getMyevents($id)) > 0)
 				@foreach (getMyevents($id) as $event)
 				<div class="row">
-					<div class="col-md-3 col-sm-3 col-xs-3">
+					<div class="col-md-3">
 						<a href="events/{{ $event->id }}">
 							<div class="imgholder" style="background: #666 url('<?php echo url()."/uploads/Medium_".$event->banner;?>') center center; background-size: cover;"></div>
 						</a>
 					</div>
-					<div class="col-md-6 col-sm-6 col-xs-6">
+					<div class="col-md-6">
 					<h3><a href="events/{{ $event->id }}">{{ $event->title }}</a></h3>
 					<div class="event-details">
 						<p class="event-info">
@@ -264,8 +264,8 @@
 						</p>
 					</div>		
 					</div>
-					<div class="col-md-3 col-sm-3 col-xs-3">
-						<a href="/events/{{ $event->id }}/edit" class="btn btn-logo" style="margin-bottom: 10px">Edit Event</a>
+					<div class="col-md-3">
+						<a href="/events/{{ $event->id }}/edit" class="btn btn-logo">Edit Event</a>
 						<a class="various btn btn-danger" href="#confirmdelete<?php echo $event->id; ?>">Delete Event</a>
 						<div id="confirmdelete<?php echo $event->id; ?>" class="confirmdelete">
 							<h3>Are you sure to delete this event?</h3>

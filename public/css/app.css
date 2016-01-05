@@ -6778,6 +6778,7 @@ h3 a:hover{
   font-size: 14px;
   padding: 10px 15px;
   margin: 0;
+  height: 40px;
 }
 .eventgroup .eventgroup-list .event-details{
   padding: 0 15px;
@@ -7563,6 +7564,9 @@ h3 a:hover{
   .imagezone .form-img6{
     margin: 0;
   }
+  .file-input .btn{
+    border: 0;
+  }
   .fixedarea{
     width: 750px;
     margin: 0 auto;
@@ -7936,6 +7940,16 @@ label.error{
     width: 70%;
     float: none;
     margin: 0 auto 25px auto
+  }
+  .dash-main .row{
+    margin: 20px 0;
+  }
+  #manageEvents .imgholder{
+    height: 120px;
+  }
+  #mybrand .bannerholder {
+    height: 120px;
+    width: 120px;
   }
 }
 @media (min-width: 768px) {

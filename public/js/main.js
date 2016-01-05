@@ -429,17 +429,17 @@ $(document).ready(function(){
 	$(window).scroll(function(){
 		console.log($(this).scrollTop());
 		if($(this).scrollTop() > 465){
-			//$('.navbar-default').addClass('whitebg');
-			$('.bannerwrapper').addClass('locked');
-			$('.bannerwrapper').next().next().css('margin-top', '520px');
+			$('.navbar-default').addClass('whitebg');
+			//$('.bannerwrapper').addClass('locked');
+			//$('.bannerwrapper').next().next().css('margin-top', '520px');
 			$('.statusbar').addClass('locked');
-			//$('#allposts').css({'margin-top':'55px'});
+			$('.bannerwrapper').next().next().css({'margin-top':'55px'});
 		}else{
-			//$('.navbar-default').removeClass('whitebg');
-			$('bannerwrapper').removeClass('locked');
-			$('.bannerwrapper').next().next().css('margin-top', '0');
+			$('.navbar-default').removeClass('whitebg');
+			//$('bannerwrapper').removeClass('locked');
+			//$('.bannerwrapper').next().next().css('margin-top', '0');
 			$('.statusbar').removeClass('locked');
-			//$('#allposts').css({'margin-top':'0'});
+			$('.bannerwrapper').next().next().css({'margin-top':'0'});
 		}
 	})
 
