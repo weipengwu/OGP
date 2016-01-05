@@ -173,7 +173,7 @@
 							<p><span class="followcount"><img src="{{ asset('img/follow_icon.png') }}" width="20"> {{ count(groupFollowers($group->id)) }}</span></p>
 						</div>
 						<div class="col-md-3 col-sm-3 col-xs-3">
-							<a href="groups/<?= $group->slug;?>" class="btn btn-logo">Enter Brand</a>
+							<a href="groups/<?= $group->slug;?>" class="btn btn-logo" style="margin-bottom:10px;">Enter Brand</a>
 							<a href="groups/<?= $group->slug;?>/edit" class="btn btn-logo">Edit brand</a>
 						</div>
 					@endforeach

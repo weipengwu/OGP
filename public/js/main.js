@@ -427,7 +427,7 @@ $(document).ready(function(){
 	})
 	
 	$(window).scroll(function(){
-		if($(this).scrollTop() > 495){
+		if($(this).scrollTop() > 485){
 			$('.navbar-default').addClass('whitebg');
 			// $('.bannerwrapper').next().css('margin-top', '485px');
 			$('.statusbar').addClass('locked');
