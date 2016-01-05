@@ -427,12 +427,11 @@ $(document).ready(function(){
 	})
 	
 	$(window).scroll(function(){
-		console.log($(this).scrollTop());
 		if($(this).scrollTop() > 465){
 			$('.bannerwrapper').addClass('locked');
 			// $('.bannerwrapper').next().css('margin-top', '485px');
 			$('.statusbar').addClass('locked');
-			$('#allposts').css({'margin-top':'500px'});
+			$('#allposts').css({'margin-top':'520px'});
 		}else{
 			$('.bannerwrapper').removeClass('locked');
 			// $('.bannerwrapper').next().css('margin-top', '0');
