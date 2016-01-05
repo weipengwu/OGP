@@ -141,6 +141,11 @@
 				<div class="home_events">
 					<?php $e = 0; ?>
 					@foreach ($events as $event)
+					<?php
+							if ( $event->type == 'private' && isFollowing($event->group_id, Auth::user()->id) == 0 ){
+								continue;
+							}
+						?>
 					<?php if($e > 3) break;?>
 					<div class="eventgroup">
 						<div class="eventgroup-list">
