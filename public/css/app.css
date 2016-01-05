@@ -6419,6 +6419,7 @@ label,
   border-bottom: 1px solid #e8e8e8;
   color: #777;
   width: 100%;
+  z-index: 99999;
   position: relative;
 }
 .statusbar.locked{
