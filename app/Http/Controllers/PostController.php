@@ -46,7 +46,7 @@ class PostController extends Controller {
 			if(Request::file('postimage1')){
 
 				$file = array('postimage1' => Request::file('postimage1'));
-				$rules = array('postimage1' => 'required|image');
+				$rules = array('postimage1' => 'required|image|max:4096');
 				$validator = Validator::make($file, $rules);
 				if ($validator->fails()){
 					return redirect()->back()->withErrors($validator);
@@ -75,7 +75,7 @@ class PostController extends Controller {
 			}
 			if(Request::file('postimage2')){
 				$file = array('postimage2' => Request::file('postimage2'));
-				$rules = array('postimage2' => 'required|image');
+				$rules = array('postimage2' => 'required|image|max:4096');
 				$validator = Validator::make($file, $rules);
 				if ($validator->fails()){
 					return redirect()->back()->withErrors($validator);
@@ -104,7 +104,7 @@ class PostController extends Controller {
 			}
 			if(Request::file('postimage3')){
 				$file = array('postimage3' => Request::file('postimage3'));
-				$rules = array('postimage3' => 'required|image');
+				$rules = array('postimage3' => 'required|image|max:4096');
 				$validator = Validator::make($file, $rules);
 				if ($validator->fails()){
 					return redirect()->back()->withErrors($validator);
@@ -133,7 +133,7 @@ class PostController extends Controller {
 			}
 			if(Request::file('postimage4')){
 				$file = array('postimage4' => Request::file('postimage4'));
-				$rules = array('postimage4' => 'required|image');
+				$rules = array('postimage4' => 'required|image|max:4096');
 				$validator = Validator::make($file, $rules);
 				if ($validator->fails()){
 					return redirect()->back()->withErrors($validator);
@@ -162,7 +162,7 @@ class PostController extends Controller {
 			}
 			if(Request::file('postimage5')){
 				$file = array('postimage5' => Request::file('postimage5'));
-				$rules = array('postimage5' => 'required|image');
+				$rules = array('postimage5' => 'required|image|max:4096');
 				$validator = Validator::make($file, $rules);
 				if ($validator->fails()){
 					return redirect()->back()->withErrors($validator);
@@ -191,7 +191,7 @@ class PostController extends Controller {
 			}
 			if(Request::file('postimage6')){
 				$file = array('postimage6' => Request::file('postimage6'));
-				$rules = array('postimage6' => 'required|image');
+				$rules = array('postimage6' => 'required|image|max:4096');
 				$validator = Validator::make($file, $rules);
 				if ($validator->fails()){
 					return redirect()->back()->withErrors($validator);
