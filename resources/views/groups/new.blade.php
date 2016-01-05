@@ -37,7 +37,7 @@
 						<h4>TELL US MORE ABOUT YOUR BRAND</h4>
 						<hr>
 						<div class="form-group" style="position:relative">
-							<input type="text" name="name" class="form-control" id="brandname" placeholder="Brand Name" maxlength="50" required>
+							<input type="text" name="name" class="form-control" id="brandname" placeholder="Brand Name" maxlength="100" required>
 							<div class="checknamepass checkname"><i class="fa fa-check"></i></div>
 							<div class="checknamefail checkname"><i class="fa fa-times"></i></div>
 							<div class="help-block checknameerror">Brand name has been taken, please choose another one.</div>

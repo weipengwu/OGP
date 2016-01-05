@@ -38,7 +38,7 @@
 							</div>
 						</div>	
 						<div class="form-group">
-							<input type="text" name="title" class="form-control" placeholder="Event Title" maxlength="50" value="{{ $event->title }}">
+							<input type="text" name="title" class="form-control" placeholder="Event Title" maxlength="150" value="{{ $event->title }}">
 						</div>
 						<div class="form-group" style="float:left; margin-right: 2%; width: 49%;">
 			                <label for="dtp_input1" class="col-md-2 control-label">From: </label>

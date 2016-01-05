@@ -148,13 +148,13 @@
 						<input type="file" name="u-profile" id="u-profile" accept="image/*">
 					</div>
 					<div class="form-group">
-						<input type="text" class="form-control" name="username" value="{{ getAuthorname($id) }}" placeholder="Username">
+						<input type="text" class="form-control" name="username" value="{{ getAuthorname($id) }}" placeholder="Username" maxlength="30">
 					</div>
 					<div class="form-group">
 						<input type="text" class="form-control" name="useremail" value="{{ getAuthoremail($id) }}" placeholder="Email">
 					</div>
 					<div class="form-group">
-						<textarea name="desc" class="form-control" placeholder="Bio" maxlength="50">@if(count($user_desc) > 0){!! strip_tags(userDesc(Auth::user()->id)[0]->meta_value) !!}@endif</textarea>
+						<textarea name="desc" class="form-control" placeholder="Bio" maxlength="100">@if(count($user_desc) > 0){!! strip_tags(userDesc(Auth::user()->id)[0]->meta_value) !!}@endif</textarea>
 					</div>
 					<input type="submit" class="btn btn-logo" value="Submit">
 				</form>

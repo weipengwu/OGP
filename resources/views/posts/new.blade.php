@@ -23,7 +23,7 @@
 						<input type="hidden" name="author" value="{{ Auth::user()->id }}">
 						<input type="hidden" name="gid" value="<?php echo $gid;?>">
 						<div class="form-group">
-							<input type="text" name="title" class="form-control" placeholder="The prominent title is waiting for you right here." maxlength="50" required>
+							<input type="text" name="title" class="form-control" placeholder="The prominent title is waiting for you right here." maxlength="100" required>
 						</div>
 						<div class="form-group">
 							<textarea name="content" class="form-control" id="posteditor" placeholder="Is there any good news?" required></textarea>
