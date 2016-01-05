@@ -428,11 +428,11 @@ $(document).ready(function(){
 	
 	$(window).scroll(function(){
 		if($(this).scrollTop() > 465){
-			$('.bannerwrapper').addClass('locked');
+			$('.navbar-defaul').addClass('whitebg');
 			// $('.bannerwrapper').next().css('margin-top', '485px');
 			$('.statusbar').addClass('locked');
 		}else{
-			$('.bannerwrapper').removeClass('locked');
+			$('.navbar-defaul').removeClass('whitebg');
 			// $('.bannerwrapper').next().css('margin-top', '0');
 			$('.statusbar').removeClass('locked');
 		}
