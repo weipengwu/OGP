@@ -7916,6 +7916,19 @@ label.error{
   }
 }
 @media (max-width: 991px) {
+  .layout84 .col-md-8, .layout84 .col-md-4{
+    float: none;
+    clear: both;
+    height: auto;
+  }
+  .layout84 .col-md-8 .bannerholder{
+    width: 100%;
+  }
+  .layout84 .col-md-8 .postinforight{
+    float: none;
+    width: 100%;
+    clear: both;
+  }
   .grouplist .bannerholder{
     height: 175px;
   }

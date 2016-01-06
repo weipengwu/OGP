@@ -49,7 +49,7 @@
 			            </div>
 			            <div class="form-group" style="float:left; width: 49%;">
 			                <label for="dtp_input2" class="col-md-2 col-sm-2 col-xs-2 control-label" style="text-align: right">To: </label>
-			                <div class="input-group date form_datetime col-md-10 col-sm-1 col-xs-10" data-date-format="yyyy-mm-dd HH:ii p" data-link-field="dtp_input2">
+			                <div class="input-group date form_datetime col-md-10 col-sm-10 col-xs-10" data-date-format="yyyy-mm-dd HH:ii p" data-link-field="dtp_input2">
 			                    <input class="form-control" name="totime" type="text" value="">
 								<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
 			                </div>
