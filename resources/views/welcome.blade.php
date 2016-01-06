@@ -298,4 +298,23 @@
 			</section>
 
 </div>
+<script src="{{ asset('js/jquery.infinitescroll.min.js') }}"></script>
+<script type="text/javascript">
+(function(){
+
+    var loading_options = {
+        finishedMsg: "",
+        msgText: "<div class='center'>Loading...</div>",
+        img: "{{ asset('img/spinner.gif') }}"
+    };
+    var pagesNum = <?php echo $allposts->lastPage(); ?>; 
+    $('#allposts').infinitescroll({
+      loading : loading_options,
+      navSelector : "#allposts .pagination",
+      nextSelector : "#allposts .pagination li.active + li a",
+      itemSelector : "#allposts section.container.posts",
+      maxPage: pagesNum
+    });
+})();
+</script>
 @endsection
