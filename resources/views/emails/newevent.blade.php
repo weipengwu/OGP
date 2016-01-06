@@ -68,7 +68,7 @@
                         <h2 style="text-align: center; line-height:1.4"><a href="{{ url() }}/events/{{ $eventid }}">{{ $eventtitle }}</a></h2>
                         <div style="text-align: center; margin: 15px 0;">
                           Organized by<br>
-                          <h3><a href="{{ url() }}/groups/{{ $gslug }}">{{ $gname }}</a></h3>
+                          <h3><a href="{{ url() }}/brands/{{ $gslug }}">{{ $gname }}</a></h3>
                         </div>
                         <div style="text-align: center; margin: 0 0 10px 0;">
                           <?php if(gmdate('M j',$fromtime) == gmdate('M j',$totime)) : ?>

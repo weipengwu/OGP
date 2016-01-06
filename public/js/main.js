@@ -126,7 +126,7 @@ $(document).ready(function(){
 		var groupid = $(this).data('group-id');
 		$.ajax({
 			type: "POST",
-			url: window.location.origin+"/groups/follow",
+			url: window.location.origin+"/brands/follow",
 			data: "uid="+userid+'&gid='+groupid
 		}).done(function(response){
 		
@@ -153,7 +153,7 @@ $(document).ready(function(){
 		var groupid = $(this).data('group-id');
 		$.ajax({
 			type: "POST",
-			url: window.location.origin+"/groups/unfollow",
+			url: window.location.origin+"/brands/unfollow",
 			data: "uid="+userid+'&gid='+groupid
 		}).done(function(response){
 			
@@ -505,7 +505,7 @@ $(document).ready(function(){
 		if(bname !== ''){
 			$.ajax({
 				type: "POST",
-				url: window.location.origin+"/groups/checkBrandname",
+				url: window.location.origin+"/brands/checkBrandname",
 				data: "brandname="+bname
 			}).done(function(response){
 				if (response == 'duplicated') {

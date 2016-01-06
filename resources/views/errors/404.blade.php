@@ -57,15 +57,15 @@
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><img src="{{ asset('/img/edit_icon.png') }}" alt="English" width="22" /></a>
 							<ul class="dropdown-menu" role="menu">
-								<li><a href="<?php echo url(); ?>/groups/<?php echo $mygroup[0]->slug; ?>/posts/new">Quick Post</a></li>
-								<li><a href="<?php echo url(); ?>/groups/<?php echo $mygroup[0]->slug; ?>/events/new">Quick Event</a></li>
+								<li><a href="<?php echo url(); ?>/brands/<?php echo $mygroup[0]->slug; ?>/posts/new">Quick Post</a></li>
+								<li><a href="<?php echo url(); ?>/brands/<?php echo $mygroup[0]->slug; ?>/events/new">Quick Event</a></li>
 							</ul>
 						</li>
 					@else
 						<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><img src="{{ asset('/img/create_brand_icon.png') }}" alt="Create Brand" width="24" /></a>
 						<ul class="dropdown-menu" role="menu">
-							<li><a href="<?php echo url(); ?>/groups/new">{{ trans('headermenu.createBrand') }}</a></li>
+							<li><a href="<?php echo url(); ?>/brands/new">{{ trans('headermenu.createBrand') }}</a></li>
 						</ul>
 					</li>
 					@endif
@@ -125,7 +125,7 @@
 					@else
 					<li><a href="{{ url('/home') }}">OGP</a></li>
 					@endif
-					<li><a href="{{ url('/groups') }}">{{ trans('headermenu.brands') }}</a></li>
+					<li><a href="{{ url('/brands') }}">{{ trans('headermenu.brands') }}</a></li>
 					<li><a href="{{ url('/events') }}">{{ trans('headermenu.events') }}</a></li>
 					<!-- <li><a href="{{ url('/missions') }}">MISSIONS</a></li> -->
 				</ul>
@@ -140,15 +140,15 @@
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><img src="{{ asset('/img/edit_icon.png') }}" alt="English" width="22" /></a>
 							<ul class="dropdown-menu" role="menu">
-								<li><a href="<?php echo url(); ?>/groups/<?php echo $mygroup[0]->slug; ?>/posts/new">Quick Post</a></li>
-								<li><a href="<?php echo url(); ?>/groups/<?php echo $mygroup[0]->slug; ?>/events/new">Quick Event</a></li>
+								<li><a href="<?php echo url(); ?>/brands/<?php echo $mygroup[0]->slug; ?>/posts/new">Quick Post</a></li>
+								<li><a href="<?php echo url(); ?>/brands/<?php echo $mygroup[0]->slug; ?>/events/new">Quick Event</a></li>
 							</ul>
 						</li>
 					@else
 						<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><img src="{{ asset('/img/create_brand_icon.png') }}" alt="Create Brand" width="24" /></a>
 						<ul class="dropdown-menu" role="menu">
-							<li><a href="<?php echo url(); ?>/groups/new">{{ trans('headermenu.createBrand') }}</a></li>
+							<li><a href="<?php echo url(); ?>/brands/new">{{ trans('headermenu.createBrand') }}</a></li>
 						</ul>
 					</li>
 					@endif

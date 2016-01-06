@@ -75,7 +75,7 @@
 <section class="orgnizationsection greybg">
 	<p class="title">Orgnized by</p>
 	<div class="groupprofile" style="background: #666 url('<?php echo url()."/uploads/Small_".getGroupProfile($event->group_id);?>') center center no-repeat; background-size: cover;"></div>
-	<h2><a href="/groups/<?php echo getGroupSlug($event->group_id); ?>">{{ getGroupName($event->group_id) }}</a></h2>
+	<h2><a href="/brands/<?php echo getGroupSlug($event->group_id); ?>">{{ getGroupName($event->group_id) }}</a></h2>
 </section>
 <section class="contentsection">
 	<div class="container">

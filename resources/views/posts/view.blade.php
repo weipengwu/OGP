@@ -7,7 +7,7 @@
 
 				<div class="panel-body">
 					<div class="groupinfo">
-						<span>FROM <a href="{{  url() }}/groups/{{ $post->group->slug }}">{{ getGroupName($post->group->id) }}</a></span>
+						<span>FROM <a href="{{  url() }}/brands/{{ $post->group->slug }}">{{ getGroupName($post->group->id) }}</a></span>
 						<span>Category: {{ $post->group->category }}</span>
 					</div>
 					<h1> {{ $post->title }}</h1>

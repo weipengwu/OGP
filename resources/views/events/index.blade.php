@@ -74,7 +74,7 @@
 											@if($event->fee == 'Free') 
 												{{ $event->fee }}
 											@else
-												C ${{ $event->fee }}
+												@if($event->currency == 'cad'){{ 'C$' }}@elseif($event->currency == 'usd'){{ '$' }}@elseif($event->currency == 'cny'){{ '¥' }}@elseif($event->currency == 'eur'){{ '€' }}@endif{{ $event->fee }}
 											@endif
 											</p>
 										</div>
@@ -83,7 +83,7 @@
 											<div class="interestcount"><img src="{{ asset('img/likes_icon.png') }}" width="15"> {{ $event->likes->count() }}</div>
 										</div>
 										<div class="postfrom">
-											From: <a href="/groups/{{ ($event->group->slug) }}">{{ ($event->group->name) }}</a>
+											From: <a href="/brands/{{ ($event->group->slug) }}">{{ ($event->group->name) }}</a>
 										</div>
 							</div>
 						</div>

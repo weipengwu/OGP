@@ -12,7 +12,7 @@
 				<p><a href="http://{{ $group->website }}" target="_blank" class="website">{{ $group->website }}</a></p>
 				@if(Auth::check())
 					@if($group->owner == Auth::user()->id)
-						<a href="/groups/{{ $group->slug }}/edit" class="btn btn_logo">Edit Brand</a>
+						<a href="/brands/{{ $group->slug }}/edit" class="btn btn_logo">Edit Brand</a>
 					@elseif(isFollowing(Auth::user()->id, $group->id))
 						<a href="" class="follow_btn unfollow_group" data-user-id="{{ Auth::user()->id }}" data-group-id="{{ $group->id }}">Following</a>
 					@else
@@ -28,7 +28,7 @@
 		<div class="right">
 			@if(Auth::check())
 				@if($group->owner == Auth::user()->id)
-					<a class="create_btn" data-toggle="tooltip" title="Create Event" href="<?php echo url();?>/groups/<?php echo $group->slug;?>/events/new"><img src="{{ asset('img/ticket_icon.png') }}" width="20"></a> <a class="create_btn" data-toggle="tooltip" title="Create Post" href="<?php echo url();?>/groups/<?php echo $group->slug;?>/posts/new"><img src="{{ asset('img/createpost_big_icon.png') }}" width="16"></a>
+					<a class="create_btn" data-toggle="tooltip" title="Create Event" href="<?php echo url();?>/brands/<?php echo $group->slug;?>/events/new"><img src="{{ asset('img/ticket_icon.png') }}" width="20"></a> <a class="create_btn" data-toggle="tooltip" title="Create Post" href="<?php echo url();?>/brands/<?php echo $group->slug;?>/posts/new"><img src="{{ asset('img/createpost_big_icon.png') }}" width="16"></a>
 				@else
 					<div class="sharebox">
 						<a href="" class="social_icons social_tw"><i class="fa fa-twitter"></i></a> <a href="" class="social_icons social_fb"><i class="fa fa-facebook"></i></a> <a href="" class="social_icons social_wc"><i class="fa fa-wechat"></i></a> <a href="" class="social_icons social_wb"><i class="fa fa-weibo"></i></a>
@@ -83,7 +83,7 @@
 										</div>
 									<?php endif;?>
 									<?php endif;?>
-									<div class="postfrom"><div>From <a href="/groups/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div>
+									<div class="postfrom"><div>From <a href="/brands/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div>
 									<div class="grouppost">{{ $post->group->category }}</div></div>
 									<a href="{{ url() }}/posts/<?php echo $post->id; ?>">
 										<?php $banner = explode(',', $post->banner); ?>
@@ -150,7 +150,7 @@
 											</div>
 										<?php endif;?>
 										<?php endif;?>
-										<div class="postfrom"><div>From <a href="/groups/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ $post->group->category }}</div></div>
+										<div class="postfrom"><div>From <a href="/brands/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ $post->group->category }}</div></div>
 										<a href="{{ url() }}/posts/<?php echo $post->id; ?>">
 										<?php $banner = explode(',', $post->banner); ?>
 										<div class="bannerholder" style="background: #ccc url('<?php echo url().'/uploads/Small_'.$banner[0];?>') no-repeat center center; background-size: cover;">
@@ -208,7 +208,7 @@
 											</div>
 										<?php endif;?>
 										<?php endif;?>
-											<div class="postfrom"><div>From <a href="/groups/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ $post->group->category }}</div></div>
+											<div class="postfrom"><div>From <a href="/brands/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ $post->group->category }}</div></div>
 											<a href="{{ url() }}/posts/<?php echo $post->id; ?>">
 											<?php $banner = explode(',', $post->banner); ?>
 												<div class="bannerholder" style="background: #ccc url('<?php echo url().'/uploads/Small_'.$banner[0];?>') no-repeat center center; background-size: cover;">
@@ -269,7 +269,7 @@
 											</div>
 										<?php endif;?>
 										<?php endif;?>
-												<div class="postfrom"><div>From <a href="/groups/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ $post->group->category }}</div></div>
+												<div class="postfrom"><div>From <a href="/brands/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ $post->group->category }}</div></div>
 												<a href="{{ url() }}/posts/<?php echo $post->id; ?>">
 												<?php $banner = explode(',', $post->banner); ?>
 													<div class="bannerholder" style="background: #ccc url('<?php echo url().'/uploads/Small_'.$banner[0];?>') no-repeat center center; background-size: cover;">

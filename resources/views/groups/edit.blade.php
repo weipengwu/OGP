@@ -374,7 +374,7 @@
 								if(bname !== '' && bname !== '{{ $group->name }}'){
 									$.ajax({
 										type: "POST",
-										url: window.location.origin+"/groups/checkBrandname",
+										url: window.location.origin+"/brands/checkBrandname",
 										data: "brandname="+bname
 									}).done(function(response){
 										if (response == 'duplicated') {

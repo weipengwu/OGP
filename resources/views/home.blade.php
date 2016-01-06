@@ -7,7 +7,7 @@
 			$group = DB::table('groups')->orderBy('created_at', 'desc')->take(1)->get();
 		?>
 		<section class="container">
-		<a href="/groups/{{ $group[0]->slug }}">
+		<a href="/brands/{{ $group[0]->slug }}">
 			<div class="homebanner" style="background: #ccc url('<?php echo url().'/uploads/Large_'.$group[0]->banner;?>') no-repeat center center; background-size: cover;">
 			
 				<div class="caption">
@@ -35,7 +35,7 @@
 					@foreach ($posts as $post)
 						<?php if($i > 1) break;?>
 						<div <?php if($i == 0) { echo 'class="col-md-8"';} else{ echo 'class="col-md-4 last"'; } ?>>
-							<div class="postfrom"><div>From <a href="/groups/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div>
+							<div class="postfrom"><div>From <a href="/brands/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div>
 							<div class="grouppost">{{ $post->group->category }}</div></div>
 							<a href="{{ url() }}/posts/<?php echo $post->id; ?>">
 								<?php $banner = explode(',', $post->banner); ?>
@@ -93,7 +93,7 @@
 					@foreach ($posts as $post)
 						<?php if($i > 2) break;?>
 						<div class="col-md-4<?php if(is_int($j/3)) echo " last";?>">
-							<div class="postfrom"><div>From <a href="/groups/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ $post->group->category }}</div></div>
+							<div class="postfrom"><div>From <a href="/brands/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ $post->group->category }}</div></div>
 							<a href="{{ url() }}/posts/<?php echo $post->id; ?>">
 								<?php $banner = explode(',', $post->banner); ?>
 								<div class="bannerholder" style="background: #ccc url('<?php echo url().'/uploads/Small_'.$banner[0];?>') no-repeat center center; background-size: cover;">
@@ -183,7 +183,7 @@
 					@foreach ($posts as $post)
 						<?php if($i >= 3) break;?>
 						<div class="<?php if($i == 0) { echo "col-md-6";} else{ echo "col-md-3"; }?><?php if(is_int($j/3)) echo " last";?>">
-							<div class="postfrom"><div>From <a href="/groups/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ $post->group->category }}</div></div>
+							<div class="postfrom"><div>From <a href="/brands/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ $post->group->category }}</div></div>
 							<a href="{{ url() }}/posts/<?php echo $post->id; ?>">
 							<?php $banner = explode(',', $post->banner); ?>
 								<div class="bannerholder" style="background: #ccc url('<?php echo url().'/uploads/Small_'.$banner[0];?>') no-repeat center center; background-size: cover;">
@@ -232,7 +232,7 @@
 			<section class="container">
 				<div class="joinedgroups">
 					<h3>FOLLOWING</h3>
-					<p>Groups that you have are following</p>
+					<p>Brands that you have are following</p>
 					<div class="groupsrow collapsed">
 					<?php
 						$uid = Auth::user()->id;
@@ -242,7 +242,7 @@
 						foreach ($groups as $group) :
 					?>
 						<div class="grouplist<?php if(is_int($f/4)) echo " last";?>">
-							<a href="groups/{{ $group->slug }}">
+							<a href="brands/{{ $group->slug }}">
 							<div class="bannerholder" style="background: #ccc url('{{$group->profile}}') no-repeat center center;background-size:cover"></div>
 							<div class="caption">
 								<h3>{{ $group->name }}</h3>
@@ -256,7 +256,7 @@
 					<?php $f++; endforeach;?>
 					</div>
 					<div class="showall"><a href="">SHOW ALL</a></div>
-					<div class="joinmore"><a href="/groups">Follow more groups to get more information</a></div>
+					<div class="joinmore"><a href="/brands">Follow more brands to get more information</a></div>
 
 				</div>
 			</section>
@@ -268,7 +268,7 @@
 					@foreach ($posts as $post)
 						<?php if($i >= 4) break;?>
 						<div class="col-md-3<?php if(is_int($j/4)) echo " last";?>">
-							<div class="postfrom"><div>From <a href="/groups/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ $post->group->category }}</div></div>
+							<div class="postfrom"><div>From <a href="/brands/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ $post->group->category }}</div></div>
 							<a href="{{ url() }}/posts/<?php echo $post->id; ?>">
 							<?php $banner = explode(',', $post->banner); ?>
 								<div class="bannerholder" style="background: #ccc url('<?php echo url().'/uploads/Small_'.$banner[0];?>') no-repeat center center; background-size: cover;">
@@ -318,7 +318,7 @@
 					@foreach ($posts as $post)
 						<?php if($i >= 3) break;?>
 						<div class="<?php if($i == 0) { echo "col-md-6";} else{ echo "col-md-3"; }?><?php if(is_int($j/3)) echo " last";?>">
-							<div class="postfrom"><div>From <a href="/groups/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ $post->group->category }}</div></div>
+							<div class="postfrom"><div>From <a href="/brands/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ $post->group->category }}</div></div>
 							<a href="{{ url() }}/posts/<?php echo $post->id; ?>">
 							<?php $banner = explode(',', $post->banner); ?>
 								<div class="bannerholder" style="background: #ccc url('<?php echo url().'/uploads/Small_'.$banner[0];?>') no-repeat center center; background-size: cover;">
@@ -370,7 +370,7 @@
 					@foreach ($posts as $post)
 						<?php if($i > 2) break;?>
 						<div class="col-md-4<?php if(is_int($j/3)) echo " last";?>">
-							<div class="postfrom"><div>From <a href="/groups/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ $post->group->category }}</div></div>
+							<div class="postfrom"><div>From <a href="/brands/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ $post->group->category }}</div></div>
 							<a href="{{ url() }}/posts/<?php echo $post->id; ?>">
 								<?php $banner = explode(',', $post->banner); ?>
 								<div class="bannerholder" style="background: #ccc url('<?php echo url().'/uploads/Small_'.$banner[0];?>') no-repeat center center; background-size: cover;">

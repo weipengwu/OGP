@@ -48,7 +48,7 @@
 						<a href="" class="dash-btn" data-id="followedbrand">Following</a>
 					</div>
 <!-- 					<div class="d-row">
-						<a href="">Joined Groups</a>
+						<a href="">Joined Brands</a>
 					</div> -->
 					@if(count(myGroup($id)) > 0)
 					<div class="d-row">
@@ -72,7 +72,7 @@
 								</div>
 							</a>
 						@else
-							<a href="/groups/new">
+							<a href="/brands/new">
 								<div class="dash-box">
 									<div class="img-wrapper">
 									<img src="{{ asset('img/create_brand_icon.png') }}" width="40">
@@ -91,7 +91,7 @@
 							</a>
 					@if(count(myGroup($id)) > 0)
 						<?php $mygroup = myGroup($id);?>
-						<a href="<?php echo url(); ?>/groups/<?php echo $mygroup[0]->slug; ?>/posts/new">
+						<a href="<?php echo url(); ?>/brands/<?php echo $mygroup[0]->slug; ?>/posts/new">
 							<div class="dash-box">
 								<div class="img-wrapper">
 									<img src="{{ asset('img/createpost_icon.png') }}" width="40">
@@ -99,7 +99,7 @@
 								<p>Create Post</p>
 							</div>
 						</a>
-						<a href="<?php echo url(); ?>/groups/<?php echo $mygroup[0]->slug; ?>/events/new">
+						<a href="<?php echo url(); ?>/brands/<?php echo $mygroup[0]->slug; ?>/events/new">
 							<div class="dash-box">
 								<div class="img-wrapper">
 									<img src="{{ asset('img/event_icon.png') }}" width="40">
@@ -164,25 +164,24 @@
 					<div class="row">
 					@foreach ( myGroup($id) as $group)
 						<div class="col-md-3">
-						<a href="groups/<?= $group->slug;?>">
+						<a href="brands/<?= $group->slug;?>">
 							<div class="bannerholder" style="background: #666 url('<?php echo url()."/uploads/Small_".$group->profile;?>');background-size:cover"></div>
 							</a>
 						</div>
 						<div class="col-md-6">
-							<a href="groups/<?= $group->slug;?>"><h3>{{ $group->name }}</h3></a>
+							<a href="brands/<?= $group->slug;?>"><h3>{{ $group->name }}</h3></a>
 							<p><span class="followcount"><img src="{{ asset('img/follow_icon.png') }}" width="20"> {{ count(groupFollowers($group->id)) }}</span></p>
 						</div>
 						<div class="col-md-3">
-							<a href="groups/<?= $group->slug;?>" class="btn btn-logo">Enter Brand</a>
-							<a href="groups/<?= $group->slug;?>/edit" class="btn btn-logo">Edit brand</a>
+							<a href="brands/<?= $group->slug;?>" class="btn btn-logo">Enter Brand</a>
+							<a href="brands/<?= $group->slug;?>/edit" class="btn btn-logo">Edit brand</a>
 						</div>
 					@endforeach
 					</div>
 				@else
 					<div class="row no-border">
 						<h3 style="margin-top:0;">You haven't created your brand yet.</h3>
-						<!-- <a href="/groups/new" class="createbrand">Create your brand</a> -->
-						<a href="/groups/new">
+						<a href="/brands/new">
 								<div class="dash-box">
 									<img src="{{ asset('img/create_brand_icon.png') }}" width="40">
 									<p>Create Brand</p>
@@ -197,7 +196,7 @@
 					<?php $i = 1;?>
 					@foreach (joinedGroup($id) as $group)
 						<div class="grouplist<?php if(is_int($i/3)) echo " last";?>">
-						<a href="groups/<?= $group->slug;?>">
+						<a href="brands/<?= $group->slug;?>">
 							<div class="bannerholder" style="background: url('{{$group->profile}}');background-size:cover"></div>
 							
 							<div class="caption">
@@ -217,7 +216,7 @@
 					<?php $i = 1;?>
 					@foreach (followedGroup($id) as $group)
 						<div class="grouplist<?php if(is_int($i/3)) echo " last";?>">
-						<a href="groups/<?= $group->slug;?>">
+						<a href="brands/<?= $group->slug;?>">
 							<div class="bannerholder" style="background: #666 url('<?php echo url()."/uploads/Small_".$group->profile;?>');background-size:cover"></div>
 							
 							<div class="caption">
