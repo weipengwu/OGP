@@ -7916,6 +7916,9 @@ label.error{
   }
 }
 @media (max-width: 991px) {
+  .bannerholder{
+    height: 250px !important;
+  }
   .layout84 .col-md-8, .layout84 .col-md-4{
     float: none;
     clear: both;
@@ -7928,6 +7931,27 @@ label.error{
     float: none;
     width: 100%;
     clear: both;
+    padding-left: 0;
+  }
+  .layout84 .col-md-8 .postauthor{
+    padding-top: 10px;
+  }
+  .layout84 .col-md-8 .excerpt-area{
+    height: 140px;
+  }
+  .singlegroup.layout84 .col-md-4 .title-area h3{
+    min-height: 120px;
+  }
+  .singlegroup{
+    border-bottom: 0;
+  }
+  .singlegroup .row-gap{
+    height: 0;
+  }
+  .singlegroup > div{
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #e8e8e8;
   }
   .grouplist .bannerholder{
     height: 175px;
