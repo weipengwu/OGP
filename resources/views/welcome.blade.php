@@ -118,9 +118,11 @@
 					<?php $e = 0; ?>
 					@foreach ($events as $event)
 					<?php
-							if ( $event->type == 'public' ){
-								continue;
-							}
+
+								if($event->type == 'private'){
+									continue;
+								}
+
 						?>
 					<?php if($e > 3) break;?>
 					<div class="eventgroup">
