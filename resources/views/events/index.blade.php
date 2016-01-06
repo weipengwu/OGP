@@ -43,7 +43,9 @@
 					@foreach ($events as $event)
 						<?php
 							if(Auth::check()){
-								if ( $event->type == 'private' && isFollowing($event->group_id, Auth::user()->id) == 0 ){
+								var_dump($event->type);
+								var_dump(isFollowing($event->group_id, Auth::user()->id));
+								if ( $event->type == 'private' && (isFollowing($event->group_id, Auth::user()->id) == 0 || $event->author !== Auth::user()->id) ){
 									continue;
 								}
 							}else{
