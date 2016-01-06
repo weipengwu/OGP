@@ -48,7 +48,7 @@
 						@if($event->fee == 'Free') 
 							{{ $event->fee }}
 						@else
-							{{ $event->currency }}{{ $event->fee }}
+							@if($event->currency == 'cad'){{ 'C$' }}@elseif($event->currency == 'usd'){{ '$' }}@elseif($event->currency == 'cny'){{ '¥' }}@elseif($event->currency == 'eur'){{ '€' }}@endif{{ $event->fee }}
 						@endif
 					</div>
 				</div>
