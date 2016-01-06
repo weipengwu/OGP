@@ -335,5 +335,21 @@
       maxPage: pagesNum
     });
 })();
+
+$(window).scroll(function(){
+		if($(this).scrollTop() > 465){
+			$('.navbar-default').addClass('whitebg');
+			//$('.bannerwrapper').addClass('locked');
+			//$('.bannerwrapper').next().next().css('margin-top', '520px');
+			$('.statusbar').addClass('locked');
+			$('.bannerwrapper').next().next().css({'margin-top':'55px'});
+		}else{
+			$('.navbar-default').removeClass('whitebg');
+			//$('bannerwrapper').removeClass('locked');
+			//$('.bannerwrapper').next().next().css('margin-top', '0');
+			$('.statusbar').removeClass('locked');
+			$('.bannerwrapper').next().next().css({'margin-top':'0'});
+		}
+	})
 </script>
 @endsection
