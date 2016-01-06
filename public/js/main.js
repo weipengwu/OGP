@@ -427,7 +427,6 @@ $(document).ready(function(){
 	})
 	
 	$(window).scroll(function(){
-		console.log($(this).scrollTop());
 		if($(this).scrollTop() > 465){
 			$('.navbar-default').addClass('whitebg');
 			//$('.bannerwrapper').addClass('locked');

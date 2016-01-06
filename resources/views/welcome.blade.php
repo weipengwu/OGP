@@ -27,7 +27,9 @@
 					array_push($posts, $singlepost);
 				?>
 			@endforeach
-			<section class="container">
+		<div id="allposts">
+			@if(count($posts) > 0)
+			<section class="container posts">
 			<div class="row singlegroup layout84">
 					<?php $i = 0;?>
 					@foreach ($posts as $post)
@@ -71,7 +73,9 @@
 				<div class="row-gap"></div>
 			</div>
 			</section>
-			<section class="container">
+			@endif
+			@if(count($posts) > 0)
+			<section class="container posts">
 			<div class="row singlegroup layout444">
 				<?php $i = 0; $j = 1; ?>
 					@foreach ($posts as $post)
@@ -106,6 +110,7 @@
 					<div class="row-gap"></div>
 			</div>
 			</section>
+			@endif
 			<section class="events_section">
 				<h2>EVENTS</h2>
 				<h4>See What's Happening Around You</h4>
@@ -147,8 +152,8 @@
 				<div class="row-gap"></div>
 				<div class="divider"></div>
 			</section>
-			
-			<section class="container">
+			@if(count($posts) > 0)
+			<section class="container posts">
 			<div class="row singlegroup layout633">
 				<?php $i = 0; $j = 1;?>
 					@foreach ($posts as $post)
@@ -186,8 +191,9 @@
 					<div class="row-gap"></div>
 			</div>
 			</section>
-
-			<section class="container">
+			@endif
+			@if(count($posts) > 0)
+			<section class="container posts">
 			<div class="row singlegroup layout3333">
 				<?php $i = 0; $j = 1;?>
 					@foreach ($posts as $post)
@@ -223,7 +229,9 @@
 					<div class="row-gap"></div>
 			</div>
 			</section>
-			<section class="container">
+			@endif
+			@if(count($posts) > 0)
+			<section class="container posts">
 			<div class="row singlegroup layout633">
 				<?php $i = 0; $j = 1;?>
 					@foreach ($posts as $post)
@@ -261,7 +269,9 @@
 					<div class="row-gap"></div>
 			</div>
 			</section>
-			<section class="container">
+			@endif
+			@if(count($posts) > 0)
+			<section class="container posts">
 			<div class="row singlegroup layout444">
 				<?php $i = 0; $j = 1; ?>
 					@foreach ($posts as $post)
@@ -296,6 +306,9 @@
 					<div class="row-gap"></div>
 			</div>
 			</section>
+			@endif
+			<?php echo $allposts->render(); ?>
+		</div>
 
 </div>
 <script src="{{ asset('js/jquery.infinitescroll.min.js') }}"></script>
