@@ -258,7 +258,7 @@
 						@if($event->fee == 'Free') 
 							{{ $event->fee }}
 						@else
-							@if($event->currency == 'cad'){{ 'C$' }}@elseif($event->currency == 'usd'){{ '$' }}@elseif($event->currency == 'cny'){{ '¥' }}@elseif($event->currency == 'eur'){{ '€' }}{{ $event->fee }}
+							@if($event->currency == 'cad'){{ 'C$' }}@elseif($event->currency == 'usd'){{ '$' }}@elseif($event->currency == 'cny'){{ '¥' }}@elseif($event->currency == 'eur'){{ '€' }}@endif{{ $event->fee }}
 						@endif
 						</p>
 					</div>		
