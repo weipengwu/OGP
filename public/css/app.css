@@ -7919,7 +7919,7 @@ label.error{
   .bannerholder{
     height: 250px !important;
   }
-  .layout84 .col-md-8, .layout84 .col-md-4{
+  .layout84 .col-md-8, .layout84 .col-md-4, .layout3333 .col-md-3, .layout633 .col-md-6, .layout633 .col-md-3, .layout444 .col-md-4{
     float: none;
     clear: both;
     height: auto;
@@ -7947,6 +7947,9 @@ label.error{
   }
   .singlegroup .row-gap{
     height: 0;
+    margin: 0;
+    padding: 0;
+    border-bottom: 0;
   }
   .singlegroup > div{
     margin-bottom: 25px;
