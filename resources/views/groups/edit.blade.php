@@ -215,126 +215,126 @@
 								<option value="LY" @if($group->originCountry == 'LY') {{ 'selected' }} @endif>Libya</option>
 								<option value="LI" @if($group->originCountry == 'LI') {{ 'selected' }} @endif>Liechtenstein</option>
 								<option value="LT" @if($group->originCountry == 'LT') {{ 'selected' }} @endif>Lithuania</option>
-								<option value="LU">Luxembourg</option>
-								<option value="MO">Macao</option>
-								<option value="MK">Macedonia, the former Yugoslav Republic of</option>
-								<option value="MG">Madagascar</option>
-								<option value="MW">Malawi</option>
-								<option value="MY">Malaysia</option>
-								<option value="MV">Maldives</option>
-								<option value="ML">Mali</option>
-								<option value="MT">Malta</option>
-								<option value="MH">Marshall Islands</option>
-								<option value="MQ">Martinique</option>
-								<option value="MR">Mauritania</option>
-								<option value="MU">Mauritius</option>
-								<option value="YT">Mayotte</option>
-								<option value="MX">Mexico</option>
-								<option value="FM">Micronesia, Federated States of</option>
-								<option value="MD">Moldova, Republic of</option>
-								<option value="MC">Monaco</option>
-								<option value="MN">Mongolia</option>
-								<option value="ME">Montenegro</option>
-								<option value="MS">Montserrat</option>
-								<option value="MA">Morocco</option>
-								<option value="MZ">Mozambique</option>
-								<option value="MM">Myanmar</option>
-								<option value="NA">Namibia</option>
-								<option value="NR">Nauru</option>
-								<option value="NP">Nepal</option>
-								<option value="NL">Netherlands</option>
-								<option value="NC">New Caledonia</option>
-								<option value="NZ">New Zealand</option>
-								<option value="NI">Nicaragua</option>
-								<option value="NE">Niger</option>
-								<option value="NG">Nigeria</option>
-								<option value="NU">Niue</option>
-								<option value="NF">Norfolk Island</option>
-								<option value="MP">Northern Mariana Islands</option>
-								<option value="NO">Norway</option>
-								<option value="OM">Oman</option>
-								<option value="PK">Pakistan</option>
-								<option value="PW">Palau</option>
-								<option value="PS">Palestinian Territory, Occupied</option>
-								<option value="PA">Panama</option>
-								<option value="PG">Papua New Guinea</option>
-								<option value="PY">Paraguay</option>
-								<option value="PE">Peru</option>
-								<option value="PH">Philippines</option>
-								<option value="PN">Pitcairn</option>
-								<option value="PL">Poland</option>
-								<option value="PT">Portugal</option>
-								<option value="PR">Puerto Rico</option>
-								<option value="QA">Qatar</option>
-								<option value="RE">Réunion</option>
-								<option value="RO">Romania</option>
-								<option value="RU">Russian Federation</option>
-								<option value="RW">Rwanda</option>
-								<option value="BL">Saint Barthélemy</option>
-								<option value="SH">Saint Helena, Ascension and Tristan da Cunha</option>
-								<option value="KN">Saint Kitts and Nevis</option>
-								<option value="LC">Saint Lucia</option>
-								<option value="MF">Saint Martin (French part)</option>
-								<option value="PM">Saint Pierre and Miquelon</option>
-								<option value="VC">Saint Vincent and the Grenadines</option>
-								<option value="WS">Samoa</option>
-								<option value="SM">San Marino</option>
-								<option value="ST">Sao Tome and Principe</option>
-								<option value="SA">Saudi Arabia</option>
-								<option value="SN">Senegal</option>
-								<option value="RS">Serbia</option>
-								<option value="SC">Seychelles</option>
-								<option value="SL">Sierra Leone</option>
-								<option value="SG">Singapore</option>
-								<option value="SX">Sint Maarten (Dutch part)</option>
-								<option value="SK">Slovakia</option>
-								<option value="SI">Slovenia</option>
-								<option value="SB">Solomon Islands</option>
-								<option value="SO">Somalia</option>
-								<option value="ZA">South Africa</option>
-								<option value="GS">South Georgia and the South Sandwich Islands</option>
-								<option value="SS">South Sudan</option>
-								<option value="ES">Spain</option>
-								<option value="LK">Sri Lanka</option>
-								<option value="SD">Sudan</option>
-								<option value="SR">Suriname</option>
-								<option value="SJ">Svalbard and Jan Mayen</option>
-								<option value="SZ">Swaziland</option>
-								<option value="SE">Sweden</option>
-								<option value="CH">Switzerland</option>
-								<option value="SY">Syrian Arab Republic</option>
-								<option value="TW">Taiwan, Province of China</option>
-								<option value="TJ">Tajikistan</option>
-								<option value="TZ">Tanzania, United Republic of</option>
-								<option value="TH">Thailand</option>
-								<option value="TL">Timor-Leste</option>
-								<option value="TG">Togo</option>
-								<option value="TK">Tokelau</option>
-								<option value="TO">Tonga</option>
-								<option value="TT">Trinidad and Tobago</option>
-								<option value="TN">Tunisia</option>
-								<option value="TR">Turkey</option>
-								<option value="TM">Turkmenistan</option>
-								<option value="TC">Turks and Caicos Islands</option>
-								<option value="TV">Tuvalu</option>
-								<option value="UG">Uganda</option>
-								<option value="UA">Ukraine</option>
-								<option value="AE">United Arab Emirates</option>
-								<option value="GB">United Kingdom</option>
-								<option value="US">United States</option>
-								<option value="UM">United States Minor Outlying Islands</option>
-								<option value="UY">Uruguay</option>
-								<option value="UZ">Uzbekistan</option>
-								<option value="VU">Vanuatu</option>
-								<option value="VE">Venezuela, Bolivarian Republic of</option>
-								<option value="VN">Viet Nam</option>
-								<option value="VG">Virgin Islands, British</option>
-								<option value="VI">Virgin Islands, U.S.</option>
-								<option value="WF">Wallis and Futuna</option>
-								<option value="EH">Western Sahara</option>
-								<option value="YE">Yemen</option>
-								<option value="ZM">Zambia</option>
-								<option value="ZW">Zimbabwe</option>
+								<option value="LU" @if($group->originCountry == 'LU') {{ 'selected' }} @endif>Luxembourg</option>
+								<option value="MO" @if($group->originCountry == 'MO') {{ 'selected' }} @endif>Macao</option>
+								<option value="MK" @if($group->originCountry == 'MK') {{ 'selected' }} @endif>Macedonia, the former Yugoslav Republic of</option>
+								<option value="MG" @if($group->originCountry == 'MG') {{ 'selected' }} @endif>Madagascar</option>
+								<option value="MW" @if($group->originCountry == 'MW') {{ 'selected' }} @endif>Malawi</option>
+								<option value="MY" @if($group->originCountry == 'MY') {{ 'selected' }} @endif>Malaysia</option>
+								<option value="MV" @if($group->originCountry == 'MV') {{ 'selected' }} @endif>Maldives</option>
+								<option value="ML" @if($group->originCountry == 'ML') {{ 'selected' }} @endif>Mali</option>
+								<option value="MT" @if($group->originCountry == 'MT') {{ 'selected' }} @endif>Malta</option>
+								<option value="MH" @if($group->originCountry == 'MH') {{ 'selected' }} @endif>Marshall Islands</option>
+								<option value="MQ" @if($group->originCountry == 'MQ') {{ 'selected' }} @endif>Martinique</option>
+								<option value="MR" @if($group->originCountry == 'MR') {{ 'selected' }} @endif>Mauritania</option>
+								<option value="MU" @if($group->originCountry == 'MU') {{ 'selected' }} @endif>Mauritius</option>
+								<option value="YT" @if($group->originCountry == 'YT') {{ 'selected' }} @endif>Mayotte</option>
+								<option value="MX" @if($group->originCountry == 'MX') {{ 'selected' }} @endif>Mexico</option>
+								<option value="FM" @if($group->originCountry == 'FM') {{ 'selected' }} @endif>Micronesia, Federated States of</option>
+								<option value="MD" @if($group->originCountry == 'MD') {{ 'selected' }} @endif>Moldova, Republic of</option>
+								<option value="MC" @if($group->originCountry == 'MC') {{ 'selected' }} @endif>Monaco</option>
+								<option value="MN" @if($group->originCountry == 'MN') {{ 'selected' }} @endif>Mongolia</option>
+								<option value="ME" @if($group->originCountry == 'ME') {{ 'selected' }} @endif>Montenegro</option>
+								<option value="MS" @if($group->originCountry == 'MS') {{ 'selected' }} @endif>Montserrat</option>
+								<option value="MA" @if($group->originCountry == 'MA') {{ 'selected' }} @endif>Morocco</option>
+								<option value="MZ" @if($group->originCountry == 'MZ') {{ 'selected' }} @endif>Mozambique</option>
+								<option value="MM" @if($group->originCountry == 'MM') {{ 'selected' }} @endif>Myanmar</option>
+								<option value="NA" @if($group->originCountry == 'NA') {{ 'selected' }} @endif>Namibia</option>
+								<option value="NR" @if($group->originCountry == 'NR') {{ 'selected' }} @endif>Nauru</option>
+								<option value="NP" @if($group->originCountry == 'NP') {{ 'selected' }} @endif>Nepal</option>
+								<option value="NL" @if($group->originCountry == 'NL') {{ 'selected' }} @endif>Netherlands</option>
+								<option value="NC" @if($group->originCountry == 'NC') {{ 'selected' }} @endif>New Caledonia</option>
+								<option value="NZ" @if($group->originCountry == 'NZ') {{ 'selected' }} @endif>New Zealand</option>
+								<option value="NI" @if($group->originCountry == 'NI') {{ 'selected' }} @endif>Nicaragua</option>
+								<option value="NE" @if($group->originCountry == 'NE') {{ 'selected' }} @endif>Niger</option>
+								<option value="NG" @if($group->originCountry == 'NG') {{ 'selected' }} @endif>Nigeria</option>
+								<option value="NU" @if($group->originCountry == 'NU') {{ 'selected' }} @endif>Niue</option>
+								<option value="NF" @if($group->originCountry == 'NF') {{ 'selected' }} @endif>Norfolk Island</option>
+								<option value="MP" @if($group->originCountry == 'MP') {{ 'selected' }} @endif>Northern Mariana Islands</option>
+								<option value="NO" @if($group->originCountry == 'NO') {{ 'selected' }} @endif>Norway</option>
+								<option value="OM" @if($group->originCountry == 'OM') {{ 'selected' }} @endif>Oman</option>
+								<option value="PK" @if($group->originCountry == 'PK') {{ 'selected' }} @endif>Pakistan</option>
+								<option value="PW" @if($group->originCountry == 'PW') {{ 'selected' }} @endif>Palau</option>
+								<option value="PS" @if($group->originCountry == 'PS') {{ 'selected' }} @endif>Palestinian Territory, Occupied</option>
+								<option value="PA" @if($group->originCountry == 'PA') {{ 'selected' }} @endif>Panama</option>
+								<option value="PG" @if($group->originCountry == 'PG') {{ 'selected' }} @endif>Papua New Guinea</option>
+								<option value="PY" @if($group->originCountry == 'PY') {{ 'selected' }} @endif>Paraguay</option>
+								<option value="PE" @if($group->originCountry == 'PE') {{ 'selected' }} @endif>Peru</option>
+								<option value="PH" @if($group->originCountry == 'PH') {{ 'selected' }} @endif>Philippines</option>
+								<option value="PN" @if($group->originCountry == 'PN') {{ 'selected' }} @endif>Pitcairn</option>
+								<option value="PL" @if($group->originCountry == 'PL') {{ 'selected' }} @endif>Poland</option>
+								<option value="PT" @if($group->originCountry == 'PT') {{ 'selected' }} @endif>Portugal</option>
+								<option value="PR" @if($group->originCountry == 'PR') {{ 'selected' }} @endif>Puerto Rico</option>
+								<option value="QA" @if($group->originCountry == 'QA') {{ 'selected' }} @endif>Qatar</option>
+								<option value="RE" @if($group->originCountry == 'RE') {{ 'selected' }} @endif>Réunion</option>
+								<option value="RO" @if($group->originCountry == 'RO') {{ 'selected' }} @endif>Romania</option>
+								<option value="RU" @if($group->originCountry == 'RU') {{ 'selected' }} @endif>Russian Federation</option>
+								<option value="RW" @if($group->originCountry == 'RW') {{ 'selected' }} @endif>Rwanda</option>
+								<option value="BL" @if($group->originCountry == 'BL') {{ 'selected' }} @endif>Saint Barthélemy</option>
+								<option value="SH" @if($group->originCountry == 'SH') {{ 'selected' }} @endif>Saint Helena, Ascension and Tristan da Cunha</option>
+								<option value="KN" @if($group->originCountry == 'KN') {{ 'selected' }} @endif>Saint Kitts and Nevis</option>
+								<option value="LC" @if($group->originCountry == 'LC') {{ 'selected' }} @endif>Saint Lucia</option>
+								<option value="MF" @if($group->originCountry == 'MF') {{ 'selected' }} @endif>Saint Martin (French part)</option>
+								<option value="PM" @if($group->originCountry == 'PM') {{ 'selected' }} @endif>Saint Pierre and Miquelon</option>
+								<option value="VC" @if($group->originCountry == 'VC') {{ 'selected' }} @endif>Saint Vincent and the Grenadines</option>
+								<option value="WS" @if($group->originCountry == 'WS') {{ 'selected' }} @endif>Samoa</option>
+								<option value="SM" @if($group->originCountry == 'SM') {{ 'selected' }} @endif>San Marino</option>
+								<option value="ST" @if($group->originCountry == 'ST') {{ 'selected' }} @endif>Sao Tome and Principe</option>
+								<option value="SA" @if($group->originCountry == 'SA') {{ 'selected' }} @endif>Saudi Arabia</option>
+								<option value="SN" @if($group->originCountry == 'SN') {{ 'selected' }} @endif>Senegal</option>
+								<option value="RS" @if($group->originCountry == 'RS') {{ 'selected' }} @endif>Serbia</option>
+								<option value="SC" @if($group->originCountry == 'SC') {{ 'selected' }} @endif>Seychelles</option>
+								<option value="SL" @if($group->originCountry == 'SL') {{ 'selected' }} @endif>Sierra Leone</option>
+								<option value="SG" @if($group->originCountry == 'SG') {{ 'selected' }} @endif>Singapore</option>
+								<option value="SX" @if($group->originCountry == 'SX') {{ 'selected' }} @endif>Sint Maarten (Dutch part)</option>
+								<option value="SK" @if($group->originCountry == 'SK') {{ 'selected' }} @endif>Slovakia</option>
+								<option value="SI" @if($group->originCountry == 'SI') {{ 'selected' }} @endif>Slovenia</option>
+								<option value="SB" @if($group->originCountry == 'SB') {{ 'selected' }} @endif>Solomon Islands</option>
+								<option value="SO" @if($group->originCountry == 'SO') {{ 'selected' }} @endif>Somalia</option>
+								<option value="ZA" @if($group->originCountry == 'ZA') {{ 'selected' }} @endif>South Africa</option>
+								<option value="GS" @if($group->originCountry == 'GS') {{ 'selected' }} @endif>South Georgia and the South Sandwich Islands</option>
+								<option value="SS" @if($group->originCountry == 'SS') {{ 'selected' }} @endif>South Sudan</option>
+								<option value="ES" @if($group->originCountry == 'ES') {{ 'selected' }} @endif>Spain</option>
+								<option value="LK" @if($group->originCountry == 'LK') {{ 'selected' }} @endif>Sri Lanka</option>
+								<option value="SD" @if($group->originCountry == 'SD') {{ 'selected' }} @endif>Sudan</option>
+								<option value="SR" @if($group->originCountry == 'SR') {{ 'selected' }} @endif>Suriname</option>
+								<option value="SJ" @if($group->originCountry == 'SJ') {{ 'selected' }} @endif>Svalbard and Jan Mayen</option>
+								<option value="SZ" @if($group->originCountry == 'SZ') {{ 'selected' }} @endif>Swaziland</option>
+								<option value="SE" @if($group->originCountry == 'SE') {{ 'selected' }} @endif>Sweden</option>
+								<option value="CH" @if($group->originCountry == 'CH') {{ 'selected' }} @endif>Switzerland</option>
+								<option value="SY" @if($group->originCountry == 'SY') {{ 'selected' }} @endif>Syrian Arab Republic</option>
+								<option value="TW" @if($group->originCountry == 'TW') {{ 'selected' }} @endif>Taiwan, Province of China</option>
+								<option value="TJ" @if($group->originCountry == 'TJ') {{ 'selected' }} @endif>Tajikistan</option>
+								<option value="TZ" @if($group->originCountry == 'TZ') {{ 'selected' }} @endif>Tanzania, United Republic of</option>
+								<option value="TH" @if($group->originCountry == 'TH') {{ 'selected' }} @endif>Thailand</option>
+								<option value="TL" @if($group->originCountry == 'TL') {{ 'selected' }} @endif>Timor-Leste</option>
+								<option value="TG" @if($group->originCountry == 'TG') {{ 'selected' }} @endif>Togo</option>
+								<option value="TK" @if($group->originCountry == 'TK') {{ 'selected' }} @endif>Tokelau</option>
+								<option value="TO" @if($group->originCountry == 'TO') {{ 'selected' }} @endif>Tonga</option>
+								<option value="TT" @if($group->originCountry == 'TT') {{ 'selected' }} @endif>Trinidad and Tobago</option>
+								<option value="TN" @if($group->originCountry == 'TN') {{ 'selected' }} @endif>Tunisia</option>
+								<option value="TR" @if($group->originCountry == 'TR') {{ 'selected' }} @endif>Turkey</option>
+								<option value="TM" @if($group->originCountry == 'TM') {{ 'selected' }} @endif>Turkmenistan</option>
+								<option value="TC" @if($group->originCountry == 'TC') {{ 'selected' }} @endif>Turks and Caicos Islands</option>
+								<option value="TV" @if($group->originCountry == 'TV') {{ 'selected' }} @endif>Tuvalu</option>
+								<option value="UG" @if($group->originCountry == 'UG') {{ 'selected' }} @endif>Uganda</option>
+								<option value="UA" @if($group->originCountry == 'UA') {{ 'selected' }} @endif>Ukraine</option>
+								<option value="AE" @if($group->originCountry == 'AE') {{ 'selected' }} @endif>United Arab Emirates</option>
+								<option value="GB" @if($group->originCountry == 'GB') {{ 'selected' }} @endif>United Kingdom</option>
+								<option value="US" @if($group->originCountry == 'US') {{ 'selected' }} @endif>United States</option>
+								<option value="UM" @if($group->originCountry == 'UM') {{ 'selected' }} @endif>United States Minor Outlying Islands</option>
+								<option value="UY" @if($group->originCountry == 'UY') {{ 'selected' }} @endif>Uruguay</option>
+								<option value="UZ" @if($group->originCountry == 'UZ') {{ 'selected' }} @endif>Uzbekistan</option>
+								<option value="VU" @if($group->originCountry == 'VU') {{ 'selected' }} @endif>Vanuatu</option>
+								<option value="VE" @if($group->originCountry == 'VE') {{ 'selected' }} @endif>Venezuela, Bolivarian Republic of</option>
+								<option value="VN" @if($group->originCountry == 'VN') {{ 'selected' }} @endif>Viet Nam</option>
+								<option value="VG" @if($group->originCountry == 'VG') {{ 'selected' }} @endif>Virgin Islands, British</option>
+								<option value="VI" @if($group->originCountry == 'VI') {{ 'selected' }} @endif>Virgin Islands, U.S.</option>
+								<option value="WF" @if($group->originCountry == 'WF') {{ 'selected' }} @endif>Wallis and Futuna</option>
+								<option value="EH" @if($group->originCountry == 'EH') {{ 'selected' }} @endif>Western Sahara</option>
+								<option value="YE" @if($group->originCountry == 'YE') {{ 'selected' }} @endif>Yemen</option>
+								<option value="ZM" @if($group->originCountry == 'ZM') {{ 'selected' }} @endif>Zambia</option>
+								<option value="ZW" @if($group->originCountry == 'ZW') {{ 'selected' }} @endif>Zimbabwe</option>
 							</select>
 							<select name="target" class="form-control" required>
 								<option value="">Target Market</option>

@@ -173,7 +173,7 @@
 							<p><span class="followcount"><img src="{{ asset('img/follow_icon.png') }}" width="20"> {{ count(groupFollowers($group->id)) }}</span></p>
 						</div>
 						<div class="col-md-3">
-							<a href="brands/<?= $group->slug;?>" class="btn btn-logo">Enter Brand</a>
+							<a href="brands/<?= $group->slug;?>" class="btn btn-logo top-btn">Enter Brand</a>
 							<a href="brands/<?= $group->slug;?>/edit" class="btn btn-logo">Edit brand</a>
 						</div>
 					@endforeach
@@ -258,13 +258,13 @@
 						@if($event->fee == 'Free') 
 							{{ $event->fee }}
 						@else
-							C ${{ $event->fee }}
+							@if($event->currency == 'cad'){{ 'C$' }}@elseif($event->currency == 'usd'){{ '$' }}@elseif($event->currency == 'cny'){{ '¥' }}@elseif($event->currency == 'eur'){{ '€' }}{{ $event->fee }}
 						@endif
 						</p>
 					</div>		
 					</div>
 					<div class="col-md-3">
-						<a href="/events/{{ $event->id }}/edit" class="btn btn-logo">Edit Event</a>
+						<a href="/events/{{ $event->id }}/edit" class="btn btn-logo top-btn">Edit Event</a>
 						<a class="various btn btn-danger" href="#confirmdelete<?php echo $event->id; ?>">Delete Event</a>
 						<div id="confirmdelete<?php echo $event->id; ?>" class="confirmdelete">
 							<h3>Are you sure to delete this event?</h3>

@@ -7883,6 +7883,9 @@ label.error{
   color: #666;
   text-decoration: none;
 }
+.dash-main .top-btn{
+  margin-bottom: 10px;
+}
 /*** media query ***/
 @media (max-width: 1199px){
   .grouplist .bannerholder{
@@ -7954,6 +7957,9 @@ label.error{
   #mybrand .bannerholder {
     height: 120px;
     width: 120px;
+  }
+  .dash-main .top-btn{
+    margin-bottom: 0;
   }
 }
 @media (min-width: 768px) {
