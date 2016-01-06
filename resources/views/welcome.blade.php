@@ -112,6 +112,11 @@
 				<div class="home_events">
 					<?php $e = 0; ?>
 					@foreach ($events as $event)
+					<?php
+							if ( $event->type == 'public' ){
+								continue;
+							}
+						?>
 					<?php if($e > 3) break;?>
 					<div class="eventgroup">
 						<div class="eventgroup-list">

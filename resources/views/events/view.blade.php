@@ -48,7 +48,7 @@
 						@if($event->fee == 'Free') 
 							{{ $event->fee }}
 						@else
-							C ${{ $event->fee }}
+							{{ $event->currency }}{{ $event->fee }}
 						@endif
 					</div>
 				</div>
