@@ -516,6 +516,7 @@ $(document).ready(function(){
 			}
 		}
 	});
+	$('#leavecomments form').validate();
 	$('#createPost').validate();
 
 	$('a.showSelect').on('click', function(e){
