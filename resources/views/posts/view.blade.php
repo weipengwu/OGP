@@ -54,7 +54,7 @@
 									<?php
 										else:
 									?>
-										<div class="top-profile">{{ getFirstCharter(Auth::user()->name) }}</div>
+										<div class="top-profile">{{ getFirstCharter(getAuthorname($comment->author)) }}</div>
 									<?php endif;?>
 								</div>
 								<div class="col-md-11">
