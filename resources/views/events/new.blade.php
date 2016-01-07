@@ -55,6 +55,7 @@
 			                </div>
 							<input type="hidden" id="dtp_input2" value="" />
 			            </div>
+			            <input type="hidden" name="timezone" id="timezone" value="" />
 			            <div class="form-group" style="float:left; margin-right: 2%; width: 49%;">
 							<label class="col-md-2 col-sm-2 col-xs-2">Price</label>
 							<div class="col-md-10 col-sm-10 col-xs-10" style="padding: 0">
@@ -107,6 +108,8 @@
 </div>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANM_gBRmfXCbtGiN768aUL1div-Dd0TU4&libraries=places"></script>
 <script>
+var tz = jstz.determine();
+$('#timezone').val(tz.name());
 	function initialize() {
   var map = new google.maps.Map(document.getElementById('map'), {
     center: { lat: 43.6509618, lng: -79.3824327},

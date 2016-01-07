@@ -206,11 +206,12 @@ class EventController extends Controller {
 			$event->author = Request::input('author');
 			$event->type = Request::input('type');
 			$event->title = Request::input('title');
+			$timezone = Request::input('timezone');
 			$fromtime = Request::input('fromtime');
-			$unixfromtime = strtotime($fromtime);
+			$unixfromtime = strtotime($fromtime.' '.$timezone);
 			$event->fromtime = $unixfromtime;
 			$totime = Request::input('totime');
-			$unixtotime = strtotime($totime);
+			$unixtotime = strtotime($totime.' '.$timezone);
 			$event->totime = $unixtotime;
 			$event->city = Request::input('city');
 			$event->suitenum = Request::input('suitenum');
