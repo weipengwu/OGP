@@ -59,7 +59,7 @@
 								</div>
 								<div class="col-md-11">
 									<p class="commentauthor"><strong>{{ getAuthorname($comment->author) }}</strong>&nbsp;&nbsp;<span class="ago-bullet">•</span>&nbsp;&nbsp;{{ $comment->created_at->diffForHumans() }}</p> 
-									<p>{{ $comment->content }}</p>
+									<p>{!! html_entity_decode($comment->content) !!}</p>
 								</div>
 							</div>
 						@endforeach

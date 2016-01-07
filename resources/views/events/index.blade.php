@@ -8,7 +8,6 @@
 				<div class="heading"><h2>Browse Events</h2>
 				<?php if(isset($_GET['category'])){
 						$cat = $_GET['category'];
-						var_dump($cat);
 					}?>
 					<form>
 						<select id="category" class="form-control">
