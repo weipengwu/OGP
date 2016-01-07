@@ -38,8 +38,8 @@
 				<hr>
 					<div class="eventinfo">
 						<?php 
-							$fromtime = new DateTime(date('Y-m-d',$event->fromtime), new DateTimeZone($event->timezone));
-							$totime = new DateTime(date('Y-m-d',$event->totime), new DateTimeZone($event->timezone));
+							$fromtime = new DateTime(date('Y-m-d H:i:s',$event->fromtime), new DateTimeZone($event->timezone));
+							$totime = new DateTime(date('Y-m-d H:i:s',$event->totime), new DateTimeZone($event->timezone));
 							var_dump($fromtime);
 							var_dump($fromtime->format('M j'));
 							if($fromtime->format('M j') == $totime->format('M j')):
