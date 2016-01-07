@@ -13,7 +13,7 @@
 					<form>
 						<select id="category" class="form-control">
 								<option value="">All Categories</option>
-								<option value="{{ urlencode(Arts &amp; Design) }}" <?php if(isset($_GET['category']) && $cat == 'Arts & Design') echo "selected";?>>Arts &amp; Design</option>
+								<option value="{{ urlencode('Arts &amp; Design') }}" <?php if(isset($_GET['category']) && $cat == 'Arts & Design') echo "selected";?>>Arts &amp; Design</option>
 								<option value="Autos" <?php if(isset($_GET['category']) && $cat == 'Autos') echo "selected";?>>Autos</option>
 								<option value="Business" <?php if(isset($_GET['category']) && $cat == 'Business') echo "selected";?>>Business</option>
 								<option value="Education" <?php if(isset($_GET['category']) && $cat == 'Education') echo "selected";?>>Education</option>
