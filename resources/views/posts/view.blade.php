@@ -8,11 +8,10 @@
 				<div class="panel-body">
 					<div class="groupinfo">
 						<span>FROM <a href="{{  url() }}/brands/{{ $post->group->slug }}">{{ getGroupName($post->group->id) }}</a></span>
-						<span>Category: {{ $post->group->category }}</span>
 					</div>
 					<h1> {{ $post->title }}</h1>
 					<div class="authorinfo">
-						<span>By {{ getAuthorname($post->author) }}</span> <span><img src="{{ asset('img/calendar_icon.png') }}" width="16"> <?php $timestamp = strtotime($post->created_at); echo date('M j, Y', $timestamp); ?></span>
+						<!-- <span>By {{ getAuthorname($post->author) }}</span> --> <span><img src="{{ asset('img/calendar_icon.png') }}" width="16"> <?php $timestamp = strtotime($post->created_at); echo date('M j, Y', $timestamp); ?></span>
 					</div>
 					<?php $banners = explode(',', $post->banner); if(count($banners) > 0 && strpos($post->banner,'img/defaultbg') == false):?>
 					<div class="postbanner">
@@ -24,14 +23,15 @@
 					</div>
 					<?php endif;?>
 					<p>{!!html_entity_decode($post->content)!!}</p>
-					
+					<br />
+					<p>Category: {{ $post->group->category }}</p>
 					<div class="commentscount">
 						<span class="c_holder">{{ $post->comments->count()}} Comments</span>
 					</div>
 					<hr>
 					@if(Auth::check())
 					<section id="leavecomments">
-						<h3 class="title">Leave a comment</h3>
+						<h4 class="title">Leave a comment</h4>
 						<form action="{{ URL::route('createComment', array('id' => $post->id)) }}" method="post">
 							<input type="hidden" name="_token" value="{{ csrf_token() }}">
 							<input type="hidden" name="author" value="{{ Auth::user()->id }}">

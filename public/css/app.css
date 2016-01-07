@@ -2349,6 +2349,7 @@ output {
   background-color: #ffffff;
   background-image: none;
   border: 1px solid #cccccc;
+  border-radius: 0;
   /*border-radius: 4px;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);*/
   transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
@@ -3927,8 +3928,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-toggle {
   position: relative;
   float: right;
-  margin-right: 15px;
-  padding: 9px 10px;
+  margin-right: 10px;
+  padding: 9px;
   margin-top: 12px;
   margin-bottom: 8px;
   background-color: transparent;
@@ -3983,8 +3984,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     background-image: none;
   }*/
   .navbar-nav > li > a {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding: 20px 12px;
   }
 }
 @media (min-width: 768px) {
@@ -8016,6 +8016,7 @@ label.error{
 @media (max-width: 767px) {
   .navbar-brand{
     margin-right: 0;
+    padding: 10px;
   }
   .desktop{
     display: none;
