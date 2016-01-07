@@ -37,7 +37,7 @@ class EventController extends Controller {
 	public function index()
 	{
 		if(isset($_GET['category'])){
-			$groups = Group::where('category', $_GET['category'])->get();
+			$groups = Group::where('category', urldecode($_GET['category']))->get();
 			$groups_id = [];
 			foreach ($groups as $group) {
 				array_push($groups_id, $group->id);			

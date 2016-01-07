@@ -364,7 +364,7 @@
 							<span>Apply to Join</span> <span class="radio"><input type="radio" name="applytojoin" id="applyyes" value="yes" /> <label for="applyyes">Yes</label> </span><span class="radio"><input type="radio" name="applytojoin" id="applyno" value="no" /> <label for="applyno">No</label></span>
 						</div> -->
 						<div class="form-group">
-							<textarea name="description" maxlength="300" class="form-control" placeholder="Brief Introduction ( Tips: Please use the official language at the target markets.)" required></textarea>
+							<textarea name="description" maxlength="300" class="form-control" placeholder="Brief Introduction ( Tips: It is recommended to use the official language at the target markets.)" required></textarea>
 						</div>
 						<p class="small">By continuing you pledge that the content filled in and the additional materials provided are true and authentic in every aspect.</p>
 						<input type="submit" class="btn btn-logo submit" value="Submit">

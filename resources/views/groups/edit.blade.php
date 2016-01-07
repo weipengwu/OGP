@@ -360,7 +360,7 @@
 							</select>
 						</div> -->
 						<div class="form-group">
-							<textarea name="description" maxlength="300" placeholder="Brief Introduction ( Tips: Please use the official language at the target markets. )" class="form-control" required>{!! strip_tags($group->description) !!}</textarea>
+							<textarea name="description" maxlength="300" placeholder="Brief Introduction ( Tips: It is recommended to use the official language at the target markets. )" class="form-control" required>{!! strip_tags($group->description) !!}</textarea>
 						</div>
 						<p class="small">By continuing you pledge that the content filled in and the additional materials provided are true and authentic in every aspect.</p>
 						<input type="submit" class="btn btn-logo" value="Submit">
