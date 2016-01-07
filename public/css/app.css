@@ -7886,6 +7886,12 @@ label.error{
 .dash-main .top-btn{
   margin-bottom: 10px;
 }
+.nobreak{
+  white-space: nowrap;
+}
+.singlegroup iframe{
+  display: none;
+}
 /*** media query ***/
 @media (max-width: 1199px){
   .grouplist .bannerholder{

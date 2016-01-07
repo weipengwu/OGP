@@ -11,7 +11,7 @@
 					</div>
 					<h1> {{ $post->title }}</h1>
 					<div class="authorinfo">
-						<!-- <span>By {{ getAuthorname($post->author) }}</span> --> <span><img src="{{ asset('img/calendar_icon.png') }}" width="16"> <?php $timestamp = strtotime($post->created_at); echo date('M j, Y', $timestamp); ?></span>
+						<!-- <span>By {{ getAuthorname($post->author) }}</span> --> <span><img src="{{ asset('img/calendar_icon.png') }}" width="16"> <?php echo $post->created_at->diffForHumans();//$timestamp = strtotime($post->created_at); echo date('M j, Y', $timestamp); ?></span>
 					</div>
 					<?php $banners = explode(',', $post->banner); if(count($banners) > 0 && strpos($post->banner,'img/defaultbg') == false):?>
 					<div class="postbanner">
@@ -24,9 +24,9 @@
 					<?php endif;?>
 					<p>{!!html_entity_decode($post->content)!!}</p>
 					<br />
-					<p>Category: {{ $post->group->category }}</p>
+					<p>For more information, visit <a href="{{  url() }}/brands/{{ $post->group->slug }}" class="nobreak">{{ getGroupName($post->group->id) }}</a></p>
 					<div class="commentscount">
-						<span class="c_holder">{{ $post->comments->count()}} Comments</span>
+						<span class="c_holder">{{ $post->comments->count()}} Comments</span> | <span>Category: {{ $post->group->category }}</span>
 					</div>
 					<hr>
 					@if(Auth::check())
