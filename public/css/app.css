@@ -7123,7 +7123,7 @@ h3 a:hover{
   bottom: 50px;
   color: #fff;
 }
-#hblikebar .cat{
+.caption .cat{
   text-transform: uppercase;
   text-decoration: underline;
   color: rgba(255,255,255,.7);
@@ -7916,7 +7916,7 @@ label.error{
   }
 }
 @media (max-width: 991px) {
-  .bannerholder{
+  .home .bannerholder{
     height: 250px !important;
   }
   .layout84 .col-md-8, .layout84 .col-md-4, .layout3333 .col-md-3, .layout633 .col-md-6, .layout633 .col-md-3, .layout444 .col-md-4{
@@ -7953,8 +7953,11 @@ label.error{
   }
   .singlegroup > div{
     margin-bottom: 25px;
-    padding-bottom: 25px;
+    padding-bottom: 45px;
     border-bottom: 1px solid #e8e8e8;
+  }
+  .singlegroup .bottom{
+    bottom: 20px;
   }
   .grouplist .bannerholder{
     height: 175px;
@@ -7995,7 +7998,7 @@ label.error{
     height: 120px;
   }
   #mybrand .bannerholder {
-    height: 120px;
+    height: 120px !important;
     width: 120px;
   }
   .dash-main .top-btn{

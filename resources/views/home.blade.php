@@ -11,11 +11,8 @@
 			<div class="homebanner" style="background: #ccc url('<?php echo url().'/uploads/Large_'.$group[0]->banner;?>') no-repeat center center; background-size: cover;">
 			
 				<div class="caption">
-					<p>from {{ getAuthorname($group[0]->owner) }}</p>
+					<p class="cat">{{ $group[0]->category }}</p>
 					<h1>{{ $group[0]->name }}</h1>
-				</div>
-				<div id="hblikebar">
-					<span class="cat">{{ $group[0]->category }}</span>
 				</div>
 			
 			</div>
