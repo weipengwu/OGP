@@ -37,10 +37,18 @@
 				<p>Category: {{ $event->group->category }}</p>
 				<hr>
 					<div class="eventinfo">
-						<?php if(date('M j',$event->fromtime) == date('M j',$event->totime)) : ?>
-							{{ date('D, M j',$event->fromtime) }} @ {{ date('g : i a',$event->fromtime) }} - {{ date('g : i a' ,$event->totime) }}
+						<?php 
+							$fromtime = new DateTime(date('Y-m-d',$event->fromtime), new DateTimeZone($event->timezone));
+							$totime = new DateTime(date('Y-m-d',$event->totime), new DateTimeZone($event->timezone));
+							var_dump($fromtime);
+							var_dump($fromtime->format('M j'));
+							if($fromtime->format('M j') == $totime->format('M j')):
+						//if(date('M j',$event->fromtime) == date('M j',$event->totime)) : 
+						?>
+							{{ $fromtime->format('D, M j') }} @ {{ $fromtime->format('g : i a') }} - {{ $totime->format('g : i a') }}
+							
 						<?php else: ?>
-							{{ date('D, M j',$event->fromtime) }} @ {{ date('g : i a',$event->fromtime) }} - {{ date('D, M j',$event->totime) }} @ {{ date('g : i a' ,$event->totime) }}
+							{{ $fromtime->format('D, M j') }} @ {{ $fromtime->format('g : i a') }} - {{ $totime->format('D, M j') }} @ {{ $totime->format('g : i a') }} 
 						<?php endif; ?>
 					</div>
 					<div class="eventinfo">@if($event->suitenum !== '') {{ $event->suitenum }}, {{ $event->address }} @else  {{ $event->address }} @endif</div>

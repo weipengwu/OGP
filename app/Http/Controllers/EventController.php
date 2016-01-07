@@ -207,6 +207,7 @@ class EventController extends Controller {
 			$event->type = Request::input('type');
 			$event->title = Request::input('title');
 			$timezone = Request::input('timezone');
+			$event->timezone = $timezone;
 			$fromtime = Request::input('fromtime');
 			$unixfromtime = strtotime($fromtime.' '.$timezone);
 			$event->fromtime = $unixfromtime;
