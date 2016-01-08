@@ -155,11 +155,11 @@
 											<p class="event-info">
 												<img src="{{ asset('img/calendar_icon.png') }}" width="14" class="edicons"> 
 												<?php 
-													if(gmdate('M j',$event->fromtime) == gmdate('M j',$event->totime)) : 
+													if(date('M j',$event->fromtime) == date('M j',$event->totime)) : 
 												?>
-												{{ gmdate('D, M j',$event->fromtime) }}
+												{{ date('D, M j',$event->fromtime) }}
 												<?php else: ?>
-												{{ gmdate('M j',$event->fromtime) }} - {{ gmdate('M j',$event->totime) }}
+												{{ date('M j',$event->fromtime) }} - {{ date('M j',$event->totime) }}
 
 												<?php endif; ?>
 											</p>
