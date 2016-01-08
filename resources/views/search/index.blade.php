@@ -36,10 +36,9 @@
 							</div>
 						@endforeach
 
-						<div>
+						<!-- <div>
 							No results found.
-						</div>
-					@endif
+						</div> -->
 				</div>
 			</div>
 		</div>
