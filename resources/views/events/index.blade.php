@@ -36,6 +36,13 @@
 							<option value="nextweek" <?php if(isset($_GET['time']) && $time == 'nextweek') echo "selected";?>>Next week</option>
 						</select>
 					</form>
+					<?php
+						$nextmondytime = strtotime('next Monday');
+				$nextsudaytime = strtotime('next Sunday');
+				echo "<pre>";
+				var_dump($nextmondytime);
+				var_dump($nextsudaytime);
+					?>
 				</div>
 
 				<div class="event-body">
@@ -67,6 +74,7 @@
 											<p class="event-info">
 												<img src="{{ asset('img/calendar_icon.png') }}" width="16" class="edicons"> 
 												<?php 
+												date_default_timezone_set($event->timezone);
 													if(date('M j',$event->fromtime) == date('M j',$event->totime)) : 
 												?>
 												{{ date('D, M j',$event->fromtime) }} @ {{ date('g : i a',$event->fromtime) }} - {{ date('g : i a' ,$event->totime) }}
