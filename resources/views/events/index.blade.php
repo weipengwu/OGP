@@ -87,7 +87,16 @@
 										</div>
 
 										<div class="interested">
-											<div class="interestcount"><img src="{{ asset('img/likes_icon.png') }}" width="15"> {{ $event->likes->count() }}</div>
+											@if(Auth::check())
+												@if(alreadyLikedEvent(Auth::user()->id,$event->id) > 0)
+													<span><a href="" data-toggle="tooltip" title="Not interested" data-event-id="{{ $event->id }}" data-author-id="{{ Auth::user()->id }}" class="like_btn event_unlike"><img src="{{ asset('img/already_likes_icon.png') }}" width="16"></a></span>
+												@else
+													<span><a href="" data-toggle="tooltip" title="Interested" data-event-id="{{ $event->id }}" data-author-id="{{ Auth::user()->id }}" class="like_btn event_like"><img src="{{ asset('img/likes_icon.png') }}" width="16"></a></span>
+												@endif
+													<span class="likenum">{{ $event->likes->count()}}</span>
+											@else
+											<div class="interestcount"><img src="{{ asset('img/likes_icon.png') }}" width="16"> {{ $event->likes->count() }}</div>
+											@endif
 										</div>
 										<div class="postfrom">
 											From: <a href="/brands/{{ ($event->group->slug) }}">{{ ($event->group->name) }}</a>
