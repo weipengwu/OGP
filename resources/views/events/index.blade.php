@@ -36,14 +36,6 @@
 							<option value="nextweek" <?php if(isset($_GET['time']) && $time == 'nextweek') echo "selected";?>>Next week</option>
 						</select>
 					</form>
-					<?php
-						$nextmondytime = strtotime('next Monday');
-				$nextsudaytime = strtotime('next next Sunday');
-				echo "<pre>";
-				var_dump($nextmondytime);
-				var_dump($nextsudaytime);
-				var_dump(strtotime('+1 week'));
-					?>
 				</div>
 
 				<div class="event-body">

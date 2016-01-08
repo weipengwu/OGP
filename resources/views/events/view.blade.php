@@ -5,6 +5,7 @@
 <div class="eventbanner" style="background: #ccc url('<?php echo url()."/uploads/Large_".$event->banner;?>') center center no-repeat; background-size: cover;)">
 
 </div>
+</div>
 <div class="statusbar">
 			<div class="left">
 				<span class="leftlikenum">{{ $event->likes->count()}} Interested</span> 
@@ -28,7 +29,6 @@
 			</div>
 		</div>
 	</div>
-</div>
 <section class="eventdetails">
 	<div class="container">
 		<div class="row">
@@ -171,12 +171,21 @@
       google.maps.event.addDomListener(window, 'load', initialize);
 
      $(window).scroll(function(){
-		if($(this).scrollTop() > 255){
-			$('.ebannerwrapper').addClass('locked');
-			$('.ebannerwrapper').next().css('margin-top', '285px');
+		// if($(this).scrollTop() > 205){
+		// 	$('.ebannerwrapper').addClass('locked');
+		// 	$('.ebannerwrapper').next().css('margin-top', '325px');
+		// }else{
+		// 	$('.ebannerwrapper').removeClass('locked');
+		// 	$('.ebannerwrapper').next().css('margin-top', '0');
+		// }
+		if($(this).scrollTop() > 205){
+			$('.navbar-default').addClass('whitebg');
+			$('.statusbar').addClass('locked');
+			$('.ebannerwrapper').next().next().css({'margin-top':'55px'});
 		}else{
-			$('.ebannerwrapper').removeClass('locked');
-			$('.ebannerwrapper').next().css('margin-top', '0');
+			$('.navbar-default').removeClass('whitebg');
+			$('.statusbar').removeClass('locked');
+			$('.ebannerwrapper').next().next().css({'margin-top':'0'});
 		}
 	})
     </script>
