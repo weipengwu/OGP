@@ -37,8 +37,10 @@
 				<p>Category: {{ $event->group->category }}</p>
 				<hr>
 					<div class="eventinfo">
+						<p>Timezone: {{ $event->timezone }}</p>
 						<?php 
 						date_default_timezone_set($event->timezone);
+
 						if(date('M j',$event->fromtime) == date('M j',$event->totime)) : 
 						?>
 					{{ date('D, M j',$event->fromtime) }} @ {{ date('g : i a',$event->fromtime) }} - {{ date('g : i a',$event->totime) }}
