@@ -18,7 +18,8 @@
 								<p>{{ getExcerpt($group['description']) }}</p>
 							</div>
 						@endforeach
-					@elseif (count($posts) > 0)
+					@endif
+					@if (count($posts) > 0)
 						<h3>Posts</h3>
 						@foreach ($posts as $post)
 							<div class="singlepost">
@@ -26,7 +27,8 @@
 								<p>{{ getExcerpt($post['content']) }}</p>
 							</div>
 						@endforeach
-					@elseif (count($events) > 0)
+					@endif
+					@if (count($events) > 0)
 						<h3>Events</h3>
 						@foreach ($events as $event)
 							<div class="singlepost">
@@ -34,7 +36,8 @@
 								<p>{{ getExcerpt($event['content']) }}</p>
 							</div>
 						@endforeach
-					@else
+					@endif
+					@if (count($groups) == 0 && count($events) == 0 && count($events) == 0 )
 						<div>
 							No results found.
 						</div>
