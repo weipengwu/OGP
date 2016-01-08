@@ -10,8 +10,8 @@
 					<h1>SEACH RESULTS</h1>
 				</div>
 				<div class="panel-body">
-				<?php echo "<pre>"; var_dump($posts);?>
-					@if (count($groups) > 0)
+				<?php echo "<pre>"; var_dump($groups);echo "</pre>";?>
+
 						<h2>Brands:</h2>
 						@foreach ($groups as $group)
 							<div class="singlepost">
@@ -19,7 +19,7 @@
 								<p>{{ getExcerpt($group->description) }}</p>
 							</div>
 						@endforeach
-					@elseif (count($posts) > 0)
+	
 						<h2>Posts:</h2>
 						@foreach ($posts as $post)
 							<div class="singlepost">
@@ -27,7 +27,7 @@
 								<p>{{ getExcerpt($post->content) }}</p>
 							</div>
 						@endforeach
-					@elseif (count($events) > 0)
+	
 						<h2>Events:</h2>
 						@foreach ($events as $event)
 							<div class="singlepost">
@@ -35,7 +35,7 @@
 								<p>{{ getExcerpt($event->content) }}</p>
 							</div>
 						@endforeach
-					@else
+
 						<div>
 							No results found.
 						</div>

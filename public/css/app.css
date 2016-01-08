@@ -7625,7 +7625,8 @@ h3 a:hover{
     text-align: center;
   }
   .single-post .panel-body{
-    width: 750px;
+    max-width: 750px;
+    width: 100%;
     padding: 15px 0;
     margin: 0 auto;
   }
