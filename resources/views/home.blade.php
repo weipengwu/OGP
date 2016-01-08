@@ -155,6 +155,7 @@
 											<p class="event-info">
 												<img src="{{ asset('img/calendar_icon.png') }}" width="14" class="edicons"> 
 												<?php 
+													date_default_timezone_set($event->timezone);
 													if(date('M j',$event->fromtime) == date('M j',$event->totime)) : 
 												?>
 												{{ date('D, M j',$event->fromtime) }}
@@ -172,6 +173,7 @@
 				<div class="viewmore"><a href="/events">VIEW MORE</a></div>
 				<div class="row-gap"></div>
 				<div class="divider"></div>
+				<?php date_default_timezone_set(Config::get('app.timezone'));?>
 			</section>
 			@if(count($posts) > 0)
 			<section class="container posts">
