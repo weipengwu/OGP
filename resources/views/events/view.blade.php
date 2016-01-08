@@ -47,11 +47,9 @@
 						if(date('M j',$event->fromtime) == date('M j',$event->totime)) : 
 						?>
 					{{ date('D, M j',$event->fromtime) }} @ {{ date('g : i a',$event->fromtime) }} - {{ date('g : i a',$event->totime) }}
-							<!--{{ $fromtime->format('D, M j') }} @ {{ $fromtime->format('g : i a') }} - {{ $totime->format('g : i a') }}-->
 							
 						<?php else: ?>
 							{{ date('D, M j',$event->fromtime) }} @ {{ date('g : i a',$event->fromtime) }} - {{ date('D, M j',$event->totime) }} @ {{ date('g : i a',$event->totime) }}
-							<!--{{ $fromtime->format('D, M j') }} @ {{ $fromtime->format('g : i a') }} - {{ $totime->format('D, M j') }} @ {{ $totime->format('g : i a') }} -->
 						<?php endif; ?>
 					</div>
 					<div class="eventinfo">@if($event->suitenum !== '') {{ $event->suitenum }}, {{ $event->address }} @else  {{ $event->address }} @endif</div>
