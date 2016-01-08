@@ -38,10 +38,11 @@
 					</form>
 					<?php
 						$nextmondytime = strtotime('next Monday');
-				$nextsudaytime = strtotime('next Sunday');
+				$nextsudaytime = strtotime('next next Sunday');
 				echo "<pre>";
 				var_dump($nextmondytime);
 				var_dump($nextsudaytime);
+				var_dump(strtotime('+1 week'));
 					?>
 				</div>
 

@@ -52,7 +52,11 @@ class EventController extends Controller {
 			if(isset($_GET['time'])){
 				$time = $_GET['time'];
 				$nextmondytime = strtotime('next Monday');
-				$nextsudaytime = strtotime('next Sunday');
+				if(date('l') == 'Sunday'){
+					$nextsudaytime = strtotime('next Sunday');
+				}else{
+					$nextsudaytime = strtotime('+1 week');
+				}
 				if ($time == 'nextweek'){
 					return view('events.index')->with('events', Event::where('fromtime', '>', $nextmondytime)->where('fromtime', '<', $nextsudaytime)->orderBy('created_at', 'DESC')->get());
 				}else{
