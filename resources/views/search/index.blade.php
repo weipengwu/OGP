@@ -10,6 +10,9 @@
 					<h1>SEACH RESULTS</h1>
 				</div>
 				<div class="panel-body">
+				<?php var_dump($posts);
+				var_dump($groups);
+				var_dump($events);?>
 					@if (count($groups) > 0)
 						<h2>Brands:</h2>
 						@foreach ($groups as $group)

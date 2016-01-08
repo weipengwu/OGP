@@ -45,7 +45,7 @@
 					<section id="comments">
 						@foreach ($post->comments as $comment)
 							<div class="comment row">
-								<div class="col-md-1">
+								<div class="col-md-1 col-sm-2 col-xs-2">
 									<?php 
 										$user_profile = DB::table('user_meta')->where('user_id', $comment->author)->where('meta_key', 'profile')->get();
 										if(count($user_profile) > 0):
@@ -57,7 +57,7 @@
 										<div class="top-profile">{{ getFirstCharter(getAuthorname($comment->author)) }}</div>
 									<?php endif;?>
 								</div>
-								<div class="col-md-11">
+								<div class="col-md-11 col-sm-10 col-xs-10">
 									<p class="commentauthor"><strong>{{ getAuthorname($comment->author) }}</strong>&nbsp;&nbsp;<span class="ago-bullet">•</span>&nbsp;&nbsp;{{ $comment->created_at->diffForHumans() }}</p> 
 									<p>{!! html_entity_decode($comment->content) !!}</p>
 								</div>

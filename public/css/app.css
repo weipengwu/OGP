@@ -7608,9 +7608,9 @@ h3 a:hover{
     padding: 20px 0;
     text-align: center;
   }
-  .groupinfo span, .authorinfo span{
+  /*.groupinfo span, .authorinfo span{
     margin-right: 15px;
-  }
+  }*/
   .groupinfo a{
     text-decoration: underline;
     text-transform: uppercase;
@@ -7810,6 +7810,7 @@ label.error{
   height: 50px;
   line-height: 50px;
   font-size: 18px;
+  margin-top: 5px;
 }
 .center{
   text-align: center;
@@ -8102,5 +8103,11 @@ label.error{
   .eventgallery{
     width: 100%;
   }
+  #comments .comment .top-profile {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+}
 
 }
