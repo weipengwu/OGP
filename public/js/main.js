@@ -18,7 +18,7 @@ $(document).ready(function(){
 			that.addClass('event_unlike');
 			that.html('<img src="../img/already_likes_icon.png" width="16">');
 			$('.leftlikenum').html(response+' Interested');
-			$('.likenum').html(response);
+			that.parent().next().html(response);
 		})
 	})
 	$('body').on('click', '.event_unlike', function(e){
@@ -38,7 +38,7 @@ $(document).ready(function(){
 			that.addClass('event_like');
 			that.html('<img src="../img/likes_icon.png" width="16">');
 			$('.leftlikenum').html(response+' Interested');
-			$('.likenum').html(response);
+			that.parent().next().html(response);
 		})
 	})
 	$('body').on('click', '.post_like', function(e){
