@@ -37,7 +37,6 @@
 				<p>Category: {{ $event->group->category }}</p>
 				<hr>
 					<div class="eventinfo">
-						<p>Timezone: {{ $event->timezone }}</p>
 						<?php 
 						date_default_timezone_set($event->timezone);
 
