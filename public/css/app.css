@@ -7976,6 +7976,9 @@ label.error{
   .grouplist .bannerholder{
     height: 175px;
   }
+  .home .grouplist .bannerholder{
+    height: 175px !important;
+  }
   .grouplist .caption h3{
     width: 160px;
     margin-top: 60px;
