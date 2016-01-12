@@ -48,7 +48,7 @@
 				</div>
 				<div class="divider"></div>
 				<h2 class="sectiontitle">ARTS & DESIGN</h2>
-				<div class="row grouprow collaps">
+				<div class="row groupsrow collaps">
 					<?php $i = 1;?>
 					@foreach ($artsgroups as $group)
 						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
@@ -69,7 +69,7 @@
 				<div class="divider"></div>
 				@if (count($autogroups) > 0)
 				<h2 class="sectiontitle">AUTOS</h2>
-				<div class="row grouprow collaps">
+				<div class="row groupsrow collaps">
 					<?php $i = 1;?>
 					@foreach ($autogroups as $group)
 						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
@@ -92,7 +92,7 @@
 
 				@if (count($businessgroups) > 0)
 				<h2 class="sectiontitle">BUSINESS</h2>
-				<div class="row grouprow collaps">
+				<div class="row groupsrow collaps">
 					<?php $i = 1;?>
 					@foreach ($businessgroups as $group)
 						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
@@ -115,7 +115,7 @@
 
 				@if (count($educationgroups) > 0)
 				<h2 class="sectiontitle">EDUCATION</h2>
-				<div class="row grouprow collaps">
+				<div class="row groupsrow collaps">
 					<?php $i = 1;?>
 					@foreach ($educationgroups as $group)
 						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
@@ -138,7 +138,7 @@
 
 				@if (count($fashiongroups) > 0)
 				<h2 class="sectiontitle">FASHION</h2>
-				<div class="row grouprow collaps">
+				<div class="row groupsrow collaps">
 					<?php $i = 1;?>
 					@foreach ($fashiongroups as $group)
 						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
@@ -161,7 +161,7 @@
 
 				@if (count($foodgroups) > 0)
 				<h2 class="sectiontitle">FOOD & DRINK</h2>
-				<div class="row grouprow collaps">
+				<div class="row groupsrow collaps">
 					<?php $i = 1;?>
 					@foreach ($foodgroups as $group)
 						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
@@ -184,7 +184,7 @@
 
 				@if (count($gamesgroups) > 0)
 				<h2 class="sectiontitle">GAMING</h2>
-				<div class="row grouprow collaps">
+				<div class="row groupsrow collaps">
 					<?php $i = 1;?>
 					@foreach ($gamesgroups as $group)
 						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
@@ -207,7 +207,7 @@
 
 				@if (count($healthgroups) > 0)
 				<h2 class="sectiontitle">HEALTH</h2>
-				<div class="row grouprow collaps">
+				<div class="row groupsrow collaps">
 					<?php $i = 1;?>
 					@foreach ($healthgroups as $group)
 						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
@@ -230,7 +230,7 @@
 
 				@if (count($homegroups) > 0)
 				<h2 class="sectiontitle">HOME</h2>
-				<div class="row grouprow collaps">
+				<div class="row groupsrow collaps">
 					<?php $i = 1;?>
 					@foreach ($homegroups as $group)
 						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
@@ -253,7 +253,7 @@
 
 				@if (count($musicgroups) > 0)
 				<h2 class="sectiontitle">MUSIC & PERFORMANCE</h2>
-				<div class="row grouprow collaps">
+				<div class="row groupsrow collaps">
 					<?php $i = 1;?>
 					@foreach ($musicgroups as $group)
 						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
@@ -276,7 +276,7 @@
 
 				@if (count($sportsgroups) > 0)
 				<h2 class="sectiontitle">SPORTS</h2>
-				<div class="row grouprow collaps">
+				<div class="row groupsrow collaps">
 					<?php $i = 1;?>
 					@foreach ($sportsgroups as $group)
 						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
@@ -299,7 +299,7 @@
 
 				@if (count($technologygroups) > 0)
 				<h2 class="sectiontitle">TECHNOLOGY & SCIENCE</h2>
-				<div class="row grouprow collaps">
+				<div class="row groupsrow collaps">
 					<?php $i = 1;?>
 					@foreach ($technologygroups as $group)
 						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
@@ -322,7 +322,7 @@
 
 				@if (count($travelgroups) > 0)
 				<h2 class="sectiontitle">TRAVEL</h2>
-				<div class="row grouprow collaps">
+				<div class="row groupsrow collaps">
 					<?php $i = 1;?>
 					@foreach ($travelgroups as $group)
 						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
@@ -345,7 +345,7 @@
 
 				@if (count($othergroups) > 0)
 				<h2 class="sectiontitle">OTHER</h2>
-				<div class="row grouprow collaps">
+				<div class="row groupsrow collaps">
 					<?php $i = 1;?>
 					@foreach ($othergroups as $group)
 						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">

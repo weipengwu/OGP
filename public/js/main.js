@@ -477,13 +477,13 @@ $(document).ready(function(){
 
 	$('.brandsshowall a').on('click', function(e){
 		e.preventDefault();
-		if($(this).prev().hasClass('collapsed')){
-			$(this).prev().removeClass('collapsed');
-			$(this).prev().addClass('expanded');
+		if($(this).parent().prev().hasClass('collapsed')){
+			$(this).parent().prev().removeClass('collapsed');
+			$(this).parent().prev().addClass('expanded');
 			$(this).html('COLLAPSE ALL');
 		}else{
-			$(this).prev().removeClass('expanded');
-			$(this).prev().addClass('collapsed');
+			$(this).parent().prev().removeClass('expanded');
+			$(this).parent().prev().addClass('collapsed');
 			$(this).html('SHOW ALL');
 		}
 	})
