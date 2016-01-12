@@ -8098,6 +8098,9 @@ label.error{
   .grouplist .bannerholder{
     height: 300px;
   }
+  .home .grouplist .bannerholder {
+    height: 300px !important;
+}
   .grouplist .caption h3{
     width: 220px;
     margin-top: 120px;
