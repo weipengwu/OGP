@@ -227,7 +227,7 @@
 			</div>
 			</section>
 			@endif
-			@if(joinedGroupCount(Auth::user()->id) > 0)
+			@if(count(followedGroup(Auth::user()->id)) > 0)
 			<section class="container">
 				<div class="joinedgroups">
 					<h3>FOLLOWING</h3>

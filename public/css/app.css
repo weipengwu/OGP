@@ -7037,26 +7037,26 @@ h3 a:hover{
 .joinedgroups h3{
   font-weight: bold;
 }
-.joinedgroups .groupsrow{
+.groupsrow{
   margin-top: 25px;
 }
-.joinedgroups .groupsrow:after{
+.groupsrow:after{
   clear: both;
   content: "";
   display: table;
 }
-.joinedgroups .groupsrow.collapsed{
+.groupsrow.collapsed{
   height: 305px;
   overflow: hidden;
 }
-.joinedgroups .groupsrow.expanded{
+.groupsrow.expanded{
   height: auto;
   overflow: auto;
 }
-.showall{
+.showall, .brandsshowall{
   margin: 20px 0;
 }
-.showall a{
+.showall a, .brandsshowall a{
   color: #777;
   font-size: 12px;
   text-decoration: underline;
