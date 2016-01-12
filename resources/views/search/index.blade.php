@@ -21,7 +21,7 @@
 									
 									<div class="caption">
 										<h3>{{ $group->name }}</h3>
-										<p><!-- <span class="membercount"><img src="{{ asset('img/member_icon_white.png') }}" width="14"> {{ memberCount($group->id) }}</span> --><span class="followcount"><img src="{{ asset('img/follow_icon_white.png') }}" width="20"> {{ count(groupFollowers($group->id)) }}</span></p>
+										<p><span class="followcount"><img src="{{ asset('img/follow_icon_white.png') }}" width="20"> {{ count(groupFollowers($group->id)) }}</span></p>
 									</div>
 									</a>
 								</div>
@@ -34,9 +34,7 @@
 					@endif
 					@if (count($posts) > 0)
 						<h3>Posts</h3>
-						@foreach ($posts as $post)
-							<section class="groupsrow collapsed">
-								<div class="row singlegroup layout3333">
+							<section class="layout3333 groupsrow collapsed">
 									<?php $j = 1;?>
 										@foreach ($posts as $post)
 											<div class="col-md-3<?php if(is_int($j/4)) echo " last";?>">
@@ -80,13 +78,10 @@
 													</div>
 											</div>
 										@endforeach
-										<div class="row-gap"></div>
-								</div>
 								</section>
 								@if (count($posts) > 4 )
 								<div class="brandsshowall"><a href="">SHOW ALL</a></div>
 								@endif
-						@endforeach
 					@endif
 					@if (count($events) > 0)
 						<h3>Events</h3>
@@ -109,9 +104,7 @@
 										<a href="events/{{ $event->id }}">
 										<div class="imgholder" style="background: #666 url('<?php echo url()."/uploads/Medium_".$event->banner;?>') center center; background-size: cover;">
 										</div>
-										</a>
-										<!-- <div style="clear:both; height:4px; background-color: #fc6c25"></div> -->
-										
+										</a>										
 										<p class="location">{{ $event->city }}</p>
 										<h3><a href="events/{{ $event->id }}">{{ $event->title }}</a></h3>
 										
@@ -159,7 +152,7 @@
 						<?php $i++;?>
 						@endforeach
 						</div>
-							@if (count($posts) > 4 )
+							@if (count($events) > 4 )
 								<div class="brandsshowall"><a href="">SHOW ALL</a></div>
 							@endif
 					@endif
