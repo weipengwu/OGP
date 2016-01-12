@@ -240,12 +240,13 @@
 						//$groups_id = array();
 						foreach ($groups as $group) :
 					?>
-						<div class="grouplist<?php if(is_int($f/4)) echo " last";?>">
-							<a href="brands/{{ $group->slug }}">
-							<div class="bannerholder" style="background: #ccc url('{{$group->profile}}') no-repeat center center;background-size:cover"></div>
+						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
+						<a href="brands/{{ $group->slug }}">
+							<div class="bannerholder" style="background: url('<?php echo url()."/uploads/Medium_".$group->profile;?>');background-size:cover"></div>
+							
 							<div class="caption">
 								<h3>{{ $group->name }}</h3>
-								<p>{{ memberCount($group->id) }} Members</p>
+								<p><!-- <span class="membercount"><img src="{{ asset('img/member_icon_white.png') }}" width="14"> {{ memberCount($group->id) }}</span> --><span class="followcount"><img src="{{ asset('img/follow_icon_white.png') }}" width="20"> {{ count(groupFollowers($group->id)) }}</span></p>
 							</div>
 							</a>
 						</div>

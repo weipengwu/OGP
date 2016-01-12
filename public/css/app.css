@@ -7903,6 +7903,9 @@ label.error{
     width: 200px;
     margin-top: 90px;
   }
+  .groupsrow.collapsed{
+    height: 252px;
+  }
   #followedbrand .grouplist .bannerholder{
     height: 181px;
   }
@@ -7966,6 +7969,9 @@ label.error{
   }
   .singlegroup .bottom{
     bottom: 20px;
+  }
+  .groupsrow.collapsed{
+    height: 200px;
   }
   .grouplist .bannerholder{
     height: 175px;
@@ -8071,6 +8077,13 @@ label.error{
 .navbar-collapse .navbar-nav > li > a{
   text-align: center;
 }
+.groupsrow.collapsed{
+    height: auto;
+    overflow: auto;
+  }
+  .brandsshowall, .showall{
+    display: none;
+  }
   .grouplist{
     width: 300px;
     margin: 0 auto 25px auto;
