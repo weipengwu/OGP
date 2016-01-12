@@ -27,7 +27,7 @@ class DashboardController extends Controller {
 		return view('dashboard.index');
 	}
 
-	public function createProfile()
+	public function updateProfile()
 	{
 		$id = Request::input('user');
 		$user = User::findOrFail($id);
@@ -38,7 +38,7 @@ class DashboardController extends Controller {
 				$profile = Usermeta::find($meta_id);
 				
 				$file = array('u-profile' => Request::file('u-profile'));
-				$rules = array('u-profile' => 'required|image');
+				$rules = array('u-profile' => 'required|image|max:4096');
 				$validator = Validator::make($file, $rules);
 				if ($validator->fails()){
 					return redirect()->back()->withErrors($validator);
@@ -59,7 +59,7 @@ class DashboardController extends Controller {
 				$profile = new Usermeta();
 				$profile->user_id = $id;
 					$file = array('u-profile' => Request::file('u-profile'));
-					$rules = array('u-profile' => 'required|image');
+					$rules = array('u-profile' => 'required|image|max:4096');
 					$validator = Validator::make($file, $rules);
 					if ($validator->fails()){
 						return redirect()->back()->withErrors($validator);

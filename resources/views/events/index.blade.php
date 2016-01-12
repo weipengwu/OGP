@@ -12,18 +12,18 @@
 					<form>
 						<select id="category" class="form-control">
 								<option value="">All Categories</option>
-								<option value="Arts & Design" <?php if(isset($_GET['category']) && $cat == 'Arts & Design') echo "selected";?>>Arts & Design</option>
+								<option value="{{ urlencode('Arts & Design') }}" <?php if(isset($_GET['category']) && $cat == 'Arts & Design') echo "selected";?>>Arts &amp; Design</option>
 								<option value="Autos" <?php if(isset($_GET['category']) && $cat == 'Autos') echo "selected";?>>Autos</option>
 								<option value="Business" <?php if(isset($_GET['category']) && $cat == 'Business') echo "selected";?>>Business</option>
 								<option value="Education" <?php if(isset($_GET['category']) && $cat == 'Education') echo "selected";?>>Education</option>
 								<option value="Fashion" <?php if(isset($_GET['category']) && $cat == 'Fashion') echo "selected";?>>Fashion</option>
-								<option value="Food & Drink" <?php if(isset($_GET['category']) && $cat == 'Food & Drink') echo "selected";?>>Food & Drink</option>
+								<option value="{{ urlencode('Food & Drink') }}" <?php if(isset($_GET['category']) && $cat == 'Food & Drink') echo "selected";?>>Food &amp; Drink</option>
 								<option value="Gaming" <?php if(isset($_GET['category']) && $cat == 'Gaming') echo "selected";?>>Gaming</option>
 								<option value="Health" <?php if(isset($_GET['category']) && $cat == 'Health') echo "selected";?>>Health</option>
 								<option value="Home" <?php if(isset($_GET['category']) && $cat == 'Home') echo "selected";?>>Home</option>
-								<option value="Music & Performance" <?php if(isset($_GET['category']) && $cat == 'Music & Performance') echo "selected";?>>Music & Performance</option>
+								<option value="{{ urlencode('Music & Performance') }}" <?php if(isset($_GET['category']) && $cat == 'Music & Performance') echo "selected";?>>Music &amp; Performance</option>
 								<option value="Sports" <?php if(isset($_GET['category']) && $cat == 'Sports') echo "selected";?>>Sports</option>
-								<option value="Technology & Science" <?php if(isset($_GET['category']) && $cat == 'Technology & Science') echo "selected";?>>Technology & Science</option>
+								<option value="{{ urlencode('Technology & Science') }}" <?php if(isset($_GET['category']) && $cat == 'Technology & Science') echo "selected";?>>Technology &amp; Science</option>
 								<option value="Travel" <?php if(isset($_GET['category']) && $cat == 'Travel') echo "selected";?>>Travel</option>
 								<option value="Other" <?php if(isset($_GET['category']) && $cat == 'Other') echo "selected";?>>Other</option>
 						</select>
@@ -41,6 +41,17 @@
 				<div class="event-body">
 					<?php $i = 1; $length = count($events);?>
 					@foreach ($events as $event)
+						<?php
+							if(Auth::check()){
+								if ( $event->type == 'private' && (isFollowing(Auth::user()->id, $event->group_id ) == 0 && $event->author !== Auth::user()->id) ){
+									continue;
+								}
+							}else{
+								if($event->type == 'private'){
+									continue;
+								}
+							}
+						?>
 						<div class="eventgroup<?php if(is_int($i/3)) { echo " last"; }?>">
 							<div class="eventgroup-list">
 										<a href="events/{{ $event->id }}">
@@ -56,6 +67,7 @@
 											<p class="event-info">
 												<img src="{{ asset('img/calendar_icon.png') }}" width="16" class="edicons"> 
 												<?php 
+												date_default_timezone_set($event->timezone);
 													if(date('M j',$event->fromtime) == date('M j',$event->totime)) : 
 												?>
 												{{ date('D, M j',$event->fromtime) }} @ {{ date('g : i a',$event->fromtime) }} - {{ date('g : i a' ,$event->totime) }}
@@ -69,16 +81,26 @@
 											@if($event->fee == 'Free') 
 												{{ $event->fee }}
 											@else
-												C ${{ $event->fee }}
+												@if($event->currency == 'cad'){{ 'C$' }}@elseif($event->currency == 'usd'){{ '$' }}@elseif($event->currency == 'cny'){{ '¥' }}@elseif($event->currency == 'eur'){{ '€' }}@endif{{ $event->fee }}
 											@endif
 											</p>
 										</div>
 
 										<div class="interested">
-											<div class="interestcount"><img src="{{ asset('img/likes_icon.png') }}" width="15"> {{ $event->likes->count() }}</div>
+											@if(Auth::check())
+												<div class="interestcount">
+												@if(alreadyLikedEvent(Auth::user()->id,$event->id) > 0)
+													<span><a href="" data-toggle="tooltip" title="Not interested" data-event-id="{{ $event->id }}" data-author-id="{{ Auth::user()->id }}" class="like_btn event_unlike"><img src="{{ asset('img/already_likes_icon.png') }}" width="16"></a></span>
+												@else
+													<span><a href="" data-toggle="tooltip" title="Interested" data-event-id="{{ $event->id }}" data-author-id="{{ Auth::user()->id }}" class="like_btn event_like"><img src="{{ asset('img/likes_icon.png') }}" width="16"></a></span>
+												@endif
+													<span class="likenum">{{ $event->likes->count()}}</span></div>
+											@else
+											<div class="interestcount"><img src="{{ asset('img/likes_icon.png') }}" width="16"> {{ $event->likes->count() }}</div>
+											@endif
 										</div>
 										<div class="postfrom">
-											From: <a href="/groups/{{ ($event->group->slug) }}">{{ ($event->group->name) }}</a>
+											From: <a href="/brands/{{ ($event->group->slug) }}">{{ ($event->group->name) }}</a>
 										</div>
 							</div>
 						</div>

@@ -5,6 +5,7 @@
 <div class="eventbanner" style="background: #ccc url('<?php echo url()."/uploads/Large_".$event->banner;?>') center center no-repeat; background-size: cover;)">
 
 </div>
+</div>
 <div class="statusbar">
 			<div class="left">
 				<span class="leftlikenum">{{ $event->likes->count()}} Interested</span> 
@@ -28,7 +29,6 @@
 			</div>
 		</div>
 	</div>
-</div>
 <section class="eventdetails">
 	<div class="container">
 		<div class="row">
@@ -37,10 +37,15 @@
 				<p>Category: {{ $event->group->category }}</p>
 				<hr>
 					<div class="eventinfo">
-						<?php if(date('M j',$event->fromtime) == date('M j',$event->totime)) : ?>
-							{{ date('D, M j',$event->fromtime) }} @ {{ date('g : i a',$event->fromtime) }} - {{ date('g : i a' ,$event->totime) }}
+						<?php 
+						date_default_timezone_set($event->timezone);
+
+						if(date('M j',$event->fromtime) == date('M j',$event->totime)) : 
+						?>
+					{{ date('D, M j',$event->fromtime) }} @ {{ date('g : i a',$event->fromtime) }} - {{ date('g : i a',$event->totime) }}
+							
 						<?php else: ?>
-							{{ date('D, M j',$event->fromtime) }} @ {{ date('g : i a',$event->fromtime) }} - {{ date('D, M j',$event->totime) }} @ {{ date('g : i a' ,$event->totime) }}
+							{{ date('D, M j',$event->fromtime) }} @ {{ date('g : i a',$event->fromtime) }} - {{ date('D, M j',$event->totime) }} @ {{ date('g : i a',$event->totime) }}
 						<?php endif; ?>
 					</div>
 					<div class="eventinfo">@if($event->suitenum !== '') {{ $event->suitenum }}, {{ $event->address }} @else  {{ $event->address }} @endif</div>
@@ -48,7 +53,7 @@
 						@if($event->fee == 'Free') 
 							{{ $event->fee }}
 						@else
-							C ${{ $event->fee }}
+							@if($event->currency == 'cad'){{ 'C$' }}@elseif($event->currency == 'usd'){{ '$' }}@elseif($event->currency == 'cny'){{ '¥' }}@elseif($event->currency == 'eur'){{ '€' }}@endif{{ $event->fee }}
 						@endif
 					</div>
 				</div>
@@ -75,7 +80,7 @@
 <section class="orgnizationsection greybg">
 	<p class="title">Orgnized by</p>
 	<div class="groupprofile" style="background: #666 url('<?php echo url()."/uploads/Small_".getGroupProfile($event->group_id);?>') center center no-repeat; background-size: cover;"></div>
-	<h2><a href="/groups/<?php echo getGroupSlug($event->group_id); ?>">{{ getGroupName($event->group_id) }}</a></h2>
+	<h2><a href="/brands/<?php echo getGroupSlug($event->group_id); ?>">{{ getGroupName($event->group_id) }}</a></h2>
 </section>
 <section class="contentsection">
 	<div class="container">
@@ -84,10 +89,10 @@
 			@if ($event->gallery !== '')
 				<?php $galleries = explode(',', $event->gallery); ?>
 					<div class="eventgallery">
-					<div class="flexslider">
-						<ul class="slides">
+					<div>
+						<ul class="bxslider">
 						@foreach ($galleries as $gallery)
-							<li><img src="<?php echo url().'/uploads/Medium_'.$gallery;?>" class="post-img"></li>
+							<li><img src="<?php echo url().'/uploads/Medium_'.$gallery;?>"></li>
 						@endforeach
 						</ul>
 					</div>
@@ -165,12 +170,21 @@
       google.maps.event.addDomListener(window, 'load', initialize);
 
      $(window).scroll(function(){
-		if($(this).scrollTop() > 255){
-			$('.ebannerwrapper').addClass('locked');
-			$('.ebannerwrapper').next().css('margin-top', '285px');
+		// if($(this).scrollTop() > 205){
+		// 	$('.ebannerwrapper').addClass('locked');
+		// 	$('.ebannerwrapper').next().css('margin-top', '325px');
+		// }else{
+		// 	$('.ebannerwrapper').removeClass('locked');
+		// 	$('.ebannerwrapper').next().css('margin-top', '0');
+		// }
+		if($(this).scrollTop() > 205){
+			$('.navbar-default').addClass('whitebg');
+			$('.statusbar').addClass('locked');
+			$('.ebannerwrapper').next().next().css({'margin-top':'55px'});
 		}else{
-			$('.ebannerwrapper').removeClass('locked');
-			$('.ebannerwrapper').next().css('margin-top', '0');
+			$('.navbar-default').removeClass('whitebg');
+			$('.statusbar').removeClass('locked');
+			$('.ebannerwrapper').next().next().css({'margin-top':'0'});
 		}
 	})
     </script>

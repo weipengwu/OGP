@@ -36,8 +36,8 @@ class WelcomeController extends Controller {
 	 */
 	public function index()
 	{
-		$events = Event::orderBy('created_at', 'DESC')->take(5)->get();
-		$posts = Post::orderBy('created_at', 'DESC')->get();
+		$events = Event::orderBy('created_at', 'DESC')->take(10)->get();
+		$posts = Post::orderBy('created_at', 'DESC')->paginate(18);
 		return view('welcome')->with('events', $events)->with('allposts', $posts);
 	}
 

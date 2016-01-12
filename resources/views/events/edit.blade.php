@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
 	<div class="row">
-		<div class="col-md-8 col-md-offset-2">
+		<div class="fixedarea">
 			<div class="panel">
 				<div class="panel-heading"><h3>EDIT EVENT</h3></div>
 
@@ -30,27 +30,27 @@
 						</div>
 						<div class="form-group row">
 							<div class="col-md-12">Select the type of your event</div>
-							<div class="col-md-6">
+							<div class="col-md-6 col-sm-6 col-xs-6">
 							<span class="radio"><input type="radio" name="type" id="typepublic" value="public" <?php if($event->type == 'public') echo "checked"; ?>/><label for="typepublic">Public(Anyone can see)</label> </span>
 							</div>
-							<div class="col-md-6">
+							<div class="col-md-6 col-sm-6 col-xs-6">
 							<span class="radio"><input type="radio" name="type" id="typeprivate" value="private" <?php if($event->type == 'private') echo "checked"; ?> /> <label for="typeprivate">Private(Only followers can see)</label></span>
 							</div>
 						</div>	
 						<div class="form-group">
-							<input type="text" name="title" class="form-control" placeholder="Event Title" value="{{ $event->title }}">
+							<input type="text" name="title" class="form-control" placeholder="Event Title" maxlength="150" value="{{ $event->title }}">
 						</div>
 						<div class="form-group" style="float:left; margin-right: 2%; width: 49%;">
-			                <label for="dtp_input1" class="col-md-2 control-label">From: </label>
-			                <div class="input-group date form_datetime col-md-10" data-date-format="yyyy-mm-dd HH:ii p" data-link-field="dtp_input1">
+			                <label for="dtp_input1" class="col-md-2 col-sm-2 col-xs-2 control-label">From: </label>
+			                <div class="input-group date form_datetime col-md-10 col-sm-10 col-xs-10" data-date-format="yyyy-mm-dd HH:ii p" data-link-field="dtp_input1">
 			                    <input class="form-control" name="fromtime" type="text" value="{{ gmdate('Y-m-d h:i a', $event->fromtime) }}">
 								<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
 			                </div>
 							<input type="hidden" id="dtp_input1" value="" />
 			            </div>
 			            <div class="form-group" style="float:left; width: 49%;">
-			                <label for="dtp_input2" class="col-md-2 control-label" style="text-align: right">To: </label>
-			                <div class="input-group date form_datetime col-md-10" data-date-format="yyyy-mm-dd HH:ii p" data-link-field="dtp_input2">
+			                <label for="dtp_input2" class="col-md-2 col-sm-2 col-xs-2 control-label" style="text-align: right">To: </label>
+			                <div class="input-group date form_datetime col-md-10 col-sm-10 col-xs-10" data-date-format="yyyy-mm-dd HH:ii p" data-link-field="dtp_input2">
 			                    <input class="form-control" name="totime" type="text" value="{{ gmdate('Y-m-d h:i a', $event->totime) }}">
 								<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
 			                </div>
@@ -58,8 +58,8 @@
 			            </div>
 			     
 			            <div class="form-group" style="float:left; margin-right: 2%; width: 49%;">
-							<label class="col-md-2">Price</label>
-							<div class="col-md-10" style="padding: 0">
+							<label class="col-md-2 col-sm-2 col-xs-2">Price</label>
+							<div class="col-md-10 col-sm-10 col-xs-10" style="padding: 0">
 							<select name="selectprice" id="selectprice" class="form-control">
 								<option value="Free">Free</option>
 								<option value="Paid" <?php if ($event->fee !== 'Free') echo "selected";?>>Paid</option>
@@ -67,14 +67,14 @@
 							</div>
 						</div>
 						<div id="fee" class="form-group" style="float:left; width: 49%;">
-							<div class="col-md-3">
+							<div class="col-md-3 col-sm-3 col-xs-3">
 								<select class="form-control" name="eventcurrency">
 									<option value="cad" @if ($event->currency == 'cad') {{ 'selected' }} @endif >C$</option>
 									<option value="usd" @if ($event->currency == 'usd') {{ 'selected' }} @endif >$</option>
 									<option value="cny" @if ($event->currency == 'cny') {{ 'selected' }} @endif >¥</option>
 									<option value="eur" @if ($event->currency == 'eur') {{ 'selected' }} @endif >€</option>
 								</select>
-							</div> <div class="col-md-9" style="padding: 0"><input type="text" name="fee" class="form-control" placeholder="Event Fee" <?php if ($event->fee !== 'Free') echo "value='".$event->fee."'";?>></div>
+							</div> <div class="col-md-9 col-sm-9 col-xs-9" style="padding: 0"><input type="number" name="fee" class="form-control" placeholder="Event Fee" <?php if ($event->fee !== 'Free') echo "value='".$event->fee."'";?>></div>
 						</div>
 						<!-- <div class="form-group">
 							<input type="number" name="quantity" class="form-control" placeholder="Quantity" min="0" max="1000" value="{{ $event->quantity }}">

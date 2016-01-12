@@ -20,15 +20,17 @@
 
 	<link href="{{ asset('/css/jquery.fancybox.css') }}" rel="stylesheet">
 
-	<link href="{{ asset('/css/flexslider.css') }}" rel="stylesheet">
-
 	<link href="{{ asset('/css/bootstrap-datetimepicker.min.css') }}" rel="stylesheet">
 
 	<link href="{{ asset('/css/bootstrap-switch.min.css') }}" rel="stylesheet">
 
-	<link href="{{ asset('/css/build.css') }}" rel="stylesheet">	
+	<link href="{{ asset('/css/build.css') }}" rel="stylesheet">
+
+	<link href="{{ asset('/css/jquery.bxslider.css') }}" rel="stylesheet">	
 
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+	<script src="{{ asset('/js/jstz.min.js') }}"></script>
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -57,21 +59,21 @@
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><img src="{{ asset('/img/edit_icon.png') }}" alt="English" width="22" /></a>
 							<ul class="dropdown-menu" role="menu">
-								<li><a href="<?php echo url(); ?>/groups/<?php echo $mygroup[0]->slug; ?>/posts/new">Quick Post</a></li>
-								<li><a href="<?php echo url(); ?>/groups/<?php echo $mygroup[0]->slug; ?>/events/new">Quick Event</a></li>
+								<li><a href="<?php echo url(); ?>/brands/<?php echo $mygroup[0]->slug; ?>/posts/new">Quick Post</a></li>
+								<li><a href="<?php echo url(); ?>/brands/<?php echo $mygroup[0]->slug; ?>/events/new">Quick Event</a></li>
 							</ul>
 						</li>
 					@else
 						<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><img src="{{ asset('/img/create_brand_icon.png') }}" alt="Create Brand" width="24" /></a>
 						<ul class="dropdown-menu" role="menu">
-							<li><a href="<?php echo url(); ?>/groups/new">{{ trans('headermenu.createBrand') }}</a></li>
+							<li><a href="<?php echo url(); ?>/brands/new">{{ trans('headermenu.createBrand') }}</a></li>
 						</ul>
 					</li>
 					@endif
 					<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><img src="{{ asset('/img/search.png') }}" alt="Search Icon" width="22" /></a>
-							<ul class="dropdown-menu search-dropdown" role="menu" style="right: -120px;">
+							<ul class="dropdown-menu search-dropdown" role="menu" style="right: -150px;">
 								<li><form id="searchform" action="{{ URL::route('search') }}"><input type="text" name="q" placeholder="Search OGP"></form></li>
 							</ul>
 						</li>
@@ -125,7 +127,7 @@
 					@else
 					<li><a href="{{ url('/home') }}">OGP</a></li>
 					@endif
-					<li><a href="{{ url('/groups') }}">{{ trans('headermenu.brands') }}</a></li>
+					<li><a href="{{ url('/brands') }}">{{ trans('headermenu.brands') }}</a></li>
 					<li><a href="{{ url('/events') }}">{{ trans('headermenu.events') }}</a></li>
 					<!-- <li><a href="{{ url('/missions') }}">MISSIONS</a></li> -->
 				</ul>
@@ -140,15 +142,15 @@
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><img src="{{ asset('/img/edit_icon.png') }}" alt="English" width="22" /></a>
 							<ul class="dropdown-menu" role="menu">
-								<li><a href="<?php echo url(); ?>/groups/<?php echo $mygroup[0]->slug; ?>/posts/new">Quick Post</a></li>
-								<li><a href="<?php echo url(); ?>/groups/<?php echo $mygroup[0]->slug; ?>/events/new">Quick Event</a></li>
+								<li><a href="<?php echo url(); ?>/brands/<?php echo $mygroup[0]->slug; ?>/posts/new">Quick Post</a></li>
+								<li><a href="<?php echo url(); ?>/brands/<?php echo $mygroup[0]->slug; ?>/events/new">Quick Event</a></li>
 							</ul>
 						</li>
 					@else
 						<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><img src="{{ asset('/img/create_brand_icon.png') }}" alt="Create Brand" width="24" /></a>
 						<ul class="dropdown-menu" role="menu">
-							<li><a href="<?php echo url(); ?>/groups/new">{{ trans('headermenu.createBrand') }}</a></li>
+							<li><a href="<?php echo url(); ?>/brands/new">{{ trans('headermenu.createBrand') }}</a></li>
 						</ul>
 					</li>
 					@endif
@@ -210,7 +212,7 @@
 	<script src="{{ asset('/js/bootstrap-datetimepicker.min.js') }}"></script>
 	<script src="{{ asset('/js/bootstrap-switch.min.js') }}"></script>
 	<script src="{{ asset('/js/jquery.fancybox.pack.js') }}"></script>
-	<script src="{{ asset('/js/jquery.flexslider-min.js') }}"></script>
+	<script src="{{ asset('/js/jquery.bxslider.min.js') }}"></script>
 	<!--<script src="{{ asset('/js/validator.min.js') }}"></script>-->
 	<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"></script>
 	<script src="{{ asset('/js/main.js') }}"></script>

@@ -2349,6 +2349,7 @@ output {
   background-color: #ffffff;
   background-image: none;
   border: 1px solid #cccccc;
+  border-radius: 0;
   /*border-radius: 4px;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);*/
   transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
@@ -3927,8 +3928,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-toggle {
   position: relative;
   float: right;
-  margin-right: 15px;
-  padding: 9px 10px;
+  margin-right: 10px;
+  padding: 9px;
   margin-top: 12px;
   margin-bottom: 8px;
   background-color: transparent;
@@ -3983,8 +3984,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     background-image: none;
   }*/
   .navbar-nav > li > a {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding: 20px 12px;
   }
 }
 @media (min-width: 768px) {
@@ -4152,7 +4152,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-  color: #333333;
+  color: #00c2a9;
   background-color: transparent;
 }
 /*.navbar-default .navbar-nav > .active > a,
@@ -6283,6 +6283,9 @@ label,
   border: none;
   color: #fff !important;
 }
+.btn-logo:hover{
+  background: #fab85c;
+}
 .btn-grey:hover{
   background: #fc6c25;
   color: #fff;
@@ -6409,13 +6412,22 @@ label,
 .last{
   border-right: 0 !important;
 }
+.navbar-default.whitebg{
+  background: white;
+}
 .statusbar{
   padding: 15px;
   line-height: 20px;
   background: #fbfbfb;
   border-bottom: 1px solid #e8e8e8;
   color: #777;
+  width: 100%;
+  z-index: 999;
   position: relative;
+}
+.statusbar.locked{
+  position: fixed;
+  top: 63px;
 }
 .statusbar:after{
   clear: both;
@@ -6557,9 +6569,8 @@ label,
 }
 .d-row{
   clear: both;
-  margin-bottom: 20px;
   border-bottom: 1px solid #e8e8e8;
-  padding: 20px;
+  padding: 15px;
 }
 .d-row:after{
   clear: both;
@@ -6767,6 +6778,7 @@ h3 a:hover{
   font-size: 14px;
   padding: 10px 15px;
   margin: 0;
+  height: 40px;
 }
 .eventgroup .eventgroup-list .event-details{
   padding: 0 15px;
@@ -7111,7 +7123,7 @@ h3 a:hover{
   bottom: 50px;
   color: #fff;
 }
-#hblikebar .cat{
+.caption .cat{
   text-transform: uppercase;
   text-decoration: underline;
   color: rgba(255,255,255,.7);
@@ -7147,6 +7159,10 @@ h3 a:hover{
   font-size: 12px;
   color: #999;
   text-transform: uppercase;
+}
+.postfrom > div{
+  height: 17px;
+  overflow: hidden;
 }
 .singlegroup .postfrom a{
  /* color: #34A4D4;*/
@@ -7324,13 +7340,13 @@ h3 a:hover{
 }
 .sharebox .social_icons{
   margin: 0 5px !important;
-  font-size: 14px;
+  font-size: 14px !important;
   width: 30px;
   height: 30px;
   color: #fff !important;
 }
 .login .logoslogan{
-  margin-bottom: 50px;
+  margin-bottom: 20px;
   font-family: 'Righteous', cursive;
 }
 .login .logoslogan img{
@@ -7338,12 +7354,13 @@ h3 a:hover{
   margin: 20px auto 0 auto;
 }
 .login .logoslogan h1{
-  font-size: 24px;
+  font-size: 32px;
   color: #fff;
 }
 .login .logoslogan h2{
   font-size: 14px;
   color: #fff;
+  margin-top: 10px;
   font-family: "Lato", Helvetica, Arial, sans-serif;
 }
 .privacy{
@@ -7381,20 +7398,32 @@ h3 a:hover{
   padding-top: 5px;
 }
 .social_icons.social_tw{
-  background: #65CCEF; 
+  background: #333; 
   color: #fff;
+}
+.social_icons.social_tw:hover{
+  background: #65CCEF; 
 }
 .social_icons.social_fb{
-  background: #507BBE; 
+  background: #333; 
   color: #fff;
+}
+.social_icons.social_fb:hover{
+  background: #507BBE; 
 }
 .social_icons.social_wc{
-  background: #38B449; 
+  background: #333; 
   color: #fff;
 }
+.social_icons.social_wc:hover{
+  background: #38B449; 
+}
 .social_icons.social_wb{
-  background: #ED1C24; 
+  background: #333; 
   color: #fff;
+}
+.social_icons.social_wb:hover{
+  background: #ED1C24;
 }
 /* Required for Down Triangle */
 .sharebox:before, .sharebox:after {
@@ -7438,11 +7467,19 @@ h3 a:hover{
     padding: 10px 15px;
     margin-top: 20px;
   }
+  #login-in:hover{
+    background: rgba(255,255,255,1);
+    color: #777777;
+  }
    #login-up{
     background: rgba(255,255,255,1);
     padding: 10px 15px;
     margin-top: 20px;
     border: 1px solid #fff;
+  }
+  #login-up:hover{
+    background: rgba(255,255,255,.3);
+    color: #fff;
   }
   #loginpageform .form-group{
     margin-bottom: 0;
@@ -7521,8 +7558,18 @@ h3 a:hover{
     color: #fff;
     background-color: #666;
   }
-  .imagezone .form-img2,.imagezone .form-img3,.imagezone .form-img4{
+  .imagezone .form-img2,.imagezone .form-img3,.imagezone .form-img4, .imagezone .form-img5, .imagezone .form-img6{
     display: none;
+  }
+  .imagezone .form-img6{
+    margin: 0;
+  }
+  .file-input .btn{
+    border: 0;
+  }
+  .fixedarea{
+    width: 750px;
+    margin: 0 auto;
   }
   .imagezone .btn-primary{
     color: #bababa;
@@ -7559,10 +7606,11 @@ h3 a:hover{
     color: #999;
     font-size: 12px;
     padding: 20px 0;
+    text-align: center;
   }
-  .groupinfo span, .authorinfo span{
+  /*.groupinfo span, .authorinfo span{
     margin-right: 15px;
-  }
+  }*/
   .groupinfo a{
     text-decoration: underline;
     text-transform: uppercase;
@@ -7574,6 +7622,13 @@ h3 a:hover{
     font-size: 28px;
     font-weight: bold;
     margin: 0;
+    text-align: center;
+  }
+  .single-post .panel-body{
+    max-width: 750px;
+    width: 100%;
+    padding: 15px 0;
+    margin: 0 auto;
   }
   .back{
     margin-bottom: 25px;
@@ -7644,7 +7699,7 @@ label.error{
   margin-left: 8px;
 }
 #mybrand .bannerholder{
-  height: 100px;
+  height: 140px;
 }
 #mybrand .membercount{
   padding-right: 20px;
@@ -7657,6 +7712,14 @@ label.error{
 }
 #mybrand .row.no-border{
   border: 0;
+}
+#mybrand a h3{
+  color: #333;
+  margin-top: 0;
+}
+#mybrand a:hover h3{
+  color: #00c2a9;
+  text-decoration: none;
 }
 #manageEvents .imgholder{
   height: 100px;
@@ -7688,11 +7751,11 @@ label.error{
   width: 180px;
 }
 .postbanner{
-  width: 600px;
-  margin: 25px 0;
+  width: 750px;
+  margin: 25px auto;
 }
 .eventgallery{
-  width: 400px;
+  width: 600px;
   margin: 30px auto;
 }
 .stripe-form{
@@ -7748,6 +7811,7 @@ label.error{
   height: 50px;
   line-height: 50px;
   font-size: 18px;
+  margin-top: 5px;
 }
 .center{
   text-align: center;
@@ -7792,7 +7856,7 @@ label.error{
 }
 .dash-side-bottom {
   clear: both;
-  margin-top: 30px;
+  margin: 30px 0;
 }
 .dash-box{
   padding: 30px 0 0 0;
@@ -7803,6 +7867,7 @@ label.error{
   height: 120px;
   float: left;
   margin-right: 30px;
+  margin-bottom: 30px;
 }
 .dash-box .img-wrapper{
   height: 30px;
@@ -7819,6 +7884,15 @@ label.error{
 .dash-init .dash-row a{
   color: #666;
   text-decoration: none;
+}
+.dash-main .top-btn{
+  margin-bottom: 10px;
+}
+.nobreak{
+  white-space: nowrap;
+}
+.singlegroup iframe{
+  display: none;
 }
 /*** media query ***/
 @media (max-width: 1199px){
@@ -7837,8 +7911,62 @@ label.error{
     font-size: 11px;
     width: 160px;
   }
+  #mybrand .bannerholder{
+    height: 110px;
+  }
+  .dash-main .btn{
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+  .dash-main .btn.btn-file{
+    padding: 10px 32px;
+    font-size: 14px;
+  }
 }
 @media (max-width: 991px) {
+  .home .bannerholder{
+    height: 250px !important;
+  }
+  .layout84 .col-md-8, .layout84 .col-md-4, .layout3333 .col-md-3, .layout633 .col-md-6, .layout633 .col-md-3, .layout444 .col-md-4{
+    float: none;
+    clear: both;
+    height: auto;
+  }
+  .layout84 .col-md-8 .bannerholder{
+    width: 100%;
+  }
+  .layout84 .col-md-8 .postinforight{
+    float: none;
+    width: 100%;
+    clear: both;
+    padding-left: 0;
+  }
+  .layout84 .col-md-8 .postauthor{
+    padding-top: 10px;
+  }
+  .layout84 .col-md-8 .excerpt-area{
+    height: 140px;
+  }
+  .singlegroup.layout84 .col-md-4 .title-area h3{
+    min-height: 120px;
+  }
+  .singlegroup{
+    border-bottom: 0;
+  }
+  .singlegroup .row-gap{
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border-bottom: 0;
+  }
+  .singlegroup > div{
+    margin-bottom: 25px;
+    padding-bottom: 45px;
+    border-bottom: 1px solid #e8e8e8;
+  }
+  .singlegroup .bottom{
+    bottom: 20px;
+  }
   .grouplist .bannerholder{
     height: 175px;
   }
@@ -7871,6 +7999,19 @@ label.error{
     float: none;
     margin: 0 auto 25px auto
   }
+  .dash-main .row{
+    margin: 20px 0;
+  }
+  #manageEvents .imgholder{
+    height: 120px;
+  }
+  #mybrand .bannerholder {
+    height: 120px !important;
+    width: 120px;
+  }
+  .dash-main .top-btn{
+    margin-bottom: 0;
+  }
 }
 @media (min-width: 768px) {
   .desktop{
@@ -7883,6 +8024,7 @@ label.error{
 @media (max-width: 767px) {
   .navbar-brand{
     margin-right: 0;
+    padding: 10px;
   }
   .desktop{
     display: none;
@@ -7926,6 +8068,9 @@ label.error{
 .login-explore, #login-in{
   margin-right: 0;
 }
+.navbar-collapse .navbar-nav > li > a{
+  text-align: center;
+}
   .grouplist{
     width: 300px;
     margin: 0 auto 25px auto;
@@ -7950,5 +8095,20 @@ label.error{
   .groupbanner .caption p{
     font-size: 12px;
   }
+  .single-post .panel-body{
+    width: 100%;
+  }
+  .postbanner{
+    width: 100%;
+  }
+  .eventgallery{
+    width: 100%;
+  }
+  #comments .comment .top-profile {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+}
 
 }

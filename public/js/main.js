@@ -18,7 +18,7 @@ $(document).ready(function(){
 			that.addClass('event_unlike');
 			that.html('<img src="../img/already_likes_icon.png" width="16">');
 			$('.leftlikenum').html(response+' Interested');
-			$('.likenum').html(response);
+			that.parent().next().html(response);
 		})
 	})
 	$('body').on('click', '.event_unlike', function(e){
@@ -38,7 +38,7 @@ $(document).ready(function(){
 			that.addClass('event_like');
 			that.html('<img src="../img/likes_icon.png" width="16">');
 			$('.leftlikenum').html(response+' Interested');
-			$('.likenum').html(response);
+			that.parent().next().html(response);
 		})
 	})
 	$('body').on('click', '.post_like', function(e){
@@ -126,7 +126,7 @@ $(document).ready(function(){
 		var groupid = $(this).data('group-id');
 		$.ajax({
 			type: "POST",
-			url: window.location.origin+"/groups/follow",
+			url: window.location.origin+"/brands/follow",
 			data: "uid="+userid+'&gid='+groupid
 		}).done(function(response){
 		
@@ -153,7 +153,7 @@ $(document).ready(function(){
 		var groupid = $(this).data('group-id');
 		$.ajax({
 			type: "POST",
-			url: window.location.origin+"/groups/unfollow",
+			url: window.location.origin+"/brands/unfollow",
 			data: "uid="+userid+'&gid='+groupid
 		}).done(function(response){
 			
@@ -183,6 +183,15 @@ $(document).ready(function(){
 	$('.create_btn').tooltip({
 		placement: 'left'
 	});
+	$('.shareto a').tooltip({
+		placement: 'left'
+	})
+	$('.postcomments a').tooltip({
+		placement: 'left'
+	})
+	$('.postlikes a').tooltip({
+		placement: 'left'
+	})
 
 	$('#g-profile').fileinput({
 		previewFileType: "image",
@@ -284,10 +293,74 @@ $(document).ready(function(){
 	});
 	$('#postimage4').on('fileloaded', function(event, file, previewId, index, reader) {
 	    $('.btn-img4').hide();
+	    $('.form-img5').show();
 	});
 	$('#postimage4').on('filecleared', function(event, file, previewId, index, reader) {
 	    $('.btn-img4').show();
 	});
+	$('#postimage5').fileinput({
+		previewFileType: "image",
+		browseClass: "btn btn-primary btn-block btn-img5",
+        showCaption: false,
+        showRemove: false,
+        showUpload: false,
+		browseLabel: "",
+		browseIcon: "<i class=\"glyphicon glyphicon-plus\"></i>",
+	});
+	$('#postimage5').on('fileloaded', function(event, file, previewId, index, reader) {
+	    $('.btn-img5').hide();
+	    $('.form-img6').show();
+	});
+	$('#postimage5').on('filecleared', function(event, file, previewId, index, reader) {
+	    $('.btn-img5').show();
+	});
+	$('#postimage6').fileinput({
+		previewFileType: "image",
+		browseClass: "btn btn-primary btn-block btn-img6",
+        showCaption: false,
+        showRemove: false,
+        showUpload: false,
+		browseLabel: "",
+		browseIcon: "<i class=\"glyphicon glyphicon-plus\"></i>",
+	});
+	$('#postimage6').on('fileloaded', function(event, file, previewId, index, reader) {
+	    $('.btn-img6').hide();
+	    // $('.form-img7').show();
+	});
+	$('#postimage6').on('filecleared', function(event, file, previewId, index, reader) {
+	    $('.btn-img6').show();
+	});
+	// $('#postimage7').fileinput({
+	// 	previewFileType: "image",
+	// 	browseClass: "btn btn-primary btn-block btn-img7",
+ //        showCaption: false,
+ //        showRemove: false,
+ //        showUpload: false,
+	// 	browseLabel: "",
+	// 	browseIcon: "<i class=\"glyphicon glyphicon-plus\"></i>",
+	// });
+	// $('#postimage7').on('fileloaded', function(event, file, previewId, index, reader) {
+	//     $('.btn-img7').hide();
+	//     $('.form-img8').show();
+	// });
+	// $('#postimage7').on('filecleared', function(event, file, previewId, index, reader) {
+	//     $('.btn-img7').show();
+	// });
+	// $('#postimage8').fileinput({
+	// 	previewFileType: "image",
+	// 	browseClass: "btn btn-primary btn-block btn-img8",
+ //        showCaption: false,
+ //        showRemove: false,
+ //        showUpload: false,
+	// 	browseLabel: "",
+	// 	browseIcon: "<i class=\"glyphicon glyphicon-plus\"></i>",
+	// });
+	// $('#postimage8').on('fileloaded', function(event, file, previewId, index, reader) {
+	//     $('.btn-img8').hide();
+	// });
+	// $('#postimage8').on('filecleared', function(event, file, previewId, index, reader) {
+	//     $('.btn-img8').show();
+	// });
 	$('.form_datetime').datetimepicker({
         	weekStart: 1,
 	        todayBtn:  1,
@@ -353,15 +426,6 @@ $(document).ready(function(){
 		}
 	})
 	
-	$(window).scroll(function(){
-		if($(this).scrollTop() > 455){
-			$('.bannerwrapper').addClass('locked');
-			$('.bannerwrapper').next().css('margin-top', '485px');
-		}else{
-			$('.bannerwrapper').removeClass('locked');
-			$('.bannerwrapper').next().css('margin-top', '0');
-		}
-	})
 
 	$(".various").fancybox({
 		fitToView	: false,
@@ -377,9 +441,11 @@ $(document).ready(function(){
 		e.preventDefault();
 		$.fancybox.close();
 	})
-	$('.flexslider').flexslider({
-		animation: 'fade',
-		controlNav: false
+	$('.bxslider').bxSlider({
+	  adaptiveHeight: true,
+	  mode: 'fade',
+	  auto: false,
+	  pager: false
 	});
 
 	$('#selectprice').on('change', function(){
@@ -424,7 +490,7 @@ $(document).ready(function(){
 		if(bname !== ''){
 			$.ajax({
 				type: "POST",
-				url: window.location.origin+"/groups/checkBrandname",
+				url: window.location.origin+"/brands/checkBrandname",
 				data: "brandname="+bname
 			}).done(function(response){
 				if (response == 'duplicated') {
@@ -450,6 +516,7 @@ $(document).ready(function(){
 			}
 		}
 	});
+	$('#leavecomments form').validate();
 	$('#createPost').validate();
 
 	$('a.showSelect').on('click', function(e){

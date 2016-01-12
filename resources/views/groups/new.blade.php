@@ -3,13 +3,20 @@
 @section('content')
 <div class="container">
 	<div class="row">
-		<div class="col-md-8 col-md-offset-2">
+		<div class="fixedarea">
 			<div class="panel">
 				<div class="panel-heading"><h3>CREATE YOUR BRAND</h3></div>
 
 				<div class="panel-body">
-					@if (Session::has('message'))
-					   <div class="alert alert-danger"><strong>Whoops!</strong> {{ Session::get('message') }}</div>
+					@if (count($errors) > 0)
+						<div class="alert alert-danger">
+							<strong>Whoops!</strong> There were some problems with your input.<br><br>
+							<ul>
+								@foreach ($errors->all() as $error)
+									<li>{{ $error }}</li>
+								@endforeach
+							</ul>
+						</div>
 					@endif
 					<form action="{{ URL::route('createGroup') }}" method="post" enctype="multipart/form-data" id="createBrand">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -19,7 +26,7 @@
 						<hr>
 						<div class="form-group">
 							<label>Upload Your Brand Logo</label>
-							<p>Recomended size: 200px X 200px. Images must be in .jpg, .bmp, .png, or .gif format, and not exceed 4 MB.</p>
+							<p>Recomended size: 400px X 400px. Images must be in .jpg, .bmp, .png, or .gif format, and not exceed 4 MB.</p>
 							<input type="file" id="g-profile" name="g-profile" accept="image/*">
 						</div>
 						<div class="form-group">
@@ -30,7 +37,7 @@
 						<h4>TELL US MORE ABOUT YOUR BRAND</h4>
 						<hr>
 						<div class="form-group" style="position:relative">
-							<input type="text" name="name" class="form-control" id="brandname" placeholder="Brand Name" required>
+							<input type="text" name="name" class="form-control" id="brandname" placeholder="Brand Name" maxlength="100" required>
 							<div class="checknamepass checkname"><i class="fa fa-check"></i></div>
 							<div class="checknamefail checkname"><i class="fa fa-times"></i></div>
 							<div class="help-block checknameerror">Brand name has been taken, please choose another one.</div>
@@ -357,7 +364,7 @@
 							<span>Apply to Join</span> <span class="radio"><input type="radio" name="applytojoin" id="applyyes" value="yes" /> <label for="applyyes">Yes</label> </span><span class="radio"><input type="radio" name="applytojoin" id="applyno" value="no" /> <label for="applyno">No</label></span>
 						</div> -->
 						<div class="form-group">
-							<textarea name="description" maxlength="300" class="form-control" placeholder="Brief Introduction ( Tips: Please use the official language at the target markets.)" required></textarea>
+							<textarea name="description" maxlength="300" class="form-control" placeholder="Brief Introduction ( Tips: It is recommended to use the official language at the target markets.)" required></textarea>
 						</div>
 						<p class="small">By continuing you pledge that the content filled in and the additional materials provided are true and authentic in every aspect.</p>
 						<input type="submit" class="btn btn-logo submit" value="Submit">

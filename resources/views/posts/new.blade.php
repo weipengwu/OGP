@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
 	<div class="row">
-		<div class="col-md-8 col-md-offset-2">
+		<div class="fixedarea">
 			<div class="panel">
 				<div class="panel-heading"><h3>CREATE A NEW POST</h3></div>
 
@@ -23,10 +23,13 @@
 						<input type="hidden" name="author" value="{{ Auth::user()->id }}">
 						<input type="hidden" name="gid" value="<?php echo $gid;?>">
 						<div class="form-group">
-							<input type="text" name="title" class="form-control" placeholder="The prominent title is waiting for you right here." required>
+							<input type="text" name="title" class="form-control" placeholder="The prominent title is waiting for you right here." maxlength="100" required>
 						</div>
 						<div class="form-group">
 							<textarea name="content" class="form-control" id="posteditor" placeholder="Is there any good news?" required></textarea>
+						</div>
+						<div class="form-group">
+							<div>Please upload at least one image, maximum six images. Image size can not be exceed 4 MB.</div>
 						</div>
 						<div class="imagezone">
 							<div class="form-group form-img1">
@@ -40,6 +43,12 @@
 							</div>
 							<div class="form-group form-img4">
 								<input type="file" id="postimage4" name="postimage4" accept="image/*">
+							</div>
+							<div class="form-group form-img5">
+								<input type="file" id="postimage5" name="postimage5" accept="image/*">
+							</div>
+							<div class="form-group form-img6">
+								<input type="file" id="postimage6" name="postimage6" accept="image/*">
 							</div>
 						</div>
 						<input type="submit" class="btn btn-logo" value="Submit">

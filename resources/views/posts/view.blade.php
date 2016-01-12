@@ -2,34 +2,36 @@
 
 @section('content')
 <div class="container single-post">
-	<div class="row">
-		<div class="col-md-10 col-md-offset-1">
+
 			<div class="panel">
 
 				<div class="panel-body">
 					<div class="groupinfo">
-						<span>FROM <a href="{{  url() }}/groups/{{ $post->group->slug }}">{{ getGroupName($post->group->id) }}</a></span>
-						<span>Category: {{ $post->group->category }}</span>
+						<span>FROM <a href="{{  url() }}/brands/{{ $post->group->slug }}">{{ getGroupName($post->group->id) }}</a></span>
 					</div>
 					<h1> {{ $post->title }}</h1>
 					<div class="authorinfo">
-						<span>By {{ getAuthorname($post->author) }}</span> <span><img src="{{ asset('img/calendar_icon.png') }}" width="16"> <?php $timestamp = strtotime($post->created_at); echo date('M j, Y', $timestamp); ?></span>
+						<!-- <span>By {{ getAuthorname($post->author) }}</span> --> <span><img src="{{ asset('img/calendar_icon.png') }}" width="16"> <?php echo $post->created_at->diffForHumans();//$timestamp = strtotime($post->created_at); echo date('M j, Y', $timestamp); ?></span>
 					</div>
-					<?php $banners = explode(',', $post->banner); ?>
+					<?php $banners = explode(',', $post->banner); if(count($banners) > 0 && strpos($post->banner,'img/defaultbg') == false):?>
 					<div class="postbanner">
+						<ul class="bxslider">
 						@foreach ($banners as $banner)
-							<img src="<?php echo url().'/uploads/Medium_'.$banner;?>" class="post-img">
+							<li><img src="<?php echo url().'/uploads/Medium_'.$banner;?>"></li>
 						@endforeach
+						</ul>
 					</div>
+					<?php endif;?>
 					<p>{!!html_entity_decode($post->content)!!}</p>
-					
+					<br />
+					<p>For more information, visit <a href="{{  url() }}/brands/{{ $post->group->slug }}" class="nobreak">{{ getGroupName($post->group->id) }}</a></p>
 					<div class="commentscount">
-						<span class="c_holder">{{ $post->comments->count()}} Comments</span>
+						<span class="c_holder">{{ $post->comments->count()}} Comments</span> | <span>Category: {{ $post->group->category }}</span>
 					</div>
 					<hr>
 					@if(Auth::check())
 					<section id="leavecomments">
-						<h3 class="title">Leave a comment</h3>
+						<h4 class="title">Leave a comment</h4>
 						<form action="{{ URL::route('createComment', array('id' => $post->id)) }}" method="post">
 							<input type="hidden" name="_token" value="{{ csrf_token() }}">
 							<input type="hidden" name="author" value="{{ Auth::user()->id }}">
@@ -43,7 +45,7 @@
 					<section id="comments">
 						@foreach ($post->comments as $comment)
 							<div class="comment row">
-								<div class="col-md-1">
+								<div class="col-md-1 col-sm-1 col-xs-2">
 									<?php 
 										$user_profile = DB::table('user_meta')->where('user_id', $comment->author)->where('meta_key', 'profile')->get();
 										if(count($user_profile) > 0):
@@ -52,19 +54,18 @@
 									<?php
 										else:
 									?>
-										<div class="top-profile">{{ getFirstCharter(Auth::user()->name) }}</div>
+										<div class="top-profile">{{ getFirstCharter(getAuthorname($comment->author)) }}</div>
 									<?php endif;?>
 								</div>
-								<div class="col-md-11">
+								<div class="col-md-11 col-sm-11 col-xs-10">
 									<p class="commentauthor"><strong>{{ getAuthorname($comment->author) }}</strong>&nbsp;&nbsp;<span class="ago-bullet">•</span>&nbsp;&nbsp;{{ $comment->created_at->diffForHumans() }}</p> 
-									<p>{{ $comment->content }}</p>
+									<p>{!! html_entity_decode($comment->content) !!}</p>
 								</div>
 							</div>
 						@endforeach
 					</section>
 				</div>
 			</div>
-		</div>
-	</div>
+
 </div>
 @endsection

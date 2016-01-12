@@ -52,7 +52,11 @@ class EventController extends Controller {
 			if(isset($_GET['time'])){
 				$time = $_GET['time'];
 				$nextmondytime = strtotime('next Monday');
-				$nextsudaytime = strtotime('next Sunday');
+				if(date('l') == 'Sunday'){
+					$nextsudaytime = strtotime('next Sunday');
+				}else{
+					$nextsudaytime = strtotime('+1 week');
+				}
 				if ($time == 'nextweek'){
 					return view('events.index')->with('events', Event::where('fromtime', '>', $nextmondytime)->where('fromtime', '<', $nextsudaytime)->orderBy('created_at', 'DESC')->get());
 				}else{
@@ -76,7 +80,7 @@ class EventController extends Controller {
 			if(Request::file('postimage1')){
 
 				$file = array('postimage1' => Request::file('postimage1'));
-				$rules = array('postimage1' => 'required|image');
+				$rules = array('postimage1' => 'required|image|max:4096');
 				$validator = Validator::make($file, $rules);
 				if ($validator->fails()){
 					return redirect()->back()->withErrors($validator);
@@ -89,7 +93,7 @@ class EventController extends Controller {
 			      		Request::file('postimage1')->move($destinationPath, $fileName); // uploading file to given path
 				  		$postimage1 = $destinationPath."/".$fileName;
 				  		$img = Image::make($postimage1);
-				  		$img->resize(400, null, function ($constraint) {
+				  		$img->resize(900, null, function ($constraint) {
 						    $constraint->aspectRatio();
 						    $constraint->upsize();
 						});
@@ -100,7 +104,7 @@ class EventController extends Controller {
 			}
 			if(Request::file('postimage2')){
 				$file = array('postimage2' => Request::file('postimage2'));
-				$rules = array('postimage2' => 'required|image');
+				$rules = array('postimage2' => 'required|image|max:4096');
 				$validator = Validator::make($file, $rules);
 				if ($validator->fails()){
 					return redirect()->back()->withErrors($validator);
@@ -113,7 +117,7 @@ class EventController extends Controller {
 			      		Request::file('postimage2')->move($destinationPath, $fileName); // uploading file to given path
 				  		$postimage2 = $destinationPath."/".$fileName;
 						$img = Image::make($postimage2);
-				  		$img->resize(400, null, function ($constraint) {
+				  		$img->resize(900, null, function ($constraint) {
 						    $constraint->aspectRatio();
 						    $constraint->upsize();
 						});
@@ -124,7 +128,7 @@ class EventController extends Controller {
 			}
 			if(Request::file('postimage3')){
 				$file = array('postimage3' => Request::file('postimage3'));
-				$rules = array('postimage3' => 'required|image');
+				$rules = array('postimage3' => 'required|image|max:4096');
 				$validator = Validator::make($file, $rules);
 				if ($validator->fails()){
 					return redirect()->back()->withErrors($validator);
@@ -137,7 +141,7 @@ class EventController extends Controller {
 			      		Request::file('postimage3')->move($destinationPath, $fileName); // uploading file to given path
 				  		$postimage3 = $destinationPath."/".$fileName;
 						$img = Image::make($postimage3);
-				  		$img->resize(400, null, function ($constraint) {
+				  		$img->resize(900, null, function ($constraint) {
 						    $constraint->aspectRatio();
 						    $constraint->upsize();
 						});
@@ -148,7 +152,7 @@ class EventController extends Controller {
 			}
 			if(Request::file('postimage4')){
 				$file = array('postimage4' => Request::file('postimage4'));
-				$rules = array('postimage4' => 'required|image');
+				$rules = array('postimage4' => 'required|image|max:4096');
 				$validator = Validator::make($file, $rules);
 				if ($validator->fails()){
 					return redirect()->back()->withErrors($validator);
@@ -161,7 +165,7 @@ class EventController extends Controller {
 			      		Request::file('postimage4')->move($destinationPath, $fileName); // uploading file to given path
 				  		$postimage4 = $destinationPath."/".$fileName;
 						$img = Image::make($postimage4);
-				  		$img->resize(400, null, function ($constraint) {
+				  		$img->resize(900, null, function ($constraint) {
 						    $constraint->aspectRatio();
 						    $constraint->upsize();
 						});
@@ -172,7 +176,7 @@ class EventController extends Controller {
 			}
 		if(Request::file('banner')){
 			$file = array('banner' => Request::file('banner'));
-			$rules = array('banner' => 'required|image');
+			$rules = array('banner' => 'required|image|max:4096');
 			$validator = Validator::make($file, $rules);
 			if ($validator->fails()){
 				return redirect()->back()->withErrors($validator);
@@ -189,7 +193,7 @@ class EventController extends Controller {
 						    $constraint->upsize();
 						});
 						$img->save($destinationPath."/Large_".$fileName);
-					$img->resize(390, 260, function ($constraint) {
+					$img->resize(800, 260, function ($constraint) {
 						    $constraint->aspectRatio();
 						    $constraint->upsize();
 						});
@@ -206,11 +210,13 @@ class EventController extends Controller {
 			$event->author = Request::input('author');
 			$event->type = Request::input('type');
 			$event->title = Request::input('title');
+			$timezone = Request::input('timezone');
+			$event->timezone = $timezone;
 			$fromtime = Request::input('fromtime');
-			$unixfromtime = strtotime($fromtime);
+			$unixfromtime = strtotime($fromtime.' '.$timezone);
 			$event->fromtime = $unixfromtime;
 			$totime = Request::input('totime');
-			$unixtotime = strtotime($totime);
+			$unixtotime = strtotime($totime.' '.$timezone);
 			$event->totime = $unixtotime;
 			$event->city = Request::input('city');
 			$event->suitenum = Request::input('suitenum');
@@ -238,7 +244,7 @@ class EventController extends Controller {
 		            $followers = Following::where('followed_id', Request::input('gid'))->get();
 		            foreach ($followers as $follower) {
 		            	$user = User::where('id', $follower->user_id)->get();
-		            	$message->to($user[0]->email)->subject('New Event on OGP');
+		            	$message->to('members@ohgoodparty.com', 'Members')->bcc($user[0]->email)->subject('New Event on OGP');
 		            }
 
 		        });
@@ -258,7 +264,7 @@ class EventController extends Controller {
 		$event = Event::find(Request::input('eid'));
 		if(Request::file('banner')){
 			$file = array('banner' => Request::file('banner'));
-			$rules = array('banner' => 'required|image');
+			$rules = array('banner' => 'required|image|max:4096');
 			$validator = Validator::make($file, $rules);
 			if ($validator->fails()){
 				return redirect()->back()->withErrors($validator);
@@ -275,7 +281,7 @@ class EventController extends Controller {
 						    $constraint->upsize();
 						});
 						$img->save($destinationPath."/Large_".$fileName);
-					$img->resize(400, null, function ($constraint) {
+					$img->resize(800, null, function ($constraint) {
 						    $constraint->aspectRatio();
 						    $constraint->upsize();
 						});

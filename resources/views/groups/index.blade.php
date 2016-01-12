@@ -16,7 +16,7 @@
 					@foreach ($groups as $group)
 						<?php if($i > 4) break;?>
 						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
-						<a href="groups/<?= $group->slug;?>">
+						<a href="brands/{{ $group->slug }}">
 							<div class="bannerholder" style="background: url('<?php echo url()."/uploads/Medium_".$group->profile;?>');background-size:cover"></div>
 							
 							<div class="caption">
@@ -35,7 +35,7 @@
 					@foreach ($popular as $pop)
 						<?php $popgroup = DB::table('groups')->where('id', $pop->followed_id)->get(); ?>
 						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
-							<a href="groups/{{ $popgroup[0]->slug }}">
+							<a href="brands/{{ $popgroup[0]->slug }}">
 							<div class="bannerholder" style="background: url('<?php echo url()."/uploads/Medium_".$popgroup[0]->profile;?>');background-size:cover"></div>
 							<div class="caption">
 								<h3>{{ $popgroup[0]->name }}</h3>
@@ -53,7 +53,7 @@
 					@foreach ($artsgroups as $group)
 						<?php if($i > 4) break;?>
 						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
-							<a href="groups/<?= $group->slug;?>">
+							<a href="brands/{{ $group->slug }}">
 							<div class="bannerholder" style="background: url('<?php echo url()."/uploads/Medium_".$group->profile;?>');background-size:cover"></div>
 							<div class="caption">
 								<h3>{{ $group->name }}</h3>
@@ -72,7 +72,7 @@
 					@foreach ($autogroups as $group)
 						<?php if($i > 4) break;?>
 						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
-							<a href="groups/<?= $group->slug;?>">
+							<a href="brands/{{ $group->slug }}">
 							<div class="bannerholder" style="background: url('<?php echo url()."/uploads/Medium_".$group->profile;?>');background-size:cover"></div>
 							<div class="caption">
 								<h3>{{ $group->name }}</h3>
@@ -93,7 +93,7 @@
 					@foreach ($businessgroups as $group)
 						<?php if($i > 4) break;?>
 						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
-							<a href="groups/<?= $group->slug;?>">
+							<a href="brands/{{ $group->slug }}">
 							<div class="bannerholder" style="background: url('<?php echo url()."/uploads/Medium_".$group->profile;?>');background-size:cover"></div>
 							<div class="caption">
 								<h3>{{ $group->name }}</h3>
@@ -114,7 +114,7 @@
 					@foreach ($educationgroups as $group)
 						<?php if($i > 4) break;?>
 						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
-							<a href="groups/<?= $group->slug;?>">
+							<a href="brands/{{ $group->slug }}">
 							<div class="bannerholder" style="background: url('<?php echo url()."/uploads/Medium_".$group->profile;?>');background-size:cover"></div>
 							<div class="caption">
 								<h3>{{ $group->name }}</h3>
@@ -135,7 +135,7 @@
 					@foreach ($fashiongroups as $group)
 						<?php if($i > 4) break;?>
 						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
-							<a href="groups/<?= $group->slug;?>">
+							<a href="brands/{{ $group->slug }}">
 							<div class="bannerholder" style="background: url('<?php echo url()."/uploads/Medium_".$group->profile;?>');background-size:cover"></div>
 							<div class="caption">
 								<h3>{{ $group->name }}</h3>
@@ -156,7 +156,7 @@
 					@foreach ($foodgroups as $group)
 						<?php if($i > 4) break;?>
 						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
-							<a href="groups/<?= $group->slug;?>">
+							<a href="brands/{{ $group->slug }}">
 							<div class="bannerholder" style="background: url('<?php echo url()."/uploads/Medium_".$group->profile;?>');background-size:cover"></div>
 							<div class="caption">
 								<h3>{{ $group->name }}</h3>
@@ -177,7 +177,7 @@
 					@foreach ($gamesgroups as $group)
 						<?php if($i > 4) break;?>
 						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
-							<a href="groups/<?= $group->slug;?>">
+							<a href="brands/{{ $group->slug }}">
 							<div class="bannerholder" style="background: url('<?php echo url()."/uploads/Medium_".$group->profile;?>');background-size:cover"></div>
 							<div class="caption">
 								<h3>{{ $group->name }}</h3>
@@ -198,7 +198,7 @@
 					@foreach ($healthgroups as $group)
 						<?php if($i > 4) break;?>
 						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
-							<a href="groups/<?= $group->slug;?>">
+							<a href="brands/{{ $group->slug }}">
 							<div class="bannerholder" style="background: url('<?php echo url()."/uploads/Medium_".$group->profile;?>');background-size:cover"></div>
 							<div class="caption">
 								<h3>{{ $group->name }}</h3>
@@ -219,7 +219,7 @@
 					@foreach ($homegroups as $group)
 						<?php if($i > 4) break;?>
 						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
-							<a href="groups/<?= $group->slug;?>">
+							<a href="brands/{{ $group->slug }}">
 							<div class="bannerholder" style="background: url('<?php echo url()."/uploads/Medium_".$group->profile;?>');background-size:cover"></div>
 							<div class="caption">
 								<h3>{{ $group->name }}</h3>
@@ -240,7 +240,7 @@
 					@foreach ($musicgroups as $group)
 						<?php if($i > 4) break;?>
 						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
-							<a href="groups/<?= $group->slug;?>">
+							<a href="brands/{{ $group->slug }}">
 							<div class="bannerholder" style="background: url('<?php echo url()."/uploads/Medium_".$group->profile;?>');background-size:cover"></div>
 							<div class="caption">
 								<h3>{{ $group->name }}</h3>
@@ -261,7 +261,7 @@
 					@foreach ($sportsgroups as $group)
 						<?php if($i > 4) break;?>
 						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
-							<a href="groups/<?= $group->slug;?>">
+							<a href="brands/{{ $group->slug }}">
 							<div class="bannerholder" style="background: url('<?php echo url()."/uploads/Medium_".$group->profile;?>');background-size:cover"></div>
 							<div class="caption">
 								<h3>{{ $group->name }}</h3>
@@ -282,7 +282,7 @@
 					@foreach ($technologygroups as $group)
 						<?php if($i > 4) break;?>
 						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
-							<a href="groups/<?= $group->slug;?>">
+							<a href="brands/{{ $group->slug }}">
 							<div class="bannerholder" style="background: url('<?php echo url()."/uploads/Medium_".$group->profile;?>');background-size:cover"></div>
 							<div class="caption">
 								<h3>{{ $group->name }}</h3>
@@ -303,7 +303,7 @@
 					@foreach ($travelgroups as $group)
 						<?php if($i > 4) break;?>
 						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
-							<a href="groups/<?= $group->slug;?>">
+							<a href="brands/{{ $group->slug }}">
 							<div class="bannerholder" style="background: url('<?php echo url()."/uploads/Medium_".$group->profile;?>');background-size:cover"></div>
 							<div class="caption">
 								<h3>{{ $group->name }}</h3>
@@ -324,7 +324,7 @@
 					@foreach ($othergroups as $group)
 						<?php if($i > 4) break;?>
 						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
-							<a href="groups/<?= $group->slug;?>">
+							<a href="brands/{{ $group->slug }}">
 							<div class="bannerholder" style="background: url('<?php echo url()."/uploads/Medium_".$group->profile;?>');background-size:cover"></div>
 							<div class="caption">
 								<h3>{{ $group->name }}</h3>
