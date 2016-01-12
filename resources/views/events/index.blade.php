@@ -39,7 +39,7 @@
 				</div>
 
 				<div class="event-body">
-					<?php $i = 1; $length = count($events);?>
+					<?php $i = 1; ?>
 					@foreach ($events as $event)
 						<?php
 							if(Auth::check()){
