@@ -6639,8 +6639,15 @@ label,
 .eventindex .event-body{
   margin-top: 30px;
 }
-.eventindex h2{
+.eventindex h1{
   margin-bottom: 30px;
+  font-size: 28px;
+}
+.searchindex h1{
+  font-size: 28px;
+}
+.searchindex h2{
+  font-size: 18px;
 }
 .home .eventgroup{
   float: left;
@@ -7640,9 +7647,9 @@ h3 a:hover{
   #fee{
     display: none;
   }
-  .search h1{
+/*  .search h1{
     font-size: 28px;
-  }
+  }*/
 .orginandtarget:after{
     clear: both;
     display: table;

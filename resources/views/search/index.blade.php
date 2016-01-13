@@ -2,7 +2,7 @@
 
 @section('content')
 	
-<div class="container search">
+<div class="container searchindex">
 	<div class="row">
 		<div class="col-md-12">
 			<div class="panel">
@@ -11,8 +11,8 @@
 				</div>
 				<div class="panel-body">
 					@if (count($groups) > 0)
-						<h3>Brands</h3>
-						<div class="groupsrow collapsed">
+						<h2>BRANDS</h2>
+						<section>
 						<?php $i = 1;?>
 						@foreach ($groups as $group)
 							<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
@@ -27,14 +27,12 @@
 								</div>
 							<?php $i++;?>
 						@endforeach
-						</div>
-						@if (count($groups) > 4 )
-						<div class="brandsshowall"><a href="">SHOW ALL</a></div>
-						@endif
+						</section>
 					@endif
 					@if (count($posts) > 0)
-						<h3>Posts</h3>
-							<section class="layout3333 groupsrow collapsed">
+						<h2>POSTS</h2>
+							<section class="posts">
+								<div class="layout3333 singlerow row">
 									<?php $j = 1;?>
 										@foreach ($posts as $post)
 											<div class="col-md-3<?php if(is_int($j/4)) echo " last";?>">
@@ -78,13 +76,11 @@
 													</div>
 											</div>
 										@endforeach
+										</div>
 								</section>
-								@if (count($posts) > 4 )
-								<div class="brandsshowall"><a href="">SHOW ALL</a></div>
-								@endif
 					@endif
 					@if (count($events) > 0)
-						<h3>Events</h3>
+						<h2>EVENTS</h2>
 						<div class="groupsrow collapsed">
 						<?php $i = 1; ?>
 						@foreach ($events as $event)
@@ -152,9 +148,6 @@
 						<?php $i++;?>
 						@endforeach
 						</div>
-							@if (count($events) > 4 )
-								<div class="brandsshowall"><a href="">SHOW ALL</a></div>
-							@endif
 					@endif
 					@if (count($groups) == 0 && count($events) == 0 && count($events) == 0 )
 						<div>
