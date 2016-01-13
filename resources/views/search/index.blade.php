@@ -28,11 +28,12 @@
 							<?php $i++;?>
 						@endforeach
 						</section>
+						<div class="clear"></div>
 					@endif
 					@if (count($posts) > 0)
 						<h2>POSTS</h2>
 							<section class="posts">
-								<div class="layout3333 singlerow row">
+								<div class="layout3333 singlegroup row">
 									<?php $j = 1;?>
 										@foreach ($posts as $post)
 											<div class="col-md-3<?php if(is_int($j/4)) echo " last";?>">
@@ -78,6 +79,7 @@
 										@endforeach
 										</div>
 								</section>
+								<div class="clear"></div>
 					@endif
 					@if (count($events) > 0)
 						<h2>EVENTS</h2>
@@ -148,10 +150,11 @@
 						<?php $i++;?>
 						@endforeach
 						</div>
+						<div class="clear"></div>
 					@endif
 					@if (count($groups) == 0 && count($events) == 0 && count($events) == 0 )
-						<div>
-							No results found.
+						<div class="noresult">
+							Sorry, we couldn't find any result, please try another keyword and search again.
 						</div>
 					@endif
 				</div>
