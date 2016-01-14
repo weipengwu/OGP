@@ -37,16 +37,6 @@
 						</select>
 					</form>
 				</div>
-<?php
-$nextmondytime = strtotime('next Monday');
-				if(date('l') == 'Sunday'){
-					$nextsudaytime = strtotime('next Sunday');
-				}else{
-					$nextsudaytime = strtotime('+1 week');
-				}
-				var_dump($nextmondytime);
-				var_dump($nextsudaytime);
-?>
 				<div class="event-body">
 					<?php $i = 1; ?>
 					@foreach ($events as $event)
