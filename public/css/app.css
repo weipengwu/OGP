@@ -6643,6 +6643,9 @@ label,
   margin-bottom: 30px;
   font-size: 28px;
 }
+.searchindex .clear{
+  height: 50px;
+}
 .searchindex h1{
   font-size: 28px;
   text-align: center;
@@ -6657,6 +6660,9 @@ label,
   font-size: 20px;
   text-align: center;
   margin: 100px 0 0 0;
+}
+.searchindex .layout3333 .col-md-3{
+  margin-bottom: 40px;
 }
 .home .eventgroup{
   float: left;

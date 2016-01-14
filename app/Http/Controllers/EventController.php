@@ -193,7 +193,7 @@ class EventController extends Controller {
 						    $constraint->upsize();
 						});
 						$img->save($destinationPath."/Large_".$fileName);
-					$img->resize(800, 260, function ($constraint) {
+					$img->resize(800, null, function ($constraint) {
 						    $constraint->aspectRatio();
 						    $constraint->upsize();
 						});

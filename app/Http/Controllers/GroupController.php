@@ -84,7 +84,7 @@ class GroupController extends Controller {
 						}
 					}
 				}else{
-					$group->profile = 'img/defaultbg'.rand(1,8).'.jpg';
+					$group->profile = 'defaultbg'.rand(1,8).'.jpg';
 
 				}
 				if(Request::file('g-banner')){
@@ -110,7 +110,7 @@ class GroupController extends Controller {
 						}
 					}
 				}else{
-					$group->banner = 'img/defaultbg'.rand(1,8).'.jpg';
+					$group->banner = 'defaultbg'.rand(1,8).'.jpg';
 
 				}
 

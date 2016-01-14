@@ -7,12 +7,16 @@ class SearchController extends Controller {
 
 	public function search()
 	{
-		$query = $_GET['q'];
-		$posts = Post::search($query)->get();
-		$groups = Group::search($query)->get();
-		$events = Event::search($query)->get();
+		if(isset($_GET['q'])){
+			$query = $_GET['q'];
+			$posts = Post::search($query)->get();
+			$groups = Group::search($query)->get();
+			$events = Event::search($query)->get();
 
-		return view('search.index')->with('posts', $posts)->with('events', $events)->with('groups', $groups);
+			return view('search.index')->with('posts', $posts)->with('events', $events)->with('groups', $groups);
+		}else{
+			return view('search.index')->with('posts', array())->with('events', array())->with('groups', array());
+		}
 	}
 
 

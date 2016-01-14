@@ -76,6 +76,7 @@
 														</div>
 													</div>
 											</div>
+											<?php $j++; ?>
 										@endforeach
 										</div>
 								</section>
@@ -152,7 +153,7 @@
 						</div>
 						<div class="clear"></div>
 					@endif
-					@if (count($groups) == 0 && count($events) == 0 && count($events) == 0 )
+					@if (count($groups) == 0 && count($posts) == 0 && count($events) == 0 )
 						<div class="noresult">
 							Sorry, we couldn't find any result, please try another keyword and search again.
 						</div>
