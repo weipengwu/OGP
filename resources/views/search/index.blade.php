@@ -46,7 +46,7 @@
 								}
 							}
 						?>
-						<div class="eventgroup<?php if(is_int($i/3)) { echo " last"; }?>">
+						<div class="eventgroup<?php if(is_int($i/4)) { echo " last"; }?>">
 							<div class="eventgroup-list">
 										<a href="/events/{{ $event->id }}">
 										<div class="imgholder" style="background: url('<?php echo url()."/uploads/Medium_".$event->banner;?>') center center; background-size: cover;"></div>
@@ -90,7 +90,7 @@
 												</a>
 													<div class="postauthor">{{ $post->created_at->diffForHumans() }}</div>
 													<div class="title-area"><a href="{{ url() }}/posts/<?php echo $post->id; ?>"><h3>{{ $post->title }}</h3></a></div>
-													<div class="excerpt-area">{!! html_entity_decode(getExcerpt($post->content, 12)) !!}</div>
+													<!-- <div class="excerpt-area">{!! html_entity_decode(getExcerpt($post->content, 12)) !!}</div> -->
 													<div class="bottom">
 														<div class="left">
 															
@@ -127,54 +127,7 @@
 								</section>
 								<div class="clear"></div>
 					@endif
-					<?php 
-						var_dump($events);
-					?>
-					@if (count($events) > 0)
-						<h2>EVENTS</h2>
-						<div class="search-events row">
-						<?php $i = 1; ?>
-						@foreach ($events as $event)
-							<?php
-							if(Auth::check()){
-								if ( $event->type == 'private' && (isFollowing(Auth::user()->id, $event->group_id ) == 0 && $event->author !== Auth::user()->id) ){
-									continue;
-								}
-							}else{
-								if($event->type == 'private'){
-									continue;
-								}
-							}
-						?>
-						<div class="eventgroup<?php if(is_int($i/3)) { echo " last"; }?>">
-							<div class="eventgroup-list">
-										<a href="/events/{{ $event->id }}">
-										<div class="imgholder" style="background: url('<?php echo url()."/uploads/Medium_".$event->banner;?>') center center; background-size: cover;"></div>
-										</a>
-										<p class="location">{{ $event->city }}</p>
-										<h3><a href="events/{{ $event->id }}">{{ $event->title }}</a></h3>
-										<div class="event-details">
-														<p class="event-info">
-															<img src="{{ asset('img/calendar_icon.png') }}" width="14" class="edicons"> 
-															<?php 
-																date_default_timezone_set($event->timezone);
-																if(date('M j',$event->fromtime) == date('M j',$event->totime)) : 
-															?>
-															{{ date('D, M j',$event->fromtime) }}
-															<?php else: ?>
-															{{ date('M j',$event->fromtime) }} - {{ date('M j',$event->totime) }}
-
-															<?php endif; ?>
-														</p>
-										</div>
-							</div>
-						</div>
-						<?php $i++;?>
-						@endforeach
-						</div>
-						<?php date_default_timezone_set(Config::get('app.timezone'));?>
-						<div class="clear"></div>
-					@endif
+					
 					@if (count($groups) == 0 && count($posts) == 0 && count($events) == 0 )
 						<div class="noresult">
 							Sorry, we couldn't find any result, please try another keyword and search again.
