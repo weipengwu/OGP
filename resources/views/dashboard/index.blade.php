@@ -174,7 +174,7 @@
 						</div>
 						<div class="col-md-3">
 							<a href="brands/<?= $group->slug;?>" class="btn btn-logo top-btn">Enter Brand</a>
-							<a href="brands/<?= $group->slug;?>/edit" class="btn btn-logo">Edit brand</a>
+							<a href="brands/<?= $group->slug;?>/edit" class="btn btn-logo">Edit Brand</a>
 						</div>
 					@endforeach
 					</div>

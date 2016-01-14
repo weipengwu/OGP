@@ -6639,8 +6639,24 @@ label,
 .eventindex .event-body{
   margin-top: 30px;
 }
-.eventindex h2{
+.eventindex h1{
   margin-bottom: 30px;
+  font-size: 28px;
+}
+.searchindex h1{
+  font-size: 28px;
+  text-align: center;
+}
+.searchindex h2{
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 0 30px 0;
+  text-align: center;
+}
+.searchindex .noresult{
+  font-size: 20px;
+  text-align: center;
+  margin: 100px 0 0 0;
 }
 .home .eventgroup{
   float: left;
@@ -6677,6 +6693,9 @@ label,
 .home .viewmore a{
   color: #999;
   text-decoration: underline;
+}
+.clear{
+  clear: both;
 }
 .eventindex .eventgroup{
   border-right: 0;
@@ -7037,26 +7056,26 @@ h3 a:hover{
 .joinedgroups h3{
   font-weight: bold;
 }
-.joinedgroups .groupsrow{
+.groupsrow{
   margin-top: 25px;
 }
-.joinedgroups .groupsrow:after{
+.groupsrow:after{
   clear: both;
   content: "";
   display: table;
 }
-.joinedgroups .groupsrow.collapsed{
+.groupsrow.collapsed{
   height: 305px;
   overflow: hidden;
 }
-.joinedgroups .groupsrow.expanded{
+.groupsrow.expanded{
   height: auto;
   overflow: auto;
 }
-.showall{
+.showall, .brandsshowall{
   margin: 20px 0;
 }
-.showall a{
+.showall a, .brandsshowall a{
   color: #777;
   font-size: 12px;
   text-decoration: underline;
@@ -7640,9 +7659,9 @@ h3 a:hover{
   #fee{
     display: none;
   }
-  .search h1{
+/*  .search h1{
     font-size: 28px;
-  }
+  }*/
 .orginandtarget:after{
     clear: both;
     display: table;
@@ -7891,7 +7910,8 @@ label.error{
 .nobreak{
   white-space: nowrap;
 }
-.singlegroup iframe{
+.singlegroup iframe
+{
   display: none;
 }
 /*** media query ***/
@@ -7902,6 +7922,9 @@ label.error{
   .grouplist .caption h3{
     width: 200px;
     margin-top: 90px;
+  }
+  .groupsrow.collapsed{
+    height: 252px;
   }
   #followedbrand .grouplist .bannerholder{
     height: 181px;
@@ -7967,8 +7990,14 @@ label.error{
   .singlegroup .bottom{
     bottom: 20px;
   }
+  .groupsrow.collapsed{
+    height: 200px;
+  }
   .grouplist .bannerholder{
     height: 175px;
+  }
+  .home .grouplist .bannerholder{
+    height: 175px !important;
   }
   .grouplist .caption h3{
     width: 160px;
@@ -8071,6 +8100,13 @@ label.error{
 .navbar-collapse .navbar-nav > li > a{
   text-align: center;
 }
+.groupsrow.collapsed{
+    height: auto;
+    overflow: auto;
+  }
+  .brandsshowall, .showall{
+    display: none;
+  }
   .grouplist{
     width: 300px;
     margin: 0 auto 25px auto;
@@ -8082,6 +8118,9 @@ label.error{
   .grouplist .bannerholder{
     height: 300px;
   }
+  .home .grouplist .bannerholder {
+    height: 300px !important;
+}
   .grouplist .caption h3{
     width: 220px;
     margin-top: 120px;

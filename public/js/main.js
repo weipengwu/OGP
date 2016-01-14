@@ -475,6 +475,19 @@ $(document).ready(function(){
 		}
 	})
 
+	$('.brandsshowall a').on('click', function(e){
+		e.preventDefault();
+		if($(this).parent().prev().hasClass('collapsed')){
+			$(this).parent().prev().removeClass('collapsed');
+			$(this).parent().prev().addClass('expanded');
+			$(this).html('COLLAPSE ALL');
+		}else{
+			$(this).parent().prev().removeClass('expanded');
+			$(this).parent().prev().addClass('collapsed');
+			$(this).html('SHOW ALL');
+		}
+	})
+
 	$('.translation .radio input').on('change', function(){
 		if($('.translation input#yestranslate').is(':checked')){
 			$('.trlanguages').show();

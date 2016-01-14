@@ -12,7 +12,7 @@ class SearchController extends Controller {
 		$groups = Group::search($query)->get();
 		$events = Event::search($query)->get();
 
-		return view('search.index')->with('posts', $posts->toArray())->with('events', $events->toArray())->with('groups', $groups->toArray());
+		return view('search.index')->with('posts', $posts)->with('events', $events)->with('groups', $groups);
 	}
 
 

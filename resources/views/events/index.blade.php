@@ -5,7 +5,7 @@
 	<div class="row">
 		<div class="col-md-12">
 			<div class="panel">
-				<div class="heading"><h2>Browse Events</h2>
+				<div class="heading"><h1>BROWSE EVENTS</h1>
 				<?php if(isset($_GET['category'])){
 						$cat = $_GET['category'];
 					}?>
@@ -39,7 +39,7 @@
 				</div>
 
 				<div class="event-body">
-					<?php $i = 1; $length = count($events);?>
+					<?php $i = 1; ?>
 					@foreach ($events as $event)
 						<?php
 							if(Auth::check()){
