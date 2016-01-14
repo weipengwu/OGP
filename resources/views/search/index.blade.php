@@ -12,7 +12,7 @@
 				<div class="panel-body">
 					@if (count($groups) > 0)
 						<h2>BRANDS</h2>
-						<section>
+						<section class="row">
 						<?php $i = 1;?>
 						@foreach ($groups as $group)
 							<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
@@ -28,6 +28,51 @@
 							<?php $i++;?>
 						@endforeach
 						</section>
+						<div class="clear"></div>
+					@endif
+					@if (count($events) > 0)
+						<h2>EVENTS</h2>
+						<div class="search-events row">
+						<?php $i = 1; ?>
+						@foreach ($events as $event)
+							<?php
+							if(Auth::check()){
+								if ( $event->type == 'private' && (isFollowing(Auth::user()->id, $event->group_id ) == 0 && $event->author !== Auth::user()->id) ){
+									continue;
+								}
+							}else{
+								if($event->type == 'private'){
+									continue;
+								}
+							}
+						?>
+						<div class="eventgroup<?php if(is_int($i/3)) { echo " last"; }?>">
+							<div class="eventgroup-list">
+										<a href="/events/{{ $event->id }}">
+										<div class="imgholder" style="background: url('<?php echo url()."/uploads/Medium_".$event->banner;?>') center center; background-size: cover;"></div>
+										</a>
+										<p class="location">{{ $event->city }}</p>
+										<h3><a href="events/{{ $event->id }}">{{ $event->title }}</a></h3>
+										<div class="event-details">
+														<p class="event-info">
+															<img src="{{ asset('img/calendar_icon.png') }}" width="14" class="edicons"> 
+															<?php 
+																date_default_timezone_set($event->timezone);
+																if(date('M j',$event->fromtime) == date('M j',$event->totime)) : 
+															?>
+															{{ date('D, M j',$event->fromtime) }}
+															<?php else: ?>
+															{{ date('M j',$event->fromtime) }} - {{ date('M j',$event->totime) }}
+
+															<?php endif; ?>
+														</p>
+										</div>
+							</div>
+						</div>
+						<?php $i++;?>
+						@endforeach
+						</div>
+						<?php date_default_timezone_set(Config::get('app.timezone'));?>
 						<div class="clear"></div>
 					@endif
 					@if (count($posts) > 0)
@@ -87,7 +132,7 @@
 					?>
 					@if (count($events) > 0)
 						<h2>EVENTS</h2>
-						<div class="search-events">
+						<div class="search-events row">
 						<?php $i = 1; ?>
 						@foreach ($events as $event)
 							<?php
@@ -103,57 +148,31 @@
 						?>
 						<div class="eventgroup<?php if(is_int($i/3)) { echo " last"; }?>">
 							<div class="eventgroup-list">
-										<a href="events/{{ $event->id }}">
-										<div class="imgholder" style="background: #666 url('<?php echo url()."/uploads/Medium_".$event->banner;?>') center center; background-size: cover;">
-										</div>
-										</a>										
+										<a href="/events/{{ $event->id }}">
+										<div class="imgholder" style="background: url('<?php echo url()."/uploads/Medium_".$event->banner;?>') center center; background-size: cover;"></div>
+										</a>
 										<p class="location">{{ $event->city }}</p>
 										<h3><a href="events/{{ $event->id }}">{{ $event->title }}</a></h3>
-										
 										<div class="event-details">
-											<p class="event-info">
-												<img src="{{ asset('img/calendar_icon.png') }}" width="16" class="edicons"> 
-												<?php 
-												date_default_timezone_set($event->timezone);
-													if(date('M j',$event->fromtime) == date('M j',$event->totime)) : 
-												?>
-												{{ date('D, M j',$event->fromtime) }} @ {{ date('g : i a',$event->fromtime) }} - {{ date('g : i a' ,$event->totime) }}
-												<?php else: ?>
-												{{ date('M j',$event->fromtime) }} - {{ date('M j',$event->totime) }}
+														<p class="event-info">
+															<img src="{{ asset('img/calendar_icon.png') }}" width="14" class="edicons"> 
+															<?php 
+																date_default_timezone_set($event->timezone);
+																if(date('M j',$event->fromtime) == date('M j',$event->totime)) : 
+															?>
+															{{ date('D, M j',$event->fromtime) }}
+															<?php else: ?>
+															{{ date('M j',$event->fromtime) }} - {{ date('M j',$event->totime) }}
 
-												<?php endif; ?>
-											</p>
-											<p class="event-info"><img src="{{ asset('img/address_icon.png') }}" width="15" class="edicons"> {{ $event->address }}</p>
-											<p class="event-info"><img src="{{ asset('img/ticket_icon.png') }}" height="12" class="edicons">
-											@if($event->fee == 'Free') 
-												{{ $event->fee }}
-											@else
-												@if($event->currency == 'cad'){{ 'C$' }}@elseif($event->currency == 'usd'){{ '$' }}@elseif($event->currency == 'cny'){{ '¥' }}@elseif($event->currency == 'eur'){{ '€' }}@endif{{ $event->fee }}
-											@endif
-											</p>
-										</div>
-
-										<div class="interested">
-											@if(Auth::check())
-												<div class="interestcount">
-												@if(alreadyLikedEvent(Auth::user()->id,$event->id) > 0)
-													<span><a href="" data-toggle="tooltip" title="Not interested" data-event-id="{{ $event->id }}" data-author-id="{{ Auth::user()->id }}" class="like_btn event_unlike"><img src="{{ asset('img/already_likes_icon.png') }}" width="16"></a></span>
-												@else
-													<span><a href="" data-toggle="tooltip" title="Interested" data-event-id="{{ $event->id }}" data-author-id="{{ Auth::user()->id }}" class="like_btn event_like"><img src="{{ asset('img/likes_icon.png') }}" width="16"></a></span>
-												@endif
-													<span class="likenum">{{ $event->likes->count()}}</span></div>
-											@else
-											<div class="interestcount"><img src="{{ asset('img/likes_icon.png') }}" width="16"> {{ $event->likes->count() }}</div>
-											@endif
-										</div>
-										<div class="postfrom">
-											From: <a href="/brands/{{ ($event->group->slug) }}">{{ ($event->group->name) }}</a>
+															<?php endif; ?>
+														</p>
 										</div>
 							</div>
 						</div>
 						<?php $i++;?>
 						@endforeach
 						</div>
+						<?php date_default_timezone_set(Config::get('app.timezone'));?>
 						<div class="clear"></div>
 					@endif
 					@if (count($groups) == 0 && count($posts) == 0 && count($events) == 0 )
