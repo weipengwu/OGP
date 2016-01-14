@@ -30,4 +30,22 @@ class Kernel extends HttpKernel {
 		'guest' => 'App\Http\Middleware\RedirectIfAuthenticated',
 	];
 
+	public function handle($request)
+	{
+	    try
+	    {
+	        return parent::handle($request);
+	    }
+	    catch(\Symfony\Component\HttpKernel\Exception\NotFoundHttpException $e)
+	    {
+	        return response()->view('errors.404', [], 404);
+	    }
+	    catch (Exception $e)
+	    {
+	        $this->reportException($e);
+
+	        return $this->renderException($request, $e);
+	    }
+	}
+
 }
