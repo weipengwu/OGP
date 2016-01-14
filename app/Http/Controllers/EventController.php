@@ -203,7 +203,7 @@ class EventController extends Controller {
 			    }
 			}
 		}else{
-			$eventbanner = 'defaultbg'.rand(1,8).'.jpg';
+			$eventbanner = 'defaultbg'.rand(1,6).'.jpg';
 			$event->banner = $eventbanner;
 		}
 
