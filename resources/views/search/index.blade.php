@@ -90,7 +90,7 @@
 												</a>
 													<div class="postauthor">{{ $post->created_at->diffForHumans() }}</div>
 													<div class="title-area"><a href="{{ url() }}/posts/<?php echo $post->id; ?>"><h3>{{ $post->title }}</h3></a></div>
-													<!-- <div class="excerpt-area">{!! html_entity_decode(getExcerpt($post->content, 12)) !!}</div> -->
+													<div class="excerpt-area">{!! html_entity_decode(getExcerpt($post->content, 12)) !!}</div>
 													<div class="bottom">
 														<div class="left">
 															
