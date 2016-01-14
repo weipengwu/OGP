@@ -15,23 +15,6 @@ class Handler extends ExceptionHandler {
 		'Symfony\Component\HttpKernel\Exception\HttpException'
 	];
 
-	/**
-	 * Throw a 404 is a model record isn't found
-	 * @param  ModelNotFoundException
-	 * @return [type]
-	 */
-    protected function renderModelNotFoundException(ModelNotFoundException $e)
-    {
-      if (view()->exists('errors.404'))
-      {
-        return response()->view('errors.404', [], 404);
-      }
-      else
-      {
-        return (new SymfonyDisplayer(config('app.debug')))
-          ->createResponse($e);
-      }
-
 
 	/**
 	 * Report or log an exception.
@@ -61,7 +44,7 @@ class Handler extends ExceptionHandler {
 	      }
 	      elseif ($e instanceof ModelNotFoundException)
 	      {
-	        return $this->renderModelNotFoundException($e);
+	        abort(404);
 	      }
 	      else
 	      {
