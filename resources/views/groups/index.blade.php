@@ -47,6 +47,7 @@
 					@endforeach
 				</div>
 				<div class="divider"></div>
+				@if (count($artsgroups) > 0 )
 				<h2 class="sectiontitle">ARTS & DESIGN</h2>
 				<div class="row groupsrow collapsed">
 					<?php $i = 1;?>
@@ -67,6 +68,7 @@
 					<div class="brandsshowall"><a href="">SHOW ALL</a></div>
 					@endif
 				<div class="divider"></div>
+				@endif
 				@if (count($autogroups) > 0)
 				<h2 class="sectiontitle">AUTOS</h2>
 				<div class="row groupsrow collapsed">
