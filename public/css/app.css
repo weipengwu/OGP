@@ -7471,9 +7471,13 @@ h3 a:hover{
 }
 .statusbar.locked .sharebox:before{
   top: -9px;
+  border-bottom-color: #ccc;
+  left: 113px;
 }
 .statusbar.locked .sharebox:after{
   top: -8px;
+  border-bottom-color: #fff;
+  left: 114px;
 }
 
   /* Stroke */
