@@ -82,9 +82,12 @@
 								</section>
 								<div class="clear"></div>
 					@endif
+					<?php 
+						var_dump($events);
+					?>
 					@if (count($events) > 0)
 						<h2>EVENTS</h2>
-						<div class="groupsrow collapsed">
+						<div class="search-events">
 						<?php $i = 1; ?>
 						@foreach ($events as $event)
 							<?php

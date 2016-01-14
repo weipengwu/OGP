@@ -6664,7 +6664,7 @@ label,
 .searchindex .layout3333 .col-md-3{
   margin-bottom: 40px;
 }
-.home .eventgroup{
+.home .eventgroup, .searchindex .eventgroup{
   float: left;
   width: 23%;
   margin: 0 1%;
@@ -6673,17 +6673,17 @@ label,
     -moz-box-shadow: 0 0 2px #bababa;
     box-shadow: 0 0 2px #bababa;
 }
-.home .eventgroup .eventgroup-list h3{
+.home .eventgroup .eventgroup-list h3, .searchindex .eventgroup .eventgroup-list h3{
   font-size: 16px;
   height: 34px;
 }
-.home .eventgroup .eventgroup-list .event-details{
+.home .eventgroup .eventgroup-list .event-details, .searchindex .eventgroup .eventgroup-list .event-details{
   height: auto;
 }
-.home .eventgroup .eventgroup-list .event-details .event-info{
+.home .eventgroup .eventgroup-list .event-details .event-info, .searchindex .eventgroup .eventgroup-list .event-details .event-info{
   font-size: 12px;
 }
-.home .eventgroup .eventgroup-list .imgholder{
+.home .eventgroup .eventgroup-list .imgholder, .searchindex .eventgroup .eventgroup-list .imgholder{
   height: 160px;
 }
 .home_events:after{
