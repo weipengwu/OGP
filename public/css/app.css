@@ -7366,6 +7366,9 @@ h3 a:hover{
   right: 10px;
   bottom: 50px;
 }
+.statusbar.locked .sharebox{
+  bottom: -50px;
+}
 .sharebox .social_icons{
   margin: 0 5px !important;
   font-size: 14px !important;
@@ -7462,6 +7465,15 @@ h3 a:hover{
     border-style: solid;
     border-color: transparent;
     border-bottom: 0;
+}
+.statusbar.locked .sharebox:before, .statusbar.locked .sharebox:after{
+  border-top: 0;
+}
+.statusbar.locked .sharebox:before{
+  top: -9px;
+}
+.statusbar.locked .sharebox:after{
+  top: -8px;
 }
 
   /* Stroke */

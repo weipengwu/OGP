@@ -110,31 +110,47 @@
 
 .bx-wrapper .bx-prev {
 	left: 10px;
-	background: url(images/controls.png) no-repeat 0 -32px;
+	/*background: url(images/controls.png) no-repeat 0 -32px;*/
 }
 
 .bx-wrapper .bx-next {
 	right: 10px;
-	background: url(images/controls.png) no-repeat -43px -32px;
+	/*background: url(images/controls.png) no-repeat -43px -32px;*/
 }
 
-.bx-wrapper .bx-prev:hover {
+/*.bx-wrapper .bx-prev:hover {
 	background-position: 0 0;
 }
 
 .bx-wrapper .bx-next:hover {
 	background-position: -43px 0;
-}
+}*/
 
 .bx-wrapper .bx-controls-direction a {
 	position: absolute;
 	top: 50%;
-	margin-top: -16px;
+	/*margin-top: -16px;*/
 	outline: 0;
-	width: 32px;
+	/*width: 32px;
 	height: 32px;
-	text-indent: -9999px;
+	text-indent: -9999px;*/
 	z-index: 998;
+	margin-top: -20px;
+	width: 40px;
+	height: 40px;
+	background: rgba(255,255,255,.5);
+	border-radius: 25px;
+}
+.bx-wrapper .bx-controls-direction a:hover{
+	background: rgba(255,255,255,.8);
+}
+.bx-wrapper .bx-controls-direction a .fa{
+	width: 40px;
+	text-align: center;
+	color: #333;
+}
+.bx-wrapper .bx-controls-direction a .fa:before{
+	font-size: 40px;
 }
 
 .bx-wrapper .bx-controls-direction a.disabled {

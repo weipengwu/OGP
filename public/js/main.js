@@ -445,7 +445,9 @@ $(document).ready(function(){
 	  adaptiveHeight: true,
 	  mode: 'fade',
 	  auto: false,
-	  pager: false
+	  pager: false,
+	  nextText: '<i class="fa fa-angle-right"></i>',
+	  prevText: '<i class="fa fa-angle-left"></i>'
 	});
 
 	$('#selectprice').on('change', function(){

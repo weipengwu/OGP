@@ -324,7 +324,7 @@
     var loading_options = {
         finishedMsg: "",
         msgText: "<div class='center'>Loading...</div>",
-        //img: null
+        img: "{{ asset('img/spinner.gif') }}"
     };
     var pagesNum = <?php echo $gposts->lastPage(); ?>; 
     $('#allposts').infinitescroll({
