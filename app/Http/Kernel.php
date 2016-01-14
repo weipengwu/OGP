@@ -36,7 +36,7 @@ class Kernel extends HttpKernel {
 	    {
 	        return parent::handle($request);
 	    }
-	    catch(\Symfony\Component\HttpKernel\Exception\NotFoundHttpException $e)
+	    catch(\Symfony\Component\HttpKernel\Exception\ModelNotFoundException $e)
 	    {
 	        return response()->view('errors.404', [], 404);
 	    }
