@@ -7468,6 +7468,7 @@ h3 a:hover{
 }
 .statusbar.locked .sharebox:before, .statusbar.locked .sharebox:after{
   border-top: 0;
+  border-bottom: 9px solid transparent;
 }
 .statusbar.locked .sharebox:before{
   top: -9px;
