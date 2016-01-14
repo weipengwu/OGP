@@ -30,22 +30,22 @@ class Kernel extends HttpKernel {
 		'guest' => 'App\Http\Middleware\RedirectIfAuthenticated',
 	];
 
-	public function handle($request)
-	{
-	    try
-	    {
-	        return parent::handle($request);
-	    }
-	    catch(\Symfony\Component\HttpKernel\Exception\ModelNotFoundException $e)
-	    {
-	        return response()->view('errors.404', [], 404);
-	    }
-	    catch (Exception $e)
-	    {
-	        $this->reportException($e);
-
-	        return $this->renderException($request, $e);
-	    }
-	}
+	/**
+	 * Throw a 404 is a model record isn't found
+	 * @param  ModelNotFoundException
+	 * @return [type]
+	 */
+    protected function renderModelNotFoundException(ModelNotFoundException $e)
+    {
+      if (view()->exists('errors.404'))
+      {
+        return response()->view('errors.404', [], 404);
+      }
+      else
+      {
+        return (new SymfonyDisplayer(config('app.debug')))
+          ->createResponse($e);
+      }
+    }
 
 }
