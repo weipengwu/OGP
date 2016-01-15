@@ -271,7 +271,8 @@ class PostController extends Controller {
 		$pid = Request::input('post-id');
 		$uid = Request::input('author-id');
 		$post = Post::findOrFail($pid);
-		$like = PostLike::where('post_id','=',$pid)->where('author_id','=',$uid)->first();
+		//$like = PostLike::where('post_id','=',$pid)->where('author_id','=',$uid)->first();
+		$like = $post->likes()->where('author_id','=',$uid)->first();
 		var_dump($like);
 
 		// $count = PostLike::where('post_id','=',$pid)->count();
