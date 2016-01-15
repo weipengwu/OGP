@@ -348,8 +348,7 @@ class EventController extends Controller {
 		$eid = Request::input('event-id');
 		$uid = Request::input('author-id');
 		$event = Event::findOrFail($eid);
-		$like = EventLike::where('event_id','=',$eid)->where('author_id','=',$uid)->get();
-		$like->delete();
+		$event->likes()->where('author_id','=',$uid)->delete();
 
 		$count = EventLike::where('event_id','=',$eid)->count();
 		echo $count;
