@@ -4,7 +4,7 @@
 <div class="home">
 	
 		<?php 
-			$group = DB::table('groups')->orderBy('created_at', 'desc')->take(1)->get();
+			$group = DB::table('groups')->where('id', '35')->get();
 		?>
 		<section class="container">
 		<a href="/brands/{{ $group[0]->slug }}">

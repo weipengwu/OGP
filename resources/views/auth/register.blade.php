@@ -45,7 +45,7 @@
 					@else
 						<li><a href="{{  url() }}/lang/en" class="login-lang">English</a></li>
 					@endif
-					<li><a href="/" class="login-explore"><i class="fa fa-compass"></i> Explore OGP</a></li>
+					<li><a href="/" class="login-explore"><i class="fa fa-compass"></i> {{ trans('auth.exploreogp') }}</a></li>
 					<li><a href="{{ url('/auth/login') }}" id="login-in">{{ trans('headermenu.signin') }}</a></li>
 					<li><a href="{{ url('/auth/register') }}" id="login-up">{{ trans('headermenu.signup') }}</a></li>	
 				</ul>
@@ -60,8 +60,8 @@
 				<div class="panel-heading">
 					<div class="logoslogan">
 						<img src="{{ asset('img/logo_transparent.png') }}" width="70">
-						<h1>OH GOOD PARTY</h1>
-						<h2>Brand Strategy & Innovation Community</h2>
+						<h1>{{ trans('auth.ohgoodparty') }}</h1>
+						<h2>{{ trans('auth.brandstrategy') }}</h2>
 					</div>
 					<!-- <h3>SIGN UP TO OH GOOD PARTY</h3> -->
 					<!-- <p class="gotosignin">Already have an account? <a href="url('/auth/login') ">Sign in</a></p> -->
@@ -82,19 +82,19 @@
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 
 						<div class="form-group">
-							<input type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="Username">
+							<input type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="{{ trans('auth.username') }}">
 						</div>
 
 						<div class="form-group">
-							<input type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email Address">
+							<input type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="{{ trans('auth.email') }}">
 						</div>
 
 						<div class="form-group">
-							<input type="password" class="form-control" name="password" placeholder="Password">
+							<input type="password" class="form-control" name="password" placeholder="{{ trans('auth.password') }}">
 						</div>
 
 						<div class="form-group">
-							<input type="password" class="form-control" name="password_confirmation" placeholder="Confirm Password">
+							<input type="password" class="form-control" name="password_confirmation" placeholder="{{ trans('auth.confirmpassword') }}">
 						</div>
 
 						<!-- <div class="othersocials">
@@ -108,7 +108,7 @@
 								</button>
 						</div>
 						<div class="privacy">
-						By continue you agree to OH GOOD PARTY's <a href="">Terms of Use</a>
+						{{ trans('auth.termsofuse') }}
 						</div>
 					</form>
 				</div>
