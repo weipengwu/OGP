@@ -5,7 +5,7 @@ return [
 	'ohgoodparty'=>'奥格派',
 	'brandstrategy'=>'品牌战略与创新的社区',
 	'email'=>'邮件地址',
-	'emailadress'=>'您的邮件地址',
+	'emailaddress'=>'您的邮件地址',
 	'password'=>'创建密码',
 	'forgotyourpassword' =>'忘记密码?',
 	'resetpassword'=>'重设密码',

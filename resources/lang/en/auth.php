@@ -5,7 +5,7 @@ return [
 	'ohgoodparty'=>'OH GOOD PARTY',
 	'brandstrategy'=>'Brand Strategy & Innovation Community',
 	'email'=>'Email Address',
-	'emailadress'=>'E-Mail Address',
+	'emailaddress'=>'E-Mail Address',
 	'password'=>'Password',
 	'forgotyourpassword' =>'Forgot Your Password?',
 	'resetpassword'=>'Reset Password',
