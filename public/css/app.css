@@ -7874,6 +7874,11 @@ label.error{
   float: left;
   margin: 10px;
 }
+.pluslike{
+  font-size: 26px;
+  float: left;
+  line-height: 50px;
+}
 .page404{
   text-align: center;
   margin-top: 100px;

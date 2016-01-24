@@ -5,7 +5,7 @@
 	<div class="row">
 		<div class="fixedarea">
 			<div class="panel">
-				<div class="panel-heading"><h3>CREATE A NEW EVENT</h3></div>
+				<div class="panel-heading"><h3>{{ trans('event.createanewevent') }}</h3></div>
 
 				<div class="panel-body">
 					@if (count($errors) > 0)
@@ -23,24 +23,24 @@
 						<input type="hidden" name="author" value="{{ Auth::user()->id }}">
 						<input type="hidden" name="gid" value="<?php echo $gid;?>">
 						<div class="form-group">
-							<label>Upload Your Banner Image.</label>
-							<p>Recomended size: 1500px X 500px. Images must be in .jpg, .bmp, .png, or .gif format, and not exceed 4 MB.</p>
+							<label>{{ trans('event.bannerimage') }}</label>
+							<p>{{ trans('event.recomendedsize') }}</p>
 							<input type="file" name="banner" id="banner" accept="image/*">
 						</div>
 						<div class="form-group row">
-							<div class="col-md-12">Select the type of your event</div>
+							<div class="col-md-12">{{ trans('event.type') }}</div>
 							<div class="col-md-6 col-sm-6 col-xs-6">
-							<span class="radio"><input type="radio" name="type" id="typepublic" value="public" checked/><label for="typepublic">Public(Anyone can see)</label> </span>
+							<span class="radio"><input type="radio" name="type" id="typepublic" value="public" checked/><label for="typepublic">{{ trans('event.publictype') }}</label> </span>
 							</div>
 							<div class="col-md-6 col-sm-6 col-xs-6">
-							<span class="radio"><input type="radio" name="type" id="typeprivate" value="private" /> <label for="typeprivate">Private(Only followers can see)</label></span>
+							<span class="radio"><input type="radio" name="type" id="typeprivate" value="private" /> <label for="typeprivate">{{ trans('event.privatetype') }}</label></span>
 							</div>
 						</div>	
 						<div class="form-group">
-							<input type="text" name="title" class="form-control" placeholder="Event Title" maxlength="50" required>
+							<input type="text" name="title" class="form-control" placeholder="{{ trans('event.eventtitle') }}" maxlength="50" required>
 						</div>
 						<div class="form-group" style="float:left; margin-right: 2%; width: 49%;">
-			                <label for="dtp_input1" class="col-md-2 col-sm-2 col-xs-2 control-label">From: </label>
+			                <label for="dtp_input1" class="col-md-2 col-sm-2 col-xs-2 control-label">{{ trans('event.from') }}</label>
 			                <div class="input-group date form_datetime col-md-10 col-sm-10 col-xs-10" data-date-format="yyyy-mm-dd HH:ii p" data-link-field="dtp_input1">
 			                    <input class="form-control" name="fromtime" type="text" value="">
 								<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
@@ -48,7 +48,7 @@
 							<input type="hidden" id="dtp_input1" value="" />
 			            </div>
 			            <div class="form-group" style="float:left; width: 49%;">
-			                <label for="dtp_input2" class="col-md-2 col-sm-2 col-xs-2 control-label" style="text-align: right">To: </label>
+			                <label for="dtp_input2" class="col-md-2 col-sm-2 col-xs-2 control-label" style="text-align: right">{{ trans('event.to') }}</label>
 			                <div class="input-group date form_datetime col-md-10 col-sm-10 col-xs-10" data-date-format="yyyy-mm-dd HH:ii p" data-link-field="dtp_input2">
 			                    <input class="form-control" name="totime" type="text" value="">
 								<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
@@ -57,11 +57,11 @@
 			            </div>
 			            <input type="hidden" name="timezone" id="timezone" value="" />
 			            <div class="form-group" style="float:left; margin-right: 2%; width: 49%;">
-							<label class="col-md-2 col-sm-2 col-xs-2">Price</label>
+							<label class="col-md-2 col-sm-2 col-xs-2">{{ trans('event.price') }}</label>
 							<div class="col-md-10 col-sm-10 col-xs-10" style="padding: 0">
 							<select name="selectprice" id="selectprice" class="form-control">
-								<option value="Free">Free</option>
-								<option value="Paid">Paid</option>
+								<option value="Free">{{ trans('event.free') }}</option>
+								<option value="Paid">{{ trans('event.paid') }}</option>
 							</select>
 							</div>
 						</div>
@@ -72,17 +72,17 @@
 							<input type="number" name="quantity" class="form-control" placeholder="Quantity" min="1" max="1000">
 						</div> -->
 						<div class="form-group">
-							<input type="text" name="suitenum" class="form-control" placeholder="Suite No.">
+							<input type="text" name="suitenum" class="form-control" placeholder="{{ trans('event.suiteno') }}">
 						</div>
 						<div class="form-group">
-							<input type="text" name="address" id="address" class="form-control" placeholder="Address">
+							<input type="text" name="address" id="address" class="form-control" placeholder="{{ trans('event.address') }}">
 							<input type="hidden" name="city" id="city" class="form-control">
 						</div>
 						<div id="map">
 						</div>
 					
 						<div class="form-group">
-							<textarea name="content" class="form-control" placeholder="Event Description" required></textarea>
+							<textarea name="content" class="form-control" placeholder="{{ trans('event.eventdescription') }}" required></textarea>
 						</div>
 
 						<div class="imagezone">
@@ -99,7 +99,7 @@
 								<input type="file" id="postimage4" name="postimage4" accept="image/*">
 							</div>
 						</div>
-						<input type="submit" class="btn btn-logo" value="Submit">
+						<input type="submit" class="btn btn-logo" value="{{ trans('event.submit') }}">
 					</form>
 				</div>
 			</div>

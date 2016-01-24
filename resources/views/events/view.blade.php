@@ -118,7 +118,8 @@
 			<h2>Interested</h2>
 			<div class="interestWrapper">
 			<?php
-				$alllikes = DB::table('eventlikes')->where('event_id', '=', $event->id)->take(10)->get();
+				$alllikes = DB::table('eventlikes')->where('event_id', '=', $event->id)->take(9)->get();
+				$alllikescount = DB::table('eventlikes')->where('event_id', '=', $event->id)->count();
 				if(count($alllikes) > 0):
 				foreach ($alllikes as $eventlike) :
 					$uid = $eventlike->author_id;
@@ -132,7 +133,13 @@
 						<div class="eventlikeprofile">
 							<div class="top-profile" style="width: 50px; height: 50px; line-height: 50px;">{{ getFirstCharter(getAuthorname($uid)) }}</div>
 						</div>
-			<?php endif; endforeach;endif;?>
+			<?php endif; 
+			endforeach;
+			if($alllikescount > 10 ){
+				$rcount = $alllikescount - 10;
+				echo "<div class='pluslike'>+".$rcount."</div>";
+			}
+			endif;?>
 			</div>
 			<!-- <hr>
 			<h2>Attentees</h2> -->

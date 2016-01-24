@@ -5,7 +5,7 @@
 	<div class="row">
 		<div class="fixedarea">
 			<div class="panel">
-				<div class="panel-heading"><h3>CREATE A NEW POST</h3></div>
+				<div class="panel-heading"><h3>{{ trans('posts.createanewpost') }}</h3></div>
 
 				<div class="panel-body">
 					@if (count($errors) > 0)
@@ -23,10 +23,10 @@
 						<input type="hidden" name="author" value="{{ Auth::user()->id }}">
 						<input type="hidden" name="gid" value="<?php echo $gid;?>">
 						<div class="form-group">
-							<input type="text" name="title" class="form-control" placeholder="The prominent title is waiting for you right here." maxlength="100" required>
+							<input type="text" name="title" class="form-control" placeholder="{{ trans('posts.posttitle') }}" maxlength="100" required>
 						</div>
 						<div class="form-group">
-							<textarea name="content" class="form-control" id="posteditor" placeholder="Is there any good news?" required></textarea>
+							<textarea name="content" class="form-control" id="posteditor" placeholder="{{ trans('posts.postcontent') }}" required></textarea>
 						</div>
 						<div class="form-group">
 							<div>Please upload at least one image, maximum six images. Image size can not be exceed 4 MB.</div>
@@ -51,7 +51,7 @@
 								<input type="file" id="postimage6" name="postimage6" accept="image/*">
 							</div>
 						</div>
-						<input type="submit" class="btn btn-logo" value="Submit">
+						<input type="submit" class="btn btn-logo" value="{{ trans('posts.submit') }}">
 					</form>
 				</div>
 			</div>
