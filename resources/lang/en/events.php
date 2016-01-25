@@ -2,6 +2,7 @@
 
 return [
 	'createanewevent'=>'CREATE A NEW EVENT',
+	'editevent'=>'EDIT EVENT',
 	'bannerimage'=>'Upload Banner Image For Your Event',
 	'recomendedsize'=>'Recommended size: 1500px X 500px. Images must be in .jpg, .bmp, .png, or .gif format, and not exceed 4 MB.',
 	'pickimage'=>'Pick Image',
@@ -14,6 +15,7 @@ return [
 	'price'=>'Price',
 	'free'=>'Free',
 	'paid'=>'Paid',
+	'eventfee' => 'Event Fee',
 	'quantity'=>'Quantity',
 	'suiteno'=>'Suite No.',
 	'address'=>'Address',

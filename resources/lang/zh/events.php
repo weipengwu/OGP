@@ -2,6 +2,7 @@
 
 return [
 	'createanewevent'=>'发布新活动',
+	'editevent'=>'编辑活动',
 	'bannerimage'=>'上传您的活动宣传横幅',
 	'recomendedsize'=>'建议尺寸:1500px X 500px。图像格式必须是 .jpg, .bmp, .png, or .gif，⼤小不超过4 MB',
 	'pickimage'=>'选择图片',
@@ -14,6 +15,7 @@ return [
 	'price'=>'价格',
 	'free'=>'免费',
 	'paid'=>'付费',
+	'eventfee' => '票价',
 	'quantity'=>'数量',
 	'suiteno'=>'位置',
 	'address'=>'地址',

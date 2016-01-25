@@ -5,7 +5,7 @@
 	<div class="row">
 		<div class="fixedarea">
 			<div class="panel">
-				<div class="panel-heading"><h3>EDIT EVENT</h3></div>
+				<div class="panel-heading"><h3>{{ trans('events.editevent') }}</h3></div>
 
 				<div class="panel-body">
 					@if (count($errors) > 0)
@@ -24,24 +24,24 @@
 						<input type="hidden" name="eid" value="{{ $event->id }}">
 						<input type="hidden" name="gid" value="{{ $event->group_id }}">
 						<div class="form-group">
-							<label>Upload Your Banner Image</label>
-							<p>Recomended size: 1500px X 500px. Images must be in .jpg, .bmp, .png, or .gif format, and not exceed 4 MB.</p>
+							<label>{{ trans('events.bannerimage') }}</label>
+							<p>{{ trans('events.recomendedsize') }}</p>
 							<input type="file" name="banner" id="banner" accept="image/*">
 						</div>
 						<div class="form-group row">
-							<div class="col-md-12">Select the type of your event</div>
+							<div class="col-md-12">{{ trans('events.type') }}</div>
 							<div class="col-md-6 col-sm-6 col-xs-6">
-							<span class="radio"><input type="radio" name="type" id="typepublic" value="public" <?php if($event->type == 'public') echo "checked"; ?>/><label for="typepublic">Public(Anyone can see)</label> </span>
+							<span class="radio"><input type="radio" name="type" id="typepublic" value="public" <?php if($event->type == 'public') echo "checked"; ?>/><label for="typepublic">{{ trans('events.publictype') }}</label> </span>
 							</div>
 							<div class="col-md-6 col-sm-6 col-xs-6">
-							<span class="radio"><input type="radio" name="type" id="typeprivate" value="private" <?php if($event->type == 'private') echo "checked"; ?> /> <label for="typeprivate">Private(Only followers can see)</label></span>
+							<span class="radio"><input type="radio" name="type" id="typeprivate" value="private" <?php if($event->type == 'private') echo "checked"; ?> /> <label for="typeprivate">{{ trans('events.privatetype') }}</label></span>
 							</div>
 						</div>	
 						<div class="form-group">
-							<input type="text" name="title" class="form-control" placeholder="Event Title" maxlength="150" value="{{ $event->title }}">
+							<input type="text" name="title" class="form-control" placeholder="{{ trans('events.eventtitle') }}" maxlength="150" value="{{ $event->title }}">
 						</div>
 						<div class="form-group" style="float:left; margin-right: 2%; width: 49%;">
-			                <label for="dtp_input1" class="col-md-2 col-sm-2 col-xs-2 control-label">From: </label>
+			                <label for="dtp_input1" class="col-md-2 col-sm-2 col-xs-2 control-label">{{ trans('events.from') }}</label>
 			                <div class="input-group date form_datetime col-md-10 col-sm-10 col-xs-10" data-date-format="yyyy-mm-dd HH:ii p" data-link-field="dtp_input1">
 			                    <input class="form-control" name="fromtime" type="text" value="{{ gmdate('Y-m-d h:i a', $event->fromtime) }}">
 								<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
@@ -49,7 +49,7 @@
 							<input type="hidden" id="dtp_input1" value="" />
 			            </div>
 			            <div class="form-group" style="float:left; width: 49%;">
-			                <label for="dtp_input2" class="col-md-2 col-sm-2 col-xs-2 control-label" style="text-align: right">To: </label>
+			                <label for="dtp_input2" class="col-md-2 col-sm-2 col-xs-2 control-label" style="text-align: right">{{ trans('events.to') }}</label>
 			                <div class="input-group date form_datetime col-md-10 col-sm-10 col-xs-10" data-date-format="yyyy-mm-dd HH:ii p" data-link-field="dtp_input2">
 			                    <input class="form-control" name="totime" type="text" value="{{ gmdate('Y-m-d h:i a', $event->totime) }}">
 								<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
@@ -58,11 +58,11 @@
 			            </div>
 			     
 			            <div class="form-group" style="float:left; margin-right: 2%; width: 49%;">
-							<label class="col-md-2 col-sm-2 col-xs-2">Price</label>
+							<label class="col-md-2 col-sm-2 col-xs-2">{{ trans('events.price') }}</label>
 							<div class="col-md-10 col-sm-10 col-xs-10" style="padding: 0">
 							<select name="selectprice" id="selectprice" class="form-control">
-								<option value="Free">Free</option>
-								<option value="Paid" <?php if ($event->fee !== 'Free') echo "selected";?>>Paid</option>
+								<option value="Free">{{ trans('events.free') }}</option>
+								<option value="Paid" <?php if ($event->fee !== 'Free') echo "selected";?>>{{ trans('events.paid') }}</option>
 							</select>
 							</div>
 						</div>
@@ -74,25 +74,25 @@
 									<option value="cny" @if ($event->currency == 'cny') {{ 'selected' }} @endif >¥</option>
 									<option value="eur" @if ($event->currency == 'eur') {{ 'selected' }} @endif >€</option>
 								</select>
-							</div> <div class="col-md-9 col-sm-9 col-xs-9" style="padding: 0"><input type="number" name="fee" class="form-control" placeholder="Event Fee" <?php if ($event->fee !== 'Free') echo "value='".$event->fee."'";?>></div>
+							</div> <div class="col-md-9 col-sm-9 col-xs-9" style="padding: 0"><input type="number" name="fee" class="form-control" placeholder="{{ trans('events.eventfee') }}" <?php if ($event->fee !== 'Free') echo "value='".$event->fee."'";?>></div>
 						</div>
 						<!-- <div class="form-group">
 							<input type="number" name="quantity" class="form-control" placeholder="Quantity" min="0" max="1000" value="{{ $event->quantity }}">
 						</div> -->
 						<div class="form-group">
-							<input type="text" name="suitenum" class="form-control" placeholder="Suite No." value="{{ $event->suitenum }}">
+							<input type="text" name="suitenum" class="form-control" placeholder="{{ trans('events.suiteno') }}" value="{{ $event->suitenum }}">
 						</div>
 						<div class="form-group">
-							<input type="text" name="address" id="address" class="form-control" placeholder="Address" value="{{ $event->address }}">
+							<input type="text" name="address" id="address" class="form-control" placeholder="{{ trans('events.address') }}" value="{{ $event->address }}">
 							<input type="hidden" name="city" id="city" class="form-control" value="{{ $event->city }}">
 						</div>
 						<div id="map">
 						</div>
 
 						<div class="form-group">
-							<textarea name="content" class="form-control" placeholder="Event Description">{{ strip_tags($event->content) }}</textarea>
+							<textarea name="content" class="form-control" placeholder="{{ trans('events.eventdescription') }}">{{ strip_tags($event->content) }}</textarea>
 						</div>
-						<input type="submit" class="btn btn-logo" value="Submit">
+						<input type="submit" class="btn btn-logo" value="{{ trans('events.submit') }}">
 					</form>
 				</div>
 			</div>

@@ -34,7 +34,7 @@ return [
 	'origincountry'=>'Origin (Country)',
 	'targetmartet'=>'Target Martet',
 	'briefintroduction'=>'Brief Introduction (Tips: It is recommended to use the official language at your target market.)',
-	'pledge'=>'By continuing you pledge that the content filled in and the additional materials provided are true and authentic in every aspect.'，
+	'pledge'=>'By continuing you pledge that the content filled in and the additional materials provided are true and authentic in every aspect.',
 	'createyourbrand' => 'CREATE YOUR BRAND',
 	'submit' => 'Submit',
 	'follow' => 'Follow',

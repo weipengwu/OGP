@@ -34,7 +34,7 @@ return [
 	'origincountry'=>'原产地(国家)',
 	'targetmartet'=>'目标市场',
 	'briefintroduction'=>'简要介绍 (贴⼼提示:建议您使⽤目标市场语⾔，有助于推广您的品牌。)',
-	'pledge'=>'继续代表您保证填写的内容和提供的附加材料的每一个环节都真实可信。'，
+	'pledge'=>'继续代表您保证填写的内容和提供的附加材料的每一个环节都真实可信。',
 	'createyourbrand' => '创建您的品牌',
 	'submit' => '提交',
 	'follow' => '关注',

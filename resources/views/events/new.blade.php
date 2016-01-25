@@ -37,7 +37,7 @@
 							</div>
 						</div>	
 						<div class="form-group">
-							<input type="text" name="title" class="form-control" placeholder="{{ trans('event.eventtitle') }}" maxlength="50" required>
+							<input type="text" name="title" class="form-control" placeholder="{{ trans('events.eventtitle') }}" maxlength="50" required>
 						</div>
 						<div class="form-group" style="float:left; margin-right: 2%; width: 49%;">
 			                <label for="dtp_input1" class="col-md-2 col-sm-2 col-xs-2 control-label">{{ trans('events.from') }}</label>
@@ -66,7 +66,7 @@
 							</div>
 						</div>
 						<div id="fee" class="form-group" style="float:left; width: 49%;">
-							<div class="col-md-3 col-sm-3 col-xs-3"><select name="eventcurrency" class="form-control"><option value="cad">C$</option><option value="usd">$</option><option value="cny">¥</option><option value="eur">€</option></select></div> <div class="col-md-9 col-sm-9 col-xs-9" style="padding: 0"><input type="number" name="fee" class="form-control" placeholder="Event Fee"></div>
+							<div class="col-md-3 col-sm-3 col-xs-3"><select name="eventcurrency" class="form-control"><option value="cad">C$</option><option value="usd">$</option><option value="cny">¥</option><option value="eur">€</option></select></div> <div class="col-md-9 col-sm-9 col-xs-9" style="padding: 0"><input type="number" name="fee" class="form-control" placeholder="{{ trans('events.eventfee') }}"></div>
 						</div>
 						<!-- <div class="form-group">
 							<input type="number" name="quantity" class="form-control" placeholder="Quantity" min="1" max="1000">

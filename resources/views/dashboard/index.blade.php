@@ -156,7 +156,7 @@
 					<div class="form-group">
 						<textarea name="desc" class="form-control" placeholder="Bio" maxlength="100">@if(count($user_desc) > 0){!! strip_tags(userDesc(Auth::user()->id)[0]->meta_value) !!}@endif</textarea>
 					</div>
-					<input type="submit" class="btn btn-logo" value="Submit">
+					<input type="submit" class="btn btn-logo" value="{{ trans('events.submit') }}">
 				</form>
 			</div>
 			<div class="dash-main" id="mybrand">
