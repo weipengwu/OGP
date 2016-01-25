@@ -12,11 +12,11 @@
 				<p><a href="http://{{ $group->website }}" target="_blank" class="website">{{ $group->website }}</a></p>
 				@if(Auth::check())
 					@if($group->owner == Auth::user()->id)
-						<a href="/brands/{{ $group->slug }}/edit" class="btn btn_logo">Edit Brand</a>
+						<a href="/brands/{{ $group->slug }}/edit" class="btn btn_logo">{{ trans('brands.editbrand') }}</a>
 					@elseif(isFollowing(Auth::user()->id, $group->id))
-						<a href="" class="follow_btn unfollow_group" data-user-id="{{ Auth::user()->id }}" data-group-id="{{ $group->id }}">Following</a>
+						<a href="" class="follow_btn unfollow_group" data-user-id="{{ Auth::user()->id }}" data-group-id="{{ $group->id }}">{{ trans('brands.following') }}</a>
 					@else
-						<a href="" class="follow_btn follow_group" data-user-id="{{ Auth::user()->id }}" data-group-id="{{ $group->id }}">Follow</a>
+						<a href="" class="follow_btn follow_group" data-user-id="{{ Auth::user()->id }}" data-group-id="{{ $group->id }}">{{ trans('brands.follow') }}</a>
 					@endif
 				@endif
 			</div>
@@ -24,7 +24,7 @@
 	</div>
 </div>
 	<div class="statusbar">
-		<div class="left"><span class="followerNumber">{{ count(groupFollowers($group->id)) }} @if(count(groupFollowers($group->id)) > 1) Followers @else Follower @endif</span> <span>{{ count($group->events) }} @if(count($group->events) > 1) Events @else Event @endif</span> <span>{{ count($group->posts) }} @if(count($group->posts) > 1) Posts @else Post @endif</span></div>
+		<div class="left"><span class="followerNumber">{{ count(groupFollowers($group->id)) }} @if(count(groupFollowers($group->id)) > 1) {{ trans('brands.followers') }} @else {{ trans('brands.follower') }} @endif</span> <span>{{ count($group->events) }} @if(count($group->events) > 1) {{ trans('brands.events') }} @else {{ trans('brands.event') }} @endif</span> <span>{{ count($group->posts) }} @if(count($group->posts) > 1) {{ trans('brands.posts') }} @else {{ trans('brands.post') }} @endif</span></div>
 		<div class="right">
 			@if(Auth::check())
 				@if($group->owner == Auth::user()->id)

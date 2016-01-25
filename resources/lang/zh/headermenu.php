@@ -2,8 +2,8 @@
 
 return [
 
-	'explorebrands' => '探索品牌',
-	'discoverevents' => '发现活动',
+	'explorebrands' => '品牌',
+	'discoverevents' => '活动',
 	'createBrand' => '创建品牌',
 	'signin' => '登 陆',
 	'signup' => '注 册',

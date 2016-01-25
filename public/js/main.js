@@ -1,46 +1,7 @@
 //init
 
 $(document).ready(function(){
-	$('body').on('click', '.event_like', function(e){
-		e.preventDefault();
-		$.ajaxSetup({
-		   headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
-		});
-		var that = $(this);
-		var eid = $(this).data('event-id');
-		var uid = $(this).data('author-id');
-		$.ajax({
-			type: "POST",
-			url: window.location.origin+"/event/like",
-			data: "event-id="+eid+'&author-id='+uid
-		}).done(function(response){
-			that.removeClass('event_like');
-			that.addClass('event_unlike');
-			that.html('<img src="../img/already_likes_icon.png" width="16">');
-			$('.leftlikenum').html(response+' Interested');
-			that.parent().next().html(response);
-		})
-	})
-	$('body').on('click', '.event_unlike', function(e){
-		e.preventDefault();
-		$.ajaxSetup({
-		   headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
-		});
-		var that = $(this);
-		var eid = $(this).data('event-id');
-		var uid = $(this).data('author-id');
-		$.ajax({
-			type: "POST",
-			url: window.location.origin+"/event/unlike",
-			data: "event-id="+eid+'&author-id='+uid
-		}).done(function(response){
-			that.removeClass('event_unlike');
-			that.addClass('event_like');
-			that.html('<img src="../img/likes_icon.png" width="16">');
-			$('.leftlikenum').html(response+' Interested');
-			that.parent().next().html(response);
-		})
-	})
+	
 	$('body').on('click', '.post_like', function(e){
 		e.preventDefault();
 		$.ajaxSetup({
@@ -117,60 +78,7 @@ $(document).ready(function(){
 	// 		}
 	// 	})
 	// })
-	$('body').on('click', '.follow_group', function(e){
-		e.preventDefault();
-		$.ajaxSetup({
-		   headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
-		});
-		var userid = $(this).data('user-id');
-		var groupid = $(this).data('group-id');
-		$.ajax({
-			type: "POST",
-			url: window.location.origin+"/brands/follow",
-			data: "uid="+userid+'&gid='+groupid
-		}).done(function(response){
-		
-				$('.follow_btn').removeClass('follow_group');
-				$('.follow_btn').addClass('unfollow_group');
-				$('.follow_btn').html('Following');
-				$('.groupfollow span a').removeClass('follow_group');
-				$('.groupfollow span a').addClass('unfollow_group');
-				$('.groupfollow span a').html('<img src="../img/unfollow_icon.png" width="20">');
-				if(response > 1){
-					$('.followerNumber').html(response+' Followers');
-				}else{
-					$('.followerNumber').html(response+' Follower');
-				}
-			
-		})
-	})
-	$('body').on('click', '.unfollow_group', function(e){
-		e.preventDefault();
-		$.ajaxSetup({
-		   headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
-		});
-		var userid = $(this).data('user-id');
-		var groupid = $(this).data('group-id');
-		$.ajax({
-			type: "POST",
-			url: window.location.origin+"/brands/unfollow",
-			data: "uid="+userid+'&gid='+groupid
-		}).done(function(response){
-			
-				$('.follow_btn').removeClass('unfollow_group');
-				$('.follow_btn').addClass('follow_group');
-				$('.follow_btn').html('Follow');
-				$('.groupfollow span a').removeClass('unfollow_group');
-				$('.groupfollow span a').addClass('follow_group');
-				$('.groupfollow span a').html('<img src="../img/follow_icon.png" width="20">');
-				if(response > 1){
-					$('.followerNumber').html(response+' Followers');
-				}else{
-					$('.followerNumber').html(response+' Follower');
-				}
-			
-		})
-	})
+	
 	$('.groupfollow span a').tooltip({
 		placement: 'left'
 	});

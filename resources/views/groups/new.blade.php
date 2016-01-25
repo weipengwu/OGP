@@ -5,7 +5,7 @@
 	<div class="row">
 		<div class="fixedarea">
 			<div class="panel">
-				<div class="panel-heading"><h3>CREATE YOUR BRAND</h3></div>
+				<div class="panel-heading"><h3>{{ trans('brands.createyourbrand') }}</h3></div>
 
 				<div class="panel-body">
 					@if (count($errors) > 0)
@@ -22,22 +22,22 @@
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 						<input type="hidden" name="creator" value="{{ Auth::user()->id }}">
 						<input type="hidden" name="owner" value="{{ Auth::user()->id }}">
-						<h4>UPLOAD IMAGES FOR YOUR BRAND</h4>
+						<h4>{{ trans('brands.uploadimages') }}</h4>
 						<hr>
 						<div class="form-group">
-							<label>Upload Your Brand Logo</label>
-							<p>Recomended size: 400px X 400px. Images must be in .jpg, .bmp, .png, or .gif format, and not exceed 4 MB.</p>
+							<label>{{ trans('brands.uploadlogo') }}</label>
+							<p>{{ trans('brands.recommendedsize') }}</p>
 							<input type="file" id="g-profile" name="g-profile" accept="image/*">
 						</div>
 						<div class="form-group">
-							<label>Upload Your Brand Banner Image</label>
-							<p>Recomended size: 1500px X 500px. Images must be in .jpg, .bmp, .png, or .gif format, and not exceed 4 MB.</p>
+							<label>{{ trans('brands.uploadbanner') }}</label>
+							<p>{{ trans('brands.recommendedsizebig') }}</p>
 							<input type="file" id="g-banner" name="g-banner" accept="image/*">
 						</div>
-						<h4>TELL US MORE ABOUT YOUR BRAND</h4>
+						<h4>{{ trans('brands.tellusmore') }}</h4>
 						<hr>
 						<div class="form-group" style="position:relative">
-							<input type="text" name="name" class="form-control" id="brandname" placeholder="Brand Name" maxlength="100" required>
+							<input type="text" name="name" class="form-control" id="brandname" placeholder="{{ trans('brands.brandname') }}" maxlength="100" required>
 							<div class="checknamepass checkname"><i class="fa fa-check"></i></div>
 							<div class="checknamefail checkname"><i class="fa fa-times"></i></div>
 							<div class="help-block checknameerror">Brand name has been taken, please choose another one.</div>
@@ -62,12 +62,12 @@
 							</select>
 						</div>
 						<div class="form-group">
-							<input type="text" name="tag" class="form-control" placeholder="Brand Tag">
+							<input type="text" name="tag" class="form-control" placeholder="{{ trans('brands.tag') }}">
 						</div>
 						<div class="form-group">
 							<div class="input-group">
 								<div class="input-group-addon">http://</div>
-								<input type="text" name="website" class="form-control" placeholder="Brand Website">
+								<input type="text" name="website" class="form-control" placeholder="{{ trans('brands.website') }}">
 							</div>
 						</div>
 						<!-- <div class="form-group selectorigin" data-ng-controller="CountryController">
@@ -364,10 +364,10 @@
 							<span>Apply to Join</span> <span class="radio"><input type="radio" name="applytojoin" id="applyyes" value="yes" /> <label for="applyyes">Yes</label> </span><span class="radio"><input type="radio" name="applytojoin" id="applyno" value="no" /> <label for="applyno">No</label></span>
 						</div> -->
 						<div class="form-group">
-							<textarea name="description" maxlength="300" class="form-control" placeholder="Brief Introduction ( Tips: It is recommended to use the official language at the target markets.)" required></textarea>
+							<textarea name="description" maxlength="300" class="form-control" placeholder="{{ trans('brands.briefintroduction') }}" required></textarea>
 						</div>
-						<p class="small">By continuing you pledge that the content filled in and the additional materials provided are true and authentic in every aspect.</p>
-						<input type="submit" class="btn btn-logo submit" value="Submit">
+						<p class="small">{{ trans('brands.pledge') }}</p>
+						<input type="submit" class="btn btn-logo submit" value="{{ trans('brands.submit') }}">
 					</form>
 				</div>
 			</div>

@@ -15,7 +15,7 @@
 						if(count($user_profile) > 0):
 					?>
 							<div class="col-md-5 col-sm-5 col-xs-5">
-								<div class="top-profile" style="background: url(<?php echo url()."/".$user_profile[0]->meta_value;?>) center center no-repeat; background-size: cover; width: 100px; height: 100px; border-radius: 50px"></div>
+								<div class="top-profile" style="background: url(<?php echo url()."/uploads/Small_".$user_profile[0]->meta_value;?>) center center no-repeat; background-size: cover; width: 100px; height: 100px; border-radius: 50px"></div>
 							</div>
 					<?php
 						else:
@@ -33,26 +33,26 @@
 				</div>
 				<div class="dash-side-bottom">
 					<div class="d-row">
-						<a href="" class="dash-btn" data-id="overview">Overview</a>
+						<a href="" class="dash-btn" data-id="overview">{{ trans('dashboard.overview') }}</a>
 					</div>
 					<div class="d-row">
-						<a href="" class="dash-btn" data-id="updateprofile">Edit Profile</a>
+						<a href="" class="dash-btn" data-id="updateprofile">{{ trans('dashboard.editprofile') }}</a>
 					</div>
 <!-- 					<div class="d-row">
 						<a href="/changepassword">Change Password</a>
 					</div> -->
 					<div class="d-row">
-						<a href="" class="dash-btn" data-id="mybrand">My Brand</a>
+						<a href="" class="dash-btn" data-id="mybrand">{{ trans('dashboard.mybrand') }}</a>
 					</div>
 					<div class="d-row">
-						<a href="" class="dash-btn" data-id="followedbrand">Following</a>
+						<a href="" class="dash-btn" data-id="followedbrand">{{ trans('dashboard.following') }}</a>
 					</div>
 <!-- 					<div class="d-row">
 						<a href="">Joined Brands</a>
 					</div> -->
 					@if(count(myGroup($id)) > 0)
 					<div class="d-row">
-						<a href="" class="dash-btn" data-id="manageEvents">Manage Events</a>
+						<a href="" class="dash-btn" data-id="manageEvents">{{ trans('dashboard.manageevents') }}</a>
 					</div>
 					@endif
 				</div>
@@ -60,7 +60,7 @@
 		</div>
 		<div class="col-md-7 col-md-push-1">
 			<div class="dash-main dash-init" id="overview">
-				<h3>Dashboard</h3>
+				<h3>{{ trans('dashboard.dashboard') }}</h3>
 					<div class="dash-row">
 						@if(count(myGroup($id)) > 0)
 							<a href="" class="dash-btn" data-id="mybrand">
@@ -68,7 +68,7 @@
 									<div class="img-wrapper">
 									<img src="{{ asset('img/edit_brand_icon.png') }}" width="40">
 									</div>
-									<p>Edit Brand</p>
+									<p>{{ trans('dashboard.editbrand') }}</p>
 								</div>
 							</a>
 						@else
@@ -77,7 +77,7 @@
 									<div class="img-wrapper">
 									<img src="{{ asset('img/create_brand_icon.png') }}" width="40">
 									</div>
-									<p>Create Brand</p>
+									<p>{{ trans('dashboard.createbrand') }}</p>
 								</div>
 							</a>
 						@endif
@@ -86,7 +86,7 @@
 									<div class="img-wrapper">
 									<img src="{{ asset('img/follow_icon.png') }}" width="40">
 									</div>
-									<p>Following</p>
+									<p>{{ trans('dashboard.following') }}</p>
 								</div>
 							</a>
 					@if(count(myGroup($id)) > 0)
@@ -96,7 +96,7 @@
 								<div class="img-wrapper">
 									<img src="{{ asset('img/createpost_icon.png') }}" width="40">
 								</div>
-								<p>Create Post</p>
+								<p>{{ trans('dashboard.createpost') }}</p>
 							</div>
 						</a>
 						<a href="<?php echo url(); ?>/brands/<?php echo $mygroup[0]->slug; ?>/events/new">
@@ -104,7 +104,7 @@
 								<div class="img-wrapper">
 									<img src="{{ asset('img/event_icon.png') }}" width="40">
 								</div>
-								<p>Create Event</p>
+								<p>{{ trans('dashboard.createevent') }}</p>
 							</div>
 						</a>
 					@endif
@@ -113,7 +113,7 @@
 									<div class="img-wrapper">
 									<img src="{{ asset('img/edit_profile_icon.png') }}" width="40">
 									</div>
-									<p>Edit Profile</p>
+									<p>{{ trans('dashboard.editprofile') }}</p>
 								</div>
 							</a>
 							<a href="/changepassword">
@@ -121,7 +121,7 @@
 									<div class="img-wrapper">
 									<img src="{{ asset('img/password_icon.png') }}" width="40">
 									</div>
-									<p>Change Password</p>
+									<p>{{ trans('dashboard.changepassword') }}</p>
 								</div>
 							</a>
 							@if(count(myGroup($id)) > 0)
@@ -130,7 +130,7 @@
 									<div class="img-wrapper">
 									<img src="{{ asset('img/edit_event_icon.png') }}" width="40">
 									</div>
-									<p>Manage Events</p>
+									<p>{{ trans('dashboard.manageevents') }}</p>
 								</div>
 							</a>
 							@endif
@@ -139,19 +139,19 @@
 
 			</div>
 			<div class="dash-main" id="updateprofile">
-				<h4>Edit Profile Info</h4>
+				<h4>{{ trans('dashboard.editprofileinfo') }}</h4>
 				<form action="{{ URL::route('updateProfile') }}" method="post" enctype="multipart/form-data">
 					<input type="hidden" name="_token" value="{{ csrf_token() }}">
 					<input type="hidden" name="user" value="{{ Auth::user()->id }}">
 					<div class="form-group">
-						<label>Upload Your Profile Image</label>
+						<label>{{ trans('dashboard.uploadprofile') }}</label>
 						<input type="file" name="u-profile" id="u-profile" accept="image/*">
 					</div>
 					<div class="form-group">
-						<input type="text" class="form-control" name="username" value="{{ getAuthorname($id) }}" placeholder="Username" maxlength="30">
+						<input type="text" class="form-control" name="username" value="{{ getAuthorname($id) }}" placeholder="{{ trans('dashboard.username') }}" maxlength="30">
 					</div>
 					<div class="form-group">
-						<input type="text" class="form-control" name="useremail" value="{{ getAuthoremail($id) }}" placeholder="Email">
+						<input type="text" class="form-control" name="useremail" value="{{ getAuthoremail($id) }}" placeholder="{{ trans('dashboard.email') }}">
 					</div>
 					<div class="form-group">
 						<textarea name="desc" class="form-control" placeholder="Bio" maxlength="100">@if(count($user_desc) > 0){!! strip_tags(userDesc(Auth::user()->id)[0]->meta_value) !!}@endif</textarea>
@@ -173,18 +173,18 @@
 							<p><span class="followcount"><img src="{{ asset('img/follow_icon.png') }}" width="20"> {{ count(groupFollowers($group->id)) }}</span></p>
 						</div>
 						<div class="col-md-3">
-							<a href="brands/<?= $group->slug;?>" class="btn btn-logo top-btn">Enter Brand</a>
-							<a href="brands/<?= $group->slug;?>/edit" class="btn btn-logo">Edit Brand</a>
+							<a href="brands/<?= $group->slug;?>" class="btn btn-logo top-btn">{{ trans('dashboard.enterbrand') }}</a>
+							<a href="brands/<?= $group->slug;?>/edit" class="btn btn-logo">{{ trans('dashboard.editbrand') }}</a>
 						</div>
 					@endforeach
 					</div>
 				@else
 					<div class="row no-border">
-						<h3 style="margin-top:0;">You haven't created your brand yet.</h3>
+						<h3 style="margin-top:0;">{{ trans('dashboard.nobrand') }}</h3>
 						<a href="/brands/new">
 								<div class="dash-box">
 									<img src="{{ asset('img/create_brand_icon.png') }}" width="40">
-									<p>Create Brand</p>
+									<p>{{ trans('dashboard.createbrand') }}</p>
 								</div>
 							</a>
 					</div>
@@ -264,8 +264,8 @@
 					</div>		
 					</div>
 					<div class="col-md-3">
-						<a href="/events/{{ $event->id }}/edit" class="btn btn-logo top-btn">Edit Event</a>
-						<a class="various btn btn-danger" href="#confirmdelete<?php echo $event->id; ?>">Delete Event</a>
+						<a href="/events/{{ $event->id }}/edit" class="btn btn-logo top-btn">{{ trans('dashboard.editevent') }}</a>
+						<a class="various btn btn-danger" href="#confirmdelete<?php echo $event->id; ?>">{{ trans('dashboard.deleteevent') }}</a>
 						<div id="confirmdelete<?php echo $event->id; ?>" class="confirmdelete">
 							<h3>Are you sure to delete this event?</h3>
 							<a href="{{ url() }}/events/<?php echo $event->id; ?>/delete" class="btn btn-danger">Delete</a> <a href="" class="btn btn-logo close_btn">Cancel</a>

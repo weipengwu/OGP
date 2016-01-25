@@ -127,7 +127,7 @@
 					if(count($user_profile) > 0):
 			?>
 						<div class="eventlikeprofile">
-							<div class="top-profile" style="background: url(<?php echo url()."/".$user_profile[0]->meta_value;?>) center center no-repeat; background-size: cover; width: 50px; height: 50px; border-radius: 50px"></div>
+							<div class="top-profile" style="background: url(<?php echo url()."/uploads/Small_".$user_profile[0]->meta_value;?>) center center no-repeat; background-size: cover; width: 50px; height: 50px; border-radius: 50px"></div>
 						</div>
 					<?php else: ?>
 						<div class="eventlikeprofile">

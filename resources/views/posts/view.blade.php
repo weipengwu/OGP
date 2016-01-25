@@ -50,7 +50,7 @@
 										$user_profile = DB::table('user_meta')->where('user_id', $comment->author)->where('meta_key', 'profile')->get();
 										if(count($user_profile) > 0):
 									?>
-										<div class="top-profile" style="background: url(<?php echo url()."/".$user_profile[0]->meta_value;?>) center center no-repeat; background-size: cover; border-radius: 50px"></div>
+										<div class="top-profile" style="background: url(<?php echo url()."/uploads/Small_".$user_profile[0]->meta_value;?>) center center no-repeat; background-size: cover; border-radius: 50px"></div>
 									<?php
 										else:
 									?>

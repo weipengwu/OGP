@@ -24,6 +24,6 @@ return [
 	'thisweek'=>'本周',
 	'nextweek'=>'下周',
 	'interested'=>'感兴趣',
-	'category'=>'分类',
+	'category'=>'分类:',
 	'orgnizedby'=>'组织者'
 ];

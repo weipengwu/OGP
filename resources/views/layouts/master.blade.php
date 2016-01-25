@@ -102,7 +102,7 @@
 							<?php $id = Auth::user()->id; $user_profile = DB::table('user_meta')->where('user_id', $id)->where('meta_key', 'profile')->get();?>
 							<a href="#" class="dropdown-toggle profile-dropdown" data-toggle="dropdown" role="button" aria-expanded="false">
 							<?php if(count($user_profile) > 0): ?>
-								<div class="top-profile" style="background: url(<?php echo url()."/".$user_profile[0]->meta_value;?>) center center no-repeat; background-size: cover"></div>
+								<div class="top-profile" style="background: url(<?php echo url()."/uploads/Small_".$user_profile[0]->meta_value;?>) center center no-repeat; background-size: cover"></div>
 							<?php else: ?>
 								<div class="top-profile"><?php echo getFirstCharter(Auth::user()->name);?></div>
 							<?php endif; ?>
@@ -185,7 +185,7 @@
 							<?php $id = Auth::user()->id; $user_profile = DB::table('user_meta')->where('user_id', $id)->where('meta_key', 'profile')->get();?>
 							<a href="#" class="dropdown-toggle profile-dropdown" data-toggle="dropdown" role="button" aria-expanded="false">
 							<?php if(count($user_profile) > 0): ?>
-								<div class="top-profile" style="background: url(<?php echo url()."/".$user_profile[0]->meta_value;?>) center center no-repeat; background-size: cover"></div>
+								<div class="top-profile" style="background: url(<?php echo url()."/uploads/Small_".$user_profile[0]->meta_value;?>) center center no-repeat; background-size: cover"></div>
 							<?php else: ?>
 								<div class="top-profile"><?php echo getFirstCharter(Auth::user()->name);?></div>
 							<?php endif; ?>
@@ -213,7 +213,6 @@
 	<script src="{{ asset('/js/bootstrap-switch.min.js') }}"></script>
 	<script src="{{ asset('/js/jquery.fancybox.pack.js') }}"></script>
 	<script src="{{ asset('/js/jquery.bxslider.min.js') }}"></script>
-	<!--<script src="{{ asset('/js/validator.min.js') }}"></script>-->
 	<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"></script>
 	<script src="{{ asset('/js/main.js') }}"></script>
 	<script type="text/javascript">
@@ -223,49 +222,103 @@
 			})
 	</script>
 	<script type="text/javascript">
-	//angular app
-	// var ogpApp = angular.module('ogpApp', []);
- //    ogpApp.controller('CountryController', function ($scope) {
- //        $scope.countries = [{
-	//         "name": "USA",
-	//         "id": 1
-	//       },{
-	//         "name": "Canada",
-	//         "id": 2
-	//     }];
-	//     $scope.states = [{
-	//         "name": "Alabama",
-	//         "id": 1,
-	//         "countryId": 1
-	//       }, {
-	//         "name": "Alaska",
-	//         "id": 2,
-	//         "countryId": 1
-	//       }, {
-	//         "name": "Arizona",
-	//         "id": 3,
-	//         "countryId": 1
-	//       }, {
-	//         "name": "Alberta",
-	//         "id": 4,
-	//         "countryId": 2
-	//       }, {
-	//         "name": "British columbia",
-	//         "id": 5,
-	//         "countryId": 2
-	//     }];
-	    
-	//     $scope.updateCountry = function(){
-	//       $scope.availableStates = [];
-	      
-	//       angular.forEach($scope.states, function(value){
-	//         if(value.countryId == $scope.country.id){
-	//           $scope.availableStates.push(value);
-	//         }
-	//       });
-	//     }
- //    })
+		$(document).ready(function(){
+			$('body').on('click', '.event_like', function(e){
+				e.preventDefault();
+				$.ajaxSetup({
+				   headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
+				});
+				var that = $(this);
+				var eid = $(this).data('event-id');
+				var uid = $(this).data('author-id');
+				$.ajax({
+					type: "POST",
+					url: window.location.origin+"/event/like",
+					data: "event-id="+eid+'&author-id='+uid
+				}).done(function(response){
+					that.removeClass('event_like');
+					that.addClass('event_unlike');
+					that.html('<img src="../img/already_likes_icon.png" width="16">');
+					$('.leftlikenum').html(response+' Interested');
+					that.parent().next().html(response);
+				})
+			})
+			$('body').on('click', '.event_unlike', function(e){
+				e.preventDefault();
+				$.ajaxSetup({
+				   headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
+				});
+				var that = $(this);
+				var eid = $(this).data('event-id');
+				var uid = $(this).data('author-id');
+				$.ajax({
+					type: "POST",
+					url: window.location.origin+"/event/unlike",
+					data: "event-id="+eid+'&author-id='+uid
+				}).done(function(response){
+					that.removeClass('event_unlike');
+					that.addClass('event_like');
+					that.html('<img src="../img/likes_icon.png" width="16">');
+					$('.leftlikenum').html(response+' Interested');
+					that.parent().next().html(response);
+				})
+			})
+			$('body').on('click', '.follow_group', function(e){
+				e.preventDefault();
+				$.ajaxSetup({
+				   headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
+				});
+				var userid = $(this).data('user-id');
+				var groupid = $(this).data('group-id');
+				$.ajax({
+					type: "POST",
+					url: window.location.origin+"/brands/follow",
+					data: "uid="+userid+'&gid='+groupid
+				}).done(function(response){
+				
+						$('.follow_btn').removeClass('follow_group');
+						$('.follow_btn').addClass('unfollow_group');
+						$('.follow_btn').html('Following');
+						$('.groupfollow span a').removeClass('follow_group');
+						$('.groupfollow span a').addClass('unfollow_group');
+						$('.groupfollow span a').html('<img src="../img/unfollow_icon.png" width="20">');
+						if(response > 1){
+							$('.followerNumber').html(response+' {{ trans("brands.followers") }}');
+						}else{
+							$('.followerNumber').html(response+' {{ trans("brands.follower") }}');
+						}
+					
+				})
+			})
+			$('body').on('click', '.unfollow_group', function(e){
+				e.preventDefault();
+				$.ajaxSetup({
+				   headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
+				});
+				var userid = $(this).data('user-id');
+				var groupid = $(this).data('group-id');
+				$.ajax({
+					type: "POST",
+					url: window.location.origin+"/brands/unfollow",
+					data: "uid="+userid+'&gid='+groupid
+				}).done(function(response){
+					
+						$('.follow_btn').removeClass('unfollow_group');
+						$('.follow_btn').addClass('follow_group');
+						$('.follow_btn').html('Follow');
+						$('.groupfollow span a').removeClass('unfollow_group');
+						$('.groupfollow span a').addClass('follow_group');
+						$('.groupfollow span a').html('<img src="../img/follow_icon.png" width="20">');
+						if(response > 1){
+							$('.followerNumber').html(response+' {{ trans("brands.followers") }}');
+						}else{
+							$('.followerNumber').html(response+' {{ trans("brands.follower") }}');
+						}
+					
+				})
+			})
+		})
 
-</script>
+	</script>
 </body>
 </html>

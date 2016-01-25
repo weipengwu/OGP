@@ -100,7 +100,7 @@
 							<?php $id = Auth::user()->id; $user_profile = DB::table('user_meta')->where('user_id', $id)->where('meta_key', 'profile')->get();?>
 							<a href="#" class="dropdown-toggle profile-dropdown" data-toggle="dropdown" role="button" aria-expanded="false">
 							<?php if(count($user_profile) > 0): ?>
-								<div class="top-profile" style="background: url(<?php echo url()."/".$user_profile[0]->meta_value;?>) center center no-repeat; background-size: cover"></div>
+								<div class="top-profile" style="background: url(<?php echo url()."/uploads/Small_".$user_profile[0]->meta_value;?>) center center no-repeat; background-size: cover"></div>
 							<?php else: ?>
 								<div class="top-profile"><?php echo getFirstCharter(Auth::user()->name);?></div>
 							<?php endif; ?>
@@ -183,7 +183,7 @@
 							<?php $id = Auth::user()->id; $user_profile = DB::table('user_meta')->where('user_id', $id)->where('meta_key', 'profile')->get();?>
 							<a href="#" class="dropdown-toggle profile-dropdown" data-toggle="dropdown" role="button" aria-expanded="false">
 							<?php if(count($user_profile) > 0): ?>
-								<div class="top-profile" style="background: url(<?php echo url()."/".$user_profile[0]->meta_value;?>) center center no-repeat; background-size: cover"></div>
+								<div class="top-profile" style="background: url(<?php echo url()."/uploads/Small_".$user_profile[0]->meta_value;?>) center center no-repeat; background-size: cover"></div>
 							<?php else: ?>
 								<div class="top-profile"><?php echo getFirstCharter(Auth::user()->name);?></div>
 							<?php endif; ?>

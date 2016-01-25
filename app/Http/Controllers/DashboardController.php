@@ -48,8 +48,15 @@ class DashboardController extends Controller {
 					      	$extension = Request::file('u-profile')->getClientOriginalExtension(); // getting image extension
 					      	$fileName = 'U_Profile_'.date('YmdHis').'_'.rand(111111,999999).'.'.$extension; // renameing image
 					      	Request::file('u-profile')->move($destinationPath, $fileName); // uploading file to given path
+					      	$profileimage = $destinationPath."/".$fileName;
+			      		    $img = Image::make($profileimage);
+					      	$img->resize(300, null, function ($constraint) {
+							    $constraint->aspectRatio();
+							    $constraint->upsize();
+							});
+							$img->save($destinationPath."/Small_".$fileName);
 							$profile->meta_key = 'profile';
-							$profile->meta_value = $destinationPath."/".$fileName;
+							$profile->meta_value = $fileName;
 							$profile->save();
 						}
 					}
