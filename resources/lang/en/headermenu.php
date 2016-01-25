@@ -2,9 +2,9 @@
 
 return [
 
-	'explorebrands' => 'EXPLORE BRANDS',
-	'discoverevents'     => 'DISCOVER EVENTS',
-	'createBrand' => 'Create your brand',
+	'explorebrands' => 'BRANDS',
+	'discoverevents'     => 'EVENTS',
+	'createBrand' => 'Create Your Brand',
 	'signin' => 'SIGN IN',
 	'signup' => 'SIGN UP',
 	'quickpost'=>'Quick Post',

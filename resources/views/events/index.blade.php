@@ -5,13 +5,13 @@
 	<div class="row">
 		<div class="col-md-12">
 			<div class="panel">
-				<div class="heading"><h1>{{ trans('event.browseevents') }}</h1>
+				<div class="heading"><h1>{{ trans('events.browseevents') }}</h1>
 				<?php if(isset($_GET['category'])){
 						$cat = $_GET['category'];
 					}?>
 					<form>
 						<select id="category" class="form-control">
-								<option value="">{{ trans('event.allcategories') }}</option>
+								<option value="">{{ trans('events.allcategories') }}</option>
 								<option value="{{ urlencode('Arts & Design') }}" <?php if(isset($_GET['category']) && $cat == 'Arts & Design') echo "selected";?>>Arts &amp; Design</option>
 								<option value="Autos" <?php if(isset($_GET['category']) && $cat == 'Autos') echo "selected";?>>Autos</option>
 								<option value="Business" <?php if(isset($_GET['category']) && $cat == 'Business') echo "selected";?>>Business</option>
@@ -31,9 +31,9 @@
 							$time = $_GET['time'];
 						}?>
 						<select id="eventtime" class="form-control">
-							<option value="">{{ trans('event.alltimes') }}</option>
-							<option value="thisweek" <?php if(isset($_GET['time']) && $time == 'thisweek') echo "selected";?>>{{ trans('event.thisweek') }}</option>
-							<option value="nextweek" <?php if(isset($_GET['time']) && $time == 'nextweek') echo "selected";?>>{{ trans('event.nextweek') }}</option>
+							<option value="">{{ trans('events.alltimes') }}</option>
+							<option value="thisweek" <?php if(isset($_GET['time']) && $time == 'thisweek') echo "selected";?>>{{ trans('events.thisweek') }}</option>
+							<option value="nextweek" <?php if(isset($_GET['time']) && $time == 'nextweek') echo "selected";?>>{{ trans('events.nextweek') }}</option>
 						</select>
 					</form>
 				</div>

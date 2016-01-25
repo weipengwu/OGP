@@ -135,8 +135,8 @@
 						</div>
 			<?php endif; 
 			endforeach;
-			if($alllikescount > 10 ){
-				$rcount = $alllikescount - 10;
+			if($alllikescount > 9 ){
+				$rcount = $alllikescount - 9;
 				echo "<div class='pluslike'>+".$rcount."</div>";
 			}
 			endif;?>

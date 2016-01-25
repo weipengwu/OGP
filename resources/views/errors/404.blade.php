@@ -63,7 +63,7 @@
 						</li>
 					@else
 						<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><img src="{{ asset('/img/create_brand_icon.png') }}" alt="Create Brand" width="24" /></a>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><img src="{{ asset('/img/create_brand_big_icon.png') }}" alt="Create Brand" width="24" /></a>
 						<ul class="dropdown-menu" role="menu">
 							<li><a href="<?php echo url(); ?>/brands/new">{{ trans('headermenu.createBrand') }}</a></li>
 						</ul>
@@ -146,7 +146,7 @@
 						</li>
 					@else
 						<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><img src="{{ asset('/img/create_brand_icon.png') }}" alt="Create Brand" width="24" /></a>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><img src="{{ asset('/img/create_brand_big_icon.png') }}" alt="Create Brand" width="24" /></a>
 						<ul class="dropdown-menu" role="menu">
 							<li><a href="<?php echo url(); ?>/brands/new">{{ trans('headermenu.createBrand') }}</a></li>
 						</ul>

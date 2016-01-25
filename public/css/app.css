@@ -7878,6 +7878,7 @@ label.error{
   font-size: 26px;
   float: left;
   line-height: 50px;
+  margin: 10px;
 }
 .page404{
   text-align: center;
