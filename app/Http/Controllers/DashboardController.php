@@ -3,6 +3,7 @@ use App\User;
 use App\Usermeta;
 use Request;
 use Validator;
+use Image;
 
 class DashboardController extends Controller {
 

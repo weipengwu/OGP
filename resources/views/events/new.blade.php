@@ -99,7 +99,7 @@
 								<input type="file" id="postimage4" name="postimage4" accept="image/*">
 							</div>
 						</div>
-						<input type="submit" class="btn btn-logo" value="{{ trans('events.submit') }}">
+						<input type="submit" class="btn btn-logo" value="{{ trans('posts.submit') }}">
 					</form>
 				</div>
 			</div>

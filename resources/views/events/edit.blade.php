@@ -92,7 +92,7 @@
 						<div class="form-group">
 							<textarea name="content" class="form-control" placeholder="{{ trans('events.eventdescription') }}">{{ strip_tags($event->content) }}</textarea>
 						</div>
-						<input type="submit" class="btn btn-logo" value="{{ trans('events.submit') }}">
+						<input type="submit" class="btn btn-logo" value="{{ trans('posts.submit') }}">
 					</form>
 				</div>
 			</div>
