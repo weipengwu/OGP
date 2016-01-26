@@ -105,7 +105,7 @@ define( "UTF8_SYMBOL_PATTERN", "/[\x{ff00}-\x{ffef}\x{2000}-\x{206F}]/u" );
 			$excerpt = substr($desc, 0, $pos[$length]) . '...';
 		}
 		elseif(mb_strlen($desc,'utf8') > $length){
-			$excerpt = mb_substr ( $str , 0 , $len );
+			$excerpt = mb_substr ( $desc , 0 , $length );
 		}
 		else{
 			$excerpt = $desc;
