@@ -79,7 +79,7 @@
 						<script type="text/javascript">
 								$('.right a.social_fb').on('click', function(e){
 									e.preventDefault();
-									window.open('https://www.facebook.com/dialog/feed?app_id=866884463391641&display=page&link='+encodeURIComponent('{{ url() }}/posts/<?php echo $post->id; ?>')+'&caption='+encodeURIComponent('{{ $post->title }}')+'&description='+encodeURIComponent('{!! html_entity_decode(getExcerpt($post->content)) !!}')+'&redirect_uri=https://www.facebook.com', "_blank", "width=600, height=600");
+									window.open('https://www.facebook.com/dialog/feed?app_id=866884463391641&display=page&link='+encodeURIComponent('{{ url() }}/posts/<?php echo $post->id; ?>')+'&caption='+encodeURIComponent('{{ $post->title }}')+'&description={!! html_entity_decode(getExcerpt($post->content)) !!}&redirect_uri=https://www.facebook.com', "_blank", "width=600, height=600");
 								})
 						</script>
 						<?php array_splice($posts,0,1); $i++;?>
