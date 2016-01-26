@@ -111,7 +111,7 @@ define( "UTF8_SYMBOL_PATTERN", "/[\x{ff00}-\x{ffef}\x{2000}-\x{206F}]/u" );
 			$excerpt = $desc;
 		}
 
-		return $excerpt.' - '.mb_strlen($desc,'utf8');
+		return $excerpt;
 	}
 
 	// function slug($string){
