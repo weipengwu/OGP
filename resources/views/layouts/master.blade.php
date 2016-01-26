@@ -216,12 +216,6 @@
 	<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"></script>
 	<script src="{{ asset('/js/main.js') }}"></script>
 	<script type="text/javascript">
-			$('.right a.facebook').on('click', function(e){
-				e.preventDefault();
-				window.open('https://www.facebook.com/dialog/feed?app_id=866884463391641&display=page&link='+encodeURIComponent('<?php echo url();?>')+'&caption=OhGoodParty&description='+encodeURIComponent('Share this article')+'&redirect_uri=https://www.facebook.com', "_blank", "width=800, height=600");
-			})
-	</script>
-	<script type="text/javascript">
 		$(document).ready(function(){
 			$('body').on('click', '.event_like', function(e){
 				e.preventDefault();

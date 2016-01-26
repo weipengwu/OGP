@@ -12,20 +12,20 @@
 					<form>
 						<select id="category" class="form-control">
 								<option value="">{{ trans('events.allcategories') }}</option>
-								<option value="{{ urlencode('Arts & Design') }}" <?php if(isset($_GET['category']) && $cat == 'Arts & Design') echo "selected";?>>Arts &amp; Design</option>
-								<option value="Autos" <?php if(isset($_GET['category']) && $cat == 'Autos') echo "selected";?>>Autos</option>
-								<option value="Business" <?php if(isset($_GET['category']) && $cat == 'Business') echo "selected";?>>Business</option>
-								<option value="Education" <?php if(isset($_GET['category']) && $cat == 'Education') echo "selected";?>>Education</option>
-								<option value="Fashion" <?php if(isset($_GET['category']) && $cat == 'Fashion') echo "selected";?>>Fashion</option>
-								<option value="{{ urlencode('Food & Drink') }}" <?php if(isset($_GET['category']) && $cat == 'Food & Drink') echo "selected";?>>Food &amp; Drink</option>
-								<option value="Gaming" <?php if(isset($_GET['category']) && $cat == 'Gaming') echo "selected";?>>Gaming</option>
-								<option value="Health" <?php if(isset($_GET['category']) && $cat == 'Health') echo "selected";?>>Health</option>
-								<option value="Home" <?php if(isset($_GET['category']) && $cat == 'Home') echo "selected";?>>Home</option>
-								<option value="{{ urlencode('Music & Performance') }}" <?php if(isset($_GET['category']) && $cat == 'Music & Performance') echo "selected";?>>Music &amp; Performance</option>
-								<option value="Sports" <?php if(isset($_GET['category']) && $cat == 'Sports') echo "selected";?>>Sports</option>
-								<option value="{{ urlencode('Technology & Science') }}" <?php if(isset($_GET['category']) && $cat == 'Technology & Science') echo "selected";?>>Technology &amp; Science</option>
-								<option value="Travel" <?php if(isset($_GET['category']) && $cat == 'Travel') echo "selected";?>>Travel</option>
-								<option value="Other" <?php if(isset($_GET['category']) && $cat == 'Other') echo "selected";?>>Other</option>
+								<option value="{{ urlencode('Arts & Design') }}" <?php if(isset($_GET['category']) && $cat == 'Arts & Design') echo "selected";?>>{{ trans('brands.artsdesign') }}</option>
+								<option value="Autos" <?php if(isset($_GET['category']) && $cat == 'Autos') echo "selected";?>>{{ trans('brands.autos') }}</option>
+								<option value="Business" <?php if(isset($_GET['category']) && $cat == 'Business') echo "selected";?>>{{ trans('brands.business') }}</option>
+								<option value="Education" <?php if(isset($_GET['category']) && $cat == 'Education') echo "selected";?>>{{ trans('brands.education') }}</option>
+								<option value="Fashion" <?php if(isset($_GET['category']) && $cat == 'Fashion') echo "selected";?>>{{ trans('brands.fashion') }}</option>
+								<option value="{{ urlencode('Food & Drink') }}" <?php if(isset($_GET['category']) && $cat == 'Food & Drink') echo "selected";?>>{{ trans('brands.fooddrink') }}</option>
+								<option value="Gaming" <?php if(isset($_GET['category']) && $cat == 'Gaming') echo "selected";?>>{{ trans('brands.gaming') }}</option>
+								<option value="Health" <?php if(isset($_GET['category']) && $cat == 'Health') echo "selected";?>>{{ trans('brands.health') }}</option>
+								<option value="Home" <?php if(isset($_GET['category']) && $cat == 'Home') echo "selected";?>>{{ trans('brands.home') }}</option>
+								<option value="{{ urlencode('Music & Performance') }}" <?php if(isset($_GET['category']) && $cat == 'Music & Performance') echo "selected";?>>{{ trans('brands.musicperformances') }}</option>
+								<option value="Sports" <?php if(isset($_GET['category']) && $cat == 'Sports') echo "selected";?>>{{ trans('brands.sports') }}</option>
+								<option value="{{ urlencode('Technology & Science') }}" <?php if(isset($_GET['category']) && $cat == 'Technology & Science') echo "selected";?>>{{ trans('brands.technologyscience') }}</option>
+								<option value="Travel" <?php if(isset($_GET['category']) && $cat == 'Travel') echo "selected";?>>{{ trans('brands.travel') }}</option>
+								<option value="Other" <?php if(isset($_GET['category']) && $cat == 'Other') echo "selected";?>>{{ trans('brands.other') }}</option>
 						</select>
 						<?php if(isset($_GET['time'])){
 							$time = $_GET['time'];

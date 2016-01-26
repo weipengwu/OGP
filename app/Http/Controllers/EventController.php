@@ -339,9 +339,8 @@ class EventController extends Controller {
 		$uid = Request::input('author-id');
 		$like->author_id = $uid;
 		$like->event_id = $eid;
-			$event->likes()->save($like);
-		
-
+		$event->likes()->save($like);
+	
 		$count = EventLike::where('event_id','=',$eid)->count();
 		echo $count;
 	}

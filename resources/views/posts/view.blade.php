@@ -7,7 +7,7 @@
 
 				<div class="panel-body">
 					<div class="groupinfo">
-						<span>FROM <a href="{{  url() }}/brands/{{ $post->group->slug }}">{{ getGroupName($post->group->id) }}</a></span>
+						<span>{{ trans('posts.from') }} <a href="{{  url() }}/brands/{{ $post->group->slug }}">{{ getGroupName($post->group->id) }}</a></span>
 					</div>
 					<h1> {{ $post->title }}</h1>
 					<div class="authorinfo">
@@ -26,17 +26,17 @@
 					<br />
 					<p>For more information, visit <a href="{{  url() }}/brands/{{ $post->group->slug }}" class="nobreak">{{ getGroupName($post->group->id) }}</a></p>
 					<div class="commentscount">
-						<span class="c_holder">{{ $post->comments->count()}} Comments</span> | <span>Category: {{ $post->group->category }}</span>
+						<span class="c_holder">{{ $post->comments->count()}} {{ trans('posts.comments') }}</span> | <span>{{ trans('events.category') }} {{ $post->group->category }}</span>
 					</div>
 					<hr>
 					@if(Auth::check())
 					<section id="leavecomments">
-						<h4 class="title">Leave a comment</h4>
+						<h4 class="title">{{ trans('posts.leavecomment') }}</h4>
 						<form action="{{ URL::route('createComment', array('id' => $post->id)) }}" method="post">
 							<input type="hidden" name="_token" value="{{ csrf_token() }}">
 							<input type="hidden" name="author" value="{{ Auth::user()->id }}">
 							<div class="form-group">
-								<textarea name="content" class="form-control" placeholder="Write down your thoughts..." required></textarea>
+								<textarea name="content" class="form-control" placeholder="{{ trans('posts.writedown') }}" required></textarea>
 							</div>
 							<input type="submit" class="btn btn-logo">
 						</form>
