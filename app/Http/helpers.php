@@ -102,6 +102,11 @@
 	// function slug($string){
 	//     return strtolower(trim(preg_replace('~[^0-9a-z]+~i', '-', html_entity_decode(preg_replace('~&([a-z]{1,2})(?:acute|cedil|circ|grave|lig|orn|ring|slash|th|tilde|uml);~i', '$1', htmlentities($string, ENT_QUOTES, 'UTF-8')), ENT_QUOTES, 'UTF-8')), '-'));
 	// }
+	function clean($string) {
+	   $string = str_replace(' ', '', $string); 
+
+	   return strtolower(preg_replace('/[^A-Za-z0-9\-]/', '', $string));
+	}
 	function slug($string, $separator = '-') {
 	    $re = "/(\\s|\\".$separator.")+/mu";
 	    $str = @trim($string);

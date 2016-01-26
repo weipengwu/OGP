@@ -120,6 +120,7 @@ class GroupController extends Controller {
 				$slug = slug(Request::input('name'));
 				$group->slug = $slug;
 				$group->category = Request::input('category');
+				$group->categorykey = clean(Request::input('category'));
 				$group->tag = Request::input('tag');
 				$group->website = Request::input('website');
 				$group->originCountry = Request::input('originCountry');
@@ -215,6 +216,7 @@ class GroupController extends Controller {
 			$slug = slug(Request::input('name'));
 			$group->slug = $slug;
 			$group->category = Request::input('category');
+			$group->categorykey = clean(Request::input('category'));
 			$group->tag = Request::input('tag');
 			$group->website = Request::input('website');
 			$group->originCountry = Request::input('originCountry');

@@ -48,7 +48,7 @@
 				</div>
 				<div class="divider"></div>
 				@if (count($artsgroups) > 0 )
-				<h2 class="sectiontitle">{{ trans('brands.artdesign') }}</h2>
+				<h2 class="sectiontitle">{{ trans('brands.artsdesign') }}</h2>
 				<div class="row groupsrow collapsed">
 					<?php $i = 1;?>
 					@foreach ($artsgroups as $group)

@@ -45,20 +45,20 @@
 						<div class="form-group">
 							<select name="category" class="form-control" required>
 								<option value="">Brand Category -- Select one</option>
-								<option value="Arts & Design">Arts & Design</option>
-								<option value="Autos">Autos</option>
-								<option value="Business">Business</option>
-								<option value="Education">Education</option>
-								<option value="Fashion">Fashion</option>
-								<option value="Food & Drink">Food & Drink</option>
-								<option value="Gaming">Gaming</option>
-								<option value="Health">Health</option>
-								<option value="Home">Home</option>
-								<option value="Music & Performance">Music & Performance</option>
-								<option value="Sports">Sports</option>
-								<option value="Technology & Science">Technology & Science</option>
-								<option value="Travel">Travel</option>
-								<option value="Other">Other</option>
+								<option value="Arts & Design">{{ trans('brands.artsdesign') }}</option>
+								<option value="Autos">{{ trans('brands.autos') }}</option>
+								<option value="Business">{{ trans('brands.business') }}</option>
+								<option value="Education">{{ trans('brands.education') }}</option>
+								<option value="Fashion">{{ trans('brands.fashion') }}</option>
+								<option value="Food & Drink">{{ trans('brands.fooddrink') }}</option>
+								<option value="Gaming">{{ trans('brands.gaming') }}</option>
+								<option value="Health">{{ trans('brands.health') }}</option>
+								<option value="Home">{{ trans('brands.home') }}</option>
+								<option value="Music & Performance">{{ trans('brands.musicperformances') }}</option>
+								<option value="Sports">{{ trans('brands.sports') }}</option>
+								<option value="Technology & Science">{{ trans('brands.technologyscience') }}</option>
+								<option value="Travel">{{ trans('brands.travel') }}</option>
+								<option value="Other">{{ trans('brands.other') }}</option>
 							</select>
 						</div>
 						<div class="form-group">

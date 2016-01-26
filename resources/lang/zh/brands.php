@@ -4,7 +4,7 @@ return [
 	'explore'=>'探索',
 	'trending'=>'最新推荐',
 	'mostpopular'=>'最受关注',
-	'artdesign'=>'艺术与设计',
+	'artsdesign'=>'艺术与设计',
 	'autos'=>'汽⻋',
 	'business'=>'商业',
 	'education'=>'教育',

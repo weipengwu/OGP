@@ -239,7 +239,7 @@
 					that.removeClass('event_like');
 					that.addClass('event_unlike');
 					that.html('<img src="../img/already_likes_icon.png" width="16">');
-					$('.leftlikenum').html(response+' Interested');
+					$('.leftlikenum').html(response+' {{ trans("events.interested") }}');
 					that.parent().next().html(response);
 				})
 			})
@@ -259,7 +259,7 @@
 					that.removeClass('event_unlike');
 					that.addClass('event_like');
 					that.html('<img src="../img/likes_icon.png" width="16">');
-					$('.leftlikenum').html(response+' Interested');
+					$('.leftlikenum').html(response+' {{ trans("events.interested") }}');
 					that.parent().next().html(response);
 				})
 			})
@@ -278,10 +278,10 @@
 				
 						$('.follow_btn').removeClass('follow_group');
 						$('.follow_btn').addClass('unfollow_group');
-						$('.follow_btn').html('Following');
+						$('.follow_btn').html('{{ trans("brands.following") }}');
 						$('.groupfollow span a').removeClass('follow_group');
 						$('.groupfollow span a').addClass('unfollow_group');
-						$('.groupfollow span a').html('<img src="../img/unfollow_icon.png" width="20">');
+						$('.groupfollow span a').html('<img src="../img/unfollow_big_icon.png" width="20">');
 						if(response > 1){
 							$('.followerNumber').html(response+' {{ trans("brands.followers") }}');
 						}else{
@@ -305,10 +305,10 @@
 					
 						$('.follow_btn').removeClass('unfollow_group');
 						$('.follow_btn').addClass('follow_group');
-						$('.follow_btn').html('Follow');
+						$('.follow_btn').html('{{ trans("brands.follow") }}');
 						$('.groupfollow span a').removeClass('unfollow_group');
 						$('.groupfollow span a').addClass('follow_group');
-						$('.groupfollow span a').html('<img src="../img/follow_icon.png" width="20">');
+						$('.groupfollow span a').html('<img src="../img/follow_big_icon.png" width="20">');
 						if(response > 1){
 							$('.followerNumber').html(response+' {{ trans("brands.followers") }}');
 						}else{
@@ -317,6 +317,47 @@
 					
 				})
 			})
+			$('#g-profile').fileinput({
+				previewFileType: "image",
+				browseClass: "btn btn-success",
+				browseLabel: "{{ trans('events.pickimage') }}",
+				browseIcon: '<i class="glyphicon glyphicon-picture"></i>',
+				removeClass: "btn btn-danger",
+				removeLabel: "Delete",
+				removeIcon: '<i class="glyphicon glyphicon-trash"></i>',
+				showUpload: false,
+			});
+			$('#u-profile').fileinput({
+				previewFileType: "image",
+				browseClass: "btn btn-success",
+				browseLabel: "{{ trans('events.pickimage') }}",
+				browseIcon: '<i class="glyphicon glyphicon-picture"></i>',
+				removeClass: "btn btn-danger",
+				removeLabel: "Delete",
+				removeIcon: '<i class="glyphicon glyphicon-trash"></i>',
+				showUpload: false,
+			});
+			$('#banner').fileinput({
+				previewFileType: "image",
+				browseClass: "btn btn-success",
+				browseLabel: "{{ trans('events.pickimage') }}",
+				browseIcon: '<i class="glyphicon glyphicon-picture"></i>',
+				removeClass: "btn btn-danger",
+				removeLabel: "Delete",
+				removeIcon: '<i class="glyphicon glyphicon-trash"></i>',
+				showUpload: false,
+			});
+			$('#g-banner').fileinput({
+				previewFileType: "image",
+				browseClass: "btn btn-success",
+				browseLabel: "{{ trans('events.pickimage') }}",
+				browseIcon: '<i class="glyphicon glyphicon-picture"></i>',
+				removeClass: "btn btn-danger",
+				removeLabel: "Delete",
+				removeIcon: '<i class="glyphicon glyphicon-trash"></i>',
+				showUpload: false,
+			});
+
 		})
 
 	</script>

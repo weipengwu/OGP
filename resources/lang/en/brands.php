@@ -4,7 +4,7 @@ return [
 	'explore'=>'EXPLORE',
 	'trending'=>'TRENDING',
 	'mostpopular'=>'MOST POPULAR',
-	'artdesign'=>'Art & Design',
+	'artsdesign'=>'Arts & Design',
 	'autos'=>'Autos',
 	'business'=>'Business',
 	'education'=>'Education',

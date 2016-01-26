@@ -101,46 +101,6 @@ $(document).ready(function(){
 		placement: 'left'
 	})
 
-	$('#g-profile').fileinput({
-		previewFileType: "image",
-		browseClass: "btn btn-success",
-		browseLabel: "Pick Image",
-		browseIcon: '<i class="glyphicon glyphicon-picture"></i>',
-		removeClass: "btn btn-danger",
-		removeLabel: "Delete",
-		removeIcon: '<i class="glyphicon glyphicon-trash"></i>',
-		showUpload: false,
-	});
-	$('#u-profile').fileinput({
-		previewFileType: "image",
-		browseClass: "btn btn-success",
-		browseLabel: "Pick Image",
-		browseIcon: '<i class="glyphicon glyphicon-picture"></i>',
-		removeClass: "btn btn-danger",
-		removeLabel: "Delete",
-		removeIcon: '<i class="glyphicon glyphicon-trash"></i>',
-		showUpload: false,
-	});
-	$('#banner').fileinput({
-		previewFileType: "image",
-		browseClass: "btn btn-success",
-		browseLabel: "Pick Image",
-		browseIcon: '<i class="glyphicon glyphicon-picture"></i>',
-		removeClass: "btn btn-danger",
-		removeLabel: "Delete",
-		removeIcon: '<i class="glyphicon glyphicon-trash"></i>',
-		showUpload: false,
-	});
-	$('#g-banner').fileinput({
-		previewFileType: "image",
-		browseClass: "btn btn-success",
-		browseLabel: "Pick Image",
-		browseIcon: '<i class="glyphicon glyphicon-picture"></i>',
-		removeClass: "btn btn-danger",
-		removeLabel: "Delete",
-		removeIcon: '<i class="glyphicon glyphicon-trash"></i>',
-		showUpload: false,
-	});
 	$('#postimage1').fileinput({
 		previewFileType: "image",
 		browseClass: "btn btn-primary btn-block btn-img1",

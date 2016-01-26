@@ -336,9 +336,12 @@ class EventController extends Controller {
 		$eid = Request::input('event-id');
 		$event = Event::findOrFail($eid);
 		$like = new EventLike();
-		$like->author_id = Request::input('author-id');
+		$uid = Request::input('author-id');
+		$like->author_id = $uid;
 		$like->event_id = $eid;
-		$event->likes()->save($like);
+		if(EventLike::where('event_id','=',$eid)->where('author-id', $uid)->count() > 0){
+			$event->likes()->save($like);
+		}
 
 		$count = EventLike::where('event_id','=',$eid)->count();
 		echo $count;
