@@ -8,7 +8,7 @@
 </div>
 <div class="statusbar">
 			<div class="left">
-				<span class="leftlikenum">{{ $event->likes->count()}} Interested</span> 
+				<span class="leftlikenum">{{ $event->likes->count()}} {{ trans("events.interested") }}</span> 
 			</div>
 		<div class="right">
 			<div class="sharebox">
@@ -20,9 +20,9 @@
 			<div class="likebar">
 			@if(Auth::check())
 				@if(alreadyLikedEvent(Auth::user()->id,$event->id) > 0)
-					<span><a href="" data-toggle="tooltip" title="Not interested" data-event-id="{{ $event->id }}" data-author-id="{{ Auth::user()->id }}" class="like_btn event_unlike"><img src="{{ asset('img/already_likes_icon.png') }}" width="16"></a></span>
+					<span><a href="" data-toggle="tooltip" title="{{ trans('events.notinterested') }}" data-event-id="{{ $event->id }}" data-author-id="{{ Auth::user()->id }}" class="like_btn event_unlike"><img src="{{ asset('img/already_likes_icon.png') }}" width="16"></a></span>
 				@else
-					<span><a href="" data-toggle="tooltip" title="Interested" data-event-id="{{ $event->id }}" data-author-id="{{ Auth::user()->id }}" class="like_btn event_like"><img src="{{ asset('img/likes_icon.png') }}" width="16"></a></span>
+					<span><a href="" data-toggle="tooltip" title="{{ trans('events.interested') }}" data-event-id="{{ $event->id }}" data-author-id="{{ Auth::user()->id }}" class="like_btn event_like"><img src="{{ asset('img/likes_icon.png') }}" width="16"></a></span>
 				@endif
 					<span class="likenum">{{ $event->likes->count()}}</span>
 			@endif
@@ -78,7 +78,7 @@
 	</div>
 </section>
 <section class="orgnizationsection greybg">
-	<p class="title">Orgnized by</p>
+	<p class="title">{{ trans("events.orgnizedby") }}</p>
 	<div class="groupprofile" style="background: #666 url('<?php echo url()."/uploads/Small_".getGroupProfile($event->group_id);?>') center center no-repeat; background-size: cover;"></div>
 	<h2><a href="/brands/<?php echo getGroupSlug($event->group_id); ?>">{{ getGroupName($event->group_id) }}</a></h2>
 </section>
@@ -115,7 +115,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2">
-			<h2>Interested</h2>
+			<h2>{{ trans("events.interested") }}</h2>
 			<div class="interestWrapper">
 			<?php
 				$alllikes = DB::table('eventlikes')->where('event_id', '=', $event->id)->take(9)->get();

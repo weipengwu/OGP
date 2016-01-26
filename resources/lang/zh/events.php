@@ -4,7 +4,7 @@ return [
 	'createanewevent'=>'发布新活动',
 	'editevent'=>'编辑活动',
 	'bannerimage'=>'上传您的活动宣传横幅',
-	'recomendedsize'=>'建议尺寸:1500px X 500px。图像格式必须是 .jpg, .bmp, .png, or .gif，⼤小不超过4 MB',
+	'recomendedsize'=>'建议尺寸:1500px X 500px。图像格式必须是 .jpg, .bmp, .png, or .gif，尺寸不超过4 MB',
 	'pickimage'=>'选择图片',
 	'type'=>'选择活动的类型',
 	'publictype'=> '公开(任何人可看)',
@@ -26,6 +26,7 @@ return [
 	'thisweek'=>'本周',
 	'nextweek'=>'下周',
 	'interested'=>'感兴趣',
+	'notinterested' => '不感兴趣',
 	'category'=>'分类:',
 	'orgnizedby'=>'组织者'
 ];

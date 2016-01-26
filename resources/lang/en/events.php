@@ -26,6 +26,7 @@ return [
 	'thisweek'=>'This Week',
 	'nextweek'=>'Next Week',
 	'interested'=>'Interested',
+	'notinterested' => 'Not Interested',
 	'category'=>'Category:',
 	'orgnizedby'=>'Orgnized by'
 ];
