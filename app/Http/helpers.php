@@ -103,7 +103,11 @@ define( "UTF8_SYMBOL_PATTERN", "/[\x{ff00}-\x{ffef}\x{2000}-\x{206F}]/u" );
 			$words = str_word_count($desc, 2);
 			$pos = array_keys($words);
 			$excerpt = substr($desc, 0, $pos[$length]) . '...';
-		}else{
+		}
+		elseif(mb_strlen($desc,'utf8') > $length){
+			$excerpt = mb_substr ( $str , 0 , $len );
+		}
+		else{
 			$excerpt = $desc;
 		}
 
