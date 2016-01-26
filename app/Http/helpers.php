@@ -99,7 +99,7 @@ define( "UTF8_SYMBOL_PATTERN", "/[\x{ff00}-\x{ffef}\x{2000}-\x{206F}]/u" );
 	function getExcerpt($desc,$length=20){
 		$desc = preg_replace("/<embed[^>]+>/i", "", $desc, 1);
 		$desc = preg_replace("/<iframe[^>]+>/i", "", $desc, 1);
-		if(str_utf8_mix_word_count($desc) > $length){
+		if(str_word_count($desc) > $length){
 			$words = str_word_count($desc, 2);
 			$pos = array_keys($words);
 			$excerpt = substr($desc, 0, $pos[$length]) . '...';
@@ -107,7 +107,7 @@ define( "UTF8_SYMBOL_PATTERN", "/[\x{ff00}-\x{ffef}\x{2000}-\x{206F}]/u" );
 			$excerpt = $desc;
 		}
 
-		return $excerpt;
+		return $excerpt.' - '.str_word_count($desc);
 	}
 
 	// function slug($string){
