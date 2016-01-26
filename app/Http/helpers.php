@@ -107,7 +107,7 @@ define( "UTF8_SYMBOL_PATTERN", "/[\x{ff00}-\x{ffef}\x{2000}-\x{206F}]/u" );
 			$excerpt = $desc;
 		}
 
-		return $excerpt.' - '.str_word_count($desc);
+		return $excerpt.' - '.mb_strlen($desc,'utf8');
 	}
 
 	// function slug($string){
