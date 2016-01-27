@@ -91,7 +91,7 @@
 							})
 							$('.right a.social_wb').on('click', function(e){
 								e.preventDefault();
-								window.open('http://service.weibo.com/share/share.php?appkey=3304326450&title={{ $post->title }}&url={{ url() }}/posts/<?php echo $post->id; ?> @奥格派&pic={{ url()."/uploads/Medium_".$banner[0] }}&searchPic=false&style=simple', "_blank", "width=360, height=360");
+								window.open('http://service.weibo.com/share/share.php?appkey=3304326450&title={{ $post->title }} @奥格派&url={{ url() }}/posts/<?php echo $post->id; ?>&pic={{ url()."/uploads/Medium_".$banner[0] }}&searchPic=false&style=simple', "_blank", "width=360, height=360");
 							})
 						</script>
 						<?php array_splice($posts,0,1); $i++;?>

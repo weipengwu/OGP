@@ -6315,7 +6315,13 @@ label,
 .commentscount{
   text-align: left;
   color: #777;
-  margin-top: 50px;
+  margin-top: 30px;
+}
+.postshare{
+  margin-top: 30px;
+}
+.postshare a{
+  margin-right: 10px;
 }
 /*.l_holder{
   margin-left: 20px;
