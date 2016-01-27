@@ -7954,10 +7954,9 @@ label.error{
   display: none;
 }
 .post_close{
-  position: absolute;
+  position: fixed;
   top: 80px;
-  right: 50px;
-  font-size: 30px;
+  right: 30px;
   line-height: 1;
 }
 /*** media query ***/
