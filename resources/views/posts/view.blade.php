@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-<a href="javascript: history.go(-1)" class="post_close"><img src="{{ asset('img/close_btn') }}" width="22"></a>
+<a href="javascript: history.go(-1)" class="post_close"><img src="{{ asset('img/close_btn.png') }}" width="22"></a>
 <div class="container single-post">
 
 			<div class="panel">
@@ -30,19 +30,19 @@
 						<a href="" class="social_icons social_tw"><i class="fa fa-twitter"></i></a> <a href="" class="social_icons social_fb"><i class="fa fa-facebook"></i></a> <a href="" class="social_icons social_lk"><i class="fa fa-linkedin"></i></a><a href="" class="social_icons social_wb"><i class="fa fa-weibo"></i></a>
 					</div>
 					<script type="text/javascript">
-							$('.right a.social_fb').on('click', function(e){
+							$('.postshare a.social_fb').on('click', function(e){
 								e.preventDefault();
 								window.open('https://www.facebook.com/v2.0/dialog/feed?app_id=866884463391641&display=page&link='+encodeURIComponent('{{ url() }}/posts/<?php echo $post->id; ?>')+'&caption=OHGOODPARTY&picture={{ url()."/uploads/Medium_".$banners[0] }}&name='+encodeURIComponent('{{ $post->title }}')+'&description={!! html_entity_decode( trim(preg_replace("/\s+/", " ", getExcerpt($post->content, 60))) ) !!}&redirect_uri=https://www.facebook.com', "_blank", "width=600, height=600");
 							})
-							$('.right a.social_tw').on('click', function(e){
+							$('.postshare a.social_tw').on('click', function(e){
 								e.preventDefault();
 								window.open('https://www.twitter.com/share?text={{ $post->title }} {{ url() }}/posts/<?php echo $post->id; ?> @ohgoodparty_ogp&url=/', "_blank", "width=360, height=360");
 							})
-							$('.right a.social_lk').on('click', function(e){
+							$('.postshare a.social_lk').on('click', function(e){
 								e.preventDefault();
 								window.open('https://www.linkedin.com/shareArticle?mini=true&url={{ url() }}/posts/<?php echo $post->id; ?>&title={{ $post->title }}&summary={!! html_entity_decode( trim(preg_replace("/\s+/", " ", getExcerpt($post->content, 60))) ) !!}&source=OHGOODPARTY', "_blank", "width=360, height=360");
 							})
-							$('.right a.social_wb').on('click', function(e){
+							$('.postshare a.social_wb').on('click', function(e){
 								e.preventDefault();
 								window.open('http://service.weibo.com/share/share.php?appkey=3304326450&title={{ $post->title }} @奥格派&url={{ url() }}/posts/<?php echo $post->id; ?>&pic={{ url()."/uploads/Medium_".$banners[0] }}&searchPic=false&style=simple', "_blank", "width=360, height=360");
 							})
