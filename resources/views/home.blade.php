@@ -45,7 +45,7 @@
 								<div class="postauthor">{{ $post->created_at->diffForHumans() }}</div>
 								<div class="title-area"><a href="{{ url() }}/posts/<?php echo $post->id; ?>"><h3>{{ $post->title }}</h3></a></div>
 							<?php if($i == 0):?>
-								<div class="excerpt-area">{!! html_entity_decode(getExcerpt($post->content, 50)) !!}</div>
+								<div class="excerpt-area">{!! html_entity_decode(getExcerpt($post->content, 60)) !!}</div>
 							</div>
 							<?php endif;?>
 								<div class="bottom">
@@ -77,10 +77,14 @@
 								</div>
 						</div>
 						<script type="text/javascript">
-								$('.right a.social_fb').on('click', function(e){
-									e.preventDefault();
-									window.open('https://www.facebook.com/dialog/feed?app_id=866884463391641&display=page&link='+encodeURIComponent('{{ url() }}/posts/<?php echo $post->id; ?>')+'&caption=OHGOODPARTY&picture={{ url()."/uploads/Medium_".$banner[0] }}&name='+encodeURIComponent('{{ $post->title }}')+'&description={!! html_entity_decode( trim(preg_replace("/\s+/", " ", getExcerpt($post->content, 50))) ) !!}&redirect_uri=https://www.facebook.com', "_blank", "width=600, height=600");
-								})
+							$('.right a.social_fb').on('click', function(e){
+								e.preventDefault();
+								window.open('https://www.facebook.com/dialog/feed?app_id=866884463391641&display=page&link='+encodeURIComponent('{{ url() }}/posts/<?php echo $post->id; ?>')+'&caption=OHGOODPARTY&picture={{ url()."/uploads/Medium_".$banner[0] }}&name='+encodeURIComponent('{{ $post->title }}')+'&description={!! html_entity_decode( trim(preg_replace("/\s+/", " ", getExcerpt($post->content, 60))) ) !!}&redirect_uri=https://www.facebook.com', "_blank", "width=600, height=600");
+							})
+							$('.right a.social_tw').on('click', function(e){
+								e.preventDefault();
+								window.open('https://www.twitter.com/share?text={{ $post->title }} '+encodeURIComponent('{{ url() }}/posts/<?php echo $post->id; ?>'), "_blank", "width=360, height=360");
+							})
 						</script>
 						<?php array_splice($posts,0,1); $i++;?>
 					@endforeach

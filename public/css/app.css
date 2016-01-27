@@ -7946,6 +7946,13 @@ label.error{
 {
   display: none;
 }
+.post_close{
+  position: absolute;
+  top: 80px;
+  right: 50px;
+  font-size: 30px;
+  line-height: 1;
+}
 /*** media query ***/
 @media (max-width: 1199px){
   .grouplist .bannerholder{

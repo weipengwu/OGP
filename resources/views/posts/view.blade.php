@@ -1,6 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
+<a href="javascript: history.go(-1)" class="post_close"><i class="fa fa-times"></i></a>
 <div class="container single-post">
 
 			<div class="panel">
