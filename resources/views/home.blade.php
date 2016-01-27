@@ -83,7 +83,7 @@
 							})
 							$('.right a.social_tw').on('click', function(e){
 								e.preventDefault();
-								window.open('https://www.twitter.com/share?text={{ $post->title }} {{ url() }}/posts/<?php echo $post->id; ?> @ohgoodparty_ogp', "_blank", "width=360, height=360");
+								window.open('https://www.twitter.com/share?text={{ $post->title }} {{ url() }}/posts/<?php echo $post->id; ?> @ohgoodparty_ogp&url=/', "_blank", "width=360, height=360");
 							})
 						</script>
 						<?php array_splice($posts,0,1); $i++;?>
