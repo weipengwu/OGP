@@ -79,7 +79,7 @@
 						<script type="text/javascript">
 							$('.right a.social_fb').on('click', function(e){
 								e.preventDefault();
-								window.open('https://www.facebook.com/dialog/feed?app_id=866884463391641&display=page&link='+encodeURIComponent('{{ url() }}/posts/<?php echo $post->id; ?>')+'&caption=OHGOODPARTY&picture={{ url()."/uploads/Medium_".$banner[0] }}&name='+encodeURIComponent('{{ $post->title }}')+'&description={!! html_entity_decode( trim(preg_replace("/\s+/", " ", getExcerpt($post->content, 60))) ) !!}&redirect_uri=https://www.facebook.com', "_blank", "width=600, height=600");
+								window.open('https://www.facebook.com/v2.0/dialog/feed?app_id=866884463391641&display=page&link='+encodeURIComponent('{{ url() }}/posts/<?php echo $post->id; ?>')+'&caption=OHGOODPARTY&picture={{ url()."/uploads/Medium_".$banner[0] }}&name='+encodeURIComponent('{{ $post->title }}')+'&description={!! html_entity_decode( trim(preg_replace("/\s+/", " ", getExcerpt($post->content, 60))) ) !!}&redirect_uri=https://www.facebook.com', "_blank", "width=600, height=600");
 							})
 							$('.right a.social_tw').on('click', function(e){
 								e.preventDefault();
@@ -91,7 +91,7 @@
 							})
 							$('.right a.social_wb').on('click', function(e){
 								e.preventDefault();
-								window.open('http://service.weibo.com/share/share.php?appkey=3304326450&title={{ $post->title }}&url={{ url() }}/posts/<?php echo $post->id; ?>&searchPic=false&style=simple', "_blank", "width=360, height=360");
+								window.open('http://service.weibo.com/share/share.php?appkey=3304326450&title={{ $post->title }}&url={{ url() }}/posts/<?php echo $post->id; ?> @奥格派&pic={{ url()."/uploads/Medium_".$banner[0] }}&searchPic=false&style=simple', "_blank", "width=360, height=360");
 							})
 						</script>
 						<?php array_splice($posts,0,1); $i++;?>

@@ -288,8 +288,10 @@ $(document).ready(function(){
 	$('.shareto a').on('click', function(e){
 		e.preventDefault();
 		if($(this).parent().prev().is(":visible")){
+			$('.sharebox').hide();
 			$(this).parent().prev().hide();
 		}else{
+			$('.sharebox').hide();
 			$(this).parent().prev().show();
 		}
 	})
