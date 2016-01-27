@@ -5,6 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="_token" content="{{ csrf_token() }}"/>
+	<meta property="wb:webmaster" content="0a7eaf411e6d1623" />
 	<title>OH GOOD PARTY</title>
 
 	<link href="{{ asset('/css/app.css') }}" rel="stylesheet">

@@ -7456,6 +7456,13 @@ h3 a:hover{
 .social_icons.social_wb:hover{
   background: #ED1C24;
 }
+.social_icons.social_lk{
+  background: #333; 
+  color: #fff;
+}
+.social_icons.social_lk:hover{
+  background: #007bb6;
+}
 /* Required for Down Triangle */
 .sharebox:before, .sharebox:after {
     content: "";
