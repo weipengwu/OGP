@@ -28,5 +28,5 @@ return [
 	'interested'=>'Interested',
 	'notinterested' => 'Not Interested',
 	'category'=>'Category:',
-	'orgnizedby'=>'Orgnized by'
+	'orgnizedby'=>'Orgnized by',
 ];

@@ -15,7 +15,7 @@
 				<a href="" class="social_icons social_tw"><i class="fa fa-twitter"></i></a> <a href="" class="social_icons social_fb"><i class="fa fa-facebook"></i></a> <a href="" class="social_icons social_wc"><i class="fa fa-wechat"></i></a> <a href="" class="social_icons social_wb"><i class="fa fa-weibo"></i></a>
 			</div>
 			<div class="shareto">
-				<a href="" data-toggle="tooltip" title="Share" class="share_btn"> <img src="{{ asset('img/share_icon.png') }}" width="16"> </a>
+				<a href="" data-toggle="tooltip" title="{{ trans('general.share') }}" class="share_btn"> <img src="{{ asset('img/share_icon.png') }}" width="16"> </a>
 			</div>
 			<div class="likebar">
 			@if(Auth::check())
@@ -34,7 +34,7 @@
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2">
 				<h1>{{ $event->title }}</h1>
-				<p>Category: {{ $event->group->category }}</p>
+				<p>{{ trans("events.category") }} {{ $event->group->category }}</p>
 				<hr>
 					<div class="eventinfo">
 						<?php 
@@ -51,7 +51,7 @@
 					<div class="eventinfo">@if($event->suitenum !== '') {{ $event->suitenum }}, {{ $event->address }} @else  {{ $event->address }} @endif</div>
 					<div class="eventinfo eventfee">
 						@if($event->fee == 'Free') 
-							{{ $event->fee }}
+							{{ trans("events.free") }}
 						@else
 							@if($event->currency == 'cad'){{ 'C$' }}@elseif($event->currency == 'usd'){{ '$' }}@elseif($event->currency == 'cny'){{ '¥' }}@elseif($event->currency == 'eur'){{ '€' }}@endif{{ $event->fee }}
 						@endif

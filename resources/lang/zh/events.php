@@ -28,5 +28,5 @@ return [
 	'interested'=>'感兴趣',
 	'notinterested' => '不感兴趣',
 	'category'=>'分类:',
-	'orgnizedby'=>'组织者'
+	'orgnizedby'=>'组织者',
 ];

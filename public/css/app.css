@@ -7962,7 +7962,7 @@ label.error{
 .post_close{
   position: fixed;
   top: 80px;
-  right: 30px;
+  left: 15px;
   line-height: 1;
 }
 /*** media query ***/

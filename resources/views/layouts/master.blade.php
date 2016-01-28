@@ -311,6 +311,31 @@
 					
 				})
 			})
+			$('.showall a').on('click', function(e){
+				e.preventDefault();
+				if($('.joinedgroups .groupsrow').hasClass('collapsed')){
+					$('.joinedgroups .groupsrow').removeClass('collapsed');
+					$('.joinedgroups .groupsrow').addClass('expanded');
+					$(this).html('{{ trans("general.collapseall") }}');
+				}else{
+					$('.joinedgroups .groupsrow').removeClass('expanded');
+					$('.joinedgroups .groupsrow').addClass('collapsed');
+					$(this).html('{{ trans("brands.showall") }}');
+				}
+			})
+
+			$('.brandsshowall a').on('click', function(e){
+				e.preventDefault();
+				if($(this).parent().prev().hasClass('collapsed')){
+					$(this).parent().prev().removeClass('collapsed');
+					$(this).parent().prev().addClass('expanded');
+					$(this).html('{{ trans("general.collapseall") }}');
+				}else{
+					$(this).parent().prev().removeClass('expanded');
+					$(this).parent().prev().addClass('collapsed');
+					$(this).html('{{ trans("brands.showall") }}');
+				}
+			})
 			$('#g-profile').fileinput({
 				previewFileType: "image",
 				browseClass: "btn btn-success",

@@ -32,7 +32,7 @@
 					@foreach ($posts as $post)
 						<?php if($i > 1) break;?>
 						<div <?php if($i == 0) { echo 'class="col-md-8"';} else{ echo 'class="col-md-4 last"'; } ?>>
-							<div class="postfrom"><div>From <a href="/brands/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div>
+							<div class="postfrom"><div>{{ trans('posts.from') }} <a href="/brands/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div>
 							<div class="grouppost">{{ $post->group->category }}</div></div>
 							<a href="{{ url() }}/posts/<?php echo $post->id; ?>">
 								<?php $banner = explode(',', $post->banner); ?>
@@ -57,7 +57,7 @@
 											<a href="#" class="social_icons social_tw"><i class="fa fa-twitter"></i></a> <a href="" class="social_icons social_fb"><i class="fa fa-facebook"></i></a> <a href="" class="social_icons social_lk"><i class="fa fa-linkedin"></i></a><a href="" class="social_icons social_wb"><i class="fa fa-weibo"></i></a><!-- <a href="" class="social_icons social_wc"><i class="fa fa-wechat"></i></a>  -->
 										</div>
 										<div class="shareto">
-											<a href="" data-toggle="tooltip" title="Share" class="share_btn"> <img src="{{ asset('img/share_icon.png') }}" width="16"> </a>
+											<a href="" data-toggle="tooltip" title="{{ trans('general.share') }}" class="share_btn"> <img src="{{ asset('img/share_icon.png') }}" width="16"> </a>
 										</div>
 										<div class="postcomments">
 											<span><a href="{{ url() }}/posts/<?php echo $post->id; ?>#leavecomments" data-toggle="tooltip" title="Comments"><img src="{{ asset('img/comments_icon.png') }}" width="16"></a></span> <span class="count">{{ count($post->comments) }}</span>
@@ -108,7 +108,7 @@
 					@foreach ($posts as $post)
 						<?php if($i > 2) break;?>
 						<div class="col-md-4<?php if(is_int($j/3)) echo " last";?>">
-							<div class="postfrom"><div>From <a href="/brands/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ $post->group->category }}</div></div>
+							<div class="postfrom"><div>{{ trans('posts.from') }} <a href="/brands/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ $post->group->category }}</div></div>
 							<a href="{{ url() }}/posts/<?php echo $post->id; ?>">
 								<?php $banner = explode(',', $post->banner); ?>
 								<div class="bannerholder" style="background: #ccc url('<?php echo url().'/uploads/Small_'.$banner[0];?>') no-repeat center center; background-size: cover;">
@@ -121,11 +121,11 @@
 										
 									</div>
 									<div class="right">
-										<div class="sharebox">
+										<div class="sharebox" id="post{{$post->id}}">
 											<a href="" class="social_icons social_tw"><i class="fa fa-twitter"></i></a> <a href="" class="social_icons social_fb"><i class="fa fa-facebook"></i></a> <a href="" class="social_icons social_wc"><i class="fa fa-wechat"></i></a> <a href="" class="social_icons social_wb"><i class="fa fa-weibo"></i></a>
 										</div>
 										<div class="shareto">
-											<a href="" data-toggle="tooltip" title="Share" class="share_btn"><img src="{{ asset('img/share_icon.png') }}" width="16"></a>
+											<a href="" data-toggle="tooltip" title="{{ trans('general.share') }}" class="share_btn"><img src="{{ asset('img/share_icon.png') }}" width="16"></a>
 										</div>
 										<div class="postcomments">
 											<span><a href="{{ url() }}/posts/<?php echo $post->id; ?>#leavecomments" data-toggle="tooltip" title="Comments"><img src="{{ asset('img/comments_icon.png') }}" width="16"></a></span> <span class="count">{{ count($post->comments) }}</span>
@@ -144,6 +144,24 @@
 									</div>
 								</div>
 						</div>
+						<script type="text/javascript">
+							$('.right #post{{$post->id}} a.social_fb').on('click', function(e){
+								e.preventDefault();
+								window.open('https://www.facebook.com/v2.0/dialog/feed?app_id=866884463391641&display=popup&link='+encodeURIComponent('{{ url() }}/posts/<?php echo $post->id; ?>')+'&caption=OHGOODPARTY&picture={{ url()."/uploads/Medium_".$banner[0] }}&name='+encodeURIComponent('{{ $post->title }}')+'&description={!! html_entity_decode( trim(preg_replace("/\s+/", " ", getExcerpt($post->content, 60))) ) !!}&redirect_uri=https://www.facebook.com', "_blank", "width=360, height=360");
+							})
+							$('.right #post{{$post->id}} a.social_tw').on('click', function(e){
+								e.preventDefault();
+								window.open('https://www.twitter.com/share?text={{ $post->title }} {{ url() }}/posts/<?php echo $post->id; ?> @ohgoodparty_ogp&url=/', "_blank", "width=360, height=360");
+							})
+							$('.right #post{{$post->id}} a.social_lk').on('click', function(e){
+								e.preventDefault();
+								window.open('https://www.linkedin.com/shareArticle?mini=true&url={{ url() }}/posts/<?php echo $post->id; ?>&title={{ $post->title }}&summary={!! html_entity_decode( trim(preg_replace("/\s+/", " ", getExcerpt($post->content, 60))) ) !!}&source=OHGOODPARTY', "_blank", "width=360, height=360");
+							})
+							$('.right #post{{$post->id}} a.social_wb').on('click', function(e){
+								e.preventDefault();
+								window.open('http://service.weibo.com/share/share.php?appkey=3304326450&title={{ $post->title }} @奥格派&url={{ url() }}/posts/<?php echo $post->id; ?>&pic={{ url()."/uploads/Medium_".$banner[0] }}&searchPic=false&style=simple', "_blank", "width=360, height=360");
+							})
+						</script>
 					<?php array_splice($posts,0,1); $i++;$j++;?>
 					@endforeach
 					<div class="row-gap"></div>
@@ -151,8 +169,8 @@
 			</section>
 			@endif
 			<section class="events_section container">
-				<h2>EVENTS</h2>
-				<h4>See What's Happening Around You</h4>
+				<h2>{{ trans('headermennu.discoverevents') }}</h2>
+				<h4>{{ trans('general.seehappen') }}</h4>
 				<div class="home_events">
 					<?php $e = 0; ?>
 					@foreach ($events as $event)
@@ -188,7 +206,7 @@
 					<?php $e++;?>
 					@endforeach
 				</div>
-				<div class="viewmore"><a href="/events">VIEW MORE</a></div>
+				<div class="viewmore"><a href="/events">{{ trans('general.viewmore') }}</a></div>
 				<div class="row-gap"></div>
 				<div class="divider"></div>
 				<?php date_default_timezone_set(Config::get('app.timezone'));?>
@@ -200,7 +218,7 @@
 					@foreach ($posts as $post)
 						<?php if($i >= 3) break;?>
 						<div class="<?php if($i == 0) { echo "col-md-6";} else{ echo "col-md-3"; }?><?php if(is_int($j/3)) echo " last";?>">
-							<div class="postfrom"><div>From <a href="/brands/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ $post->group->category }}</div></div>
+							<div class="postfrom"><div>{{ trans('posts.from') }} <a href="/brands/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ $post->group->category }}</div></div>
 							<a href="{{ url() }}/posts/<?php echo $post->id; ?>">
 							<?php $banner = explode(',', $post->banner); ?>
 								<div class="bannerholder" style="background: #ccc url('<?php echo url().'/uploads/Small_'.$banner[0];?>') no-repeat center center; background-size: cover;">
@@ -216,11 +234,11 @@
 										
 									</div>
 									<div class="right">
-										<div class="sharebox">
+										<div class="sharebox" id="post{{$post->id}}">
 											<a href="" class="social_icons social_tw"><i class="fa fa-twitter"></i></a> <a href="" class="social_icons social_fb"><i class="fa fa-facebook"></i></a> <a href="" class="social_icons social_wc"><i class="fa fa-wechat"></i></a> <a href="" class="social_icons social_wb"><i class="fa fa-weibo"></i></a>
 										</div>
 										<div class="shareto">
-											<a href="" data-toggle="tooltip" title="Share" class="share_btn"><img src="{{ asset('img/share_icon.png') }}" width="16"></a>
+											<a href="" data-toggle="tooltip" title="{{ trans('general.share') }}" class="share_btn"><img src="{{ asset('img/share_icon.png') }}" width="16"></a>
 										</div>
 										<div class="postcomments">
 											<span><a href="{{ url() }}/posts/<?php echo $post->id; ?>#leavecomments" data-toggle="tooltip" title="Comments"><img src="{{ asset('img/comments_icon.png') }}" width="16"></a></span> <span class="count">{{ count($post->comments) }}</span>
@@ -239,6 +257,24 @@
 									</div>
 								</div>
 						</div>
+						<script type="text/javascript">
+							$('.right #post{{$post->id}} a.social_fb').on('click', function(e){
+								e.preventDefault();
+								window.open('https://www.facebook.com/v2.0/dialog/feed?app_id=866884463391641&display=popup&link='+encodeURIComponent('{{ url() }}/posts/<?php echo $post->id; ?>')+'&caption=OHGOODPARTY&picture={{ url()."/uploads/Medium_".$banner[0] }}&name='+encodeURIComponent('{{ $post->title }}')+'&description={!! html_entity_decode( trim(preg_replace("/\s+/", " ", getExcerpt($post->content, 60))) ) !!}&redirect_uri=https://www.facebook.com', "_blank", "width=360, height=360");
+							})
+							$('.right #post{{$post->id}} a.social_tw').on('click', function(e){
+								e.preventDefault();
+								window.open('https://www.twitter.com/share?text={{ $post->title }} {{ url() }}/posts/<?php echo $post->id; ?> @ohgoodparty_ogp&url=/', "_blank", "width=360, height=360");
+							})
+							$('.right #post{{$post->id}} a.social_lk').on('click', function(e){
+								e.preventDefault();
+								window.open('https://www.linkedin.com/shareArticle?mini=true&url={{ url() }}/posts/<?php echo $post->id; ?>&title={{ $post->title }}&summary={!! html_entity_decode( trim(preg_replace("/\s+/", " ", getExcerpt($post->content, 60))) ) !!}&source=OHGOODPARTY', "_blank", "width=360, height=360");
+							})
+							$('.right #post{{$post->id}} a.social_wb').on('click', function(e){
+								e.preventDefault();
+								window.open('http://service.weibo.com/share/share.php?appkey=3304326450&title={{ $post->title }} @奥格派&url={{ url() }}/posts/<?php echo $post->id; ?>&pic={{ url()."/uploads/Medium_".$banner[0] }}&searchPic=false&style=simple', "_blank", "width=360, height=360");
+							})
+						</script>
 					<?php array_splice($posts,0,1); $i++;$j++;?>
 					@endforeach
 					<div class="row-gap"></div>
@@ -252,7 +288,7 @@
 					@foreach ($posts as $post)
 						<?php if($i >= 4) break;?>
 						<div class="col-md-3<?php if(is_int($j/4)) echo " last";?>">
-							<div class="postfrom"><div>From <a href="/brands/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ $post->group->category }}</div></div>
+							<div class="postfrom"><div>{{ trans('posts.from') }} <a href="/brands/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ $post->group->category }}</div></div>
 							<a href="{{ url() }}/posts/<?php echo $post->id; ?>">
 							<?php $banner = explode(',', $post->banner); ?>
 								<div class="bannerholder" style="background: #ccc url('<?php echo url().'/uploads/Small_'.$banner[0];?>') no-repeat center center; background-size: cover;">
@@ -266,11 +302,11 @@
 										
 									</div>
 									<div class="right">
-										<div class="sharebox">
+										<div class="sharebox" id="post{{$post->id}}">
 											<a href="" class="social_icons social_tw"><i class="fa fa-twitter"></i></a> <a href="" class="social_icons social_fb"><i class="fa fa-facebook"></i></a> <a href="" class="social_icons social_wc"><i class="fa fa-wechat"></i></a> <a href="" class="social_icons social_wb"><i class="fa fa-weibo"></i></a>
 										</div>
 										<div class="shareto">
-											<a href="" data-toggle="tooltip" title="Share" class="share_btn"><img src="{{ asset('img/share_icon.png') }}" width="16"></a>
+											<a href="" data-toggle="tooltip" title="{{ trans('general.share') }}" class="share_btn"><img src="{{ asset('img/share_icon.png') }}" width="16"></a>
 										</div>
 										<div class="postcomments">
 											<span><a href="{{ url() }}/posts/<?php echo $post->id; ?>#leavecomments" data-toggle="tooltip" title="Comments"><img src="{{ asset('img/comments_icon.png') }}" width="16"></a></span> <span class="count">{{ count($post->comments) }}</span>
@@ -289,6 +325,24 @@
 									</div>
 								</div>
 						</div>
+						<script type="text/javascript">
+							$('.right #post{{$post->id}} a.social_fb').on('click', function(e){
+								e.preventDefault();
+								window.open('https://www.facebook.com/v2.0/dialog/feed?app_id=866884463391641&display=popup&link='+encodeURIComponent('{{ url() }}/posts/<?php echo $post->id; ?>')+'&caption=OHGOODPARTY&picture={{ url()."/uploads/Medium_".$banner[0] }}&name='+encodeURIComponent('{{ $post->title }}')+'&description={!! html_entity_decode( trim(preg_replace("/\s+/", " ", getExcerpt($post->content, 60))) ) !!}&redirect_uri=https://www.facebook.com', "_blank", "width=360, height=360");
+							})
+							$('.right #post{{$post->id}} a.social_tw').on('click', function(e){
+								e.preventDefault();
+								window.open('https://www.twitter.com/share?text={{ $post->title }} {{ url() }}/posts/<?php echo $post->id; ?> @ohgoodparty_ogp&url=/', "_blank", "width=360, height=360");
+							})
+							$('.right #post{{$post->id}} a.social_lk').on('click', function(e){
+								e.preventDefault();
+								window.open('https://www.linkedin.com/shareArticle?mini=true&url={{ url() }}/posts/<?php echo $post->id; ?>&title={{ $post->title }}&summary={!! html_entity_decode( trim(preg_replace("/\s+/", " ", getExcerpt($post->content, 60))) ) !!}&source=OHGOODPARTY', "_blank", "width=360, height=360");
+							})
+							$('.right #post{{$post->id}} a.social_wb').on('click', function(e){
+								e.preventDefault();
+								window.open('http://service.weibo.com/share/share.php?appkey=3304326450&title={{ $post->title }} @奥格派&url={{ url() }}/posts/<?php echo $post->id; ?>&pic={{ url()."/uploads/Medium_".$banner[0] }}&searchPic=false&style=simple', "_blank", "width=360, height=360");
+							})
+						</script>
 					<?php array_splice($posts,0,1); $i++;$j++;?>
 					@endforeach
 					<div class="row-gap"></div>
@@ -302,7 +356,7 @@
 					@foreach ($posts as $post)
 						<?php if($i >= 3) break;?>
 						<div class="<?php if($i == 0) { echo "col-md-6";} else{ echo "col-md-3"; }?><?php if(is_int($j/3)) echo " last";?>">
-							<div class="postfrom"><div>From <a href="/brands/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ $post->group->category }}</div></div>
+							<div class="postfrom"><div>{{ trans('posts.from') }} <a href="/brands/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ $post->group->category }}</div></div>
 							<a href="{{ url() }}/posts/<?php echo $post->id; ?>">
 							<?php $banner = explode(',', $post->banner); ?>
 								<div class="bannerholder" style="background: #ccc url('<?php echo url().'/uploads/Small_'.$banner[0];?>') no-repeat center center; background-size: cover;">
@@ -318,11 +372,11 @@
 										
 									</div>
 									<div class="right">
-										<div class="sharebox">
+										<div class="sharebox" id="post{{$post->id}}">
 											<a href="" class="social_icons social_tw"><i class="fa fa-twitter"></i></a> <a href="" class="social_icons social_fb"><i class="fa fa-facebook"></i></a> <a href="" class="social_icons social_wc"><i class="fa fa-wechat"></i></a> <a href="" class="social_icons social_wb"><i class="fa fa-weibo"></i></a>
 										</div>
 										<div class="shareto">
-											<a href="" data-toggle="tooltip" title="Share" class="share_btn"><img src="{{ asset('img/share_icon.png') }}" width="16"></a>
+											<a href="" data-toggle="tooltip" title="{{ trans('general.share') }}" class="share_btn"><img src="{{ asset('img/share_icon.png') }}" width="16"></a>
 										</div>
 										<div class="postcomments">
 											<span><a href="{{ url() }}/posts/<?php echo $post->id; ?>#leavecomments" data-toggle="tooltip" title="Comments"><img src="{{ asset('img/comments_icon.png') }}" width="16"></a></span> <span class="count">{{ count($post->comments) }}</span>
@@ -341,6 +395,24 @@
 									</div>
 								</div>
 						</div>
+						<script type="text/javascript">
+							$('.right #post{{$post->id}} a.social_fb').on('click', function(e){
+								e.preventDefault();
+								window.open('https://www.facebook.com/v2.0/dialog/feed?app_id=866884463391641&display=popup&link='+encodeURIComponent('{{ url() }}/posts/<?php echo $post->id; ?>')+'&caption=OHGOODPARTY&picture={{ url()."/uploads/Medium_".$banner[0] }}&name='+encodeURIComponent('{{ $post->title }}')+'&description={!! html_entity_decode( trim(preg_replace("/\s+/", " ", getExcerpt($post->content, 60))) ) !!}&redirect_uri=https://www.facebook.com', "_blank", "width=360, height=360");
+							})
+							$('.right #post{{$post->id}} a.social_tw').on('click', function(e){
+								e.preventDefault();
+								window.open('https://www.twitter.com/share?text={{ $post->title }} {{ url() }}/posts/<?php echo $post->id; ?> @ohgoodparty_ogp&url=/', "_blank", "width=360, height=360");
+							})
+							$('.right #post{{$post->id}} a.social_lk').on('click', function(e){
+								e.preventDefault();
+								window.open('https://www.linkedin.com/shareArticle?mini=true&url={{ url() }}/posts/<?php echo $post->id; ?>&title={{ $post->title }}&summary={!! html_entity_decode( trim(preg_replace("/\s+/", " ", getExcerpt($post->content, 60))) ) !!}&source=OHGOODPARTY', "_blank", "width=360, height=360");
+							})
+							$('.right #post{{$post->id}} a.social_wb').on('click', function(e){
+								e.preventDefault();
+								window.open('http://service.weibo.com/share/share.php?appkey=3304326450&title={{ $post->title }} @奥格派&url={{ url() }}/posts/<?php echo $post->id; ?>&pic={{ url()."/uploads/Medium_".$banner[0] }}&searchPic=false&style=simple', "_blank", "width=360, height=360");
+							})
+						</script>
 					<?php array_splice($posts,0,1); $i++;$j++;?>
 					@endforeach
 					<div class="row-gap"></div>
@@ -375,8 +447,8 @@
 						?>
 					<?php $f++; endforeach;?>
 					</div>
-					<div class="showall"><a href="">SHOW ALL</a></div>
-					<div class="joinmore"><a href="/brands">Follow more brands to get more information</a></div>
+					<div class="showall"><a href="">{{ trans('brands.showall') }}</a></div>
+					<div class="joinmore"><a href="/brands">{{ trans('general.followmore') }}</a></div>
 
 				</div>
 			</section>
@@ -388,7 +460,7 @@
 					@foreach ($posts as $post)
 						<?php if($i > 2) break;?>
 						<div class="col-md-4<?php if(is_int($j/3)) echo " last";?>">
-							<div class="postfrom"><div>From <a href="/brands/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ $post->group->category }}</div></div>
+							<div class="postfrom"><div>{{ trans('posts.from') }} <a href="/brands/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ $post->group->category }}</div></div>
 							<a href="{{ url() }}/posts/<?php echo $post->id; ?>">
 								<?php $banner = explode(',', $post->banner); ?>
 								<div class="bannerholder" style="background: #ccc url('<?php echo url().'/uploads/Small_'.$banner[0];?>') no-repeat center center; background-size: cover;">
@@ -401,11 +473,11 @@
 										
 									</div>
 									<div class="right">
-										<div class="sharebox">
+										<div class="sharebox" id="post{{$post->id}}">
 											<a href="" class="social_icons social_tw"><i class="fa fa-twitter"></i></a> <a href="" class="social_icons social_fb"><i class="fa fa-facebook"></i></a> <a href="" class="social_icons social_wc"><i class="fa fa-wechat"></i></a> <a href="" class="social_icons social_wb"><i class="fa fa-weibo"></i></a>
 										</div>
 										<div class="shareto">
-											<a href="" data-toggle="tooltip" title="Share" class="share_btn"><img src="{{ asset('img/share_icon.png') }}" width="16"></a>
+											<a href="" data-toggle="tooltip" title="{{ trans('general.share') }}" class="share_btn"><img src="{{ asset('img/share_icon.png') }}" width="16"></a>
 										</div>
 										<div class="postcomments">
 											<span><a href="{{ url() }}/posts/<?php echo $post->id; ?>#leavecomments" data-toggle="tooltip" title="Comments"><img src="{{ asset('img/comments_icon.png') }}" width="16"></a></span> <span class="count">{{ count($post->comments) }}</span>
@@ -424,6 +496,24 @@
 									</div>
 								</div>
 						</div>
+						<script type="text/javascript">
+							$('.right #post{{$post->id}} a.social_fb').on('click', function(e){
+								e.preventDefault();
+								window.open('https://www.facebook.com/v2.0/dialog/feed?app_id=866884463391641&display=popup&link='+encodeURIComponent('{{ url() }}/posts/<?php echo $post->id; ?>')+'&caption=OHGOODPARTY&picture={{ url()."/uploads/Medium_".$banner[0] }}&name='+encodeURIComponent('{{ $post->title }}')+'&description={!! html_entity_decode( trim(preg_replace("/\s+/", " ", getExcerpt($post->content, 60))) ) !!}&redirect_uri=https://www.facebook.com', "_blank", "width=360, height=360");
+							})
+							$('.right #post{{$post->id}} a.social_tw').on('click', function(e){
+								e.preventDefault();
+								window.open('https://www.twitter.com/share?text={{ $post->title }} {{ url() }}/posts/<?php echo $post->id; ?> @ohgoodparty_ogp&url=/', "_blank", "width=360, height=360");
+							})
+							$('.right #post{{$post->id}} a.social_lk').on('click', function(e){
+								e.preventDefault();
+								window.open('https://www.linkedin.com/shareArticle?mini=true&url={{ url() }}/posts/<?php echo $post->id; ?>&title={{ $post->title }}&summary={!! html_entity_decode( trim(preg_replace("/\s+/", " ", getExcerpt($post->content, 60))) ) !!}&source=OHGOODPARTY', "_blank", "width=360, height=360");
+							})
+							$('.right #post{{$post->id}} a.social_wb').on('click', function(e){
+								e.preventDefault();
+								window.open('http://service.weibo.com/share/share.php?appkey=3304326450&title={{ $post->title }} @奥格派&url={{ url() }}/posts/<?php echo $post->id; ?>&pic={{ url()."/uploads/Medium_".$banner[0] }}&searchPic=false&style=simple', "_blank", "width=360, height=360");
+							})
+						</script>
 					<?php array_splice($posts,0,1); $i++;$j++;?>
 					@endforeach
 					<div class="row-gap"></div>

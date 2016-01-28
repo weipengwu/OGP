@@ -18,7 +18,7 @@ return [
 	'technologyscience'=>'科技与科学',
 	'travel'=>'旅⾏',
 	'other'=>'其他',
-	'showall'=>'显示全部',
+	'showall'=>'展开',
 	'editbrand'=>'编辑品牌',
 	'editmybrand'=>'编辑我的品牌',
 	'uploadbanner'=>'上传您品牌的宣传横幅',

@@ -258,17 +258,17 @@ $(document).ready(function(){
 		$('#'+id).addClass('active');
 	})
 
-	$('.bootstrap-switch').on('click', function(){
-		if($(this).hasClass('bootstrap-switch-off')){
-			$('input[name="resume"]').val('off');
-			$('#linkresume').hide();
-			$('#noresume').show();
-		}else{
-			$('input[name="resume"]').val('on');
-			$('#linkresume').show();
-			$('#noresume').hide();
-		}
-	})
+	// $('.bootstrap-switch').on('click', function(){
+	// 	if($(this).hasClass('bootstrap-switch-off')){
+	// 		$('input[name="resume"]').val('off');
+	// 		$('#linkresume').hide();
+	// 		$('#noresume').show();
+	// 	}else{
+	// 		$('input[name="resume"]').val('on');
+	// 		$('#linkresume').show();
+	// 		$('#noresume').hide();
+	// 	}
+	// })
 	$('#category').on('change', function(){
 		var cat = $('#category').val();	
 		if( cat == ""){
@@ -334,31 +334,6 @@ $(document).ready(function(){
 		$('#fee').hide();
 	}
 	
-	$('.showall a').on('click', function(e){
-		e.preventDefault();
-		if($('.joinedgroups .groupsrow').hasClass('collapsed')){
-			$('.joinedgroups .groupsrow').removeClass('collapsed');
-			$('.joinedgroups .groupsrow').addClass('expanded');
-			$(this).html('COLLAPSE ALL');
-		}else{
-			$('.joinedgroups .groupsrow').removeClass('expanded');
-			$('.joinedgroups .groupsrow').addClass('collapsed');
-			$(this).html('SHOW ALL');
-		}
-	})
-
-	$('.brandsshowall a').on('click', function(e){
-		e.preventDefault();
-		if($(this).parent().prev().hasClass('collapsed')){
-			$(this).parent().prev().removeClass('collapsed');
-			$(this).parent().prev().addClass('expanded');
-			$(this).html('COLLAPSE ALL');
-		}else{
-			$(this).parent().prev().removeClass('expanded');
-			$(this).parent().prev().addClass('collapsed');
-			$(this).html('SHOW ALL');
-		}
-	})
 
 	$('.translation .radio input').on('change', function(){
 		if($('.translation input#yestranslate').is(':checked')){

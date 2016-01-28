@@ -99,7 +99,7 @@
 											@endif
 										</div>
 										<div class="postfrom">
-											From: <a href="/brands/{{ ($event->group->slug) }}">{{ ($event->group->name) }}</a>
+											{{ trans('events.from') }} <a href="/brands/{{ ($event->group->slug) }}">{{ ($event->group->name) }}</a>
 										</div>
 							</div>
 						</div>
