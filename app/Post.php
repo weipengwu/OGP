@@ -33,8 +33,8 @@ class Post extends Model{
 	{
 		return $this->belongsTo('App\User');
 	}
-	public function getCreatedAtAttribute($value)
-	{
-	    return Date::instance($value);
-	}
+	// public function getCreatedAtAttribute($value)
+	// {
+	//     return Date::instance($value);
+	// }
 }
