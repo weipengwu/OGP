@@ -87,6 +87,7 @@
 				@endforeach
 				@if(count($posts) > 0)
 				<section class="container">
+				<?php use Jenssegers\Date\Date; Date::setLocale(Config::get('app.locale'));?>
 					<div class="row singlegroup layout84">
 							<?php $i = 0;?>
 							@foreach ($posts as $post)
