@@ -12,7 +12,7 @@
 					</div>
 					<h1> {{ $post->title }}</h1>
 					<div class="authorinfo">
-						<?php use Jenssegers\Date\Date;?>
+						<?php use Jenssegers\Date\Date; Date::setLocale(Config::get('app.locale'));?>
 						<!-- <span>By {{ getAuthorname($post->author) }}</span> --> <span><img src="{{ asset('img/calendar_icon.png') }}" width="16"> <?php echo Date::instance($post->created_at)->diffForHumans();//$timestamp = strtotime($post->created_at); echo date('M j, Y', $timestamp); ?></span>
 					</div>
 					<?php $banners = explode(',', $post->banner); if(count($banners) > 0 && strpos($post->banner,'img/defaultbg') == false):?>
