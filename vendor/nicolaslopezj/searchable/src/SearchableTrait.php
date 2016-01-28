@@ -2,13 +2,17 @@
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Query\Expression;
-use Config;
-use DB;
+use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
 /**
  * Trait SearchableTrait
  * @package Nicolaslopezj\Searchable
+ * @property array $searchable
+ * @property string $table
+ * @property string $primaryKey
+ * @method string getTable()
  */
 trait SearchableTrait
 {
@@ -23,9 +27,15 @@ trait SearchableTrait
      * @param \Illuminate\Database\Eloquent\Builder $q
      * @param string $search
      * @param float|null $threshold
+     * @param  boolean $entireText
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopeSearch(Builder $q, $search, $threshold = null, $entireText = false)
+    {
+        return $this->scopeSearchRestricted($q, $search, null, $threshold, $entireText);
+    }
+
+    public function scopeSearchRestricted(Builder $q, $search, $restriction, $threshold = null, $entireText = false)
     {
         $query = clone $q;
         $query->select($this->getTable() . '.*');
@@ -60,11 +70,21 @@ trait SearchableTrait
         }
 
         $this->addSelectsToQuery($query, $selects);
-        $this->filterQueryWithRelevance($query, $selects, $threshold ?: ($relevance_count / 4));
+
+        // Default the threshold if no value was passed.
+        if (is_null($threshold)) {
+            $threshold = $relevance_count / 4;
+        }
+
+        $this->filterQueryWithRelevance($query, $selects, $threshold);
 
         $this->makeGroupBy($query);
 
         $this->addBindingsToQuery($query, $this->search_bindings);
+
+        if(is_callable($restriction)) {
+            $query = $restriction($query);
+        }
 
         $this->mergeQueries($query, $q);
 
@@ -77,7 +97,7 @@ trait SearchableTrait
      * @return array
      */
     protected function getDatabaseDriver() {
-        $key = Config::get('database.default');
+        $key = $this->connection ?: Config::get('database.default');
         return Config::get('database.connections.' . $key . '.driver');
     }
 
@@ -93,6 +113,20 @@ trait SearchableTrait
         } else {
             return DB::connection()->getSchemaBuilder()->getColumnListing($this->table);
         }
+    }
+
+    /**
+     * Returns whether or not to keep duplicates.
+     *
+     * @return array
+     */
+    protected function getGroupBy()
+    {
+        if (array_key_exists('groupBy', $this->searchable)) {
+            return $this->searchable['groupBy'];
+        }
+
+        return false;
     }
 
     /**
@@ -122,9 +156,13 @@ trait SearchableTrait
      */
     protected function makeJoins(Builder $query)
     {
-        foreach ($this->getJoins() as $table => $keys)
-        {
-            $query->leftJoin($table, $keys[0], '=', $keys[1]);
+        foreach ($this->getJoins() as $table => $keys) {
+            $query->leftJoin($table, function ($join) use ($keys) {
+                $join->on($keys[0], '=', $keys[1]);
+                if (array_key_exists(2, $keys) && array_key_exists(3, $keys)) {
+                    $join->where($keys[2], '=', $keys[3]);
+                }
+            });
         }
     }
 
@@ -135,26 +173,29 @@ trait SearchableTrait
      */
     protected function makeGroupBy(Builder $query)
     {
-        $driver = $this->getDatabaseDriver();
-        if ($driver == 'sqlsrv') {
-            $columns = $this->getTableColumns();
+        if ($groupBy = $this->getGroupBy()) {
+            $query->groupBy($groupBy);
         } else {
-            $id = $this->getTable() . '.' .$this->primaryKey;
+            $driver = $this->getDatabaseDriver();
+
+            if ($driver == 'sqlsrv') {
+                $columns = $this->getTableColumns();
+            } else {
+                $columns = $this->getTable() . '.' .$this->primaryKey;
+            }
+
+            $query->groupBy($columns);
+
             $joins = array_keys(($this->getJoins()));
 
             foreach ($this->getColumns() as $column => $relevance) {
-
-                array_map(function($join) use ($column, $query){
-
-                    if(Str::contains($column, $join)){
-                        $query->groupBy("$column");
+                array_map(function ($join) use ($column, $query) {
+                    if (Str::contains($column, $join)) {
+                        $query->groupBy($column);
                     }
-
                 }, $joins);
-
             }
         }
-        $query->groupBy($id);
     }
 
     /**
@@ -165,7 +206,7 @@ trait SearchableTrait
      */
     protected function addSelectsToQuery(Builder $query, array $selects)
     {
-        $selects = new Expression(implode(' + ', $selects) . ' as relevance');
+        $selects = new Expression('max(' . implode(' + ', $selects) . ') as relevance');
         $query->addSelect($selects);
     }
 
@@ -244,6 +285,11 @@ trait SearchableTrait
      * @return string
      */
     protected function getCaseCompare($column, $compare, $relevance) {
+        if($this->getDatabaseDriver() == 'pgsql') {
+            $field = "LOWER(" . $column . ") " . $compare . " ?";    
+            return '(case when ' . $field . ' then ' . $relevance . ' else 0 end)';
+        }
+
         $column = str_replace('.', '`.`', $column);
         $field = "LOWER(`" . $column . "`) " . $compare . " ?";
         return '(case when ' . $field . ' then ' . $relevance . ' else 0 end)';
@@ -272,7 +318,12 @@ trait SearchableTrait
      * @param \Illuminate\Database\Eloquent\Builder $original
      */
     protected function mergeQueries(Builder $clone, Builder $original) {
-        $original->from(DB::raw("({$clone->toSql()}) as `{$this->getTable()}`"));
+        $tableName = DB::connection($this->connection)->getTablePrefix() . $this->getTable();
+		if ($this->getDatabaseDriver() == 'pgsql') {
+            $original->from(DB::connection($this->connection)->raw("({$clone->toSql()}) as {$tableName}"));
+        } else {
+            $original->from(DB::connection($this->connection)->raw("({$clone->toSql()}) as `{$tableName}`"));
+        }
         $original->mergeBindings($clone->getQuery());
     }
 }
