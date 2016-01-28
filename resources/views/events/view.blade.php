@@ -35,7 +35,7 @@
 			})
 			$('.right a.social_tw').on('click', function(e){
 					e.preventDefault();
-					window.open('https://www.twitter.com/share?text={{ $post->title }} {{ url() }}/events/<?php echo $event->id; ?> @ohgoodparty_ogp&url=/', "_blank", "width=360, height=360");
+					window.open('https://www.twitter.com/share?text={{ $event->title }} {{ url() }}/events/<?php echo $event->id; ?> @ohgoodparty_ogp&url=/', "_blank", "width=360, height=360");
 			})
 			$('.right a.social_lk').on('click', function(e){
 				e.preventDefault();

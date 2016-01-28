@@ -51,7 +51,7 @@
 		<script type="text/javascript">
 					$('.right #brand{{$group->id}} a.social_fb').on('click', function(e){
 						e.preventDefault();
-						window.open('https://www.facebook.com/v2.0/dialog/feed?app_id=866884463391641&display=popup&link='+encodeURIComponent('{{ url() }}/brands/<?php echo $brand->slug; ?>')+'&caption=OHGOODPARTY&picture={{ url()."/uploads/Medium_".$group->banner }}&name='+encodeURIComponent('{{ $group->name }}')+'&description={!! html_entity_decode($group->description) !!}&redirect_uri=https://www.facebook.com', "_blank", "width=360, height=360");
+						window.open('https://www.facebook.com/v2.0/dialog/feed?app_id=866884463391641&display=popup&link='+encodeURIComponent('{{ url() }}/brands/<?php echo $group->slug; ?>')+'&caption=OHGOODPARTY&picture={{ url()."/uploads/Medium_".$group->banner }}&name='+encodeURIComponent('{{ $group->name }}')+'&description={!! html_entity_decode($group->description) !!}&redirect_uri=https://www.facebook.com', "_blank", "width=360, height=360");
 					})
 					$('.right #brand{{$group->id}} a.social_tw').on('click', function(e){
 						e.preventDefault();
