@@ -31,7 +31,7 @@
 					<a class="create_btn" data-toggle="tooltip" title="Create Event" href="<?php echo url();?>/brands/<?php echo $group->slug;?>/events/new"><img src="{{ asset('img/ticket_icon.png') }}" width="20"></a> <a class="create_btn" data-toggle="tooltip" title="Create Post" href="<?php echo url();?>/brands/<?php echo $group->slug;?>/posts/new"><img src="{{ asset('img/createpost_big_icon.png') }}" width="16"></a>
 				@else
 					<div class="sharebox" id="brand{{$group->id}}">
-						<a href="" class="social_icons social_tw"><i class="fa fa-twitter"></i></a> <a href="" class="social_icons social_fb"><i class="fa fa-facebook"></i></a> <a href="" class="social_icons social_wc"><i class="fa fa-wechat"></i></a> <a href="" class="social_icons social_wb"><i class="fa fa-weibo"></i></a>
+						<a href="" class="social_icons social_tw"><i class="fa fa-twitter"></i></a> <a href="" class="social_icons social_fb"><i class="fa fa-facebook"></i></a> <a href="" class="social_icons social_lk"><i class="fa fa-linkedin"></i></a><a href="" class="social_icons social_wb"><i class="fa fa-weibo"></i></a>
 					</div>
 					<div class="shareto">
 						<a href="" data-toggle="tooltip" title="{{ trans('general.share') }}" class="share_btn"> <img src="{{ asset('img/share_icon.png') }}" width="16"> </a>
@@ -51,7 +51,7 @@
 		<script type="text/javascript">
 					$('.right #brand{{$group->id}} a.social_fb').on('click', function(e){
 						e.preventDefault();
-						window.open('https://www.facebook.com/v2.0/dialog/feed?app_id=866884463391641&display=popup&link='+encodeURIComponent('{{ url() }}/brands/<?php echo $group->slug; ?>')+'&caption=OHGOODPARTY&picture={{ url()."/uploads/Medium_".$group->banner }}&name='+encodeURIComponent('{{ $group->name }}')+'&description={!! html_entity_decode($group->description) !!}&redirect_uri=https://www.facebook.com', "_blank", "width=360, height=360");
+						window.open('https://www.facebook.com/v2.0/dialog/feed?app_id=866884463391641&display=popup&link='+encodeURIComponent('{{ url() }}/brands/<?php echo $group->slug; ?>')+'&caption=OHGOODPARTY&picture={{ url()."/uploads/Large_".$group->banner }}&name='+encodeURIComponent('{{ $group->name }}')+'&description={!! html_entity_decode($group->description) !!}&redirect_uri=https://www.facebook.com', "_blank", "width=360, height=360");
 					})
 					$('.right #brand{{$group->id}} a.social_tw').on('click', function(e){
 						e.preventDefault();
@@ -63,7 +63,7 @@
 					})
 					$('.right #brand{{$group->id}} a.social_wb').on('click', function(e){
 						e.preventDefault();
-						window.open('http://service.weibo.com/share/share.php?appkey=3304326450&title={{ $group->name }} @奥格派&url={{ url() }}/brands/<?php echo $group->slug; ?>&pic={{ url()."/uploads/Medium_".$group->banner }}&searchPic=false&style=simple', "_blank", "width=360, height=360");
+						window.open('http://service.weibo.com/share/share.php?appkey=3304326450&title={{ $group->name }} @奥格派&url={{ url() }}/brands/<?php echo $group->slug; ?>&pic={{ url()."/uploads/Large_".$group->banner }}&searchPic=false&style=simple', "_blank", "width=360, height=360");
 					})
 				</script>
 	</div>
