@@ -4,6 +4,7 @@ return [
 	'seehappen' => 'See What\'s Happening',
 	'collapseall' => 'COLLAPSE ALL',
 	'viewmore' => 'VIEW MORE',
+	'following' => 'FOLLOWING',
 	'followmore' => 'Follow more brands to get more information',
 	'oops' => 'OOPS. SOMETHINGS GONE WRONG.',
 	'backhome' => 'Back to home',

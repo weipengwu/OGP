@@ -4,6 +4,7 @@ return [
 	'seehappen' => '正在发生',
 	'collapseall' => '收起',
 	'viewmore' => '更多',
+	'following' => '已关注',
 	'followmore' => '关注更多品牌以获得更好的体验',
 	'oops' => '出错啦...',
 	'backhome' => '回首页',

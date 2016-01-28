@@ -60,14 +60,14 @@
 											<a href="" data-toggle="tooltip" title="{{ trans('general.share') }}" class="share_btn"> <img src="{{ asset('img/share_icon.png') }}" width="16"> </a>
 										</div>
 										<div class="postcomments">
-											<span><a href="{{ url() }}/posts/<?php echo $post->id; ?>#leavecomments" data-toggle="tooltip" title="Comments"><img src="{{ asset('img/comments_icon.png') }}" width="16"></a></span> <span class="count">{{ count($post->comments) }}</span>
+											<span><a href="{{ url() }}/posts/<?php echo $post->id; ?>#leavecomments" data-toggle="tooltip" title="{{ trans('posts.comments') }}"><img src="{{ asset('img/comments_icon.png') }}" width="16"></a></span> <span class="count">{{ count($post->comments) }}</span>
 										</div>
 										<div class="postlikes">
 										@if(Auth::check())
 											@if(alreadyLikedPost(Auth::user()->id,$post->id) > 0)
-												<span><a href="" data-toggle="tooltip" title="Unlike" data-post-id="{{ $post->id }}" data-author-id="{{ Auth::user()->id }}" class="like_btn post_unlike"><img src="{{ asset('img/already_likes_icon.png') }}" width="16"></a></span>
+												<span><a href="" data-toggle="tooltip" title="{{ trans('general.unlike') }}" data-post-id="{{ $post->id }}" data-author-id="{{ Auth::user()->id }}" class="like_btn post_unlike"><img src="{{ asset('img/already_likes_icon.png') }}" width="16"></a></span>
 											@else
-												<span><a href="" data-toggle="tooltip" title="Like" data-post-id="{{ $post->id }}" data-author-id="{{ Auth::user()->id }}" class="like_btn post_like"><img src="{{ asset('img/likes_icon.png') }}" width="16"></a></span>
+												<span><a href="" data-toggle="tooltip" title="{{ trans('general.like') }}" data-post-id="{{ $post->id }}" data-author-id="{{ Auth::user()->id }}" class="like_btn post_like"><img src="{{ asset('img/likes_icon.png') }}" width="16"></a></span>
 											@endif
 										@endif
 										<span class="count">{{ count($post->likes) }}</span>
@@ -128,14 +128,14 @@
 											<a href="" data-toggle="tooltip" title="{{ trans('general.share') }}" class="share_btn"><img src="{{ asset('img/share_icon.png') }}" width="16"></a>
 										</div>
 										<div class="postcomments">
-											<span><a href="{{ url() }}/posts/<?php echo $post->id; ?>#leavecomments" data-toggle="tooltip" title="Comments"><img src="{{ asset('img/comments_icon.png') }}" width="16"></a></span> <span class="count">{{ count($post->comments) }}</span>
+											<span><a href="{{ url() }}/posts/<?php echo $post->id; ?>#leavecomments" data-toggle="tooltip" title="{{ trans('posts.comments') }}"><img src="{{ asset('img/comments_icon.png') }}" width="16"></a></span> <span class="count">{{ count($post->comments) }}</span>
 										</div>
 										<div class="postlikes">
 										@if(Auth::check())
 											@if(alreadyLikedPost(Auth::user()->id,$post->id) > 0)
-												<span><a href="" data-toggle="tooltip" title="Unlike" data-post-id="{{ $post->id }}" data-author-id="{{ Auth::user()->id }}" class="like_btn post_unlike"><img src="{{ asset('img/already_likes_icon.png') }}" width="16"></a></span>
+												<span><a href="" data-toggle="tooltip" title="{{ trans('general.unlike') }}" data-post-id="{{ $post->id }}" data-author-id="{{ Auth::user()->id }}" class="like_btn post_unlike"><img src="{{ asset('img/already_likes_icon.png') }}" width="16"></a></span>
 											@else
-												<span><a href="" data-toggle="tooltip" title="Like" data-post-id="{{ $post->id }}" data-author-id="{{ Auth::user()->id }}" class="like_btn post_like"><img src="{{ asset('img/likes_icon.png') }}" width="16"></a></span>
+												<span><a href="" data-toggle="tooltip" title="{{ trans('general.like') }}" data-post-id="{{ $post->id }}" data-author-id="{{ Auth::user()->id }}" class="like_btn post_like"><img src="{{ asset('img/likes_icon.png') }}" width="16"></a></span>
 											@endif
 										@endif
 										<span class="count">{{ count($post->likes) }}</span>
@@ -169,7 +169,7 @@
 			</section>
 			@endif
 			<section class="events_section container">
-				<h2>{{ trans('headermennu.discoverevents') }}</h2>
+				<h2>{{ trans('headermenu.discoverevents') }}</h2>
 				<h4>{{ trans('general.seehappen') }}</h4>
 				<div class="home_events">
 					<?php $e = 0; ?>
@@ -241,14 +241,14 @@
 											<a href="" data-toggle="tooltip" title="{{ trans('general.share') }}" class="share_btn"><img src="{{ asset('img/share_icon.png') }}" width="16"></a>
 										</div>
 										<div class="postcomments">
-											<span><a href="{{ url() }}/posts/<?php echo $post->id; ?>#leavecomments" data-toggle="tooltip" title="Comments"><img src="{{ asset('img/comments_icon.png') }}" width="16"></a></span> <span class="count">{{ count($post->comments) }}</span>
+											<span><a href="{{ url() }}/posts/<?php echo $post->id; ?>#leavecomments" data-toggle="tooltip" title="{{ trans('posts.comments') }}"><img src="{{ asset('img/comments_icon.png') }}" width="16"></a></span> <span class="count">{{ count($post->comments) }}</span>
 										</div>
 										<div class="postlikes">
 										@if(Auth::check())
 											@if(alreadyLikedPost(Auth::user()->id,$post->id) > 0)
-												<span><a href="" data-toggle="tooltip" title="Unlike" data-post-id="{{ $post->id }}" data-author-id="{{ Auth::user()->id }}" class="like_btn post_unlike"><img src="{{ asset('img/already_likes_icon.png') }}" width="16"></a></span>
+												<span><a href="" data-toggle="tooltip" title="{{ trans('general.unlike') }}" data-post-id="{{ $post->id }}" data-author-id="{{ Auth::user()->id }}" class="like_btn post_unlike"><img src="{{ asset('img/already_likes_icon.png') }}" width="16"></a></span>
 											@else
-												<span><a href="" data-toggle="tooltip" title="Like" data-post-id="{{ $post->id }}" data-author-id="{{ Auth::user()->id }}" class="like_btn post_like"><img src="{{ asset('img/likes_icon.png') }}" width="16"></a></span>
+												<span><a href="" data-toggle="tooltip" title="{{ trans('general.like') }}" data-post-id="{{ $post->id }}" data-author-id="{{ Auth::user()->id }}" class="like_btn post_like"><img src="{{ asset('img/likes_icon.png') }}" width="16"></a></span>
 											@endif
 										@endif
 										<span class="count">{{ count($post->likes) }}</span>
@@ -309,14 +309,14 @@
 											<a href="" data-toggle="tooltip" title="{{ trans('general.share') }}" class="share_btn"><img src="{{ asset('img/share_icon.png') }}" width="16"></a>
 										</div>
 										<div class="postcomments">
-											<span><a href="{{ url() }}/posts/<?php echo $post->id; ?>#leavecomments" data-toggle="tooltip" title="Comments"><img src="{{ asset('img/comments_icon.png') }}" width="16"></a></span> <span class="count">{{ count($post->comments) }}</span>
+											<span><a href="{{ url() }}/posts/<?php echo $post->id; ?>#leavecomments" data-toggle="tooltip" title="{{ trans('posts.comments') }}"><img src="{{ asset('img/comments_icon.png') }}" width="16"></a></span> <span class="count">{{ count($post->comments) }}</span>
 										</div>
 										<div class="postlikes">
 										@if(Auth::check())
 											@if(alreadyLikedPost(Auth::user()->id,$post->id) > 0)
-												<span><a href="" data-toggle="tooltip" title="Unlike" data-post-id="{{ $post->id }}" data-author-id="{{ Auth::user()->id }}" class="like_btn post_unlike"><img src="{{ asset('img/already_likes_icon.png') }}" width="16"></a></span>
+												<span><a href="" data-toggle="tooltip" title="{{ trans('general.unlike') }}" data-post-id="{{ $post->id }}" data-author-id="{{ Auth::user()->id }}" class="like_btn post_unlike"><img src="{{ asset('img/already_likes_icon.png') }}" width="16"></a></span>
 											@else
-												<span><a href="" data-toggle="tooltip" title="Like" data-post-id="{{ $post->id }}" data-author-id="{{ Auth::user()->id }}" class="like_btn post_like"><img src="{{ asset('img/likes_icon.png') }}" width="16"></a></span>
+												<span><a href="" data-toggle="tooltip" title="{{ trans('general.like') }}" data-post-id="{{ $post->id }}" data-author-id="{{ Auth::user()->id }}" class="like_btn post_like"><img src="{{ asset('img/likes_icon.png') }}" width="16"></a></span>
 											@endif
 										@endif
 										<span class="count">{{ count($post->likes) }}</span>
@@ -379,14 +379,14 @@
 											<a href="" data-toggle="tooltip" title="{{ trans('general.share') }}" class="share_btn"><img src="{{ asset('img/share_icon.png') }}" width="16"></a>
 										</div>
 										<div class="postcomments">
-											<span><a href="{{ url() }}/posts/<?php echo $post->id; ?>#leavecomments" data-toggle="tooltip" title="Comments"><img src="{{ asset('img/comments_icon.png') }}" width="16"></a></span> <span class="count">{{ count($post->comments) }}</span>
+											<span><a href="{{ url() }}/posts/<?php echo $post->id; ?>#leavecomments" data-toggle="tooltip" title="{{ trans('posts.comments') }}"><img src="{{ asset('img/comments_icon.png') }}" width="16"></a></span> <span class="count">{{ count($post->comments) }}</span>
 										</div>
 										<div class="postlikes">
 										@if(Auth::check())
 											@if(alreadyLikedPost(Auth::user()->id,$post->id) > 0)
-												<span><a href="" data-toggle="tooltip" title="Unlike" data-post-id="{{ $post->id }}" data-author-id="{{ Auth::user()->id }}" class="like_btn post_unlike"><img src="{{ asset('img/already_likes_icon.png') }}" width="16"></a></span>
+												<span><a href="" data-toggle="tooltip" title="{{ trans('general.unlike') }}" data-post-id="{{ $post->id }}" data-author-id="{{ Auth::user()->id }}" class="like_btn post_unlike"><img src="{{ asset('img/already_likes_icon.png') }}" width="16"></a></span>
 											@else
-												<span><a href="" data-toggle="tooltip" title="Like" data-post-id="{{ $post->id }}" data-author-id="{{ Auth::user()->id }}" class="like_btn post_like"><img src="{{ asset('img/likes_icon.png') }}" width="16"></a></span>
+												<span><a href="" data-toggle="tooltip" title="{{ trans('general.like') }}" data-post-id="{{ $post->id }}" data-author-id="{{ Auth::user()->id }}" class="like_btn post_like"><img src="{{ asset('img/likes_icon.png') }}" width="16"></a></span>
 											@endif
 										@endif
 										<span class="count">{{ count($post->likes) }}</span>
@@ -422,8 +422,8 @@
 			@if(count(followedGroup(Auth::user()->id)) > 0)
 			<section class="container">
 				<div class="joinedgroups">
-					<h3>FOLLOWING</h3>
-					<p>Brands that you have are following</p>
+					<h3>{{ trans('general.following') }}</h3>
+					<p>{{ trans('general.youarefollowing') }}</p>
 					<div class="groupsrow collapsed">
 					<?php
 						$uid = Auth::user()->id;
@@ -480,14 +480,14 @@
 											<a href="" data-toggle="tooltip" title="{{ trans('general.share') }}" class="share_btn"><img src="{{ asset('img/share_icon.png') }}" width="16"></a>
 										</div>
 										<div class="postcomments">
-											<span><a href="{{ url() }}/posts/<?php echo $post->id; ?>#leavecomments" data-toggle="tooltip" title="Comments"><img src="{{ asset('img/comments_icon.png') }}" width="16"></a></span> <span class="count">{{ count($post->comments) }}</span>
+											<span><a href="{{ url() }}/posts/<?php echo $post->id; ?>#leavecomments" data-toggle="tooltip" title="{{ trans('posts.comments') }}"><img src="{{ asset('img/comments_icon.png') }}" width="16"></a></span> <span class="count">{{ count($post->comments) }}</span>
 										</div>
 										<div class="postlikes">
 										@if(Auth::check())
 											@if(alreadyLikedPost(Auth::user()->id,$post->id) > 0)
-												<span><a href="" data-toggle="tooltip" title="Unlike" data-post-id="{{ $post->id }}" data-author-id="{{ Auth::user()->id }}" class="like_btn post_unlike"><img src="{{ asset('img/already_likes_icon.png') }}" width="16"></a></span>
+												<span><a href="" data-toggle="tooltip" title="{{ trans('general.unlike') }}" data-post-id="{{ $post->id }}" data-author-id="{{ Auth::user()->id }}" class="like_btn post_unlike"><img src="{{ asset('img/already_likes_icon.png') }}" width="16"></a></span>
 											@else
-												<span><a href="" data-toggle="tooltip" title="Like" data-post-id="{{ $post->id }}" data-author-id="{{ Auth::user()->id }}" class="like_btn post_like"><img src="{{ asset('img/likes_icon.png') }}" width="16"></a></span>
+												<span><a href="" data-toggle="tooltip" title="{{ trans('general.like') }}" data-post-id="{{ $post->id }}" data-author-id="{{ Auth::user()->id }}" class="like_btn post_like"><img src="{{ asset('img/likes_icon.png') }}" width="16"></a></span>
 											@endif
 										@endif
 										<span class="count">{{ count($post->likes) }}</span>
