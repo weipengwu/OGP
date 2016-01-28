@@ -87,7 +87,7 @@
 				@endforeach
 				@if(count($posts) > 0)
 				<section class="container">
-				<?php use Jenssegers\Date\Date; Date::setLocale(Config::get('app.locale'));?>
+				<?php Jenssegers\Date\Date::setLocale(Config::get('app.locale'));?>
 					<div class="row singlegroup layout84">
 							<?php $i = 0;?>
 							@foreach ($posts as $post)
@@ -112,7 +112,7 @@
 										<?php if($i == 0):?>
 										<div class="postinforight">
 										<?php endif;?>
-											<div class="postauthor">{{ Date::instance($post->created_at)->diffForHumans() }}</div>
+											<div class="postauthor">{{ Jenssegers\Date\Date::instance($post->created_at)->diffForHumans() }}</div>
 											<div class="title-area"><a href="{{ url() }}/posts/<?php echo $post->id; ?>"><h3>{{ $post->title }}</h3></a></div>
 										<?php if($i == 0):?>
 											<div class="excerpt-area">{!! html_entity_decode(getExcerpt($post->content)) !!}</div>
@@ -192,7 +192,7 @@
 										<?php $banner = explode(',', $post->banner); ?>
 										<div class="bannerholder" style="background: #ccc url('<?php echo url().'/uploads/Small_'.$banner[0];?>') no-repeat center center; background-size: cover;">
 											</div></a>
-										<div class="postauthor">{{ Date::instance($post->created_at)->diffForHumans() }}</div>
+										<div class="postauthor">{{ Jenssegers\Date\Date::instance($post->created_at)->diffForHumans() }}</div>
 											<div class="title-area"><a href="{{ url() }}/posts/<?php echo $post->id; ?>"><h3>{{ $post->title }}</h3></a></div>
 											<div class="excerpt-area">{!! html_entity_decode(getExcerpt($post->content)) !!}</div>
 											<div class="bottom">
@@ -269,7 +269,7 @@
 												<div class="bannerholder" style="background: #ccc url('<?php echo url().'/uploads/Small_'.$banner[0];?>') no-repeat center center; background-size: cover;">
 												</div>
 											</a>
-												<div class="postauthor">{{ Date::instance($post->created_at)->diffForHumans() }}</div>
+												<div class="postauthor">{{ Jenssegers\Date\Date::instance($post->created_at)->diffForHumans() }}</div>
 												<div class="title-area"><a href="{{ url() }}/posts/<?php echo $post->id; ?>"><h3>{{ $post->title }}</h3></a></div>
 												<?php if($i > 0): ?>
 												<div class="excerpt-area">{!! html_entity_decode(getExcerpt($post->content, 12)) !!}</div>
@@ -348,7 +348,7 @@
 													<div class="bannerholder" style="background: #ccc url('<?php echo url().'/uploads/Small_'.$banner[0];?>') no-repeat center center; background-size: cover;">
 													</div>
 												</a>
-													<div class="postauthor">{{ Date::instance($post->created_at)->diffForHumans() }}</div>
+													<div class="postauthor">{{ Jenssegers\Date\Date::instance($post->created_at)->diffForHumans() }}</div>
 													<div class="title-area"><a href="{{ url() }}/posts/<?php echo $post->id; ?>"><h3>{{ $post->title }}</h3></a></div>
 													<div class="excerpt-area">{!! html_entity_decode(getExcerpt($post->content, 12)) !!}</div>
 													<div class="bottom">

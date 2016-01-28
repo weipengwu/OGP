@@ -1,7 +1,6 @@
 <?php namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Nicolaslopezj\Searchable\SearchableTrait;
-use Jenssegers\Date\Date;
 
 class Post extends Model{
 
@@ -33,8 +32,4 @@ class Post extends Model{
 	{
 		return $this->belongsTo('App\User');
 	}
-	// public function getCreatedAtAttribute($value)
-	// {
-	//     return Date::instance($value);
-	// }
 }
