@@ -30,7 +30,7 @@
 				@if($group->owner == Auth::user()->id)
 					<a class="create_btn" data-toggle="tooltip" title="Create Event" href="<?php echo url();?>/brands/<?php echo $group->slug;?>/events/new"><img src="{{ asset('img/ticket_icon.png') }}" width="20"></a> <a class="create_btn" data-toggle="tooltip" title="Create Post" href="<?php echo url();?>/brands/<?php echo $group->slug;?>/posts/new"><img src="{{ asset('img/createpost_big_icon.png') }}" width="16"></a>
 				@else
-					<div class="sharebox">
+					<div class="sharebox" id="brand{{$group->id}}">
 						<a href="" class="social_icons social_tw"><i class="fa fa-twitter"></i></a> <a href="" class="social_icons social_fb"><i class="fa fa-facebook"></i></a> <a href="" class="social_icons social_wc"><i class="fa fa-wechat"></i></a> <a href="" class="social_icons social_wb"><i class="fa fa-weibo"></i></a>
 					</div>
 					<div class="shareto">
@@ -48,6 +48,24 @@
 				@endif
 			@endif
 		</div>
+		<script type="text/javascript">
+					$('.right #brand{{$group->id}} a.social_fb').on('click', function(e){
+						e.preventDefault();
+						window.open('https://www.facebook.com/v2.0/dialog/feed?app_id=866884463391641&display=popup&link='+encodeURIComponent('{{ url() }}/brands/<?php echo $brand->slug; ?>')+'&caption=OHGOODPARTY&picture={{ url()."/uploads/Medium_".$group->banner }}&name='+encodeURIComponent('{{ $group->name }}')+'&description={!! html_entity_decode($group->description) !!}&redirect_uri=https://www.facebook.com', "_blank", "width=360, height=360");
+					})
+					$('.right #brand{{$group->id}} a.social_tw').on('click', function(e){
+						e.preventDefault();
+						window.open('https://www.twitter.com/share?text={{ $group->name }} {{ url() }}/brands/<?php echo $group->slug; ?> @ohgoodparty_ogp&url=/', "_blank", "width=360, height=360");
+					})
+					$('.right #brand{{$group->id}} a.social_lk').on('click', function(e){
+						e.preventDefault();
+						window.open('https://www.linkedin.com/shareArticle?mini=true&url={{ url() }}/brands/<?php echo $group->slug; ?>&title={{ $group->name }}&summary={!! html_entity_decode($group->description) !!}&source=OHGOODPARTY', "_blank", "width=360, height=360");
+					})
+					$('.right #brand{{$group->id}} a.social_wb').on('click', function(e){
+						e.preventDefault();
+						window.open('http://service.weibo.com/share/share.php?appkey=3304326450&title={{ $group->name }} @奥格派&url={{ url() }}/brands/<?php echo $group->slug; ?>&pic={{ url()."/uploads/Medium_".$group->banner }}&searchPic=false&style=simple', "_blank", "width=360, height=360");
+					})
+				</script>
 	</div>
 
 
@@ -104,21 +122,21 @@
 												
 											</div>
 											<div class="right">
-												<div class="sharebox">
+												<div class="sharebox" id="post{{$post->id}}">
 													<a href="" class="social_icons social_tw"><i class="fa fa-twitter"></i></a> <a href="" class="social_icons social_fb"><i class="fa fa-facebook"></i></a> <a href="" class="social_icons social_wc"><i class="fa fa-wechat"></i></a> <a href="" class="social_icons social_wb"><i class="fa fa-weibo"></i></a>
 												</div>
 												<div class="shareto">
-													<a href="" data-toggle="tooltip" title="Share" class="share_btn"> <img src="{{ asset('img/share_icon.png') }}" width="16"> </a>
+													<a href="" data-toggle="tooltip" title="{{ trans('general.share') }}" class="share_btn"> <img src="{{ asset('img/share_icon.png') }}" width="16"> </a>
 												</div>
 												<div class="postcomments">
-													<span><a href="{{ url() }}/posts/<?php echo $post->id; ?>#leavecomments" data-toggle="tooltip" title="Comments"><img src="{{ asset('img/comments_icon.png') }}" width="16"></a></span> <span class="count">{{ count($post->comments) }}</span>
+													<span><a href="{{ url() }}/posts/<?php echo $post->id; ?>#leavecomments" data-toggle="tooltip" title="{{ trans('posts.comments') }}"><img src="{{ asset('img/comments_icon.png') }}" width="16"></a></span> <span class="count">{{ count($post->comments) }}</span>
 												</div>
 												<div class="postlikes">
 												@if(Auth::check())
 													@if(alreadyLikedPost(Auth::user()->id,$post->id) > 0)
-														<span><a href="" data-toggle="tooltip" title="Unlike" data-post-id="{{ $post->id }}" data-author-id="{{ Auth::user()->id }}" class="like_btn post_unlike"><img src="{{ asset('img/already_likes_icon.png') }}" width="16"></a></span>
+														<span><a href="" data-toggle="tooltip" title="{{ trans('general.unlike') }}" data-post-id="{{ $post->id }}" data-author-id="{{ Auth::user()->id }}" class="like_btn post_unlike"><img src="{{ asset('img/already_likes_icon.png') }}" width="16"></a></span>
 													@else
-														<span><a href="" data-toggle="tooltip" title="Like" data-post-id="{{ $post->id }}" data-author-id="{{ Auth::user()->id }}" class="like_btn post_like"><img src="{{ asset('img/likes_icon.png') }}" width="16"></a></span>
+														<span><a href="" data-toggle="tooltip" title="{{ trans('general.like') }}" data-post-id="{{ $post->id }}" data-author-id="{{ Auth::user()->id }}" class="like_btn post_like"><img src="{{ asset('img/likes_icon.png') }}" width="16"></a></span>
 													@endif
 												@endif
 												<span class="count">{{ count($post->likes) }}</span>
@@ -127,6 +145,24 @@
 											</div>
 										</div>
 								</div>
+								<script type="text/javascript">
+									$('.right #post{{$post->id}} a.social_fb').on('click', function(e){
+										e.preventDefault();
+										window.open('https://www.facebook.com/v2.0/dialog/feed?app_id=866884463391641&display=popup&link='+encodeURIComponent('{{ url() }}/posts/<?php echo $post->id; ?>')+'&caption=OHGOODPARTY&picture={{ url()."/uploads/Medium_".$banner[0] }}&name='+encodeURIComponent('{{ $post->title }}')+'&description={!! html_entity_decode( trim(preg_replace("/\s+/", " ", getExcerpt($post->content, 60))) ) !!}&redirect_uri=https://www.facebook.com', "_blank", "width=360, height=360");
+									})
+									$('.right #post{{$post->id}} a.social_tw').on('click', function(e){
+										e.preventDefault();
+										window.open('https://www.twitter.com/share?text={{ $post->title }} {{ url() }}/posts/<?php echo $post->id; ?> @ohgoodparty_ogp&url=/', "_blank", "width=360, height=360");
+									})
+									$('.right #post{{$post->id}} a.social_lk').on('click', function(e){
+										e.preventDefault();
+										window.open('https://www.linkedin.com/shareArticle?mini=true&url={{ url() }}/posts/<?php echo $post->id; ?>&title={{ $post->title }}&summary={!! html_entity_decode( trim(preg_replace("/\s+/", " ", getExcerpt($post->content, 60))) ) !!}&source=OHGOODPARTY', "_blank", "width=360, height=360");
+									})
+									$('.right #post{{$post->id}} a.social_wb').on('click', function(e){
+										e.preventDefault();
+										window.open('http://service.weibo.com/share/share.php?appkey=3304326450&title={{ $post->title }} @奥格派&url={{ url() }}/posts/<?php echo $post->id; ?>&pic={{ url()."/uploads/Medium_".$banner[0] }}&searchPic=false&style=simple', "_blank", "width=360, height=360");
+									})
+								</script>
 								<?php array_splice($posts,0,1); $i++;?>
 							@endforeach
 						
@@ -163,21 +199,21 @@
 													
 												</div>
 												<div class="right">
-													<div class="sharebox">
+													<div class="sharebox" id="post{{$post->id}}">
 														<a href="" class="social_icons social_tw"><i class="fa fa-twitter"></i></a> <a href="" class="social_icons social_fb"><i class="fa fa-facebook"></i></a> <a href="" class="social_icons social_wc"><i class="fa fa-wechat"></i></a> <a href="" class="social_icons social_wb"><i class="fa fa-weibo"></i></a>
 													</div>
 													<div class="shareto">
-														<a href="" data-toggle="tooltip" title="Share" class="share_btn"><img src="{{ asset('img/share_icon.png') }}" width="16"></a>
+														<a href="" data-toggle="tooltip" title="{{ trans('general.share') }}" class="share_btn"><img src="{{ asset('img/share_icon.png') }}" width="16"></a>
 													</div>
 													<div class="postcomments">
-														<span><a href="{{ url() }}/posts/<?php echo $post->id; ?>#leavecomments" data-toggle="tooltip" title="Comments"><img src="{{ asset('img/comments_icon.png') }}" width="16"></a></span> <span class="count">{{ count($post->comments) }}</span>
+														<span><a href="{{ url() }}/posts/<?php echo $post->id; ?>#leavecomments" data-toggle="tooltip" title="{{ trans('posts.comments') }}"><img src="{{ asset('img/comments_icon.png') }}" width="16"></a></span> <span class="count">{{ count($post->comments) }}</span>
 													</div>
 													<div class="postlikes">
 													@if(Auth::check())
 														@if(alreadyLikedPost(Auth::user()->id,$post->id) > 0)
-															<span><a href="" data-toggle="tooltip" title="Unlike" data-post-id="{{ $post->id }}" data-author-id="{{ Auth::user()->id }}" class="like_btn post_unlike"><img src="{{ asset('img/already_likes_icon.png') }}" width="16"></a></span>
+															<span><a href="" data-toggle="tooltip" title="{{ trans('general.unlike') }}" data-post-id="{{ $post->id }}" data-author-id="{{ Auth::user()->id }}" class="like_btn post_unlike"><img src="{{ asset('img/already_likes_icon.png') }}" width="16"></a></span>
 														@else
-															<span><a href="" data-toggle="tooltip" title="Like" data-post-id="{{ $post->id }}" data-author-id="{{ Auth::user()->id }}" class="like_btn post_like"><img src="{{ asset('img/likes_icon.png') }}" width="16"></a></span>
+															<span><a href="" data-toggle="tooltip" title="{{ trans('general.like') }}" data-post-id="{{ $post->id }}" data-author-id="{{ Auth::user()->id }}" class="like_btn post_like"><img src="{{ asset('img/likes_icon.png') }}" width="16"></a></span>
 														@endif
 													@endif
 													<span class="count">{{ count($post->likes) }}</span>
@@ -186,6 +222,24 @@
 												</div>
 											</div>
 									</div>
+									<script type="text/javascript">
+										$('.right #post{{$post->id}} a.social_fb').on('click', function(e){
+											e.preventDefault();
+											window.open('https://www.facebook.com/v2.0/dialog/feed?app_id=866884463391641&display=popup&link='+encodeURIComponent('{{ url() }}/posts/<?php echo $post->id; ?>')+'&caption=OHGOODPARTY&picture={{ url()."/uploads/Medium_".$banner[0] }}&name='+encodeURIComponent('{{ $post->title }}')+'&description={!! html_entity_decode( trim(preg_replace("/\s+/", " ", getExcerpt($post->content, 60))) ) !!}&redirect_uri=https://www.facebook.com', "_blank", "width=360, height=360");
+										})
+										$('.right #post{{$post->id}} a.social_tw').on('click', function(e){
+											e.preventDefault();
+											window.open('https://www.twitter.com/share?text={{ $post->title }} {{ url() }}/posts/<?php echo $post->id; ?> @ohgoodparty_ogp&url=/', "_blank", "width=360, height=360");
+										})
+										$('.right #post{{$post->id}} a.social_lk').on('click', function(e){
+											e.preventDefault();
+											window.open('https://www.linkedin.com/shareArticle?mini=true&url={{ url() }}/posts/<?php echo $post->id; ?>&title={{ $post->title }}&summary={!! html_entity_decode( trim(preg_replace("/\s+/", " ", getExcerpt($post->content, 60))) ) !!}&source=OHGOODPARTY', "_blank", "width=360, height=360");
+										})
+										$('.right #post{{$post->id}} a.social_wb').on('click', function(e){
+											e.preventDefault();
+											window.open('http://service.weibo.com/share/share.php?appkey=3304326450&title={{ $post->title }} @奥格派&url={{ url() }}/posts/<?php echo $post->id; ?>&pic={{ url()."/uploads/Medium_".$banner[0] }}&searchPic=false&style=simple', "_blank", "width=360, height=360");
+										})
+									</script>
 								<?php array_splice($posts,0,1); $i++;$j++;?>
 								@endforeach
 								<div class="row-gap"></div>
@@ -224,21 +278,21 @@
 														
 													</div>
 													<div class="right">
-														<div class="sharebox">
+														<div class="sharebox" id="post{{$post->id}}">
 															<a href="" class="social_icons social_tw"><i class="fa fa-twitter"></i></a> <a href="" class="social_icons social_fb"><i class="fa fa-facebook"></i></a> <a href="" class="social_icons social_wc"><i class="fa fa-wechat"></i></a> <a href="" class="social_icons social_wb"><i class="fa fa-weibo"></i></a>
 														</div>
 														<div class="shareto">
-															<a href="" data-toggle="tooltip" title="Share" class="share_btn"><img src="{{ asset('img/share_icon.png') }}" width="16"></a>
+															<a href="" data-toggle="tooltip" title="{{ trans('general.share') }}" class="share_btn"><img src="{{ asset('img/share_icon.png') }}" width="16"></a>
 														</div>
 														<div class="postcomments">
-															<span><a href="{{ url() }}/posts/<?php echo $post->id; ?>#leavecomments" data-toggle="tooltip" title="Comments"><img src="{{ asset('img/comments_icon.png') }}" width="16"></a></span> <span class="count">{{ count($post->comments) }}</span>
+															<span><a href="{{ url() }}/posts/<?php echo $post->id; ?>#leavecomments" data-toggle="tooltip" title="{{ trans('posts.comments') }}"><img src="{{ asset('img/comments_icon.png') }}" width="16"></a></span> <span class="count">{{ count($post->comments) }}</span>
 														</div>
 														<div class="postlikes">
 														@if(Auth::check())
 															@if(alreadyLikedPost(Auth::user()->id,$post->id) > 0)
-																<span><a href="" data-toggle="tooltip" title="Unlike" data-post-id="{{ $post->id }}" data-author-id="{{ Auth::user()->id }}" class="like_btn post_unlike"><img src="{{ asset('img/already_likes_icon.png') }}" width="16"></a></span>
+																<span><a href="" data-toggle="tooltip" title="{{ trans('general.unlike') }}" data-post-id="{{ $post->id }}" data-author-id="{{ Auth::user()->id }}" class="like_btn post_unlike"><img src="{{ asset('img/already_likes_icon.png') }}" width="16"></a></span>
 															@else
-																<span><a href="" data-toggle="tooltip" title="Like" data-post-id="{{ $post->id }}" data-author-id="{{ Auth::user()->id }}" class="like_btn post_like"><img src="{{ asset('img/likes_icon.png') }}" width="16"></a></span>
+																<span><a href="" data-toggle="tooltip" title="{{ trans('general.like') }}" data-post-id="{{ $post->id }}" data-author-id="{{ Auth::user()->id }}" class="like_btn post_like"><img src="{{ asset('img/likes_icon.png') }}" width="16"></a></span>
 															@endif
 														@endif
 														<span class="count">{{ count($post->likes) }}</span>
@@ -247,6 +301,24 @@
 													</div>
 												</div>
 										</div>
+										<script type="text/javascript">
+											$('.right #post{{$post->id}} a.social_fb').on('click', function(e){
+												e.preventDefault();
+												window.open('https://www.facebook.com/v2.0/dialog/feed?app_id=866884463391641&display=popup&link='+encodeURIComponent('{{ url() }}/posts/<?php echo $post->id; ?>')+'&caption=OHGOODPARTY&picture={{ url()."/uploads/Medium_".$banner[0] }}&name='+encodeURIComponent('{{ $post->title }}')+'&description={!! html_entity_decode( trim(preg_replace("/\s+/", " ", getExcerpt($post->content, 60))) ) !!}&redirect_uri=https://www.facebook.com', "_blank", "width=360, height=360");
+											})
+											$('.right #post{{$post->id}} a.social_tw').on('click', function(e){
+												e.preventDefault();
+												window.open('https://www.twitter.com/share?text={{ $post->title }} {{ url() }}/posts/<?php echo $post->id; ?> @ohgoodparty_ogp&url=/', "_blank", "width=360, height=360");
+											})
+											$('.right #post{{$post->id}} a.social_lk').on('click', function(e){
+												e.preventDefault();
+												window.open('https://www.linkedin.com/shareArticle?mini=true&url={{ url() }}/posts/<?php echo $post->id; ?>&title={{ $post->title }}&summary={!! html_entity_decode( trim(preg_replace("/\s+/", " ", getExcerpt($post->content, 60))) ) !!}&source=OHGOODPARTY', "_blank", "width=360, height=360");
+											})
+											$('.right #post{{$post->id}} a.social_wb').on('click', function(e){
+												e.preventDefault();
+												window.open('http://service.weibo.com/share/share.php?appkey=3304326450&title={{ $post->title }} @奥格派&url={{ url() }}/posts/<?php echo $post->id; ?>&pic={{ url()."/uploads/Medium_".$banner[0] }}&searchPic=false&style=simple', "_blank", "width=360, height=360");
+											})
+										</script>
 									<?php array_splice($posts,0,1); $i++;$j++;?>
 									@endforeach
 									<div class="row-gap"></div>
@@ -283,21 +355,21 @@
 															
 														</div>
 														<div class="right">
-															<div class="sharebox">
+															<div class="sharebox" id="post{{$post->id}}">
 																<a href="" class="social_icons social_tw"><i class="fa fa-twitter"></i></a> <a href="" class="social_icons social_fb"><i class="fa fa-facebook"></i></a> <a href="" class="social_icons social_wc"><i class="fa fa-wechat"></i></a> <a href="" class="social_icons social_wb"><i class="fa fa-weibo"></i></a>
 															</div>
 															<div class="shareto">
-																<a href="" data-toggle="tooltip" title="Share" class="share_btn"><img src="{{ asset('img/share_icon.png') }}" width="16"></a>
+																<a href="" data-toggle="tooltip" title="{{ trans('general.share') }}" class="share_btn"><img src="{{ asset('img/share_icon.png') }}" width="16"></a>
 															</div>
 															<div class="postcomments">
-																<span><a href="{{ url() }}/posts/<?php echo $post->id; ?>#leavecomments" data-toggle="tooltip" title="Comments"><img src="{{ asset('img/comments_icon.png') }}" width="16"></a></span> <span class="count">{{ count($post->comments) }}</span>
+																<span><a href="{{ url() }}/posts/<?php echo $post->id; ?>#leavecomments" data-toggle="tooltip" title="{{ trans('posts.comments') }}"><img src="{{ asset('img/comments_icon.png') }}" width="16"></a></span> <span class="count">{{ count($post->comments) }}</span>
 															</div>
 															<div class="postlikes">
 															@if(Auth::check())
 																@if(alreadyLikedPost(Auth::user()->id,$post->id) > 0)
-																	<span><a href="" data-toggle="tooltip" title="Unlike" data-post-id="{{ $post->id }}" data-author-id="{{ Auth::user()->id }}" class="like_btn post_unlike"><img src="{{ asset('img/already_likes_icon.png') }}" width="16"></a></span>
+																	<span><a href="" data-toggle="tooltip" title="{{ trans('general.unlike') }}" data-post-id="{{ $post->id }}" data-author-id="{{ Auth::user()->id }}" class="like_btn post_unlike"><img src="{{ asset('img/already_likes_icon.png') }}" width="16"></a></span>
 																@else
-																	<span><a href="" data-toggle="tooltip" title="Like" data-post-id="{{ $post->id }}" data-author-id="{{ Auth::user()->id }}" class="like_btn post_like"><img src="{{ asset('img/likes_icon.png') }}" width="16"></a></span>
+																	<span><a href="" data-toggle="tooltip" title="{{ trans('general.like') }}" data-post-id="{{ $post->id }}" data-author-id="{{ Auth::user()->id }}" class="like_btn post_like"><img src="{{ asset('img/likes_icon.png') }}" width="16"></a></span>
 																@endif
 															@endif
 															<span class="count">{{ count($post->likes) }}</span>
@@ -306,6 +378,24 @@
 														</div>
 													</div>
 											</div>
+											<script type="text/javascript">
+												$('.right #post{{$post->id}} a.social_fb').on('click', function(e){
+													e.preventDefault();
+													window.open('https://www.facebook.com/v2.0/dialog/feed?app_id=866884463391641&display=popup&link='+encodeURIComponent('{{ url() }}/posts/<?php echo $post->id; ?>')+'&caption=OHGOODPARTY&picture={{ url()."/uploads/Medium_".$banner[0] }}&name='+encodeURIComponent('{{ $post->title }}')+'&description={!! html_entity_decode( trim(preg_replace("/\s+/", " ", getExcerpt($post->content, 60))) ) !!}&redirect_uri=https://www.facebook.com', "_blank", "width=360, height=360");
+												})
+												$('.right #post{{$post->id}} a.social_tw').on('click', function(e){
+													e.preventDefault();
+													window.open('https://www.twitter.com/share?text={{ $post->title }} {{ url() }}/posts/<?php echo $post->id; ?> @ohgoodparty_ogp&url=/', "_blank", "width=360, height=360");
+												})
+												$('.right #post{{$post->id}} a.social_lk').on('click', function(e){
+													e.preventDefault();
+													window.open('https://www.linkedin.com/shareArticle?mini=true&url={{ url() }}/posts/<?php echo $post->id; ?>&title={{ $post->title }}&summary={!! html_entity_decode( trim(preg_replace("/\s+/", " ", getExcerpt($post->content, 60))) ) !!}&source=OHGOODPARTY', "_blank", "width=360, height=360");
+												})
+												$('.right #post{{$post->id}} a.social_wb').on('click', function(e){
+													e.preventDefault();
+													window.open('http://service.weibo.com/share/share.php?appkey=3304326450&title={{ $post->title }} @奥格派&url={{ url() }}/posts/<?php echo $post->id; ?>&pic={{ url()."/uploads/Medium_".$banner[0] }}&searchPic=false&style=simple', "_blank", "width=360, height=360");
+												})
+											</script>
 										<?php array_splice($posts,0,1); $i++;$j++;?>
 										@endforeach
 										<div class="row-gap"></div>

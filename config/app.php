@@ -148,7 +148,11 @@ return [
 		/*
 		 * Image Intervention
 		 */
-		'Intervention\Image\ImageServiceProvider'
+		'Intervention\Image\ImageServiceProvider',
+		/*
+		*	Carbon Locale
+		*/
+		'Jenssegers\Date\DateServiceProvider'
 
 	],
 

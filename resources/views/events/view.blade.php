@@ -12,7 +12,7 @@
 			</div>
 		<div class="right">
 			<div class="sharebox">
-				<a href="" class="social_icons social_tw"><i class="fa fa-twitter"></i></a> <a href="" class="social_icons social_fb"><i class="fa fa-facebook"></i></a> <a href="" class="social_icons social_wc"><i class="fa fa-wechat"></i></a> <a href="" class="social_icons social_wb"><i class="fa fa-weibo"></i></a>
+				<a href="" class="social_icons social_tw"><i class="fa fa-twitter"></i></a> <a href="" class="social_icons social_fb"><i class="fa fa-facebook"></i></a> <a href="" class="social_icons social_lk"><i class="fa fa-linkedin"></i></a><a href="" class="social_icons social_wb"><i class="fa fa-weibo"></i></a>
 			</div>
 			<div class="shareto">
 				<a href="" data-toggle="tooltip" title="{{ trans('general.share') }}" class="share_btn"> <img src="{{ asset('img/share_icon.png') }}" width="16"> </a>
@@ -28,6 +28,24 @@
 			@endif
 			</div>
 		</div>
+		<script type="text/javascript">
+			$('.right a.social_fb').on('click', function(e){
+				e.preventDefault();
+				window.open('https://www.facebook.com/v2.0/dialog/feed?app_id=866884463391641&display=popup&link='+encodeURIComponent('{{ url() }}/events/<?php echo $event->id; ?>')+'&caption=OHGOODPARTY&picture={{ url()."/uploads/Medium_".$event->banner }}&name='+encodeURIComponent('{{ $event->title }}')+'&redirect_uri=https://www.facebook.com', "_blank", "width=360, height=360");
+			})
+			$('.right a.social_tw').on('click', function(e){
+					e.preventDefault();
+					window.open('https://www.twitter.com/share?text={{ $post->title }} {{ url() }}/events/<?php echo $event->id; ?> @ohgoodparty_ogp&url=/', "_blank", "width=360, height=360");
+			})
+			$('.right a.social_lk').on('click', function(e){
+				e.preventDefault();
+				window.open('https://www.linkedin.com/shareArticle?mini=true&url={{ url() }}/events/<?php echo $event->id; ?>&title={{ $event->title }}&source=OHGOODPARTY', "_blank", "width=360, height=360");
+			})
+			$('.right a.social_wb').on('click', function(e){
+				e.preventDefault();
+				window.open('http://service.weibo.com/share/share.php?appkey=3304326450&title={{ $event->title }} @奥格派&url={{ url() }}/events/<?php echo $event->id; ?>&pic={{ url()."/uploads/Medium_".$event->banner }}&searchPic=false&style=simple', "_blank", "width=360, height=360");
+			})
+		</script>
 	</div>
 <section class="eventdetails">
 	<div class="container">
