@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-<a href="javascript: history.go(-1)" class="post_close"><img src="{{ asset('img/close_btn.png') }}" width="22"></a>
+<a href="javascript: history.go(-1)" class="post_close"><img src="{{ asset('img/close_btn.png') }}" width="16"></a>
 <div class="container single-post">
 
 			<div class="panel">

@@ -8185,6 +8185,9 @@ label.error{
   .groupbanner .caption p{
     font-size: 12px;
   }
+  .single-post{
+    padding: 0 35px;
+  }
   .single-post .panel-body{
     width: 100%;
   }

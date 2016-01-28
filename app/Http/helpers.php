@@ -1,6 +1,4 @@
 <?php
-define( "UTF8_CHINESE_PATTERN", "/[\x{4e00}-\x{9fff}\x{f900}-\x{faff}]/u" );
-define( "UTF8_SYMBOL_PATTERN", "/[\x{ff00}-\x{ffef}\x{2000}-\x{206F}]/u" );
 
 	function getAuthorname($id){
 		$name = DB::table('users')->where('id', $id)->pluck('name');
@@ -87,15 +85,6 @@ define( "UTF8_SYMBOL_PATTERN", "/[\x{ff00}-\x{ffef}\x{2000}-\x{206F}]/u" );
 		return $events;
 	}
 
-	function str_utf8_chinese_word_count($str = ""){
-		$str = preg_replace(UTF8_SYMBOL_PATTERN, "", $str);
-		return preg_match_all(UTF8_CHINESE_PATTERN, $str, $arr);
-	}
-	function str_utf8_mix_word_count($str = ""){
-	    $str = preg_replace(UTF8_SYMBOL_PATTERN, "", $str);
-	    return str_utf8_chinese_word_count($str) + str_word_count(preg_replace(UTF8_CHINESE_PATTERN, "", $str));
-	}
-
 	function getExcerpt($desc,$length=20){
 		$desc = preg_replace("/<embed[^>]+>/i", "", $desc, 1);
 		$desc = preg_replace("/<iframe[^>]+>/i", "", $desc, 1);
@@ -105,7 +94,7 @@ define( "UTF8_SYMBOL_PATTERN", "/[\x{ff00}-\x{ffef}\x{2000}-\x{206F}]/u" );
 			$excerpt = substr($desc, 0, $pos[$length]) . '...';
 		}
 		elseif(mb_strlen($desc,'utf8') > $length){
-			$excerpt = mb_substr ( $desc , 0 , $length ) . '...';
+			$excerpt = mb_substr ( $desc , 0 , $length*2 ) . '...';
 		}
 		else{
 			$excerpt = $desc;
