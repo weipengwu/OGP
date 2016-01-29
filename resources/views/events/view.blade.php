@@ -60,12 +60,11 @@
 						use Jenssegers\Date\Date; Date::setLocale(Config::get('app.locale'));
 
 						if(date('M j',$event->fromtime) == date('M j',$event->totime)) : 
-							if(Config::get('app.locale') = 'en'):
+							
 						?>
-								{{ date('D, M j',$event->fromtime) }} @ {{ date('g : i a',$event->fromtime) }} - {{ date('g : i a',$event->totime) }}
-							<?php else: ?>
+					
 								{{ Date($event->fromtime)->format('D, M j') }} {{ Date($event->fromtime)->format('g : i a') }} - {{ Date($event->totime)->format('g : i a') }}
-							<?php endif; ?>
+				
 						<?php else: ?>
 							{{ Date('D, M j',$event->fromtime) }} @ {{ Date('g : i a',$event->fromtime) }} - {{ Date('D, M j',$event->totime) }} @ {{ Date('g : i a',$event->totime) }}
 						<?php endif; ?>
