@@ -49,7 +49,7 @@
 							})
 					</script>
 					<div class="commentscount">
-						<span class="c_holder">{{ $post->comments->count()}} {{ trans('posts.comments') }}</span> | <span>{{ trans('events.category') }} {{ $post->group->category }}</span>
+						<span class="c_holder">{{ $post->comments->count()}} {{ trans('posts.comments') }}</span> | <span>{{ trans('events.category') }} {{ trans('brands.'.$post->group->categorykey) }}</span>
 					</div>
 					<hr>
 					@if(Auth::check())

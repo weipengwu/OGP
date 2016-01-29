@@ -57,13 +57,14 @@
 					<div class="eventinfo">
 						<?php 
 						date_default_timezone_set($event->timezone);
+						Jenssegers\Date\Date::setLocale(Config::get('app.locale'));
 
 						if(date('M j',$event->fromtime) == date('M j',$event->totime)) : 
 						?>
-					{{ date('D, M j',$event->fromtime) }} @ {{ date('g : i a',$event->fromtime) }} - {{ date('g : i a',$event->totime) }}
+					{{ Jenssegers\Date\Date::instance('D, M j',$event->fromtime) }} @ {{ Jenssegers\Date\Date::instance('g : i a',$event->fromtime) }} - {{ Jenssegers\Date\Date::instance('g : i a',$event->totime) }}
 							
 						<?php else: ?>
-							{{ date('D, M j',$event->fromtime) }} @ {{ date('g : i a',$event->fromtime) }} - {{ date('D, M j',$event->totime) }} @ {{ date('g : i a',$event->totime) }}
+							{{ Jenssegers\Date\Date::instance('D, M j',$event->fromtime) }} @ {{ Jenssegers\Date\Date::instance('g : i a',$event->fromtime) }} - {{ Jenssegers\Date\Date::instance('D, M j',$event->totime) }} @ {{ Jenssegers\Date\Date::instance('g : i a',$event->totime) }}
 						<?php endif; ?>
 					</div>
 					<div class="eventinfo">@if($event->suitenum !== '') {{ $event->suitenum }}, {{ $event->address }} @else  {{ $event->address }} @endif</div>

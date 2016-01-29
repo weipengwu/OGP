@@ -6,7 +6,7 @@
 		<div class="caption">
 			<div class="container">
 				<div class="groupprofile" style="background: #666 url('<?php echo url()."/uploads/Small_".$group->profile;?>') center center no-repeat; background-size: cover;"></div>
-				<p class="groupcategory">{{ $group->category }}</p>
+				<p class="groupcategory">{{ trans('brands.'.$group->categorykey) }}</p>
 				<h1>{{ $group->name }}</h1>
 				<p>{!! html_entity_decode($group->description) !!}</p>
 				<p><a href="http://{{ $group->website }}" target="_blank" class="website">{{ $group->website }}</a></p>
