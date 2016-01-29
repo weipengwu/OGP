@@ -60,12 +60,11 @@
 						use Jenssegers\Date\Date; Date::setLocale(Config::get('app.locale'));
 
 						if(date('M j',$event->fromtime) == date('M j',$event->totime)) : 
-							$fromtime = new Date($event->fromtime);
-							$totime = new Date($event->totime);
+							if(Config::get('app.locale') == 'en'):
 						?>
-					
-								{{ $fromtime->format('D, M j') }} {{ $fromtime->format('g : i a') }} - {{ $totime->format('g : i a') }}
-				
+								{{ date('D, M j',$event->fromtime) }} @ {{ date('g : i a',$event->fromtime) }} - {{ date('g : i a',$event->totime) }}
+							<?php else: ?>
+								{{ zhweekday(date('D',$event->fromtime)) }}，{{ date('n',$event->fromtime) }}月{{ date('j',$event->fromtime) }}日 {{ date('g : i a',$event->fromtime) }} - {{ date('g : i a',$event->totime) }}
 						<?php else: ?>
 							{{ Date('D, M j',$event->fromtime) }} @ {{ Date('g : i a',$event->fromtime) }} - {{ Date('D, M j',$event->totime) }} @ {{ Date('g : i a',$event->totime) }}
 						<?php endif; ?>

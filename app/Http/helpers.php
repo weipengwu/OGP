@@ -174,6 +174,10 @@
 		// return null;
 		return mb_substr($str, 0, 1, 'UTF8');
 	}
+	function zhweekday($str){
+		$weekday = array('Mon'=>'星期一','Tue'=>'星期二','Wed'=>'星期三','Thu'=>'星期四','Fri'=>'星期五','Sat'=>'星期六','Sun'=>'星期日');
+		return $weekday[$str];
+	}
 	// function fetchAll(){
 	// 	$events = DB::table('events')->select('title','content','city')->orderBy('created_at', 'DESC');
 	// 	$posts = DB::table('posts')->select('title','content','author')->orderBy('created_at', 'DESC');
