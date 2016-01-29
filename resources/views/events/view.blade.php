@@ -61,10 +61,10 @@
 
 						if(date('M j',$event->fromtime) == date('M j',$event->totime)) : 
 						?>
-					{{ Jenssegers\Date\Date::instance('D, M j',$event->fromtime) }} @ {{ Jenssegers\Date\Date::instance('g : i a',$event->fromtime) }} - {{ Jenssegers\Date\Date::instance('g : i a',$event->totime) }}
+					{{ Jenssegers\Date\Date('D, M j',$event->fromtime) }} @ {{ Jenssegers\Date\Date('g : i a',$event->fromtime) }} - {{ Jenssegers\Date\Date('g : i a',$event->totime) }}
 							
 						<?php else: ?>
-							{{ Jenssegers\Date\Date::instance('D, M j',$event->fromtime) }} @ {{ Jenssegers\Date\Date::instance('g : i a',$event->fromtime) }} - {{ Jenssegers\Date\Date::instance('D, M j',$event->totime) }} @ {{ Jenssegers\Date\Date::instance('g : i a',$event->totime) }}
+							{{ Jenssegers\Date\Date('D, M j',$event->fromtime) }} @ {{ Jenssegers\Date\Date('g : i a',$event->fromtime) }} - {{ Jenssegers\Date\Date('D, M j',$event->totime) }} @ {{ Jenssegers\Date\Date('g : i a',$event->totime) }}
 						<?php endif; ?>
 					</div>
 					<div class="eventinfo">@if($event->suitenum !== '') {{ $event->suitenum }}, {{ $event->address }} @else  {{ $event->address }} @endif</div>
