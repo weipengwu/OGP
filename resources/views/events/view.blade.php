@@ -65,6 +65,7 @@
 								{{ date('D, M j',$event->fromtime) }} @ {{ date('g : i a',$event->fromtime) }} - {{ date('g : i a',$event->totime) }}
 							<?php else: ?>
 								{{ zhweekday(date('D',$event->fromtime)) }}，{{ date('n',$event->fromtime) }}月{{ date('j',$event->fromtime) }}日 {{ date('g : i a',$event->fromtime) }} - {{ date('g : i a',$event->totime) }}
+							<?php endif;?>
 						<?php else: ?>
 							{{ Date('D, M j',$event->fromtime) }} @ {{ Date('g : i a',$event->fromtime) }} - {{ Date('D, M j',$event->totime) }} @ {{ Date('g : i a',$event->totime) }}
 						<?php endif; ?>
