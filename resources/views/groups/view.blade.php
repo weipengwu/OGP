@@ -103,7 +103,7 @@
 									<?php endif;?>
 									<?php endif;?>
 									<div class="postfrom"><div>From <a href="/brands/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div>
-									<div class="grouppost">{{ $post->group->category }}</div></div>
+									<div class="grouppost">{{ trans('brands.'.$post->group->categorykey) }}</div></div>
 									<a href="{{ url() }}/posts/<?php echo $post->id; ?>">
 										<?php $banner = explode(',', $post->banner); ?>
 										<div class="bannerholder" style="background: #ccc url('<?php echo url().'/uploads/Medium_'.$banner[0];?>') no-repeat center center; background-size: cover;">
@@ -187,7 +187,7 @@
 											</div>
 										<?php endif;?>
 										<?php endif;?>
-										<div class="postfrom"><div>From <a href="/brands/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ $post->group->category }}</div></div>
+										<div class="postfrom"><div>{{ trans('posts.from') }} <a href="/brands/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ trans('brands.'.$post->group->categorykey) }}</div></div>
 										<a href="{{ url() }}/posts/<?php echo $post->id; ?>">
 										<?php $banner = explode(',', $post->banner); ?>
 										<div class="bannerholder" style="background: #ccc url('<?php echo url().'/uploads/Small_'.$banner[0];?>') no-repeat center center; background-size: cover;">
@@ -263,7 +263,7 @@
 											</div>
 										<?php endif;?>
 										<?php endif;?>
-											<div class="postfrom"><div>From <a href="/brands/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ $post->group->category }}</div></div>
+											<div class="postfrom"><div>{{ trans('posts.from') }} <a href="/brands/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ trans('brands.'.$post->group->categorykey) }}</div></div>
 											<a href="{{ url() }}/posts/<?php echo $post->id; ?>">
 											<?php $banner = explode(',', $post->banner); ?>
 												<div class="bannerholder" style="background: #ccc url('<?php echo url().'/uploads/Small_'.$banner[0];?>') no-repeat center center; background-size: cover;">
@@ -342,7 +342,7 @@
 											</div>
 										<?php endif;?>
 										<?php endif;?>
-												<div class="postfrom"><div>From <a href="/brands/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ $post->group->category }}</div></div>
+												<div class="postfrom"><div>{{ trans('posts.from') }} <a href="/brands/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ trans('brands.'.$post->group->categorykey) }}</div></div>
 												<a href="{{ url() }}/posts/<?php echo $post->id; ?>">
 												<?php $banner = explode(',', $post->banner); ?>
 													<div class="bannerholder" style="background: #ccc url('<?php echo url().'/uploads/Small_'.$banner[0];?>') no-repeat center center; background-size: cover;">

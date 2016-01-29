@@ -108,7 +108,7 @@
 					@foreach ($posts as $post)
 						<?php if($i > 2) break;?>
 						<div class="col-md-4<?php if(is_int($j/3)) echo " last";?>">
-							<div class="postfrom"><div>{{ trans('posts.from') }} <a href="/brands/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ $post->group->category }}</div></div>
+							<div class="postfrom"><div>{{ trans('posts.from') }} <a href="/brands/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ trans('brands.'.$post->group->categorykey) }}</div></div>
 							<a href="{{ url() }}/posts/<?php echo $post->id; ?>">
 								<?php $banner = explode(',', $post->banner); ?>
 								<div class="bannerholder" style="background: #ccc url('<?php echo url().'/uploads/Small_'.$banner[0];?>') no-repeat center center; background-size: cover;">
@@ -218,7 +218,7 @@
 					@foreach ($posts as $post)
 						<?php if($i >= 3) break;?>
 						<div class="<?php if($i == 0) { echo "col-md-6";} else{ echo "col-md-3"; }?><?php if(is_int($j/3)) echo " last";?>">
-							<div class="postfrom"><div>{{ trans('posts.from') }} <a href="/brands/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ $post->group->category }}</div></div>
+							<div class="postfrom"><div>{{ trans('posts.from') }} <a href="/brands/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ trans('brands.'.$post->group->categorykey) }}</div></div>
 							<a href="{{ url() }}/posts/<?php echo $post->id; ?>">
 							<?php $banner = explode(',', $post->banner); ?>
 								<div class="bannerholder" style="background: #ccc url('<?php echo url().'/uploads/Small_'.$banner[0];?>') no-repeat center center; background-size: cover;">
@@ -288,7 +288,7 @@
 					@foreach ($posts as $post)
 						<?php if($i >= 4) break;?>
 						<div class="col-md-3<?php if(is_int($j/4)) echo " last";?>">
-							<div class="postfrom"><div>{{ trans('posts.from') }} <a href="/brands/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ $post->group->category }}</div></div>
+							<div class="postfrom"><div>{{ trans('posts.from') }} <a href="/brands/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ trans('brands.'.$post->group->categorykey) }}</div></div>
 							<a href="{{ url() }}/posts/<?php echo $post->id; ?>">
 							<?php $banner = explode(',', $post->banner); ?>
 								<div class="bannerholder" style="background: #ccc url('<?php echo url().'/uploads/Small_'.$banner[0];?>') no-repeat center center; background-size: cover;">
@@ -356,7 +356,7 @@
 					@foreach ($posts as $post)
 						<?php if($i >= 3) break;?>
 						<div class="<?php if($i == 0) { echo "col-md-6";} else{ echo "col-md-3"; }?><?php if(is_int($j/3)) echo " last";?>">
-							<div class="postfrom"><div>{{ trans('posts.from') }} <a href="/brands/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ $post->group->category }}</div></div>
+							<div class="postfrom"><div>{{ trans('posts.from') }} <a href="/brands/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ trans('brands.'.$post->group->categorykey) }}</div></div>
 							<a href="{{ url() }}/posts/<?php echo $post->id; ?>">
 							<?php $banner = explode(',', $post->banner); ?>
 								<div class="bannerholder" style="background: #ccc url('<?php echo url().'/uploads/Small_'.$banner[0];?>') no-repeat center center; background-size: cover;">
@@ -460,7 +460,7 @@
 					@foreach ($posts as $post)
 						<?php if($i > 2) break;?>
 						<div class="col-md-4<?php if(is_int($j/3)) echo " last";?>">
-							<div class="postfrom"><div>{{ trans('posts.from') }} <a href="/brands/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ $post->group->category }}</div></div>
+							<div class="postfrom"><div>{{ trans('posts.from') }} <a href="/brands/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ trans('brands.'.$post->group->categorykey) }}</div></div>
 							<a href="{{ url() }}/posts/<?php echo $post->id; ?>">
 								<?php $banner = explode(',', $post->banner); ?>
 								<div class="bannerholder" style="background: #ccc url('<?php echo url().'/uploads/Small_'.$banner[0];?>') no-repeat center center; background-size: cover;">
