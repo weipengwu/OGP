@@ -192,13 +192,20 @@
 											<p class="event-info">
 												<img src="{{ asset('img/calendar_icon.png') }}" width="14" class="edicons"> 
 												<?php 
-													date_default_timezone_set($event->timezone);
+												date_default_timezone_set($event->timezone);
 													if(date('M j',$event->fromtime) == date('M j',$event->totime)) : 
+														if(Config::get('app.locale') == 'en'):
 												?>
-												{{ date('D, M j',$event->fromtime) }}
+															{{ date('D, M j',$event->fromtime) }}
+														<?php else: ?>
+															{{ zhweekday(date('D',$event->fromtime)) }} {{ date('n',$event->fromtime) }}月{{ date('j',$event->fromtime) }}日
+														<?php endif;?>
 												<?php else: ?>
-												{{ date('M j',$event->fromtime) }} - {{ date('M j',$event->totime) }}
-
+													<?php if(Config::get('app.locale') == 'en'):?>
+														{{ date('M j',$event->fromtime) }} - {{ date('M j',$event->totime) }}
+													<?php else: ?>
+														{{ date('n',$event->fromtime) }}月{{ date('j',$event->fromtime) }}日 - {{ date('n',$event->totime) }}月{{ date('j',$event->totime) }}日
+													<?php endif;?>
 												<?php endif; ?>
 											</p>
 							</div>

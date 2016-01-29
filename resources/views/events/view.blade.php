@@ -67,9 +67,9 @@
 							<?php endif;?>
 						<?php else: ?>
 							<?php if(Config::get('app.locale') == 'en'): ?>
-								{{ date('n',$event->fromtime) }}月{{ date('j',$event->fromtime) }}日 {{ date('g : i a',$event->fromtime) }} - {{ date('n',$event->totime) }}月{{ date('j',$event->totime) }}日 {{ date('g : i a',$event->totime) }}
+								{{ date('D, M j',$event->fromtime) }} @ {{ date('g : i a',$event->fromtime) }} - {{ date('D, M j',$event->totime) }} @ {{ date('g : i a',$event->totime) }}
 							<?php else: ?>
-
+								{{ date('n',$event->fromtime) }}月{{ date('j',$event->fromtime) }}日 {{ date('g : i a',$event->fromtime) }} - {{ date('n',$event->totime) }}月{{ date('j',$event->totime) }}日 {{ date('g : i a',$event->totime) }}
 							<?php endif; ?>
 						<?php endif; ?>
 					</div>
