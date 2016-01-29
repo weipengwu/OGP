@@ -26,6 +26,7 @@
 			@endforeach
 		<div id="allposts">
 			@if(count($posts) > 0)
+			<?php Jenssegers\Date\Date::setLocale(Config::get('app.locale'));?>
 			<section class="container posts">
 			<div class="row singlegroup layout84">
 					<?php $i = 0;?>
@@ -33,7 +34,7 @@
 						<?php if($i > 1) break;?>
 						<div <?php if($i == 0) { echo 'class="col-md-8"';} else{ echo 'class="col-md-4 last"'; } ?>>
 							<div class="postfrom"><div>{{ trans('posts.from') }} <a href="/brands/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div>
-							<div class="grouppost">{{ $post->group->category }}</div></div>
+							<div class="grouppost">{{ trans('brands.'.$post->group->categorykey) }}</div></div>
 							<a href="{{ url() }}/posts/<?php echo $post->id; ?>">
 								<?php $banner = explode(',', $post->banner); ?>
 								<div class="bannerholder" style="background: #ccc url('<?php echo url().'/uploads/Medium_'.$banner[0];?>') no-repeat center center; background-size: cover;">
@@ -42,7 +43,7 @@
 							<?php if($i == 0):?>
 							<div class="postinforight">
 							<?php endif;?>
-								<div class="postauthor">{{ $post->created_at->diffForHumans() }}</div>
+								<div class="postauthor">{{ Jenssegers\Date\Date::instance($post->created_at)->diffForHumans() }}</div>
 								<div class="title-area"><a href="{{ url() }}/posts/<?php echo $post->id; ?>"><h3>{{ $post->title }}</h3></a></div>
 							<?php if($i == 0):?>
 								<div class="excerpt-area">{!! html_entity_decode(getExcerpt($post->content, 60)) !!}</div>
@@ -113,7 +114,7 @@
 								<?php $banner = explode(',', $post->banner); ?>
 								<div class="bannerholder" style="background: #ccc url('<?php echo url().'/uploads/Small_'.$banner[0];?>') no-repeat center center; background-size: cover;">
 								</div></a>
-							<div class="postauthor">{{ $post->created_at->diffForHumans() }}</div>
+							<div class="postauthor">{{ Jenssegers\Date\Date::instance($post->created_at)->diffForHumans() }}</div>
 								<div class="title-area"><a href="{{ url() }}/posts/<?php echo $post->id; ?>"><h3>{{ $post->title }}</h3></a></div>
 								<div class="excerpt-area">{!! html_entity_decode(getExcerpt($post->content)) !!}</div>
 								<div class="bottom">
@@ -224,7 +225,7 @@
 								<div class="bannerholder" style="background: #ccc url('<?php echo url().'/uploads/Small_'.$banner[0];?>') no-repeat center center; background-size: cover;">
 								</div>
 							</a>
-								<div class="postauthor">{{ $post->created_at->diffForHumans() }}</div>
+								<div class="postauthor">{{ Jenssegers\Date\Date::instance($post->created_at)->diffForHumans() }}</div>
 								<div class="title-area"><a href="{{ url() }}/posts/<?php echo $post->id; ?>"><h3>{{ $post->title }}</h3></a></div>
 								<?php if($i > 0): ?>
 								<div class="excerpt-area">{!! html_entity_decode(getExcerpt($post->content, 12)) !!}</div>
@@ -362,7 +363,7 @@
 								<div class="bannerholder" style="background: #ccc url('<?php echo url().'/uploads/Small_'.$banner[0];?>') no-repeat center center; background-size: cover;">
 								</div>
 							</a>
-								<div class="postauthor">{{ $post->created_at->diffForHumans() }}</div>
+								<div class="postauthor">{{ Jenssegers\Date\Date::instance($post->created_at)->diffForHumans() }}</div>
 								<div class="title-area"><a href="{{ url() }}/posts/<?php echo $post->id; ?>"><h3>{{ $post->title }}</h3></a></div>
 								<?php if($i > 0): ?>
 								<div class="excerpt-area">{!! html_entity_decode(getExcerpt($post->content, 12)) !!}</div>
@@ -465,7 +466,7 @@
 								<?php $banner = explode(',', $post->banner); ?>
 								<div class="bannerholder" style="background: #ccc url('<?php echo url().'/uploads/Small_'.$banner[0];?>') no-repeat center center; background-size: cover;">
 								</div></a>
-							<div class="postauthor">{{ $post->created_at->diffForHumans() }}</div>
+							<div class="postauthor">{{ Jenssegers\Date\Date::instance($post->created_at)->diffForHumans() }}</div>
 								<div class="title-area"><a href="{{ url() }}/posts/<?php echo $post->id; ?>"><h3>{{ $post->title }}</h3></a></div>
 								<div class="excerpt-area">{!! html_entity_decode(getExcerpt($post->content)) !!}</div>
 								<div class="bottom">
