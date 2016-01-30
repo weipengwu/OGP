@@ -6,7 +6,7 @@
 		<div class="caption">
 			<div class="container">
 				<div class="groupprofile" style="background: #666 url('<?php echo url()."/uploads/Small_".$group->profile;?>') center center no-repeat; background-size: cover;"></div>
-				<p class="groupcategory">{{ trans('brands.'.$group->categorykey) }}</p>
+				<p class="groupcategory"><a href="{{ url() }}/brands/category/{{$post->group->categorykey}}">{{ trans('brands.'.$group->categorykey) }}</a></p>
 				<h1>{{ $group->name }}</h1>
 				<p>{!! html_entity_decode($group->description) !!}</p>
 				<p><a href="http://{{ $group->website }}" target="_blank" class="website">{{ $group->website }}</a></p>
@@ -103,7 +103,7 @@
 									<?php endif;?>
 									<?php endif;?>
 									<div class="postfrom"><div>From <a href="/brands/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div>
-									<div class="grouppost">{{ trans('brands.'.$post->group->categorykey) }}</div></div>
+									<div class="grouppost"><a href="{{ url() }}/brands/category/{{$post->group->categorykey}}">{{ trans('brands.'.$post->group->categorykey) }}</a></div></div>
 									<a href="{{ url() }}/posts/<?php echo $post->id; ?>">
 										<?php $banner = explode(',', $post->banner); ?>
 										<div class="bannerholder" style="background: #ccc url('<?php echo url().'/uploads/Medium_'.$banner[0];?>') no-repeat center center; background-size: cover;">
@@ -187,7 +187,7 @@
 											</div>
 										<?php endif;?>
 										<?php endif;?>
-										<div class="postfrom"><div>{{ trans('posts.from') }} <a href="/brands/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ trans('brands.'.$post->group->categorykey) }}</div></div>
+										<div class="postfrom"><div>{{ trans('posts.from') }} <a href="/brands/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost"><a href="{{ url() }}/brands/category/{{$post->group->categorykey}}">{{ trans('brands.'.$post->group->categorykey) }}</a></div></div>
 										<a href="{{ url() }}/posts/<?php echo $post->id; ?>">
 										<?php $banner = explode(',', $post->banner); ?>
 										<div class="bannerholder" style="background: #ccc url('<?php echo url().'/uploads/Small_'.$banner[0];?>') no-repeat center center; background-size: cover;">
@@ -263,7 +263,7 @@
 											</div>
 										<?php endif;?>
 										<?php endif;?>
-											<div class="postfrom"><div>{{ trans('posts.from') }} <a href="/brands/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ trans('brands.'.$post->group->categorykey) }}</div></div>
+											<div class="postfrom"><div>{{ trans('posts.from') }} <a href="/brands/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost"><a href="{{ url() }}/brands/category/{{$post->group->categorykey}}">{{ trans('brands.'.$post->group->categorykey) }}</a></div></div>
 											<a href="{{ url() }}/posts/<?php echo $post->id; ?>">
 											<?php $banner = explode(',', $post->banner); ?>
 												<div class="bannerholder" style="background: #ccc url('<?php echo url().'/uploads/Small_'.$banner[0];?>') no-repeat center center; background-size: cover;">
@@ -342,7 +342,7 @@
 											</div>
 										<?php endif;?>
 										<?php endif;?>
-												<div class="postfrom"><div>{{ trans('posts.from') }} <a href="/brands/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ trans('brands.'.$post->group->categorykey) }}</div></div>
+												<div class="postfrom"><div>{{ trans('posts.from') }} <a href="/brands/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost"><a href="{{ url() }}/brands/category/{{$post->group->categorykey}}">{{ trans('brands.'.$post->group->categorykey) }}</a></div></div>
 												<a href="{{ url() }}/posts/<?php echo $post->id; ?>">
 												<?php $banner = explode(',', $post->banner); ?>
 													<div class="bannerholder" style="background: #ccc url('<?php echo url().'/uploads/Small_'.$banner[0];?>') no-repeat center center; background-size: cover;">

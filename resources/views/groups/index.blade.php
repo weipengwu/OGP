@@ -70,7 +70,7 @@
 				<div class="divider"></div>
 				@endif
 				@if (count($autogroups) > 0)
-				<h2 class="sectiontitle"><a href="{{ url() }}/brands/category/artsdesign">{{ trans('brands.autos') }}</a></h2>
+				<h2 class="sectiontitle"><a href="{{ url() }}/brands/category/autos">{{ trans('brands.autos') }}</a></h2>
 				<div class="row groupsrow collapsed">
 					<?php $i = 1;?>
 					@foreach ($autogroups as $group)
@@ -93,7 +93,7 @@
 				@endif
 
 				@if (count($businessgroups) > 0)
-				<h2 class="sectiontitle"><a href="{{ url() }}/brands/category/artsdesign">{{ trans('brands.business') }}</a></h2>
+				<h2 class="sectiontitle"><a href="{{ url() }}/brands/category/business">{{ trans('brands.business') }}</a></h2>
 				<div class="row groupsrow collapsed">
 					<?php $i = 1;?>
 					@foreach ($businessgroups as $group)
@@ -116,7 +116,7 @@
 				@endif
 
 				@if (count($educationgroups) > 0)
-				<h2 class="sectiontitle">{{ trans('brands.education') }}</h2>
+				<h2 class="sectiontitle"><a href="{{ url() }}/brands/category/education">{{ trans('brands.education') }}</a></h2>
 				<div class="row groupsrow collapsed">
 					<?php $i = 1;?>
 					@foreach ($educationgroups as $group)
@@ -139,7 +139,7 @@
 				@endif
 
 				@if (count($fashiongroups) > 0)
-				<h2 class="sectiontitle">{{ trans('brands.fashion') }}</h2>
+				<h2 class="sectiontitle"><a href="{{ url() }}/brands/category/fashion">{{ trans('brands.fashion') }}</a></h2>
 				<div class="row groupsrow collapsed">
 					<?php $i = 1;?>
 					@foreach ($fashiongroups as $group)
@@ -162,7 +162,7 @@
 				@endif
 
 				@if (count($foodgroups) > 0)
-				<h2 class="sectiontitle">{{ trans('brands.fooddrink') }}</h2>
+				<h2 class="sectiontitle"><a href="{{ url() }}/brands/category/fooddrink">{{ trans('brands.fooddrink') }}</a></h2>
 				<div class="row groupsrow collapsed">
 					<?php $i = 1;?>
 					@foreach ($foodgroups as $group)
@@ -185,7 +185,7 @@
 				@endif
 
 				@if (count($gamesgroups) > 0)
-				<h2 class="sectiontitle">{{ trans('brands.gaming') }}</h2>
+				<h2 class="sectiontitle"><a href="{{ url() }}/brands/category/gaming">{{ trans('brands.gaming') }}</a></h2>
 				<div class="row groupsrow collapsed">
 					<?php $i = 1;?>
 					@foreach ($gamesgroups as $group)
@@ -208,7 +208,7 @@
 				@endif
 
 				@if (count($healthgroups) > 0)
-				<h2 class="sectiontitle">{{ trans('brands.health') }}</h2>
+				<h2 class="sectiontitle"><a href="{{ url() }}/brands/category/health">{{ trans('brands.health') }}</a></h2>
 				<div class="row groupsrow collapsed">
 					<?php $i = 1;?>
 					@foreach ($healthgroups as $group)
@@ -231,7 +231,7 @@
 				@endif
 
 				@if (count($homegroups) > 0)
-				<h2 class="sectiontitle">{{ trans('brands.home') }}</h2>
+				<h2 class="sectiontitle"><a href="{{ url() }}/brands/category/home">{{ trans('brands.home') }}</a></h2>
 				<div class="row groupsrow collapsed">
 					<?php $i = 1;?>
 					@foreach ($homegroups as $group)
@@ -254,7 +254,7 @@
 				@endif
 
 				@if (count($musicgroups) > 0)
-				<h2 class="sectiontitle">{{ trans('brands.musicperformances') }}</h2>
+				<h2 class="sectiontitle"><a href="{{ url() }}/brands/category/musicperformances">{{ trans('brands.musicperformances') }}</a></h2>
 				<div class="row groupsrow collapsed">
 					<?php $i = 1;?>
 					@foreach ($musicgroups as $group)
@@ -277,7 +277,7 @@
 				@endif
 
 				@if (count($sportsgroups) > 0)
-				<h2 class="sectiontitle">{{ trans('brands.sports') }}</h2>
+				<h2 class="sectiontitle"><a href="{{ url() }}/brands/category/sports">{{ trans('brands.sports') }}</a></h2>
 				<div class="row groupsrow collapsed">
 					<?php $i = 1;?>
 					@foreach ($sportsgroups as $group)
@@ -300,7 +300,7 @@
 				@endif
 
 				@if (count($technologygroups) > 0)
-				<h2 class="sectiontitle">{{ trans('brands.technologyscience') }}</h2>
+				<h2 class="sectiontitle"><a href="{{ url() }}/brands/category/technologyscience">{{ trans('brands.technologyscience') }}</a></h2>
 				<div class="row groupsrow collapsed">
 					<?php $i = 1;?>
 					@foreach ($technologygroups as $group)
@@ -323,7 +323,7 @@
 				@endif
 
 				@if (count($travelgroups) > 0)
-				<h2 class="sectiontitle">{{ trans('brands.travel') }}</h2>
+				<h2 class="sectiontitle"><a href="{{ url() }}/brands/category/travel">{{ trans('brands.travel') }}</a></h2>
 				<div class="row groupsrow collapsed">
 					<?php $i = 1;?>
 					@foreach ($travelgroups as $group)
@@ -346,7 +346,7 @@
 				@endif
 
 				@if (count($othergroups) > 0)
-				<h2 class="sectiontitle">{{ trans('brands.other') }}</h2>
+				<h2 class="sectiontitle"><a href="{{ url() }}/brands/category/other">{{ trans('brands.other') }}</a></h2>
 				<div class="row groupsrow collapsed">
 					<?php $i = 1;?>
 					@foreach ($othergroups as $group)
