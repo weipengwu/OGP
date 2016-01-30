@@ -7141,6 +7141,9 @@ h3 a:hover{
 .grouppost{
   text-decoration: underline;
 }
+.grouppost a{
+  color: #999;
+}
 .home .joinmore{
   margin-bottom: 30px;
   padding-bottom: 30px;

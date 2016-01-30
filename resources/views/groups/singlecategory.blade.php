@@ -7,6 +7,7 @@
 			<div class="panel-heading"><h1>{{ trans('brands.'.$cat) }}</h1></div>
 			<div class="panel-body">
 				<div class="row">
+				<?php $i = 1; ?>
 					@foreach ($groups as $group)
 						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
 						<a href="brands/{{ $group->slug }}">
@@ -18,6 +19,7 @@
 							</div>
 							</a>
 						</div>
+						<?php $i++; ?>
 					@endforeach
 				</div>
 			</div>
