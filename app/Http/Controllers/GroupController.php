@@ -306,4 +306,9 @@ class GroupController extends Controller {
 			echo "pass";
 		}
 	}
+	public function singleCateogry($cat)
+	{
+		$groups = Group::where('categorykey', $cat)->get();
+		return view('groups.singlecategory')->with('groups', $groups)->with('cat', $cat);
+	}
 }

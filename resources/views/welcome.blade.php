@@ -11,11 +11,8 @@
 			<div class="homebanner" style="background: #ccc url('<?php echo url().'/uploads/Large_'.$group[0]->banner;?>') no-repeat center center; background-size: cover;">
 			
 				<div class="caption">
-					<p>from {{ getAuthorname($group[0]->owner) }}</p>
+					<p class="cat">{{ trans('brands.'.$group[0]->categorykey) }}</p>
 					<h1>{{ $group[0]->name }}</h1>
-				</div>
-				<div id="hblikebar">
-					<span class="cat">{{ $group[0]->category }}</span>
 				</div>
 			
 			</div>
@@ -35,7 +32,7 @@
 					@foreach ($posts as $post)
 						<?php if($i > 1) break;?>
 						<div <?php if($i == 0) { echo 'class="col-md-8"';} else{ echo 'class="col-md-4 last"'; } ?>>
-							<div class="postfrom"><div>From <a href="/brands/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div>
+							<div class="postfrom"><div>{{ trans('posts.from') }} <a href="/brands/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div>
 							<div class="grouppost">{{ $post->group->category }}</div></div>
 							<a href="{{ url() }}/posts/<?php echo $post->id; ?>">
 								<?php $banner = explode(',', $post->banner); ?>
@@ -81,7 +78,7 @@
 					@foreach ($posts as $post)
 						<?php if($i > 2) break;?>
 						<div class="col-md-4<?php if(is_int($j/3)) echo " last";?>">
-							<div class="postfrom"><div>From <a href="/brands/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ $post->group->category }}</div></div>
+							<div class="postfrom"><div>{{ trans('posts.from') }} <a href="/brands/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ $post->group->category }}</div></div>
 							<a href="{{ url() }}/posts/<?php echo $post->id; ?>">
 								<?php $banner = explode(',', $post->banner); ?>
 								<div class="bannerholder" style="background: #ccc url('<?php echo url().'/uploads/Small_'.$banner[0];?>') no-repeat center center; background-size: cover;">
@@ -170,7 +167,7 @@
 					@foreach ($posts as $post)
 						<?php if($i >= 3) break;?>
 						<div class="<?php if($i == 0) { echo "col-md-6";} else{ echo "col-md-3"; }?><?php if(is_int($j/3)) echo " last";?>">
-							<div class="postfrom"><div>From <a href="/brands/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ $post->group->category }}</div></div>
+							<div class="postfrom"><div>{{ trans('posts.from') }} <a href="/brands/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ $post->group->category }}</div></div>
 							<a href="{{ url() }}/posts/<?php echo $post->id; ?>">
 							<?php $banner = explode(',', $post->banner); ?>
 								<div class="bannerholder" style="background: #ccc url('<?php echo url().'/uploads/Small_'.$banner[0];?>') no-repeat center center; background-size: cover;">
@@ -210,7 +207,7 @@
 					@foreach ($posts as $post)
 						<?php if($i >= 4) break;?>
 						<div class="col-md-3<?php if(is_int($j/4)) echo " last";?>">
-							<div class="postfrom"><div>From <a href="/brands/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ $post->group->category }}</div></div>
+							<div class="postfrom"><div>{{ trans('posts.from') }} <a href="/brands/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ $post->group->category }}</div></div>
 							<a href="{{ url() }}/posts/<?php echo $post->id; ?>">
 							<?php $banner = explode(',', $post->banner); ?>
 								<div class="bannerholder" style="background: #ccc url('<?php echo url().'/uploads/Small_'.$banner[0];?>') no-repeat center center; background-size: cover;">
@@ -248,7 +245,7 @@
 					@foreach ($posts as $post)
 						<?php if($i >= 3) break;?>
 						<div class="<?php if($i == 0) { echo "col-md-6";} else{ echo "col-md-3"; }?><?php if(is_int($j/3)) echo " last";?>">
-							<div class="postfrom"><div>From <a href="/brands/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ $post->group->category }}</div></div>
+							<div class="postfrom"><div>{{ trans('posts.from') }} <a href="/brands/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ $post->group->category }}</div></div>
 							<a href="{{ url() }}/posts/<?php echo $post->id; ?>">
 							<?php $banner = explode(',', $post->banner); ?>
 								<div class="bannerholder" style="background: #ccc url('<?php echo url().'/uploads/Small_'.$banner[0];?>') no-repeat center center; background-size: cover;">
@@ -288,7 +285,7 @@
 					@foreach ($posts as $post)
 						<?php if($i > 2) break;?>
 						<div class="col-md-4<?php if(is_int($j/3)) echo " last";?>">
-							<div class="postfrom"><div>From <a href="/brands/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ $post->group->category }}</div></div>
+							<div class="postfrom"><div>{{ trans('posts.from') }} <a href="/brands/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ $post->group->category }}</div></div>
 							<a href="{{ url() }}/posts/<?php echo $post->id; ?>">
 								<?php $banner = explode(',', $post->banner); ?>
 								<div class="bannerholder" style="background: #ccc url('<?php echo url().'/uploads/Small_'.$banner[0];?>') no-repeat center center; background-size: cover;">

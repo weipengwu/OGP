@@ -71,6 +71,7 @@ Route::group(['middleware' => 'auth'], function(){
 
 Route::get('events', 'EventController@index');
 Route::get('brands', 'GroupController@index');
+Route::get('brands/catogory/{cat}', 'GroupController@singlecategory');
 //Route::get('missions', 'MissionController@index');
 
 //Route::get('profiles/{id}', array('uses' => 'ProfileController@viewUser', 'as' => 'viewUser'));

@@ -2,8 +2,8 @@
 
 return [
 	'explore'=>'探索',
-	'trending'=>'最新推荐',
-	'mostpopular'=>'最受关注',
+	'trending'=>'推荐',
+	'mostpopular'=>'热门',
 	'artsdesign'=>'艺术与设计',
 	'autos'=>'汽⻋',
 	'business'=>'商业',
@@ -36,7 +36,7 @@ return [
 	'briefintroduction'=>'简要介绍 (贴⼼提示:建议您使⽤目标市场语⾔，有助于推广您的品牌。)',
 	'pledge'=>'继续代表您保证填写的内容和提供的附加材料的每一个环节都真实可信。',
 	'createyourbrand' => '创建您的品牌',
-	'submit' => '提交',
+	'submit' => '发布',
 	'follow' => '关注',
 	'following' => '已关注',
 	'follower' => '关注者',
@@ -44,5 +44,6 @@ return [
 	'event' => '活动',
 	'events' => '活动',
 	'post' => '动态',
-	'posts' => '动态'
+	'posts' => '动态',
+	'selectcategory' => '品牌分类 － 请选择'
 ];

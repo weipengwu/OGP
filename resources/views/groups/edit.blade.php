@@ -45,20 +45,20 @@
 						<div class="form-group">
 							<select name="category" class="form-control">
 								<option value="">Brand Category -- Select one</option>
-								<option value="Arts & Design" <?php if($group->category == 'Arts & Design') echo "selected"; ?>>Arts & Design</option>
-								<option value="Autos" <?php if($group->category == 'Autos') echo "selected"; ?>>Autos</option>
-								<option value="Business" <?php if($group->category == 'Business') echo "selected"; ?>>Business</option>
-								<option value="Education" <?php if($group->category == 'Education') echo "selected"; ?>>Education</option>
-								<option value="Fashion" <?php if($group->category == 'Fashion') echo "selected"; ?>>Fashion</option>
-								<option value="Food & Drink" <?php if($group->category == 'Food & Drink') echo "selected"; ?>>Food & Drink</option>
-								<option value="Gaming" <?php if($group->category == 'Gaming') echo "selected"; ?>>Gaming</option>
-								<option value="Health" <?php if($group->category == 'Health') echo "selected"; ?>>Health</option>
-								<option value="Home" <?php if($group->category == 'Home') echo "selected"; ?>>Home</option>
-								<option value="Music & Performance" <?php if($group->category == 'Music & Performance') echo "selected"; ?>>Music & Performance</option>
-								<option value="Sports" <?php if($group->category == 'Sports') echo "selected"; ?>>Sports</option>
-								<option value="Technology & Science" <?php if($group->category == 'Technology & Science') echo "selected"; ?>>Technology & Science</option>
-								<option value="Travel" <?php if($group->category == 'Travel') echo "selected"; ?>>Travel</option>
-								<option value="Other" <?php if($group->category == 'Other') echo "selected"; ?>>Other</option>
+								<option value="Arts & Design" <?php if($group->category == 'Arts & Design') echo "selected"; ?>>{{ trans('brands.artsdesign') }}</option>
+								<option value="Autos" <?php if($group->category == 'Autos') echo "selected"; ?>>{{ trans('brands.autos') }}</option>
+								<option value="Business" <?php if($group->category == 'Business') echo "selected"; ?>>{{ trans('brands.business') }}</option>
+								<option value="Education" <?php if($group->category == 'Education') echo "selected"; ?>>{{ trans('brands.education') }}</option>
+								<option value="Fashion" <?php if($group->category == 'Fashion') echo "selected"; ?>>{{ trans('brands.fashion') }}</option>
+								<option value="Food & Drink" <?php if($group->category == 'Food & Drink') echo "selected"; ?>>{{ trans('brands.fooddrink') }}</option>
+								<option value="Gaming" <?php if($group->category == 'Gaming') echo "selected"; ?>>{{ trans('brands.gaming') }}</option>
+								<option value="Health" <?php if($group->category == 'Health') echo "selected"; ?>>{{ trans('brands.health') }}</option>
+								<option value="Home" <?php if($group->category == 'Home') echo "selected"; ?>>{{ trans('brands.home') }}</option>
+								<option value="Music & Performance" <?php if($group->category == 'Music & Performance') echo "selected"; ?>>{{ trans('brands.musicperformances') }}</option>
+								<option value="Sports" <?php if($group->category == 'Sports') echo "selected"; ?>>{{ trans('brands.sports') }}</option>
+								<option value="Technology & Science" <?php if($group->category == 'Technology & Science') echo "selected"; ?>>{{ trans('brands.technologyscience') }}</option>
+								<option value="Travel" <?php if($group->category == 'Travel') echo "selected"; ?>>{{ trans('brands.travel') }}</option>
+								<option value="Other" <?php if($group->category == 'Other') echo "selected"; ?>>{{ trans('brands.other') }}</option>
 							</select>
 						</div>
 						<div class="form-group">

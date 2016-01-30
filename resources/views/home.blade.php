@@ -11,7 +11,7 @@
 			<div class="homebanner" style="background: #ccc url('<?php echo url().'/uploads/Large_'.$group[0]->banner;?>') no-repeat center center; background-size: cover;">
 			
 				<div class="caption">
-					<p class="cat">{{ $group[0]->category }}</p>
+					<p class="cat">{{ trans('brands.'.$group[0]->categorykey) }}</p>
 					<h1>{{ $group[0]->name }}</h1>
 				</div>
 			
@@ -123,7 +123,7 @@
 									</div>
 									<div class="right">
 										<div class="sharebox" id="post{{$post->id}}">
-											<a href="" class="social_icons social_tw"><i class="fa fa-twitter"></i></a> <a href="" class="social_icons social_fb"><i class="fa fa-facebook"></i></a> <a href="" class="social_icons social_wc"><i class="fa fa-wechat"></i></a> <a href="" class="social_icons social_wb"><i class="fa fa-weibo"></i></a>
+											<a href="" class="social_icons social_tw"><i class="fa fa-twitter"></i></a> <a href="" class="social_icons social_fb"><i class="fa fa-facebook"></i></a> <a href="" class="social_icons social_lk"><i class="fa fa-linkedin"></i></a><a href="" class="social_icons social_wb"><i class="fa fa-weibo"></i></a>
 										</div>
 										<div class="shareto">
 											<a href="" data-toggle="tooltip" title="{{ trans('general.share') }}" class="share_btn"><img src="{{ asset('img/share_icon.png') }}" width="16"></a>
@@ -243,7 +243,7 @@
 									</div>
 									<div class="right">
 										<div class="sharebox" id="post{{$post->id}}">
-											<a href="" class="social_icons social_tw"><i class="fa fa-twitter"></i></a> <a href="" class="social_icons social_fb"><i class="fa fa-facebook"></i></a> <a href="" class="social_icons social_wc"><i class="fa fa-wechat"></i></a> <a href="" class="social_icons social_wb"><i class="fa fa-weibo"></i></a>
+											<a href="" class="social_icons social_tw"><i class="fa fa-twitter"></i></a> <a href="" class="social_icons social_fb"><i class="fa fa-facebook"></i></a> <a href="" class="social_icons social_lk"><i class="fa fa-linkedin"></i></a><a href="" class="social_icons social_wb"><i class="fa fa-weibo"></i></a>
 										</div>
 										<div class="shareto">
 											<a href="" data-toggle="tooltip" title="{{ trans('general.share') }}" class="share_btn"><img src="{{ asset('img/share_icon.png') }}" width="16"></a>
@@ -311,7 +311,7 @@
 									</div>
 									<div class="right">
 										<div class="sharebox" id="post{{$post->id}}">
-											<a href="" class="social_icons social_tw"><i class="fa fa-twitter"></i></a> <a href="" class="social_icons social_fb"><i class="fa fa-facebook"></i></a> <a href="" class="social_icons social_wc"><i class="fa fa-wechat"></i></a> <a href="" class="social_icons social_wb"><i class="fa fa-weibo"></i></a>
+											<a href="" class="social_icons social_tw"><i class="fa fa-twitter"></i></a> <a href="" class="social_icons social_fb"><i class="fa fa-facebook"></i></a> <a href="" class="social_icons social_lk"><i class="fa fa-linkedin"></i></a><a href="" class="social_icons social_wb"><i class="fa fa-weibo"></i></a>
 										</div>
 										<div class="shareto">
 											<a href="" data-toggle="tooltip" title="{{ trans('general.share') }}" class="share_btn"><img src="{{ asset('img/share_icon.png') }}" width="16"></a>
@@ -381,7 +381,7 @@
 									</div>
 									<div class="right">
 										<div class="sharebox" id="post{{$post->id}}">
-											<a href="" class="social_icons social_tw"><i class="fa fa-twitter"></i></a> <a href="" class="social_icons social_fb"><i class="fa fa-facebook"></i></a> <a href="" class="social_icons social_wc"><i class="fa fa-wechat"></i></a> <a href="" class="social_icons social_wb"><i class="fa fa-weibo"></i></a>
+											<a href="" class="social_icons social_tw"><i class="fa fa-twitter"></i></a> <a href="" class="social_icons social_fb"><i class="fa fa-facebook"></i></a> <a href="" class="social_icons social_lk"><i class="fa fa-linkedin"></i></a><a href="" class="social_icons social_wb"><i class="fa fa-weibo"></i></a>
 										</div>
 										<div class="shareto">
 											<a href="" data-toggle="tooltip" title="{{ trans('general.share') }}" class="share_btn"><img src="{{ asset('img/share_icon.png') }}" width="16"></a>
@@ -482,7 +482,7 @@
 									</div>
 									<div class="right">
 										<div class="sharebox" id="post{{$post->id}}">
-											<a href="" class="social_icons social_tw"><i class="fa fa-twitter"></i></a> <a href="" class="social_icons social_fb"><i class="fa fa-facebook"></i></a> <a href="" class="social_icons social_wc"><i class="fa fa-wechat"></i></a> <a href="" class="social_icons social_wb"><i class="fa fa-weibo"></i></a>
+											<a href="" class="social_icons social_tw"><i class="fa fa-twitter"></i></a> <a href="" class="social_icons social_fb"><i class="fa fa-facebook"></i></a> <a href="" class="social_icons social_lk"><i class="fa fa-linkedin"></i></a><a href="" class="social_icons social_wb"><i class="fa fa-weibo"></i></a>
 										</div>
 										<div class="shareto">
 											<a href="" data-toggle="tooltip" title="{{ trans('general.share') }}" class="share_btn"><img src="{{ asset('img/share_icon.png') }}" width="16"></a>

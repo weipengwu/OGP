@@ -44,5 +44,6 @@ return [
 	'event' => 'Event',
 	'events' => 'Events',
 	'post' => 'Post',
-	'posts' => 'Posts'
+	'posts' => 'Posts',
+	'selectcategory' => 'Brand Category -- Select one'
 ];
