@@ -48,7 +48,7 @@
 				</div>
 				<div class="divider"></div>
 				@if (count($artsgroups) > 0 )
-				<h2 class="sectiontitle">{{ trans('brands.artsdesign') }}</h2>
+				<h2 class="sectiontitle"><a href="{{ url }}/brands/category/artsdesign">{{ trans('brands.artsdesign') }}</a></h2>
 				<div class="row groupsrow collapsed">
 					<?php $i = 1;?>
 					@foreach ($artsgroups as $group)
@@ -70,7 +70,7 @@
 				<div class="divider"></div>
 				@endif
 				@if (count($autogroups) > 0)
-				<h2 class="sectiontitle">{{ trans('brands.autos') }}</h2>
+				<h2 class="sectiontitle"><a href="{{ url }}/brands/category/artsdesign">{{ trans('brands.autos') }}</a></h2>
 				<div class="row groupsrow collapsed">
 					<?php $i = 1;?>
 					@foreach ($autogroups as $group)
@@ -93,7 +93,7 @@
 				@endif
 
 				@if (count($businessgroups) > 0)
-				<h2 class="sectiontitle">{{ trans('brands.business') }}</h2>
+				<h2 class="sectiontitle"><a href="{{ url }}/brands/category/artsdesign">{{ trans('brands.business') }}</a></h2>
 				<div class="row groupsrow collapsed">
 					<?php $i = 1;?>
 					@foreach ($businessgroups as $group)
