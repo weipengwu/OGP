@@ -7141,7 +7141,7 @@ h3 a:hover{
 .grouppost{
   text-decoration: underline;
 }
-.grouppost a{
+.singlegroup .postfrom .grouppost a{
   color: #999;
 }
 .home .joinmore{

@@ -10,7 +10,7 @@
 				<?php $i = 1; ?>
 					@foreach ($groups as $group)
 						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
-						<a href="brands/{{ $group->slug }}">
+						<a href="{{ url() }}/brands/{{ $group->slug }}">
 							<div class="bannerholder" style="background: url('<?php echo url()."/uploads/Medium_".$group->profile;?>');background-size:cover"></div>
 							
 							<div class="caption">
