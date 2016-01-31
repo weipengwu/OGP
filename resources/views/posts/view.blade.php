@@ -61,7 +61,7 @@
 							<div class="form-group">
 								<textarea name="content" class="form-control" placeholder="{{ trans('posts.writedown') }}" required></textarea>
 							</div>
-							<input type="submit" class="btn btn-logo">
+							<input type="submit" class="btn btn-logo" value="{{ trans('posts.submit') }}">
 						</form>
 					</section> 
 					@endif

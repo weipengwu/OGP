@@ -38,6 +38,7 @@ return [
 	'createyourbrand' => '创建您的品牌',
 	'submit' => '发布',
 	'follow' => '关注',
+	'unfollow' => '取消关注',
 	'following' => '已关注',
 	'follower' => '关注者',
 	'followers' => '关注者',

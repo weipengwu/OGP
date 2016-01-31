@@ -230,6 +230,8 @@
 	<script src="{{ asset('/js/jquery.fancybox.pack.js') }}"></script>
 	<script src="{{ asset('/js/jquery.bxslider.min.js') }}"></script>
 	<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"></script>
+	<script src="http://jzaefferer.github.io/jquery-validation/localization/messages_zh.js" />
+
 	<script src="{{ asset('/js/main.js') }}"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){

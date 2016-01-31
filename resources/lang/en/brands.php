@@ -38,6 +38,7 @@ return [
 	'createyourbrand' => 'CREATE YOUR BRAND',
 	'submit' => 'Submit',
 	'follow' => 'Follow',
+	'unfollow' => 'Unfollow',
 	'following' => 'Following',
 	'follower' => 'Follower',
 	'followers' => 'Followers',

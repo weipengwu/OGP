@@ -38,11 +38,11 @@
 					</div>
 					@if(isFollowing(Auth::user()->id, $group->id))
 					<div class="groupfollow">
-						<span><a href="" data-toggle="tooltip" title="Unfollow" class="unfollow_group" data-user-id="{{ Auth::user()->id }}" data-group-id="{{ $group->id }}"><img src="{{ asset('img/unfollow_big_icon.png') }}" width="20"></a></span>
+						<span><a href="" data-toggle="tooltip" title="{{ trans('brands.unfollow') }}" class="unfollow_group" data-user-id="{{ Auth::user()->id }}" data-group-id="{{ $group->id }}"><img src="{{ asset('img/unfollow_big_icon.png') }}" width="20"></a></span>
 					</div>
 					@else
 					<div class="groupfollow">
-						<span><a href="" data-toggle="tooltip" title="Follow" class="follow_group" data-user-id="{{ Auth::user()->id }}" data-group-id="{{ $group->id }}"><img src="{{ asset('img/follow_big_icon.png') }}" width="20"></a></span>
+						<span><a href="" data-toggle="tooltip" title="{{ trans('brands.follow') }}" class="follow_group" data-user-id="{{ Auth::user()->id }}" data-group-id="{{ $group->id }}"><img src="{{ asset('img/follow_big_icon.png') }}" width="20"></a></span>
 					</div>
 					@endif
 				@endif
