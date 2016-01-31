@@ -20,7 +20,7 @@ return [
 	'suiteno'=>'位置',
 	'address'=>'地址',
 	'eventdescription'=>'关于活动的精彩介绍',
-	'browseevents'=>'发现活动',
+	'browseevents'=>'参与',
 	'allcategories'=>'所有分类',
 	'alltimes'=>'全部时间',
 	'thisweek'=>'本周',

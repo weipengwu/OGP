@@ -1,7 +1,7 @@
 <?php
 
 return [
-
+	'ogp' => 'OGP',
 	'explorebrands' => 'BRANDS',
 	'discoverevents'     => 'EVENTS',
 	'createBrand' => 'Create Your Brand',
