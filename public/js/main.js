@@ -378,6 +378,7 @@ $(document).ready(function(){
 	});
 	$('#leavecomments form').validate();
 	$('#createPost').validate();
+	$('#newevent').validate();
 
 	$('a.showSelect').on('click', function(e){
 		e.preventDefault();

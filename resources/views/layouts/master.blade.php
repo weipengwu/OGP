@@ -226,11 +226,12 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
 	<script src="{{ asset('/js/fileinput.min.js') }}"></script>
 	<script src="{{ asset('/js/bootstrap-datetimepicker.min.js') }}"></script>
-	<script src="{{ asset('/js/bootstrap-switch.min.js') }}"></script>
 	<script src="{{ asset('/js/jquery.fancybox.pack.js') }}"></script>
 	<script src="{{ asset('/js/jquery.bxslider.min.js') }}"></script>
 	<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"></script>
+	@if(Config::get('app.locale') == 'zh')
 	<script src="{{ asset('/js/messages_zh.js') }}"></script>
+	@endif
 
 	<script src="{{ asset('/js/main.js') }}"></script>
 	<script type="text/javascript">

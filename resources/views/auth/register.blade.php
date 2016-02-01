@@ -139,7 +139,6 @@
 	<script src="{{ asset('/js/fileinput.min.js') }}"></script>
 	<script src="{{ asset('/js/bootstrap-datetimepicker.min.js') }}"></script>
 	<script src="{{ asset('/js/bootstrap-switch.min.js') }}"></script>
-	<script src="{{ asset('/js/tinymce/tinymce.min.js') }}"></script>
 	<script src="{{ asset('/js/jstz.min.js') }}"></script>
 	<script src="{{ asset('/js/main.js') }}"></script>
 </body>
