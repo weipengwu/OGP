@@ -135,9 +135,9 @@
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
 					@if (Auth::guest())
-					<li><a href="{{ url('/') }}">OGP</a></li>
+					<li><a href="{{ url('/') }}">{{ trans('headermenu.ogp') }}</a></li>
 					@else
-					<li><a href="{{ url('/home') }}">OGP</a></li>
+					<li><a href="{{ url('/home') }}">{{ trans('headermenu.ogp') }}</a></li>
 					@endif
 					<li><a href="{{ url('/brands') }}">{{ trans('headermenu.explorebrands') }}</a></li>
 					<li><a href="{{ url('/events') }}">{{ trans('headermenu.discoverevents') }}</a></li>
@@ -216,11 +216,11 @@
 	</nav>
 	<section class="site-container">
 		<div class="page404">
-			<h1>OOPS. SOMETHINGS GONE WRONG.</h1>
+			<h1>{{ trans('general.oops') }}</h1>
 			@if (Auth::guest())
-			<a href="/" class="btn btn-logo">Back to home</a>
+			<a href="/" class="btn btn-logo">{{ trans('general.backhome') }}</a>
 			@else
-			<a href="/home" class="btn btn-logo">Back to home</a>
+			<a href="/home" class="btn btn-logo">{{ trans('general.backhome') }}</a>
 			@endif
 		</div>
 	</section>

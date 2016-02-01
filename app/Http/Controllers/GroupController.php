@@ -44,12 +44,13 @@ class GroupController extends Controller {
 		$checkGroup = Group::where('owner',$user)->count();
 		if($checkGroup > 0){
 			//one user can only create one brand
-			return redirect()->back()->withErrors("You can only have one brand!");
+			return redirect()->back()->withErrors(trans('messages.onebrandonly'));
 		}else{
 			//double check brand name
 			$bname =  Request::input('name');
 			$checkBname = Group::where('name',$bname)->count();
-			if($checkBname > 0){
+			$checkBslug = Group::where('slug',slug($bname))->count();
+			if($checkBname > 0 || $checkBslug > 0){
 				return redirect()->back()->withErrors("Brand name is unavailable, please choose another one.");
 			}else{
 				//create new brand
@@ -149,9 +150,10 @@ class GroupController extends Controller {
 	{
 		$bname =  Request::input('name');
 		$checkBname = Group::where('name',$bname)->count();
+		$checkBslug = Group::where('slug',slug($bname))->count();
 		$id = Request::input('id');
 		$group = Group::where('id', $id)->firstOrFail();
-		if($checkBname > 0 && $bname !== $group->name){
+		if(($checkBname > 0 || $checkBslug > 0 ) && $bname !== $group->name){
 			return redirect()->back()->withErrors("Brand name is unavailable, please choose another one.");
 		}else{
 			
@@ -298,7 +300,7 @@ class GroupController extends Controller {
 	}
 	public function checkBrandname()
 	{
-		$bname = Request::input('brandname');
+		$bname = Request::input('checkbrandname');
 		$group = Group::where('slug', slug($bname))->count();
 		if ( $group > 0 ) {
 			echo 'duplicated';
