@@ -103,9 +103,9 @@ return [
 	*/
 
 	'attributes' => [
-		'name' => '{{ trans("auth.username") }}',
-		'email' => '{{ trans("auth.email") }}',
-		'password' => '{{ trans("auth.email") }}'
+		'name' => 'Username',
+		'email' => 'Email Address',
+		'password' => 'Password'
 	],
 
 ];
