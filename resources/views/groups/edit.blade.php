@@ -92,10 +92,10 @@
 								<option value="CN" @if($group->originCountry == 'CN') {{ 'selected' }} @endif>China</option>
 								<option value="CO" @if($group->originCountry == 'CO') {{ 'selected' }} @endif>Colombia</option>
 								<option value="CU" @if($group->originCountry == 'CU') {{ 'selected' }} @endif>Cuba</option>
-								<option value="DK" @if($group->originCountry == 'DK') {{ 'selected' }} @endif>Cyprus>Denmark</option>
-								<option value="EG" @if($group->originCountry == 'EG') {{ 'selected' }} @endif>Cyprus>Egypt</option>
-								<option value="FI" @if($group->originCountry == 'FI') {{ 'selected' }} @endif>Cyprus>Finland</option>
-								<option value="FR" @if($group->originCountry == 'FR') {{ 'selected' }} @endif>Cyprus>France</option>
+								<option value="DK" @if($group->originCountry == 'DK') {{ 'selected' }} @endif>Denmark</option>
+								<option value="EG" @if($group->originCountry == 'EG') {{ 'selected' }} @endif>Egypt</option>
+								<option value="FI" @if($group->originCountry == 'FI') {{ 'selected' }} @endif>Finland</option>
+								<option value="FR" @if($group->originCountry == 'FR') {{ 'selected' }} @endif>France</option>
 								<option value="DE" @if($group->originCountry == 'DE') {{ 'selected' }} @endif>Germany</option>
 								<option value="GR" @if($group->originCountry == 'GR') {{ 'selected' }} @endif>Greece</option>
 								<option value="HU" @if($group->originCountry == 'HU') {{ 'selected' }} @endif>Hungary</option>

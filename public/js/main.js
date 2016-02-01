@@ -351,7 +351,7 @@ $(document).ready(function(){
 			$.ajax({
 				type: "POST",
 				url: window.location.origin+"/brands/checkBrandname",
-				data: "brandname="+bname
+				data: "checkbrandname="+bname
 			}).done(function(response){
 				if (response == 'duplicated') {
 					$('.checknamefail').show();
