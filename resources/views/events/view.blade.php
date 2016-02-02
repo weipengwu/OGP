@@ -31,11 +31,11 @@
 		<script type="text/javascript">
 			$('.right a.social_fb').on('click', function(e){
 				e.preventDefault();
-				window.open('https://www.facebook.com/v2.0/dialog/feed?app_id=866884463391641&display=popup&link='+encodeURIComponent('{{ url() }}/events/<?php echo $event->id; ?>')+'&caption=OHGOODPARTY&picture={{ url()."/uploads/Medium_".$event->banner }}&name='+encodeURIComponent('{{ $event->title }}')+'&redirect_uri=https://www.facebook.com', "_blank", "width=360, height=360");
+				window.open('https://www.facebook.com/v2.0/dialog/feed?app_id=866884463391641&display=popup&link='+encodeURIComponent('{{ url() }}/events/<?php echo $event->id; ?>')+'&caption=OHGOODPARTY&picture={{ url()."/uploads/Medium_".$event->banner }}&name='+encodeURIComponent('{{ $event->title }}')+'&redirect_uri=https://www.facebook.com', "_blank", "width=600, height=400");
 			})
 			$('.right a.social_tw').on('click', function(e){
 					e.preventDefault();
-					window.open('https://www.twitter.com/share?text={{ $event->title }} {{ url() }}/events/<?php echo $event->id; ?> @ohgoodparty_ogp&url=/', "_blank", "width=360, height=360");
+					window.open('https://twitter.com/intent/tweet?text={{ $event->title }}&via=ohgoodparty_ogp&url={{ url() }}/events/<?php echo $event->id; ?>', "_blank", "width=360, height=360");
 			})
 			$('.right a.social_lk').on('click', function(e){
 				e.preventDefault();

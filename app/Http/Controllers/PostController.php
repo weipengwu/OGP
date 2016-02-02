@@ -62,7 +62,7 @@ class PostController extends Controller {
 				  		$img->resize(900, null, function ($constraint) {
 						    $constraint->aspectRatio();
 						    $constraint->upsize();
-						})->insert('img/ogp_watermark.png', 'bottom-right', 10, 10);
+						});
 						$img->save($destinationPath."/Medium_".$fileName);
 				  		$img->resize(500, null, function ($constraint) {
 						    $constraint->aspectRatio();
@@ -91,7 +91,7 @@ class PostController extends Controller {
 				  		$img->resize(900, null, function ($constraint) {
 						    $constraint->aspectRatio();
 						    $constraint->upsize();
-						})->insert('img/ogp_watermark.png', 'bottom-right', 10, 10);
+						});
 						$img->save($destinationPath."/Medium_".$fileName);
 						$img->resize(500, null, function ($constraint) {
 						    $constraint->aspectRatio();
@@ -120,7 +120,7 @@ class PostController extends Controller {
 				  		$img->resize(900, null, function ($constraint) {
 						    $constraint->aspectRatio();
 						    $constraint->upsize();
-						})->insert('img/ogp_watermark.png', 'bottom-right', 10, 10);
+						});
 						$img->save($destinationPath."/Medium_".$fileName);
 						$img->resize(500, null, function ($constraint) {
 						    $constraint->aspectRatio();
@@ -149,7 +149,7 @@ class PostController extends Controller {
 				  		$img->resize(900, null, function ($constraint) {
 						    $constraint->aspectRatio();
 						    $constraint->upsize();
-						})->insert('img/ogp_watermark.png', 'bottom-right', 10, 10);
+						});
 						$img->save($destinationPath."/Medium_".$fileName);
 						$img->resize(500, null, function ($constraint) {
 						    $constraint->aspectRatio();
@@ -178,7 +178,7 @@ class PostController extends Controller {
 				  		$img->resize(900, null, function ($constraint) {
 						    $constraint->aspectRatio();
 						    $constraint->upsize();
-						})->insert('img/ogp_watermark.png', 'bottom-right', 10, 10);
+						});
 						$img->save($destinationPath."/Medium_".$fileName);
 						$img->resize(500, null, function ($constraint) {
 						    $constraint->aspectRatio();
@@ -207,7 +207,7 @@ class PostController extends Controller {
 				  		$img->resize(900, null, function ($constraint) {
 						    $constraint->aspectRatio();
 						    $constraint->upsize();
-						})->insert('img/ogp_watermark.png', 'bottom-right', 10, 10);
+						});
 						$img->save($destinationPath."/Medium_".$fileName);
 						$img->resize(500, null, function ($constraint) {
 						    $constraint->aspectRatio();
