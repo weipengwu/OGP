@@ -88,7 +88,7 @@
 							})
 							$('.right #post{{$post->id}} a.social_lk').on('click', function(e){
 								e.preventDefault();
-								window.open('https://www.linkedin.com/shareArticle?mini=true&url={{ url() }}/posts/<?php echo $post->id; ?>&title={{ $post->title }}&summary={{ strip_tags(getExcerpt($post->content, 60)) }}&source=OHGOODPARTY', "_blank", "width=360, height=360");
+								window.open('https://www.linkedin.com/shareArticle?mini=true&url={{ url() }}/posts/<?php echo $post->id; ?>&title={{ $post->title }}&summary={{ strip_tags( trim(preg_replace("/\s+/", " ", getExcerpt($post->content, 60))) ) }}&source=OHGOODPARTY', "_blank", "width=360, height=360");
 							})
 							$('.right #post{{$post->id}} a.social_wb').on('click', function(e){
 								e.preventDefault();
