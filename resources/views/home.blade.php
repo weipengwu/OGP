@@ -84,7 +84,7 @@
 							})
 							$('.right #post{{$post->id}} a.social_tw').on('click', function(e){
 								e.preventDefault();
-								window.open('https://www.twitter.com/share?text={{ $post->title }} {{ url() }}/posts/<?php echo $post->id; ?> @ohgoodparty_ogp&url=/', "_blank", "width=360, height=360");
+								window.open('https://www.twitter.com/share?text={{ $post->title }} @ohgoodparty_ogp&url={{ url() }}/posts/<?php echo $post->id; ?>', "_blank", "width=360, height=360");
 							})
 							$('.right #post{{$post->id}} a.social_lk').on('click', function(e){
 								e.preventDefault();

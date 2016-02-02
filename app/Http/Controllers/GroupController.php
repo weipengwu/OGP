@@ -51,7 +51,7 @@ class GroupController extends Controller {
 			$checkBname = Group::where('name',$bname)->count();
 			$checkBslug = Group::where('slug',slug($bname))->count();
 			if($checkBname > 0 || $checkBslug > 0){
-				return redirect()->back()->withErrors("Brand name is unavailable, please choose another one.");
+				return redirect()->back()->withErrors(trans('messages.uniquebrandname'));
 			}else{
 				//create new brand
 				$group = new Group();

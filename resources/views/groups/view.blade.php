@@ -28,7 +28,7 @@
 		<div class="right">
 			@if(Auth::check())
 				@if($group->owner == Auth::user()->id)
-					<a class="create_btn" data-toggle="tooltip" title="Create Event" href="<?php echo url();?>/brands/<?php echo $group->slug;?>/events/new"><img src="{{ asset('img/ticket_icon.png') }}" width="20"></a> <a class="create_btn" data-toggle="tooltip" title="Create Post" href="<?php echo url();?>/brands/<?php echo $group->slug;?>/posts/new"><img src="{{ asset('img/createpost_big_icon.png') }}" width="16"></a>
+					<a class="create_btn" data-toggle="tooltip" title="{{ trans('dashboard.createevent') }}" href="<?php echo url();?>/brands/<?php echo $group->slug;?>/events/new"><img src="{{ asset('img/ticket_icon.png') }}" width="20"></a> <a class="create_btn" data-toggle="tooltip" title="{{ trans('dashboard.createpost') }}" href="<?php echo url();?>/brands/<?php echo $group->slug;?>/posts/new"><img src="{{ asset('img/createpost_big_icon.png') }}" width="16"></a>
 				@else
 					<div class="sharebox" id="brand{{$group->id}}">
 						<a href="" class="social_icons social_tw"><i class="fa fa-twitter"></i></a> <a href="" class="social_icons social_fb"><i class="fa fa-facebook"></i></a> <a href="" class="social_icons social_lk"><i class="fa fa-linkedin"></i></a><a href="" class="social_icons social_wb"><i class="fa fa-weibo"></i></a>
@@ -97,8 +97,8 @@
 									<?php if($post->author == Auth::user()->id || $group->owner == Auth::user()->id):?>
 										<div class="deletepost"><a class="various" href="#confirmdelete<?php echo $post->id; ?>"><img src="{{ asset('img/delete_icon.png') }}" width="20"></a></div>
 										<div id="confirmdelete<?php echo $post->id; ?>" class="confirmdelete">
-											<h3>Are you sure to delete this post?</h3>
-											<a href="{{ url() }}/posts/<?php echo $post->id; ?>/delete" class="btn btn-danger">Delete</a> <a href="" class="btn btn-logo close_btn">Cancel</a>
+											<h3>{{ trans('messages.postdeleteconfirmation') }}</h3>
+											<a href="{{ url() }}/posts/<?php echo $post->id; ?>/delete" class="btn btn-danger">{{ trans('messages.delete') }}</a> <a href="" class="btn btn-logo close_btn">{{ trans('messages.cancel') }}</a>
 										</div>
 									<?php endif;?>
 									<?php endif;?>
@@ -182,8 +182,8 @@
 										<?php if($post->author == Auth::user()->id || $group->owner == Auth::user()->id):?>
 											<div class="deletepost"><a class="various" href="#confirmdelete<?php echo $post->id; ?>"><img src="{{ asset('img/delete_icon.png') }}" width="20"></a></div>
 											<div id="confirmdelete<?php echo $post->id; ?>" class="confirmdelete">
-												<h3>Are you sure to delete this post?</h3>
-												<a href="{{ url() }}/posts/<?php echo $post->id; ?>/delete" class="btn btn-danger">Delete</a> <a href="" class="btn btn-logo close_btn">Cancel</a>
+												<h3>{{ trans('messages.postdeleteconfirmation') }}</h3>
+												<a href="{{ url() }}/posts/<?php echo $post->id; ?>/delete" class="btn btn-danger">{{ trans('messages.delete') }}</a> <a href="" class="btn btn-logo close_btn">{{ trans('messages.cancel') }}</a>
 											</div>
 										<?php endif;?>
 										<?php endif;?>
@@ -258,8 +258,8 @@
 										<?php if($post->author == Auth::user()->id || $group->owner == Auth::user()->id):?>
 											<div class="deletepost"><a class="various" href="#confirmdelete<?php echo $post->id; ?>"><img src="{{ asset('img/delete_icon.png') }}" width="20"></a></div>
 											<div id="confirmdelete<?php echo $post->id; ?>" class="confirmdelete">
-												<h3>Are you sure to delete this post?</h3>
-												<a href="{{ url() }}/posts/<?php echo $post->id; ?>/delete" class="btn btn-danger">Delete</a> <a href="" class="btn btn-logo close_btn">Cancel</a>
+												<h3>{{ trans('messages.postdeleteconfirmation') }}</h3>
+												<a href="{{ url() }}/posts/<?php echo $post->id; ?>/delete" class="btn btn-danger">{{ trans('messages.delete') }}</a> <a href="" class="btn btn-logo close_btn">{{ trans('messages.cancel') }}</a>
 											</div>
 										<?php endif;?>
 										<?php endif;?>

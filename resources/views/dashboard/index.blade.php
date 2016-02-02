@@ -245,13 +245,21 @@
 						<p class="event-info">
 							<img src="{{ asset('img/calendar_icon.png') }}" width="16" class="edicons"> 
 							<?php 
-								if(date('M j',$event->fromtime) == date('M j',$event->totime)) : 
-							?>
-								{{ date('D, M j',$event->fromtime) }} @ {{ date('g : i a',$event->fromtime) }} - {{ date('g : i a' ,$event->totime) }}
-							<?php else: ?>
-								{{ date('M j',$event->fromtime) }} - {{ date('M j',$event->totime) }}
-
-							<?php endif; ?>
+												date_default_timezone_set($event->timezone);
+													if(date('M j',$event->fromtime) == date('M j',$event->totime)) : 
+														if(Config::get('app.locale') == 'en'):
+												?>
+															{{ date('D, M j',$event->fromtime) }}
+														<?php else: ?>
+															{{ zhweekday(date('D',$event->fromtime)) }} {{ date('n',$event->fromtime) }}月{{ date('j',$event->fromtime) }}日
+														<?php endif;?>
+												<?php else: ?>
+													<?php if(Config::get('app.locale') == 'en'):?>
+														{{ date('M j',$event->fromtime) }} - {{ date('M j',$event->totime) }}
+													<?php else: ?>
+														{{ date('n',$event->fromtime) }}月{{ date('j',$event->fromtime) }}日 - {{ date('n',$event->totime) }}月{{ date('j',$event->totime) }}日
+													<?php endif;?>
+												<?php endif; ?>
 						</p>
 						<p class="event-info"><img src="{{ asset('img/address_icon.png') }}" width="15" class="edicons"> {{ $event->address }}</p>
 						<p class="event-info"><img src="{{ asset('img/ticket_icon.png') }}" height="12" class="edicons">
@@ -267,8 +275,8 @@
 						<a href="/events/{{ $event->id }}/edit" class="btn btn-logo top-btn">{{ trans('dashboard.editevent') }}</a>
 						<a class="various btn btn-danger" href="#confirmdelete<?php echo $event->id; ?>">{{ trans('dashboard.deleteevent') }}</a>
 						<div id="confirmdelete<?php echo $event->id; ?>" class="confirmdelete">
-							<h3>Are you sure to delete this event?</h3>
-							<a href="{{ url() }}/events/<?php echo $event->id; ?>/delete" class="btn btn-danger">Delete</a> <a href="" class="btn btn-logo close_btn">Cancel</a>
+							<h3>{{ trans('messages.eventdeleteconfirmation') }}</h3>
+							<a href="{{ url() }}/events/<?php echo $event->id; ?>/delete" class="btn btn-danger">{{ trans('messages.delete') }}</a> <a href="" class="btn btn-logo close_btn">{{ trans('messages.cancel') }}</a>
 						</div>
 					</div>
 				</div>
