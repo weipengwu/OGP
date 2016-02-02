@@ -10,7 +10,7 @@
 				<div class="panel-body">
 					@if (count($errors) > 0)
 						<div class="alert alert-danger">
-							<strong>Whoops!</strong> There were some problems with your input.<br><br>
+							{{ trans('messages.inputerror') }}<br><br>
 							<ul>
 								@foreach ($errors->all() as $error)
 									<li>{{ $error }}</li>
@@ -80,63 +80,63 @@
 						</div>-->
 						<div class="form-group orginandtarget">
 							<select class="form-control" name="originCountry">
-								<option value="">Origin (Country)</option>
-								<option value="AU">Australia</option>
-								<option value="BR">Brazil</option>
-								<option value="CA">Canada</option>
-								<option value="CN">China</option>
-								<option value="CO">Colombia</option>
-								<option value="CU">Cuba</option>
-								<option value="DK">Denmark</option>
-								<option value="EG">Egypt</option>
-								<option value="FI">Finland</option>
-								<option value="FR">France</option>
-								<option value="DE">Germany</option>
-								<option value="GR">Greece</option>
-								<option value="HU">Hungary</option>
-								<option value="IS">Iceland</option>
-								<option value="IN">India</option>
-								<option value="ID">Indonesia</option>
-								<option value="IR">Iran, Islamic Republic of</option>
-								<option value="IE">Ireland</option>
-								<option value="IT">Italy</option>
-								<option value="JP">Japan</option>
-								<option value="KR">Korea, Republic of</option>
-								<option value="MY">Malaysia</option>
-								<option value="MX">Mexico</option>
-								<option value="MN">Mongolia</option>
-								<option value="NL">Netherlands</option>
-								<option value="NZ">New Zealand</option>
-								<option value="NO">Norway</option>
-								<option value="PH">Philippines</option>
-								<option value="PL">Poland</option>
-								<option value="PT">Portugal</option>
-								<option value="RU">Russian Federation</option>
-								<option value="SA">Saudi Arabia</option>
-								<option value="SG">Singapore</option>
-								<option value="ZA">South Africa</option>
-								<option value="ES">Spain</option>
-								<option value="SE">Sweden</option>
-								<option value="CH">Switzerland</option>
-								<option value="TW">Taiwan, Province of China</option>
-								<option value="TH">Thailand</option>
-								<option value="TR">Turkey</option>
-								<option value="UA">Ukraine</option>
-								<option value="AE">United Arab Emirates</option>
-								<option value="GB">United Kingdom</option>
-								<option value="US">United States</option>
-								<option value="VN">Viet Nam</option>
-								<option value="OTHERS">Others</option>
+								<option value="">{{ trans('countires.origin') }}</option>
+								<option value="AU">{{ trans('countires.australia') }}</option>
+								<option value="BR">{{ trans('countires.brazil') }}</option>
+								<option value="CA">{{ trans('countires.canada') }}</option>
+								<option value="CN">{{ trans('countires.china') }}</option>
+								<option value="CO">{{ trans('countires.colombia') }}</option>
+								<option value="CU">{{ trans('countires.cuba') }}</option>
+								<option value="DK">{{ trans('countires.denmark') }}</option>
+								<option value="EG">{{ trans('countires.egypt') }}</option>
+								<option value="FI">{{ trans('countires.finland') }}</option>
+								<option value="FR">{{ trans('countires.france') }}</option>
+								<option value="DE">{{ trans('countires.germany') }}</option>
+								<option value="GR">{{ trans('countires.greece') }}</option>
+								<option value="HU">{{ trans('countires.hungary') }}</option>
+								<option value="IS">{{ trans('countires.iceland') }}</option>
+								<option value="IN">{{ trans('countires.india') }}</option>
+								<option value="ID">{{ trans('countires.indonesia') }}</option>
+								<option value="IR">{{ trans('countires.iran') }}</option>
+								<option value="IE">{{ trans('countires.ireland') }}</option>
+								<option value="IT">{{ trans('countires.italy') }}</option>
+								<option value="JP">{{ trans('countires.japan') }}</option>
+								<option value="KR">{{ trans('countires.korea') }}</option>
+								<option value="MY">{{ trans('countires.malaysia') }}</option>
+								<option value="MX">{{ trans('countires.mexico') }}</option>
+								<option value="MN">{{ trans('countires.mongolia') }}</option>
+								<option value="NL">{{ trans('countires.netherlands') }}</option>
+								<option value="NZ">{{ trans('countires.newzealand') }}</option>
+								<option value="NO">{{ trans('countires.norway') }}</option>
+								<option value="PH">{{ trans('countires.philippines') }}</option>
+								<option value="PL">{{ trans('countires.poland') }}</option>
+								<option value="PT">{{ trans('countires.portugal') }}</option>
+								<option value="RU">{{ trans('countires.russian') }}</option>
+								<option value="SA">{{ trans('countires.saudiarabia') }}</option>
+								<option value="SG">{{ trans('countires.singapore') }}</option>
+								<option value="ZA">{{ trans('countires.southafrica') }}</option>
+								<option value="ES">{{ trans('countires.spain') }}</option>
+								<option value="SE">{{ trans('countires.sweden') }}</option>
+								<option value="CH">{{ trans('countires.switzerland') }}</option>
+								<option value="TW">{{ trans('countires.taiwan') }}</option>
+								<option value="TH">{{ trans('countires.thailand') }}</option>
+								<option value="TR">{{ trans('countires.turkey') }}</option>
+								<option value="UA">{{ trans('countires.ukraine') }}</option>
+								<option value="AE">{{ trans('countires.unitedarabemirates') }}</option>
+								<option value="GB">{{ trans('countires.unitedkingdom') }}</option>
+								<option value="US">{{ trans('countires.unitedstates') }}</option>
+								<option value="VN">{{ trans('countires.vietnam') }}</option>
+								<option value="OTHERS">{{ trans('countires.others') }}</option>
 							</select>
 							<select name="target" class="form-control" required>
-								<option value="">Target Market</option>
-								<option value="Global">Global</option>
-								<option value="Africa">Africa</option>
-								<option value="Asia">Asia</option>
-								<option value="Europe">Europe</option>
-								<option value="North America">North America</option>
-								<option value="Oceania">Oceania</option>
-								<option value="South America">South America</option>
+								<option value="">{{ trans('countires.targetmarket') }}</option>
+								<option value="Global">{{ trans('countires.global') }}</option>
+								<option value="Africa">{{ trans('countires.africa') }}</option>
+								<option value="Asia">{{ trans('countires.asia') }}</option>
+								<option value="Europe">{{ trans('countires.europe') }}</option>
+								<option value="North America">{{ trans('countires.northamerica') }}</option>
+								<option value="Oceania">{{ trans('countires.oceania') }}</option>
+								<option value="South America">{{ trans('countires.southamerica') }}</option>
 							</select>
 						</div>
 						<!-- <div class="form-group translation">

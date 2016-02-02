@@ -10,7 +10,8 @@ return [
 	'forgotyourpassword' =>'Forgot Your Password?',
 	'resetpassword'=>'Reset Password',
 	'passwordresetlink'=>'Send Password Reset Link',
-	'termsofuse'=>'By continue you agree to OH GOOD PARTY\'s <a href="">Terms of Use</a>',
+	'termsofuse'=>'Terms of Use',
+	'agree' => 'By continue you agree to OH GOOD PARTY\'s',
 	'username'=>'Username',
 	'confirmpassword'=>'Confirm Password'
 ];

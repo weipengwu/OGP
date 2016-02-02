@@ -6,5 +6,6 @@ return [
 	'postdeleteconfirmation' => 'Are you sure to delete this post?',
 	'eventdeleteconfirmation' => 'Are you sure to delete this event?',
 	'delete' => 'Delete',
-	'cancel' => 'Cancel'
+	'cancel' => 'Cancel',
+	'inputerror' => 'Whoops! There were some problems with your input.'
 ];

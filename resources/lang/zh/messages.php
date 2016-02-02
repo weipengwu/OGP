@@ -6,5 +6,6 @@ return [
 	'postdeleteconfirmation' => '确认删除此动态？',
 	'eventdeleteconfirmation' => '确认删除此活动？',
 	'delete' => '删除',
-	'cancel' => '取消'
+	'cancel' => '取消',
+	'inputerror' => '囧！这里悲剧了'
 ];

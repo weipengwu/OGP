@@ -6,7 +6,7 @@ return [
 	'viewmore' => 'VIEW MORE',
 	'following' => 'FOLLOWING',
 	'followmore' => 'Follow more brands to get more information',
-	'oops' => 'OOPS. SOMETHINGS GONE WRONG.',
+	'oops' => 'WHOOPS! SOME THINGS GONE WRONG.',
 	'backhome' => 'Back to home',
 	'youarefollowing' => 'Brands that you have are following',
 	'share' => 'Share',
