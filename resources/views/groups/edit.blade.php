@@ -85,63 +85,63 @@
 						</div> -->
 						<div class="form-group orginandtarget">
 							<select class="form-control" name="originCountry">
-								<option value="">{{ trans('countires.origin') }}</option>
-								<option value="AU" @if($group->originCountry == 'AU') {{ 'selected' }} @endif>{{ trans('countires.australia') }}</option>
-								<option value="BR" @if($group->originCountry == 'BR') {{ 'selected' }} @endif>{{ trans('countires.brazil') }}</option>
-								<option value="CA" @if($group->originCountry == 'CA') {{ 'selected' }} @endif>{{ trans('countires.canada') }}</option>
-								<option value="CN" @if($group->originCountry == 'CN') {{ 'selected' }} @endif>{{ trans('countires.china') }}</option>
-								<option value="CO" @if($group->originCountry == 'CO') {{ 'selected' }} @endif>{{ trans('countires.colombia') }}</option>
-								<option value="CU" @if($group->originCountry == 'CU') {{ 'selected' }} @endif>{{ trans('countires.cuba') }}</option>
-								<option value="DK" @if($group->originCountry == 'DK') {{ 'selected' }} @endif>{{ trans('countires.denmark') }}</option>
-								<option value="EG" @if($group->originCountry == 'EG') {{ 'selected' }} @endif>{{ trans('countires.egypt') }}</option>
-								<option value="FI" @if($group->originCountry == 'FI') {{ 'selected' }} @endif>{{ trans('countires.finland') }}</option>
-								<option value="FR" @if($group->originCountry == 'FR') {{ 'selected' }} @endif>{{ trans('countires.france') }}</option>
-								<option value="DE" @if($group->originCountry == 'DE') {{ 'selected' }} @endif>{{ trans('countires.germany') }}</option>
-								<option value="GR" @if($group->originCountry == 'GR') {{ 'selected' }} @endif>{{ trans('countires.greece') }}</option>
-								<option value="HU" @if($group->originCountry == 'HU') {{ 'selected' }} @endif>{{ trans('countires.hungary') }}</option>
-								<option value="IS" @if($group->originCountry == 'IS') {{ 'selected' }} @endif>{{ trans('countires.iceland') }}</option>
-								<option value="IN" @if($group->originCountry == 'IN') {{ 'selected' }} @endif>{{ trans('countires.india') }}</option>
-								<option value="ID" @if($group->originCountry == 'ID') {{ 'selected' }} @endif>{{ trans('countires.indonesia') }}</option>
-								<option value="IR" @if($group->originCountry == 'IR') {{ 'selected' }} @endif>{{ trans('countires.iran') }}</option>
-								<option value="IE" @if($group->originCountry == 'IE') {{ 'selected' }} @endif>{{ trans('countires.ireland') }}</option>
-								<option value="IT" @if($group->originCountry == 'IT') {{ 'selected' }} @endif>{{ trans('countires.italy') }}</option>
-								<option value="JP" @if($group->originCountry == 'JP') {{ 'selected' }} @endif>{{ trans('countires.japan') }}</option>
-								<option value="KR" @if($group->originCountry == 'KR') {{ 'selected' }} @endif>{{ trans('countires.korea') }}</option>
-								<option value="MY" @if($group->originCountry == 'MY') {{ 'selected' }} @endif>{{ trans('countires.malaysia') }}</option>
-								<option value="MX" @if($group->originCountry == 'MX') {{ 'selected' }} @endif>{{ trans('countires.mexico') }}</option>
-								<option value="MN" @if($group->originCountry == 'MN') {{ 'selected' }} @endif>{{ trans('countires.mongolia') }}</option>
-								<option value="NL" @if($group->originCountry == 'NL') {{ 'selected' }} @endif>{{ trans('countires.netherlands') }}</option>
-								<option value="NZ" @if($group->originCountry == 'NZ') {{ 'selected' }} @endif>{{ trans('countires.newzealand') }}</option>
-								<option value="NO" @if($group->originCountry == 'NO') {{ 'selected' }} @endif>{{ trans('countires.norway') }}</option>
-								<option value="PH" @if($group->originCountry == 'PH') {{ 'selected' }} @endif>{{ trans('countires.philippines') }}</option>
-								<option value="PL" @if($group->originCountry == 'PL') {{ 'selected' }} @endif>{{ trans('countires.poland') }}</option>
-								<option value="PT" @if($group->originCountry == 'PT') {{ 'selected' }} @endif>{{ trans('countires.portugal') }}</option>
-								<option value="RU" @if($group->originCountry == 'RU') {{ 'selected' }} @endif>{{ trans('countires.russian') }}</option>
-								<option value="SA" @if($group->originCountry == 'SA') {{ 'selected' }} @endif>{{ trans('countires.saudiarabia') }}</option>
-								<option value="SG" @if($group->originCountry == 'SG') {{ 'selected' }} @endif>{{ trans('countires.singapore') }}</option>
-								<option value="ZA" @if($group->originCountry == 'ZA') {{ 'selected' }} @endif>{{ trans('countires.southafrica') }}</option>
-								<option value="ES" @if($group->originCountry == 'ES') {{ 'selected' }} @endif>{{ trans('countires.spain') }}</option>
-								<option value="SE" @if($group->originCountry == 'SE') {{ 'selected' }} @endif>{{ trans('countires.sweden') }}</option>
-								<option value="CH" @if($group->originCountry == 'CH') {{ 'selected' }} @endif>{{ trans('countires.switzerland') }}</option>
-								<option value="TW" @if($group->originCountry == 'TW') {{ 'selected' }} @endif>{{ trans('countires.taiwan') }}</option>
-								<option value="TH" @if($group->originCountry == 'TH') {{ 'selected' }} @endif>{{ trans('countires.thailand') }}</option>
-								<option value="TR" @if($group->originCountry == 'TR') {{ 'selected' }} @endif>{{ trans('countires.turkey') }}</option>
-								<option value="UA" @if($group->originCountry == 'UA') {{ 'selected' }} @endif>{{ trans('countires.ukraine') }}</option>
-								<option value="AE" @if($group->originCountry == 'AE') {{ 'selected' }} @endif>{{ trans('countires.unitedarabemirates') }}</option>
-								<option value="GB" @if($group->originCountry == 'GB') {{ 'selected' }} @endif>{{ trans('countires.unitedkingdom') }}</option>
-								<option value="US" @if($group->originCountry == 'US') {{ 'selected' }} @endif>{{ trans('countires.unitedstates') }}</option>
-								<option value="VN" @if($group->originCountry == 'VN') {{ 'selected' }} @endif>{{ trans('countires.vietnam') }}</option>
-								<option value="OTHERS" @if($group->originCountry == 'OTHERS') {{ 'selected' }} @endif>{{ trans('countires.others') }}</option>
+								<option value="">{{ trans('countries.origin') }}</option>
+								<option value="AU" @if($group->originCountry == 'AU') {{ 'selected' }} @endif>{{ trans('countries.australia') }}</option>
+								<option value="BR" @if($group->originCountry == 'BR') {{ 'selected' }} @endif>{{ trans('countries.brazil') }}</option>
+								<option value="CA" @if($group->originCountry == 'CA') {{ 'selected' }} @endif>{{ trans('countries.canada') }}</option>
+								<option value="CN" @if($group->originCountry == 'CN') {{ 'selected' }} @endif>{{ trans('countries.china') }}</option>
+								<option value="CO" @if($group->originCountry == 'CO') {{ 'selected' }} @endif>{{ trans('countries.colombia') }}</option>
+								<option value="CU" @if($group->originCountry == 'CU') {{ 'selected' }} @endif>{{ trans('countries.cuba') }}</option>
+								<option value="DK" @if($group->originCountry == 'DK') {{ 'selected' }} @endif>{{ trans('countries.denmark') }}</option>
+								<option value="EG" @if($group->originCountry == 'EG') {{ 'selected' }} @endif>{{ trans('countries.egypt') }}</option>
+								<option value="FI" @if($group->originCountry == 'FI') {{ 'selected' }} @endif>{{ trans('countries.finland') }}</option>
+								<option value="FR" @if($group->originCountry == 'FR') {{ 'selected' }} @endif>{{ trans('countries.france') }}</option>
+								<option value="DE" @if($group->originCountry == 'DE') {{ 'selected' }} @endif>{{ trans('countries.germany') }}</option>
+								<option value="GR" @if($group->originCountry == 'GR') {{ 'selected' }} @endif>{{ trans('countries.greece') }}</option>
+								<option value="HU" @if($group->originCountry == 'HU') {{ 'selected' }} @endif>{{ trans('countries.hungary') }}</option>
+								<option value="IS" @if($group->originCountry == 'IS') {{ 'selected' }} @endif>{{ trans('countries.iceland') }}</option>
+								<option value="IN" @if($group->originCountry == 'IN') {{ 'selected' }} @endif>{{ trans('countries.india') }}</option>
+								<option value="ID" @if($group->originCountry == 'ID') {{ 'selected' }} @endif>{{ trans('countries.indonesia') }}</option>
+								<option value="IR" @if($group->originCountry == 'IR') {{ 'selected' }} @endif>{{ trans('countries.iran') }}</option>
+								<option value="IE" @if($group->originCountry == 'IE') {{ 'selected' }} @endif>{{ trans('countries.ireland') }}</option>
+								<option value="IT" @if($group->originCountry == 'IT') {{ 'selected' }} @endif>{{ trans('countries.italy') }}</option>
+								<option value="JP" @if($group->originCountry == 'JP') {{ 'selected' }} @endif>{{ trans('countries.japan') }}</option>
+								<option value="KR" @if($group->originCountry == 'KR') {{ 'selected' }} @endif>{{ trans('countries.korea') }}</option>
+								<option value="MY" @if($group->originCountry == 'MY') {{ 'selected' }} @endif>{{ trans('countries.malaysia') }}</option>
+								<option value="MX" @if($group->originCountry == 'MX') {{ 'selected' }} @endif>{{ trans('countries.mexico') }}</option>
+								<option value="MN" @if($group->originCountry == 'MN') {{ 'selected' }} @endif>{{ trans('countries.mongolia') }}</option>
+								<option value="NL" @if($group->originCountry == 'NL') {{ 'selected' }} @endif>{{ trans('countries.netherlands') }}</option>
+								<option value="NZ" @if($group->originCountry == 'NZ') {{ 'selected' }} @endif>{{ trans('countries.newzealand') }}</option>
+								<option value="NO" @if($group->originCountry == 'NO') {{ 'selected' }} @endif>{{ trans('countries.norway') }}</option>
+								<option value="PH" @if($group->originCountry == 'PH') {{ 'selected' }} @endif>{{ trans('countries.philippines') }}</option>
+								<option value="PL" @if($group->originCountry == 'PL') {{ 'selected' }} @endif>{{ trans('countries.poland') }}</option>
+								<option value="PT" @if($group->originCountry == 'PT') {{ 'selected' }} @endif>{{ trans('countries.portugal') }}</option>
+								<option value="RU" @if($group->originCountry == 'RU') {{ 'selected' }} @endif>{{ trans('countries.russian') }}</option>
+								<option value="SA" @if($group->originCountry == 'SA') {{ 'selected' }} @endif>{{ trans('countries.saudiarabia') }}</option>
+								<option value="SG" @if($group->originCountry == 'SG') {{ 'selected' }} @endif>{{ trans('countries.singapore') }}</option>
+								<option value="ZA" @if($group->originCountry == 'ZA') {{ 'selected' }} @endif>{{ trans('countries.southafrica') }}</option>
+								<option value="ES" @if($group->originCountry == 'ES') {{ 'selected' }} @endif>{{ trans('countries.spain') }}</option>
+								<option value="SE" @if($group->originCountry == 'SE') {{ 'selected' }} @endif>{{ trans('countries.sweden') }}</option>
+								<option value="CH" @if($group->originCountry == 'CH') {{ 'selected' }} @endif>{{ trans('countries.switzerland') }}</option>
+								<option value="TW" @if($group->originCountry == 'TW') {{ 'selected' }} @endif>{{ trans('countries.taiwan') }}</option>
+								<option value="TH" @if($group->originCountry == 'TH') {{ 'selected' }} @endif>{{ trans('countries.thailand') }}</option>
+								<option value="TR" @if($group->originCountry == 'TR') {{ 'selected' }} @endif>{{ trans('countries.turkey') }}</option>
+								<option value="UA" @if($group->originCountry == 'UA') {{ 'selected' }} @endif>{{ trans('countries.ukraine') }}</option>
+								<option value="AE" @if($group->originCountry == 'AE') {{ 'selected' }} @endif>{{ trans('countries.unitedarabemirates') }}</option>
+								<option value="GB" @if($group->originCountry == 'GB') {{ 'selected' }} @endif>{{ trans('countries.unitedkingdom') }}</option>
+								<option value="US" @if($group->originCountry == 'US') {{ 'selected' }} @endif>{{ trans('countries.unitedstates') }}</option>
+								<option value="VN" @if($group->originCountry == 'VN') {{ 'selected' }} @endif>{{ trans('countries.vietnam') }}</option>
+								<option value="OTHERS" @if($group->originCountry == 'OTHERS') {{ 'selected' }} @endif>{{ trans('countries.others') }}</option>
 							</select>
 							<select name="target" class="form-control" required>
-								<option value="">{{ trans('countires.targetmarket') }}</option>
-								<option value="Global" <?php if($group->target == 'Global') echo "selected"; ?>>{{ trans('countires.global') }}</option>
-								<option value="Africa" <?php if($group->target == 'Africa') echo "selected"; ?>>{{ trans('countires.africa') }}</option>
-								<option value="Asia" <?php if($group->target == 'Asia') echo "selected"; ?>>{{ trans('countires.asia') }}</option>
-								<option value="Europe" <?php if($group->target == 'Europe') echo "selected"; ?>>{{ trans('countires.europe') }}</option>
-								<option value="North America" <?php if($group->target == 'North America') echo "selected"; ?>>{{ trans('countires.northamerica') }}</option>
-								<option value="Oceania" <?php if($group->target == 'Oceania') echo "selected"; ?>>{{ trans('countires.oceania') }}</option>
-								<option value="South America" <?php if($group->target == 'South America') echo "selected"; ?>>{{ trans('countires.southamerica') }}</option>
+								<option value="">{{ trans('countries.targetmarket') }}</option>
+								<option value="Global" <?php if($group->target == 'Global') echo "selected"; ?>>{{ trans('countries.global') }}</option>
+								<option value="Africa" <?php if($group->target == 'Africa') echo "selected"; ?>>{{ trans('countries.africa') }}</option>
+								<option value="Asia" <?php if($group->target == 'Asia') echo "selected"; ?>>{{ trans('countries.asia') }}</option>
+								<option value="Europe" <?php if($group->target == 'Europe') echo "selected"; ?>>{{ trans('countries.europe') }}</option>
+								<option value="North America" <?php if($group->target == 'North America') echo "selected"; ?>>{{ trans('countries.northamerica') }}</option>
+								<option value="Oceania" <?php if($group->target == 'Oceania') echo "selected"; ?>>{{ trans('countries.oceania') }}</option>
+								<option value="South America" <?php if($group->target == 'South America') echo "selected"; ?>>{{ trans('countries.southamerica') }}</option>
 							</select>
 						</div>
 						<!-- <div class="form-group translation">

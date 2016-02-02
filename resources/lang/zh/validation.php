@@ -43,7 +43,7 @@ return [
 	"ip"                   => "The :attribute must be a valid IP address.",
 	"max"                  => [
 		"numeric" => ":attribute不能大于:max.",
-		"file"    => ":attribute不能超过:max kilobytes.",
+		"file"    => ":attribute不能超过:max KB.",
 		"string"  => ":attribute不能超过:max个字符",
 		"array"   => "The :attribute may not have more than :max items.",
 	],
