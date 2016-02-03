@@ -121,7 +121,7 @@
 							</a>
 							<ul class="dropdown-menu" role="menu">
 								<li><a href="{{ url('/dashboard') }}">{{ trans('headermenu.dashboard') }}</a></li>
-								<li><a href="http://about.ohgoodparty.com#contacts">{{ trans('headermenu.feedback') }}</a></li>
+								<li><a href="http://about.ohgoodparty.com#contacts" target="_blank">{{ trans('headermenu.feedback') }}</a></li>
 								<!-- <li><a href="#">Notifications</a></li> -->
 								<li><a href="{{ url('/auth/logout') }}">{{ trans('headermenu.logout') }}</a></li>
 							</ul>
@@ -204,7 +204,7 @@
 							</a>
 							<ul class="dropdown-menu" role="menu">
 								<li><a href="{{ url('/dashboard') }}">{{ trans('headermenu.dashboard') }}</a></li>
-								<li><a href="http://about.ohgoodparty.com#contacts">{{ trans('headermenu.feedback') }}</a></li>
+								<li><a href="http://about.ohgoodparty.com#contacts" target="_blank">{{ trans('headermenu.feedback') }}</a></li>
 								<!-- <li><a href="#">Notifications</a></li> -->
 								<li><a href="{{ url('/auth/logout') }}">{{ trans('headermenu.logout') }}</a></li>
 							</ul>
