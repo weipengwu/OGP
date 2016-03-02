@@ -88,6 +88,7 @@
 	function getExcerpt($desc,$length=20){
 		$desc = preg_replace("/<embed[^>]+>/i", "", $desc, 1);
 		$desc = preg_replace("/<iframe[^>]+>/i", "", $desc, 1);
+		$desc = preg_replace("/<br[^>]+>/i", "", $desc, 1);
 		if(str_word_count($desc) > $length ){
 			$words = str_word_count($desc, 2);
 			$pos = array_keys($words);
