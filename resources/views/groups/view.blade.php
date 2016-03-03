@@ -79,14 +79,14 @@
 					</div>
 				</section>
 			@else
-				<?php $posts = array();?>
+				<?php $posts = array(); ?>
 				@foreach ($gposts as $singlepost)
 					<?php 
 						array_push($posts, $singlepost);
 					?>
 				@endforeach
 				@if(count($posts) > 0)
-				<section class="container">
+				<section class="container posts">
 				<?php Jenssegers\Date\Date::setLocale(Config::get('app.locale'));?>
 					<div class="row singlegroup layout84">
 							<?php $i = 0;?>
@@ -172,7 +172,7 @@
 					</section>
 					@endif
 					@if(count($posts) > 0)
-					<section class="container">
+					<section class="container posts">
 						<div class="row singlegroup layout444">
 							<?php $i = 0; $j = 1; ?>
 								@foreach ($posts as $post)
@@ -403,9 +403,9 @@
 								</div>
 								</section>
 								@endif
-						<?php echo $gposts->render(); ?>
+						
 			@endif
-
+			<?php echo $gposts->render(); ?>
 			</div>
 	</div>
 <script src="{{ asset('js/jquery.infinitescroll.min.js') }}"></script>
