@@ -1,7 +1,17 @@
 @extends('layouts.master')
 
 @section('content')
-<a href="javascript: history.go(-1)" class="post_close"><img src="{{ asset('img/close_btn.png') }}" width="16"></a>
+<a href="#" class="post_close"><img src="{{ asset('img/close_btn.png') }}" width="16"></a>
+<script type="text/javascript">
+	$('.post_close').on('click', function(e){
+		e.preventDefault();
+		if(document.referrer == "{{ url() }}/home" || document.referrer == "{{ url() }}"){
+			window.history.back();
+		}else{
+			window.location.href = "{{  url() }}/brands/{{ $post->group->slug }}";
+		}
+	})
+</script>
 <div class="container single-post">
 
 			<div class="panel">
@@ -26,7 +36,7 @@
 					<?php endif;?>
 					<p>{!!html_entity_decode($post->content)!!}</p>
 					<br />
-					<p>For more information, visit <a href="{{  url() }}/brands/{{ $post->group->slug }}" class="nobreak">{{ getGroupName($post->group->id) }}</a></p>
+					<p>For more information, visit <a href="{{  url() }}/brands/{{ $post->group->slug }}">{{ getGroupName($post->group->id) }}</a></p>
 					<div class="postshare">
 						<a href="" class="social_icons social_tw"><i class="fa fa-twitter"></i></a> <a href="" class="social_icons social_fb"><i class="fa fa-facebook"></i></a> <a href="" class="social_icons social_lk"><i class="fa fa-linkedin"></i></a><a href="" class="social_icons social_wb"><i class="fa fa-weibo"></i></a>
 					</div>
