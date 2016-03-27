@@ -67,6 +67,10 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('brands/{slug}', array('uses' => 'GroupController@viewGroup', 'as' => 'viewGroup'));
 
 	Route::get('posts/{id}', array('uses' => 'PostController@viewPost', 'as' => 'viewPost'));
+
+	Route::get('posts/{id}/edit', array('uses' => 'PostController@editPost'));
+
+	Route::post('editposts', array('uses' => 'PostController@editingPost', 'as' => 'editingPost'));
 });
 
 Route::get('events', 'EventController@index');

@@ -6317,6 +6317,9 @@ label,
   color: #777;
   margin-top: 30px;
 }
+.commentscount .count{
+  color: #777;
+}
 .postshare{
   margin-top: 30px;
 }
@@ -7669,6 +7672,9 @@ h3 a:hover{
     position: absolute;
     right: 15px;
     top: 10px;
+  }
+  .deletepost a{
+    margin-left: 10px;
   }
   .confirmdelete{
     display: none;

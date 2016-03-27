@@ -59,7 +59,16 @@
 							})
 					</script>
 					<div class="commentscount">
-						<span class="c_holder">{{ $post->comments->count()}} {{ trans('posts.comments') }}</span> | <span>{{ trans('events.category') }} {{ trans('brands.'.$post->group->categorykey) }}</span>
+						<span>{{ trans('events.category') }} {{ trans('brands.'.$post->group->categorykey) }}</span> | <span class="c_holder">{{ $post->comments->count()}} {{ trans('posts.comments') }}</span> | 
+						@if(Auth::check())
+							@if(alreadyLikedPost(Auth::user()->id,$post->id) > 0)
+								<span><a href="" data-toggle="tooltip" title="{{ trans('general.unlike') }}" data-post-id="{{ $post->id }}" data-author-id="{{ Auth::user()->id }}" class="like_btn post_unlike"><img src="{{ asset('img/already_likes_icon.png') }}" width="16"></a></span>
+							@else
+								<span><a href="" data-toggle="tooltip" title="{{ trans('general.like') }}" data-post-id="{{ $post->id }}" data-author-id="{{ Auth::user()->id }}" class="like_btn post_like"><img src="{{ asset('img/likes_icon.png') }}" width="16"></a></span>
+							@endif
+						<span class="count">{{ count($post->likes) }}</span>
+						@endif
+						
 					</div>
 					<hr>
 					@if(Auth::check())

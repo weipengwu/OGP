@@ -237,8 +237,31 @@ class PostController extends Controller {
 	public function viewPost($id)
 	{
 		$post = Post::findOrFail($id);
-
 		return view('posts.view')->with('post', $post);
+
+		// if($post->group()->where('verified', '1')->count() == 1){
+
+		// 	return view('posts.view')->with('post', $post);
+		// }else{
+		// 	abort(404);
+		// }
+	}
+
+	public function editPost($id)
+	{
+		$post = Post::findOrFail($id);
+		return view('posts.edit')->with('post', $post);
+	}
+
+	public function editingPost()
+	{
+		$post = Post::findOrFail(Request::input('pid'));
+		$post->title = Request::input('title');
+		$post->content = nl2br(Request::input('content'));
+		$post->save();
+
+		return redirect()->route('viewPost', [ 'id' => $post->id ]);
+
 	}
 
 	public function createComment($id)

@@ -95,7 +95,7 @@
 								<div <?php if($i == 0) { echo 'class="col-md-8"';} else{ echo 'class="col-md-4 last"'; } ?>>
 									<?php if(Auth::check()) : ?>
 									<?php if($post->author == Auth::user()->id || $group->owner == Auth::user()->id):?>
-										<div class="deletepost"><a class="various" href="#confirmdelete<?php echo $post->id; ?>"><img src="{{ asset('img/delete_icon.png') }}" width="20"></a></div>
+										<div class="deletepost"><a href="{{ url() }}/posts/{{ $post->id }}/edit"><img src="{{ asset('img/editpost_icon.png') }}" width="20"></a><a class="various" href="#confirmdelete<?php echo $post->id; ?>"><img src="{{ asset('img/delete_icon.png') }}" width="20"></a></div>
 										<div id="confirmdelete<?php echo $post->id; ?>" class="confirmdelete">
 											<h3>{{ trans('messages.postdeleteconfirmation') }}</h3>
 											<a href="{{ url() }}/posts/<?php echo $post->id; ?>/delete" class="btn btn-danger">{{ trans('messages.delete') }}</a> <a href="" class="btn btn-logo close_btn">{{ trans('messages.cancel') }}</a>
@@ -115,7 +115,7 @@
 											<div class="postauthor">{{ Jenssegers\Date\Date::instance($post->created_at)->diffForHumans() }}</div>
 											<div class="title-area"><a href="{{ url() }}/posts/<?php echo $post->id; ?>"><h3>{{ $post->title }}</h3></a></div>
 										<?php if($i == 0):?>
-											<div class="excerpt-area">{!! html_entity_decode(getExcerpt($post->content)) !!}</div>
+											<div class="excerpt-area">{{ strip_tags(getExcerpt($post->content)) }}</div>
 										</div>
 										<?php endif;?>
 										<div class="bottom">
@@ -194,7 +194,7 @@
 											</div></a>
 										<div class="postauthor">{{ Jenssegers\Date\Date::instance($post->created_at)->diffForHumans() }}</div>
 											<div class="title-area"><a href="{{ url() }}/posts/<?php echo $post->id; ?>"><h3>{{ $post->title }}</h3></a></div>
-											<div class="excerpt-area">{!! html_entity_decode(getExcerpt($post->content)) !!}</div>
+											<div class="excerpt-area">{{ strip_tags(getExcerpt($post->content)) }}</div>
 											<div class="bottom">
 												<div class="left">
 													
@@ -272,7 +272,7 @@
 												<div class="postauthor">{{ Jenssegers\Date\Date::instance($post->created_at)->diffForHumans() }}</div>
 												<div class="title-area"><a href="{{ url() }}/posts/<?php echo $post->id; ?>"><h3>{{ $post->title }}</h3></a></div>
 												<?php if($i > 0): ?>
-												<div class="excerpt-area">{!! html_entity_decode(getExcerpt($post->content, 12)) !!}</div>
+												<div class="excerpt-area">{{ strip_tags(getExcerpt($post->content, 12)) }}</div>
 												<?php endif;?>
 												<div class="bottom">
 													<div class="left">
@@ -350,7 +350,7 @@
 												</a>
 													<div class="postauthor">{{ Jenssegers\Date\Date::instance($post->created_at)->diffForHumans() }}</div>
 													<div class="title-area"><a href="{{ url() }}/posts/<?php echo $post->id; ?>"><h3>{{ $post->title }}</h3></a></div>
-													<div class="excerpt-area">{!! html_entity_decode(getExcerpt($post->content, 12)) !!}</div>
+													<div class="excerpt-area">{{ strip_tags(getExcerpt($post->content, 12)) }}</div>
 													<div class="bottom">
 														<div class="left">
 															
