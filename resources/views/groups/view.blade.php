@@ -180,7 +180,7 @@
 									<div class="col-md-4<?php if(is_int($j/3)) echo " last";?>">
 										<?php if(Auth::check()) : ?>
 										<?php if($post->author == Auth::user()->id || $group->owner == Auth::user()->id):?>
-											<div class="deletepost"><a class="various" href="#confirmdelete<?php echo $post->id; ?>"><img src="{{ asset('img/delete_icon.png') }}" width="20"></a></div>
+											<div class="deletepost"><a href="{{ url() }}/posts/{{ $post->id }}/edit"><img src="{{ asset('img/editpost_icon.png') }}" width="20"></a><a class="various" href="#confirmdelete<?php echo $post->id; ?>"><img src="{{ asset('img/delete_icon.png') }}" width="20"></a></div>
 											<div id="confirmdelete<?php echo $post->id; ?>" class="confirmdelete">
 												<h3>{{ trans('messages.postdeleteconfirmation') }}</h3>
 												<a href="{{ url() }}/posts/<?php echo $post->id; ?>/delete" class="btn btn-danger">{{ trans('messages.delete') }}</a> <a href="" class="btn btn-logo close_btn">{{ trans('messages.cancel') }}</a>
@@ -256,7 +256,7 @@
 										<div class="<?php if($i == 0) { echo "col-md-6";} else{ echo "col-md-3"; }?><?php if(is_int($j/3)) echo " last";?>">
 												<?php if(Auth::check()) : ?>
 										<?php if($post->author == Auth::user()->id || $group->owner == Auth::user()->id):?>
-											<div class="deletepost"><a class="various" href="#confirmdelete<?php echo $post->id; ?>"><img src="{{ asset('img/delete_icon.png') }}" width="20"></a></div>
+											<div class="deletepost"><a href="{{ url() }}/posts/{{ $post->id }}/edit"><img src="{{ asset('img/editpost_icon.png') }}" width="20"></a><a class="various" href="#confirmdelete<?php echo $post->id; ?>"><img src="{{ asset('img/delete_icon.png') }}" width="20"></a></div>
 											<div id="confirmdelete<?php echo $post->id; ?>" class="confirmdelete">
 												<h3>{{ trans('messages.postdeleteconfirmation') }}</h3>
 												<a href="{{ url() }}/posts/<?php echo $post->id; ?>/delete" class="btn btn-danger">{{ trans('messages.delete') }}</a> <a href="" class="btn btn-logo close_btn">{{ trans('messages.cancel') }}</a>
@@ -335,7 +335,7 @@
 											<div class="col-md-3<?php if(is_int($j/4)) echo " last";?>">
 											<?php if(Auth::check()) : ?>
 										<?php if($post->author == Auth::user()->id || $group->owner == Auth::user()->id):?>
-											<div class="deletepost"><a class="various" href="#confirmdelete<?php echo $post->id; ?>"><img src="{{ asset('img/delete_icon.png') }}" width="20"></a></div>
+											<div class="deletepost"><a href="{{ url() }}/posts/{{ $post->id }}/edit"><img src="{{ asset('img/editpost_icon.png') }}" width="20"></a><a class="various" href="#confirmdelete<?php echo $post->id; ?>"><img src="{{ asset('img/delete_icon.png') }}" width="20"></a></div>
 											<div id="confirmdelete<?php echo $post->id; ?>" class="confirmdelete">
 												<h3>Are you sure to delete this post?</h3>
 												<a href="{{ url() }}/posts/<?php echo $post->id; ?>/delete" class="btn btn-danger">Delete</a> <a href="" class="btn btn-logo close_btn">Cancel</a>
