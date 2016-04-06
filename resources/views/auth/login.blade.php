@@ -112,9 +112,9 @@
 						</div>
 						<div class="privacy">
 						@if(App::getLocale() == 'en')
-							By continue you agree to OH GOOD PARTY\'s <a href="http://about.ohgoodparty.com/terms.html" target="_blank">Terms of Use</a>
+							By continue you agree to OH GOOD PARTY's <a href="http://about.ohgoodparty.com/terms.html" target="_blank">Terms of Use</a> | <a href="http://about.ohgoodparty.com" target="_blank">About Us</a>
 						@else
-							继续代表您同意遵守奥格派的<a href="http://about.ohgoodparty.com/terms-cn.html" target="_blank">使⽤条款</a>
+							继续代表您同意遵守奥格派的<a href="http://about.ohgoodparty.com/terms-cn.html" target="_blank">使⽤条款</a> | <a href="http://about.ohgoodparty.com" target="_blank">关于我们</a>
 						@endif
 						</div>
 					</form>

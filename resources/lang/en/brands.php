@@ -9,7 +9,7 @@ return [
 	'business'=>'Business',
 	'education'=>'Education',
 	'fashion'=>'Fashion',
-	'fooddrink'=>'Food & Drink',
+	'fooddrink'=>'Food & Drinks',
 	'gaming'=>'Gaming',
 	'health'=>'Health',
 	'home'=>'Home',

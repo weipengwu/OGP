@@ -3,7 +3,7 @@
 return [
 	'exploreogp'=>'Explore OGP',
 	'ohgoodparty'=>'OH GOOD PARTY',
-	'brandstrategy'=>'Brand Strategy & Innovation Community',
+	'brandstrategy'=>'nnovate & Party On',
 	'email'=>'Email Address',
 	'emailaddress'=>'E-Mail Address',
 	'password'=>'Password',

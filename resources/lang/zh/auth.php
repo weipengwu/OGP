@@ -3,7 +3,7 @@
 return [
 	'exploreogp'=>'探索奥格派',
 	'ohgoodparty'=>'奥格派',
-	'brandstrategy'=>'品牌战略与创新的社区',
+	'brandstrategy'=>'创意.互动.成功  ',
 	'email'=>'邮件地址',
 	'emailaddress'=>'您的邮件地址',
 	'password'=>'创建密码',
