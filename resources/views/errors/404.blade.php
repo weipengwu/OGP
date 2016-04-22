@@ -123,9 +123,9 @@
 								<li><a href="{{ url('/dashboard') }}">{{ trans('headermenu.dashboard') }}</a></li>
 								<li><a href="http://about.ohgoodparty.com#contacts" target="_blank">{{ trans('headermenu.feedback') }}</a></li>
 								@if(App::getLocale() == 'en')
-									<li><a href="http://about.ohgoodparty.com/tutorials.html">Tutorial</a></li>
+									<li><a href="http://about.ohgoodparty.com/tutorials.html" target="_blank">Tutorial</a></li>
 								@else
-									<li><a href="http://about.ohgoodparty.com/tutorials-cn.html">指引</a></li>
+									<li><a href="http://about.ohgoodparty.com/tutorials-cn.html" target="_blank">指引</a></li>
 								@endif
 								<!-- <li><a href="#">Notifications</a></li> -->
 								<li><a href="{{ url('/auth/logout') }}">{{ trans('headermenu.logout') }}</a></li>
@@ -211,9 +211,9 @@
 								<li><a href="{{ url('/dashboard') }}">{{ trans('headermenu.dashboard') }}</a></li>
 								<li><a href="http://about.ohgoodparty.com#contacts" target="_blank">{{ trans('headermenu.feedback') }}</a></li>
 								@if(App::getLocale() == 'en')
-									<li><a href="http://about.ohgoodparty.com/tutorials.html">Tutorial</a></li>
+									<li><a href="http://about.ohgoodparty.com/tutorials.html" target="_blank">Tutorial</a></li>
 								@else
-									<li><a href="http://about.ohgoodparty.com/tutorials-cn.html">指引</a></li>
+									<li><a href="http://about.ohgoodparty.com/tutorials-cn.html" target="_blank">指引</a></li>
 								@endif
 								<!-- <li><a href="#">Notifications</a></li> -->
 								<li><a href="{{ url('/auth/logout') }}">{{ trans('headermenu.logout') }}</a></li>
