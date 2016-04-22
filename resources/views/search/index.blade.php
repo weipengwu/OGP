@@ -36,15 +36,19 @@
 						<?php $i = 1; ?>
 						@foreach ($events as $event)
 							<?php
-							if(Auth::check()){
-								if ( $event->type == 'private' && (isFollowing(Auth::user()->id, $event->group_id ) == 0 && $event->author !== Auth::user()->id) ){
-									continue;
-								}
-							}else{
-								if($event->type == 'private'){
-									continue;
-								}
+							if($event->group->verified !== '1'){
+								continue;
 							}
+								if(Auth::check()){
+									if ( $event->type == 'private' && (isFollowing(Auth::user()->id, $event->group_id ) == 0 && $event->author !== Auth::user()->id) ){
+										continue;
+									}
+								}else{
+									if($event->type == 'private'){
+										continue;
+									}
+								}
+							
 						?>
 						<div class="eventgroup<?php if(is_int($i/4)) { echo " last"; }?>">
 							<div class="eventgroup-list">
@@ -81,6 +85,11 @@
 								<div class="layout3333 singlegroup row">
 									<?php $j = 1;?>
 										@foreach ($posts as $post)
+										<?php
+											if($post->group->verified !== '1'){
+												continue;
+											}
+										?>
 											<div class="col-md-3<?php if(is_int($j/4)) echo " last";?>">
 												<div class="postfrom"><div>From <a href="/brands/<?php echo $post->group->slug; ?>">{{ $post->group->name }}</a></div><div class="grouppost">{{ $post->group->category }}</div></div>
 												<a href="{{ url() }}/posts/<?php echo $post->id; ?>">

@@ -62,6 +62,8 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::post('search', array('uses' => 'SearchController@search', 'as' => 'search'));
 	Route::post('ogppay', array('uses' => 'EventController@eventCharge', 'as' => 'eventCharge'));
 
+	Route::get('ogppay/success', array('uses' => 'EventController@paySuccess', 'as' => 'paySuccess'));
+
 	Route::get('events/{id}', array('uses' => 'EventController@viewEvent', 'as' => 'viewEvent'));
 
 	Route::get('brands/{slug}', array('uses' => 'GroupController@viewGroup', 'as' => 'viewGroup'));
@@ -71,6 +73,24 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('posts/{id}/edit', array('uses' => 'PostController@editPost'));
 
 	Route::post('editposts', array('uses' => 'PostController@editingPost', 'as' => 'editingPost'));
+
+	Route::get('adminogp', 'AdminController@index');
+
+	Route::get('adminogp/users', 'AdminController@users');
+
+	Route::get('adminogp/brands', 'AdminController@brands');
+
+	Route::get('adminogp/posts', 'AdminController@posts');
+
+	Route::get('adminogp/tickets', 'AdminController@tickets');
+
+	Route::post('brand/approve', 'AdminController@approve');
+
+	Route::post('brand/disapprove', 'AdminController@disapprove');
+
+	Route::post('post/feature', 'AdminController@postfeature');
+
+	Route::post('post/unfeature', 'AdminController@postunfeature');
 });
 
 Route::get('events', 'EventController@index');

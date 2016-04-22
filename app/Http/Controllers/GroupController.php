@@ -32,7 +32,7 @@ class GroupController extends Controller {
 	 */
 	public function index()
 	{
-		return view('groups.index')->with('groups', Group::orderBy('created_at', 'DESC')->get())->with('artsgroups',Group::where('category','Arts & Design')->orderBy('created_at', 'DESC')->get())->with('autogroups',Group::where('category','Auto')->orderBy('created_at', 'DESC')->get())->with('businessgroups',Group::where('category','Business')->orderBy('created_at', 'DESC')->get())->with('educationgroups',Group::where('category','Education')->orderBy('created_at', 'DESC')->get())->with('fashiongroups',Group::where('category','Fashion')->orderBy('created_at', 'DESC')->get())->with('foodgroups',Group::where('category','Food & Drink')->orderBy('created_at', 'DESC')->get())->with('gamesgroups',Group::where('category','Games')->orderBy('created_at', 'DESC')->get())->with('healthgroups',Group::where('category','Health')->orderBy('created_at', 'DESC')->get())->with('homegroups',Group::where('category','Home')->orderBy('created_at', 'DESC')->get())->with('musicgroups',Group::where('category','Music')->orderBy('created_at', 'DESC')->get())->with('sportsgroups',Group::where('category','Sports')->orderBy('created_at', 'DESC')->get())->with('technologygroups',Group::where('category','Technology')->orderBy('created_at', 'DESC')->get())->with('travelgroups',Group::where('category','Travel')->orderBy('created_at', 'DESC')->get())->with('othergroups',Group::where('category','Other')->orderBy('created_at', 'DESC')->get());
+		return view('groups.index')->with('groups', Group::orderBy('created_at', 'DESC')->where('verified', '1')->get())->with('artsgroups',Group::where('category','Arts & Design')->where('verified', '1')->orderBy('created_at', 'DESC')->get())->with('autogroups',Group::where('category','Auto')->where('verified', '1')->orderBy('created_at', 'DESC')->get())->with('businessgroups',Group::where('category','Business')->where('verified', '1')->orderBy('created_at', 'DESC')->get())->with('educationgroups',Group::where('category','Education')->where('verified', '1')->orderBy('created_at', 'DESC')->get())->with('fashiongroups',Group::where('category','Fashion')->where('verified', '1')->orderBy('created_at', 'DESC')->get())->with('foodgroups',Group::where('category','Food & Drink')->where('verified', '1')->orderBy('created_at', 'DESC')->get())->with('gamesgroups',Group::where('category','Games')->where('verified', '1')->orderBy('created_at', 'DESC')->get())->with('healthgroups',Group::where('category','Health')->where('verified', '1')->orderBy('created_at', 'DESC')->get())->with('homegroups',Group::where('category','Home')->where('verified', '1')->orderBy('created_at', 'DESC')->get())->with('musicgroups',Group::where('category','Music')->where('verified', '1')->orderBy('created_at', 'DESC')->get())->with('sportsgroups',Group::where('category','Sports')->where('verified', '1')->orderBy('created_at', 'DESC')->get())->with('technologygroups',Group::where('category','Technology')->where('verified', '1')->orderBy('created_at', 'DESC')->get())->with('travelgroups',Group::where('category','Travel')->where('verified', '1')->orderBy('created_at', 'DESC')->get())->with('othergroups',Group::where('category','Other')->where('verified', '1')->orderBy('created_at', 'DESC')->get());
 	}
 	public function newGroup()
 	{
@@ -125,6 +125,7 @@ class GroupController extends Controller {
 				$group->tag = Request::input('tag');
 				$group->website = Request::input('website');
 				$group->originCountry = Request::input('originCountry');
+				$group->verified = '0';
 				//$group->originProvince = Request::input('originProvince');
 				$group->target = Request::input('target');
 				// if(Request::input('translate') == 'no'){
@@ -239,9 +240,13 @@ class GroupController extends Controller {
 	public function viewGroup($slug)
 	{
 		$group = Group::where('slug', $slug)->firstOrFail();
-		$gposts = Post::where('group_id', $group->id)->orderBy('created_at', 'DESC')->paginate(12);
+		if($group->verified == '1'){
+			$gposts = Post::where('group_id', $group->id)->orderBy('created_at', 'DESC')->paginate(12);
 
-		return view('groups.view')->with('group', $group)->with('gposts', $gposts);
+			return view('groups.view')->with('group', $group)->with('gposts', $gposts);
+		}else{
+			return view('groups.pendingview');
+		}
 	}
 
 	public function joinGroup()
@@ -310,7 +315,7 @@ class GroupController extends Controller {
 	}
 	public function singleCateogry($cat)
 	{
-		$groups = Group::where('categorykey', $cat)->get();
+		$groups = Group::where('categorykey', $cat)->where('verified', '1')->get();
 		return view('groups.singlecategory')->with('groups', $groups)->with('cat', $cat);
 	}
 }

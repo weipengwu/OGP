@@ -10,7 +10,7 @@ class SearchController extends Controller {
 		if(isset($_GET['q'])){
 			$query = $_GET['q'];
 			$posts = Post::search($query)->get();
-			$groups = Group::search($query)->get();
+			$groups = Group::where('verified', '1')->search($query)->get();
 			$events = Event::search($query)->get();
 
 			return view('search.index')->with('posts', $posts)->with('events', $events)->with('groups', $groups);

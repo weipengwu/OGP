@@ -7790,11 +7790,11 @@ label.error{
 #mybrand .row.no-border{
   border: 0;
 }
-#mybrand a h3{
+#mybrand a h4{
   color: #333;
   margin-top: 0;
 }
-#mybrand a:hover h3{
+#mybrand a:hover h4{
   color: #00c2a9;
   text-decoration: none;
 }
@@ -7840,7 +7840,7 @@ label.error{
   padding-top: 30px;
 }
 .stripe-form .stripe-button{
-  background: #fc6c25;
+  background: #c9ad88;
     border: none;
     color: #fff ;
     font-weight: 400;
@@ -7854,15 +7854,21 @@ label.error{
     line-height: 1.42857143;
 }
 .stripe-button-el{
-  background: #fc6c25 !important;
+  background: #c9ad88 !important;
   border-radius: 0 !important;
   padding: 5px 15px !important;
   box-shadow: none !important;
 }
 .stripe-button-el span{
-  background: #fc6c25 !important;
+  background: #c9ad88 !important;
   box-shadow: none !important;
   text-shadow: none !important;
+}
+#paymessege{
+  margin-top: 50px;
+}
+#paymessege h2, #paymessege h3{
+  margin-bottom: 20px;
 }
 #comments{
   margin-top: 30px;
@@ -7983,6 +7989,75 @@ label.error{
   top: 80px;
   left: 15px;
   line-height: 1;
+}
+.hint{
+  width: 300px;
+  position: absolute;
+  right: 80px;
+  top: 70px;
+  background: #c9ad88;
+  padding: 15px;
+  color: #fff;
+  display: none;
+}
+.hint2{
+  width: 300px;
+  position: absolute;
+  right: 10px;
+  top: 70px;
+  background: #c9ad88;
+  padding: 15px;
+  color: #fff;
+  display: none;
+}
+.hint:after, .hint2:after{
+  border-top: 0;
+    border-bottom: 9px solid transparent;
+}
+.hint:before, .hint:after, .hint2:before, .hint2:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-color: transparent;
+    border-top: 0;
+    border-bottom: 9px solid transparent;
+}
+.hint:after {
+    border-width: 8px;
+    top: -8px;
+    border-bottom-color: #c9ad88;
+    left: 164px;
+}
+.hint2:after{
+  border-width: 8px;
+    top: -8px;
+    border-bottom-color: #c9ad88;
+    left: 255px;
+}
+.hint a, .hint2 a{
+  padding: 6px 10px;
+  color: #c9ad88;
+  background: #fff;
+  float: right;
+  display: block;
+  margin-top: 20px;
+  text-decoration: none;
+}
+.hinttop{
+  margin-bottom: 10px;
+}
+.admin{
+  padding-top: 40px;
+}
+.admin ul li{
+  list-style: none;
+  padding: 15px;
+  border-bottom: 1px solid #e8e8e8;
+}
+.admin h2{
+  margin-top: 0;
 }
 /*** media query ***/
 @media (max-width: 1199px){

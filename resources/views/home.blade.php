@@ -21,6 +21,7 @@
 			<?php $posts = array();?>
 			@foreach ($allposts as $singlepost)
 				<?php 
+
 					array_push($posts, $singlepost);
 				?>
 			@endforeach
@@ -84,7 +85,7 @@
 							})
 							$('.right #post{{$post->id}} a.social_tw').on('click', function(e){
 								e.preventDefault();
-								window.open('https://twitter.com/intent/tweet?text={{ $post->title }}&via=ohgoodparty_ogp&url={{ url() }}/posts/<?php echo $post->id; ?>', "_blank", "width=360, height=360");
+								window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent('{{ $post->title }}')+'&via=ohgoodparty_ogp&url={{ url() }}/posts/<?php echo $post->id; ?>', "_blank", "width=360, height=360");
 							})
 							$('.right #post{{$post->id}} a.social_lk').on('click', function(e){
 								e.preventDefault();
@@ -152,7 +153,7 @@
 							})
 							$('.right #post{{$post->id}} a.social_tw').on('click', function(e){
 								e.preventDefault();
-								window.open('https://twitter.com/intent/tweet?text={{ $post->title }}&via=ohgoodparty_ogp&url={{ url() }}/posts/<?php echo $post->id; ?>', "_blank", "width=360, height=360");
+								window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent('{{ $post->title }}')+'&via=ohgoodparty_ogp&url={{ url() }}/posts/<?php echo $post->id; ?>', "_blank", "width=360, height=360");
 							})
 							$('.right #post{{$post->id}} a.social_lk').on('click', function(e){
 								e.preventDefault();
@@ -272,7 +273,7 @@
 							})
 							$('.right #post{{$post->id}} a.social_tw').on('click', function(e){
 								e.preventDefault();
-								window.open('https://twitter.com/intent/tweet?text={{ $post->title }}&via=ohgoodparty_ogp&url={{ url() }}/posts/<?php echo $post->id; ?>', "_blank", "width=360, height=360");
+								window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent('{{ $post->title }}')+'&via=ohgoodparty_ogp&url={{ url() }}/posts/<?php echo $post->id; ?>', "_blank", "width=360, height=360");
 							})
 							$('.right #post{{$post->id}} a.social_lk').on('click', function(e){
 								e.preventDefault();
@@ -340,7 +341,7 @@
 							})
 							$('.right #post{{$post->id}} a.social_tw').on('click', function(e){
 								e.preventDefault();
-								window.open('https://twitter.com/intent/tweet?text={{ $post->title }}&via=ohgoodparty_ogp&url={{ url() }}/posts/<?php echo $post->id; ?>', "_blank", "width=360, height=360");
+								window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent('{{ $post->title }}')+'&via=ohgoodparty_ogp&url={{ url() }}/posts/<?php echo $post->id; ?>', "_blank", "width=360, height=360");
 							})
 							$('.right #post{{$post->id}} a.social_lk').on('click', function(e){
 								e.preventDefault();
@@ -410,7 +411,7 @@
 							})
 							$('.right #post{{$post->id}} a.social_tw').on('click', function(e){
 								e.preventDefault();
-								window.open('https://twitter.com/intent/tweet?text={{ $post->title }}&via=ohgoodparty_ogp&url={{ url() }}/posts/<?php echo $post->id; ?>', "_blank", "width=360, height=360");
+								window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent('{{ $post->title }}')+'&via=ohgoodparty_ogp&url={{ url() }}/posts/<?php echo $post->id; ?>', "_blank", "width=360, height=360");
 							})
 							$('.right #post{{$post->id}} a.social_lk').on('click', function(e){
 								e.preventDefault();
@@ -511,7 +512,7 @@
 							})
 							$('.right #post{{$post->id}} a.social_tw').on('click', function(e){
 								e.preventDefault();
-								window.open('https://twitter.com/intent/tweet?text={{ $post->title }}&via=ohgoodparty_ogp&url={{ url() }}/posts/<?php echo $post->id; ?>', "_blank", "width=360, height=360");
+								window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent('{{ $post->title }}')+'&via=ohgoodparty_ogp&url={{ url() }}/posts/<?php echo $post->id; ?>', "_blank", "width=360, height=360");
 							})
 							$('.right #post{{$post->id}} a.social_lk').on('click', function(e){
 								e.preventDefault();

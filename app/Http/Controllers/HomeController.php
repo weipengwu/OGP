@@ -32,9 +32,13 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
-		$events = Event::orderBy('created_at', 'DESC')->take(10)->get();
+		$events = Event::join('groups', function($join){
+			$join->on('groups.id', '=', 'events.group_id')->where('groups.verified', '=', '1');
+		})->select('events.*')->orderBy('events.created_at', 'DESC')->take(10)->get();
 		//$events = Event::orderBy('created_at', 'DESC')->simplePaginate(5);
-		$posts = Post::orderBy('created_at', 'DESC')->paginate(18);
+		$posts = Post::join('groups', function($join){
+			$join->on('groups.id', '=', 'posts.group_id')->where('groups.verified', '=', '1');
+		})->select('posts.*')->orderBy('posts.created_at', 'DESC')->paginate(18);
 		return view('home')->with('events', $events)->with('allposts', $posts);
 	}
 

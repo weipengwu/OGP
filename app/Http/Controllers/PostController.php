@@ -36,8 +36,13 @@ class PostController extends Controller {
 	// }
 	public function newPost($slug)
 	{
-		$gid = Group::where('slug', $slug)->pluck('id');
-		return view('posts.new')->with('gid', $gid);
+		$brand = Group::where('slug', $slug)->firstOrFail();
+		if($brand->verified == '1'){
+			$gid = $brand->id;
+			return view('posts.new')->with('gid', $gid);
+		}else{
+			abort(404);
+		}
 	}
 	public function createPost()
 	{
@@ -237,20 +242,24 @@ class PostController extends Controller {
 	public function viewPost($id)
 	{
 		$post = Post::findOrFail($id);
-		return view('posts.view')->with('post', $post);
+		// return view('posts.view')->with('post', $post);
 
-		// if($post->group()->where('verified', '1')->count() == 1){
+		if($post->group()->where('verified', '1')->count() == 1){
 
-		// 	return view('posts.view')->with('post', $post);
-		// }else{
-		// 	abort(404);
-		// }
+			return view('posts.view')->with('post', $post);
+		}else{
+			abort(404);
+		}
 	}
 
 	public function editPost($id)
 	{
 		$post = Post::findOrFail($id);
-		return view('posts.edit')->with('post', $post);
+		if($post->group()->where('verified', '1')->count() == 1){
+			return view('posts.edit')->with('post', $post);
+		}else{
+			abort(404);
+		}
 	}
 
 	public function editingPost()

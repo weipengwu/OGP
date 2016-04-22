@@ -33,7 +33,10 @@
 				<div class="row">
 					<?php $i = 1; ?>
 					@foreach ($popular as $pop)
-						<?php $popgroup = DB::table('groups')->where('id', $pop->followed_id)->get(); ?>
+						<?php 
+							$popgroup = DB::table('groups')->where('id', $pop->followed_id)->where('verified', '1')->get(); 
+							if(count($popgroup) > 0):
+						?>
 						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
 							<a href="brands/{{ $popgroup[0]->slug }}">
 							<div class="bannerholder" style="background: url('<?php echo url()."/uploads/Medium_".$popgroup[0]->profile;?>');background-size:cover"></div>
@@ -43,7 +46,7 @@
 							</div>
 							</a>
 						</div>
-						<?php $i++;?>
+						<?php endif; $i++;?>
 					@endforeach
 				</div>
 				<div class="divider"></div>

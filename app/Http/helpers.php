@@ -42,7 +42,7 @@
 		foreach ($groups_id as $group_id) {
 			$ids[] = $group_id->followed_id;
 		}
-		return DB::table('groups')->whereIn('id', $ids)->get();
+		return DB::table('groups')->where('verified', '1')->whereIn('id', $ids)->get();
 	}
 
 	function myGroup($uid){
@@ -56,8 +56,8 @@
 		return DB::table('following')->where('followed_id', $group_id)->get();
 	}
 
-	function generateRandomString($length = 8) {
-	    $characters = '0123456789abcdefghijklmnopqrstuvwxyz';
+	function generateRandomString($length = 10) {
+	    $characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 	    $charactersLength = strlen($characters);
 	    $randomString = '';
 	    for ($i = 0; $i < $length; $i++) {
@@ -81,7 +81,9 @@
 		return $events;
 	}
 	function getMyevents($uid){
-		$events = DB::table('events')->where('author', $uid)->orderBy('created_at', 'DESC')->get();
+		$events = DB::table('events')->join('groups', function($join){
+			$join->on('groups.id', '=', 'events.group_id')->where('groups.verified', '=', '1');
+		})->where('events.author', $uid)->select('events.*')->orderBy('events.created_at', 'DESC')->get();
 		return $events;
 	}
 
@@ -124,6 +126,12 @@
 		$name = DB::table('groups')->where('id', $id)->pluck('name');
 		return $name;
 	}
+
+	function getEventTitle($id){
+		$name = DB::table('events')->where('id', $id)->pluck('title');
+		return $name;
+	}
+
 	function getGroupProfile($id){
 		$profile = DB::table('groups')->where('id', $id)->pluck('profile');
 		return $profile;

@@ -82,23 +82,44 @@
 						@endif
 					</div>
 				</div>
-				<!-- @if($event->fee == 'Free')
+				@if($event->fee == 'Free')
 
 				@else
-
-				<form action="{{ URL::route('eventCharge') }}" method="post" class="stripe-form">
-				  <input type="hidden" name="eid" value="{{ $event->id }}">
-				  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-				          data-key="{{Config::get('stripe.stripe.public')}}"
-				          data-description="{{ $event->title }}"
-				          data-amount="{{ $event->fee * 100 }}"
-				          data-label="Reserve"
-				          data-name="{{ getGroupName($event->group_id) }}"
-				          data-image='<?php echo url()."/".getGroupProfile($event->group_id);?>'
-				          data-currency='cad'
-				          data-alipay="true"></script>
-				</form>
-				@endif -->
+					@if(Auth::check())
+						@if(App::getLocale() == 'en')
+							<form action="{{ URL::route('eventCharge') }}" method="post" class="stripe-form">
+							  <input type="hidden" name="eid" value="{{ $event->id }}">
+							  <input type="hidden" name="userid" value="{{ Auth::user()->id }}">
+							  <input type="hidden" name="useremail" value="{{ Auth::user()->email }}">
+							  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+							          data-key="{{Config::get('stripe.stripe.public')}}"
+							          data-description="{{ $event->title }}"
+							          data-amount="{{ $event->fee * 100 * 1.13 }}"
+							          data-label="RESERVE"
+							          data-email="{{ Auth::user()->email }}"
+							          data-name="{{ getGroupName($event->group_id) }}"
+							          data-image='<?php echo url()."/uploads/Small_".getGroupProfile($event->group_id);?>'
+							          data-currency='{{ $event->currency }}'
+							          data-alipay="false"></script>
+							</form>
+						@else
+							<form action="{{ URL::route('eventCharge') }}" method="post" class="stripe-form">
+							  <input type="hidden" name="eid" value="{{ $event->id }}">
+							  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+							          data-key="{{Config::get('stripe.stripe.public')}}"
+							          data-description="{{ $event->title }}"
+							          data-amount="{{ $event->fee * 100 * 1.13 }}"
+							          data-label="预 定"
+							          data-email="{{ Auth::user()->email }}"
+							          data-name="{{ getGroupName($event->group_id) }}"
+							          data-image='<?php echo url()."/uploads/Small_".getGroupProfile($event->group_id);?>'
+							          data-locale="zh"
+							          data-currency='{{ $event->currency }}'
+							          data-alipay="false"></script>
+							</form>
+						@endif
+					@endif
+				@endif
 			</div>
 	</div>
 </section>

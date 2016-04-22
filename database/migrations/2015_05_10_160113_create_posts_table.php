@@ -18,6 +18,7 @@ class CreatePostsTable extends Migration {
 			$table->string('slug');
 			$table->string('banner');
 			$table->text('content');
+			$table->string('featured');
 			$table->integer('group_id')->unsigned();
 			$table->foreign('group_id')->references('id')->on('groups')->onDelete('cascade');
 			$table->integer('author')->unsigned();

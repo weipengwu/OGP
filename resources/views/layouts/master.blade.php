@@ -215,6 +215,30 @@
 						</li>
 					@endif
 				</ul>
+				@if (Auth::check())
+					<div class="hint">
+						<div class="hintbody">
+						<div class="hinttop">
+						Tip 1 of 2
+						</div>
+						Use this menu to manage your brand, explore the site, and share your experience.
+						</div>
+						<div class="hintbottom">
+							<a class="hintnext" href="">Next</a>
+						</div>
+					</div>
+					<div class="hint2">
+						<div class="hintbody">
+						<div class="hinttop">
+						Tip 2 of 2
+						</div>
+						Use this button to personalize your experience.
+						</div>
+						<div class="hintbottom">
+							<a class="hintnext" href="" target="_blank">Learn More</a>
+						</div>
+					</div>
+				@endif
 			</div>
 		</div>
 	</nav>

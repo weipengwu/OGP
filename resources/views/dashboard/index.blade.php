@@ -169,11 +169,14 @@
 							</a>
 						</div>
 						<div class="col-md-6">
-							<a href="brands/<?= $group->slug;?>"><h3>{{ $group->name }}</h3></a>
+							<a href="brands/<?= $group->slug;?>"><h4>{{ $group->name }}</h4></a>
+							<p>Status: {{ $group->verified == '1' ? "Active" : "Pending" }}</p>
 							<p><span class="followcount"><img src="{{ asset('img/follow_icon.png') }}" width="20"> {{ count(groupFollowers($group->id)) }}</span></p>
 						</div>
 						<div class="col-md-3">
+							@if($group->verified == '1')
 							<a href="brands/<?= $group->slug;?>" class="btn btn-logo top-btn">{{ trans('dashboard.enterbrand') }}</a>
+							@endif
 							<a href="brands/<?= $group->slug;?>/edit" class="btn btn-logo">{{ trans('dashboard.editbrand') }}</a>
 						</div>
 					@endforeach

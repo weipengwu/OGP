@@ -4,6 +4,7 @@ use App\EventLike;
 use App\Group;
 use App\Following;
 use App\User;
+use App\Ticket;
 use Request;
 use Validator;
 use Stripe\Stripe;
@@ -37,7 +38,7 @@ class EventController extends Controller {
 	public function index()
 	{
 		if(isset($_GET['category'])){
-			$groups = Group::where('category', $_GET['category'])->get();
+			$groups = Group::where('category', $_GET['category'])->where('verified', '1')->get();
 			$groups_id = [];
 			foreach ($groups as $group) {
 				array_push($groups_id, $group->id);			
@@ -58,20 +59,29 @@ class EventController extends Controller {
 					$nextsudaytime = strtotime('next Sunday', $nextmondytime);
 				}
 				if ($time == 'nextweek'){
-					return view('events.index')->with('events', Event::where('fromtime', '>', $nextmondytime)->where('fromtime', '<', $nextsudaytime)->orderBy('created_at', 'DESC')->get());
+					return view('events.index')->with('events', Event::join('groups', function($join){
+						$join->on('groups.id', '=', 'events.group_id')->where('groups.verified', '=', '1');
+					})->where('events.fromtime', '>', $nextmondytime)->where('events.fromtime', '<', $nextsudaytime)->select('events.*')->orderBy('events.created_at', 'DESC')->get());
 				}else{
 					$currenttime = time();
 					return view('events.index')->with('events', Event::where('fromtime', '>', $currenttime)->where('fromtime', '<', $nextmondytime)->orderBy('created_at', 'DESC')->get());
 				}
 			}else{
-				return view('events.index')->with('events', Event::orderBy('created_at', 'DESC')->get());
+				return view('events.index')->with('events', Event::join('groups', function($join){
+						$join->on('groups.id', '=', 'events.group_id')->where('groups.verified', '=', '1');
+					})->select('events.*')->orderBy('events.created_at', 'DESC')->get());
 			}
 		}
 	}
 	public function newEvent($slug)
 	{
-		$gid = Group::where('slug', $slug)->pluck('id');
-		return view('events.new')->with('gid', $gid);
+		$brand = Group::where('slug', $slug)->firstOrFail();
+		if($brand->verified == '1'){
+			$gid = $brand->id;
+			return view('events.new')->with('gid', $gid);
+		}else{
+			abort(404);
+		}
 	}
 	public function createEvent()
 	{
@@ -256,7 +266,11 @@ class EventController extends Controller {
 	public function editEvent($id)
 	{
 		$event = Event::findOrFail($id);
-		return view('events.edit')->with('event', $event);
+		if($event->group()->where('verified', '1')->count() == 1){
+			return view('events.edit')->with('event', $event);
+		}else{
+			abort(404);
+		}
 	}
 
 	public function editingEvent()
@@ -318,8 +332,11 @@ class EventController extends Controller {
 	public function viewEvent($id)
 	{
 		$event = Event::findOrFail($id);
-
-		return view('events.view')->with('event', $event);
+		if($event->group()->where('verified', '1')->count() == 1){
+			return view('events.view')->with('event', $event);
+		}else{
+			abort(404);
+		}
 	}
 
 	public function deleteEvent($id)
@@ -360,7 +377,7 @@ class EventController extends Controller {
 		$event = Event::findOrFail(Request::input('eid'));
 		\Stripe\Stripe::setApiKey(Config::get('stripe.stripe.secret'));
 
-		if($event->quantity > 0 ){
+		// future check $event->quantity
 			try {
 				$token  = Request::get('stripeToken');
 
@@ -374,10 +391,32 @@ class EventController extends Controller {
 				      'amount'   => $event->fee,
 				      'currency' => 'usd'
 				  ));
-				echo '<h1>Successfully charged CAD $'.$event->fee.'!</h1>';
+
+				  $ticket = new Ticket();
+				  $ticketnumber = generateRandomString();
+				  $ticket->ticket_number = $ticketnumber;
+				  $ticket->event_id = $event->id;
+				  $ticket->user_id = Request::input('userid');
+				  $ticket->status = 'Paid';
+				  $ticket->save();
+
+				  Mail::queue(['html' => 'emails.ticket'], ['ticketnumber' => $ticketnumber, 'eventtitle' => $event->title, 'eventfee' => $event->fee, 'location' => $event->address, 'fromtime' => $event->fromtime, 'totime' => $event->totime], function($message)
+		        {
+		            $message->from('tickets@ohgoodparty.com', 'OGP Tickets');
+		            $message->to(Request::input('useremail'))->subject('Your Event Ticket');
+
+		        });
+
+				  return redirect()->route('paySuccess');
 			} catch(\Stripe\Error\Card $e){
 				echo $e->getMessage();
 			}
-		}
+	
 	}
+
+	public function paySuccess()
+	{
+		return view('events/paysuccess');
+	}
+
 }
