@@ -235,7 +235,7 @@
 						Use this button to personalize your experience.
 						</div>
 						<div class="hintbottom">
-							<a class="hintnext" href="" target="_blank">Learn More</a>
+							<a class="hintnext" href="http://about.ohgoodparty.com/tutorials.html" target="_blank">Learn More</a>
 						</div>
 					</div>
 				@endif
