@@ -2,7 +2,7 @@
 
 @section('content')
 	<div class="container admin">
-		@if(Auth::id() == '1')
+		@if(Auth::id() == '1' || Auth::id() == '20' || Auth::id() == '74')
 		<div class="row">
 			<aside class="col-md-3">
 				<ul>
