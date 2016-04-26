@@ -38,7 +38,7 @@ class HomeController extends Controller {
 		//$events = Event::orderBy('created_at', 'DESC')->simplePaginate(5);
 		$posts = Post::join('groups', function($join){
 			$join->on('groups.id', '=', 'posts.group_id')->where('groups.verified', '=', '1');
-		})->select('posts.*')->orderBy('posts.created_at', 'DESC')->paginate(18);
+		})->where('posts.featured', '=', '1')->select('posts.*')->orderBy('posts.created_at', 'DESC')->paginate(18);
 		return view('home')->with('events', $events)->with('allposts', $posts);
 	}
 
