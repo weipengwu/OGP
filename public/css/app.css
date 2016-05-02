@@ -7060,6 +7060,7 @@ h3 a:hover{
   color: #fff;
   font-weight: bold;
   margin-top: 0;
+  text-align: left;
 }
 .singlegroup .eventslists{
   height: 500px;
@@ -7377,9 +7378,9 @@ h3 a:hover{
   background: #fff;
   border: 1px solid #ccc;
     padding: 10px;
-    bottom: 40px;
+    bottom: 35px;
     width: 192px;
-    right: 0;
+    left: -80px;
     display: none;
     border-radius: 4px;
     z-index: 10;
@@ -8209,6 +8210,9 @@ label.error{
   .quickmenu{
     float: right;
     margin: 0;
+  }
+  .homebanner .caption h1{
+    font-size: 20px;
   }
   .navbar-right.quickmenu .dropdown-menu {
     left: auto;
