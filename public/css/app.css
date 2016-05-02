@@ -7174,7 +7174,7 @@ h3 a:hover{
   bottom: 50px;
   color: #fff;
 }
-.caption .cat{
+.caption .cat a{
   text-transform: uppercase;
   text-decoration: underline;
   color: rgba(255,255,255,.7);

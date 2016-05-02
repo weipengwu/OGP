@@ -8,13 +8,11 @@
 		?>
 		<section class="container">
 		<a href="/brands/{{ $group[0]->slug }}">
-			<div class="homebanner" style="background: #ccc url('<?php echo url().'/uploads/Large_'.$group[0]->banner;?>') no-repeat center center; background-size: cover;">
-			
+			<div class="homebanner" style="background: #ccc url('<?php echo url().'/uploads/Large_'.$group[0]->banner;?>') no-repeat center center; background-size: cover;">		
 				<div class="caption">
-					<p class="cat">{{ trans('brands.'.$group[0]->categorykey) }}</p>
+					<p class="cat"><a href="/brands/category/{{ $group[0]->categorykey }}">{{ trans('brands.'.$group[0]->categorykey) }}</a></p>
 					<h1>{{ $group[0]->name }}</h1>
-				</div>
-			
+				</div>		
 			</div>
 		</a>
 		</section>
@@ -351,7 +349,7 @@
 						//$groups_id = array();
 						foreach ($groups as $group) :
 					?>
-						<div class="grouplist<?php if(is_int($i/4)) echo " last";?>">
+						<div class="grouplist<?php if(is_int($f/4)) echo " last";?>">
 						<a href="brands/{{ $group->slug }}">
 							<div class="bannerholder" style="background: url('<?php echo url()."/uploads/Medium_".$group->profile;?>');background-size:cover"></div>
 							
