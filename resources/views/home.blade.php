@@ -55,7 +55,7 @@
 										
 									</div>
 									<div class="right">
-										<div class="sharebox" id="post{{$post->id}}">
+										<div class="sharebox" id="post{{$post->id}}" data-post-id="{{ $post->id }}" data-post-title="{{ $post->title }}" data-banner="{{ $banner[0] }}" data-post-description="{{ strip_tags( getExcerpt($post->content, 60) ) }}">
 											<a href="" class="social_icons social_tw"><i class="fa fa-twitter"></i></a> <a href="" class="social_icons social_fb"><i class="fa fa-facebook"></i></a> <a href="" class="social_icons social_lk"><i class="fa fa-linkedin"></i></a><a href="" class="social_icons social_wb"><i class="fa fa-weibo"></i></a><!-- <a href="" class="social_icons social_wc"><i class="fa fa-wechat"></i></a>  -->
 										</div>
 										<div class="shareto">
@@ -79,22 +79,22 @@
 								</div>
 						</div>
 						<script type="text/javascript">
-							$('.right #post{{$post->id}} a.social_fb').on('click', function(e){
-								e.preventDefault();
-								window.open('https://www.facebook.com/v2.0/dialog/feed?app_id=866884463391641&display=popup&link='+encodeURIComponent('{{ url() }}/posts/<?php echo $post->id; ?>')+'&caption=OHGOODPARTY&picture={{ url()."/uploads/Medium_".$banner[0] }}&name='+encodeURIComponent('{{ $post->title }}')+'&description={{ strip_tags( trim(preg_replace("/\s+/", " ", getExcerpt($post->content, 60))) ) }}&redirect_uri=https://www.facebook.com', "_blank", "width=600, height=400");
-							})
-							$('.right #post{{$post->id}} a.social_tw').on('click', function(e){
-								e.preventDefault();
-								window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent('{{ $post->title }}')+'&via=ohgoodparty_ogp&url={{ url() }}/posts/<?php echo $post->id; ?>', "_blank", "width=360, height=360");
-							})
-							$('.right #post{{$post->id}} a.social_lk').on('click', function(e){
-								e.preventDefault();
-								window.open('https://www.linkedin.com/shareArticle?mini=true&url={{ url() }}/posts/<?php echo $post->id; ?>&title={{ $post->title }}&summary={{ strip_tags( trim(preg_replace("/\s+/", " ", getExcerpt($post->content, 60))) ) }}&source=OHGOODPARTY', "_blank", "width=360, height=360");
-							})
-							$('.right #post{{$post->id}} a.social_wb').on('click', function(e){
-								e.preventDefault();
-								window.open('http://service.weibo.com/share/share.php?appkey=3304326450&title={{ $post->title }} @奥格派&url={{ url() }}/posts/<?php echo $post->id; ?>&pic={{ url()."/uploads/Medium_".$banner[0] }}&searchPic=false&style=simple', "_blank", "width=360, height=360");
-							})
+							// $('.right #post{{$post->id}} a.social_fb').on('click', function(e){
+							// 	e.preventDefault();
+							// 	window.open('https://www.facebook.com/v2.0/dialog/feed?app_id=866884463391641&display=popup&link='+encodeURIComponent('{{ url() }}/posts/<?php echo $post->id; ?>')+'&caption=OHGOODPARTY&picture={{ url()."/uploads/Medium_".$banner[0] }}&name='+encodeURIComponent('{{ $post->title }}')+'&description={{ strip_tags( trim(preg_replace("/\s+/", " ", getExcerpt($post->content, 60))) ) }}&redirect_uri=https://www.facebook.com', "_blank", "width=600, height=400");
+							// })
+							// $('.right #post{{$post->id}} a.social_tw').on('click', function(e){
+							// 	e.preventDefault();
+							// 	window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent('{{ $post->title }}')+'&via=ohgoodparty_ogp&url={{ url() }}/posts/<?php echo $post->id; ?>', "_blank", "width=360, height=360");
+							// })
+							// $('.right #post{{$post->id}} a.social_lk').on('click', function(e){
+							// 	e.preventDefault();
+							// 	window.open('https://www.linkedin.com/shareArticle?mini=true&url={{ url() }}/posts/<?php echo $post->id; ?>&title={{ $post->title }}&summary={{ strip_tags( trim(preg_replace("/\s+/", " ", getExcerpt($post->content, 60))) ) }}&source=OHGOODPARTY', "_blank", "width=360, height=360");
+							// })
+							// $('.right #post{{$post->id}} a.social_wb').on('click', function(e){
+							// 	e.preventDefault();
+							// 	window.open('http://service.weibo.com/share/share.php?appkey=3304326450&title={{ $post->title }} @奥格派&url={{ url() }}/posts/<?php echo $post->id; ?>&pic={{ url()."/uploads/Medium_".$banner[0] }}&searchPic=false&style=simple', "_blank", "width=360, height=360");
+							// })
 						</script>
 						<?php array_splice($posts,0,1); $i++;?>
 					@endforeach
@@ -123,7 +123,7 @@
 										
 									</div>
 									<div class="right">
-										<div class="sharebox" id="post{{$post->id}}">
+										<div class="sharebox" id="post{{$post->id}}" data-post-id="{{ $post->id }}" data-post-title="{{ $post->title }}" data-banner="{{ $banner[0] }}" data-post-description="{{ strip_tags( getExcerpt($post->content, 60) ) }}">
 											<a href="" class="social_icons social_tw"><i class="fa fa-twitter"></i></a> <a href="" class="social_icons social_fb"><i class="fa fa-facebook"></i></a> <a href="" class="social_icons social_lk"><i class="fa fa-linkedin"></i></a><a href="" class="social_icons social_wb"><i class="fa fa-weibo"></i></a>
 										</div>
 										<div class="shareto">
@@ -147,22 +147,22 @@
 								</div>
 						</div>
 						<script type="text/javascript">
-							$('.right #post{{$post->id}} a.social_fb').on('click', function(e){
-								e.preventDefault();
-								window.open('https://www.facebook.com/v2.0/dialog/feed?app_id=866884463391641&display=popup&link='+encodeURIComponent('{{ url() }}/posts/<?php echo $post->id; ?>')+'&caption=OHGOODPARTY&picture={{ url()."/uploads/Medium_".$banner[0] }}&name='+encodeURIComponent('{{ $post->title }}')+'&description={{ strip_tags( trim(preg_replace("/\s+/", " ", getExcerpt($post->content, 60))) ) }}&redirect_uri=https://www.facebook.com', "_blank", "width=600, height=400");
-							})
-							$('.right #post{{$post->id}} a.social_tw').on('click', function(e){
-								e.preventDefault();
-								window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent('{{ $post->title }}')+'&via=ohgoodparty_ogp&url={{ url() }}/posts/<?php echo $post->id; ?>', "_blank", "width=360, height=360");
-							})
-							$('.right #post{{$post->id}} a.social_lk').on('click', function(e){
-								e.preventDefault();
-								window.open('https://www.linkedin.com/shareArticle?mini=true&url={{ url() }}/posts/<?php echo $post->id; ?>&title={{ $post->title }}&summary={{ strip_tags( trim(preg_replace("/\s+/", " ", getExcerpt($post->content, 60))) ) }}&source=OHGOODPARTY', "_blank", "width=360, height=360");
-							})
-							$('.right #post{{$post->id}} a.social_wb').on('click', function(e){
-								e.preventDefault();
-								window.open('http://service.weibo.com/share/share.php?appkey=3304326450&title={{ $post->title }} @奥格派&url={{ url() }}/posts/<?php echo $post->id; ?>&pic={{ url()."/uploads/Medium_".$banner[0] }}&searchPic=false&style=simple', "_blank", "width=360, height=360");
-							})
+							// $('.right #post{{$post->id}} a.social_fb').on('click', function(e){
+							// 	e.preventDefault();
+							// 	window.open('https://www.facebook.com/v2.0/dialog/feed?app_id=866884463391641&display=popup&link='+encodeURIComponent('{{ url() }}/posts/<?php echo $post->id; ?>')+'&caption=OHGOODPARTY&picture={{ url()."/uploads/Medium_".$banner[0] }}&name='+encodeURIComponent('{{ $post->title }}')+'&description={{ strip_tags( trim(preg_replace("/\s+/", " ", getExcerpt($post->content, 60))) ) }}&redirect_uri=https://www.facebook.com', "_blank", "width=600, height=400");
+							// })
+							// $('.right #post{{$post->id}} a.social_tw').on('click', function(e){
+							// 	e.preventDefault();
+							// 	window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent('{{ $post->title }}')+'&via=ohgoodparty_ogp&url={{ url() }}/posts/<?php echo $post->id; ?>', "_blank", "width=360, height=360");
+							// })
+							// $('.right #post{{$post->id}} a.social_lk').on('click', function(e){
+							// 	e.preventDefault();
+							// 	window.open('https://www.linkedin.com/shareArticle?mini=true&url={{ url() }}/posts/<?php echo $post->id; ?>&title={{ $post->title }}&summary={{ strip_tags( trim(preg_replace("/\s+/", " ", getExcerpt($post->content, 60))) ) }}&source=OHGOODPARTY', "_blank", "width=360, height=360");
+							// })
+							// $('.right #post{{$post->id}} a.social_wb').on('click', function(e){
+							// 	e.preventDefault();
+							// 	window.open('http://service.weibo.com/share/share.php?appkey=3304326450&title={{ $post->title }} @奥格派&url={{ url() }}/posts/<?php echo $post->id; ?>&pic={{ url()."/uploads/Medium_".$banner[0] }}&searchPic=false&style=simple', "_blank", "width=360, height=360");
+							// })
 						</script>
 					<?php array_splice($posts,0,1); $i++;$j++;?>
 					@endforeach
@@ -243,7 +243,7 @@
 										
 									</div>
 									<div class="right">
-										<div class="sharebox" id="post{{$post->id}}">
+										<div class="sharebox" id="post{{$post->id}}" data-post-id="{{ $post->id }}" data-post-title="{{ $post->title }}" data-banner="{{ $banner[0] }}" data-post-description="{{ strip_tags( getExcerpt($post->content, 60) ) }}">
 											<a href="" class="social_icons social_tw"><i class="fa fa-twitter"></i></a> <a href="" class="social_icons social_fb"><i class="fa fa-facebook"></i></a> <a href="" class="social_icons social_lk"><i class="fa fa-linkedin"></i></a><a href="" class="social_icons social_wb"><i class="fa fa-weibo"></i></a>
 										</div>
 										<div class="shareto">
@@ -267,22 +267,22 @@
 								</div>
 						</div>
 						<script type="text/javascript">
-							$('.right #post{{$post->id}} a.social_fb').on('click', function(e){
-								e.preventDefault();
-								window.open('https://www.facebook.com/v2.0/dialog/feed?app_id=866884463391641&display=popup&link='+encodeURIComponent('{{ url() }}/posts/<?php echo $post->id; ?>')+'&caption=OHGOODPARTY&picture={{ url()."/uploads/Medium_".$banner[0] }}&name='+encodeURIComponent('{{ $post->title }}')+'&description={{ strip_tags( trim(preg_replace("/\s+/", " ", getExcerpt($post->content, 60))) ) }}&redirect_uri=https://www.facebook.com', "_blank", "width=600, height=400");
-							})
-							$('.right #post{{$post->id}} a.social_tw').on('click', function(e){
-								e.preventDefault();
-								window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent('{{ $post->title }}')+'&via=ohgoodparty_ogp&url={{ url() }}/posts/<?php echo $post->id; ?>', "_blank", "width=360, height=360");
-							})
-							$('.right #post{{$post->id}} a.social_lk').on('click', function(e){
-								e.preventDefault();
-								window.open('https://www.linkedin.com/shareArticle?mini=true&url={{ url() }}/posts/<?php echo $post->id; ?>&title={{ $post->title }}&summary={{ strip_tags( trim(preg_replace("/\s+/", " ", getExcerpt($post->content, 60))) ) }}&source=OHGOODPARTY', "_blank", "width=360, height=360");
-							})
-							$('.right #post{{$post->id}} a.social_wb').on('click', function(e){
-								e.preventDefault();
-								window.open('http://service.weibo.com/share/share.php?appkey=3304326450&title={{ $post->title }} @奥格派&url={{ url() }}/posts/<?php echo $post->id; ?>&pic={{ url()."/uploads/Medium_".$banner[0] }}&searchPic=false&style=simple', "_blank", "width=360, height=360");
-							})
+							// $('.right #post{{$post->id}} a.social_fb').on('click', function(e){
+							// 	e.preventDefault();
+							// 	window.open('https://www.facebook.com/v2.0/dialog/feed?app_id=866884463391641&display=popup&link='+encodeURIComponent('{{ url() }}/posts/<?php echo $post->id; ?>')+'&caption=OHGOODPARTY&picture={{ url()."/uploads/Medium_".$banner[0] }}&name='+encodeURIComponent('{{ $post->title }}')+'&description={{ strip_tags( trim(preg_replace("/\s+/", " ", getExcerpt($post->content, 60))) ) }}&redirect_uri=https://www.facebook.com', "_blank", "width=600, height=400");
+							// })
+							// $('.right #post{{$post->id}} a.social_tw').on('click', function(e){
+							// 	e.preventDefault();
+							// 	window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent('{{ $post->title }}')+'&via=ohgoodparty_ogp&url={{ url() }}/posts/<?php echo $post->id; ?>', "_blank", "width=360, height=360");
+							// })
+							// $('.right #post{{$post->id}} a.social_lk').on('click', function(e){
+							// 	e.preventDefault();
+							// 	window.open('https://www.linkedin.com/shareArticle?mini=true&url={{ url() }}/posts/<?php echo $post->id; ?>&title={{ $post->title }}&summary={{ strip_tags( trim(preg_replace("/\s+/", " ", getExcerpt($post->content, 60))) ) }}&source=OHGOODPARTY', "_blank", "width=360, height=360");
+							// })
+							// $('.right #post{{$post->id}} a.social_wb').on('click', function(e){
+							// 	e.preventDefault();
+							// 	window.open('http://service.weibo.com/share/share.php?appkey=3304326450&title={{ $post->title }} @奥格派&url={{ url() }}/posts/<?php echo $post->id; ?>&pic={{ url()."/uploads/Medium_".$banner[0] }}&searchPic=false&style=simple', "_blank", "width=360, height=360");
+							// })
 						</script>
 					<?php array_splice($posts,0,1); $i++;$j++;?>
 					@endforeach
@@ -311,7 +311,7 @@
 										
 									</div>
 									<div class="right">
-										<div class="sharebox" id="post{{$post->id}}">
+										<div class="sharebox" id="post{{$post->id}}" data-post-id="{{ $post->id }}" data-post-title="{{ $post->title }}" data-banner="{{ $banner[0] }}" data-post-description="{{ strip_tags( getExcerpt($post->content, 60) ) }}">
 											<a href="" class="social_icons social_tw"><i class="fa fa-twitter"></i></a> <a href="" class="social_icons social_fb"><i class="fa fa-facebook"></i></a> <a href="" class="social_icons social_lk"><i class="fa fa-linkedin"></i></a><a href="" class="social_icons social_wb"><i class="fa fa-weibo"></i></a>
 										</div>
 										<div class="shareto">
@@ -335,22 +335,22 @@
 								</div>
 						</div>
 						<script type="text/javascript">
-							$('.right #post{{$post->id}} a.social_fb').on('click', function(e){
-								e.preventDefault();
-								window.open('https://www.facebook.com/v2.0/dialog/feed?app_id=866884463391641&display=popup&link='+encodeURIComponent('{{ url() }}/posts/<?php echo $post->id; ?>')+'&caption=OHGOODPARTY&picture={{ url()."/uploads/Medium_".$banner[0] }}&name='+encodeURIComponent('{{ $post->title }}')+'&description={{ strip_tags( trim(preg_replace("/\s+/", " ", getExcerpt($post->content, 60))) ) }}&redirect_uri=https://www.facebook.com', "_blank", "width=600, height=400");
-							})
-							$('.right #post{{$post->id}} a.social_tw').on('click', function(e){
-								e.preventDefault();
-								window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent('{{ $post->title }}')+'&via=ohgoodparty_ogp&url={{ url() }}/posts/<?php echo $post->id; ?>', "_blank", "width=360, height=360");
-							})
-							$('.right #post{{$post->id}} a.social_lk').on('click', function(e){
-								e.preventDefault();
-								window.open('https://www.linkedin.com/shareArticle?mini=true&url={{ url() }}/posts/<?php echo $post->id; ?>&title={{ $post->title }}&summary={{ strip_tags( trim(preg_replace("/\s+/", " ", getExcerpt($post->content, 60))) ) }}&source=OHGOODPARTY', "_blank", "width=360, height=360");
-							})
-							$('.right #post{{$post->id}} a.social_wb').on('click', function(e){
-								e.preventDefault();
-								window.open('http://service.weibo.com/share/share.php?appkey=3304326450&title={{ $post->title }} @奥格派&url={{ url() }}/posts/<?php echo $post->id; ?>&pic={{ url()."/uploads/Medium_".$banner[0] }}&searchPic=false&style=simple', "_blank", "width=360, height=360");
-							})
+							// $('.right #post{{$post->id}} a.social_fb').on('click', function(e){
+							// 	e.preventDefault();
+							// 	window.open('https://www.facebook.com/v2.0/dialog/feed?app_id=866884463391641&display=popup&link='+encodeURIComponent('{{ url() }}/posts/<?php echo $post->id; ?>')+'&caption=OHGOODPARTY&picture={{ url()."/uploads/Medium_".$banner[0] }}&name='+encodeURIComponent('{{ $post->title }}')+'&description={{ strip_tags( trim(preg_replace("/\s+/", " ", getExcerpt($post->content, 60))) ) }}&redirect_uri=https://www.facebook.com', "_blank", "width=600, height=400");
+							// })
+							// $('.right #post{{$post->id}} a.social_tw').on('click', function(e){
+							// 	e.preventDefault();
+							// 	window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent('{{ $post->title }}')+'&via=ohgoodparty_ogp&url={{ url() }}/posts/<?php echo $post->id; ?>', "_blank", "width=360, height=360");
+							// })
+							// $('.right #post{{$post->id}} a.social_lk').on('click', function(e){
+							// 	e.preventDefault();
+							// 	window.open('https://www.linkedin.com/shareArticle?mini=true&url={{ url() }}/posts/<?php echo $post->id; ?>&title={{ $post->title }}&summary={{ strip_tags( trim(preg_replace("/\s+/", " ", getExcerpt($post->content, 60))) ) }}&source=OHGOODPARTY', "_blank", "width=360, height=360");
+							// })
+							// $('.right #post{{$post->id}} a.social_wb').on('click', function(e){
+							// 	e.preventDefault();
+							// 	window.open('http://service.weibo.com/share/share.php?appkey=3304326450&title={{ $post->title }} @奥格派&url={{ url() }}/posts/<?php echo $post->id; ?>&pic={{ url()."/uploads/Medium_".$banner[0] }}&searchPic=false&style=simple', "_blank", "width=360, height=360");
+							// })
 						</script>
 					<?php array_splice($posts,0,1); $i++;$j++;?>
 					@endforeach
@@ -381,7 +381,7 @@
 										
 									</div>
 									<div class="right">
-										<div class="sharebox" id="post{{$post->id}}">
+										<div class="sharebox" id="post{{$post->id}}" data-post-id="{{ $post->id }}" data-post-title="{{ $post->title }}" data-banner="{{ $banner[0] }}" data-post-description="{{ strip_tags( getExcerpt($post->content, 60) ) }}">
 											<a href="" class="social_icons social_tw"><i class="fa fa-twitter"></i></a> <a href="" class="social_icons social_fb"><i class="fa fa-facebook"></i></a> <a href="" class="social_icons social_lk"><i class="fa fa-linkedin"></i></a><a href="" class="social_icons social_wb"><i class="fa fa-weibo"></i></a>
 										</div>
 										<div class="shareto">
@@ -405,22 +405,22 @@
 								</div>
 						</div>
 						<script type="text/javascript">
-							$('.right #post{{$post->id}} a.social_fb').on('click', function(e){
-								e.preventDefault();
-								window.open('https://www.facebook.com/v2.0/dialog/feed?app_id=866884463391641&display=popup&link='+encodeURIComponent('{{ url() }}/posts/<?php echo $post->id; ?>')+'&caption=OHGOODPARTY&picture={{ url()."/uploads/Medium_".$banner[0] }}&name='+encodeURIComponent('{{ $post->title }}')+'&description={{ strip_tags( trim(preg_replace("/\s+/", " ", getExcerpt($post->content, 60))) ) }}&redirect_uri=https://www.facebook.com', "_blank", "width=600, height=400");
-							})
-							$('.right #post{{$post->id}} a.social_tw').on('click', function(e){
-								e.preventDefault();
-								window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent('{{ $post->title }}')+'&via=ohgoodparty_ogp&url={{ url() }}/posts/<?php echo $post->id; ?>', "_blank", "width=360, height=360");
-							})
-							$('.right #post{{$post->id}} a.social_lk').on('click', function(e){
-								e.preventDefault();
-								window.open('https://www.linkedin.com/shareArticle?mini=true&url={{ url() }}/posts/<?php echo $post->id; ?>&title={{ $post->title }}&summary={{ strip_tags( trim(preg_replace("/\s+/", " ", getExcerpt($post->content, 60))) ) }}&source=OHGOODPARTY', "_blank", "width=360, height=360");
-							})
-							$('.right #post{{$post->id}} a.social_wb').on('click', function(e){
-								e.preventDefault();
-								window.open('http://service.weibo.com/share/share.php?appkey=3304326450&title={{ $post->title }} @奥格派&url={{ url() }}/posts/<?php echo $post->id; ?>&pic={{ url()."/uploads/Medium_".$banner[0] }}&searchPic=false&style=simple', "_blank", "width=360, height=360");
-							})
+							// $('.right #post{{$post->id}} a.social_fb').on('click', function(e){
+							// 	e.preventDefault();
+							// 	window.open('https://www.facebook.com/v2.0/dialog/feed?app_id=866884463391641&display=popup&link='+encodeURIComponent('{{ url() }}/posts/<?php echo $post->id; ?>')+'&caption=OHGOODPARTY&picture={{ url()."/uploads/Medium_".$banner[0] }}&name='+encodeURIComponent('{{ $post->title }}')+'&description={{ strip_tags( trim(preg_replace("/\s+/", " ", getExcerpt($post->content, 60))) ) }}&redirect_uri=https://www.facebook.com', "_blank", "width=600, height=400");
+							// })
+							// $('.right #post{{$post->id}} a.social_tw').on('click', function(e){
+							// 	e.preventDefault();
+							// 	window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent('{{ $post->title }}')+'&via=ohgoodparty_ogp&url={{ url() }}/posts/<?php echo $post->id; ?>', "_blank", "width=360, height=360");
+							// })
+							// $('.right #post{{$post->id}} a.social_lk').on('click', function(e){
+							// 	e.preventDefault();
+							// 	window.open('https://www.linkedin.com/shareArticle?mini=true&url={{ url() }}/posts/<?php echo $post->id; ?>&title={{ $post->title }}&summary={{ strip_tags( trim(preg_replace("/\s+/", " ", getExcerpt($post->content, 60))) ) }}&source=OHGOODPARTY', "_blank", "width=360, height=360");
+							// })
+							// $('.right #post{{$post->id}} a.social_wb').on('click', function(e){
+							// 	e.preventDefault();
+							// 	window.open('http://service.weibo.com/share/share.php?appkey=3304326450&title={{ $post->title }} @奥格派&url={{ url() }}/posts/<?php echo $post->id; ?>&pic={{ url()."/uploads/Medium_".$banner[0] }}&searchPic=false&style=simple', "_blank", "width=360, height=360");
+							// })
 						</script>
 					<?php array_splice($posts,0,1); $i++;$j++;?>
 					@endforeach
@@ -482,7 +482,7 @@
 										
 									</div>
 									<div class="right">
-										<div class="sharebox" id="post{{$post->id}}">
+										<div class="sharebox" id="post{{$post->id}}" data-post-id="{{ $post->id }}" data-post-title="{{ $post->title }}" data-banner="{{ $banner[0] }}" data-post-description="{{ strip_tags( getExcerpt($post->content, 60) ) }}">
 											<a href="" class="social_icons social_tw"><i class="fa fa-twitter"></i></a> <a href="" class="social_icons social_fb"><i class="fa fa-facebook"></i></a> <a href="" class="social_icons social_lk"><i class="fa fa-linkedin"></i></a><a href="" class="social_icons social_wb"><i class="fa fa-weibo"></i></a>
 										</div>
 										<div class="shareto">
@@ -506,22 +506,22 @@
 								</div>
 						</div>
 						<script type="text/javascript">
-							$('.right #post{{$post->id}} a.social_fb').on('click', function(e){
-								e.preventDefault();
-								window.open('https://www.facebook.com/v2.0/dialog/feed?app_id=866884463391641&display=popup&link='+encodeURIComponent('{{ url() }}/posts/<?php echo $post->id; ?>')+'&caption=OHGOODPARTY&picture={{ url()."/uploads/Medium_".$banner[0] }}&name='+encodeURIComponent('{{ $post->title }}')+'&description={{ strip_tags( trim(preg_replace("/\s+/", " ", getExcerpt($post->content, 60))) ) }}&redirect_uri=https://www.facebook.com', "_blank", "width=600, height=400");
-							})
-							$('.right #post{{$post->id}} a.social_tw').on('click', function(e){
-								e.preventDefault();
-								window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent('{{ $post->title }}')+'&via=ohgoodparty_ogp&url={{ url() }}/posts/<?php echo $post->id; ?>', "_blank", "width=360, height=360");
-							})
-							$('.right #post{{$post->id}} a.social_lk').on('click', function(e){
-								e.preventDefault();
-								window.open('https://www.linkedin.com/shareArticle?mini=true&url={{ url() }}/posts/<?php echo $post->id; ?>&title={{ $post->title }}&summary={{ strip_tags( trim(preg_replace("/\s+/", " ", getExcerpt($post->content, 60))) ) }}&source=OHGOODPARTY', "_blank", "width=360, height=360");
-							})
-							$('.right #post{{$post->id}} a.social_wb').on('click', function(e){
-								e.preventDefault();
-								window.open('http://service.weibo.com/share/share.php?appkey=3304326450&title={{ $post->title }} @奥格派&url={{ url() }}/posts/<?php echo $post->id; ?>&pic={{ url()."/uploads/Medium_".$banner[0] }}&searchPic=false&style=simple', "_blank", "width=360, height=360");
-							})
+							// $('.right #post{{$post->id}} a.social_fb').on('click', function(e){
+							// 	e.preventDefault();
+							// 	window.open('https://www.facebook.com/v2.0/dialog/feed?app_id=866884463391641&display=popup&link='+encodeURIComponent('{{ url() }}/posts/<?php echo $post->id; ?>')+'&caption=OHGOODPARTY&picture={{ url()."/uploads/Medium_".$banner[0] }}&name='+encodeURIComponent('{{ $post->title }}')+'&description={{ strip_tags( trim(preg_replace("/\s+/", " ", getExcerpt($post->content, 60))) ) }}&redirect_uri=https://www.facebook.com', "_blank", "width=600, height=400");
+							// })
+							// $('.right #post{{$post->id}} a.social_tw').on('click', function(e){
+							// 	e.preventDefault();
+							// 	window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent('{{ $post->title }}')+'&via=ohgoodparty_ogp&url={{ url() }}/posts/<?php echo $post->id; ?>', "_blank", "width=360, height=360");
+							// })
+							// $('.right #post{{$post->id}} a.social_lk').on('click', function(e){
+							// 	e.preventDefault();
+							// 	window.open('https://www.linkedin.com/shareArticle?mini=true&url={{ url() }}/posts/<?php echo $post->id; ?>&title={{ $post->title }}&summary={{ strip_tags( trim(preg_replace("/\s+/", " ", getExcerpt($post->content, 60))) ) }}&source=OHGOODPARTY', "_blank", "width=360, height=360");
+							// })
+							// $('.right #post{{$post->id}} a.social_wb').on('click', function(e){
+							// 	e.preventDefault();
+							// 	window.open('http://service.weibo.com/share/share.php?appkey=3304326450&title={{ $post->title }} @奥格派&url={{ url() }}/posts/<?php echo $post->id; ?>&pic={{ url()."/uploads/Medium_".$banner[0] }}&searchPic=false&style=simple', "_blank", "width=360, height=360");
+							// })
 						</script>
 					<?php array_splice($posts,0,1); $i++;$j++;?>
 					@endforeach
@@ -533,6 +533,40 @@
 		</div>
 
 </div>
+<script type="text/javascript">
+	$('body').on('click', '.right a.social_fb', function(e){
+		e.preventDefault();
+		var pid = $(this).parent().data('post-id');
+		var ptitle = $(this).parent().data('post-title');
+		var pbanner = $(this).parent().data('banner');
+		var pdesc = $(this).parent().data('post-description');
+		window.open('https://www.facebook.com/v2.0/dialog/feed?app_id=866884463391641&display=popup&link='+encodeURIComponent('{{ url() }}/posts/'+pid)+'&caption=OHGOODPARTY&picture={{ url() }}/uploads/Medium_'+pbanner+'&name='+encodeURIComponent(ptitle)+'&description='+pdesc+'&redirect_uri=https://www.facebook.com', "_blank", "width=600, height=400");
+	})
+	$('body').on('click', '.right a.social_tw', function(e){
+		e.preventDefault();
+		var pid = $(this).parent().data('post-id');
+		var ptitle = $(this).parent().data('post-title');
+		var pbanner = $(this).parent().data('banner');
+		var pdesc = $(this).parent().data('post-description');
+		window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent(ptitle)+'&via=ohgoodparty_ogp&url={{ url() }}/posts/'+pid, "_blank", "width=360, height=360");
+	})
+	$('body').on('click', '.right a.social_lk', function(e){
+		e.preventDefault();
+		var pid = $(this).parent().data('post-id');
+		var ptitle = $(this).parent().data('post-title');
+		var pbanner = $(this).parent().data('banner');
+		var pdesc = $(this).parent().data('post-description');
+		window.open('https://www.linkedin.com/shareArticle?mini=true&url={{ url() }}/posts/'+pid+'&title='+encodeURIComponent(ptitle)+'&summary='+pdesc+'&source=OHGOODPARTY', "_blank", "width=360, height=360");
+	})
+	$('body').on('click', '.right a.social_wb', function(e){
+		e.preventDefault();
+		var pid = $(this).parent().data('post-id');
+		var ptitle = $(this).parent().data('post-title');
+		var pbanner = $(this).parent().data('banner');
+		var pdesc = $(this).parent().data('post-description');
+		window.open('http://service.weibo.com/share/share.php?appkey=3304326450&title='+encodeURIComponent(ptitle)+' @奥格派&url={{ url() }}/posts/'+pid+'&pic={{ url() }}/uploads/Medium_'+pbanner+'&searchPic=false&style=simple', "_blank", "width=360, height=360");
+	})
+</script>
 <script src="{{ asset('js/jquery.infinitescroll.min.js') }}"></script>
 <script type="text/javascript">
 (function(){

@@ -285,7 +285,7 @@ $(document).ready(function(){
 			window.location.href =  window.location.origin+'/events?time='+eventtime;
 		}
 	})
-	$('.shareto a').on('click', function(e){
+	$('body').on('click', '.shareto a', function(e){
 		e.preventDefault();
 		if($(this).parent().prev().is(":visible")){
 			$('.sharebox').hide();

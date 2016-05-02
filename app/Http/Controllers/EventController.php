@@ -389,7 +389,7 @@ class EventController extends Controller {
 				  $charge = \Stripe\Charge::create(array(
 				      'customer' => $customer->id,
 				      'amount'   => $event->fee,
-				      'currency' => 'usd'
+				      'currency' => 'cad'
 				  ));
 
 				  $ticket = new Ticket();
