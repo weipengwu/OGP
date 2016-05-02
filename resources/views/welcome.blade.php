@@ -17,6 +17,11 @@
 			
 			</div>
 		</a>
+		<script type="text/javascript">
+			$('.homebanner .cat').on('click', function(){
+				window.location.href = "/brands/category/{{ $group[0]->categorykey }}";
+			})
+		</script>
 		</section>
 			<?php $posts = array();?>
 			@foreach ($allposts as $singlepost)

@@ -10,11 +10,16 @@
 		<a href="/brands/{{ $group[0]->slug }}">
 			<div class="homebanner" style="background: #ccc url('<?php echo url().'/uploads/Large_'.$group[0]->banner;?>') no-repeat center center; background-size: cover;">		
 				<div class="caption">
-					<p class="cat"><a href="/brands/category/{{ $group[0]->categorykey }}">{{ trans('brands.'.$group[0]->categorykey) }}</a></p>
+					<p class="cat">{{ trans('brands.'.$group[0]->categorykey) }}</p>
 					<h1>{{ $group[0]->name }}</h1>
 				</div>		
 			</div>
 		</a>
+		<script type="text/javascript">
+			$('.homebanner .cat').on('click', function(){
+				window.location.href = "/brands/category/{{ $group[0]->categorykey }}";
+			})
+		</script>
 		</section>
 			<?php $posts = array();?>
 			@foreach ($allposts as $singlepost)
