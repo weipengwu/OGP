@@ -6784,7 +6784,8 @@ label,
   margin-right: 5px;
 }
 .eventgroup .postfrom{
-  height: auto;
+  height: 33px;
+  overflow: hidden;
   padding: 12px 15px;
   border-top: 1px solid #ddd;
   color: #777;
@@ -8171,7 +8172,7 @@ label.error{
     border-right: 0;
   }
   .eventindex .eventgroup{
-    width: 70%;
+    width: 90%;
     float: none;
     margin: 0 auto 25px auto
   }
