@@ -42,6 +42,8 @@ return [
 	'following' => 'Following',
 	'follower' => 'Follower',
 	'followers' => 'Followers',
+	'message' => 'Message',
+	'messages' => 'Messages',
 	'event' => 'Event',
 	'events' => 'Events',
 	'post' => 'Post',

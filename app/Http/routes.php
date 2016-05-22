@@ -44,6 +44,9 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::post('dashboard', array('uses' => 'DashboardController@updateProfile','as' => 'updateProfile'));
 	Route::get('changepassword', 'ChangePwdController@changepwdindex');
 	Route::post('changepassword', array('uses' => 'ChangePwdController@changePassword','as' => 'changePassword'));
+	Route::get('dashboard/messages', array('uses' => 'DashboardController@viewMessages', 'as' => 'viewMessages'));
+	Route::get('dashboard/message/user/{id}', 'DashboardController@messageuser');
+	Route::post('dashboard/sendmessage', 'DashboardController@sendMessage');
 	Route::get('brands/{slug}/posts/new', array('uses' => 'PostController@newPost', 'as' => 'newPost'));
 	// Route::post('brands/{slug}/posts/new', array('uses' => 'PostController@createPost', 'as' => 'createPost'));
 	Route::post('posts/new', array('uses' => 'PostController@createPost', 'as' => 'createPost'));

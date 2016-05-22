@@ -42,6 +42,8 @@ return [
 	'following' => '已关注',
 	'follower' => '关注者',
 	'followers' => '关注者',
+	'message' => '短消息',
+	'messages' => '短消息',
 	'event' => '活动',
 	'events' => '活动',
 	'post' => '动态',

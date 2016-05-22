@@ -5233,7 +5233,7 @@ a.list-group-item-danger.active:focus {
   border-color: #dddddd;
 }
 .panel-default > .panel-heading {
-  color: #333333;
+  color: #777777;
   background-color: #f5f5f5;
   border-color: #dddddd;
 }
@@ -6382,6 +6382,9 @@ label,
   display: inline-block;
   margin-top: 15px;
   text-decoration: none !important;
+}
+.groupbanner .caption a.follow_btn{
+  margin-right: 10px;
 }
 .groupbanner .caption a.website{
   border: 0;
@@ -8061,6 +8064,64 @@ label.error{
 }
 .admin h2{
   margin-top: 0;
+}
+.singlemessage{
+  margin: 15px 0;
+}
+.singlemessage span{
+  padding: 8px 10px;
+  border-radius: 4px;
+  display: block;
+}
+.inbox{
+  float: left;
+}
+.inbox span{
+    background: #efefef;
+    float: left;
+}
+.inbox .top-profile{
+  float: left;
+  margin-right: 10px;
+}
+.outbox{
+  float: right;
+}
+.outbox span{
+    background: #ddd;
+}
+#messageform{
+  margin-top: 30px;
+}
+.listmessage{
+  padding: 10px;
+  position: relative;
+  border-bottom: 1px solid #e8e8e8;
+}
+.listmessage .unreaddot{
+  width: 8px;
+  height: 8px;
+  border-radius: 20px;
+  background: red;
+  position: absolute;
+  top: 5px;
+  left: 0;
+}
+.panel-heading .messageback{
+  float: right;
+  color: #777;
+}
+.messageauthor{
+  padding: 10px 15px;
+  border: 1px solid #999;
+  color: #777;
+  text-decoration: none;
+  margin-top: 20px;
+  display: inline-block;
+}
+.messageauthor:hover, .messageauthor:focus{
+  color: #777;
+  text-decoration: none;
 }
 /*** media query ***/
 @media (max-width: 1199px){

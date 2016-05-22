@@ -20,5 +20,7 @@ return [
 	'deleteevent' => 'Delete Event',
 	'nobrand' => 'You haven\'t created your brand yet.',
 	'username' => 'Username',
-	'email' => 'Email'
+	'email' => 'Email',
+	'send' => 'Send',
+	'reply' => 'Reply'
 ];

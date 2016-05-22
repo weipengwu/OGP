@@ -20,5 +20,7 @@ return [
 	'deleteevent' => '删除活动',
 	'nobrand' => '您还未创建属于您的品牌',
 	'username' => '用户名',
-	'email' => '邮件地址'
+	'email' => '邮件地址',
+	'send' => '发送',
+	'reply' => '回复'
 ];

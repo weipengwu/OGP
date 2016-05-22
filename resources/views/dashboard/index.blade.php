@@ -55,6 +55,10 @@
 						<a href="" class="dash-btn" data-id="manageEvents">{{ trans('dashboard.manageevents') }}</a>
 					</div>
 					@endif
+
+					<div class="d-row">
+						<a href="{{ url() }}/dashboard/messages">{{ trans('brands.messages') }}</a>
+					</div>
 				</div>
 
 		</div>

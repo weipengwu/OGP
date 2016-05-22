@@ -15,8 +15,10 @@
 						<a href="/brands/{{ $group->slug }}/edit" class="btn btn_logo">{{ trans('brands.editbrand') }}</a>
 					@elseif(isFollowing(Auth::user()->id, $group->id))
 						<a href="" class="follow_btn unfollow_group" data-user-id="{{ Auth::user()->id }}" data-group-id="{{ $group->id }}">{{ trans('brands.following') }}</a>
+						<a href="{{ url() }}/dashboard/message/user/{{ $group->owner }}">{{ trans('brands.message') }}</a>
 					@else
 						<a href="" class="follow_btn follow_group" data-user-id="{{ Auth::user()->id }}" data-group-id="{{ $group->id }}">{{ trans('brands.follow') }}</a>
+						<a href="{{ url() }}/dashboard/message/user/{{ $group->owner }}">{{ trans('brands.message') }}</a>
 					@endif
 				@endif
 			</div>

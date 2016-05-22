@@ -1,9 +1,11 @@
 <?php namespace App\Http\Controllers;
 use App\User;
 use App\Usermeta;
+use Auth;
 use Request;
 use Validator;
 use Image;
+use App\Message;
 
 class DashboardController extends Controller {
 
@@ -114,5 +116,42 @@ class DashboardController extends Controller {
 		}
 
 		return redirect()->route('dashboard');
+	}
+
+	public function viewMessages()
+	{
+		$id = Auth::user()->id;
+		$messages = Message::where('sentto', $id)->orderBy('created_at', 'DESC')->get();
+		return view('dashboard.messages')->with('messages', $messages);
+	}
+
+	public function messageuser($id)
+	{
+		$user = Auth::user()->id;
+		$inbox = ['sentto'=>$user, 'sentby'=>$id];
+		$outbox = ['sentby'=>$user, 'sentto'=>$id];
+		$readmessages = Message::where($inbox)->get();
+		foreach ($readmessages as $readmessage) {
+			if($readmessage->unread == '1'){
+				$readmessage->unread = '0';
+				$readmessage->save();
+			}
+		}
+		$messages = Message::where($inbox)->orWhere($outbox)->orderBy('created_at', 'ASC')->get();
+		return view('dashboard.messageuser')->with('sentto', $id)->with('messages', $messages);
+	}
+
+	public function sendMessage()
+	{
+		$sentto = Request::input('sentto');
+		$sentby = Request::input('sentby');
+		$message = new Message();
+		$message->sentto = $sentto;
+		$message->sentby = $sentby;
+		$message->message = nl2br(Request::input('message'));
+		$message->unread = '1';
+		$message->save();
+
+		return redirect()->back();
 	}
 }
