@@ -10,5 +10,6 @@ return [
 	'from' => '出⾃',
 	'leavecomment' => '参与评论',
 	'writedown' => '来说两句吧...',
-	'comments' => '评论'
+	'comments' => '评论',
+	'inquiry' => '咨询'
 ];

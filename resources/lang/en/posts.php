@@ -10,5 +10,6 @@ return [
 	'from' => 'FROM',
 	'leavecomment' => 'Leave a Comment',
 	'writedown' => 'Write down your thoughts...',
-	'comments' => 'Comments'
+	'comments' => 'Comments',
+	'inquiry' => 'MAKE AN INQUIRY'
 ];

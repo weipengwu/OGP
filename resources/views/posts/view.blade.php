@@ -37,7 +37,7 @@
 					<p>{!!html_entity_decode($post->content)!!}</p>
 					<br />
 					<p>For more information, visit <a href="{{  url() }}/brands/{{ $post->group->slug }}">{{ getGroupName($post->group->id) }}</a></p>
-					<p><a href="{{ url() }}/dashboard/message/user/{{$post->author}}" class="messageauthor">Message Author</a></p>
+					<p><a href="{{ url() }}/dashboard/message/user/{{$post->author}}" class="messageauthor">{{ trans('posts.inquiry') }}</a></p>
 					<div class="postshare">
 						<a href="" class="social_icons social_tw"><i class="fa fa-twitter"></i></a> <a href="" class="social_icons social_fb"><i class="fa fa-facebook"></i></a> <a href="" class="social_icons social_lk"><i class="fa fa-linkedin"></i></a><a href="" class="social_icons social_wb"><i class="fa fa-weibo"></i></a>
 					</div>
